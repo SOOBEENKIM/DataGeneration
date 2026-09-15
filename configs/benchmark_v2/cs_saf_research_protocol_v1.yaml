@@ -1,0 +1,61 @@
+schema_version: cs-saf-research-protocol-v1
+family: cs_saf
+status: DEFINED_NOT_IMPLEMENTED
+base_commit: de8fa70
+
+claim:
+  working_failure_mode: conditional_mechanism_dilution
+  question: >-
+    Can exact support alignment and context-balanced selective routing preserve
+    rare context-specific gap-to-mark transition mechanisms in sequential
+    synthetic data?
+  forbidden_claims:
+    - dependency_routing_already_succeeded
+    - universal_fidelity_utility_privacy_superiority
+    - held_out_test_superiority
+
+data:
+  reuse_existing_sources: true
+  reuse_entity_disjoint_splits: true
+  held_out_test_access: false
+  controlled_grid:
+    context_prevalence: [0.05, 0.10, 0.25, 0.50]
+    kappa: [0, 1]
+    pilot_seed: 20260930
+    confirmatory_seeds: [20261001, 20261002, 20261003, 20261004, 20261005]
+
+model:
+  gap_decoder: train_support_aligned
+  mark_decoder: copy_new
+  context_gap_interaction: vector_or_bilinear_to_be_frozen_before_training
+  objective: average_nll_plus_context_balanced_copy_loss
+  ordered_hazard_primary: false
+  matched_ablation_factors:
+    - support_alignment
+    - context_gap_interaction
+    - context_balanced_objective
+
+pilot_gate:
+  active_cell_min_probability_range: 0.05
+  noncausal_cell_max_probability_range: 0.05
+  active_to_largest_noncausal_min_ratio: 2.0
+  zero_gap_control_max_range: 1.0e-8
+  gap_support_violations: 0
+  lower_thresholds_after_results: forbidden
+
+confirmatory_gate:
+  minimum_directional_seed_wins: 4
+  seed_count: 5
+  require_aggregate_direction: true
+  require_kappa_0_null_safety: true
+  gap_support_violations: 0
+  aggregate_fidelity_noninferiority: required
+  tstr_utility_noninferiority: required
+
+execution_order:
+  - freeze_exact_architecture_and_loss
+  - oracle_dgp_identifiability_audit
+  - single_seed_pilot
+  - five_seed_controlled_confirmation
+  - real_data_and_external_baselines
+  - separately_authorized_held_out_test
