@@ -1,0 +1,35 @@
+schema_version: cof-seqgen-saf-gated-v6-intervention-audit-v1
+model_implementation_version: saf-gated-static-aware-gap-copy-route-v6
+device: cuda:1
+batch_size: 128
+chunk_size: 512
+max_histories_per_label: 20000
+criteria:
+  min_kappa_1_label_1_mean_range: 0.05
+  max_noncausal_mean_range: 0.05
+  min_selectivity_ratio: 2.0
+  max_control_range: 0.00000001
+cells:
+  kappa_0:
+    dataset_dir: data/cof_seqgen_saf/canonical/controlled_coupling_joint_semimarkov_v2b_kappa_0_00
+    branches:
+      unordered:
+        checkpoint: artifacts/cof_seqgen_saf/development/gpu_dgp_k0_gated_v6_staticfix_pilot/seed_20260929/SAF-U1/checkpoint_best.pt
+        routed_candidate: SAF-U1
+        control_candidate: SAF-U0
+      ordered:
+        checkpoint: artifacts/cof_seqgen_saf/development/gpu_dgp_k0_gated_v6_staticfix_pilot/seed_20260929/SAF-O1/checkpoint_best.pt
+        routed_candidate: SAF-O1
+        control_candidate: SAF-O0
+  kappa_1:
+    dataset_dir: data/cof_seqgen_saf/canonical/controlled_coupling_joint_semimarkov_v2b_kappa_1_00
+    branches:
+      unordered:
+        checkpoint: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_gated_v6_staticfix_pilot/seed_20260929/SAF-U1/checkpoint_best.pt
+        routed_candidate: SAF-U1
+        control_candidate: SAF-U0
+      ordered:
+        checkpoint: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_gated_v6_staticfix_pilot/seed_20260929/SAF-O1/checkpoint_best.pt
+        routed_candidate: SAF-O1
+        control_candidate: SAF-O0
+output_path: artifacts/cof_seqgen_saf/development/gated_v6_intervention_audit.json

@@ -1,0 +1,19 @@
+schema_version: cof-seqgen-saf-interactive-route-decision-v1
+analysis_path: artifacts/cof_seqgen_saf/development/dgp_interactive_v3_five_seed_mechanism_analysis.json
+output_path: artifacts/cof_seqgen_saf/development/dgp_interactive_v3_routing_decision.json
+required_positive_seeds: 4
+primary_endpoints:
+  - gap_conditioned_mark_tv
+  - short_gap_repeat_curve_l1
+  - gap_repeat_mi_error
+route_contrasts:
+  unordered: H3_route_unordered_U0_to_U1
+  ordered: H3_route_ordered_O0_to_O1
+kappa_interactions:
+  unordered: H3_route_unordered_kappa_interaction
+  ordered: H3_route_ordered_kappa_interaction
+decision_rule: >-
+  PASS only if both unordered and ordered routed models lower all three primary
+  errors at kappa=1 with positive mean and at least 4/5 positive paired seeds,
+  and every corresponding routing gain is larger at kappa=1 than kappa=0 with
+  positive mean and at least 4/5 positive paired seeds.

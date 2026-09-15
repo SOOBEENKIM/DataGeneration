@@ -1,0 +1,1233 @@
+{
+  "all_datasets_all_sensitivity_checks_pass": true,
+  "candidate_output_accessed": false,
+  "datasets": {
+    "amlsim": {
+      "noninferiority_margins_q95": {
+        "amount_ks": 0.0492522999760176,
+        "amount_scaled_w1": 0.008559920113230257,
+        "gap_ks": 0.029528271069704404,
+        "gap_scaled_w1": 0.012158817217059293,
+        "gap_zero_rate_error": 0.029528271069704404,
+        "length_scaled_w1": 0.030189580041899484,
+        "mark_sparse_tv": 0.015488922340761595
+      },
+      "provenance": {
+        "event_file_sha256": "bf33d086f892b9575e2496b6f5775f2803a8a7d57fdb1b9065fbd984a69c9916",
+        "nontrain_event_count_used": 0,
+        "split_file_sha256": "80a1d058362693a50bc7de40b18c1bf8bf8cfd00c84a9884b5b2bca458750f40",
+        "train_entity_count": 6999,
+        "train_event_count": 929289
+      },
+      "validity": {
+        "all_checks_pass": true,
+        "audit_scope": "train_only_entity_disjoint",
+        "checks": {
+          "copied_trajectories_detected": true,
+          "gap_permutation_detected_jointly": true,
+          "gap_permutation_preserves_gap_marginal": true,
+          "mark_permutation_detected_jointly": true,
+          "mark_permutation_preserves_mark_marginal": true,
+          "numeric_corruption_detected": true
+        },
+        "corruptions": {
+          "copy_trajectories": {
+            "trajectory_exact_match_rate": 1.0,
+            "transition_ngram_exposure_rate": 1.0
+          },
+          "permute_marks": {
+            "amount_ks": 0.03868073025110941,
+            "amount_lag1_acf_error": 0.009027990910023154,
+            "amount_scaled_w1": 0.0049947510146332585,
+            "gap_conditioned_mark_tv": 0.033025868609419785,
+            "gap_ks": 0.013437742000568575,
+            "gap_lag1_acf_error": 0.00161954589391608,
+            "gap_repeat_mi_error": 0.39806429584295017,
+            "gap_scaled_w1": 0.005344780974815529,
+            "gap_zero_rate_error": 0.013437742000568575,
+            "length_scaled_w1": 0.013252978505354427,
+            "mark_sparse_tv": 0.015176897701807506,
+            "short_gap_repeat_curve_l1": 0.2998106287865123
+          },
+          "permute_nonfirst_gaps": {
+            "amount_ks": 0.03868073025110941,
+            "amount_lag1_acf_error": 0.009027990910023154,
+            "amount_scaled_w1": 0.0049947510146332585,
+            "gap_conditioned_mark_tv": 0.03264837093964417,
+            "gap_ks": 0.013437742000568575,
+            "gap_lag1_acf_error": 0.1993896422182909,
+            "gap_repeat_mi_error": 0.3980607706554299,
+            "gap_scaled_w1": 0.005344780974815529,
+            "gap_zero_rate_error": 0.013437742000568575,
+            "length_scaled_w1": 0.013252978505354427,
+            "mark_sparse_tv": 0.015176897701807506,
+            "short_gap_repeat_curve_l1": 0.3612180347844398
+          },
+          "shift_scale_amount": {
+            "amount_ks": 0.9907701344528379,
+            "amount_lag1_acf_error": 0.009027990910020822,
+            "amount_scaled_w1": 1.9911053078561676,
+            "gap_conditioned_mark_tv": 0.017217583348457393,
+            "gap_ks": 0.013437742000568575,
+            "gap_lag1_acf_error": 0.00161954589391608,
+            "gap_repeat_mi_error": 0.005535488667376187,
+            "gap_scaled_w1": 0.005344780974815529,
+            "gap_zero_rate_error": 0.013437742000568575,
+            "length_scaled_w1": 0.013252978505354427,
+            "mark_sparse_tv": 0.015176897701807506,
+            "short_gap_repeat_curve_l1": 0.00196541457342343
+          }
+        },
+        "interpretation": "Failure is a metric-power diagnostic, never evidence for or against a model.",
+        "metric_state": {
+          "amount_scale": 1337035.1808093071,
+          "fit_entity_count": 3499,
+          "fit_split": "train",
+          "gap_bin_edges": [
+            0.0,
+            1.0
+          ],
+          "gap_scale": 3.942483278968904,
+          "length_scale": 158.0,
+          "mark_groups": [
+            "9960",
+            "9993",
+            "9982",
+            "9950",
+            "9872",
+            "9992",
+            "9971",
+            "9980",
+            "9983",
+            "9961",
+            "9999",
+            "9883",
+            "9641",
+            "9410",
+            "9998",
+            "8695",
+            "9048",
+            "9994",
+            "9970",
+            "9892"
+          ]
+        },
+        "probe_entities": 3500,
+        "real_vs_real_null": {
+          "amount_ks": 0.03868073025110941,
+          "amount_lag1_acf_error": 0.009027990910023154,
+          "amount_scaled_w1": 0.0049947510146332585,
+          "gap_conditioned_mark_tv": 0.017217583348457393,
+          "gap_ks": 0.013437742000568575,
+          "gap_lag1_acf_error": 0.00161954589391608,
+          "gap_repeat_mi_error": 0.005535488667376187,
+          "gap_scaled_w1": 0.005344780974815529,
+          "gap_zero_rate_error": 0.013437742000568575,
+          "length_scaled_w1": 0.013252978505354427,
+          "mark_sparse_tv": 0.015176897701807506,
+          "short_gap_repeat_curve_l1": 0.00196541457342343
+        },
+        "reference_entities": 3499,
+        "seed": 20260826,
+        "utility_validity": {
+          "all_checks_pass": true,
+          "checks": {
+            "gap_target_corruption_worsens_next_gap": true,
+            "mark_target_corruption_worsens_next_repeat": true
+          },
+          "gap_corruption": {
+            "next_gap_tstr_mae_ratio": 1.2530085519694507,
+            "next_repeat_tstr_brier_ratio": 0.987412540643058,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "mark_corruption": {
+            "next_gap_tstr_mae_ratio": 1.0729421499633154,
+            "next_repeat_tstr_brier_ratio": 0.9999670682818584,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "real_vs_real": {
+            "next_gap_tstr_mae_ratio": 1.0714459016831928,
+            "next_repeat_tstr_brier_ratio": 0.8389747278762288,
+            "test_examples": 50000,
+            "train_examples": 50000
+          }
+        }
+      }
+    },
+    "berka": {
+      "noninferiority_margins_q95": {
+        "amount_ks": 0.01670690828223792,
+        "amount_scaled_w1": 0.030525079111611585,
+        "gap_ks": 0.007993531504074641,
+        "gap_scaled_w1": 0.015757510941579164,
+        "gap_zero_rate_error": 0.00497789093641042,
+        "length_scaled_w1": 0.05063812888691556,
+        "mark_sparse_tv": 0.011608984560793453
+      },
+      "provenance": {
+        "event_file_sha256": "a35759d49b3db112579c968827cb8732b20d4b7a6146feba1743dfda157c3ffd",
+        "nontrain_event_count_used": 0,
+        "split_file_sha256": "8948349af2438df3d00ff951f4ec6add4840c958c371e0dfaf78305478764e8e",
+        "train_entity_count": 3150,
+        "train_event_count": 737846
+      },
+      "validity": {
+        "all_checks_pass": true,
+        "audit_scope": "train_only_entity_disjoint",
+        "checks": {
+          "copied_trajectories_detected": true,
+          "gap_permutation_detected_jointly": true,
+          "gap_permutation_preserves_gap_marginal": true,
+          "mark_permutation_detected_jointly": true,
+          "mark_permutation_preserves_mark_marginal": true,
+          "numeric_corruption_detected": true
+        },
+        "corruptions": {
+          "copy_trajectories": {
+            "trajectory_exact_match_rate": 1.0,
+            "transition_ngram_exposure_rate": 1.0
+          },
+          "permute_marks": {
+            "amount_ks": 0.00511700960772643,
+            "amount_lag1_acf_error": 0.015390317912889029,
+            "amount_scaled_w1": 0.008600581133709874,
+            "gap_conditioned_mark_tv": 0.22885535119975317,
+            "gap_ks": 0.006994256501657081,
+            "gap_lag1_acf_error": 0.004842984755177984,
+            "gap_repeat_mi_error": 0.004395911898414973,
+            "gap_scaled_w1": 0.009340032696050734,
+            "gap_zero_rate_error": 0.0026118460056599735,
+            "length_scaled_w1": 0.024167296548248927,
+            "mark_sparse_tv": 0.006553112412887585,
+            "short_gap_repeat_curve_l1": 0.03793444664930811
+          },
+          "permute_nonfirst_gaps": {
+            "amount_ks": 0.00511700960772643,
+            "amount_lag1_acf_error": 0.015390317912889029,
+            "amount_scaled_w1": 0.008600581133709874,
+            "gap_conditioned_mark_tv": 0.22923132573516153,
+            "gap_ks": 0.006994256501657081,
+            "gap_lag1_acf_error": 0.11858245304528019,
+            "gap_repeat_mi_error": 0.004393359939011257,
+            "gap_scaled_w1": 0.009340032696050734,
+            "gap_zero_rate_error": 0.0026118460056599735,
+            "length_scaled_w1": 0.024167296548248927,
+            "mark_sparse_tv": 0.006553112412887585,
+            "short_gap_repeat_curve_l1": 0.03753676424665664
+          },
+          "shift_scale_amount": {
+            "amount_ks": 0.9022827640302148,
+            "amount_lag1_acf_error": 0.015390317912888696,
+            "amount_scaled_w1": 2.177669028044644,
+            "gap_conditioned_mark_tv": 0.013180726574116276,
+            "gap_ks": 0.006994256501657081,
+            "gap_lag1_acf_error": 0.004842984755177984,
+            "gap_repeat_mi_error": 0.0002688435243138618,
+            "gap_scaled_w1": 0.009340032696050734,
+            "gap_zero_rate_error": 0.0026118460056599735,
+            "length_scaled_w1": 0.024167296548248927,
+            "mark_sparse_tv": 0.006553112412887585,
+            "short_gap_repeat_curve_l1": 0.00207689682319453
+          }
+        },
+        "interpretation": "Failure is a metric-power diagnostic, never evidence for or against a model.",
+        "metric_state": {
+          "amount_scale": 9596.968358015889,
+          "fit_entity_count": 1575,
+          "fit_split": "train",
+          "gap_bin_edges": [
+            0.0,
+            2.0,
+            5.0,
+            9.0
+          ],
+          "gap_scale": 7.0,
+          "length_scale": 189.0,
+          "mark_groups": [
+            "VYBER",
+            "PREVOD NA UCET",
+            "PRIJEM",
+            "VKLAD",
+            "PREVOD Z UCTU",
+            "VYBER KARTOU"
+          ]
+        },
+        "probe_entities": 1575,
+        "real_vs_real_null": {
+          "amount_ks": 0.00511700960772643,
+          "amount_lag1_acf_error": 0.015390317912889029,
+          "amount_scaled_w1": 0.008600581133709874,
+          "gap_conditioned_mark_tv": 0.013180726574116276,
+          "gap_ks": 0.006994256501657081,
+          "gap_lag1_acf_error": 0.004842984755177984,
+          "gap_repeat_mi_error": 0.0002688435243138618,
+          "gap_scaled_w1": 0.009340032696050734,
+          "gap_zero_rate_error": 0.0026118460056599735,
+          "length_scaled_w1": 0.024167296548248927,
+          "mark_sparse_tv": 0.006553112412887585,
+          "short_gap_repeat_curve_l1": 0.00207689682319453
+        },
+        "reference_entities": 1575,
+        "seed": 20260826,
+        "utility_validity": {
+          "all_checks_pass": true,
+          "checks": {
+            "gap_target_corruption_worsens_next_gap": true,
+            "mark_target_corruption_worsens_next_repeat": true
+          },
+          "gap_corruption": {
+            "next_gap_tstr_mae_ratio": 0.9996853925917402,
+            "next_repeat_tstr_brier_ratio": 0.8643062049269896,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "mark_corruption": {
+            "next_gap_tstr_mae_ratio": 0.9459539324590267,
+            "next_repeat_tstr_brier_ratio": 0.9040710832704199,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "real_vs_real": {
+            "next_gap_tstr_mae_ratio": 0.909598479126571,
+            "next_repeat_tstr_brier_ratio": 0.8592311375690228,
+            "test_examples": 50000,
+            "train_examples": 50000
+          }
+        }
+      }
+    },
+    "berka_nested_900": {
+      "noninferiority_margins_q95": {
+        "amount_ks": 0.029427855606506514,
+        "amount_scaled_w1": 0.06264278868444095,
+        "gap_ks": 0.017502269579794894,
+        "gap_scaled_w1": 0.026564694636359368,
+        "gap_zero_rate_error": 0.011633962759276431,
+        "length_scaled_w1": 0.07663653437471041,
+        "mark_sparse_tv": 0.025877366140544242
+      },
+      "provenance": {
+        "event_file_sha256": "c8549af44db5f747715489a1497f9c74b581ec22f248857f931663dd9fe9c8f0",
+        "nontrain_event_count_used": 0,
+        "split_file_sha256": "0fef7f9c728eda6ffa9bc7fc0db3cb4e3563dfb6eb09d2a26e82bf32903625d0",
+        "train_entity_count": 630,
+        "train_event_count": 145947
+      },
+      "validity": {
+        "all_checks_pass": true,
+        "audit_scope": "train_only_entity_disjoint",
+        "checks": {
+          "copied_trajectories_detected": true,
+          "gap_permutation_detected_jointly": true,
+          "gap_permutation_preserves_gap_marginal": true,
+          "mark_permutation_detected_jointly": true,
+          "mark_permutation_preserves_mark_marginal": true,
+          "numeric_corruption_detected": true
+        },
+        "corruptions": {
+          "copy_trajectories": {
+            "trajectory_exact_match_rate": 1.0,
+            "transition_ngram_exposure_rate": 1.0
+          },
+          "permute_marks": {
+            "amount_ks": 0.019650864823019032,
+            "amount_lag1_acf_error": 0.02048741610752644,
+            "amount_scaled_w1": 0.03069327922459953,
+            "gap_conditioned_mark_tv": 0.23377416768842696,
+            "gap_ks": 0.012820233361876987,
+            "gap_lag1_acf_error": 0.03188917295960919,
+            "gap_repeat_mi_error": 0.003857594005580183,
+            "gap_scaled_w1": 0.009351176598917044,
+            "gap_zero_rate_error": 0.005998950503385059,
+            "length_scaled_w1": 0.05863577863577864,
+            "mark_sparse_tv": 0.007694161067471943,
+            "short_gap_repeat_curve_l1": 0.0378285034898644
+          },
+          "permute_nonfirst_gaps": {
+            "amount_ks": 0.019650864823019032,
+            "amount_lag1_acf_error": 0.02048741610752644,
+            "amount_scaled_w1": 0.03069327922459953,
+            "gap_conditioned_mark_tv": 0.23639826180363868,
+            "gap_ks": 0.012820233361876987,
+            "gap_lag1_acf_error": 0.10842076503344206,
+            "gap_repeat_mi_error": 0.0038118128578691676,
+            "gap_scaled_w1": 0.009351176598917044,
+            "gap_zero_rate_error": 0.005998950503385059,
+            "length_scaled_w1": 0.05863577863577864,
+            "mark_sparse_tv": 0.007694161067471943,
+            "short_gap_repeat_curve_l1": 0.0380222899373813
+          },
+          "shift_scale_amount": {
+            "amount_ks": 0.9101206801974767,
+            "amount_lag1_acf_error": 0.020487416107526163,
+            "amount_scaled_w1": 2.3569394436904103,
+            "gap_conditioned_mark_tv": 0.02208469896711228,
+            "gap_ks": 0.012820233361876987,
+            "gap_lag1_acf_error": 0.03188917295960919,
+            "gap_repeat_mi_error": 0.00038002077721504494,
+            "gap_scaled_w1": 0.009351176598917044,
+            "gap_zero_rate_error": 0.005998950503385059,
+            "length_scaled_w1": 0.05863577863577864,
+            "mark_sparse_tv": 0.007694161067471943,
+            "short_gap_repeat_curve_l1": 0.010140517065673845
+          }
+        },
+        "interpretation": "Failure is a metric-power diagnostic, never evidence for or against a model.",
+        "metric_state": {
+          "amount_scale": 9348.494278511627,
+          "fit_entity_count": 315,
+          "fit_split": "train",
+          "gap_bin_edges": [
+            0.0,
+            2.0,
+            5.0,
+            9.0
+          ],
+          "gap_scale": 7.0,
+          "length_scale": 185.0,
+          "mark_groups": [
+            "VYBER",
+            "PREVOD NA UCET",
+            "PRIJEM",
+            "VKLAD",
+            "PREVOD Z UCTU",
+            "VYBER KARTOU"
+          ]
+        },
+        "probe_entities": 315,
+        "real_vs_real_null": {
+          "amount_ks": 0.019650864823019032,
+          "amount_lag1_acf_error": 0.02048741610752644,
+          "amount_scaled_w1": 0.03069327922459953,
+          "gap_conditioned_mark_tv": 0.02208469896711228,
+          "gap_ks": 0.012820233361876987,
+          "gap_lag1_acf_error": 0.03188917295960919,
+          "gap_repeat_mi_error": 0.00038002077721504494,
+          "gap_scaled_w1": 0.009351176598917044,
+          "gap_zero_rate_error": 0.005998950503385059,
+          "length_scaled_w1": 0.05863577863577864,
+          "mark_sparse_tv": 0.007694161067471943,
+          "short_gap_repeat_curve_l1": 0.010140517065673845
+        },
+        "reference_entities": 315,
+        "seed": 20260826,
+        "utility_validity": {
+          "all_checks_pass": true,
+          "checks": {
+            "gap_target_corruption_worsens_next_gap": true,
+            "mark_target_corruption_worsens_next_repeat": true
+          },
+          "gap_corruption": {
+            "next_gap_tstr_mae_ratio": 0.9987780993766432,
+            "next_repeat_tstr_brier_ratio": 0.8666277733269325,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "mark_corruption": {
+            "next_gap_tstr_mae_ratio": 0.9499122470823725,
+            "next_repeat_tstr_brier_ratio": 0.9116397249188679,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "real_vs_real": {
+            "next_gap_tstr_mae_ratio": 0.9197136846854399,
+            "next_repeat_tstr_brier_ratio": 0.8602041821246151,
+            "test_examples": 50000,
+            "train_examples": 50000
+          }
+        }
+      }
+    },
+    "citi_bike": {
+      "noninferiority_margins_q95": {
+        "amount_ks": 0.004912774246632834,
+        "amount_scaled_w1": 0.006708744048349511,
+        "gap_ks": 0.008141844572346457,
+        "gap_scaled_w1": 0.011097448458266036,
+        "gap_zero_rate_error": 0.0,
+        "length_scaled_w1": 0.04435458143820466,
+        "mark_sparse_tv": 0.0033330490368248247
+      },
+      "provenance": {
+        "event_file_sha256": "797293ad210169a9e5a3f4f29524ef272a729081f3ea1d4872962ee4bd575125",
+        "nontrain_event_count_used": 0,
+        "split_file_sha256": "aebd78cc75f1fe57e2323335fd27d7cb9a6be8c09be683eb7f332b9c1386fb42",
+        "train_entity_count": 5238,
+        "train_event_count": 392813
+      },
+      "validity": {
+        "all_checks_pass": true,
+        "audit_scope": "train_only_entity_disjoint",
+        "checks": {
+          "copied_trajectories_detected": true,
+          "gap_permutation_detected_jointly": true,
+          "gap_permutation_preserves_gap_marginal": true,
+          "mark_permutation_detected_jointly": true,
+          "mark_permutation_preserves_mark_marginal": true,
+          "numeric_corruption_detected": true
+        },
+        "corruptions": {
+          "copy_trajectories": {
+            "trajectory_exact_match_rate": 1.0,
+            "transition_ngram_exposure_rate": 1.0
+          },
+          "permute_marks": {
+            "amount_ks": 0.004326432995839569,
+            "amount_lag1_acf_error": 0.000981599907576432,
+            "amount_scaled_w1": 0.005703574165914734,
+            "gap_conditioned_mark_tv": 0.01584066346712168,
+            "gap_ks": 0.0077103516690812945,
+            "gap_lag1_acf_error": 0.00708745475383063,
+            "gap_repeat_mi_error": 0.00012970425785817152,
+            "gap_scaled_w1": 0.0090323047648036,
+            "gap_zero_rate_error": 0.0,
+            "length_scaled_w1": 0.04225791118280075,
+            "mark_sparse_tv": 0.002122524526163814,
+            "short_gap_repeat_curve_l1": 0.010054402980266703
+          },
+          "permute_nonfirst_gaps": {
+            "amount_ks": 0.004326432995839569,
+            "amount_lag1_acf_error": 0.000981599907576432,
+            "amount_scaled_w1": 0.005703574165914734,
+            "gap_conditioned_mark_tv": 0.01627750322488712,
+            "gap_ks": 0.0077103516690812945,
+            "gap_lag1_acf_error": 0.0675959311342045,
+            "gap_repeat_mi_error": 0.00012887185614010206,
+            "gap_scaled_w1": 0.0090323047648036,
+            "gap_zero_rate_error": 0.0,
+            "length_scaled_w1": 0.04225791118280075,
+            "mark_sparse_tv": 0.002122524526163814,
+            "short_gap_repeat_curve_l1": 0.001678708378075014
+          },
+          "shift_scale_amount": {
+            "amount_ks": 0.9976675650487393,
+            "amount_lag1_acf_error": 0.0009815999075764342,
+            "amount_scaled_w1": 1.8325581549351844,
+            "gap_conditioned_mark_tv": 0.005780631646345738,
+            "gap_ks": 0.0077103516690812945,
+            "gap_lag1_acf_error": 0.00708745475383063,
+            "gap_repeat_mi_error": 4.3599803048203226e-05,
+            "gap_scaled_w1": 0.0090323047648036,
+            "gap_zero_rate_error": 0.0,
+            "length_scaled_w1": 0.04225791118280075,
+            "mark_sparse_tv": 0.002122524526163814,
+            "short_gap_repeat_curve_l1": 0.0004655402130404929
+          }
+        },
+        "interpretation": "Failure is a metric-power diagnostic, never evidence for or against a model.",
+        "metric_state": {
+          "amount_scale": 8157.142638706874,
+          "fit_entity_count": 2619,
+          "fit_split": "train",
+          "gap_bin_edges": [
+            1520.0,
+            3542.0,
+            9923.000000000015,
+            38283.0
+          ],
+          "gap_scale": 79662.77652490856,
+          "length_scale": 49.0,
+          "mark_groups": [
+            "519",
+            "435",
+            "293",
+            "497",
+            "477",
+            "402",
+            "285",
+            "459",
+            "490",
+            "284",
+            "379",
+            "492",
+            "537",
+            "168",
+            "523",
+            "368",
+            "250",
+            "444",
+            "151",
+            "521"
+          ]
+        },
+        "probe_entities": 2619,
+        "real_vs_real_null": {
+          "amount_ks": 0.004326432995839569,
+          "amount_lag1_acf_error": 0.000981599907576432,
+          "amount_scaled_w1": 0.005703574165914734,
+          "gap_conditioned_mark_tv": 0.005780631646345738,
+          "gap_ks": 0.0077103516690812945,
+          "gap_lag1_acf_error": 0.00708745475383063,
+          "gap_repeat_mi_error": 4.3599803048203226e-05,
+          "gap_scaled_w1": 0.0090323047648036,
+          "gap_zero_rate_error": 0.0,
+          "length_scaled_w1": 0.04225791118280075,
+          "mark_sparse_tv": 0.002122524526163814,
+          "short_gap_repeat_curve_l1": 0.0004655402130404929
+        },
+        "reference_entities": 2619,
+        "seed": 20260826,
+        "utility_validity": {
+          "all_checks_pass": true,
+          "checks": {
+            "gap_target_corruption_worsens_next_gap": true,
+            "mark_target_corruption_worsens_next_repeat": true
+          },
+          "gap_corruption": {
+            "next_gap_tstr_mae_ratio": 1.0039499073345712,
+            "next_repeat_tstr_brier_ratio": 0.9995612933501375,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "mark_corruption": {
+            "next_gap_tstr_mae_ratio": 0.9888829423431904,
+            "next_repeat_tstr_brier_ratio": 1.0011030002305183,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "real_vs_real": {
+            "next_gap_tstr_mae_ratio": 0.9796827119204202,
+            "next_repeat_tstr_brier_ratio": 0.9993813339836387,
+            "test_examples": 50000,
+            "train_examples": 50000
+          }
+        }
+      }
+    },
+    "controlled_coupling_joint_semimarkov_v2b_kappa_0_00": {
+      "noninferiority_margins_q95": {
+        "amount_ks": 0.0032210338647969405,
+        "amount_scaled_w1": 0.0031968034254063185,
+        "gap_ks": 0.003191079200543845,
+        "gap_scaled_w1": 0.005062823425921969,
+        "gap_zero_rate_error": 0.0,
+        "length_scaled_w1": 0.013630273510813952,
+        "mark_sparse_tv": 0.009744213595487702
+      },
+      "provenance": {
+        "event_file_sha256": "d61f36ec7df32cd4178589add912bc90f17f0b02bec1393204f4c7cb9db2381f",
+        "nontrain_event_count_used": 0,
+        "split_file_sha256": "00f248d3d1d931ba62acf77c65d8b81a35236a6533a987e19ec437aa90702a9f",
+        "train_entity_count": 31951,
+        "train_event_count": 766935
+      },
+      "validity": {
+        "all_checks_pass": true,
+        "audit_scope": "train_only_entity_disjoint",
+        "checks": {
+          "copied_trajectories_detected": true,
+          "gap_permutation_detected_jointly": true,
+          "gap_permutation_preserves_gap_marginal": true,
+          "mark_permutation_detected_jointly": true,
+          "mark_permutation_preserves_mark_marginal": true,
+          "numeric_corruption_detected": true
+        },
+        "corruptions": {
+          "copy_trajectories": {
+            "trajectory_exact_match_rate": 1.0,
+            "transition_ngram_exposure_rate": 1.0
+          },
+          "permute_marks": {
+            "amount_ks": 0.0016910633924358542,
+            "amount_lag1_acf_error": 7.53168598360515e-05,
+            "amount_scaled_w1": 0.0024485716034073493,
+            "gap_conditioned_mark_tv": 0.00921973191627103,
+            "gap_ks": 0.001552269739222678,
+            "gap_lag1_acf_error": 0.000732213379898719,
+            "gap_repeat_mi_error": 9.163867403233652e-06,
+            "gap_scaled_w1": 0.0021765553564135043,
+            "gap_zero_rate_error": 0.0,
+            "length_scaled_w1": 0.01548467556577432,
+            "mark_sparse_tv": 0.007156649830631423,
+            "short_gap_repeat_curve_l1": 0.3013239702766307
+          },
+          "permute_nonfirst_gaps": {
+            "amount_ks": 0.0016910633924358542,
+            "amount_lag1_acf_error": 7.53168598360515e-05,
+            "amount_scaled_w1": 0.0024485716034073493,
+            "gap_conditioned_mark_tv": 0.008798753706774482,
+            "gap_ks": 0.001552269739222678,
+            "gap_lag1_acf_error": 0.10988130235765695,
+            "gap_repeat_mi_error": 5.625559234094079e-06,
+            "gap_scaled_w1": 0.0021765553564135043,
+            "gap_zero_rate_error": 0.0,
+            "length_scaled_w1": 0.01548467556577432,
+            "mark_sparse_tv": 0.007156649830631423,
+            "short_gap_repeat_curve_l1": 0.0021611121765814146
+          },
+          "shift_scale_amount": {
+            "amount_ks": 0.9417848153033659,
+            "amount_lag1_acf_error": 7.53168598360502e-05,
+            "amount_scaled_w1": 3.2933160075681456,
+            "gap_conditioned_mark_tv": 0.008598489481368524,
+            "gap_ks": 0.001552269739222678,
+            "gap_lag1_acf_error": 0.000732213379898719,
+            "gap_repeat_mi_error": 7.126642129751538e-06,
+            "gap_scaled_w1": 0.0021765553564135043,
+            "gap_zero_rate_error": 0.0,
+            "length_scaled_w1": 0.01548467556577432,
+            "mark_sparse_tv": 0.007156649830631423,
+            "short_gap_repeat_curve_l1": 0.0017217673937293344
+          }
+        },
+        "interpretation": "Failure is a metric-power diagnostic, never evidence for or against a model.",
+        "metric_state": {
+          "amount_scale": 1.3485231399536133,
+          "fit_entity_count": 15975,
+          "fit_split": "train",
+          "gap_bin_edges": [
+            0.247971585392952,
+            0.6168778657913208,
+            1.2403869867324833,
+            2.515903902053833
+          ],
+          "gap_scale": 1.8259643818939448,
+          "length_scale": 8.0,
+          "mark_groups": [
+            "receiver-52",
+            "receiver-8",
+            "receiver-29",
+            "receiver-28",
+            "receiver-19",
+            "receiver-15",
+            "receiver-47",
+            "receiver-62",
+            "receiver-22",
+            "receiver-9",
+            "receiver-31",
+            "receiver-57",
+            "receiver-24",
+            "receiver-49",
+            "receiver-42",
+            "receiver-50",
+            "receiver-37",
+            "receiver-17",
+            "receiver-41",
+            "receiver-38"
+          ]
+        },
+        "probe_entities": 15976,
+        "real_vs_real_null": {
+          "amount_ks": 0.0016910633924358542,
+          "amount_lag1_acf_error": 7.53168598360515e-05,
+          "amount_scaled_w1": 0.0024485716034073493,
+          "gap_conditioned_mark_tv": 0.008598489481368524,
+          "gap_ks": 0.001552269739222678,
+          "gap_lag1_acf_error": 0.000732213379898719,
+          "gap_repeat_mi_error": 7.126642129751538e-06,
+          "gap_scaled_w1": 0.0021765553564135043,
+          "gap_zero_rate_error": 0.0,
+          "length_scaled_w1": 0.01548467556577432,
+          "mark_sparse_tv": 0.007156649830631423,
+          "short_gap_repeat_curve_l1": 0.0017217673937293344
+        },
+        "reference_entities": 15975,
+        "seed": 20260826,
+        "utility_validity": {
+          "all_checks_pass": false,
+          "checks": {
+            "gap_target_corruption_worsens_next_gap": true,
+            "mark_target_corruption_worsens_next_repeat": false
+          },
+          "gap_corruption": {
+            "next_gap_tstr_mae_ratio": 1.0155778188762428,
+            "next_repeat_tstr_brier_ratio": 1.0005289061221871,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "mark_corruption": {
+            "next_gap_tstr_mae_ratio": 1.001892845079076,
+            "next_repeat_tstr_brier_ratio": 1.0000142082713008,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "real_vs_real": {
+            "next_gap_tstr_mae_ratio": 1.0016300827090072,
+            "next_repeat_tstr_brier_ratio": 1.0005277892933497,
+            "test_examples": 50000,
+            "train_examples": 50000
+          }
+        }
+      }
+    },
+    "controlled_coupling_joint_semimarkov_v2b_kappa_1_00": {
+      "noninferiority_margins_q95": {
+        "amount_ks": 0.002745285229559913,
+        "amount_scaled_w1": 0.0031822967428354132,
+        "gap_ks": 0.0037722912412242737,
+        "gap_scaled_w1": 0.004922405731874472,
+        "gap_zero_rate_error": 0.0,
+        "length_scaled_w1": 0.013630273510813952,
+        "mark_sparse_tv": 0.010588305058039049
+      },
+      "provenance": {
+        "event_file_sha256": "59da3e2d8d27fdb801363667ee573f76e3f7b6e3443dc30197fcbbb3c1534baf",
+        "nontrain_event_count_used": 0,
+        "split_file_sha256": "00f248d3d1d931ba62acf77c65d8b81a35236a6533a987e19ec437aa90702a9f",
+        "train_entity_count": 31951,
+        "train_event_count": 766935
+      },
+      "validity": {
+        "all_checks_pass": true,
+        "audit_scope": "train_only_entity_disjoint",
+        "checks": {
+          "copied_trajectories_detected": true,
+          "gap_permutation_detected_jointly": true,
+          "gap_permutation_preserves_gap_marginal": true,
+          "mark_permutation_detected_jointly": true,
+          "mark_permutation_preserves_mark_marginal": true,
+          "numeric_corruption_detected": true
+        },
+        "corruptions": {
+          "copy_trajectories": {
+            "trajectory_exact_match_rate": 1.0,
+            "transition_ngram_exposure_rate": 1.0
+          },
+          "permute_marks": {
+            "amount_ks": 0.0012739507101345166,
+            "amount_lag1_acf_error": 0.001026441649292353,
+            "amount_scaled_w1": 0.0014117853785491005,
+            "gap_conditioned_mark_tv": 0.010222818217715831,
+            "gap_ks": 0.0024635425299563973,
+            "gap_lag1_acf_error": 0.0055859368852110985,
+            "gap_repeat_mi_error": 0.00014681574049345172,
+            "gap_scaled_w1": 0.0022783716049082727,
+            "gap_zero_rate_error": 0.0,
+            "length_scaled_w1": 0.01548467556577432,
+            "mark_sparse_tv": 0.008801278040134489,
+            "short_gap_repeat_curve_l1": 0.3018176957727728
+          },
+          "permute_nonfirst_gaps": {
+            "amount_ks": 0.0012739507101345166,
+            "amount_lag1_acf_error": 0.001026441649292353,
+            "amount_scaled_w1": 0.0014117853785491005,
+            "gap_conditioned_mark_tv": 0.01050584146908828,
+            "gap_ks": 0.0024635425299563973,
+            "gap_lag1_acf_error": 0.1051750476269064,
+            "gap_repeat_mi_error": 0.00014978967381675212,
+            "gap_scaled_w1": 0.0022783716049082727,
+            "gap_zero_rate_error": 0.0,
+            "length_scaled_w1": 0.01548467556577432,
+            "mark_sparse_tv": 0.008801278040134489,
+            "short_gap_repeat_curve_l1": 0.008162818866858969
+          },
+          "shift_scale_amount": {
+            "amount_ks": 0.9429968506114355,
+            "amount_lag1_acf_error": 0.0010264416492923576,
+            "amount_scaled_w1": 3.298852873952892,
+            "gap_conditioned_mark_tv": 0.010672463867458655,
+            "gap_ks": 0.0024635425299563973,
+            "gap_lag1_acf_error": 0.0055859368852110985,
+            "gap_repeat_mi_error": 1.7423051047980864e-06,
+            "gap_scaled_w1": 0.0022783716049082727,
+            "gap_zero_rate_error": 0.0,
+            "length_scaled_w1": 0.01548467556577432,
+            "mark_sparse_tv": 0.008801278040134489,
+            "short_gap_repeat_curve_l1": 0.0012413176103176383
+          }
+        },
+        "interpretation": "Failure is a metric-power diagnostic, never evidence for or against a model.",
+        "metric_state": {
+          "amount_scale": 1.3496851921081543,
+          "fit_entity_count": 15975,
+          "fit_split": "train",
+          "gap_bin_edges": [
+            0.248490571975708,
+            0.6191753745079042,
+            1.2488529443740846,
+            2.5339633464813236
+          ],
+          "gap_scale": 1.830342101837566,
+          "length_scale": 8.0,
+          "mark_groups": [
+            "receiver-32",
+            "receiver-29",
+            "receiver-6",
+            "receiver-2",
+            "receiver-11",
+            "receiver-10",
+            "receiver-48",
+            "receiver-40",
+            "receiver-21",
+            "receiver-0",
+            "receiver-47",
+            "receiver-49",
+            "receiver-60",
+            "receiver-26",
+            "receiver-30",
+            "receiver-4",
+            "receiver-62",
+            "receiver-13",
+            "receiver-34",
+            "receiver-52"
+          ]
+        },
+        "probe_entities": 15976,
+        "real_vs_real_null": {
+          "amount_ks": 0.0012739507101345166,
+          "amount_lag1_acf_error": 0.001026441649292353,
+          "amount_scaled_w1": 0.0014117853785491005,
+          "gap_conditioned_mark_tv": 0.010672463867458655,
+          "gap_ks": 0.0024635425299563973,
+          "gap_lag1_acf_error": 0.0055859368852110985,
+          "gap_repeat_mi_error": 1.7423051047980864e-06,
+          "gap_scaled_w1": 0.0022783716049082727,
+          "gap_zero_rate_error": 0.0,
+          "length_scaled_w1": 0.01548467556577432,
+          "mark_sparse_tv": 0.008801278040134489,
+          "short_gap_repeat_curve_l1": 0.0012413176103176383
+        },
+        "reference_entities": 15975,
+        "seed": 20260826,
+        "utility_validity": {
+          "all_checks_pass": false,
+          "checks": {
+            "gap_target_corruption_worsens_next_gap": true,
+            "mark_target_corruption_worsens_next_repeat": false
+          },
+          "gap_corruption": {
+            "next_gap_tstr_mae_ratio": 1.0194172748457355,
+            "next_repeat_tstr_brier_ratio": 1.0003004221055838,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "mark_corruption": {
+            "next_gap_tstr_mae_ratio": 1.002579090319858,
+            "next_repeat_tstr_brier_ratio": 0.9999878097451832,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "real_vs_real": {
+            "next_gap_tstr_mae_ratio": 1.0026531925212545,
+            "next_repeat_tstr_brier_ratio": 1.0001736884206358,
+            "test_examples": 50000,
+            "train_examples": 50000
+          }
+        }
+      }
+    },
+    "hm": {
+      "noninferiority_margins_q95": {
+        "amount_ks": 0.01631898485587946,
+        "amount_scaled_w1": 0.031209538464968444,
+        "gap_ks": 0.013126152015360937,
+        "gap_scaled_w1": 0.01506064128719703,
+        "gap_zero_rate_error": 0.012326945547030121,
+        "length_scaled_w1": 0.04557668538491721,
+        "mark_sparse_tv": 0.003405705810704393
+      },
+      "provenance": {
+        "event_file_sha256": "4de629eecea6d4b791852bb5a827ba4637d44619b09891fb3b1e80dd533b9459",
+        "nontrain_event_count_used": 0,
+        "split_file_sha256": "0a8f097d8cbc1db13e269a24e9cd35c1572076ad07a043cc54c4807ae99c1cbd",
+        "train_entity_count": 7000,
+        "train_event_count": 164403
+      },
+      "validity": {
+        "all_checks_pass": true,
+        "audit_scope": "train_only_entity_disjoint",
+        "checks": {
+          "copied_trajectories_detected": true,
+          "gap_permutation_detected_jointly": true,
+          "gap_permutation_preserves_gap_marginal": true,
+          "mark_permutation_detected_jointly": true,
+          "mark_permutation_preserves_mark_marginal": true,
+          "numeric_corruption_detected": true
+        },
+        "corruptions": {
+          "copy_trajectories": {
+            "trajectory_exact_match_rate": 1.0,
+            "transition_ngram_exposure_rate": 1.0
+          },
+          "permute_marks": {
+            "amount_ks": 0.004600337605954574,
+            "amount_lag1_acf_error": 0.022136315355376135,
+            "amount_scaled_w1": 0.007818478024599876,
+            "gap_conditioned_mark_tv": 0.002063709556991487,
+            "gap_ks": 0.006659733102280407,
+            "gap_lag1_acf_error": 0.008565154405893954,
+            "gap_repeat_mi_error": 0.019132896719389753,
+            "gap_scaled_w1": 0.012291239468311147,
+            "gap_zero_rate_error": 0.002958199915245374,
+            "length_scaled_w1": 0.035959778656439914,
+            "mark_sparse_tv": 0.0012558163149570685,
+            "short_gap_repeat_curve_l1": 0.1067100981845351
+          },
+          "permute_nonfirst_gaps": {
+            "amount_ks": 0.004600337605954574,
+            "amount_lag1_acf_error": 0.022136315355376135,
+            "amount_scaled_w1": 0.007818478024599876,
+            "gap_conditioned_mark_tv": 0.0017184908759448445,
+            "gap_ks": 0.006659733102280407,
+            "gap_lag1_acf_error": 0.00384113066392405,
+            "gap_repeat_mi_error": 0.01913514146629503,
+            "gap_scaled_w1": 0.012291239468311147,
+            "gap_zero_rate_error": 0.002958199915245374,
+            "length_scaled_w1": 0.035959778656439914,
+            "mark_sparse_tv": 0.0012558163149570685,
+            "short_gap_repeat_curve_l1": 0.03691675273532613
+          },
+          "shift_scale_amount": {
+            "amount_ks": 0.8771758141389223,
+            "amount_lag1_acf_error": 0.022136315355375358,
+            "amount_scaled_w1": 2.5825062054539107,
+            "gap_conditioned_mark_tv": 0.0015454236210453048,
+            "gap_ks": 0.006659733102280407,
+            "gap_lag1_acf_error": 0.008565154405893954,
+            "gap_repeat_mi_error": 0.0007889742829771708,
+            "gap_scaled_w1": 0.012291239468311147,
+            "gap_zero_rate_error": 0.002958199915245374,
+            "length_scaled_w1": 0.035959778656439914,
+            "mark_sparse_tv": 0.0012558163149570685,
+            "short_gap_repeat_curve_l1": 0.005420423621777264
+          }
+        },
+        "interpretation": "Failure is a metric-power diagnostic, never evidence for or against a model.",
+        "metric_state": {
+          "amount_scale": 0.019518545216705867,
+          "fit_entity_count": 3500,
+          "fit_split": "train",
+          "gap_bin_edges": [
+            0.0,
+            6.0
+          ],
+          "gap_scale": 41.07251562374259,
+          "length_scale": 41.84834276191074,
+          "mark_groups": [
+            "706016001",
+            "706016002",
+            "610776002",
+            "156231001",
+            "372860001",
+            "706016003",
+            "372860002",
+            "673396002",
+            "610776001",
+            "759871002",
+            "351484002",
+            "562245046",
+            "464297007",
+            "111586001",
+            "568601006",
+            "399256001",
+            "688537004",
+            "399223001",
+            "448509014",
+            "751471001"
+          ]
+        },
+        "probe_entities": 3500,
+        "real_vs_real_null": {
+          "amount_ks": 0.004600337605954574,
+          "amount_lag1_acf_error": 0.022136315355376135,
+          "amount_scaled_w1": 0.007818478024599876,
+          "gap_conditioned_mark_tv": 0.0015454236210453048,
+          "gap_ks": 0.006659733102280407,
+          "gap_lag1_acf_error": 0.008565154405893954,
+          "gap_repeat_mi_error": 0.0007889742829771708,
+          "gap_scaled_w1": 0.012291239468311147,
+          "gap_zero_rate_error": 0.002958199915245374,
+          "length_scaled_w1": 0.035959778656439914,
+          "mark_sparse_tv": 0.0012558163149570685,
+          "short_gap_repeat_curve_l1": 0.005420423621777264
+        },
+        "reference_entities": 3500,
+        "seed": 20260826,
+        "utility_validity": {
+          "all_checks_pass": true,
+          "checks": {
+            "gap_target_corruption_worsens_next_gap": true,
+            "mark_target_corruption_worsens_next_repeat": true
+          },
+          "gap_corruption": {
+            "next_gap_tstr_mae_ratio": 1.4791144569506909,
+            "next_repeat_tstr_brier_ratio": 0.9960590027795854,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "mark_corruption": {
+            "next_gap_tstr_mae_ratio": 1.4728243792311198,
+            "next_repeat_tstr_brier_ratio": 0.9998025889475914,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "real_vs_real": {
+            "next_gap_tstr_mae_ratio": 1.4714538536398403,
+            "next_repeat_tstr_brier_ratio": 0.9957177320795197,
+            "test_examples": 50000,
+            "train_examples": 50000
+          }
+        }
+      }
+    },
+    "sparkov": {
+      "noninferiority_margins_q95": {
+        "amount_ks": 0.023368170523814596,
+        "amount_scaled_w1": 0.017863128958820994,
+        "gap_ks": 0.023289224406506437,
+        "gap_scaled_w1": 0.06139550958433588,
+        "gap_zero_rate_error": 1.720179582661893e-05,
+        "length_scaled_w1": 0.09037564246663035,
+        "mark_sparse_tv": 0.0034549796890419576
+      },
+      "provenance": {
+        "event_file_sha256": "227fe8f2b5af13776bd85a7fb76542b932bbdd2e750652ce5d3f29949c7cac85",
+        "nontrain_event_count_used": 0,
+        "split_file_sha256": "553f1bc4344fea005cc698daa0a67639a6e8de31491fcad14933caf8e9752a65",
+        "train_entity_count": 688,
+        "train_event_count": 916567
+      },
+      "validity": {
+        "all_checks_pass": true,
+        "audit_scope": "train_only_entity_disjoint",
+        "checks": {
+          "copied_trajectories_detected": true,
+          "gap_permutation_detected_jointly": true,
+          "gap_permutation_preserves_gap_marginal": true,
+          "mark_permutation_detected_jointly": true,
+          "mark_permutation_preserves_mark_marginal": true,
+          "numeric_corruption_detected": true
+        },
+        "corruptions": {
+          "copy_trajectories": {
+            "trajectory_exact_match_rate": 1.0,
+            "transition_ngram_exposure_rate": 1.0
+          },
+          "permute_marks": {
+            "amount_ks": 0.014128986921001618,
+            "amount_lag1_acf_error": 0.019153267505204956,
+            "amount_scaled_w1": 0.018306154164495415,
+            "gap_conditioned_mark_tv": 0.005374328875694655,
+            "gap_ks": 0.002161885383910711,
+            "gap_lag1_acf_error": 0.011729719715006942,
+            "gap_repeat_mi_error": 0.00011432384818550983,
+            "gap_scaled_w1": 0.0072381690485516315,
+            "gap_zero_rate_error": 1.356224950493673e-05,
+            "length_scaled_w1": 0.04190032780286934,
+            "mark_sparse_tv": 0.0010161827503366362,
+            "short_gap_repeat_curve_l1": 0.0008086686489868542
+          },
+          "permute_nonfirst_gaps": {
+            "amount_ks": 0.014128986921001618,
+            "amount_lag1_acf_error": 0.019153267505204956,
+            "amount_scaled_w1": 0.018306154164495415,
+            "gap_conditioned_mark_tv": 0.005513108204187621,
+            "gap_ks": 0.002161885383910711,
+            "gap_lag1_acf_error": 0.2378203737138583,
+            "gap_repeat_mi_error": 0.00011476491373143147,
+            "gap_scaled_w1": 0.0072381690485516315,
+            "gap_zero_rate_error": 1.356224950493673e-05,
+            "length_scaled_w1": 0.04190032780286934,
+            "mark_sparse_tv": 0.0010161827503366362,
+            "short_gap_repeat_curve_l1": 0.0006733564317023506
+          },
+          "shift_scale_amount": {
+            "amount_ks": 0.9802404983178442,
+            "amount_lag1_acf_error": 0.0191532675052049,
+            "amount_scaled_w1": 2.4137738860192095,
+            "gap_conditioned_mark_tv": 0.002099339751179966,
+            "gap_ks": 0.002161885383910711,
+            "gap_lag1_acf_error": 0.011729719715006942,
+            "gap_repeat_mi_error": 5.812472738609602e-07,
+            "gap_scaled_w1": 0.0072381690485516315,
+            "gap_zero_rate_error": 1.356224950493673e-05,
+            "length_scaled_w1": 0.04190032780286934,
+            "mark_sparse_tv": 0.0010161827503366362,
+            "short_gap_repeat_curve_l1": 0.00017412030834211616
+          }
+        },
+        "interpretation": "Failure is a metric-power diagnostic, never evidence for or against a model.",
+        "metric_state": {
+          "amount_scale": 150.68769425286172,
+          "fit_entity_count": 344,
+          "fit_split": "train",
+          "gap_bin_edges": [
+            4506.0,
+            11428.0,
+            23221.00000000006,
+            48809.0
+          ],
+          "gap_scale": 47540.26914157241,
+          "length_scale": 1502.25,
+          "mark_groups": [
+            "fraud_Kilback LLC",
+            "fraud_Cormier LLC",
+            "fraud_Schumm PLC",
+            "fraud_Boyer PLC",
+            "fraud_Kuhn LLC",
+            "fraud_Dickinson Ltd",
+            "fraud_Rodriguez Group",
+            "fraud_Connelly, Reichert and Fritsch",
+            "fraud_Tillman, Dickinson and Labadie",
+            "fraud_Schmitt Inc",
+            "fraud_Kutch LLC",
+            "fraud_Erdman-Kertzmann",
+            "fraud_Christiansen, Goyette and Schamberger",
+            "fraud_Stroman, Hudson and Erdman",
+            "fraud_Eichmann, Bogan and Rodriguez",
+            "fraud_Berge LLC",
+            "fraud_Brekke and Sons",
+            "fraud_Bartoletti-Wunsch",
+            "fraud_Friesen-Stamm",
+            "fraud_Olson, Becker and Koch"
+          ]
+        },
+        "probe_entities": 344,
+        "real_vs_real_null": {
+          "amount_ks": 0.014128986921001618,
+          "amount_lag1_acf_error": 0.019153267505204956,
+          "amount_scaled_w1": 0.018306154164495415,
+          "gap_conditioned_mark_tv": 0.002099339751179966,
+          "gap_ks": 0.002161885383910711,
+          "gap_lag1_acf_error": 0.011729719715006942,
+          "gap_repeat_mi_error": 5.812472738609602e-07,
+          "gap_scaled_w1": 0.0072381690485516315,
+          "gap_zero_rate_error": 1.356224950493673e-05,
+          "length_scaled_w1": 0.04190032780286934,
+          "mark_sparse_tv": 0.0010161827503366362,
+          "short_gap_repeat_curve_l1": 0.00017412030834211616
+        },
+        "reference_entities": 344,
+        "seed": 20260826,
+        "utility_validity": {
+          "all_checks_pass": true,
+          "checks": {
+            "gap_target_corruption_worsens_next_gap": true,
+            "mark_target_corruption_worsens_next_repeat": true
+          },
+          "gap_corruption": {
+            "next_gap_tstr_mae_ratio": 1.0070546288175157,
+            "next_repeat_tstr_brier_ratio": 1.0001377516263206,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "mark_corruption": {
+            "next_gap_tstr_mae_ratio": 0.9855098535949471,
+            "next_repeat_tstr_brier_ratio": 1.00762258924773,
+            "test_examples": 50000,
+            "train_examples": 50000
+          },
+          "real_vs_real": {
+            "next_gap_tstr_mae_ratio": 0.9848907509801228,
+            "next_repeat_tstr_brier_ratio": 1.000076748380874,
+            "test_examples": 50000,
+            "train_examples": 50000
+          }
+        }
+      }
+    }
+  },
+  "margin_repeats": 31,
+  "schema_version": "cof-seqgen-saf-metric-validity-audit-result-v1",
+  "scientific_interpretation": "Per-dataset sensitivity failure is a power warning. It cannot be used as model evidence and cannot trigger endpoint replacement.",
+  "scope": "TRAIN_ONLY_NO_MODEL_OUTPUT",
+  "source_provenance": {
+    "audit_runner_sha256": "7f29a9c4cba8a794a6dfaadffcf0d0dc64a00a70abf22348d36d503e7ae1c163",
+    "metric_config_sha256": "74e82b5569268c957395f2f0b81b4e561a95d65f2980c5a0e27ce5ba370255d5",
+    "metric_source_sha256": "b1b7dfb58c4811ab55be0108005b8bbc362b55fc8ec1d3fe07cca9da88671a35"
+  },
+  "test_event_used": false,
+  "validation_event_used": false
+}

@@ -1,0 +1,11 @@
+extends: main.yaml
+cof:
+  coherence_lambda: 0.0
+  cfg_dropout: 0.15
+  guidance_scale: 2.0
+  discrete_mask_max: 0.7
+  start_from_mask: true
+  feedback_discrete: true
+  feedback_after: 0.3
+  loss_positions: all_valid
+smoke: {n_train_max: 512, training_steps: 100, diffusion_steps: 5, seed: 1}

@@ -1,0 +1,125 @@
+schema_version: cof-seqgen-saf-acquisition-v1
+family: cof_seqgen_saf
+acquisition_date: '2026-08-26'
+runtime_root: data/cof_seqgen_saf
+raw_root: data/cof_seqgen_saf/raw
+manifest_root: data/cof_seqgen_saf/manifests/acquisition
+
+reference_alignment:
+  seq2synth:
+    repository: https://github.com/KiwanKwon/Seq2Synth.git
+    inspected_revision: 8346a95d6d84876a9ddf9196eb62758082619bd9
+    paper_version: arXiv:2607.15606v2
+    reported_scopes:
+      berka: {trajectories: 900, total_rows_all_tables: 45666}
+      hm: {trajectories: 10000, total_rows_all_tables: 297879}
+      citi_bike: {trajectories: 5793, event_rows: 559644}
+    tabdit_repository: https://github.com/fabriziogaruti/TabDiT.git
+    tabdit_inspected_revision: cbb2b9a4866b0071ed9150a552704db188c33d4b
+    tabdit_reported_tau_max_berka: 50
+    note: >-
+      Seq2Synth and TabDiT do not publish the Berka test entity IDs or the H&M
+      random sample seed in the inspected repositories. The deterministic SAF
+      Berka 900 subset is entity-count aligned only and is explicitly forbidden
+      from being labeled Seq2Synth-comparable. Citi Bike is schema aligned but
+      has unconfirmed row identity. Exact comparison requires upstream IDs.
+
+datasets:
+  controlled_coupling_dgp:
+    role: mechanism_identification
+    method: local_generator
+    source_url: null
+    license: repository_source_license
+    files:
+      - source_path: benchmarks/temporal_coupling_v2.py
+        target_name: temporal_coupling_v2.py
+        expected_sha256: fd63ef3ae5e4c4010ee2fe1fa9d444cd0320f777e98147167363792e761791af
+      - source_path: benchmarks/semi_markov.py
+        target_name: semi_markov.py
+        expected_sha256: 94e9bcbeb8a067623d206677a827d4ef8f77bb7d224910fdd7189190ecd0e21f
+      - source_path: benchmarks/types.py
+        target_name: types.py
+        expected_sha256: de50e77998ab6c812d63694d18f66e30d464fdf6ee03cdbde513142aba39ea29
+
+  amlsim:
+    role: complex_financial_simulation
+    method: existing_local_verified
+    source_url: https://www.kaggle.com/datasets/anshankul/ibm-amlsim-example-dataset
+    upstream_project: https://github.com/IBM/AMLSim
+    source_version: kaggle_version_1
+    license: Other; dataset description refers to IBM AMLSim Apache-2.0
+    files:
+      - source_path: local_data/amlsim/accounts.csv
+        target_name: accounts.csv
+        expected_sha256: 21f6d56fd98fdf25f4e2df4e7534925a0e006bc2a5ad8b03dc576e2bb4cdf667
+      - source_path: local_data/amlsim/alerts.csv
+        target_name: alerts.csv
+        expected_sha256: 2afddc306ebd623ef3f83449b289815b8647182f00c3cbf2ed73195e2786568c
+      - source_path: local_data/amlsim/transactions.csv
+        target_name: transactions.csv
+        expected_sha256: cc4885da00fd4c6f854aae4e7bc8dd9c35a9b491f5ef871c51c9194ee1e292f7
+
+  sparkov:
+    role: external_financial_simulation
+    method: existing_local_verified
+    source_url: https://www.kaggle.com/datasets/kartik2112/fraud-detection
+    generator_url: https://github.com/namebrandon/Sparkov_Data_Generation
+    source_version: kaggle_fraudTrain_snapshot_verified_2026-08-26
+    license: CC0-1.0 as declared by the Kaggle dataset page
+    files:
+      - source_path: local_data/sparkov/fraudTrain.csv
+        target_name: fraudTrain.csv
+        expected_sha256: fd7139200dbfcbed0b6742bbe05a4f1abce532c4fef20918228a651647a3e75d
+    excluded_files:
+      - source_path: local_data/sparkov/fraudTest.csv
+        sha256: 12d553ab19440c752d2531ee1af44bb64f12cc3d3839f1649f19e81c230545f0
+        reason: not pooled into SAF development/entity split
+
+  berka:
+    role: real_irregular_financial_sequences
+    method: git_snapshot
+    original_source_url: https://relational.fel.cvut.cz/dataset/Financial
+    repository: https://github.com/jlacko/berka-dataset.git
+    revision: 77e9972a1ead107e5f42a91dd989d587bff055a4
+    license: original PKDD'99 challenge data; mirror has no standalone license file
+    files:
+      - {repository_path: account.asc, target_name: account.asc, expected_sha256: 58d7f50abd72e9b1a5568346f74bb54cd71224ee1db9f09a27d7cac563f38cc6}
+      - {repository_path: card.asc, target_name: card.asc, expected_sha256: fc669bde6adf6457d87421c0bfb218e9c384a7032c6accd348d207a405e72109}
+      - {repository_path: client.asc, target_name: client.asc, expected_sha256: e435c6b92d246f4f0dfd5e2827469d745c06238714c32b3ffb415eebe794e1a7}
+      - {repository_path: disp.asc, target_name: disp.asc, expected_sha256: ebd801f77b6d322e8ebc08e52f188e7c8fca539325f85f57f8c73434da9d32d8}
+      - {repository_path: district.asc, target_name: district.asc, expected_sha256: 7f03cf3b9b82f0fdcc3abdf6cc716f145db8e9875c68e2d2e2f7151e9ecf4df3}
+      - {repository_path: loan.asc, target_name: loan.asc, expected_sha256: 68535f609a254aa7a3f03dd8e27dcb822b532df12a0d6046f0666b8dc0b8ae8e}
+      - {repository_path: order.asc, target_name: order.asc, expected_sha256: 035930fa6acd2ca42a935e654b21e1bb260248f49b6dc6e7de6351b7c4d56d02}
+      - {repository_path: trans.asc, target_name: trans.asc, expected_sha256: 75ab2f39df9d79d79c5c900de90ddd28248b689f214598ac9fa2ff0f574a70d2}
+      - {repository_path: Financial Data description.pdf, target_name: Financial Data description.pdf, expected_sha256: 67227f33f4fc6f8526ca5216fc6ac55ef86393b4f6b3cb6c69a0969c9ffa2b16}
+      - {repository_path: README.md, target_name: README.md, expected_sha256: f7e0229da5dc9c4abde12a8abeb066a2ebd0891fb6e2d87fdc7c0c11797f75ea}
+
+  hm:
+    role: real_irregular_retail_sequences
+    method: kaggle_competition
+    competition: h-and-m-personalized-fashion-recommendations
+    source_url: https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations/data
+    license: subject_to_competition_rules
+    required_files: [transactions_train.csv, customers.csv, articles.csv]
+    expected_sha256:
+      transactions_train.csv: fff5e3b35c1b26016aa0bf2231be9525bc766eed32c94f1653420b465aef84fa
+      customers.csv: abf3450c37ee1c16124e0d3379371153f5371148742efdcfe44c97c0445df6b2
+      articles.csv: 25f21882053517f7684ea43f524225a9481a7bb9aab9cf0abfc7fe8c4576a72b
+    excluded_files: [images, sample_submission.csv]
+    prerequisite: user_must_accept_competition_rules_and_authenticate_kaggle_cli
+
+  citi_bike:
+    role: optional_real_cross_domain_robustness
+    method: http_zip
+    source_url: https://s3.amazonaws.com/tripdata/2016-citibike-tripdata.zip
+    source_page: https://citibikenyc.com/system-data
+    license: NYCBS Data Use Policy
+    archive_name: 2016-citibike-tripdata.zip
+    archive_sha256: 3f2a47babfe48f1397247861867bd1a6057f62d4564d1285f9739eb4b5b25495
+    archive_member: 201602-citibike-tripdata_1.csv
+    target_name: 201602-citibike-tripdata_1.csv
+    expected_sha256: 5f5aa00ed0051cfb35593706747056c0681b6536d0bb06730074bab825f0e9df
+    selection_reason: >-
+      Historical schema contains bikeid and the raw monthly scale is close to
+      Seq2Synth's reported 559,644 event rows and 5,793 trajectories; exact
+      identity will be audited after download rather than assumed.

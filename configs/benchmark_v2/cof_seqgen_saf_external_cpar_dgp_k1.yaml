@@ -1,0 +1,16 @@
+dataset_dir: data/cof_seqgen_saf/canonical/controlled_coupling_joint_semimarkov_v2b_kappa_1_00
+output_dir: artifacts/cof_seqgen_saf/development/external_dgp_k1/cpar_epochs20
+baseline_id: cpar
+fit_seed: 20260826
+generation_seed: 20261826
+generation_entities: null
+train_entity_limit: null
+model_kwargs:
+  epochs: 20
+  sample_size: 1
+  cuda: true
+  verbose: true
+fit_kwargs: null
+fit_device: cuda
+sample_device: cuda
+metric_audit_path: artifacts/cof_seqgen_saf/metric_validity_audit_train_only.json

@@ -1,0 +1,175 @@
+{
+  "schema_version": "external-confirmatory-internal-test-aggregate-forensic-v1",
+  "scope": {
+    "stored_artifact_reads_only": true,
+    "complete_jobs": 8,
+    "sample_or_checkpoint_reads": 0,
+    "test_time_selection_calls": 0,
+    "regeneration_calls": 0,
+    "training_calls": 0,
+    "gpu_or_cuda_calls": 0,
+    "tstr_calls": 0,
+    "privacy_calls": 0,
+    "sparkov_fraud_test_accesses": 0
+  },
+  "score_contract": {
+    "direction": "lower_is_better",
+    "fidelity": "maximum ratio of a stored fidelity metric to its immutable train-only threshold",
+    "coherence": "maximum ratio of a stored coherence metric to its immutable train-only threshold",
+    "combined_score": "arithmetic mean of fidelity_max_ratio and coherence_max_ratio",
+    "macro": "unweighted arithmetic mean over AMLSim and Sparkov",
+    "inference": "descriptive_only"
+  },
+  "provenance": {
+    "execution_source_commit": "5bebc990d49a7bbb034b3900bef86bf08fdd66c1",
+    "authorization_manifest_sha256": "9c593702788b12b6cf0581e4a4807b59d1ae931cd4779e26bac1537bdcc4d0db",
+    "authorization_checksum_manifest_sha256": "8d2348779e271433a2afb1eee6efda1fd7279ed516509cf5002b2b5ce056a7db",
+    "execution_config_sha256": "c459da6a74d63f971d1855082dea8b062921def64f8e12c4750817abe2172500",
+    "relevant_execution_source_sha256": "377749127defdc73fe0bd776717f070687d297bcbb61edcce64664d7ca71a3da",
+    "confirmatory_plan_sha256": "8795d0eca434d47817c6b386d6c546fc02585abb22fa58c6858c4620e0b9a581",
+    "validation_inputs": {
+      "amlsim": {
+        "path": "docs/benchmark_v2/amlsim_external_validation_aggregate_forensic_v1.json",
+        "sha256": "5363efdbac2ac2f2a72bc4fdacac23c021cb27af34f106cf24aff1143b1e1197"
+      },
+      "sparkov": {
+        "path": "docs/benchmark_v2/sparkov_external_validation_aggregate_forensic_v1.json",
+        "sha256": "ed6b77280f1f62a9cff3f9d77116effd5f1bc7e4956e2f48b321d795b6c4f524"
+      }
+    },
+    "dataset_bindings": {
+      "amlsim": {
+        "internal_test_sha256": "9a032afb85b908a1451c541a5269019b8e9842cc5f4f8dcb36ae341fe05aa047",
+        "thresholds_sha256": "e715b01a9481e7a539c6661126ddeb04570f08318e409911f3f0d06947ca0330",
+        "conditioning_plan_sha256": "b67de81c1d38dba515c4a6f521efe0de503742aa02531f2557acacf1903b1086"
+      },
+      "sparkov": {
+        "internal_test_sha256": "e775cf327fabc8ff3eb661738929dade7ec0009bddabbfd0295349f69963beab",
+        "thresholds_sha256": "c091c874e8a32c32eb9516e7d56c5946e15342a6837806f8f3809c7972424efb",
+        "conditioning_plan_sha256": "19859e8c99ee4d382e0d649ee0f00e4e798dfa60ebd4826b9a62018c9c3ce37e"
+      }
+    }
+  },
+  "job_artifact_inventory": [
+    {
+      "dataset": "amlsim",
+      "model": "empirical_iid",
+      "complete_sha256": "77f8dd611a2f8453a19a245a3b979ab68d803d57699207f067c1347b9b63df26",
+      "artifact_index_sha256": "312a27238805ee6b106faddf9b19142610b642c7308c626f801c9f47d0aa5baa",
+      "manifest_sha256": "0afdda84b53bbcf38fa673ca4759f2cb353ab1ee69cda5119200425471a4522c",
+      "evaluation_sha256": "35d30cc40067ea776ea0cef8c84ee5cdd1ee0fa57c393a2fc8ae8512fdac876f",
+      "hash_chain_verified": true
+    },
+    {
+      "dataset": "amlsim",
+      "model": "ctgan_separate_class",
+      "complete_sha256": "cdd8738e4a69749d2826db562b2a05ea10bb9fc946ad03294e19720e456d9239",
+      "artifact_index_sha256": "378bb7fe481392b9ad37067dcc39334e02f1debbf7002c1dcfa34ef2e9dd2282",
+      "manifest_sha256": "0dafa7ca715b4cc5346c67faf5c366ae0ac3a701aa9a15bbf14cb88d5b9625d9",
+      "evaluation_sha256": "4aeaad46223724eda8b7228a6f184ea668eb3f97d82d5d9e4d41458147b9b236",
+      "hash_chain_verified": true
+    },
+    {
+      "dataset": "amlsim",
+      "model": "tvae_separate_class",
+      "complete_sha256": "7232d6ccea4600a93293ceb32e8c0385440a12bb694731c468495cc5d018354a",
+      "artifact_index_sha256": "032a6ed6104a0d7d6761ff62629b977885e0a61552aeec5fab03d2116ca97b83",
+      "manifest_sha256": "670e395b7b45c4e809540363b17066eb5d37ba63e9bb7ff6931ebf9377d4a0a3",
+      "evaluation_sha256": "4a1b7a5fcb92b37e901c72eb6ef7727c607f11fe2a93130c06eee46437a42324",
+      "hash_chain_verified": true
+    },
+    {
+      "dataset": "amlsim",
+      "model": "cof_seqgen_frozen_non_v3",
+      "complete_sha256": "f54d8a4173f43273bb2f6272e08b396a77f23c80bc8612a4e6e47ced9114d587",
+      "artifact_index_sha256": "7d6b0ae47f8882607d9375b7c40ae964894e9c505e4832345419b828a31c1cb1",
+      "manifest_sha256": "92255673a0821c0182639c6c75cd4a78330a6e02e4323a4ab05897e9387acd9f",
+      "evaluation_sha256": "d9c78aa4ce400cb212c0bbbed12771d24f634ab5a18a3050dad96f9df8d00e3e",
+      "hash_chain_verified": true
+    },
+    {
+      "dataset": "sparkov",
+      "model": "empirical_iid",
+      "complete_sha256": "aae9bb8da465520055b9fa40fb8e15cee80f6fa44ec8cbd800c79c261d6adb65",
+      "artifact_index_sha256": "4954e591a58383ba17c3b0256580c331c4c4645b3fdcd9e7469beb27f56ea8e7",
+      "manifest_sha256": "410af4d06268839b26cd5494f788157d476249035214179ca67a34fce52e02b8",
+      "evaluation_sha256": "258a2ce55141137d1a4f0974aa1cda8963fa7cc0ba84f135ab334d6baded02c5",
+      "hash_chain_verified": true
+    },
+    {
+      "dataset": "sparkov",
+      "model": "ctgan_separate_class",
+      "complete_sha256": "ac6e56d6c2b84c63441c35528815cf1ee47b65d6aa47f70d4a1f3a687ef17c4b",
+      "artifact_index_sha256": "20cb11765b8b8af308aec396aa50e68431628e2d70734896367c8eb420f0acad",
+      "manifest_sha256": "c95d35b9cbf7b4f877628f45f61d0a7e4efc7a5660ecb14dfbc461a5ac82c86f",
+      "evaluation_sha256": "1364c05c148be2476039c0775a0a9c80675e4a6333ca32a9f35a8be1a1d7cc0a",
+      "hash_chain_verified": true
+    },
+    {
+      "dataset": "sparkov",
+      "model": "tvae_separate_class",
+      "complete_sha256": "f5aa38d25b3d9c78775db1c27e97a1dd3c782dfd3d4506453966c14c909e42a6",
+      "artifact_index_sha256": "80db108c12f01ba6b17e4df73d464ab041d22bc15a7f96ba57cfff463952c2be",
+      "manifest_sha256": "5e89aa458a6725319813daa98851fcda2c735015e24314626616f26bdb2fa0aa",
+      "evaluation_sha256": "0804e762991cfc302ac38317c3818fb5631e33273357ead629b8fbc61af51668",
+      "hash_chain_verified": true
+    },
+    {
+      "dataset": "sparkov",
+      "model": "cof_seqgen_frozen_non_v3",
+      "complete_sha256": "adee5f9f8cbb2562dd4d8625126e097938dd69d9304dc7234dbbb3789f8766b5",
+      "artifact_index_sha256": "07dbacc16f82f5b07e9db3c8e6c30a42838ab6c1b64f51a55a7c8482f6518226",
+      "manifest_sha256": "924dc6d30604aedbd93476dcba8d1f0cbf1c5009a217611fbd29acdb6f841614",
+      "evaluation_sha256": "8a5a9a78187c64d1dbeae19a12a57084006f5ee94c2e796bc9859d3f220e4124",
+      "hash_chain_verified": true
+    }
+  ],
+  "internal_test_results": {
+    "amlsim": [
+      {"model": "empirical_iid", "fidelity_max_ratio": 1.7965305201876083, "coherence_max_ratio": 15.307181944363045, "combined_score": 8.551856232275327, "fidelity_rank": 1, "coherence_rank": 3, "combined_rank": 1},
+      {"model": "tvae_separate_class", "fidelity_max_ratio": 6.16669452261197, "coherence_max_ratio": 14.707800271967137, "combined_score": 10.437247397289553, "fidelity_rank": 2, "coherence_rank": 2, "combined_rank": 2},
+      {"model": "ctgan_separate_class", "fidelity_max_ratio": 12.103967103100194, "coherence_max_ratio": 15.31865659349675, "combined_score": 13.711311848298472, "fidelity_rank": 3, "coherence_rank": 4, "combined_rank": 3},
+      {"model": "cof_seqgen_frozen_non_v3", "fidelity_max_ratio": 13.771584498560323, "coherence_max_ratio": 14.457382929108038, "combined_score": 14.11448371383418, "fidelity_rank": 4, "coherence_rank": 1, "combined_rank": 4}
+    ],
+    "sparkov": [
+      {"model": "empirical_iid", "fidelity_max_ratio": 2.142842133106293, "coherence_max_ratio": 4.559339299005181, "combined_score": 3.351090716055737, "fidelity_rank": 1, "coherence_rank": 3, "combined_rank": 1},
+      {"model": "ctgan_separate_class", "fidelity_max_ratio": 11.133907145449868, "coherence_max_ratio": 4.152255433022576, "combined_score": 7.643081289236222, "fidelity_rank": 2, "coherence_rank": 2, "combined_rank": 2},
+      {"model": "cof_seqgen_frozen_non_v3", "fidelity_max_ratio": 12.681493879857856, "coherence_max_ratio": 3.134545768066063, "combined_score": 7.9080198239619595, "fidelity_rank": 3, "coherence_rank": 1, "combined_rank": 3},
+      {"model": "tvae_separate_class", "fidelity_max_ratio": 48.58829819764218, "coherence_max_ratio": 430.0026876374262, "combined_score": 239.2954929175342, "fidelity_rank": 4, "coherence_rank": 4, "combined_rank": 4}
+    ]
+  },
+  "internal_test_macro": [
+    {"model": "empirical_iid", "fidelity_max_ratio": 1.9696863266469506, "coherence_max_ratio": 9.933260621684113, "combined_score": 5.951473474165532, "fidelity_rank": 1, "coherence_rank": 3, "combined_rank": 1},
+    {"model": "ctgan_separate_class", "fidelity_max_ratio": 11.618937124275032, "coherence_max_ratio": 9.735456013259663, "combined_score": 10.677196568767346, "fidelity_rank": 2, "coherence_rank": 2, "combined_rank": 2},
+    {"model": "cof_seqgen_frozen_non_v3", "fidelity_max_ratio": 13.226539189209088, "coherence_max_ratio": 8.79596434858705, "combined_score": 11.01125176889807, "fidelity_rank": 3, "coherence_rank": 1, "combined_rank": 3},
+    {"model": "tvae_separate_class", "fidelity_max_ratio": 27.377496360127076, "coherence_max_ratio": 222.35524395469668, "combined_score": 124.86637015741188, "fidelity_rank": 4, "coherence_rank": 4, "combined_rank": 4}
+  ],
+  "validation_internal_test_rank_comparison": {
+    "amlsim": {
+      "fidelity_max_ratio": {"validation_order": ["empirical_iid", "tvae_separate_class", "ctgan_separate_class", "cof_seqgen_frozen_non_v3"], "internal_test_order": ["empirical_iid", "tvae_separate_class", "ctgan_separate_class", "cof_seqgen_frozen_non_v3"], "pairwise_concordant": 6, "pairwise_discordant": 0, "spearman_rho": 1.0},
+      "coherence_max_ratio": {"validation_order": ["cof_seqgen_frozen_non_v3", "tvae_separate_class", "empirical_iid", "ctgan_separate_class"], "internal_test_order": ["cof_seqgen_frozen_non_v3", "tvae_separate_class", "empirical_iid", "ctgan_separate_class"], "pairwise_concordant": 6, "pairwise_discordant": 0, "spearman_rho": 1.0},
+      "combined_score": {"validation_order": ["empirical_iid", "tvae_separate_class", "cof_seqgen_frozen_non_v3", "ctgan_separate_class"], "internal_test_order": ["empirical_iid", "tvae_separate_class", "ctgan_separate_class", "cof_seqgen_frozen_non_v3"], "pairwise_concordant": 5, "pairwise_discordant": 1, "spearman_rho": 0.8, "reversal": "CTGAN and CoF exchanged ranks 3 and 4"}
+    },
+    "sparkov": {
+      "fidelity_max_ratio": {"validation_order": ["empirical_iid", "ctgan_separate_class", "cof_seqgen_frozen_non_v3", "tvae_separate_class"], "internal_test_order": ["empirical_iid", "ctgan_separate_class", "cof_seqgen_frozen_non_v3", "tvae_separate_class"], "pairwise_concordant": 6, "pairwise_discordant": 0, "spearman_rho": 1.0},
+      "coherence_max_ratio": {"validation_order": ["cof_seqgen_frozen_non_v3", "ctgan_separate_class", "empirical_iid", "tvae_separate_class"], "internal_test_order": ["cof_seqgen_frozen_non_v3", "ctgan_separate_class", "empirical_iid", "tvae_separate_class"], "pairwise_concordant": 6, "pairwise_discordant": 0, "spearman_rho": 1.0},
+      "combined_score": {"validation_order": ["empirical_iid", "ctgan_separate_class", "cof_seqgen_frozen_non_v3", "tvae_separate_class"], "internal_test_order": ["empirical_iid", "ctgan_separate_class", "cof_seqgen_frozen_non_v3", "tvae_separate_class"], "pairwise_concordant": 6, "pairwise_discordant": 0, "spearman_rho": 1.0}
+    },
+    "macro_orders_identical": true,
+    "fully_identical_dataset_metric_orders": 5,
+    "dataset_metric_orders_compared": 6
+  },
+  "claim_assessment": {
+    "cof_overall_superiority_to_iid_ctgan_tvae": "NOT_SUPPORTED",
+    "cof_descriptive_coherence_advantage": "SUPPORTED",
+    "cof_statistical_or_general_superiority": "NOT_ESTABLISHED",
+    "evidence": [
+      "CoF is first on coherence_max_ratio in both internal-test datasets and in the equal-weight macro; this direction also held in validation.",
+      "CoF is fourth on AMLSim internal-test fidelity and combined score.",
+      "CoF is third on Sparkov internal-test fidelity and combined score, behind IID and CTGAN.",
+      "CoF is third on the cross-dataset macro fidelity and combined score, while IID is first and CTGAN is second.",
+      "The evidence comprises one frozen run per model and dataset and supports a descriptive coherence result, not an inferential superiority claim."
+    ],
+    "strict_conclusion": "ONLY_DESCRIPTIVE_COHERENCE_ADVANTAGE_SUPPORTED"
+  }
+}

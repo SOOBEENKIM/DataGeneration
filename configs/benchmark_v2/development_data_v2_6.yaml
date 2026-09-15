@@ -1,0 +1,47 @@
+schema_version: benchmark-v2.6-development-data-v1
+status: FROZEN_FOR_SELECTION
+purpose: train_validation_only_candidate_selection
+prepared_from_v2_5_forensic_commit: 5502f84974133c035eb16ea72487e4a1dddd206b
+test_split_access: FORBIDDEN
+v2_5_runtime_mutation: FORBIDDEN
+splits:
+  train:
+    path: data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/train.npz
+    file_sha256: c67a6fce4593317e11e1b6f36397bfb38f9607916bf8f5b32329d8fa99b700a8
+    content_sha256: 0c03f179930cd4d89ccc8a8b66283e620313e16d15fd53f0674c133bcb80c09d
+    entities: 31951
+    valid_rows: 766529
+  validation:
+    path: data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/validation.npz
+    file_sha256: 68c15c05c55742bfce0f22560ffe8378d032a7a9fd9a1072e80ec8da5340fba5
+    content_sha256: aa1576b4ccae6a2ca30d0472f0782e1231ecc61ab3d224590a772dc3448b9e66
+    entities: 7989
+    valid_rows: 191227
+selection_sampling_plan:
+  fit_split: train
+  entity_count: 7989
+  seed: 26001
+  content_sha256: 862be1aa149b98e5521d0197a53487c9a9df535fc4853b33b95186cc3fb8cc27
+  shared_by_all_models_candidates_and_selection_seed: true
+tau:
+  - 0.03352697193622589
+  - 0.10602573305368423
+  - 0.186189204454422
+  - 0.27613455057144165
+  - 0.3794345557689667
+  - 0.4958447813987732
+  - 0.6317992210388184
+  - 0.793271541595459
+  - 0.9864107966423035
+  - 1.2198055982589722
+  - 1.5090267658233643
+  - 1.874557375907898
+  - 2.352236270904541
+  - 3.011887788772583
+  - 4.022998332977295
+  - 6.220571994781494
+provenance:
+  source_meta_sha256: 74566c8f06bed7b37060b12fd86e9a38b168942101433e7df8ddf18dc93aa2b4
+  source_row_guard_calibration_sha256: a241491deee47a4b0fc6dc22e561c8fbf304086ed04dd4dca1ace8440583b27b
+  learned_or_test_results_used_to_define_splits_or_plan: false
+  fresh_test_defined_or_generated: false

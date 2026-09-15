@@ -1,0 +1,103 @@
+schema_version: cof-seqgen-saf-model-v6
+status: GATED_V6_INTERVENTION_PREFLIGHT_FAILED_AFTER_STATIC_CODEC_REPAIR_TEST_SEALED
+model_implementation_version: saf-gated-static-aware-gap-copy-route-v6
+factorization:
+  - gap_given_strict_past_and_static
+  - mark_given_strict_past_static_and_current_gap
+  - value_given_strict_past_static_current_gap_and_current_mark
+training:
+  history_encoder: shifted_gru_strictly_past
+  static_context_route: first_event_output_and_all_gru_layer_initial_states
+  gap_to_mark_route: history_gated_current_gap_delta_vs_zero_context_ablation
+  routed_mark_decoder: previous_mark_copy_mixture_plus_new_mark_distribution
+  no_route_mark_decoder: previous_mark_copy_mixture_plus_new_mark_distribution
+  copy_logit: base_history_plus_sigmoid_history_gate_times_gap_delta
+  route_ablation_capacity: EXACTLY_MATCHED_WITH_ZERO_GAP_CONTEXT_FOR_CONTROL
+  gap_route: observed_current_gap_teacher_forced
+  mark_route_to_value: observed_current_mark_teacher_forced
+  first_gap: missing_and_excluded_from_gap_nll
+generation:
+  gap_route: generated_current_gap
+  mark_route_to_value: generated_current_mark
+  sequence_length: externally_supplied_shared_train_only_plan
+  rolling_context_window: 256
+ablations:
+  SAF-C0: {gap_decoder: hurdle_lognormal, support_aligned: false, ordered: false, gap_to_mark: zero_context, mark_decoder: copy_new}
+  SAF-U0: {gap_decoder: unordered_categorical, support_aligned: true, ordered: false, gap_to_mark: zero_context, mark_decoder: copy_new}
+  SAF-O0: {gap_decoder: ordered_hazard, support_aligned: true, ordered: true, gap_to_mark: zero_context, mark_decoder: copy_new}
+  SAF-U1: {gap_decoder: unordered_categorical, support_aligned: true, ordered: false, gap_to_mark: true, mark_decoder: copy_new}
+  SAF-O1: {gap_decoder: ordered_hazard, support_aligned: true, ordered: true, gap_to_mark: true, mark_decoder: copy_new}
+hypothesis_contrasts:
+  SAF-H1: [SAF-C0, SAF-U0]
+  SAF-H2: [[SAF-U0, SAF-O0], [SAF-U1, SAF-O1]]
+  SAF-H3: [[SAF-O0, SAF-O1], [SAF-U0, SAF-U1]]
+  SAF-H4: [SAF-O1, primary_sequential_baselines]
+  SAF-H5: [SAF-O1, train_calibrated_noninferiority_margins]
+numerical_guards:
+  ordered_hazard_logits: bounded_tanh_12
+  scale: softplus_clamped
+  continuous_gap: double_log_transform_and_max_gap_clamp
+  support_representatives: observed_train_atoms_only_including_zero_only_when_observed
+scope:
+  auxiliary_event_heads: IMPLEMENTED
+  learned_sequence_termination: NOT_IMPLEMENTED
+  cpu_gate: GATED_V6_STATICFIX_PASSED_EXACT_DETERMINISM_LOSS_DECREASE_AND_GENERATION
+  gpu_training: GATED_V6_STATICFIX_PILOT_ONLY_KAPPA0_AND_KAPPA1_SEED_20260929_COMPLETE
+  controlled_validation: GATED_V6_FIVE_SEED_NOT_STARTED_BECAUSE_INTERVENTION_PREFLIGHT_FAILED
+  canonical_fit: NOT_EXECUTED_BECAUSE_INTERVENTION_PREFLIGHT_FAILED
+  real_data_and_baseline_stage: NOT_STARTED_BECAUSE_DEPENDENCY_ROUTING_NOT_VALIDATED
+  held_out_test: SEALED_NOT_ACCESSED
+prior_development_decision:
+  artifact: artifacts/cof_seqgen_saf/development/dgp_interactive_v3_routing_decision.json
+  result: FAIL
+  passed_branch: SAF-U0_TO_SAF-U1
+  failed_branch: SAF-O0_TO_SAF-O1_GAP_CONDITIONED_ABSOLUTE_MARK_TV_ONLY
+  real_data_and_baseline_stage: NOT_STARTED_BECAUSE_PREREGISTERED_GATE_FAILED
+copy_new_v4_metric:
+  primary: transition_conditioned_mark_tv
+  controlled_train_only_audit: PASSED_KAPPA0_AND_KAPPA1
+  full_canonical_train_only_audit: PASSED_ALL_EIGHT_DATASETS
+copy_new_v4_development_decision:
+  artifact: artifacts/cof_seqgen_saf/development/dgp_copy_new_v4_routing_decision.json
+  report: docs/benchmark_v2/cof_seqgen_saf_copy_new_v4_experiment_report_2026_09_14.md
+  result: FAIL
+  kappa_1_dependency_gain: PASSED_ALL_THREE_ENDPOINTS_FOR_BOTH_BRANCHES_AT_FIVE_OF_FIVE_SEEDS
+  failed_checks:
+    - UNORDERED_KAPPA_INTERACTION_TRANSITION_CONDITIONED_MARK_TV
+    - ORDERED_KAPPA_INTERACTION_SHORT_GAP_REPEAT_CURVE_L1
+  diagnosis: COPY_NEW_DECODER_CHANGE_CONFOUNDED_WITH_CURRENT_GAP_ROUTE
+  next_experiment: MATCHED_COPY_NEW_DECODER_WITH_CURRENT_GAP_INPUT_AS_THE_ONLY_ABLATION
+  real_data_and_baseline_stage: NOT_STARTED_BECAUSE_PREREGISTERED_GATE_FAILED
+matched_copy_v5_development_decision:
+  artifact: artifacts/cof_seqgen_saf/development/dgp_matched_copy_v5_routing_decision.json
+  report: docs/benchmark_v2/cof_seqgen_saf_matched_copy_v5_experiment_report_2026_09_14.md
+  result: FAIL
+  passed_checks: ALL_REPEAT_CURVE_AND_GAP_REPEAT_MI_ROUTING_AND_INTERACTION_CHECKS
+  failed_checks:
+    - UNORDERED_KAPPA1_TRANSITION_CONDITIONED_MARK_TV
+    - UNORDERED_KAPPA_INTERACTION_TRANSITION_CONDITIONED_MARK_TV
+    - ORDERED_KAPPA1_TRANSITION_CONDITIONED_MARK_TV
+    - ORDERED_KAPPA_INTERACTION_TRANSITION_CONDITIONED_MARK_TV
+  diagnosis: ADDITIVE_GAP_EFFECT_CANNOT_MODEL_STATIC_OR_HISTORY_BY_GAP_INTERACTION
+  next_experiment: PARAMETER_MATCHED_GATED_HISTORY_BY_CURRENT_GAP_COPY_LOGIT
+  real_data_and_baseline_stage: NOT_STARTED_BECAUSE_PREREGISTERED_GATE_FAILED
+static_context_codec_invalidation:
+  artifact: artifacts/cof_seqgen_saf/development/STATIC_CONTEXT_CODEC_INVALIDATION_2026_09_15.json
+  finding: CONTROLLED_DGP_ENTITY_LABEL_WAS_ENCODED_AS_UNK_FOR_ALL_ENTITIES
+  affected_interpretation: PRIOR_V2_TO_V5_RUNS_CANNOT_TEST_STATIC_AWARE_DEPENDENCY_ROUTING
+  support_alignment_status: DESCRIPTIVE_EVIDENCE_REMAINS_STRONG_BUT_REQUIRES_CORRECTED_CONFIRMATION
+  repaired_tensorizer_schema: cof-seqgen-saf-tensorizer-state-v2
+gated_v6_preflight_decision:
+  artifact: artifacts/cof_seqgen_saf/development/gated_v6_intervention_audit.json
+  result: FAIL
+  pilot_seed: 20260929
+  passed_checks:
+    - PARAMETER_MATCHED_ZERO_GAP_CONTROLS_EXACTLY_INVARIANT
+    - NONCAUSAL_CELL_MEAN_SENSITIVITY_BELOW_0_05
+  failed_checks:
+    - KAPPA1_LABEL1_MATERIAL_SENSITIVITY_BOTH_BRANCHES
+    - KAPPA_AND_LABEL_SELECTIVITY_BOTH_BRANCHES
+  diagnosis: STATIC_INFORMATION_IS_PRESENT_BUT_SCALAR_MULTIPLICATIVE_GATE_DID_NOT_LEARN_SELECTIVE_ROUTING
+  five_seed_status: NOT_STARTED_BY_PREREGISTERED_PREFLIGHT_RULE
+  next_experiment: NONE_AUTHORIZED; FREEZE_ROUTING_LINE_OR_PREREGISTER_A_NEW_EXPLORATORY_FAMILY
+  real_data_and_baseline_stage: NOT_STARTED

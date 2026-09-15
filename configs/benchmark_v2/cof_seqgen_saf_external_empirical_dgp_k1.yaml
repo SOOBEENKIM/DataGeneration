@@ -1,0 +1,12 @@
+dataset_dir: data/cof_seqgen_saf/canonical/controlled_coupling_joint_semimarkov_v2b_kappa_1_00
+output_dir: artifacts/cof_seqgen_saf/development/external_dgp_k1/empirical_sequence_sampler
+baseline_id: empirical_sequence_sampler
+fit_seed: 20260826
+generation_seed: 20261826
+generation_entities: null
+train_entity_limit: null
+model_kwargs: null
+fit_kwargs: null
+fit_device: cpu
+sample_device: cpu
+metric_audit_path: artifacts/cof_seqgen_saf/metric_validity_audit_train_only.json

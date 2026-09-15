@@ -1,0 +1,26 @@
+schema_version: benchmark_v2.0
+name: temporal_coupling_suite_v2_smoke
+scenarios: [markov_persistence_v2a, joint_semimarkov_v2b]
+data:
+  n_train: 512
+  n_test: 256
+  sequence_length: {min: 16, max: 32}
+  fraud_rate: 0.05
+  n_gap_bins: 16
+  n_receiver_categories: 64
+  padding_side: right
+  window_width: 7.0
+  soft_g_temperature: 1.0
+coupling:
+  kappas: [0.0, 1.0]
+  gap_regime:
+    burst_stationary_probability: 0.30
+    normal_gap_scale: 2.0
+    burst_gap_scale: 0.5
+    rho_fraud_max: 0.90
+  joint_semimarkov:
+    duration: {burst_target_mean: 6.0, normal_target_mean: 14.0, sigma: 0.60, max_duration: 128}
+    receiver_repeat_probability: {low: 0.05, high: 0.90}
+  amount_log: {mean: 5.0, std: 1.0}
+seeds: {base: 42, test_offset: 100000}
+evaluation: {primary_bins: 8, confirmatory_bins: 4, descriptive_bins: 2, minimum_bin_count: 5, bootstrap_resamples: 100}

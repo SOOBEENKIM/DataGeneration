@@ -1,0 +1,367 @@
+schema_version: external-validation-v1
+status: source_only_not_authorized
+source_base_head: 03a7f36d83b4e16afc3df2d8bf7296cffd8a9be3
+
+performance_correction:
+  kind: receiver_total_variation_complexity_only
+  metric_source_path: eval/external_validation_metrics_v1.py
+  metric_source_sha256: e91de63a11cf34e537738cf0fbbfe3c76bbde9c1a383b26c2cae963d5fbcd933
+  scientific_definition_unchanged: true
+  seed_conditioning_selection_unchanged: true
+  job_cap_changed: false
+
+frozen_cof:
+  source_commit: 99a445f6dc893a8c2240d950de4f92877cc07f8a
+  config_path: configs/benchmark_v2/full_v2_5.yaml
+  config_sha256: 81bc16416f6dad3c23eaf1990c3cb76e5449e74f1ddc634f42d3a897cd3c5bb3
+  model_path: models/cof_seqgen.py
+  model_sha256: caf5fdb3baf367a28c6081a8ba5f4a89e59dacbba2377636acba5c051ae7006e
+  adapter_path: generators/cof_seqgen_adapter.py
+  adapter_sha256: 48e9e1280bc23a27abf0b5f6447f6682e3b846d0d1773fb96d99abcf407dd7f3
+  denoiser_path: models/seq_denoiser.py
+  denoiser_sha256: bd9a057a880bcfe8918b0ccbcc7bef5ffd9e5d0181a4cac0a17b942ac6cf9dc4
+  architecture_changes_allowed: false
+
+datasets:
+  amlsim:
+    seed: 31001
+    bundle_root: data/external_sequence_protocol_v1/frozen/amlsim/attempt_001
+    artifact_root: artifacts/external_sequence_protocol_v1/materialization/amlsim/attempt_001
+    complete_sha256: a7494b9956be4b4c773aaed9f2a6db1266cb65eccd064d0d973814246dc328f6
+    tree_sha256: cc8f4c9c6ff415ccd4f78ec193122100145e10084751b971dcc0ce5e705fa024
+    raw_csv_access: forbidden
+  sparkov:
+    seed: 32001
+    bundle_root: data/external_sequence_protocol_v1/frozen/sparkov/attempt_001
+    artifact_root: artifacts/external_sequence_protocol_v1/materialization/sparkov/attempt_001
+    complete_sha256: 02686624b042517daa92b583dcad39448f5bd945f0c613d230d6dee608919cf1
+    tree_sha256: 62fefda6207911104a9bff0ebb41d5edf44c20a4c78dccef5875d9768be6addc
+    raw_csv_access: forbidden
+    public_fraud_test_access: forbidden
+
+models:
+  - empirical_iid
+  - ctgan_separate_class
+  - tvae_separate_class
+  - cof_seqgen_frozen_non_v3
+
+adapter_sources:
+  empirical_iid:
+    path: generators/empirical_conditional_iid.py
+    sha256: 38ef9090130a7ac6490643592015ec4044813dd6f2a09b8225df94cb2165faf4
+  ctgan_separate_class:
+    path: generators/conditional_ctgan.py
+    sha256: 0a1606281e8a0fce436aef138eec7e68c87e3dd15e6d008e8906fe4f02608910
+  tvae_separate_class:
+    path: generators/conditional_tvae.py
+    sha256: e2a07d10155087f7ddf0b7e5c54ddd78f98cf6c60e6fd3d1a6a3484321019df3
+  cof_seqgen_frozen_non_v3:
+    path: generators/cof_seqgen_adapter.py
+    sha256: 48e9e1280bc23a27abf0b5f6447f6682e3b846d0d1773fb96d99abcf407dd7f3
+
+runtime:
+  root: artifacts/external_validation_v1
+  attempts_by_model:
+    empirical_iid: attempt_002
+    ctgan_separate_class: attempt_001
+    tvae_separate_class: attempt_001
+    cof_seqgen_frozen_non_v3: attempt_001
+  append_only: true
+  overwrite: forbidden
+  authorization_required_for_execute: true
+  terminal_markers: [COMPLETE.json, INVALID.json, FAILED.json]
+
+continuation:
+  schema_version: external-validation-performance-continuation-v1
+  job_count: 8
+  authorization_root: artifacts/external_validation_v1/memory_corrective_authorization_history
+  preserved_artifacts:
+    amlsim_empirical_iid_attempt_001:
+      path: artifacts/external_validation_v1/amlsim/empirical_iid/attempt_001
+      tree_sha256: e0d2bf55ca9eaf6404294168a309b66d0c1c34ce63c247f15af853a4b37e7810
+      file_count: 4
+      byte_count: 5071
+      terminal: FAILED
+    sparkov_empirical_iid_attempt_001:
+      path: artifacts/external_validation_v1/sparkov/empirical_iid/attempt_001
+      tree_sha256: 64abdd9ec13d52b25f8f9f79de15e6fd95d81bb321058a90d42b77e10b4a8592
+      file_count: 11
+      byte_count: 1140406
+      terminal: COMPLETE
+    prior_authorization_history:
+      path: artifacts/external_validation_v1/authorization_history
+      tree_sha256: 281372d002df2af1c42dc941410cb25348ab875d078da396c77c2c867e4b7246
+      file_count: 5
+      byte_count: 70976
+    prior_continuation_authorization_history:
+      path: artifacts/external_validation_v1/continuation_authorization_history
+      tree_sha256: 22d82f8512ee1c7acab130947a360f938710417130891cd114408a4bdd99a824
+      file_count: 3
+      byte_count: 44573
+    prior_wave_scheduled_authorization_history:
+      path: artifacts/external_validation_v1/wave_scheduled_continuation_authorization_history
+      tree_sha256: 75f066a680681ad5a917b225c99f6ff02bd1f40eea7fc432089c355982d841c1
+      file_count: 1
+      byte_count: 26916
+
+memory_safety:
+  data_transformer:
+    models: [ctgan_separate_class, tvae_separate_class]
+    fixed_n_jobs: 1
+    unbounded_n_jobs_forbidden: true
+    execution_mode: synchronous_column_transform
+    max_concurrent_heavy_transforms: 1
+    algorithm_seed_conditioning_metrics_unchanged: true
+
+corrective_continuation:
+  status: source_only_not_authorized
+  failure_scope: amlsim_tvae_attempt_001_global_oom
+  resource_policy_only_change: true
+  scientific_contract_unchanged: true
+  authorization_root: artifacts/external_validation_v1/amlsim_tvae_attempt_002_authorization_history
+  failed_attempt_preservation:
+    path: artifacts/external_validation_v1/amlsim/tvae_separate_class/attempt_001
+    tree_sha256: d98ed71eb09f2ca07c7f53d42c16df0c1035477f783ed3b5733ccd038c2c9272
+    file_count: 5
+    byte_count: 7273
+    manifest_sha256: e5e2ca279e5e38223f1d74b403d4eb5ed7a3b0720f4d50e01612c045add0b6d0
+    failed_sha256: b0ca730547ef7600577736046bbba0dae39bbb5da7b3f3c1de301d367dae8cdf
+    runner_log_path: artifacts/external_validation_v1/runner_logs/extv1_sched_amlsim_tvae_attempt_001.log
+    runner_log_sha256: b4c95d7246baf7cf4198ac481d7084d212d8ae8f5fa54f439a0a9b361f414c60
+  completed_result_reuse:
+    amlsim:
+      empirical_iid:
+        attempt_path: artifacts/external_validation_v1/amlsim/empirical_iid/attempt_002
+        manifest_sha256: 723a947c155c506e3ca54a2d473b825318ada635a7f62fd56caf0cf61bb9e320
+        evaluation_sha256: 9510091563d4c5e8f57a654a4b447a9cd0f8087fae0d9d98415f290fba7e1ef3
+        terminal_sha256: 81c8105f62646d833dcbf016b371c1f22e783988d7d5524f84907d22f87c800a
+      ctgan_separate_class:
+        attempt_path: artifacts/external_validation_v1/amlsim/ctgan_separate_class/attempt_001
+        manifest_sha256: 84f79b23f77050433dfad3c9563833a4ebfaca4c24c3e97c3117c810f275e689
+        evaluation_sha256: 01e5c7dcb041052d9a6cb2e9c0cb7b814653708f909e610d55b4ce15b87c8542
+        terminal_sha256: 58deb1884cf086a902181d6c30e372d1a04c79e9ff6eb327789a8e3613f38754
+      cof_seqgen_frozen_non_v3:
+        attempt_path: artifacts/external_validation_v1/amlsim/cof_seqgen_frozen_non_v3/attempt_001
+        manifest_sha256: 5d23f8f33f83c8bd64c0864c985d9ab676253402f1f0296e9cda1d7e27f11edf
+        evaluation_sha256: db7f7e99f7a43c6cbdb259b663f32628bd44440e01f145e17be305daf1a5d68a
+        terminal_sha256: e44db66eaaa6c65142df3cde8fa283dd5d05df9f7386a3d35870d51780db7f35
+  required_equivalence:
+    source_commit: 2ae7496905b234d04c9bc1fea2dd842dd7fd0a63
+    config_sha256: f14e182744e7ce83a8504d32c267efc8d8bb08051dc79473f0698b7cb2c548f1
+    bundle_tree_sha256: cc8f4c9c6ff415ccd4f78ec193122100145e10084751b971dcc0ce5e705fa024
+    train_sha256: 4d55aebee884964438c0f46c222e61a5ab6384ac444e76390d2575b1345b014f
+    validation_sha256: a4cc4792a681d42cdfcf30a3590c7a3a312383028c5f0ed1b7c9008c3b106fec
+    metric_source_sha256: e91de63a11cf34e537738cf0fbbfe3c76bbde9c1a383b26c2cae963d5fbcd933
+    sampling_plan_sha256: 9e36a197c631f108a264d020279b89f940b2f581a7a23b8b67b65807fbfb4a9d
+    thresholds_sha256: e715b01a9481e7a539c6661126ddeb04570f08318e409911f3f0d06947ca0330
+    seed: 31001
+  next_target:
+    dataset: amlsim
+    model: tvae_separate_class
+    attempt: attempt_002
+    seed: 31001
+    requested_steps: 20000
+    training_hard_cap_seconds: 7200
+    job_hard_cap_seconds: 10800
+    runner_device: cuda:0
+    cuda_visible_devices_count: 1
+    data_transformer_n_jobs: 1
+    heavy_transform_exclusion_group: external_tabular_transform
+    authorization_required: true
+  sparkov_learned_wave:
+    status: blocked_until_amlsim_tvae_terminal_and_separate_authorization
+
+sparkov_validation_preparation:
+  schema_version: external-validation-sparkov-source-preparation-v1
+  status: source_only_not_authorized
+  scientific_contract_unchanged: true
+  model_architecture_or_config_change_allowed: false
+  authorization_root: artifacts/external_validation_v1/sparkov_validation_authorization_history
+  iid_reference:
+    dataset: sparkov
+    model: empirical_iid
+    attempt: attempt_002
+    attempt_path: artifacts/external_validation_v1/sparkov/empirical_iid/attempt_002
+    manifest_sha256: 96ba1e44afb0a86e4e53eff33ff0d8c191e2749a20781b6d14fee4cd0ca01fe8
+    evaluation_sha256: 9da17648abf8deaf5d9715143b48c687d04b88711b06b77fdd39d3c325d8d1b8
+    terminal_sha256: ad2fc7fe471b2b92dba37e14e7c5b77903c535cd586df9bf3336d82aba1cfa80
+    source_commit: 2ae7496905b234d04c9bc1fea2dd842dd7fd0a63
+    config_sha256: f14e182744e7ce83a8504d32c267efc8d8bb08051dc79473f0698b7cb2c548f1
+    bundle_tree_sha256: 62fefda6207911104a9bff0ebb41d5edf44c20a4c78dccef5875d9768be6addc
+    train_sha256: 73341c497193497dfa48314f07631afbd98a2b5757debe01bab3dee27be8ae70
+    validation_sha256: 440e3930e4fb344f247373943612507605e6654b995fc40c7357b6e32e5eca74
+    metric_source_sha256: e91de63a11cf34e537738cf0fbbfe3c76bbde9c1a383b26c2cae963d5fbcd933
+    sampling_plan_sha256: 665c990d78e01bd31844ca5433f177017955b35915941080bc0648deb957e247
+    thresholds_sha256: c091c874e8a32c32eb9516e7d56c5946e15342a6837806f8f3809c7972424efb
+    seed: 32001
+  learned_jobs:
+    - dataset: sparkov
+      model: ctgan_separate_class
+      attempt: attempt_001
+      wave_id: sparkov_gpu_wave_1
+      data_transformer_n_jobs: 1
+    - dataset: sparkov
+      model: cof_seqgen_frozen_non_v3
+      attempt: attempt_001
+      wave_id: sparkov_gpu_wave_1
+      data_transformer_n_jobs: 0
+    - dataset: sparkov
+      model: tvae_separate_class
+      attempt: attempt_001
+      wave_id: sparkov_gpu_wave_2
+      data_transformer_n_jobs: 1
+  wave_contract:
+    - wave_id: sparkov_gpu_wave_1
+      parallel: true
+      distinct_physical_gpus: true
+      terminal_barrier_after: true
+      models: [ctgan_separate_class, cof_seqgen_frozen_non_v3]
+    - wave_id: sparkov_gpu_wave_2
+      parallel: false
+      distinct_physical_gpus: true
+      terminal_barrier_after: true
+      models: [tvae_separate_class]
+  stop_rule:
+    comparison: cof_seqgen_frozen_non_v3_vs_tvae_separate_class
+    direction: lower_is_better
+    combined_field: selection.combined_score
+    combined_operator: strict_less_than
+    fidelity_field: selection.fidelity_max_ratio
+    fidelity_operator: strict_less_than
+    required_relation: both_metrics_strictly_better
+    ties: stop_existing_cof_family
+    invalid_or_noncomplete: stop_existing_cof_family
+    pass_decision: CONTINUE_TO_SEPARATE_TEST_PROPOSAL
+    stop_decision: STOP_EXISTING_COF_FAMILY_MODEL_LEVEL_REDESIGN_REQUIRED
+    result_based_rule_change_allowed: false
+    test_execution_authorized: false
+
+launch_schedule:
+  schema_version: external-validation-memory-safe-five-wave-schedule-v1
+  scheduling_only: true
+  scientific_contract_unchanged: true
+  waves:
+    - wave_id: cpu_wave
+      device_class: cpu
+      parallel: true
+      terminal_barrier_after: true
+      jobs:
+        - dataset: amlsim
+          model: empirical_iid
+          device_slot: cpu_a
+          runner_device: cpu
+          cuda_visible_devices_count: 0
+        - dataset: sparkov
+          model: empirical_iid
+          device_slot: cpu_b
+          runner_device: cpu
+          cuda_visible_devices_count: 0
+    - wave_id: amlsim_gpu_wave_1
+      device_class: gpu
+      parallel: true
+      terminal_barrier_after: true
+      jobs:
+        - dataset: amlsim
+          model: ctgan_separate_class
+          device_slot: physical_gpu_a
+          runner_device: cuda:0
+          cuda_visible_devices_count: 1
+        - dataset: amlsim
+          model: cof_seqgen_frozen_non_v3
+          device_slot: physical_gpu_c
+          runner_device: cuda:0
+          cuda_visible_devices_count: 1
+    - wave_id: amlsim_gpu_wave_2
+      device_class: gpu
+      parallel: true
+      terminal_barrier_after: true
+      jobs:
+        - dataset: amlsim
+          model: tvae_separate_class
+          device_slot: physical_gpu_b
+          runner_device: cuda:0
+          cuda_visible_devices_count: 1
+    - wave_id: sparkov_gpu_wave_1
+      device_class: gpu
+      parallel: true
+      terminal_barrier_after: true
+      jobs:
+        - dataset: sparkov
+          model: ctgan_separate_class
+          device_slot: physical_gpu_a
+          runner_device: cuda:0
+          cuda_visible_devices_count: 1
+        - dataset: sparkov
+          model: cof_seqgen_frozen_non_v3
+          device_slot: physical_gpu_c
+          runner_device: cuda:0
+          cuda_visible_devices_count: 1
+    - wave_id: sparkov_gpu_wave_2
+      device_class: gpu
+      parallel: true
+      terminal_barrier_after: true
+      jobs:
+        - dataset: sparkov
+          model: tvae_separate_class
+          device_slot: physical_gpu_b
+          runner_device: cuda:0
+          cuda_visible_devices_count: 1
+
+access_contract:
+  fit: train.npz_only
+  generate_then_evaluate: validation.npz_only
+  internal_test: fail_closed
+  sparkov_fraud_test: fail_closed
+  plan_dry_run: manifest_and_hash_only_no_npz_load
+
+analysis:
+  controlled_five_guard_thresholds_reused: false
+  bootstrap:
+    source_split: train
+    cluster_unit: entity
+    replicates: 1000
+    order_statistic_rank: 951
+    interpolation: none
+    freeze_before_validation: true
+  fidelity:
+    amount: [amount_ks_y0, amount_ks_y1]
+    gap: [gap_total_variation_y0, gap_total_variation_y1]
+    receiver: [receiver_total_variation_y0, receiver_total_variation_y1]
+  coherence:
+    definition: short_gap_times_receiver_repeat_by_class
+    metrics:
+      - short_gap_receiver_repeat_error_y0
+      - short_gap_receiver_repeat_error_y1
+    short_gap_threshold_source: train_positive_gap_median
+  selection:
+    fidelity_weight: 0.5
+    coherence_weight: 0.5
+    all_fidelity_pass_required: false
+    tie_break:
+      - combined_score
+      - fidelity_max_ratio
+      - coherence_max_ratio
+      - candidate_id_lexicographic
+  row_shuffle_negative_control:
+    execution_enabled: false
+    design_only: true
+    fit_and_orientation: train_only
+    preserve: [Y, length, valid_mask, per_window_transformed_row_multiset]
+    permute_together: [amount, gap, receiver]
+    expected_effect: reduce_short_gap_receiver_repeat_coherence
+  test_unlock:
+    requires_separate_authorization: true
+    all_models_terminal_and_selected: true
+    hard_validity_required: true
+    all_fidelity_pass_required: false
+    validation_report_and_hash_index_required: true
+    internal_test_and_sparkov_fraudTest_remain_locked: true
+
+prohibited:
+  - gpu_or_cuda_query_in_plan_or_dry_run
+  - raw_csv_access
+  - model_import_fit_checkpoint_or_sample_in_plan_or_dry_run
+  - internal_test_npz_load
+  - sparkov_fraud_test_access
+  - controlled_five_guard_threshold_reuse
+  - existing_bundle_or_controlled_artifact_mutation

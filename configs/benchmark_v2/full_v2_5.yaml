@@ -1,0 +1,344 @@
+schema_version: benchmark-v2.5-full-preregistered
+configuration_role: full_experiment
+status: PREPARED_NOT_AUTHORIZED
+execution:
+  full_experiment_authorized: false
+  five_seed_run_started: false
+  sweep_authorized: false
+  preparation_only: true
+  runtime_artifacts_committed_to_git: false
+freeze:
+  v2_4_gate_pass_tag: benchmark-v2.4-gate-pass
+  v2_4_gate_pass_commit: 35ec654061f99e8e5ccd54381d40329546ed2eb7
+  v2_4_artifact_index:
+    path: artifacts/benchmark_v2_4/artifact_index.json
+    artifact_count: 1679
+    sha256: c99c79b501ba264b01f1ef54f1bb7fa1c40446c865d95b6078fad6fd47fec08a
+  v2_4_gate_report:
+    path: artifacts/benchmark_v2_4/gates/gate_report.json
+    indexed_sha256: 53fc93c3650e5e6d03f9a085c74a5ad86ef2862f7a918668bce817500319ee14
+    actual_sha256: 53fc93c3650e5e6d03f9a085c74a5ad86ef2862f7a918668bce817500319ee14
+    hash_match: true
+    full_experiment_authorized: false
+paths:
+  artifact_root: artifacts/benchmark_v2_5
+  data_root: data/benchmark_v2_5
+  attempt_template: full/joint_semimarkov_v2b/kappa_1.00/{generator}/seed_{seed}/attempt_{attempt:03d}
+scope:
+  scenarios: [joint_semimarkov_v2b]
+  kappas: [1.0]
+  model_seeds: [1, 2, 3, 4, 5]
+  bootstrap_seed: 25000
+  bootstrap_resamples: 10000
+  forbidden_implicit_extensions:
+    - kappa_0
+    - kappa_curve
+    - scenario_markov_persistence_v2a
+    - hyperparameter_sweep
+  extension_requires: separate_v2_6_preregistration
+data:
+  n_train: 31951
+  n_validation: 7989
+  n_test: 7989
+  dataset_seed: 42
+  validation_seed: 200042
+  validation_split_id: 2
+  same_frozen_data_for_all_model_seeds: true
+  sequence_length: {min: 16, max: 32}
+  fraud_rate: 0.05
+  n_gap_bins: 16
+  n_receiver_categories: 64
+  padding_side: right
+  window_width: 7.0
+  soft_g_temperature: 1.0
+  train_only_fitted:
+    - bin_edges
+    - tau_representatives
+    - short_gap_threshold
+    - coherence_reference
+    - row_marginal_reference
+    - label_prevalence
+    - label_conditional_length_distribution
+  test_usage: evaluation_only
+sampling_plan:
+  entity_count: 7989
+  seed: 10001
+  generated_once_from_train: true
+  labels: sample_from_train_empirical_prevalence
+  lengths: sample_from_train_empirical_label_conditional_distribution
+  shared_by_all_generators_and_model_seeds: true
+  model_seed_may_not_change_plan: true
+  manifest_requires_full_sha256: true
+  test_labels_or_lengths_used: false
+coupling:
+  kappas: [1.0]
+  gap_regime:
+    burst_stationary_probability: 0.30
+    normal_gap_scale: 2.0
+    burst_gap_scale: 0.5
+    rho_nonfraud: 0.0
+    rho_fraud_max: 0.90
+  receiver:
+    rho_nonfraud: 0.0
+    rho_fraud_max: 0.90
+    stationary_distribution: uniform
+  joint_semimarkov:
+    burst_stationary_probability: 0.30
+    duration:
+      family: discrete_lognormal
+      burst_target_mean: 6.0
+      normal_target_mean: 14.0
+      sigma: 0.60
+      max_duration: 128
+    receiver_repeat_probability: {low: 0.05, high: 0.90}
+    equilibrium_initialization: true
+    shared_gap_receiver_state_for_fraud_at_kappa_1: true
+  amount_log: {mean: 5.0, std: 1.0, dependence: iid_label_independent}
+seeds:
+  base: 42
+  test_offset: 100000
+binning:
+  fit_split: train
+  shared_across_kappa: true
+  reference_kappa: 1.0
+evaluation:
+  version: benchmark-v2.5-evaluation-v1
+  primary_endpoint:
+    name: continuous_association_recovery_error
+    formula: abs(delta_joint_real_test_minus_delta_joint_synthetic)
+    direction: lower_is_better
+    joint_summary: joint_alignment
+    sole_primary_endpoint: true
+  test_role: evaluation_only
+  support_diagnostic_bins: [4, 8]
+  diagnostic_bins_cannot_change_primary_decision: true
+  floor_epsilon: 0.000001
+  minimum_bin_count: 25
+  hard_guards:
+    - canonical_mask_and_zero_padding
+    - train_discrete_support
+    - c0_c1_reference_contract
+    - invalid_generator_routing
+    - gap_ks_effect_size_emission_contract
+    - receiver_signed_cluster_frequency
+    - amount_ks_effect_size_emission_contract
+  invalid_policy: INVALID_not_nan_exclusion
+  row_marginal_guard_calibration:
+    fit_split: train
+    trials: 200
+    seed: 24500
+    cutoff: maximum_rank_200_of_200_no_interpolation
+    entity_count_per_replicate: 7989
+    amount:
+      statistics: [two_sample_ks, absolute_standardized_label_effect]
+      emission_contract: finite
+    gap:
+      statistics: [two_sample_ks, absolute_standardized_label_effect]
+      emission_contract: train_discrete_support_and_frozen_tau
+    receiver:
+      statistic: maximum_absolute_entity_balanced_signed_category_frequency
+      practical_margin: 0.02
+    learned_results_used_for_calibration: false
+baseline_definition_version: benchmark-v2.5
+baselines:
+  empirical_iid:
+    adapter: generators.empirical_conditional_iid.EmpiricalConditionalIID
+    role: structural_reference
+    device: cpu
+  block_2:
+    adapter: generators.empirical_conditional_block.EmpiricalConditionalBlock
+    block_length: 2
+    role: structural_reference
+    device: cpu
+  block_4:
+    adapter: generators.empirical_conditional_block.EmpiricalConditionalBlock
+    block_length: 4
+    role: structural_reference
+    device: cpu
+  block_8:
+    adapter: generators.empirical_conditional_block.EmpiricalConditionalBlock
+    block_length: 8
+    role: structural_reference
+    device: cpu
+  full_sequence_reference:
+    adapter: generators.empirical_conditional_block.EmpiricalConditionalBlock
+    block_length: full
+    role: oracle_reference_not_learned_competitor
+    device: cpu
+  independent_markov:
+    adapter: generators.class_conditional_markov.ClassConditionalMarkov
+    laplace_alpha: 1.0
+    amount_model: label_conditional_empirical
+    max_wall_seconds: 7200
+    device: cpu
+  joint_markov:
+    adapter: generators.class_conditional_markov.JointObservedMarkov
+    observed_state: [dt_bin, receiver_repeat]
+    laplace_alpha: 1.0
+    unseen_state_fallback: laplace_smoothed_transition
+    amount_model: label_conditional_empirical
+    max_wall_seconds: 7200
+    device: cpu
+  plug_in_hmm:
+    adapter: generators.plug_in_state_baselines_v2_5.ClassConditionalPlugInHMM
+    definition: deterministic_train_only_plugin_state_inference
+    hidden_states: 2
+    state_fit_split: train
+    uses_em: false
+    uses_latent_state_restarts: false
+    uses_test_data_for_fit: false
+    short_gap_quantile: 0.5
+    laplace_alpha: 1.0
+    amount_model: state_and_label_conditional_empirical
+    max_wall_seconds: 7200
+    device: cpu
+  plug_in_hsmm:
+    adapter: generators.plug_in_state_baselines_v2_5.ClassConditionalPlugInHSMM
+    definition: deterministic_train_only_plugin_state_and_duration_inference
+    hidden_states: 2
+    state_fit_split: train
+    uses_em: false
+    uses_latent_state_restarts: false
+    uses_test_data_for_fit: false
+    short_gap_quantile: 0.5
+    laplace_alpha: 1.0
+    duration_laplace_alpha: 1.0
+    duration_family: smoothed_empirical_discrete
+    duration_max: 128
+    amount_model: state_and_label_conditional_empirical
+    max_wall_seconds: 7200
+    device: cpu
+  ctgan_separate_class:
+    adapter: generators.conditional_ctgan.ConditionalCTGAN
+    definition: separate_y0_and_y1_models
+    package_version: ctgan==0.12.1
+    batch_size: 500
+    optimizer:
+      generator: {name: Adam, lr: 0.0002, betas: [0.5, 0.9], weight_decay: 0.000001}
+      discriminator: {name: Adam, lr: 0.0002, betas: [0.5, 0.9], weight_decay: 0.000001}
+    requested_steps_total: 10000
+    requested_steps_per_class: {"0": 5000, "1": 5000}
+    max_wall_seconds_total: 7200
+    max_wall_seconds_per_class: {"0": 3600, "1": 3600}
+    checkpoint_interval_steps: 100
+    early_stopping: false
+    device: gpu
+  tvae_separate_class:
+    adapter: generators.conditional_tvae.ConditionalTVAE
+    definition: separate_y0_and_y1_models
+    package_version: ctgan==0.12.1
+    batch_size: 500
+    optimizer: {name: Adam, lr: 0.001, weight_decay: 0.00001}
+    requested_steps_total: 20000
+    requested_steps_per_class: {"0": 10000, "1": 10000}
+    max_wall_seconds_total: 7200
+    max_wall_seconds_per_class: {"0": 3600, "1": 3600}
+    checkpoint_interval_steps: 100
+    early_stopping: false
+    device: gpu
+  neural_sequence:
+    adapter: generators.joint_sequence_baseline.NeuralSequenceBaseline
+    architecture: class_conditional_autoregressive_gru
+    hidden_size: 64
+    batch_size: 256
+    optimizer: {name: Adam, lr: 0.001, weight_decay: 0.0}
+    requested_steps: 20000
+    max_wall_seconds: 7200
+    checkpoint_interval_steps: 100
+    validation_reporting_interval_steps: 100
+    early_stopping: false
+    device: gpu
+  cof_seqgen:
+    adapter: generators.cof_seqgen_adapter.CoFSeqGenAdapter
+    architecture: CoF-SeqGen
+    d_model: 128
+    n_layers: 2
+    batch_size: 256
+    optimizer: {name: Adam, lr: 0.001, weight_decay: 0.0}
+    requested_steps: 20000
+    max_wall_seconds: 7200
+    checkpoint_interval_steps: 100
+    validation_reporting_interval_steps: 100
+    early_stopping: false
+    coherence_lambda: 0.0
+    cfg_dropout: 0.15
+    guidance_scale: 2.0
+    diffusion_steps: 50
+    sampling_chunk_size: 256
+    discrete_mask_max: 0.7
+    start_from_mask: true
+    feedback_discrete: true
+    feedback_after: 0.3
+    loss_positions: all_valid
+    device: gpu
+training_budget:
+  unit: baseline_per_seed
+  learned_generator_max_gpu_hours: 2.0
+  ctgan_tvae_class_models_share_baseline_budget: true
+  ctgan_tvae_gpu_hours_per_class: 1.0
+  neural_gpu_hours_total: 2.0
+  cof_gpu_hours_total: 2.0
+  result_based_extension: forbidden
+  result_based_early_stopping: forbidden
+  model_specific_extra_training: forbidden
+checkpointing:
+  progress_interval_rule: min_100_steps_or_10_percent_of_requested_steps
+  writes_are_atomic: true
+  immutable_attempts: true
+  resume_requires_exact_manifest_hashes: true
+  mismatch_creates_new_attempt: true
+statistics:
+  aggregate_requires_all_seeds: [1, 2, 3, 4, 5]
+  partial_seed_results_for_decisions: forbidden
+  effect: baseline_mean_error_minus_cof_mean_error
+  positive_effect_interpretation: CoF_has_lower_error
+  effect_size: Hedges_g
+  confidence_interval: unpaired_bootstrap_95_percent
+  hypothesis_test: Welch_two_sided_t_test
+  sole_primary_endpoint: continuous_association_recovery_error
+  support_diagnostic_bins: [4, 8]
+  c2_primary_family:
+    - ctgan_separate_class
+    - tvae_separate_class
+    - empirical_iid
+  c2_requires_all_comparisons: true
+  c2_decision_thresholds:
+    mean_effect_strictly_greater_than: 0.0
+    holm_adjusted_p_strictly_less_than: 0.05
+    hedges_g_strictly_greater_than: 0.8
+  secondary_holm_family:
+    - neural_sequence
+    - independent_markov
+    - joint_markov
+    - plug_in_hmm
+    - plug_in_hsmm
+  nonsignificant_plugin_interpretation: planned_sample_did_not_detect_a_difference
+  floor_epsilon: 0.000001
+  full_sequence_reference_role: oracle_reference_only
+  invalid_seed_policy: generator_INVALID_no_nan_exclusion
+capacity_preflight:
+  mode: timing_only
+  full_run_authorized: false
+  train_split_only: true
+  max_updates: 500
+  warmup_updates_excluded: 20
+  measured_updates: 480
+  sampling_chunk_size: 256
+  sampling_warmup_chunks_excluded: 1
+  sampling_measured_chunks: 5
+  fixed_overhead_seconds: 600
+  projection_safety_multiplier: 1.15
+  projection_entity_count: 7989
+  projection_requested_updates: 20000
+  maximum_projected_seconds: 7200
+  minimum_gpu_memory_headroom_fraction: 0.20
+  idle_max_memory_used_mib: 1024
+  idle_max_utilization_percent: 5
+  durable_checkpoint_forbidden: true
+  durable_sample_forbidden: true
+  quality_metrics_forbidden: true
+stop_rules:
+  - hard_data_mask_support_contract_failure
+  - fixed_gpu_hour_cap_reached
+  - same_infrastructure_error_three_consecutive_attempts
+  - manifest_hash_mismatch_or_artifact_corruption

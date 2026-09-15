@@ -1,0 +1,16 @@
+schema_version: cof-seqgen-saf-validation-matrix-v1
+model_implementation_version: saf-gated-static-aware-gap-copy-route-v6
+dataset_dir: data/cof_seqgen_saf/canonical/controlled_coupling_joint_semimarkov_v2b_kappa_1_00
+output_root: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_gated_v6_validation
+candidates: [SAF-C0, SAF-U0, SAF-O0, SAF-U1, SAF-O1]
+checkpoint_roots:
+  20260924: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_gated_v6/seed_20260924
+  20260925: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_gated_v6/seed_20260925
+  20260926: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_gated_v6/seed_20260926
+  20260927: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_gated_v6/seed_20260927
+  20260928: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_gated_v6/seed_20260928
+gpu_ids: [1, 2]
+generation_seed: 20261924
+sample_batch_size: 256
+generation_entities: null
+metric_audit_path: artifacts/cof_seqgen_saf/metric_validity_audit_train_only_copy_new_v4_controlled.json

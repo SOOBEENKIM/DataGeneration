@@ -1,0 +1,140 @@
+schema_version: external-sequence-protocol-v1
+status: source_only_not_authorized
+audit_parent_commit: 0564252a43445c1e35ccf0c582b18dd9d4dd7544
+
+frozen_baseline:
+  model_family: existing_CoF_SeqGen_v2_5_non_v3
+  source_commit: 99a445f6dc893a8c2240d950de4f92877cc07f8a
+  model_path: models/cof_seqgen.py
+  model_sha256: caf5fdb3baf367a28c6081a8ba5f4a89e59dacbba2377636acba5c051ae7006e
+  adapter_path: generators/cof_seqgen_adapter.py
+  adapter_sha256: 48e9e1280bc23a27abf0b5f6447f6682e3b846d0d1773fb96d99abcf407dd7f3
+  config_path: configs/benchmark_v2/full_v2_5.yaml
+  config_sha256: 81bc16416f6dad3c23eaf1990c3cb76e5449e74f1ddc634f42d3a897cd3c5bb3
+  architecture_changes_allowed: false
+
+preservation:
+  v2_5_final_complete:
+    path: artifacts/benchmark_v2_5/full/FINAL_COMPLETE.json
+    sha256: e47d46b995cdaa8f564ccb4cca56eeda4e9a17dba43c1ed2ca8c1a954e657d8a
+  v2_5_frozen_manifest:
+    path: data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/data_manifest.json
+    sha256: b2529f00bae2e534f90805db6cebdf7f19ee93117f34f71015bc6753a9223e05
+  v2_8_aggregate_complete:
+    path: artifacts/benchmark_v2_8/candidate_selection/aggregate_attempt_001/AGGREGATE_COMPLETE.json
+    sha256: 58573dfb93ebed71843f286405e205669140b8cc66811ce61deebe808de513e9
+  v3_forensic_evidence:
+    path: docs/benchmark_v2/forensic_v3_attempt_002_evidence.json
+    sha256: e89b6456f5ed404ff9e1fa8ba8fb9f901ade9ced7c4c501fb3b8f66a24f3a538
+
+window:
+  length: 32
+  stride: 32
+  minimum_tail: 16
+  shorter_tail: drop
+  padding: right_zero_with_prefix_valid_mask
+  first_gap: zero_at_each_window_start
+  label: any_fraud_transaction_in_window
+
+split:
+  method: group_stratified_by_retained_window_any_fraud_per_entity
+  entity_fractions:
+    train: 0.70
+    validation: 0.15
+    internal_test: 0.15
+  seed: 20260801
+  leakage_policy: fail_closed_entity_window_transaction
+
+transforms:
+  fit_split: train
+  fit_rows: valid_rows_of_retained_train_windows_only
+  amount:
+    operator: log1p_then_population_zscore
+  gap:
+    bins: 16
+    operator: positive_train_gap_empirical_quantiles
+    last_edge: positive_infinity
+  receiver:
+    vocabulary: train_only_sorted
+    pad_code: 0
+    unk_code: 1
+    validation_and_internal_test_unseen: map_to_unk
+
+datasets:
+  amlsim:
+    development_source:
+      role: transactions_development
+      path: local_data/amlsim/transactions.csv
+      sha256: cc4885da00fd4c6f854aae4e7bc8dd9c35a9b491f5ef871c51c9194ee1e292f7
+      rows: 1323234
+    entity: SENDER_ACCOUNT_ID
+    sort: [TIMESTAMP, TX_ID]
+    timestamp: TIMESTAMP
+    gap_unit: simulation_steps
+    transaction_id: TX_ID
+    receiver: RECEIVER_ACCOUNT_ID
+    amount: TX_AMOUNT
+    fraud_label: IS_FRAUD
+  sparkov:
+    development_source:
+      role: fraudTrain_development
+      path: local_data/sparkov/fraudTrain.csv
+      sha256: fd7139200dbfcbed0b6742bbe05a4f1abce532c4fef20918228a651647a3e75d
+      rows: 1296675
+    public_test:
+      role: locked_temporal_robustness_only
+      path: local_data/sparkov/fraudTest.csv
+      sha256: 12d553ab19440c752d2531ee1af44bb64f12cc3d3839f1649f19e81c230545f0
+      rows: 555719
+      calibration_allowed: false
+      selection_allowed: false
+      current_read_mode: provenance_hash_and_header_only
+    entity: cc_num
+    sort: [trans_date_trans_time, source_row_order]
+    timestamp: trans_date_trans_time
+    gap_unit: seconds
+    transaction_id: trans_num
+    receiver: merchant
+    amount: amt
+    fraud_label: is_fraud
+
+external_thresholds:
+  controlled_benchmark_thresholds_copied: false
+  execution_enabled: false
+  future_preregistration_only:
+    source: train_entities_only
+    cluster_unit: entity
+    bootstrap_replicates: 2000
+    order_statistic_rank: 1901
+    interpolation: none
+    confidence_level: 0.95
+    freeze_before_validation: true
+    families:
+      fidelity:
+        - amount_and_gap_marginal_and_Y_effect
+        - receiver_PMF_and_UNK_rate_by_Y
+        - length_Y_prevalence_support_and_mask
+      coherence:
+        - receiver_repeat_run_and_transition
+        - joint_gap_receiver_by_Y
+        - amount_gap_and_amount_receiver_dependence_by_Y
+        - original_vs_row_shuffle_order_sensitive_delta
+
+row_shuffle_negative_control:
+  fit_and_orientation: train_only
+  selection: validation_only_after_threshold_freeze
+  locked_test_reorientation: forbidden
+  preserve: [entity_Y, length, valid_mask, timestamp_positions, row_marginals]
+  permute_together: [amount, receiver]
+
+prohibited:
+  - gpu_inventory_query
+  - cuda
+  - model_fit
+  - model_sample
+  - external_test_execution
+  - public_fraudTest_calibration_or_selection
+  - threshold_copy_from_controlled_benchmark
+  - architecture_change
+  - execution_authorization_creation
+  - launch_command_creation

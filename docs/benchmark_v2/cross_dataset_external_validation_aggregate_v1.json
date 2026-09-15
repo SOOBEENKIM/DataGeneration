@@ -1,0 +1,107 @@
+{
+  "descriptive_macro_contract": {
+    "datasets_equal_weight": true,
+    "formula": "(amlsim_stored_value + sparkov_stored_value) / 2",
+    "lower_is_better": true,
+    "not_a_selection_or_test_unlock_rule": true
+  },
+  "execution_counts": {
+    "authorization_artifacts_created": 0,
+    "fraudTest_accesses": 0,
+    "gpu_or_cuda_calls": 0,
+    "internal_test_reads": 0,
+    "model_calls": 0,
+    "privacy_calls": 0,
+    "tstr_calls": 0
+  },
+  "input_artifacts": {
+    "amlsim": {
+      "path": "docs/benchmark_v2/amlsim_external_validation_aggregate_forensic_v1.json",
+      "sha256": "5363efdbac2ac2f2a72bc4fdacac23c021cb27af34f106cf24aff1143b1e1197"
+    },
+    "sparkov": {
+      "path": "docs/benchmark_v2/sparkov_external_validation_aggregate_forensic_v1.json",
+      "sha256": "ed6b77280f1f62a9cff3f9d77116effd5f1bc7e4956e2f48b321d795b6c4f524"
+    }
+  },
+  "models": [
+    {
+      "amlsim": {
+        "coherence_max_ratio": 13.739364866756338,
+        "combined_score": 7.808823293878477,
+        "fidelity_max_ratio": 1.8782817210006166
+      },
+      "descriptive_macro": {
+        "coherence_max_ratio": 9.379399863254502,
+        "combined_rank": 1,
+        "combined_score": 5.683385570315916,
+        "fidelity_max_ratio": 1.98737127737733
+      },
+      "model": "empirical_iid",
+      "sparkov": {
+        "coherence_max_ratio": 5.019434859752665,
+        "combined_score": 3.557947846753354,
+        "fidelity_max_ratio": 2.0964608337540436
+      }
+    },
+    {
+      "amlsim": {
+        "coherence_max_ratio": 13.751441564149554,
+        "combined_score": 13.05529835723971,
+        "fidelity_max_ratio": 12.359155150329867
+      },
+      "descriptive_macro": {
+        "coherence_max_ratio": 8.846160086523136,
+        "combined_rank": 2,
+        "combined_score": 10.134434444507264,
+        "fidelity_max_ratio": 11.422708802491389
+      },
+      "model": "ctgan_separate_class",
+      "sparkov": {
+        "coherence_max_ratio": 3.9408786088967207,
+        "combined_score": 7.213570531774816,
+        "fidelity_max_ratio": 10.48626245465291
+      }
+    },
+    {
+      "amlsim": {
+        "coherence_max_ratio": 12.904440760490298,
+        "combined_score": 12.650570037447325,
+        "fidelity_max_ratio": 12.396699314404353
+      },
+      "descriptive_macro": {
+        "coherence_max_ratio": 8.381176751968281,
+        "combined_rank": 3,
+        "combined_score": 10.555601923890324,
+        "fidelity_max_ratio": 12.730027095812368
+      },
+      "model": "cof_seqgen_frozen_non_v3",
+      "sparkov": {
+        "coherence_max_ratio": 3.8579127434462643,
+        "combined_score": 8.460633810333322,
+        "fidelity_max_ratio": 13.06335487722038
+      }
+    },
+    {
+      "amlsim": {
+        "coherence_max_ratio": 13.148912283396186,
+        "combined_score": 10.02263893408993,
+        "fidelity_max_ratio": 6.896365584783675
+      },
+      "descriptive_macro": {
+        "coherence_max_ratio": 221.55975499019553,
+        "combined_rank": 4,
+        "combined_score": 124.67750502972146,
+        "fidelity_max_ratio": 27.795255069247396
+      },
+      "model": "tvae_separate_class",
+      "sparkov": {
+        "coherence_max_ratio": 429.97059769699484,
+        "combined_score": 239.33237112535298,
+        "fidelity_max_ratio": 48.69414455371112
+      }
+    }
+  ],
+  "schema_version": "cross-dataset-external-validation-aggregate-v1",
+  "source_aggregate_only": true
+}

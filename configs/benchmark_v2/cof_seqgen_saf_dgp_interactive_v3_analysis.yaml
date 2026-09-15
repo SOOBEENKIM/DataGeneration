@@ -1,0 +1,18 @@
+schema_version: cof-seqgen-saf-dgp-replication-analysis-v1
+model_implementation_version: saf-interactive-gap-route-v3
+seeds: [20260826, 20260827, 20260828, 20260829, 20260830]
+candidates: [SAF-C0, SAF-U0, SAF-O0, SAF-U1, SAF-O1]
+reports:
+  kappa_0:
+    20260826: artifacts/cof_seqgen_saf/development/gpu_dgp_k0_interactive_v3_validation/seed_20260826/validation_comparison.json
+    20260827: artifacts/cof_seqgen_saf/development/gpu_dgp_k0_interactive_v3_validation/seed_20260827/validation_comparison.json
+    20260828: artifacts/cof_seqgen_saf/development/gpu_dgp_k0_interactive_v3_validation/seed_20260828/validation_comparison.json
+    20260829: artifacts/cof_seqgen_saf/development/gpu_dgp_k0_interactive_v3_validation/seed_20260829/validation_comparison.json
+    20260830: artifacts/cof_seqgen_saf/development/gpu_dgp_k0_interactive_v3_validation/seed_20260830/validation_comparison.json
+  kappa_1:
+    20260826: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_interactive_v3_validation/seed_20260826/validation_comparison.json
+    20260827: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_interactive_v3_validation/seed_20260827/validation_comparison.json
+    20260828: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_interactive_v3_validation/seed_20260828/validation_comparison.json
+    20260829: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_interactive_v3_validation/seed_20260829/validation_comparison.json
+    20260830: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_interactive_v3_validation/seed_20260830/validation_comparison.json
+output_path: artifacts/cof_seqgen_saf/development/dgp_interactive_v3_five_seed_mechanism_analysis.json

@@ -1,0 +1,159 @@
+schema_version: external-confirmatory-internal-test-v1
+status: source_only_not_authorized
+source_base_head: c33eeb11cde9efee8267f04ea5604eaffa9628a8
+
+validation_aggregate_inputs:
+  amlsim:
+    path: docs/benchmark_v2/amlsim_external_validation_aggregate_forensic_v1.json
+    sha256: 5363efdbac2ac2f2a72bc4fdacac23c021cb27af34f106cf24aff1143b1e1197
+  sparkov:
+    path: docs/benchmark_v2/sparkov_external_validation_aggregate_forensic_v1.json
+    sha256: ed6b77280f1f62a9cff3f9d77116effd5f1bc7e4956e2f48b321d795b6c4f524
+
+datasets:
+  amlsim:
+    seed: 31001
+    test_input: data/external_sequence_protocol_v1/frozen/amlsim/attempt_001/internal_test.npz
+    validation_sampling_plan_sha256: 9e36a197c631f108a264d020279b89f940b2f581a7a23b8b67b65807fbfb4a9d
+    train_only_thresholds_sha256: e715b01a9481e7a539c6661126ddeb04570f08318e409911f3f0d06947ca0330
+    public_external_test: not_applicable
+  sparkov:
+    seed: 32001
+    test_input: data/external_sequence_protocol_v1/frozen/sparkov/attempt_001/internal_test.npz
+    validation_sampling_plan_sha256: 665c990d78e01bd31844ca5433f177017955b35915941080bc0648deb957e247
+    train_only_thresholds_sha256: c091c874e8a32c32eb9516e7d56c5946e15342a6837806f8f3809c7972424efb
+    sparkov_fraudTest_access: forbidden_before_path_resolution
+
+models:
+  - empirical_iid
+  - ctgan_separate_class
+  - tvae_separate_class
+  - cof_seqgen_frozen_non_v3
+
+validation_attempt_reuse:
+  amlsim:
+    empirical_iid: attempt_002
+    ctgan_separate_class: attempt_001
+    tvae_separate_class: attempt_002
+    cof_seqgen_frozen_non_v3: attempt_001
+  sparkov:
+    empirical_iid: attempt_002
+    ctgan_separate_class: attempt_001
+    tvae_separate_class: attempt_001
+    cof_seqgen_frozen_non_v3: attempt_001
+
+frozen_contract:
+  model_training_calls: 0
+  transform_fit_calls: 0
+  threshold_fit_calls: 0
+  validation_based_selection_calls: 0
+  seed_changes_allowed: false
+  model_or_hyperparameter_changes_allowed: false
+  evaluator_or_formula_changes_allowed: false
+  train_only_transform_reuse_required: true
+  train_only_threshold_reuse_required: true
+  validation_terminal_and_checkpoint_hash_reuse_required: true
+  conditioning_plan:
+    source: exact_internal_test_y_and_valid_lengths
+    derivation: deterministic_order_preserving_no_fit
+    shared_by_all_four_models: true
+    hash_before_first_job: required
+
+evaluation:
+  split: internal_test
+  # Validation used seed+1 for the single frozen generation call.  Reuse that
+  # sampling seed exactly; only the preregistered conditioning plan changes.
+  sample_seed_offset: 1
+  fidelity_metrics:
+    - amount_ks_y0
+    - amount_ks_y1
+    - gap_total_variation_y0
+    - gap_total_variation_y1
+    - receiver_total_variation_y0
+    - receiver_total_variation_y1
+  coherence_metrics:
+    - short_gap_receiver_repeat_error_y0
+    - short_gap_receiver_repeat_error_y1
+  combined_score:
+    fidelity_weight: 0.5
+    coherence_weight: 0.5
+    formula: 0.5*fidelity_max_ratio+0.5*coherence_max_ratio
+    lower_is_better: true
+  thresholds: reuse_validation_frozen_train_only_thresholds
+  all_models_reported_without_test_selection: true
+  partial_or_invalid_result_exclusion: forbidden
+
+execution_plan:
+  job_count: 8
+  attempts: attempt_001_only
+  one_execution_per_dataset_model: true
+  retries: forbidden
+  early_stopping: forbidden
+  tuning_or_sweep: forbidden
+  artifact_root: artifacts/external_confirmatory_internal_test_v1
+  append_only: true
+  authorization_required: true
+  waves:
+    - wave_id: cpu_iid
+      jobs: [amlsim/empirical_iid, sparkov/empirical_iid]
+      parallel: true
+      terminal_barrier_after: true
+    - wave_id: amlsim_ctgan_cof
+      jobs: [amlsim/ctgan_separate_class, amlsim/cof_seqgen_frozen_non_v3]
+      parallel_on_distinct_gpus: true
+      terminal_barrier_after: true
+    - wave_id: amlsim_tvae
+      jobs: [amlsim/tvae_separate_class]
+      parallel: false
+      terminal_barrier_after: true
+    - wave_id: sparkov_ctgan_cof
+      jobs: [sparkov/ctgan_separate_class, sparkov/cof_seqgen_frozen_non_v3]
+      parallel_on_distinct_gpus: true
+      terminal_barrier_after: true
+    - wave_id: sparkov_tvae
+      jobs: [sparkov/tvae_separate_class]
+      parallel: false
+      terminal_barrier_after: true
+
+authorization_scope_required:
+  allowed:
+    - restore_hash_bound_validation_generator_state
+    - read_one_hash_bound_internal_test_npz_per_dataset_model_job
+    - derive_shared_internal_test_y_length_conditioning_plan_without_fit
+    - generate_once_per_dataset_model
+    - evaluate_frozen_fidelity_and_coherence_once
+    - write_append_only_attempt_and_final_aggregate
+  required_hash_bindings:
+    - source_commit_and_relevant_source
+    - protocol_config
+    - both_validation_aggregate_inputs
+    - frozen_bundle_manifest_and_internal_test_file
+    - train_only_transform_state
+    - train_only_threshold_state
+    - validation_model_checkpoint_or_empirical_fit_state
+    - validation_terminal_and_artifact_index
+    - evaluator_source
+    - per_dataset_test_conditioning_plan
+  forbidden:
+    - authorizationless_execution
+    - training_or_refit
+    - validation_or_test_calibration
+    - model_checkpoint_or_hyperparameter_change
+    - seed_change
+    - retry
+    - sweep
+    - internal_test_model_selection
+    - Sparkov_fraudTest_path_resolution_or_read
+    - raw_csv_read
+    - TSTR
+    - privacy
+    - existing_artifact_overwrite_delete_move
+
+current_execution_counts:
+  authorization_artifacts_created: 0
+  gpu_or_cuda_calls: 0
+  model_calls: 0
+  internal_test_reads: 0
+  sparkov_fraudTest_accesses: 0
+  tstr_calls: 0
+  privacy_calls: 0

@@ -1,0 +1,202 @@
+schema_version: cof-seqgen-saf-preexecution-source-protocol-v2
+mode: METRIC_AUDIT_BASELINE_COMPATIBILITY_AND_MODEL_SOURCE_IMPLEMENTATION
+family: cof_seqgen_saf
+display_name: CoFSeqGen-SAF
+expansion: Support-Aligned Autoregressive Factorization
+current_state: PREEXECUTION_SOURCE_IMPLEMENTED_METRIC_AUDIT_COMPLETE
+
+research_question: >-
+  Does support-aligned gap modeling with explicit gap-to-mark dependency routing
+  improve temporal-relational fidelity over current sequential tabular generators
+  while retaining marginal fidelity, utility, and privacy?
+
+family_separation:
+  h1_permanent_state: STOP_COF_HCMTTPP_V2_FAMILY_H1_GATE_FAIL
+  h1_artifacts_mutable: false
+  d1_family: cof_zdh_v3
+  d1_status: SPECIFIED_NOT_IMPLEMENTED
+  d1_role: PLANNED_DECODER_ABLATION_REFERENCE_ONLY
+  d1_source_config: configs/benchmark_v2/cof_zdh_v3_d1_source_only.yaml
+
+hypotheses:
+  - id: SAF-H1
+    statement: support_alignment_improves_gap_fidelity
+    status: UNTESTED
+  - id: SAF-H2
+    statement: ordered_hazard_outperforms_unordered_categorical_gap_decoding
+    status: UNTESTED
+  - id: SAF-H3
+    statement: gap_to_mark_routing_improves_joint_dependency_recovery
+    status: UNTESTED
+  - id: SAF-H4
+    statement: full_cofseqgen_saf_outperforms_current_sequential_generators_on_temporal_relational_fidelity
+    status: UNTESTED
+  - id: SAF-H5
+    statement: marginal_fidelity_utility_and_privacy_are_noninferior
+    status: UNTESTED
+
+canonical_data_contract:
+  schema_version: cofseqgen-saf-canonical-entity-sequence-v1
+  frames: [static_context, events, entity_splits]
+  split_before_preprocessing: true
+  split_unit: entity_id
+  split_roles: [train, validation, test]
+  default_split_fractions: {train: 0.70, validation: 0.15, test: 0.15}
+  split_stratifiers:
+    - declared_static_context_when_feasible
+    - raw_sequence_length_coarse_bin
+  raw_sequence_length_bins: [1, 2, 4, 8, 16, 32, 64, 128, positive_infinity]
+  rare_stratum_policy: DETERMINISTIC_HIERARCHICAL_MERGE_BEFORE_SPLIT
+  event_columns:
+    - entity_id
+    - event_id
+    - event_index
+    - timestamp
+    - gap
+    - receiver_or_mark
+    - amount_or_numeric_value
+  auxiliary_categorical_columns: DECLARED_PER_DATASET
+  auxiliary_numeric_columns: DECLARED_PER_DATASET
+  static_context_columns: DECLARED_PER_DATASET_OPTIONAL
+  static_context_required: false
+  fraud_label_required: false
+  first_event_gap: MISSING_NOT_ZERO
+  simultaneous_nonfirst_gap_zero_allowed: true
+  timestamp_order: NONDECREASING_WITHIN_ENTITY
+  transform_fit_split: train
+  train_only_transform_state_required:
+    - gap_support_or_bins
+    - categorical_vocabulary
+    - numerical_normalization
+    - quantiles
+  reserved_category_codes: {PAD: 0, UNK: 1, MISSING: 2, FIRST_LEARNED: 3}
+  entity_id_model_input: FORBIDDEN
+  padding_unknown_and_source_missing_must_remain_distinct: true
+
+planned_model_factorization:
+  semantics: NON_ANTICIPATIVE_NOT_CAUSAL_EFFECT_IDENTIFICATION
+  history: PAST_VALID_EVENTS_ONLY
+  within_event_order:
+    - gap_given_history_and_optional_static_context
+    - mark_given_history_optional_static_context_and_current_gap
+    - numeric_value_given_history_optional_static_context_current_gap_and_mark
+  sequence_termination: FUTURE_MODEL_COMPONENT_UNIMPLEMENTED
+  implementation_status: CORE_AND_FIVE_ABLATIONS_IMPLEMENTED_CPU_TESTED_NOT_TRAINED
+  training_route: OBSERVED_CURRENT_GAP_AND_MARK_TEACHER_FORCED
+  generation_route: GENERATED_CURRENT_GAP_AND_MARK
+  first_gap_likelihood: MASKED
+
+datasets:
+  - id: controlled_coupling_dgp
+    role: mechanism_identification
+    acquisition_state: REGISTERED_GENERATED_AND_CANONICAL_MATERIALIZED
+    raw_body_read_count: 3
+  - id: amlsim
+    role: complex_financial_simulation
+    acquisition_state: ACQUIRED_AND_CANONICAL_MATERIALIZED
+    raw_body_read_count: 2
+  - id: sparkov
+    role: external_financial_simulation
+    acquisition_state: ACQUIRED_FRAUDTRAIN_AND_CANONICAL_MATERIALIZED
+    raw_body_read_count: 1
+  - id: berka
+    role: real_irregular_financial_sequences
+    acquisition_state: ACQUIRED_PINNED_REVISION_AND_CANONICAL_MATERIALIZED
+    raw_body_read_count: 3
+  - id: hm
+    role: real_irregular_retail_sequences
+    acquisition_state: ACQUIRED_HASH_PINNED_CSV_ONLY_AND_CANONICAL_MATERIALIZED
+    raw_body_read_count: 4
+  - id: citi_bike
+    role: optional_real_cross_domain_robustness
+    acquisition_state: ACQUIRED_OFFICIAL_ARCHIVE_AND_CANONICAL_MATERIALIZED
+    raw_body_read_count: 1
+
+planned_baselines:
+  - tabularargn
+  - tabdit
+  - cpar
+  - realtabformer
+  - ctgan
+  - tvae
+  - gaussian_copula
+  - empirical_sequence_sampler
+  - non_v3_cof
+  - ccmtpp_c1
+  - hcmttpp_h1
+
+endpoint_policy:
+  primary_family: temporal_relational_fidelity
+  required_noninferiority_families: [marginal_fidelity, utility, privacy]
+  exact_metrics_status: FIXED_BY_TRAIN_ONLY_VALIDITY_AUDIT
+  metric_config: configs/benchmark_v2/cof_seqgen_saf_metric_audit.yaml
+  numeric_margins_status: MARGINAL_AND_STRUCTURAL_Q95_FROM_31_TRAIN_ONLY_PSEUDO_SPLITS
+  utility_decision_status: FROZEN_TSTR_TASKS_PAIRED_BASELINE_COMPARISON
+  privacy_decision_status: FROZEN_COPY_EXPOSURE_GUARDS_AND_PAIRED_BASELINE_COMPARISON
+  metric_audit_artifact: artifacts/cof_seqgen_saf/metric_validity_audit_train_only.json
+  metric_audit_artifact_sha256: 4c0cec50af9dceccad8a709cbf7393aa1523e8f1ff55e8f43db4d65638395ce4
+  candidate_output_accessed_during_audit: false
+  result_based_endpoint_switching: FORBIDDEN
+  held_out_test_during_development: FORBIDDEN
+
+implementation:
+  status: PREEXECUTION_SOURCE_IMPLEMENTED_METRIC_AUDIT_COMPLETE
+  canonical_contract_path: data/cof_seqgen_saf_contract.py
+  contract_test_path: tests/test_cof_seqgen_saf_contract.py
+  adapter_path: data/cof_seqgen_saf_adapters.py
+  adapter_test_path: tests/test_cof_seqgen_saf_adapters.py
+  dataset_config_path: configs/benchmark_v2/cof_seqgen_saf_datasets.yaml
+  materializer_path: scripts/materialize_cof_seqgen_saf.py
+  verifier_path: scripts/verify_cof_seqgen_saf_data.py
+  model_path: models/cof_seqgen_saf.py
+  model_config_path: configs/benchmark_v2/cof_seqgen_saf_model.yaml
+  model_test_path: tests/test_cof_seqgen_saf_model.py
+  metric_path: benchmarks/cof_seqgen_saf_metrics.py
+  metric_config_path: configs/benchmark_v2/cof_seqgen_saf_metric_audit.yaml
+  metric_test_path: tests/test_cof_seqgen_saf_metric_audit.py
+  metric_audit_runner_path: scripts/audit_cof_seqgen_saf_metrics.py
+  metric_audit_artifact_path: artifacts/cof_seqgen_saf/metric_validity_audit_train_only.json
+  baseline_contract_path: generators/cof_seqgen_saf_baselines.py
+  baseline_config_path: configs/benchmark_v2/cof_seqgen_saf_baseline_compatibility.yaml
+  baseline_test_path: tests/test_cof_seqgen_saf_baseline_compatibility.py
+  runner_path: null
+  acquisition_config_path: configs/benchmark_v2/cof_seqgen_saf_acquisition.yaml
+  download_script_path: scripts/acquire_cof_seqgen_saf.py
+  runtime_root: data/cof_seqgen_saf
+
+documents:
+  protocol: docs/benchmark_v2/preregistered_cof_seqgen_saf_source_protocol.md
+  data_collection_report: docs/benchmark_v2/cof_seqgen_saf_data_collection_report_2026_08_26.md
+  implementation_report: docs/benchmark_v2/cof_seqgen_saf_preexecution_implementation_report_2026_08_26.md
+
+safety:
+  data_download_authorized: true
+  raw_data_body_read_authorized: true
+  preprocessing_authorized: true
+  materialization_authorized: true
+  canonical_test_structural_materialization_authorized: true
+  metric_implementation_authorized: true
+  train_only_metric_audit_authorized: true
+  train_only_privacy_metric_audit_authorized: true
+  baseline_compatibility_design_authorized: true
+  model_implementation_authorized: true
+  cpu_structural_unit_sampling_authorized: true
+  baseline_install_authorized: false
+  runner_implementation_authorized: false
+  gpu_query_authorized: false
+  cuda_authorized: false
+  fit_authorized: false
+  sample_authorized: false
+  evaluation_authorized: false
+  validation_authorized: false
+  test_authorized: false
+  privacy_authorized: false
+  claim_authorized: false
+
+next_boundary_requires_separate_request:
+  - baseline_installation
+  - external_baseline_wrapper_implementation
+  - canonical_tensorizer_and_training_runner
+  - gpu_execution
+  - model_fit_and_candidate_sampling
+  - validation_or_test_evaluation

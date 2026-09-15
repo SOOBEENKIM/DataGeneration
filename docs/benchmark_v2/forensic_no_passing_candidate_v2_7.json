@@ -1,0 +1,650 @@
+{
+  "analysis_base_head": "fbaaac55cd2506e806e22bb7c26cdbaba1ed2997",
+  "candidate_rows": [
+    {
+      "all_five_guards_pass": false,
+      "amount_abs_standardized_label_effect": 0.15739738490009872,
+      "amount_abs_standardized_label_effect_check": "FAIL",
+      "amount_abs_standardized_label_effect_delta_vs_tvae_selected": 0.1274595730991902,
+      "amount_abs_standardized_label_effect_ratio_to_threshold": 4.327748627666374,
+      "amount_abs_standardized_label_effect_threshold": 0.0363693454591819,
+      "amount_ks": 0.15994737794221647,
+      "amount_ks_check": "FAIL",
+      "amount_ks_delta_vs_tvae_selected": 0.15504741545189138,
+      "amount_ks_ratio_to_threshold": 26.302210844112093,
+      "amount_ks_threshold": 0.006081138155655141,
+      "candidate_id": "ctgan_v27_c00_frozen_standard",
+      "candidate_result_sha256": "bccb0143ca6bd3411284443c3b5cb85d8bdcb9cf81d844ec479305fcf7d1dc51",
+      "checkpoint_sha256": "7e9de7e609ad48e8de687426240fe4fd0a47b5d2d0abcbc70a4edb58f182d10d",
+      "evaluation_sha256": "2698a443b81327080c7cbd34f7cd1ee5feae80d6d74cb067b62d4d83f55736b6",
+      "failed_guards": [
+        "amount_ks",
+        "gap_ks",
+        "amount_abs_standardized_label_effect",
+        "receiver_max_abs_signed_frequency"
+      ],
+      "gap_abs_standardized_label_effect": 0.04132540101414345,
+      "gap_abs_standardized_label_effect_check": "PASS",
+      "gap_abs_standardized_label_effect_delta_vs_tvae_selected": 0.039950335593403205,
+      "gap_abs_standardized_label_effect_ratio_to_threshold": 0.8018040016004888,
+      "gap_abs_standardized_label_effect_threshold": 0.051540527275560376,
+      "gap_ks": 0.042130956808560494,
+      "gap_ks_check": "FAIL",
+      "gap_ks_delta_vs_tvae_selected": 0.036361867057964625,
+      "gap_ks_ratio_to_threshold": 6.595449066446775,
+      "gap_ks_threshold": 0.006387882975686154,
+      "largest_failure_component": "amount_ks",
+      "largest_failure_ratio": 26.302210844112093,
+      "model_id": "ctgan_separate_class",
+      "receiver_max_abs_signed_frequency": 0.029209442517897546,
+      "receiver_max_abs_signed_frequency_check": "FAIL",
+      "receiver_max_abs_signed_frequency_delta_vs_tvae_selected": 0.022415049456733796,
+      "receiver_max_abs_signed_frequency_ratio_to_threshold": 1.4604721258948772,
+      "receiver_max_abs_signed_frequency_threshold": 0.02,
+      "source_kind": "frozen_control",
+      "status": "FAIL"
+    },
+    {
+      "all_five_guards_pass": false,
+      "amount_abs_standardized_label_effect": 0.008727642444275839,
+      "amount_abs_standardized_label_effect_check": "PASS",
+      "amount_abs_standardized_label_effect_delta_vs_tvae_selected": -0.02121016935663269,
+      "amount_abs_standardized_label_effect_ratio_to_threshold": 0.23997249150582214,
+      "amount_abs_standardized_label_effect_threshold": 0.0363693454591819,
+      "amount_ks": 0.003227693136008347,
+      "amount_ks_check": "PASS",
+      "amount_ks_delta_vs_tvae_selected": -0.0016722693543167466,
+      "amount_ks_ratio_to_threshold": 0.5307712229834411,
+      "amount_ks_threshold": 0.006081138155655141,
+      "candidate_id": "ctgan_v27_c01_amount_quantile_inverse",
+      "candidate_result_sha256": "e31d1008317729864f659dd94aa3fa66271f4aae1c0deb832548786700a191c1",
+      "checkpoint_sha256": "7e9de7e609ad48e8de687426240fe4fd0a47b5d2d0abcbc70a4edb58f182d10d",
+      "evaluation_sha256": "77a3a1891af4c8a9748997ec5d55cdef2d7b16714305f08f066dd4ead1415d4a",
+      "failed_guards": [
+        "gap_ks",
+        "receiver_max_abs_signed_frequency"
+      ],
+      "gap_abs_standardized_label_effect": 0.03264708979304742,
+      "gap_abs_standardized_label_effect_check": "PASS",
+      "gap_abs_standardized_label_effect_delta_vs_tvae_selected": 0.031272024372307174,
+      "gap_abs_standardized_label_effect_ratio_to_threshold": 0.633425607357496,
+      "gap_abs_standardized_label_effect_threshold": 0.051540527275560376,
+      "gap_ks": 0.04114196583960961,
+      "gap_ks_check": "FAIL",
+      "gap_ks_delta_vs_tvae_selected": 0.03537287608901374,
+      "gap_ks_ratio_to_threshold": 6.440626103547293,
+      "gap_ks_threshold": 0.006387882975686154,
+      "largest_failure_component": "gap_ks",
+      "largest_failure_ratio": 6.440626103547293,
+      "model_id": "ctgan_separate_class",
+      "receiver_max_abs_signed_frequency": 0.026672031008210265,
+      "receiver_max_abs_signed_frequency_check": "FAIL",
+      "receiver_max_abs_signed_frequency_delta_vs_tvae_selected": 0.019877637947046514,
+      "receiver_max_abs_signed_frequency_ratio_to_threshold": 1.3336015504105132,
+      "receiver_max_abs_signed_frequency_threshold": 0.02,
+      "source_kind": "stored_v2_7_evaluation",
+      "status": "FAIL"
+    },
+    {
+      "all_five_guards_pass": false,
+      "amount_abs_standardized_label_effect": 0.14186391321617203,
+      "amount_abs_standardized_label_effect_check": "FAIL",
+      "amount_abs_standardized_label_effect_delta_vs_tvae_selected": 0.1119261014152635,
+      "amount_abs_standardized_label_effect_ratio_to_threshold": 3.9006452116491612,
+      "amount_abs_standardized_label_effect_threshold": 0.0363693454591819,
+      "amount_ks": 0.15925435076425964,
+      "amount_ks_check": "FAIL",
+      "amount_ks_delta_vs_tvae_selected": 0.15435438827393455,
+      "amount_ks_ratio_to_threshold": 26.18824744446258,
+      "amount_ks_threshold": 0.006081138155655141,
+      "candidate_id": "ctgan_v27_c02_categorical_logit",
+      "candidate_result_sha256": "ea18683a0453f00e15a1488985d9bccdac7d585176e26db76c1d0c3e1892e83a",
+      "checkpoint_sha256": "7e9de7e609ad48e8de687426240fe4fd0a47b5d2d0abcbc70a4edb58f182d10d",
+      "evaluation_sha256": "8447b6bb2bac0adee94bb96644631b3281db3d8419f103ef758bc2b0eb54650d",
+      "failed_guards": [
+        "amount_ks",
+        "gap_ks",
+        "amount_abs_standardized_label_effect",
+        "receiver_max_abs_signed_frequency"
+      ],
+      "gap_abs_standardized_label_effect": 0.046268331551648126,
+      "gap_abs_standardized_label_effect_check": "PASS",
+      "gap_abs_standardized_label_effect_delta_vs_tvae_selected": 0.04489326613090788,
+      "gap_abs_standardized_label_effect_ratio_to_threshold": 0.8977077650811649,
+      "gap_abs_standardized_label_effect_threshold": 0.051540527275560376,
+      "gap_ks": 0.04502505669664836,
+      "gap_ks_check": "FAIL",
+      "gap_ks_delta_vs_tvae_selected": 0.03925596694605249,
+      "gap_ks_ratio_to_threshold": 7.048509947352627,
+      "gap_ks_threshold": 0.006387882975686154,
+      "largest_failure_component": "amount_ks",
+      "largest_failure_ratio": 26.18824744446258,
+      "model_id": "ctgan_separate_class",
+      "receiver_max_abs_signed_frequency": 0.028411380073218508,
+      "receiver_max_abs_signed_frequency_check": "FAIL",
+      "receiver_max_abs_signed_frequency_delta_vs_tvae_selected": 0.021616987012054757,
+      "receiver_max_abs_signed_frequency_ratio_to_threshold": 1.4205690036609253,
+      "receiver_max_abs_signed_frequency_threshold": 0.02,
+      "source_kind": "stored_v2_7_evaluation",
+      "status": "FAIL"
+    },
+    {
+      "all_five_guards_pass": false,
+      "amount_abs_standardized_label_effect": 0.0959392814885709,
+      "amount_abs_standardized_label_effect_check": "FAIL",
+      "amount_abs_standardized_label_effect_delta_vs_tvae_selected": 0.06600146968766236,
+      "amount_abs_standardized_label_effect_ratio_to_threshold": 2.637916087773579,
+      "amount_abs_standardized_label_effect_threshold": 0.0363693454591819,
+      "amount_ks": 0.07704704580827831,
+      "amount_ks_check": "FAIL",
+      "amount_ks_delta_vs_tvae_selected": 0.07214708331795322,
+      "amount_ks_ratio_to_threshold": 12.669839730023002,
+      "amount_ks_threshold": 0.006081138155655141,
+      "candidate_id": "tvae_v27_c00_frozen_temperature_0_75",
+      "candidate_result_sha256": "3146d3470a0398acae39e3f0bbc559b52bb2f36d86876ed5bbe11f7d0f907a56",
+      "checkpoint_sha256": "6f5263a5a40d9513342b33a823a02769bab65f6e1a5bd38c814b87d771a2947c",
+      "evaluation_sha256": "2698a443b81327080c7cbd34f7cd1ee5feae80d6d74cb067b62d4d83f55736b6",
+      "failed_guards": [
+        "amount_ks",
+        "gap_ks",
+        "amount_abs_standardized_label_effect"
+      ],
+      "gap_abs_standardized_label_effect": 0.0012802996717590162,
+      "gap_abs_standardized_label_effect_check": "PASS",
+      "gap_abs_standardized_label_effect_delta_vs_tvae_selected": -9.476574898122786e-05,
+      "gap_abs_standardized_label_effect_ratio_to_threshold": 0.024840639772928982,
+      "gap_abs_standardized_label_effect_threshold": 0.051540527275560376,
+      "gap_ks": 0.007007139808880958,
+      "gap_ks_check": "FAIL",
+      "gap_ks_delta_vs_tvae_selected": 0.0012380500582850895,
+      "gap_ks_ratio_to_threshold": 1.0969424198207522,
+      "gap_ks_threshold": 0.006387882975686154,
+      "largest_failure_component": "amount_ks",
+      "largest_failure_ratio": 12.669839730023002,
+      "model_id": "tvae_separate_class",
+      "receiver_max_abs_signed_frequency": 0.005332414120450629,
+      "receiver_max_abs_signed_frequency_check": "PASS",
+      "receiver_max_abs_signed_frequency_delta_vs_tvae_selected": -0.0014619789407131212,
+      "receiver_max_abs_signed_frequency_ratio_to_threshold": 0.26662070602253146,
+      "receiver_max_abs_signed_frequency_threshold": 0.02,
+      "source_kind": "frozen_control",
+      "status": "FAIL"
+    },
+    {
+      "all_five_guards_pass": true,
+      "amount_abs_standardized_label_effect": 0.02993781180090853,
+      "amount_abs_standardized_label_effect_check": "PASS",
+      "amount_abs_standardized_label_effect_delta_vs_tvae_selected": 0.0,
+      "amount_abs_standardized_label_effect_ratio_to_threshold": 0.8231605882076811,
+      "amount_abs_standardized_label_effect_threshold": 0.0363693454591819,
+      "amount_ks": 0.004899962490325094,
+      "amount_ks_check": "PASS",
+      "amount_ks_delta_vs_tvae_selected": 0.0,
+      "amount_ks_ratio_to_threshold": 0.8057640469438084,
+      "amount_ks_threshold": 0.006081138155655141,
+      "candidate_id": "tvae_v27_c01_amount_inverse_decoder",
+      "candidate_result_sha256": "5c65e3bd0e0331c95af4fd026bc91008253b06e90414bc54a1cb0d2bba0137c0",
+      "checkpoint_sha256": "6f5263a5a40d9513342b33a823a02769bab65f6e1a5bd38c814b87d771a2947c",
+      "evaluation_sha256": "56dc7155791440369f4fc23ef791f916cc86417603d7091730efcdd8038581b2",
+      "failed_guards": [],
+      "gap_abs_standardized_label_effect": 0.001375065420740244,
+      "gap_abs_standardized_label_effect_check": "PASS",
+      "gap_abs_standardized_label_effect_delta_vs_tvae_selected": 0.0,
+      "gap_abs_standardized_label_effect_ratio_to_threshold": 0.026679304489620078,
+      "gap_abs_standardized_label_effect_threshold": 0.051540527275560376,
+      "gap_ks": 0.005769089750595868,
+      "gap_ks_check": "PASS",
+      "gap_ks_delta_vs_tvae_selected": 0.0,
+      "gap_ks_ratio_to_threshold": 0.9031301563529631,
+      "gap_ks_threshold": 0.006387882975686154,
+      "largest_failure_component": null,
+      "largest_failure_ratio": 0.0,
+      "model_id": "tvae_separate_class",
+      "receiver_max_abs_signed_frequency": 0.00679439306116375,
+      "receiver_max_abs_signed_frequency_check": "PASS",
+      "receiver_max_abs_signed_frequency_delta_vs_tvae_selected": 0.0,
+      "receiver_max_abs_signed_frequency_ratio_to_threshold": 0.3397196530581875,
+      "receiver_max_abs_signed_frequency_threshold": 0.02,
+      "source_kind": "stored_v2_7_evaluation",
+      "status": "PASS"
+    },
+    {
+      "all_five_guards_pass": false,
+      "amount_abs_standardized_label_effect": 0.07872742922673624,
+      "amount_abs_standardized_label_effect_check": "FAIL",
+      "amount_abs_standardized_label_effect_delta_vs_tvae_selected": 0.048789617425827714,
+      "amount_abs_standardized_label_effect_ratio_to_threshold": 2.164664451140418,
+      "amount_abs_standardized_label_effect_threshold": 0.0363693454591819,
+      "amount_ks": 0.07706022013997049,
+      "amount_ks_check": "FAIL",
+      "amount_ks_delta_vs_tvae_selected": 0.0721602576496454,
+      "amount_ks_ratio_to_threshold": 12.672006155345855,
+      "amount_ks_threshold": 0.006081138155655141,
+      "candidate_id": "tvae_v27_c02_bounded_temperature",
+      "candidate_result_sha256": "4d4c98d9c33ee122203034d46e277fec2ea2b71fff2820fc91852168c7775d97",
+      "checkpoint_sha256": "6f5263a5a40d9513342b33a823a02769bab65f6e1a5bd38c814b87d771a2947c",
+      "evaluation_sha256": "a840cdb4ee2e38213633e6cff2c1ca6a16d6df75864d0cd06cbcb6d6f67ff4a5",
+      "failed_guards": [
+        "amount_ks",
+        "gap_ks",
+        "amount_abs_standardized_label_effect"
+      ],
+      "gap_abs_standardized_label_effect": 0.016557311731001098,
+      "gap_abs_standardized_label_effect_check": "PASS",
+      "gap_abs_standardized_label_effect_delta_vs_tvae_selected": 0.015182246310260853,
+      "gap_abs_standardized_label_effect_ratio_to_threshold": 0.3212483962858542,
+      "gap_abs_standardized_label_effect_threshold": 0.051540527275560376,
+      "gap_ks": 0.00643646852913321,
+      "gap_ks_check": "FAIL",
+      "gap_ks_delta_vs_tvae_selected": 0.000667378778537342,
+      "gap_ks_ratio_to_threshold": 1.0076058928493188,
+      "gap_ks_threshold": 0.006387882975686154,
+      "largest_failure_component": "amount_ks",
+      "largest_failure_ratio": 12.672006155345855,
+      "model_id": "tvae_separate_class",
+      "receiver_max_abs_signed_frequency": 0.004956258896090771,
+      "receiver_max_abs_signed_frequency_check": "PASS",
+      "receiver_max_abs_signed_frequency_delta_vs_tvae_selected": -0.0018381341650729795,
+      "receiver_max_abs_signed_frequency_ratio_to_threshold": 0.24781294480453853,
+      "receiver_max_abs_signed_frequency_threshold": 0.02,
+      "source_kind": "stored_v2_7_evaluation",
+      "status": "FAIL"
+    },
+    {
+      "all_five_guards_pass": false,
+      "amount_abs_standardized_label_effect": 0.03831363135119061,
+      "amount_abs_standardized_label_effect_check": "FAIL",
+      "amount_abs_standardized_label_effect_delta_vs_tvae_selected": 0.008375819550282083,
+      "amount_abs_standardized_label_effect_ratio_to_threshold": 1.0534594688868082,
+      "amount_abs_standardized_label_effect_threshold": 0.0363693454591819,
+      "amount_ks": 0.028220657842463193,
+      "amount_ks_check": "FAIL",
+      "amount_ks_delta_vs_tvae_selected": 0.0233206953521381,
+      "amount_ks_ratio_to_threshold": 4.64068684514583,
+      "amount_ks_threshold": 0.006081138155655141,
+      "candidate_id": "cof_v27_c00_frozen_variance_residual",
+      "candidate_result_sha256": "d68a78c228520a3edaffae3dfe076c7d59e446575c576905d21f7f53bc639fac",
+      "checkpoint_sha256": "7ce44721cadffef21ade3bf1884421c304f73ea9eff1e9bfb3ca2d9e63cc0c29",
+      "evaluation_sha256": "2698a443b81327080c7cbd34f7cd1ee5feae80d6d74cb067b62d4d83f55736b6",
+      "failed_guards": [
+        "amount_ks",
+        "gap_ks",
+        "amount_abs_standardized_label_effect",
+        "gap_abs_standardized_label_effect"
+      ],
+      "gap_abs_standardized_label_effect": 0.25894890573252216,
+      "gap_abs_standardized_label_effect_check": "FAIL",
+      "gap_abs_standardized_label_effect_delta_vs_tvae_selected": 0.25757384031178193,
+      "gap_abs_standardized_label_effect_ratio_to_threshold": 5.0241803765036614,
+      "gap_abs_standardized_label_effect_threshold": 0.051540527275560376,
+      "gap_ks": 0.02244017136797355,
+      "gap_ks_check": "FAIL",
+      "gap_ks_delta_vs_tvae_selected": 0.01667108161737768,
+      "gap_ks_ratio_to_threshold": 3.512927749832978,
+      "gap_ks_threshold": 0.006387882975686154,
+      "largest_failure_component": "gap_abs_standardized_label_effect",
+      "largest_failure_ratio": 5.0241803765036614,
+      "model_id": "cof_seqgen",
+      "receiver_max_abs_signed_frequency": 0.01810577260056522,
+      "receiver_max_abs_signed_frequency_check": "PASS",
+      "receiver_max_abs_signed_frequency_delta_vs_tvae_selected": 0.011311379539401471,
+      "receiver_max_abs_signed_frequency_ratio_to_threshold": 0.9052886300282611,
+      "receiver_max_abs_signed_frequency_threshold": 0.02,
+      "source_kind": "frozen_control",
+      "status": "FAIL"
+    },
+    {
+      "all_five_guards_pass": false,
+      "amount_abs_standardized_label_effect": 0.004578512140862445,
+      "amount_abs_standardized_label_effect_check": "PASS",
+      "amount_abs_standardized_label_effect_delta_vs_tvae_selected": -0.025359299660046082,
+      "amount_abs_standardized_label_effect_ratio_to_threshold": 0.12588931923454624,
+      "amount_abs_standardized_label_effect_threshold": 0.0363693454591819,
+      "amount_ks": 0.003925903617421178,
+      "amount_ks_check": "PASS",
+      "amount_ks_delta_vs_tvae_selected": -0.0009740588729039157,
+      "amount_ks_ratio_to_threshold": 0.64558698009028,
+      "amount_ks_threshold": 0.006081138155655141,
+      "candidate_id": "cof_v27_c01_empirical_residual",
+      "candidate_result_sha256": "2edba78d3e1d31ef3fab345b93f0c303484fc256ff1db8d71b82445bbf4722bb",
+      "checkpoint_sha256": "7ce44721cadffef21ade3bf1884421c304f73ea9eff1e9bfb3ca2d9e63cc0c29",
+      "evaluation_sha256": "bfa153860fa0ceb187454e77f3284fc1302bfadad16decf9d052023a8d62cbad",
+      "failed_guards": [
+        "gap_ks",
+        "gap_abs_standardized_label_effect"
+      ],
+      "gap_abs_standardized_label_effect": 0.25894890573252216,
+      "gap_abs_standardized_label_effect_check": "FAIL",
+      "gap_abs_standardized_label_effect_delta_vs_tvae_selected": 0.25757384031178193,
+      "gap_abs_standardized_label_effect_ratio_to_threshold": 5.0241803765036614,
+      "gap_abs_standardized_label_effect_threshold": 0.051540527275560376,
+      "gap_ks": 0.02244017136797355,
+      "gap_ks_check": "FAIL",
+      "gap_ks_delta_vs_tvae_selected": 0.01667108161737768,
+      "gap_ks_ratio_to_threshold": 3.512927749832978,
+      "gap_ks_threshold": 0.006387882975686154,
+      "largest_failure_component": "gap_abs_standardized_label_effect",
+      "largest_failure_ratio": 5.0241803765036614,
+      "model_id": "cof_seqgen",
+      "receiver_max_abs_signed_frequency": 0.01810577260056522,
+      "receiver_max_abs_signed_frequency_check": "PASS",
+      "receiver_max_abs_signed_frequency_delta_vs_tvae_selected": 0.011311379539401471,
+      "receiver_max_abs_signed_frequency_ratio_to_threshold": 0.9052886300282611,
+      "receiver_max_abs_signed_frequency_threshold": 0.02,
+      "source_kind": "stored_v2_7_evaluation",
+      "status": "FAIL"
+    },
+    {
+      "all_five_guards_pass": false,
+      "amount_abs_standardized_label_effect": 0.018892007590243447,
+      "amount_abs_standardized_label_effect_check": "PASS",
+      "amount_abs_standardized_label_effect_delta_vs_tvae_selected": -0.011045804210665082,
+      "amount_abs_standardized_label_effect_ratio_to_threshold": 0.5194486552265933,
+      "amount_abs_standardized_label_effect_threshold": 0.0363693454591819,
+      "amount_ks": 0.0291134169292091,
+      "amount_ks_check": "FAIL",
+      "amount_ks_delta_vs_tvae_selected": 0.024213454438884008,
+      "amount_ks_ratio_to_threshold": 4.787494739308816,
+      "amount_ks_threshold": 0.006081138155655141,
+      "candidate_id": "cof_v27_c02_gap_logit_bias",
+      "candidate_result_sha256": "c2987eb5ebf2344b5c448886b69a529657d25fe03cff55275c5e37794a5c6288",
+      "checkpoint_sha256": "7ce44721cadffef21ade3bf1884421c304f73ea9eff1e9bfb3ca2d9e63cc0c29",
+      "evaluation_sha256": "a758d8ae9a1faa93c2a8d37eedcf3690d29430da00e1ad17dbcccffa9dd67427",
+      "failed_guards": [
+        "amount_ks",
+        "gap_ks",
+        "gap_abs_standardized_label_effect"
+      ],
+      "gap_abs_standardized_label_effect": 0.3289517776514092,
+      "gap_abs_standardized_label_effect_check": "FAIL",
+      "gap_abs_standardized_label_effect_delta_vs_tvae_selected": 0.327576712230669,
+      "gap_abs_standardized_label_effect_ratio_to_threshold": 6.3823906164691575,
+      "gap_abs_standardized_label_effect_threshold": 0.051540527275560376,
+      "gap_ks": 0.009416293536285036,
+      "gap_ks_check": "FAIL",
+      "gap_ks_delta_vs_tvae_selected": 0.003647203785689168,
+      "gap_ks_ratio_to_threshold": 1.474086731414109,
+      "gap_ks_threshold": 0.006387882975686154,
+      "largest_failure_component": "gap_abs_standardized_label_effect",
+      "largest_failure_ratio": 6.3823906164691575,
+      "model_id": "cof_seqgen",
+      "receiver_max_abs_signed_frequency": 0.019471177051411145,
+      "receiver_max_abs_signed_frequency_check": "PASS",
+      "receiver_max_abs_signed_frequency_delta_vs_tvae_selected": 0.012676783990247395,
+      "receiver_max_abs_signed_frequency_ratio_to_threshold": 0.9735588525705573,
+      "receiver_max_abs_signed_frequency_threshold": 0.02,
+      "source_kind": "stored_v2_7_evaluation",
+      "status": "FAIL"
+    }
+  ],
+  "data_sources": {
+    "selection_reports": 1,
+    "stored_evaluations": 6,
+    "test_splits": 0,
+    "validation_samples": 0
+  },
+  "execution_counts": {
+    "candidate_reexecution_calls": 0,
+    "cuda_calls": 0,
+    "five_seed_full_run_calls": 0,
+    "fresh_test_calls": 0,
+    "gpu_queries": 0,
+    "guard_recalculation_calls": 0,
+    "model_restore_calls": 0,
+    "model_sample_calls": 0,
+    "privacy_calls": 0,
+    "test_split_reads": 0,
+    "training_calls": 0,
+    "tstr_calls": 0,
+    "validation_sample_reads": 0
+  },
+  "five_seed_full_run_authorized": false,
+  "fresh_test_authorized": false,
+  "hash_inventory": {
+    "aggregate_authorization": {
+      "bytes": 11272,
+      "path": "artifacts/benchmark_v2_7/authorizations/authorization_fbaaac55_aggregate_attempt_001.json",
+      "sha256": "5961ce4b042553c7ff058984e37d38b69176118a1e0b3b92898f8f61bccb5d64"
+    },
+    "aggregate_bundle_tree": {
+      "bytes": 34223,
+      "files": 6,
+      "sha256": "18d8e4d0fc5dfd148dd6e67036e063b6ad6db1a1f640c322b50bc825aa824378"
+    },
+    "aggregate_checksum": {
+      "bytes": 527,
+      "path": "artifacts/benchmark_v2_7/candidate_selection/aggregate_attempt_001/checksum_manifest.json",
+      "sha256": "da1b2244d718ac9000758c4c6a5411b83e0cd7badd6cd1372ca58f064b1b2496"
+    },
+    "aggregate_complete": {
+      "bytes": 1081,
+      "path": "artifacts/benchmark_v2_7/candidate_selection/aggregate_attempt_001/AGGREGATE_COMPLETE.json",
+      "sha256": "a40630f51e1a07fb509f8f676eabf52f9bd18affbd7a9de47c510e2e1c0792b2"
+    },
+    "aggregate_index": {
+      "bytes": 1030,
+      "path": "artifacts/benchmark_v2_7/candidate_selection/aggregate_attempt_001/artifact_index.json",
+      "sha256": "2539c02a5cec95ec85b21e2d1dec2798d905e63aac21723dfcdc103195a07b89"
+    },
+    "candidate_config": {
+      "bytes": 14902,
+      "path": "configs/benchmark_v2/selection_v2_7_source_preparation.yaml",
+      "sha256": "2737723a05ce8628b7c9b8e1afbe7edae323a06971fbaf1eb00465224e0d654b"
+    },
+    "candidate_input_tree": {
+      "bytes": 6993542,
+      "files": 51,
+      "sha256": "de3fda560550cb8c815774a28be9bcc2350db32075a6776750fc66061b3a520e"
+    },
+    "execution_authorization": {
+      "bytes": 6107,
+      "path": "artifacts/benchmark_v2_7/authorizations/authorization_de57f79_attempt_001.json",
+      "sha256": "ff8bfdab5177d4b067e74f2cf192590b152236406b2eb4c1664878c20b5beea5"
+    },
+    "runner_config": {
+      "bytes": 2753,
+      "path": "configs/benchmark_v2/evaluation_only_v2_7.yaml",
+      "sha256": "05435443f69f25f56e6d738dcae7c5a62f0c99096483b5ac26c6f525cffae68c"
+    },
+    "sampling_plan_sha256": "862be1aa149b98e5521d0197a53487c9a9df535fc4853b33b95186cc3fb8cc27",
+    "selection_manifest": {
+      "bytes": 2716,
+      "path": "artifacts/benchmark_v2_7/candidate_selection/aggregate_attempt_001/selection_manifest.json",
+      "sha256": "53807d3b399d74aea77c2a1b9cced1534bcf6735b7b27cf8fa8b35b74063a07b"
+    },
+    "selection_report": {
+      "bytes": 17693,
+      "path": "artifacts/benchmark_v2_7/candidate_selection/aggregate_attempt_001/selection_report.json",
+      "sha256": "3af94b53f5dbaaeca917a04d2b490c0267f70aa915e38e2f751b449451122ec3"
+    },
+    "stored_evaluations": {
+      "cof_v27_c01_empirical_residual": {
+        "bytes": 1295,
+        "path": "artifacts/benchmark_v2_7/candidate_selection/evaluations/cof_seqgen/cof_v27_c01_empirical_residual/seed_2601/attempt_001/evaluation.json",
+        "sha256": "bfa153860fa0ceb187454e77f3284fc1302bfadad16decf9d052023a8d62cbad"
+      },
+      "cof_v27_c02_gap_logit_bias": {
+        "bytes": 1290,
+        "path": "artifacts/benchmark_v2_7/candidate_selection/evaluations/cof_seqgen/cof_v27_c02_gap_logit_bias/seed_2601/attempt_001/evaluation.json",
+        "sha256": "a758d8ae9a1faa93c2a8d37eedcf3690d29430da00e1ad17dbcccffa9dd67427"
+      },
+      "ctgan_v27_c01_amount_quantile_inverse": {
+        "bytes": 1313,
+        "path": "artifacts/benchmark_v2_7/candidate_selection/evaluations/ctgan_separate_class/ctgan_v27_c01_amount_quantile_inverse/seed_2601/attempt_001/evaluation.json",
+        "sha256": "77a3a1891af4c8a9748997ec5d55cdef2d7b16714305f08f066dd4ead1415d4a"
+      },
+      "ctgan_v27_c02_categorical_logit": {
+        "bytes": 1306,
+        "path": "artifacts/benchmark_v2_7/candidate_selection/evaluations/ctgan_separate_class/ctgan_v27_c02_categorical_logit/seed_2601/attempt_001/evaluation.json",
+        "sha256": "8447b6bb2bac0adee94bb96644631b3281db3d8419f103ef758bc2b0eb54650d"
+      },
+      "tvae_v27_c01_amount_inverse_decoder": {
+        "bytes": 1309,
+        "path": "artifacts/benchmark_v2_7/candidate_selection/evaluations/tvae_separate_class/tvae_v27_c01_amount_inverse_decoder/seed_2601/attempt_001/evaluation.json",
+        "sha256": "56dc7155791440369f4fc23ef791f916cc86417603d7091730efcdd8038581b2"
+      },
+      "tvae_v27_c02_bounded_temperature": {
+        "bytes": 1306,
+        "path": "artifacts/benchmark_v2_7/candidate_selection/evaluations/tvae_separate_class/tvae_v27_c02_bounded_temperature/seed_2601/attempt_001/evaluation.json",
+        "sha256": "a840cdb4ee2e38213633e6cff2c1ca6a16d6df75864d0cd06cbcb6d6f67ff4a5"
+      }
+    },
+    "train_content_sha256": "0c03f179930cd4d89ccc8a8b66283e620313e16d15fd53f0674c133bcb80c09d",
+    "train_split": {
+      "bytes": 4489910,
+      "path": "data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/train.npz",
+      "sha256": "c67a6fce4593317e11e1b6f36397bfb38f9607916bf8f5b32329d8fa99b700a8"
+    },
+    "v2_5_config": {
+      "bytes": 11584,
+      "path": "configs/benchmark_v2/full_v2_5.yaml",
+      "sha256": "81bc16416f6dad3c23eaf1990c3cb76e5449e74f1ddc634f42d3a897cd3c5bb3"
+    },
+    "v2_5_final": {
+      "bytes": 397,
+      "path": "artifacts/benchmark_v2_5/full/FINAL_COMPLETE.json",
+      "sha256": "e47d46b995cdaa8f564ccb4cca56eeda4e9a17dba43c1ed2ca8c1a954e657d8a"
+    },
+    "v2_5_frozen_manifest": {
+      "bytes": 1547,
+      "path": "data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/data_manifest.json",
+      "sha256": "b2529f00bae2e534f90805db6cebdf7f19ee93117f34f71015bc6753a9223e05"
+    },
+    "v2_6_forensic_terminal": {
+      "bytes": 850,
+      "path": "artifacts/benchmark_v2_6/selection_single_factor/forensic_attempt_001/FORENSIC_COMPLETE.json",
+      "sha256": "0c2e89a4124d35ccfa565ab504fbedf8819bed2dfe649370f811efe51a408703"
+    },
+    "validation_content_sha256": "aa1576b4ccae6a2ca30d0472f0782e1231ecc61ab3d224590a772dc3448b9e66",
+    "validation_split": {
+      "bytes": 1122873,
+      "path": "data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/validation.npz",
+      "sha256": "68c15c05c55742bfce0f22560ffe8378d032a7a9fd9a1072e80ec8da5340fba5"
+    }
+  },
+  "hypotheses": {
+    "aggregate_implementation_defect": {
+      "basis": "All 30 non-control evaluation statistics match the selection report exactly; all 45 stored statistic/threshold decisions are internally consistent, and the TVAE passing control demonstrates the same aggregate path can select.",
+      "verdict": "REFUTED"
+    },
+    "current_candidate_space_limit": {
+      "basis": "Every CTGAN candidate fails both gap KS and receiver frequency; every CoF candidate fails both gap KS and gap class effect. The finite preregistered candidates therefore contain no all-five-guard intersection.",
+      "verdict": "SUPPORTED"
+    },
+    "evaluator_implementation_defect": {
+      "basis": "No stored evaluation/report inconsistency supports an evaluator defect, and every stored sample contract is PASS. However, the requested read-only scope forbids recomputing guards from samples, so evaluator formula correctness is not independently re-established here.",
+      "verdict": "INCONCLUSIVE"
+    },
+    "numeric_decode_sampling_path_limit": {
+      "basis": "CTGAN amount inversion repairs both amount guards while gap KS and receiver remain failed; its categorical-logit candidate leaves both common discrete blockers failed. CoF empirical residual sampling repairs both amount guards but leaves both gap guards failed, while gap-logit bias improves gap KS but worsens gap class effect.",
+      "verdict": "SUPPORTED"
+    }
+  },
+  "minimum_failure_components": {
+    "cof_seqgen": [
+      "gap_abs_standardized_label_effect",
+      "gap_ks"
+    ],
+    "ctgan_separate_class": [
+      "gap_ks",
+      "receiver_max_abs_signed_frequency"
+    ]
+  },
+  "model_summaries": {
+    "cof_seqgen": {
+      "all_five_guard_pass_candidates": [],
+      "candidate_failure_components": {
+        "cof_v27_c00_frozen_variance_residual": [
+          "amount_ks",
+          "gap_ks",
+          "amount_abs_standardized_label_effect",
+          "gap_abs_standardized_label_effect"
+        ],
+        "cof_v27_c01_empirical_residual": [
+          "gap_ks",
+          "gap_abs_standardized_label_effect"
+        ],
+        "cof_v27_c02_gap_logit_bias": [
+          "amount_ks",
+          "gap_ks",
+          "gap_abs_standardized_label_effect"
+        ]
+      },
+      "selected_candidate_id": null,
+      "selection_status": "NO_PASSING_CANDIDATE"
+    },
+    "ctgan_separate_class": {
+      "all_five_guard_pass_candidates": [],
+      "candidate_failure_components": {
+        "ctgan_v27_c00_frozen_standard": [
+          "amount_ks",
+          "gap_ks",
+          "amount_abs_standardized_label_effect",
+          "receiver_max_abs_signed_frequency"
+        ],
+        "ctgan_v27_c01_amount_quantile_inverse": [
+          "gap_ks",
+          "receiver_max_abs_signed_frequency"
+        ],
+        "ctgan_v27_c02_categorical_logit": [
+          "amount_ks",
+          "gap_ks",
+          "amount_abs_standardized_label_effect",
+          "receiver_max_abs_signed_frequency"
+        ]
+      },
+      "selected_candidate_id": null,
+      "selection_status": "NO_PASSING_CANDIDATE"
+    },
+    "tvae_separate_class": {
+      "all_five_guard_pass_candidates": [
+        "tvae_v27_c01_amount_inverse_decoder"
+      ],
+      "candidate_failure_components": {
+        "tvae_v27_c00_frozen_temperature_0_75": [
+          "amount_ks",
+          "gap_ks",
+          "amount_abs_standardized_label_effect"
+        ],
+        "tvae_v27_c01_amount_inverse_decoder": [],
+        "tvae_v27_c02_bounded_temperature": [
+          "amount_ks",
+          "gap_ks",
+          "amount_abs_standardized_label_effect"
+        ]
+      },
+      "selected_candidate_id": "tvae_v27_c01_amount_inverse_decoder",
+      "selection_status": "SELECTED"
+    }
+  },
+  "next_single_factor_proposals": {
+    "cof_seqgen": {
+      "candidate_count": 1,
+      "proposal": "One train-only class-conditional gap-distribution sampler calibration replacing only the current gap-logit sampling map.",
+      "rationale": "gap KS and gap class effect are each universal CoF blockers; a single class-conditional gap sampler addresses the shared channel without an amount or architecture change.",
+      "single_factor": "gap_sampler",
+      "unchanged": "empirical amount residual sampler, receiver path, checkpoint, architecture/objective, thresholds, SamplingPlan, endpoint, and DGP"
+    },
+    "ctgan_separate_class": {
+      "candidate_count": 1,
+      "proposal": "One train-only class-conditional joint (gap_bin, receiver) categorical decoder calibration, treated as one frozen discrete-decoder factor.",
+      "rationale": "gap KS and receiver frequency are each universal CTGAN blockers; one joint discrete-decoder boundary targets them without combining a numeric-path change.",
+      "single_factor": "joint_discrete_decoder",
+      "unchanged": "amount quantile inverse, checkpoint, separate-class generators, thresholds, SamplingPlan, endpoint, and DGP"
+    }
+  },
+  "primary_c2_selection_ready": false,
+  "privacy_authorized": false,
+  "purpose": "read_only_stored_evaluation_forensics",
+  "schema_version": "benchmark-v2.7-no-passing-candidate-forensic-v1",
+  "selection_conclusion_changed": false,
+  "status": "COMPLETE",
+  "stored_evaluation_value_comparisons": 30,
+  "stored_evaluation_value_matches": 30,
+  "stored_guard_decision_comparisons": 45,
+  "stored_guard_decision_matches": 45,
+  "test_based_tuning": false,
+  "threshold_changed": false,
+  "tstr_authorized": false,
+  "tvae_selected_comparator": "tvae_v27_c01_amount_inverse_decoder"
+}

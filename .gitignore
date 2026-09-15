@@ -1,0 +1,44 @@
+**/__pycache__/**
+*.pyc
+
+data/*
+!/data/Info/
+!/data/*.py
+
+wandb/
+synthetic/
+impute/
+workspace/
+debug/
+tabdiff/result/
+
+**/ckpt/*
+
+# Legacy and v2 runtime artifacts are inventoried, not versioned.
+results/
+logs/
+figs/
+artifacts/
+data/benchmark_v2/
+*.pt
+*.pth
+*.ckpt
+*.npz
+
+# Third-party baseline repositories are acquired from pinned upstream revisions.
+external/cof_seqgen_saf_baselines/
+
+# User-supplied raw sources referenced by the public acquisition configs.
+local_data/
+
+# Keep the v2 artifact schema documentation in source control.
+!artifacts/
+artifacts/*
+!artifacts/benchmark_v2/
+artifacts/benchmark_v2/*
+!artifacts/benchmark_v2/README.md
+
+# Compact train-only audit required by the SAF source contract.
+!artifacts/cof_seqgen_saf/
+artifacts/cof_seqgen_saf/*
+!artifacts/cof_seqgen_saf/metric_validity_audit_train_only.json

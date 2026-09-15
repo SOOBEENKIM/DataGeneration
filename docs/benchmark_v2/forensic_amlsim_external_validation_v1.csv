@@ -1,0 +1,12 @@
+section,model,status,metric,class,stored_value,stored_threshold,stored_ratio,pass,interpretation
+evaluation,empirical_iid,COMPLETE,amount_ks,Y0,0.06073800390406259,0.032337004201747566,1.8782817210006166,false,validation-versus-train marginal shift exceeds train-only bootstrap variation
+evaluation,empirical_iid,COMPLETE,amount_ks,Y1,0.06686002137078306,0.06135753516958309,1.0896790620091228,false,small positive-class reference has wider threshold but remains exceeded
+evaluation,empirical_iid,COMPLETE,gap_total_variation,Y0,0.030253868737669005,0.019096601122333405,1.5842541059459643,false,validation-versus-train gap marginal shift
+evaluation,empirical_iid,COMPLETE,gap_total_variation,Y1,0.04991604335216002,0.03952681908465382,1.2628398770276907,false,positive-class gap marginal shift
+evaluation,empirical_iid,COMPLETE,receiver_total_variation,Y0,0.5372272781984793,0.30471718800231296,1.7630356912928766,false,high-cardinality new-entity receiver shift with UNK contribution
+evaluation,empirical_iid,COMPLETE,receiver_total_variation,Y1,0.7847656846283011,0.43586367457491954,1.8004842578213287,false,sparse positive-class high-cardinality receiver shift
+evaluation,empirical_iid,COMPLETE,short_gap_receiver_repeat_error,Y0,0.227815902842422,0.01658125430482188,13.739364866756338,false,iid row assembly destroys sequential short-gap/repeat dependence
+evaluation,empirical_iid,COMPLETE,short_gap_receiver_repeat_error,Y1,0.15617088607594937,0.031414883095152335,4.971238810691238,false,iid row assembly destroys sequential short-gap/repeat dependence
+terminal,ctgan_separate_class,COMPLETE,,,,,,true,preserved result eligible only under exact hash-bound resource-policy reuse
+terminal,tvae_separate_class,FAILED,,,,,,false,joblib DataTransformer worker received SIGKILL(-9) during concurrent AMLSim heavy transform
+terminal,cof_seqgen_frozen_non_v3,COMPLETE,,,,,,true,preserved result eligible only under exact hash-bound resource-policy reuse

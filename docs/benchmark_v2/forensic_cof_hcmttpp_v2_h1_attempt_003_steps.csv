@@ -1,0 +1,70 @@
+row_type,dataset,step_or_interval,elapsed_seconds,metric,value,finite,checkpoint_sha256,note
+progress,amlsim,12000,236.043070793,total_loss,-0.520941257477,true,f076bac882ab89cd828882e16545f158b95e03ce63187be7a06fd065ca3f5d95,checkpoint
+progress,amlsim,12100,238.137084065,total_loss,-0.572648942471,true,,
+progress,amlsim,12200,240.158408375,total_loss,-0.395550519228,true,,
+progress,amlsim,12300,242.212826592,total_loss,-0.285350710154,true,,
+progress,amlsim,12400,244.261205871,total_loss,-0.484946459532,true,,
+progress,amlsim,12500,246.310401009,total_loss,-0.134169340134,true,,
+progress,amlsim,12600,248.184688926,total_loss,-0.299924165010,true,,
+progress,amlsim,12700,250.035492075,total_loss,-0.384858191013,true,,
+progress,amlsim,12800,251.632259109,total_loss,-0.322555154562,true,,
+progress,amlsim,12900,253.675857476,total_loss,-0.549475431442,true,,
+progress,amlsim,13000,255.707453135,total_loss,-0.436398327351,true,580e18f5b2264389b47b63ace75768df18a43f57ade1c573c664c50ee3f22c9e,checkpoint
+progress,amlsim,13100,257.364416900,total_loss,-0.438234239817,true,,
+progress,amlsim,13200,259.308565637,total_loss,-0.283889055252,true,,
+progress,amlsim,13300,261.164948126,total_loss,-0.492174476385,true,,
+progress,amlsim,13400,263.182508707,total_loss,-0.461155474186,true,,
+progress,amlsim,13500,265.190325314,total_loss,-0.368841022253,true,,
+progress,amlsim,13600,267.160767136,total_loss,-0.441253274679,true,,
+progress,amlsim,13700,269.044762250,total_loss,-0.372418791056,true,,
+progress,amlsim,13800,271.054771112,total_loss,-0.456889182329,true,,
+progress,amlsim,13900,272.846769745,total_loss,-0.274661064148,true,,
+progress,amlsim,14000,274.776499301,total_loss,-0.465128034353,true,fc45f0ba44ebaade455018889c5fa3f1972aee1105641b233ef6ecaa66a88b8b,last finite checkpoint and progress
+failure_observation,amlsim,14001-14099,277.671623438,H1GapParameters.invalid_mask,1,false,,exact detection step and first tensor not persisted
+checkpoint_state,amlsim,14000,,state_entries,56,true,fc45f0ba44ebaade455018889c5fa3f1972aee1105641b233ef6ecaa66a88b8b,all floating checkpoint tensors finite
+checkpoint_state,amlsim,14000,,backbone_absmax,4.94987,true,fc45f0ba44ebaade455018889c5fa3f1972aee1105641b233ef6ecaa66a88b8b,
+checkpoint_state,amlsim,14000,,hurdle_head_absmax,1.05280,true,fc45f0ba44ebaade455018889c5fa3f1972aee1105641b233ef6ecaa66a88b8b,
+checkpoint_state,amlsim,14000,,rqs_head_absmax,4.64241,true,fc45f0ba44ebaade455018889c5fa3f1972aee1105641b233ef6ecaa66a88b8b,
+checkpoint_state,amlsim,14000,,tail_gate_head_absmax,0.625688,true,fc45f0ba44ebaade455018889c5fa3f1972aee1105641b233ef6ecaa66a88b8b,
+checkpoint_state,amlsim,14000,,tail_scale_head_absmax,0.00240103,true,fc45f0ba44ebaade455018889c5fa3f1972aee1105641b233ef6ecaa66a88b8b,
+checkpoint_state,amlsim,14000,,amount_path_absmax,5.20660,true,fc45f0ba44ebaade455018889c5fa3f1972aee1105641b233ef6ecaa66a88b8b,
+checkpoint_state,amlsim,14000,,receiver_head_absmax,2.42885,true,fc45f0ba44ebaade455018889c5fa3f1972aee1105641b233ef6ecaa66a88b8b,
+progress,sparkov,12000,197.935863571,total_loss,17.0038299561,true,86447ebecbf60c47721071ac3a4bff37f4462d5584e816d2c2b5451df9b3f316,checkpoint
+progress,sparkov,12100,199.516901460,total_loss,16.7552967072,true,,
+progress,sparkov,12200,201.164985900,total_loss,16.9716091156,true,,
+progress,sparkov,12300,203.023379142,total_loss,17.2726554871,true,,
+progress,sparkov,12400,204.661040833,total_loss,16.8736267090,true,,
+progress,sparkov,12500,206.535072259,total_loss,16.6696395874,true,,
+progress,sparkov,12600,208.008301232,total_loss,16.9747810364,true,,
+progress,sparkov,12700,209.514751140,total_loss,16.8520088196,true,,
+progress,sparkov,12800,211.060241574,total_loss,16.8487758636,true,,
+progress,sparkov,12900,212.636688016,total_loss,16.8975868225,true,,
+progress,sparkov,13000,214.483287703,total_loss,16.9619026184,true,cb5b9570a989dfc9b376e0a26745ed79efba98dfe67391071d6d2107fbdb0b49,checkpoint
+progress,sparkov,13100,216.067201187,total_loss,16.8374652863,true,,
+progress,sparkov,13200,217.741128708,total_loss,16.6041297913,true,,
+progress,sparkov,13300,219.323017028,total_loss,16.8602256775,true,,
+progress,sparkov,13400,221.089021715,total_loss,16.5020523071,true,,
+progress,sparkov,13500,222.758109503,total_loss,16.8079147339,true,,
+progress,sparkov,13600,224.334986248,total_loss,16.8203086853,true,,
+progress,sparkov,13700,226.157455543,total_loss,16.6418800354,true,,
+progress,sparkov,13800,227.693295510,total_loss,16.6549110413,true,,
+progress,sparkov,13900,229.436640196,total_loss,16.6374893188,true,,
+progress,sparkov,14000,231.197780205,total_loss,16.8227577209,true,36979cfd820ff6821f82c4df06410a1d40ff35880cd045adcec35cfdf970fbb3,same-step comparator
+checkpoint_state,sparkov,14000,,state_entries,56,true,36979cfd820ff6821f82c4df06410a1d40ff35880cd045adcec35cfdf970fbb3,all floating checkpoint tensors finite
+checkpoint_state,sparkov,14000,,backbone_absmax,5.34985,true,36979cfd820ff6821f82c4df06410a1d40ff35880cd045adcec35cfdf970fbb3,
+checkpoint_state,sparkov,14000,,hurdle_head_absmax,1.01865,true,36979cfd820ff6821f82c4df06410a1d40ff35880cd045adcec35cfdf970fbb3,
+checkpoint_state,sparkov,14000,,rqs_head_absmax,9.07358,true,36979cfd820ff6821f82c4df06410a1d40ff35880cd045adcec35cfdf970fbb3,
+checkpoint_state,sparkov,14000,,tail_gate_head_absmax,2.68618,true,36979cfd820ff6821f82c4df06410a1d40ff35880cd045adcec35cfdf970fbb3,
+checkpoint_state,sparkov,14000,,tail_scale_head_absmax,0.00626374,true,36979cfd820ff6821f82c4df06410a1d40ff35880cd045adcec35cfdf970fbb3,
+checkpoint_state,sparkov,14000,,amount_path_absmax,4.63231,true,36979cfd820ff6821f82c4df06410a1d40ff35880cd045adcec35cfdf970fbb3,
+checkpoint_state,sparkov,14000,,receiver_head_absmax,1.79221,true,36979cfd820ff6821f82c4df06410a1d40ff35880cd045adcec35cfdf970fbb3,
+progress,sparkov,15000,247.497750933,total_loss,16.9278144836,true,08e3ea9714f977722882a7e84b545e05f6868a83d84631f0748a280731ee59b9,
+progress,sparkov,16000,265.110694745,total_loss,16.5776290894,true,aeff15689d06844aa4d9d12887bf89bb4f8b994635d730f0adfc80d8200aaeb5,
+progress,sparkov,17000,282.674584914,total_loss,16.6591129303,true,8c34ad5bfa07a63616898298279c551233b65fdec08f78c9da178b8ff5ff6bad,
+progress,sparkov,18000,299.640146893,total_loss,16.6811313629,true,454b56cdf9b726e97cdfedc2d6a630c3016d9273ba858dfe601de3f7d60ce253,
+progress,sparkov,19000,316.422583636,total_loss,16.7959461212,true,903b5b2214eddf26a339063c157ff2cce61f851c9f36df99476db357800236ae,
+progress,sparkov,20000,332.866363602,total_loss,17.2295722961,true,48c3d94e84849370dcfc2915c652646c3731e9ee599e000f707c7eabcc0fc804,complete
+evaluation,sparkov,20000,340.612837065,hard_validity,1,true,,mask padding and train support PASS
+evaluation,sparkov,20000,340.612837065,finite_density_count,195250,true,,
+evaluation,sparkov,20000,340.612837065,nonfinite_sample_count,0,true,,
+evaluation,sparkov,20000,340.612837065,gate_decision,0,true,,FAIL scientific gate; COMPLETE execution

@@ -1,0 +1,86 @@
+{
+  "schema_version": "benchmark-v2.5-attempt-001-preservation-v1",
+  "snapshot_at": "2026-07-29T22:37:25+09:00",
+  "preservation_policy": {
+    "read_only": true,
+    "delete": false,
+    "overwrite": false,
+    "retry": false,
+    "data_regeneration": false,
+    "gpu_execution": false
+  },
+  "root": "artifacts/benchmark_v2_5/full",
+  "attempt_001_inventory": {
+    "attempt_directories": 48,
+    "files": 983,
+    "bytes": 5039876507,
+    "terminal_counts": {
+      "COMPLETE.json": 35,
+      "INVALID.json": 9,
+      "CANCELLED.json": 4
+    },
+    "tree_digest_algorithm": "sha256(sorted lines of '<file_sha256>  <path_relative_to_full>\\n' for every file whose path contains attempt_001)",
+    "tree_sha256": "fc7f37a7e7c359fe7727618f888e2f953f7addc1e8c1d9587b0d8a5399816e8f"
+  },
+  "provenance": {
+    "source_commit": "a17d386be67c0d6ee78dc4382ceba6972c8de060",
+    "config_sha256": "81bc16416f6dad3c23eaf1990c3cb76e5449e74f1ddc634f42d3a897cd3c5bb3",
+    "code_sha256": "1cfd68a6df7a70fa4cc9ed520ffd8d602c1212e60480e862cdb92062c203df7e",
+    "evaluation_version": "benchmark-v2.5-evaluation-v1",
+    "sampling_plan_sha256": "800d40c5f4fcee4577e7d6db95f92f492b7aaa3d8303e3cbeecfd3a374fd5887",
+    "manifest_count": 48
+  },
+  "run_state": {
+    "STOPPED.json": {
+      "sha256": "d583a1a23174a362e51ca713e7c4cdf84c5e2547e7776ed33bc59483e15765d1",
+      "reason": "authorized GPU became unavailable before wave; no external process was terminated"
+    },
+    "run_state.jsonl": {
+      "sha256": "68279c86f1a8a7eaf587be4824543a012cbac7a129cd69bffca7b6dc8dc36df3"
+    },
+    "FINAL_COMPLETE.json": "MISSING",
+    "COMPLETE.json": "MISSING"
+  },
+  "empirical_iid_forensic_artifacts": {
+    "seed_1": {
+      "manifest.json": "49f56aaede083cd101f49b33a11a3fd19ab5002c41d3b29a99774fb8834a9937",
+      "sample.npz": "6fd34a738a615b737281e8be03ddf741be269efe2bb65fdb6a9e213565df8f0f",
+      "checkpoints/final.pt": "a53699441cb87cd2f2bdacd01dbdb39379b62b63cbb3dd35ef6f7cf7586aa0fd",
+      "metrics.json": "d727c8704144d6019e66e1fef90292934bf1a911a2abee1d1b8b060ac42d408a",
+      "evaluation.json": "698a364487528c307b50d8acd4035b6373487c80f5af50ba3a103160e739d774",
+      "INVALID.json": "d0ea8cfe17972f244efc7d9a4bbefa6baccfe52f5863a823e92f034cc8834eb3"
+    },
+    "seed_2": {
+      "manifest.json": "9063c6252cbdc107fac332005dfee28899e16579e3f6b72aa963fc76b71c3c0c",
+      "sample.npz": "483f3c05c33084188f1e32076e4e40d317546cf5ae7bedf20089e5136cfa3dd1",
+      "checkpoints/final.pt": "a53699441cb87cd2f2bdacd01dbdb39379b62b63cbb3dd35ef6f7cf7586aa0fd",
+      "metrics.json": "9fa2853b545ec4a870460e7213060805665b3e1391c6178ca330a2e02ee2e70a",
+      "evaluation.json": "b63ccdb8a57ef86d7ef516755982258d36b365d8226ef246cf6855f2c865d2c6",
+      "INVALID.json": "d0ea8cfe17972f244efc7d9a4bbefa6baccfe52f5863a823e92f034cc8834eb3"
+    },
+    "seed_3": {
+      "manifest.json": "93d56256700305c97a8a1b9e8be8253e892a2733cc70dd5292461ff9682cd550",
+      "sample.npz": "8ef2efc61cee1730ba934d037185fe4a17bb03a4ab8c28307ab84ba9fb516229",
+      "checkpoints/final.pt": "a53699441cb87cd2f2bdacd01dbdb39379b62b63cbb3dd35ef6f7cf7586aa0fd",
+      "metrics.json": "27aae804f60604eea52b72b49896c72cbe81bc0e4f3b2e0c2a28274a5a524500",
+      "evaluation.json": "7c0e0633f98b339d804e9dc434fec0dc2036e38d224136dd198a956d11dc292f",
+      "INVALID.json": "d0ea8cfe17972f244efc7d9a4bbefa6baccfe52f5863a823e92f034cc8834eb3"
+    },
+    "seed_4": {
+      "manifest.json": "ba972201412733d11d4d3351946d8bbd77cce3a601f2e0f25ce756b51378a4f3",
+      "sample.npz": "eb6eb053e35212b6b22e3b0c4d0adb17e12262c44739e0723855fff95be1d26f",
+      "checkpoints/final.pt": "a53699441cb87cd2f2bdacd01dbdb39379b62b63cbb3dd35ef6f7cf7586aa0fd",
+      "metrics.json": "d2eed21369204cbdf27887e0fae1ce31128f2ad453a322a093393593376bb41c",
+      "evaluation.json": "01275764326e97a4a8ba2e37e3e4ee420193e9dbfaa9ecfabd56b865d710caa8",
+      "INVALID.json": "d0ea8cfe17972f244efc7d9a4bbefa6baccfe52f5863a823e92f034cc8834eb3"
+    },
+    "seed_5": {
+      "manifest.json": "206dd4ebf39db4c18a6128e5c266b02a0a02792dd22eac4decc0d138279bd1c4",
+      "sample.npz": "0394def13a93e882f685c14d27912f8fd57657001d9cdf9c9d7e2c8a223551eb",
+      "checkpoints/final.pt": "a53699441cb87cd2f2bdacd01dbdb39379b62b63cbb3dd35ef6f7cf7586aa0fd",
+      "metrics.json": "8285c93ab065c554fd6521c3835a1daf934aef309173550e9ca31753cf8792eb",
+      "evaluation.json": "bdee57a8fe8511527d65761f03688e885e2824cca78f347e4bb04e1947d81d07",
+      "INVALID.json": "d0ea8cfe17972f244efc7d9a4bbefa6baccfe52f5863a823e92f034cc8834eb3"
+    }
+  }
+}

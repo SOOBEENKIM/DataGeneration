@@ -1,0 +1,147 @@
+schema_version: benchmark-v2.4-candidate
+amendment_reason: calibrated-null-single-row-auroc-gate
+source:
+  v2_3_config: configs/benchmark_v2/main_v2_3_candidate.yaml
+  clean_results: artifacts/benchmark_v2_3/auroc_calibration/clean_seed_results.csv
+  leakage_results: artifacts/benchmark_v2_3/auroc_calibration/injected_leakage_results.csv
+  source_commit_policy: record_runtime_git_head
+  config_sha256_policy: record_resolved_config
+  code_sha256_policy: record_relevant_scripts
+unchanged_contract:
+  dgp_parameters: benchmark-v2.2-candidate
+  continuous_primary_endpoint: continuous_association_recovery_error
+  generator_training_entities: 31951
+  learned_model_evaluation_plan_changed: false
+audit_base:
+  train_entities: 31951
+  orientation_validation_entities: 7989
+  test_entities: 31956
+  split_scale_policy: same_multiplier_for_all_three_splits
+  audit_multiplier: 34
+  separate_seed_path_and_provenance: true
+  selected_entity_counts:
+    train_entities: 1086334
+    orientation_validation_entities: 271626
+    test_entities: 1086504
+step_a:
+  statistic: max_over_scenario_kappa_classifier_abs_test_auroc_minus_half
+  source_method: A_two_sided_ci_inside
+  immutable_source_clean_seeds: 100
+  threshold_proxy:
+    target_calibration_seeds: 200
+    target_order_statistic_rank: 200
+    interpolation: none
+    definition: maximum_of_observed_global_T_max_and_gaussian_upper_prediction
+    gaussian_upper_prediction:
+      mean_uncertainty_confidence: 0.95
+      sd_upper_confidence: 0.95
+      sd_bound: chi_square_one_sided
+      familywise_dimensions: 8
+      target_new_seed_exceedance_denominator: 201
+      tail_probability_per_side: 1_over_2_times_8_times_201
+  power:
+    noise_scaling: inverse_sqrt_audit_multiplier
+    interpretation: optimistic_lower_bound
+    target_power: {"0.02": 0.80, "0.05": 0.90}
+    safety_factor: 1.25
+    unrealistic_multiplier_exclusive_upper_bound: 32
+    maximum_search_multiplier: 256
+    familywise_cells_and_classifiers: 8
+    detection_event: global_T_strictly_greater_than_threshold
+    classifier_specific_table:
+      target_classifier_cells: injected
+      other_classifier_cells: clean
+    variance_reduction_order:
+      - repeated_crossfit_average_within_each_classifier
+    classifier_mean_statistic_allowed: false
+    decision_required_before_step_b: true
+  decision:
+    status: global_max_statistic_selected
+    artifact: artifacts/benchmark_v2_4/step_a/step_a_manifest.json
+    source_commit_sha: 3510e6134b52dd67539133d86ed8cf155b1edc65
+    current_n_threshold_proxy: 0.032693651823633714
+    largest_required_multiplier_before_safety: 27
+    selected_multiplier_after_1_25_safety: 34
+    variance_reduction_required: false
+    descriptive_2pct_features: []
+    auroc_hard_features_at_2pct: [amount, gap, receiver_category]
+    auroc_hard_features_at_5pct: [amount, gap, receiver_category]
+step_b:
+  method: calibrated_null_max_deviation
+  calibration_clean_seeds:
+    start: 1000
+    count: 200
+  validation_clean_seeds:
+    start: 2000
+    count: 200
+  calibration_quantile: maximum
+  calibration_order_statistic_rank: 200
+  calibration_interpolation: none
+  statistic: max_over_4_cells_times_2_classifiers
+  clean_detection_event: global_T_strictly_greater_than_threshold
+  exact_interval: clopper_pearson_two_sided_95pct
+  bootstrap_resamples: 0
+  compared_methods: 1
+  leakage_magnitudes: [0.02, 0.05]
+  excluded_leakage_magnitudes: [0.01]
+  classifiers: [logistic, hist_gradient_boosting]
+  orientation_source: audit_orientation_validation_entities_only
+  test_label_used_for_orientation: false
+  maximum_validation_false_fail_upper_bound: 0.05
+  required_power: {"0.02": 0.80, "0.05": 0.90}
+  checkpoint:
+    unit: cell_seed
+    write: immediate_append
+    resume: skip_completed
+  threading:
+    omp_threads: floor_total_cores_divided_by_workers
+    mkl_threads: floor_total_cores_divided_by_workers
+  smoke:
+    seeds: 1
+    must_record_task_runtime_and_total_estimate: true
+    variance_floor_diagnostic:
+      nested_multipliers: [1, selected_audit_multiplier]
+      record_clean_deviation_and_inverse_sqrt_projection: true
+      single_seed_cannot_estimate_variance_floor: true
+leakage_operators:
+  apply_identically_to_splits: [train, orientation_validation, test]
+  integer_rounding: nearest_feasible_count_with_realized_probability_delta_recorded
+  validation_trial_schedule:
+    definition: fixed_cycle_by_zero_based_validation_trial_ordinal
+    independent_of_data_and_seed_value: true
+    every_validation_seed_evaluates_each_feature_and_magnitude: true
+    trials_per_feature_classifier_magnitude: 200
+    power_aggregation: feature_classifier_magnitude
+  amount:
+    type: class_conditional_contamination_mixture
+    replacement_anchor: population_log_amount_mean_plus_3_population_sd
+    directions:
+      - {name: positive_label, target_label: 1}
+      - {name: negative_label, target_label: 0}
+    schedule: alternate_in_listed_order
+  gap:
+    type: class_conditional_contamination_mixture
+    replacement_anchor: population_normal_gap_99th_percentile
+    directions:
+      - {name: positive_label, target_label: 1}
+      - {name: negative_label, target_label: 0}
+    step_a_proxy: v2_3_gap_bin_leakage
+    step_b_feature: continuous_raw_gap
+    schedule: alternate_in_listed_order
+  receiver_category:
+    type: exact_class_conditional_target_category_probability_increase
+    operators:
+      - {direction: positive_label, target_label: 1, category: 0}
+      - {direction: positive_label, target_label: 1, category: 31}
+      - {direction: negative_label, target_label: 0, category: 1}
+      - {direction: negative_label, target_label: 0, category: 63}
+    schedule: cycle_in_listed_order
+direct_row_marginal_hard_guards:
+  gap: [ks, standardized_effect_size, emission_contract]
+  receiver_category: [signed_cluster_frequency]
+  amount: [ks, standardized_effect_size, emission_contract]
+  retained_if_auroc_2pct_is_descriptive: true
+step_c:
+  replace_gate_component_only: calibrated_single_row_auroc
+  learned_smoke_requires_all_cpu_checks_pass: true
+  five_seed_full_experiment_authorized: false

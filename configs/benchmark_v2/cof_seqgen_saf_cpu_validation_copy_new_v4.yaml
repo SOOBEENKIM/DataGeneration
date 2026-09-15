@@ -1,0 +1,9 @@
+dataset_dir: data/cof_seqgen_saf/canonical/controlled_coupling_joint_semimarkov_v2b_kappa_1_00
+output_dir: artifacts/cof_seqgen_saf/development/cpu_validation_copy_new_v4_dgp_kappa_1
+checkpoints:
+  SAF-O1: artifacts/cof_seqgen_saf/development/cpu_overfit_copy_new_v4_dgp_kappa_1/checkpoint_best.pt
+device: cpu
+generation_seed: 20261914
+sample_batch_size: 16
+generation_entities: 32
+metric_audit_path: artifacts/cof_seqgen_saf/metric_validity_audit_train_only_copy_new_v4_controlled.json

@@ -1,0 +1,22 @@
+schema_version: cof-seqgen-saf-dgp-replication-analysis-v1
+model_implementation_version: saf-gated-static-aware-gap-copy-route-v6
+seeds: [20260924, 20260925, 20260926, 20260927, 20260928]
+candidates: [SAF-C0, SAF-U0, SAF-O0, SAF-U1, SAF-O1]
+primary_endpoints:
+  - transition_conditioned_mark_tv
+  - short_gap_repeat_curve_l1
+  - gap_repeat_mi_error
+reports:
+  kappa_0:
+    20260924: artifacts/cof_seqgen_saf/development/gpu_dgp_k0_gated_v6_validation/seed_20260924/validation_comparison.json
+    20260925: artifacts/cof_seqgen_saf/development/gpu_dgp_k0_gated_v6_validation/seed_20260925/validation_comparison.json
+    20260926: artifacts/cof_seqgen_saf/development/gpu_dgp_k0_gated_v6_validation/seed_20260926/validation_comparison.json
+    20260927: artifacts/cof_seqgen_saf/development/gpu_dgp_k0_gated_v6_validation/seed_20260927/validation_comparison.json
+    20260928: artifacts/cof_seqgen_saf/development/gpu_dgp_k0_gated_v6_validation/seed_20260928/validation_comparison.json
+  kappa_1:
+    20260924: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_gated_v6_validation/seed_20260924/validation_comparison.json
+    20260925: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_gated_v6_validation/seed_20260925/validation_comparison.json
+    20260926: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_gated_v6_validation/seed_20260926/validation_comparison.json
+    20260927: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_gated_v6_validation/seed_20260927/validation_comparison.json
+    20260928: artifacts/cof_seqgen_saf/development/gpu_dgp_k1_gated_v6_validation/seed_20260928/validation_comparison.json
+output_path: artifacts/cof_seqgen_saf/development/dgp_gated_v6_five_seed_mechanism_analysis.json

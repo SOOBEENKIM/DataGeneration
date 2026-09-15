@@ -1,0 +1,957 @@
+{
+  "audit_base_head": "91acaf97fee2ae6ada305670c06698b98a247561",
+  "datasets": {
+    "amlsim": {
+      "audit": {
+        "amount": {
+          "count": 1323234,
+          "max": 21474836.47,
+          "mean": 115988.18213934949,
+          "median": 156.71,
+          "min": 0.0,
+          "p01": 5.46,
+          "p05": 7.97,
+          "p25": 23.93,
+          "p75": 440.0,
+          "p95": 584.46,
+          "p99": 1854724.689999991,
+          "std": 1320090.180308339
+        },
+        "duplicate_timestamps_global": {
+          "row_count": 1323234,
+          "timestamp_count": 200
+        },
+        "duplicate_timestamps_within_entity": {
+          "entity_timestamp_group_count": 84283,
+          "row_count": 888787
+        },
+        "duplicate_transaction_ids": {
+          "id_count": 0,
+          "row_count": 0
+        },
+        "entities": 9999,
+        "entity_fraud": {
+          "definition": "any transaction fraud within entity",
+          "positive_count": 1484,
+          "positive_prevalence": 0.1484148414841484
+        },
+        "entity_transaction_counts": {
+          "count": 9999,
+          "max": 963.0,
+          "mean": 132.33663366336634,
+          "median": 132.0,
+          "min": 7.0,
+          "p01": 13.0,
+          "p05": 16.0,
+          "p25": 22.0,
+          "p75": 180.0,
+          "p95": 340.0,
+          "p99": 740.0,
+          "std": 132.73560925126776
+        },
+        "exact_duplicate_rows": 0,
+        "fixed_event_windows": {
+          "positive_count": 1611,
+          "positive_prevalence": 0.03540581525680754,
+          "rows_per_window": {
+            "count": 45501,
+            "max": 32.0,
+            "mean": 29.08142678182897,
+            "median": 32.0,
+            "min": 1.0,
+            "p01": 4.0,
+            "p05": 16.0,
+            "p25": 32.0,
+            "p75": 32.0,
+            "p95": 32.0,
+            "p99": 32.0,
+            "std": 6.377516553161175
+          },
+          "tail_policy": "retain_nonempty_tail_with_mask",
+          "window_count": 45501,
+          "window_size": 32
+        },
+        "missing_protocol_columns": {
+          "IS_FRAUD": 0,
+          "RECEIVER_ACCOUNT_ID": 0,
+          "SENDER_ACCOUNT_ID": 0,
+          "TIMESTAMP": 0,
+          "TX_AMOUNT": 0,
+          "TX_ID": 0
+        },
+        "non_overlapping_time_windows": {
+          "origin": "per_entity_minimum_timestamp",
+          "positive_count": 1697,
+          "positive_prevalence": 0.010628902849197352,
+          "rows_per_window": {
+            "count": 159659,
+            "max": 110.0,
+            "mean": 8.287876035801302,
+            "median": 8.0,
+            "min": 1.0,
+            "p01": 1.0,
+            "p05": 1.0,
+            "p25": 2.0,
+            "p75": 9.0,
+            "p95": 22.0,
+            "p99": 42.0,
+            "std": 8.063391763635646
+          },
+          "width": 10,
+          "window_count": 159659
+        },
+        "ordering": {
+          "input_timestamp_globally_monotone": true,
+          "input_timestamp_monotone_within_entity": true,
+          "stable_sort_keys": [
+            "SENDER_ACCOUNT_ID",
+            "TIMESTAMP",
+            "TX_ID"
+          ],
+          "stable_sort_possible": true,
+          "stable_tie_breaker": "TX_ID"
+        },
+        "receiver_cardinality": 9926,
+        "receiver_column": "RECEIVER_ACCOUNT_ID",
+        "rows": 1323234,
+        "transaction_fraud": {
+          "count": 1719,
+          "prevalence": 0.0012990899568783752
+        },
+        "within_entity_gap": {
+          "count": 1313235,
+          "max": 91.0,
+          "mean": 1.4148754792554266,
+          "median": 0.0,
+          "min": 0.0,
+          "p01": 0.0,
+          "p05": 0.0,
+          "p25": 0.0,
+          "p75": 1.0,
+          "p95": 10.0,
+          "p99": 20.0,
+          "std": 3.948031012575516
+        }
+      },
+      "companion_label_checks": {
+        "account_is_fraud_positive": 1685,
+        "alert_ids_not_marked_transaction_fraud": 0,
+        "alert_rows": 1719,
+        "alert_unique_ids": 391,
+        "fraud_ids_not_in_alerts": 0,
+        "fraud_transaction_ids_equal_alert_transaction_ids": true,
+        "transactions_linked_to_alert_rows": 1719
+      },
+      "development_entity_split": {
+        "entity_disjoint": true,
+        "internal_test": {
+          "entities": 1502,
+          "entity_fraud_prevalence": 0.151797603195739,
+          "fraud_positive_entities": 228,
+          "fraud_transactions": 267,
+          "rows": 191507,
+          "transaction_fraud_prevalence": 0.001394204911569812
+        },
+        "receiver_vocabulary": {
+          "internal_test": {
+            "oov_categories": 160,
+            "oov_row_rate": 0.019294333888578485,
+            "oov_rows": 3695,
+            "rows": 191507,
+            "unique_receivers": 5703
+          },
+          "train": {
+            "oov_categories": 0,
+            "oov_row_rate": 0.0,
+            "oov_rows": 0,
+            "rows": 936728,
+            "unique_receivers": 9686
+          },
+          "train_vocabulary_cardinality": 9686,
+          "validation": {
+            "oov_categories": 155,
+            "oov_row_rate": 0.016635982748629482,
+            "oov_rows": 3244,
+            "rows": 194999,
+            "unique_receivers": 5645
+          },
+          "vocabulary_source": "train"
+        },
+        "rule": "sha256(string(entity)) first 64 bits modulo 100: 0-69 train, 70-84 validation, 85-99 internal_test",
+        "train": {
+          "entities": 6979,
+          "entity_fraud_prevalence": 0.14543630892678033,
+          "fraud_positive_entities": 1015,
+          "fraud_transactions": 1169,
+          "rows": 936728,
+          "transaction_fraud_prevalence": 0.0012479609876079288
+        },
+        "validation": {
+          "entities": 1518,
+          "entity_fraud_prevalence": 0.15876152832674573,
+          "fraud_positive_entities": 241,
+          "fraud_transactions": 283,
+          "rows": 194999,
+          "transaction_fraud_prevalence": 0.0014512894937922759
+        }
+      },
+      "files": {
+        "accounts": {
+          "bytes": 326177,
+          "columns": [
+            "ACCOUNT_ID",
+            "CUSTOMER_ID",
+            "INIT_BALANCE",
+            "COUNTRY",
+            "ACCOUNT_TYPE",
+            "IS_FRAUD",
+            "TX_BEHAVIOR_ID"
+          ],
+          "missing_by_raw_column": {
+            "ACCOUNT_ID": 0,
+            "ACCOUNT_TYPE": 0,
+            "COUNTRY": 0,
+            "CUSTOMER_ID": 0,
+            "INIT_BALANCE": 0,
+            "IS_FRAUD": 0,
+            "TX_BEHAVIOR_ID": 0
+          },
+          "path": "<LOCAL_DATA_ROOT>/ibm_amlsim_example_accounts_transactions_alerts/accounts.csv",
+          "rows": 10000,
+          "sha256": "21f6d56fd98fdf25f4e2df4e7534925a0e006bc2a5ad8b03dc576e2bb4cdf667"
+        },
+        "alerts": {
+          "bytes": 88071,
+          "columns": [
+            "ALERT_ID",
+            "ALERT_TYPE",
+            "IS_FRAUD",
+            "TX_ID",
+            "SENDER_ACCOUNT_ID",
+            "RECEIVER_ACCOUNT_ID",
+            "TX_TYPE",
+            "TX_AMOUNT",
+            "TIMESTAMP"
+          ],
+          "missing_by_raw_column": {
+            "ALERT_ID": 0,
+            "ALERT_TYPE": 0,
+            "IS_FRAUD": 0,
+            "RECEIVER_ACCOUNT_ID": 0,
+            "SENDER_ACCOUNT_ID": 0,
+            "TIMESTAMP": 0,
+            "TX_AMOUNT": 0,
+            "TX_ID": 0,
+            "TX_TYPE": 0
+          },
+          "path": "<LOCAL_DATA_ROOT>/ibm_amlsim_example_accounts_transactions_alerts/alerts.csv",
+          "rows": 1719,
+          "sha256": "2afddc306ebd623ef3f83449b289815b8647182f00c3cbf2ed73195e2786568c"
+        },
+        "transactions": {
+          "bytes": 61047116,
+          "columns": [
+            "TX_ID",
+            "SENDER_ACCOUNT_ID",
+            "RECEIVER_ACCOUNT_ID",
+            "TX_TYPE",
+            "TX_AMOUNT",
+            "TIMESTAMP",
+            "IS_FRAUD",
+            "ALERT_ID"
+          ],
+          "missing_by_raw_column": {
+            "ALERT_ID": 0,
+            "IS_FRAUD": 0,
+            "RECEIVER_ACCOUNT_ID": 0,
+            "SENDER_ACCOUNT_ID": 0,
+            "TIMESTAMP": 0,
+            "TX_AMOUNT": 0,
+            "TX_ID": 0,
+            "TX_TYPE": 0
+          },
+          "path": "<LOCAL_DATA_ROOT>/ibm_amlsim_example_accounts_transactions_alerts/transactions.csv",
+          "rows": 1323234,
+          "sha256": "cc4885da00fd4c6f854aae4e7bc8dd9c35a9b491f5ef871c51c9194ee1e292f7"
+        }
+      },
+      "mapping": {
+        "amount": "TX_AMOUNT",
+        "entity": "SENDER_ACCOUNT_ID",
+        "fraud_label": "IS_FRAUD",
+        "receiver": "RECEIVER_ACCOUNT_ID",
+        "timestamp": "TIMESTAMP",
+        "transaction_id": "TX_ID"
+      },
+      "label_mapping_candidates": {
+        "alternatives_not_selected": [
+          "sender ACCOUNT.IS_FRAUD (entity-constant and not temporally localized)",
+          "any alert membership (identical transaction-ID support to IS_FRAUD in this raw release and therefore not an independent label)"
+        ],
+        "recommended": "fixed-window Y = any transaction IS_FRAUD"
+      },
+      "recommendation": {
+        "entity": "SENDER_ACCOUNT_ID",
+        "exclude_from_features": [
+          "IS_FRAUD",
+          "ALERT_ID",
+          "TX_ID"
+        ],
+        "exclusion_criteria": [
+          "missing or non-binary IS_FRAUD",
+          "missing entity/timestamp/amount/receiver",
+          "non-unique TX_ID preventing deterministic tie-breaking",
+          "a preregistered split with no positive validation or locked-test windows"
+        ],
+        "receiver": "RECEIVER_ACCOUNT_ID",
+        "risks": [
+          "TIMESTAMP is a coarse integer simulation step and has many within-entity ties; TX_ID must be the frozen tie-breaker.",
+          "A receiver can be a sender in another split, so receiver vocabulary/OOV handling must not import validation/test categories into training.",
+          "Account-level IS_FRAUD and alert identifiers can directly leak the target and must not enter model inputs."
+        ],
+        "sequence_label_y": "1 iff any IS_FRAUD=1 transaction occurs in the window",
+        "sequence_unit": "stable (SENDER_ACCOUNT_ID, TIMESTAMP, TX_ID) order, non-overlapping 32-event windows; retain a nonempty tail with a valid-length mask",
+        "split": "entity-disjoint SHA-256 partition by SENDER_ACCOUNT_ID; fit transforms/vocabulary on train only"
+      }
+    },
+    "sparkov": {
+      "development_entity_split_from_fraudTrain_only": {
+        "entity_disjoint": true,
+        "internal_test": {
+          "entities": 156,
+          "entity_fraud_prevalence": 0.8141025641025641,
+          "fraud_positive_entities": 127,
+          "fraud_transactions": 1286,
+          "rows": 188039,
+          "transaction_fraud_prevalence": 0.006839006801780481
+        },
+        "receiver_vocabulary": {
+          "internal_test": {
+            "oov_categories": 0,
+            "oov_row_rate": 0.0,
+            "oov_rows": 0,
+            "rows": 188039,
+            "unique_receivers": 693
+          },
+          "train": {
+            "oov_categories": 0,
+            "oov_row_rate": 0.0,
+            "oov_rows": 0,
+            "rows": 927441,
+            "unique_receivers": 693
+          },
+          "train_vocabulary_cardinality": 693,
+          "validation": {
+            "oov_categories": 0,
+            "oov_row_rate": 0.0,
+            "oov_rows": 0,
+            "rows": 181195,
+            "unique_receivers": 693
+          },
+          "vocabulary_source": "train"
+        },
+        "rule": "sha256(string(entity)) first 64 bits modulo 100: 0-69 train, 70-84 validation, 85-99 internal_test",
+        "train": {
+          "entities": 684,
+          "entity_fraud_prevalence": 0.7733918128654971,
+          "fraud_positive_entities": 529,
+          "fraud_transactions": 5181,
+          "rows": 927441,
+          "transaction_fraud_prevalence": 0.005586339184918502
+        },
+        "validation": {
+          "entities": 143,
+          "entity_fraud_prevalence": 0.7412587412587412,
+          "fraud_positive_entities": 106,
+          "fraud_transactions": 1039,
+          "rows": 181195,
+          "transaction_fraud_prevalence": 0.005734153812191285
+        }
+      },
+      "files": {
+        "test": {
+          "bytes": 150354339,
+          "columns": [
+            "Unnamed: 0",
+            "trans_date_trans_time",
+            "cc_num",
+            "merchant",
+            "category",
+            "amt",
+            "first",
+            "last",
+            "gender",
+            "street",
+            "city",
+            "state",
+            "zip",
+            "lat",
+            "long",
+            "city_pop",
+            "job",
+            "dob",
+            "trans_num",
+            "unix_time",
+            "merch_lat",
+            "merch_long",
+            "is_fraud"
+          ],
+          "missing_by_raw_column": {
+            "Unnamed: 0": 0,
+            "amt": 0,
+            "category": 0,
+            "cc_num": 0,
+            "city": 0,
+            "city_pop": 0,
+            "dob": 0,
+            "first": 0,
+            "gender": 0,
+            "is_fraud": 0,
+            "job": 0,
+            "last": 0,
+            "lat": 0,
+            "long": 0,
+            "merch_lat": 0,
+            "merch_long": 0,
+            "merchant": 0,
+            "state": 0,
+            "street": 0,
+            "trans_date_trans_time": 0,
+            "trans_num": 0,
+            "unix_time": 0,
+            "zip": 0
+          },
+          "path": "<LOCAL_DATA_ROOT>/Sparkov_fraud_train_test/fraudTest.csv",
+          "rows": 555719,
+          "sha256": "12d553ab19440c752d2531ee1af44bb64f12cc3d3839f1649f19e81c230545f0"
+        },
+        "train": {
+          "bytes": 351238196,
+          "columns": [
+            "Unnamed: 0",
+            "trans_date_trans_time",
+            "cc_num",
+            "merchant",
+            "category",
+            "amt",
+            "first",
+            "last",
+            "gender",
+            "street",
+            "city",
+            "state",
+            "zip",
+            "lat",
+            "long",
+            "city_pop",
+            "job",
+            "dob",
+            "trans_num",
+            "unix_time",
+            "merch_lat",
+            "merch_long",
+            "is_fraud"
+          ],
+          "missing_by_raw_column": {
+            "Unnamed: 0": 0,
+            "amt": 0,
+            "category": 0,
+            "cc_num": 0,
+            "city": 0,
+            "city_pop": 0,
+            "dob": 0,
+            "first": 0,
+            "gender": 0,
+            "is_fraud": 0,
+            "job": 0,
+            "last": 0,
+            "lat": 0,
+            "long": 0,
+            "merch_lat": 0,
+            "merch_long": 0,
+            "merchant": 0,
+            "state": 0,
+            "street": 0,
+            "trans_date_trans_time": 0,
+            "trans_num": 0,
+            "unix_time": 0,
+            "zip": 0
+          },
+          "path": "<LOCAL_DATA_ROOT>/Sparkov_fraud_train_test/fraudTrain.csv",
+          "rows": 1296675,
+          "sha256": "fd7139200dbfcbed0b6742bbe05a4f1abce532c4fef20918228a651647a3e75d"
+        }
+      },
+      "locked_original_test_audit": {
+        "amount": {
+          "count": 555719,
+          "max": 22768.11,
+          "mean": 69.39281023322938,
+          "median": 47.29,
+          "min": 1.0,
+          "p01": 1.26,
+          "p05": 2.43,
+          "p25": 9.63,
+          "p75": 83.01,
+          "p95": 193.0509999999998,
+          "p99": 519.8545999999985,
+          "std": 156.74580032539535
+        },
+        "duplicate_timestamps_global": {
+          "row_count": 21719,
+          "timestamp_count": 10760
+        },
+        "duplicate_timestamps_within_entity": {
+          "entity_timestamp_group_count": 24,
+          "row_count": 48
+        },
+        "duplicate_transaction_ids": {
+          "id_count": 0,
+          "row_count": 0
+        },
+        "entities": 924,
+        "entity_fraud": {
+          "definition": "any transaction fraud within entity",
+          "positive_count": 218,
+          "positive_prevalence": 0.23593073593073594
+        },
+        "entity_transaction_counts": {
+          "count": 924,
+          "max": 1474.0,
+          "mean": 601.4274891774892,
+          "median": 634.5,
+          "min": 6.0,
+          "p01": 11.0,
+          "p05": 208.0,
+          "p25": 252.25,
+          "p75": 859.0,
+          "p95": 1267.85,
+          "p99": 1357.08,
+          "std": 329.0707304030267
+        },
+        "exact_duplicate_rows": 0,
+        "fixed_event_windows": {
+          "positive_count": 260,
+          "positive_prevalence": 0.0145993598742209,
+          "rows_per_window": {
+            "count": 17809,
+            "max": 32.0,
+            "mean": 31.20439103823909,
+            "median": 32.0,
+            "min": 1.0,
+            "p01": 7.0,
+            "p05": 31.0,
+            "p25": 32.0,
+            "p75": 32.0,
+            "p95": 32.0,
+            "p99": 32.0,
+            "std": 3.9926797005289973
+          },
+          "tail_policy": "retain_nonempty_tail_with_mask",
+          "window_count": 17809,
+          "window_size": 32
+        },
+        "missing_protocol_columns": {
+          "amt": 0,
+          "category": 0,
+          "cc_num": 0,
+          "is_fraud": 0,
+          "merchant": 0,
+          "trans_num": 0,
+          "unix_time": 0
+        },
+        "non_overlapping_time_windows": {
+          "origin": "per_entity_minimum_timestamp",
+          "positive_count": 268,
+          "positive_prevalence": 0.010539148216603091,
+          "rows_per_window": {
+            "count": 25429,
+            "max": 101.0,
+            "mean": 21.853749655904675,
+            "median": 19.0,
+            "min": 1.0,
+            "p01": 3.0,
+            "p05": 5.0,
+            "p25": 11.0,
+            "p75": 29.0,
+            "p95": 48.0,
+            "p99": 67.0,
+            "std": 13.949788745324424
+          },
+          "width": 604800,
+          "window_count": 25429
+        },
+        "ordering": {
+          "input_timestamp_globally_monotone": true,
+          "input_timestamp_monotone_within_entity": true,
+          "stable_sort_keys": [
+            "cc_num",
+            "unix_time",
+            "trans_num"
+          ],
+          "stable_sort_possible": true,
+          "stable_tie_breaker": "trans_num"
+        },
+        "receiver_cardinality": 693,
+        "receiver_column": "merchant",
+        "rows": 555719,
+        "secondary_receiver": {
+          "cardinality": 14,
+          "column": "category",
+          "missing": 0
+        },
+        "transaction_fraud": {
+          "count": 2145,
+          "prevalence": 0.0038598644278853163
+        },
+        "within_entity_gap": {
+          "count": 554795,
+          "max": 1136944.0,
+          "mean": 27269.071019025047,
+          "median": 13848.0,
+          "min": 0.0,
+          "p01": 159.0,
+          "p05": 820.7000000000007,
+          "p25": 5049.0,
+          "p75": 33473.0,
+          "p95": 95711.29999999993,
+          "p99": 193676.05999999994,
+          "std": 39750.40018401556
+        }
+      },
+      "mapping": {
+        "amount": "amt",
+        "entity": "cc_num",
+        "fraud_label": "is_fraud",
+        "receiver": "merchant",
+        "receiver_secondary": "category",
+        "timestamp": "unix_time",
+        "timestamp_human": "trans_date_trans_time",
+        "transaction_id": "trans_num"
+      },
+      "label_mapping_candidates": {
+        "alternatives_not_selected": [
+          "card-level any-fraud Y (77.52% positive in fraudTrain and not temporally localized)",
+          "window fraud count/rate regression (not compatible with the current binary sequence-Y contract without a separately preregistered model/interface change)"
+        ],
+        "recommended": "fixed-window Y = any transaction is_fraud"
+      },
+      "published_partition_relationship": {
+        "original_test_role": "locked temporal robustness evaluation only; never calibration or candidate selection",
+        "overlapping_entities": 908,
+        "test_category_oov_rows_vs_train": 0,
+        "test_entities": 924,
+        "test_entity_overlap_fraction": 0.9826839826839827,
+        "test_merchant_oov_categories_vs_train": 0,
+        "test_merchant_oov_row_rate_vs_train": 0.0,
+        "test_merchant_oov_rows_vs_train": 0,
+        "train_entities": 983
+      },
+      "recommendation": {
+        "entity": "cc_num",
+        "exclude_from_features": [
+          "is_fraud",
+          "trans_num",
+          "the blank CSV index column",
+          "names/addresses/demographics unless separately justified"
+        ],
+        "exclusion_criteria": [
+          "missing or non-binary is_fraud",
+          "missing cc_num/unix_time/amt/merchant",
+          "non-unique trans_num preventing deterministic tie-breaking",
+          "a preregistered entity split with no positive validation or internal-test windows",
+          "using fraudTest.csv to fit transforms, vocabulary, thresholds, or candidate choices"
+        ],
+        "receiver": "merchant",
+        "receiver_secondary": "category is a low-cardinality merchant-type diagnostic, not the primary receiver identity",
+        "risks": [
+          "The published train/test files reuse card entities, so they are not an entity-leakage-free split.",
+          "Fraud prevalence is low at transaction level and a window-level any-fraud label may remain imbalanced.",
+          "merchant can contain train-only vocabulary gaps; an explicit UNK contract is required.",
+          "merchant/category and amount may make Y detectable from row marginals without temporal information."
+        ],
+        "sequence_label_y": "1 iff any is_fraud=1 transaction occurs in the window",
+        "sequence_unit": "stable (cc_num, unix_time, trans_num) order, non-overlapping 32-event windows; retain a nonempty tail with a valid-length mask",
+        "split": "use fraudTrain.csv only for entity-disjoint SHA-256 train/validation/internal-test development; keep fraudTest.csv untouched for a separately preregistered temporal robustness test"
+      },
+      "train_audit": {
+        "amount": {
+          "count": 1296675,
+          "max": 28948.9,
+          "mean": 70.35103545607033,
+          "median": 47.52,
+          "min": 1.0,
+          "p01": 1.26,
+          "p05": 2.44,
+          "p25": 9.65,
+          "p75": 83.14,
+          "p95": 196.31,
+          "p99": 545.9926000000002,
+          "std": 160.31597675338924
+        },
+        "duplicate_timestamps_global": {
+          "row_count": 43395,
+          "timestamp_count": 21543
+        },
+        "duplicate_timestamps_within_entity": {
+          "entity_timestamp_group_count": 20,
+          "row_count": 40
+        },
+        "duplicate_transaction_ids": {
+          "id_count": 0,
+          "row_count": 0
+        },
+        "entities": 983,
+        "entity_fraud": {
+          "definition": "any transaction fraud within entity",
+          "positive_count": 762,
+          "positive_prevalence": 0.775178026449644
+        },
+        "entity_transaction_counts": {
+          "count": 983,
+          "max": 3123.0,
+          "mean": 1319.0996948118006,
+          "median": 1054.0,
+          "min": 7.0,
+          "p01": 7.82,
+          "p05": 10.100000000000001,
+          "p25": 525.0,
+          "p75": 2025.0,
+          "p95": 2921.6,
+          "p99": 3099.3599999999997,
+          "std": 811.8226534039097
+        },
+        "exact_duplicate_rows": 0,
+        "fixed_event_windows": {
+          "positive_count": 946,
+          "positive_prevalence": 0.02306248323947439,
+          "rows_per_window": {
+            "count": 41019,
+            "max": 32.0,
+            "mean": 31.611570247933884,
+            "median": 32.0,
+            "min": 1.0,
+            "p01": 12.0,
+            "p05": 32.0,
+            "p25": 32.0,
+            "p75": 32.0,
+            "p95": 32.0,
+            "p99": 32.0,
+            "std": 2.8511431059597228
+          },
+          "tail_policy": "retain_nonempty_tail_with_mask",
+          "window_count": 41019,
+          "window_size": 32
+        },
+        "missing_protocol_columns": {
+          "amt": 0,
+          "category": 0,
+          "cc_num": 0,
+          "is_fraud": 0,
+          "merchant": 0,
+          "trans_num": 0,
+          "unix_time": 0
+        },
+        "non_overlapping_time_windows": {
+          "origin": "per_entity_minimum_timestamp",
+          "positive_count": 931,
+          "positive_prevalence": 0.013314836532135808,
+          "rows_per_window": {
+            "count": 69922,
+            "max": 103.0,
+            "mean": 18.544592545979807,
+            "median": 16.0,
+            "min": 1.0,
+            "p01": 2.0,
+            "p05": 4.0,
+            "p25": 9.0,
+            "p75": 25.0,
+            "p95": 41.0,
+            "p99": 56.0,
+            "std": 11.921912452149337
+          },
+          "width": 604800,
+          "window_count": 69922
+        },
+        "ordering": {
+          "input_timestamp_globally_monotone": true,
+          "input_timestamp_monotone_within_entity": true,
+          "stable_sort_keys": [
+            "cc_num",
+            "unix_time",
+            "trans_num"
+          ],
+          "stable_sort_possible": true,
+          "stable_tie_breaker": "trans_num"
+        },
+        "receiver_cardinality": 693,
+        "receiver_column": "merchant",
+        "rows": 1296675,
+        "secondary_receiver": {
+          "cardinality": 14,
+          "column": "category",
+          "missing": 0
+        },
+        "transaction_fraud": {
+          "count": 7506,
+          "prevalence": 0.005788651743883394
+        },
+        "within_entity_gap": {
+          "count": 1295692,
+          "max": 1341471.0,
+          "mean": 32485.015289899144,
+          "median": 16587.0,
+          "min": 0.0,
+          "p01": 191.0,
+          "p05": 984.0,
+          "p25": 6022.0,
+          "p75": 40270.0,
+          "p95": 113958.0,
+          "p99": 232457.27000000025,
+          "std": 47340.62872207445
+        }
+      }
+    }
+  },
+  "existing_preparation_code_audit": {
+    "amlsim": {
+      "finding": "Its sender/receiver/amount/timestamp mapping agrees with the raw schema, but final ordering uses only (SENDER_ACCOUNT_ID, TIMESTAMP); the observed timestamp ties require frozen TX_ID tie-breaking and an entity-disjoint split contract.",
+      "path": "data/prepare_amlsim.py",
+      "sha256": "381ea3482f64c2a3bd686adea8e5c569c9c8754cf48fe0831f89716380ba77a7",
+      "status": "REQUIRES_PROTOCOL_AMENDMENT_BEFORE_USE"
+    },
+    "sparkov": {
+      "finding": "It concatenates all provided files and drops merchant in favor of category. That would mix the published test into preparation and replace counterparty identity with merchant type; it must not be used unchanged.",
+      "path": "data/prepare_sparkov.py",
+      "sha256": "2b4ed307c2137433a9df6d4d836a052ca74d6148b7ef6e6071c3f52e5a7c630e",
+      "status": "NOT_ADMISSIBLE_FOR_PROPOSED_EXTERNAL_PROTOCOL"
+    }
+  },
+  "execution_counts": {
+    "cuda_calls": 0,
+    "data_generation_calls": 0,
+    "external_validation_experiment_calls": 0,
+    "fresh_test_calls": 0,
+    "full_run_calls": 0,
+    "gpu_inventory_queries": 0,
+    "model_fit_calls": 0,
+    "model_sample_calls": 0,
+    "privacy_calls": 0,
+    "tstr_calls": 0
+  },
+  "external_protocol_proposal": {
+    "controlled_benchmark_separation": {
+      "coherence": [
+        "receiver repeat/run length and transition fidelity",
+        "joint gap-receiver distribution by Y",
+        "amount-gap and amount-receiver dependence by Y",
+        "original-versus-row-shuffled order-sensitive delta"
+      ],
+      "fidelity": [
+        "amount and gap marginals/effect sizes by Y",
+        "receiver PMF and UNK rate by Y",
+        "sequence length and Y prevalence",
+        "train-support validity and padding/mask contract"
+      ],
+      "five_guard": "Do not copy v2 controlled-benchmark numeric thresholds to external data. Preserve the guard families as diagnostics, but calibrate any external hard thresholds with train-only entity bootstrap in a new preregistration.",
+      "locked_test": "Use once after train-only fitting and validation-only protocol selection; no recalibration or candidate changes afterward."
+    },
+    "preprocessing": [
+      "Fit log1p/standardization parameters on valid train rows only and freeze their hashes before validation.",
+      "Fit receiver vocabulary on train only; reserve explicit UNK for validation/locked-test categories.",
+      "Choose timestamp bin edges, maximum length, tail policy, and class/window sampling from train only."
+    ],
+    "row_shuffle_negative_control": {
+      "decision_use": "compare an order-sensitive validation statistic/classifier with the unshuffled sequence; unchanged performance indicates row-marginal rather than sequential signal",
+      "forbidden": "do not orient, tune, or select the shuffle statistic on the locked test",
+      "operator": "keep timestamp positions, entity Y, sequence length, and row-feature marginals fixed; independently permute aligned (amount, receiver and other non-time row features) across valid positions, then recompute gap-aligned summaries without exposing row fraud labels",
+      "unit": "within each fixed entity window"
+    }
+  },
+  "feasibility": {
+    "amlsim": "FEASIBLE_WITH_PREREGISTRATION",
+    "experiment_authorized": false,
+    "sparkov": "FEASIBLE_WITH_PREREGISTRATION_AND_SPLIT_DECISION"
+  },
+  "frozen_external_cof_baseline": {
+    "adapter_path": "generators/cof_seqgen_adapter.py",
+    "adapter_sha256": "48e9e1280bc23a27abf0b5f6447f6682e3b846d0d1773fb96d99abcf407dd7f3",
+    "audit_constraint": "identity only: this audit does not adapt, train, sample, or authorize this baseline; external-data preprocessing and evaluation require a separate preregistration",
+    "cof_config": {
+      "architecture": "CoF-SeqGen",
+      "batch_size": 256,
+      "cfg_dropout": 0.15,
+      "coherence_lambda": 0.0,
+      "d_model": 128,
+      "diffusion_steps": 50,
+      "discrete_mask_max": 0.7,
+      "early_stopping": false,
+      "feedback_after": 0.3,
+      "feedback_discrete": true,
+      "guidance_scale": 2.0,
+      "loss_positions": "all_valid",
+      "max_wall_seconds": 7200,
+      "n_layers": 2,
+      "optimizer": {
+        "lr": 0.001,
+        "name": "Adam",
+        "weight_decay": 0.0
+      },
+      "requested_steps": 20000,
+      "start_from_mask": true
+    },
+    "config_path": "configs/benchmark_v2/full_v2_5.yaml",
+    "config_sha256": "81bc16416f6dad3c23eaf1990c3cb76e5449e74f1ddc634f42d3a897cd3c5bb3",
+    "model_family": "existing CoF-SeqGen v2.5 (non-v3)",
+    "model_path": "models/cof_seqgen.py",
+    "model_sha256": "caf5fdb3baf367a28c6081a8ba5f4a89e59dacbba2377636acba5c051ae7006e",
+    "source_commit": "99a445f6dc893a8c2240d950de4f92877cc07f8a",
+    "source_commit_role": "source state used for the completed v2.5 full execution and frozen here as the external baseline identity"
+  },
+  "mapping_status": "recommended candidates based on observed raw columns and distributions; not an experiment authorization",
+  "preservation_inventory": {
+    "v2_5_final_complete": {
+      "path": "artifacts/benchmark_v2_5/full/FINAL_COMPLETE.json",
+      "sha256": "e47d46b995cdaa8f564ccb4cca56eeda4e9a17dba43c1ed2ca8c1a954e657d8a"
+    },
+    "v2_5_frozen_manifest": {
+      "path": "data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/data_manifest.json",
+      "sha256": "b2529f00bae2e534f90805db6cebdf7f19ee93117f34f71015bc6753a9223e05"
+    },
+    "v2_8_aggregate_complete": {
+      "path": "artifacts/benchmark_v2_8/candidate_selection/aggregate_attempt_001/AGGREGATE_COMPLETE.json",
+      "sha256": "58573dfb93ebed71843f286405e205669140b8cc66811ce61deebe808de513e9"
+    },
+    "v2_8_candidate_selection": {
+      "byte_count": 2065996,
+      "file_count": 21,
+      "path": "artifacts/benchmark_v2_8/candidate_selection",
+      "tree_sha256": "7f60deb8a10cd9946e2e8a814b21c463fbf753954e7e03c44b6a7d9efb02e700"
+    },
+    "v3_direct_attempt_002": {
+      "byte_count": 186589677,
+      "file_count": 52,
+      "path": "artifacts/benchmark_v3/candidate_selection/candidates/cof_v3_c01_direct_joint/seed_3001/attempt_002",
+      "tree_sha256": "a5ede6b1c13b0a59d328e094444bda9cad54489b8fc3c49282004bd033dc830d"
+    },
+    "v3_factorized_attempt_002": {
+      "byte_count": 164781479,
+      "file_count": 52,
+      "path": "artifacts/benchmark_v3/candidate_selection/candidates/cof_v3_c02_factorized_joint/seed_3001/attempt_002",
+      "tree_sha256": "28f159a587fbf5d9c656bc09417bd84c283b7a5e4537280c0314b23c4d1e0da1"
+    },
+    "v3_forensic_evidence": {
+      "path": "docs/benchmark_v2/forensic_v3_attempt_002_evidence.json",
+      "sha256": "e89b6456f5ed404ff9e1fa8ba8fb9f901ade9ced7c4c501fb3b8f66a24f3a538"
+    }
+  },
+  "required_user_decisions": [
+    "Approve non-overlapping 32-event windows (with masked tails) versus a separately preregistered time-window alternative.",
+    "Approve Sparkov merchant as primary receiver and category as secondary diagnostic.",
+    "Choose whether Sparkov fraudTest.csv is a final temporal robustness evaluation despite entity overlap, or whether only the fraudTrain-derived entity-disjoint internal test is confirmatory.",
+    "Approve train-only external-data thresholds and the row-shuffle coherence endpoint before any model execution.",
+    "Approve the frozen v2.5 non-v3 CoF source/config identity and a separate external execution budget; neither is authorized by this audit."
+  ],
+  "schema_version": "external-validation-feasibility-audit-v1",
+  "scope": "read-only raw-data feasibility and source-only protocol proposal"
+}

@@ -1,0 +1,560 @@
+schema_version: benchmark-v2.6-validation-selection-v1
+mode: PREPARATION_ONLY
+scenario: joint_semimarkov_v2b
+kappa: 1.0
+test_split_access: FORBIDDEN
+v2_5_test_artifacts:
+  permitted_use: forensic_cause_evidence_only
+  candidate_selection_use: FORBIDDEN
+model_order:
+  - ctgan_separate_class
+  - tvae_separate_class
+  - neural_sequence
+  - cof_seqgen
+model_roles:
+  primary_c2_learned:
+    - ctgan_separate_class
+    - tvae_separate_class
+    - cof_seqgen
+  secondary:
+    - neural_sequence
+  fixed_reference:
+    - empirical_iid
+
+selection_budget:
+  candidates_per_model: 4
+  evaluation_candidates_per_model: 4
+  evaluation_candidates_all_models: 16
+  training_trajectories_per_model: 3
+  training_trajectories_all_models: 12
+  selection_seeds: [2601]
+  requested_updates_per_trajectory: 20000
+  eligible_checkpoint_steps: [10000, 20000]
+  checkpoint_interval_steps: 100
+  max_gpu_wall_seconds_per_trajectory: 7200
+  max_gpu_hours_per_trajectory: 2.0
+  max_gpu_hours_per_model: 6.0
+  max_gpu_hours_all_models: 24.0
+  early_stopping: false
+  partial_candidate_selection: FORBIDDEN
+  result_based_budget_extension: FORBIDDEN
+  candidate_training_execution_authorized: false
+
+validation_gate:
+  threshold_provenance:
+    fit_split: train
+    source_sha256: a241491deee47a4b0fc6dc22e561c8fbf304086ed04dd4dca1ace8440583b27b
+    v2_5_threshold_mutation: false
+  thresholds:
+    amount_ks: 0.006081138155655141
+    gap_ks: 0.006387882975686154
+    amount_abs_standardized_label_effect: 0.0363693454591819
+    gap_abs_standardized_label_effect: 0.051540527275560376
+    receiver_max_abs_signed_frequency: 0.02
+  metrics:
+    - amount_ks
+    - gap_ks
+    - amount_abs_standardized_label_effect
+    - gap_abs_standardized_label_effect
+    - receiver_max_abs_signed_frequency
+  selection_rule:
+    eligibility: all_five_row_marginal_guards_PASS
+    primary_objective: minimize_max_amount_ks_gap_ks
+    secondary_objective: minimize_sum_amount_ks_gap_ks
+    final_tiebreaker: lexicographic_candidate_id
+    primary_no_pass_action: PROHIBIT_V2_6_PRIMARY_C2_FULL_RUN
+    secondary_no_pass_action: RECORD_NOT_EVALUABLE_WITHOUT_BLOCKING_PRIMARY_C2
+
+models:
+  ctgan_separate_class:
+    class_handling: separate_y0_y1_models
+    adapter_base_config:
+      adapter: generators.candidate_model_backends_v2_6.ConditionalCTGANCandidateV26
+      batch_size: 500
+      generator_lr: 0.0002
+      generator_decay: 0.000001
+      discriminator_lr: 0.0002
+      discriminator_decay: 0.000001
+      cuda: true
+      device: cuda
+      early_stopping: false
+    candidates:
+      - candidate_id: c00_native_checkpoint_10000
+        numeric_representation:
+          amount: native_then_train_fitted_bayesian_gmm
+          inverse: upstream_cluster_normalizer_reverse_transform
+        channel_loss_weights:
+          mode: native_joint_adversarial_no_explicit_channel_weights
+        sampling_rule:
+          latent: standard_normal
+          conditional_vector: upstream_original_frequency
+          categorical_activation: gumbel_softmax
+          categorical_temperature: 0.2
+          inverse_decode: upstream
+        training_schedule:
+          shared_trajectory_id: ctgan_native_seed_2601
+          requested_updates: 20000
+          class_updates: {"0": 10000, "1": 10000}
+          selection_checkpoint_step: 10000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          class_wall_seconds: {"0": 3600, "1": 3600}
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-ctgan-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+      - candidate_id: c01_native_checkpoint_20000
+        numeric_representation:
+          amount: native_then_train_fitted_bayesian_gmm
+          inverse: upstream_cluster_normalizer_reverse_transform
+        channel_loss_weights:
+          mode: native_joint_adversarial_no_explicit_channel_weights
+        sampling_rule:
+          latent: standard_normal
+          conditional_vector: upstream_original_frequency
+          categorical_activation: gumbel_softmax
+          categorical_temperature: 0.2
+          inverse_decode: upstream
+        training_schedule:
+          shared_trajectory_id: ctgan_native_seed_2601
+          requested_updates: 20000
+          class_updates: {"0": 10000, "1": 10000}
+          selection_checkpoint_step: 20000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          class_wall_seconds: {"0": 3600, "1": 3600}
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-ctgan-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+      - candidate_id: c02_zscore_checkpoint_20000
+        numeric_representation:
+          amount: train_only_global_zscore_then_train_fitted_bayesian_gmm
+          inverse: gmm_reverse_then_train_only_zscore_inverse
+          zero_variance_action: candidate_invalid
+        channel_loss_weights:
+          mode: native_joint_adversarial_no_explicit_channel_weights
+        sampling_rule:
+          latent: standard_normal
+          conditional_vector: upstream_original_frequency
+          categorical_activation: gumbel_softmax
+          categorical_temperature: 0.2
+          inverse_decode: upstream
+        training_schedule:
+          shared_trajectory_id: ctgan_zscore_seed_2601
+          requested_updates: 20000
+          class_updates: {"0": 10000, "1": 10000}
+          selection_checkpoint_step: 20000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          class_wall_seconds: {"0": 3600, "1": 3600}
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-ctgan-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+      - candidate_id: c03_zscore_tempered_checkpoint_20000
+        numeric_representation:
+          amount: train_only_global_zscore_then_train_fitted_bayesian_gmm
+          inverse: gmm_reverse_then_train_only_zscore_inverse
+          zero_variance_action: candidate_invalid
+        channel_loss_weights:
+          mode: native_joint_adversarial_no_explicit_channel_weights
+        sampling_rule:
+          latent: standard_normal
+          conditional_vector: upstream_original_frequency
+          categorical_activation: gumbel_softmax
+          categorical_temperature: 0.5
+          inverse_decode: upstream
+        training_schedule:
+          shared_trajectory_id: ctgan_zscore_tempered_seed_2601
+          requested_updates: 20000
+          class_updates: {"0": 10000, "1": 10000}
+          selection_checkpoint_step: 20000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          class_wall_seconds: {"0": 3600, "1": 3600}
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-ctgan-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+
+  tvae_separate_class:
+    class_handling: separate_y0_y1_models
+    adapter_base_config:
+      adapter: generators.candidate_model_backends_v2_6.ConditionalTVAECandidateV26
+      batch_size: 500
+      lr: 0.001
+      weight_decay: 0.00001
+      cuda: true
+      device: cuda
+      early_stopping: false
+    candidates:
+      - candidate_id: c00_native_checkpoint_10000
+        numeric_representation:
+          amount: native_then_train_fitted_bayesian_gmm
+          inverse: upstream_cluster_normalizer_reverse_transform_with_sigma
+        channel_loss_weights:
+          mode: native_tvae_likelihood
+          amount: 1.0
+          gap: 1.0
+          receiver: 1.0
+        sampling_rule:
+          latent_scale: 1.0
+          continuous_decode: tanh_then_sigma_perturbed_inverse
+          categorical_decode: upstream_inverse
+        training_schedule:
+          shared_trajectory_id: tvae_native_seed_2601
+          requested_updates: 20000
+          class_updates: {"0": 10000, "1": 10000}
+          selection_checkpoint_step: 10000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          class_wall_seconds: {"0": 3600, "1": 3600}
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-tvae-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+      - candidate_id: c01_native_checkpoint_20000
+        numeric_representation:
+          amount: native_then_train_fitted_bayesian_gmm
+          inverse: upstream_cluster_normalizer_reverse_transform_with_sigma
+        channel_loss_weights:
+          mode: native_tvae_likelihood
+          amount: 1.0
+          gap: 1.0
+          receiver: 1.0
+        sampling_rule:
+          latent_scale: 1.0
+          continuous_decode: tanh_then_sigma_perturbed_inverse
+          categorical_decode: upstream_inverse
+        training_schedule:
+          shared_trajectory_id: tvae_native_seed_2601
+          requested_updates: 20000
+          class_updates: {"0": 10000, "1": 10000}
+          selection_checkpoint_step: 20000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          class_wall_seconds: {"0": 3600, "1": 3600}
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-tvae-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+      - candidate_id: c02_zscore_checkpoint_20000
+        numeric_representation:
+          amount: train_only_global_zscore_then_train_fitted_bayesian_gmm
+          inverse: gmm_reverse_then_train_only_zscore_inverse
+          zero_variance_action: candidate_invalid
+        channel_loss_weights:
+          mode: native_tvae_likelihood
+          amount: 1.0
+          gap: 1.0
+          receiver: 1.0
+        sampling_rule:
+          latent_scale: 1.0
+          continuous_decode: tanh_then_sigma_perturbed_inverse
+          categorical_decode: upstream_inverse
+        training_schedule:
+          shared_trajectory_id: tvae_zscore_seed_2601
+          requested_updates: 20000
+          class_updates: {"0": 10000, "1": 10000}
+          selection_checkpoint_step: 20000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          class_wall_seconds: {"0": 3600, "1": 3600}
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-tvae-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+      - candidate_id: c03_zscore_weighted_tempered_checkpoint_20000
+        numeric_representation:
+          amount: train_only_global_zscore_then_train_fitted_bayesian_gmm
+          inverse: gmm_reverse_then_train_only_zscore_inverse
+          zero_variance_action: candidate_invalid
+        channel_loss_weights:
+          mode: explicit_span_weights_before_tvae_loss_factor
+          amount: 2.0
+          gap: 2.0
+          receiver: 1.0
+        sampling_rule:
+          latent_scale: 0.75
+          continuous_decode: tanh_then_sigma_perturbed_inverse
+          categorical_decode: temperature_multinomial
+          categorical_temperature: 0.75
+        training_schedule:
+          shared_trajectory_id: tvae_zscore_weighted_tempered_seed_2601
+          requested_updates: 20000
+          class_updates: {"0": 10000, "1": 10000}
+          selection_checkpoint_step: 20000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          class_wall_seconds: {"0": 3600, "1": 3600}
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-tvae-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+
+  neural_sequence:
+    class_handling: one_label_conditioned_model
+    adapter_base_config:
+      adapter: generators.candidate_model_backends_v2_6.NeuralSequenceCandidateV26
+      hidden_size: 64
+      batch_size: 256
+      lr: 0.001
+      weight_decay: 0.0
+      device: cuda
+      early_stopping: false
+    candidates:
+      - candidate_id: c00_native_checkpoint_10000
+        numeric_representation:
+          amount: native_raw
+          inverse: identity
+        channel_loss_weights:
+          mode: explicit
+          amount: 1.0
+          gap: 1.0
+          receiver: 1.0
+        sampling_rule:
+          amount: deterministic_conditional_mean
+          gap: multinomial
+          receiver: multinomial
+          categorical_temperature: 1.0
+        training_schedule:
+          shared_trajectory_id: neural_native_seed_2601
+          requested_updates: 20000
+          selection_checkpoint_step: 10000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-neural-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+      - candidate_id: c01_native_checkpoint_20000
+        numeric_representation:
+          amount: native_raw
+          inverse: identity
+        channel_loss_weights:
+          mode: explicit
+          amount: 1.0
+          gap: 1.0
+          receiver: 1.0
+        sampling_rule:
+          amount: deterministic_conditional_mean
+          gap: multinomial
+          receiver: multinomial
+          categorical_temperature: 1.0
+        training_schedule:
+          shared_trajectory_id: neural_native_seed_2601
+          requested_updates: 20000
+          selection_checkpoint_step: 20000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-neural-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+      - candidate_id: c02_zscore_checkpoint_20000
+        numeric_representation:
+          amount: train_only_global_zscore
+          inverse: train_only_zscore_inverse
+          zero_variance_action: candidate_invalid
+        channel_loss_weights:
+          mode: explicit
+          amount: 1.0
+          gap: 1.0
+          receiver: 1.0
+        sampling_rule:
+          amount: deterministic_conditional_mean
+          gap: multinomial
+          receiver: multinomial
+          categorical_temperature: 1.0
+        training_schedule:
+          shared_trajectory_id: neural_zscore_seed_2601
+          requested_updates: 20000
+          selection_checkpoint_step: 20000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-neural-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+      - candidate_id: c03_zscore_weighted_tempered_checkpoint_20000
+        numeric_representation:
+          amount: train_only_global_zscore
+          inverse: train_only_zscore_inverse
+          zero_variance_action: candidate_invalid
+        channel_loss_weights:
+          mode: explicit
+          amount: 2.0
+          gap: 2.0
+          receiver: 1.0
+        sampling_rule:
+          amount: deterministic_conditional_mean
+          gap: multinomial
+          receiver: multinomial
+          categorical_temperature: 0.75
+        training_schedule:
+          shared_trajectory_id: neural_zscore_weighted_tempered_seed_2601
+          requested_updates: 20000
+          selection_checkpoint_step: 20000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-neural-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+
+  cof_seqgen:
+    class_handling: one_cfg_label_conditioned_model
+    adapter_base_config:
+      adapter: generators.candidate_model_backends_v2_6.CoFSeqGenCandidateV26
+      d_model: 128
+      n_layers: 2
+      batch_size: 256
+      lr: 0.001
+      weight_decay: 0.0
+      device: cuda
+      coherence_lambda: 0.0
+      cfg_dropout: 0.15
+      guidance_scale: 2.0
+      diffusion_steps: 50
+      sampling_chunk_size: 256
+      discrete_mask_max: 0.7
+      start_from_mask: true
+      feedback_discrete: true
+      feedback_after: 0.3
+      early_stopping: false
+    candidates:
+      - candidate_id: c00_native_checkpoint_10000
+        numeric_representation:
+          amount: native_raw_gaussian_diffusion
+          inverse: identity
+        channel_loss_weights:
+          mode: explicit
+          amount: 1.0
+          gap: 1.0
+          receiver: 1.0
+          label: 1.0
+        sampling_rule:
+          amount: deterministic_ddim_50_steps
+          discrete_feedback_temperature: 1.0
+          final_categorical_decode: argmax
+          guidance_scale: 2.0
+        training_schedule:
+          shared_trajectory_id: cof_native_seed_2601
+          requested_updates: 20000
+          selection_checkpoint_step: 10000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-cof-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+      - candidate_id: c01_native_checkpoint_20000
+        numeric_representation:
+          amount: native_raw_gaussian_diffusion
+          inverse: identity
+        channel_loss_weights:
+          mode: explicit
+          amount: 1.0
+          gap: 1.0
+          receiver: 1.0
+          label: 1.0
+        sampling_rule:
+          amount: deterministic_ddim_50_steps
+          discrete_feedback_temperature: 1.0
+          final_categorical_decode: argmax
+          guidance_scale: 2.0
+        training_schedule:
+          shared_trajectory_id: cof_native_seed_2601
+          requested_updates: 20000
+          selection_checkpoint_step: 20000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-cof-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+      - candidate_id: c02_zscore_checkpoint_20000
+        numeric_representation:
+          amount: train_only_global_zscore_gaussian_diffusion
+          inverse: train_only_zscore_inverse
+          zero_variance_action: candidate_invalid
+        channel_loss_weights:
+          mode: explicit
+          amount: 1.0
+          gap: 1.0
+          receiver: 1.0
+          label: 1.0
+        sampling_rule:
+          amount: deterministic_ddim_50_steps
+          discrete_feedback_temperature: 1.0
+          final_categorical_decode: argmax
+          guidance_scale: 2.0
+        training_schedule:
+          shared_trajectory_id: cof_zscore_seed_2601
+          requested_updates: 20000
+          selection_checkpoint_step: 20000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-cof-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+      - candidate_id: c03_zscore_weighted_tempered_checkpoint_20000
+        numeric_representation:
+          amount: train_only_global_zscore_gaussian_diffusion
+          inverse: train_only_zscore_inverse
+          zero_variance_action: candidate_invalid
+        channel_loss_weights:
+          mode: explicit
+          amount: 2.0
+          gap: 2.0
+          receiver: 1.0
+          label: 1.0
+        sampling_rule:
+          amount: deterministic_ddim_50_steps
+          discrete_feedback_temperature: 0.75
+          final_categorical_decode: temperature_multinomial
+          final_categorical_temperature: 0.75
+          guidance_scale: 2.0
+        training_schedule:
+          shared_trajectory_id: cof_zscore_weighted_tempered_seed_2601
+          requested_updates: 20000
+          selection_checkpoint_step: 20000
+          checkpoint_interval_steps: 100
+          max_gpu_wall_seconds: 7200
+          early_stopping: false
+        implementation_contract:
+          version: benchmark-v2.6-cof-candidate-v1
+          v2_5_files_modified: false
+          required_before_candidate_execution: true
+
+freeze_and_authorization:
+  selection_execution_authorized: false
+  selected_config_freeze_required: true
+  candidate_source_hash_freeze_required: true
+  train_validation_manifest_freeze_required: true
+  fresh_test_definition_before_selection: FORBIDDEN
+  fresh_test_generation_authorized: false
+  five_seed_full_experiment_authorized: false
+  separate_explicit_user_approval_required: true
+artifact_roots:
+  candidate_selection: artifacts/benchmark_v2_6/selection/
+  selected_freeze: artifacts/benchmark_v2_6/freeze/
+  future_fresh_test: data/benchmark_v2_6/fresh_test/
+  v2_5_runtime_reuse_or_overwrite: FORBIDDEN

@@ -1,0 +1,75 @@
+{
+  "conclusions": {
+    "ctgan_reuse": "REUSE_ELIGIBLE_EXACT_HASH_BOUND_RESOURCE_ONLY",
+    "empirical_iid_failure": "STORED_EXTERNAL_FIDELITY_AND_COHERENCE_THRESHOLDS_EXCEEDED",
+    "evaluator_or_metric_formula_changed": false,
+    "preferred_next_execution": "AMLSIM_TVAE_ATTEMPT_002_ONLY_AFTER_SEPARATE_AUTHORIZATION",
+    "sparkov_launch_status": "BLOCKED_UNTIL_AMLSIM_TVAE_TERMINAL_AND_SEPARATE_AUTHORIZATION",
+    "tvae_failure": "GLOBAL_OOM_DURING_JOBLIB_DATA_TRANSFORMER_PARALLELISM"
+  },
+  "dataset_context": {
+    "receiver_train_vocabulary_size": 9654,
+    "receiver_vocabulary_cardinality_with_pad_unk": 9656,
+    "train": {
+      "negative_sequences": 29267,
+      "positive_sequences": 1082,
+      "sequences": 30349,
+      "unk_count": 0,
+      "valid_rows": 914756
+    },
+    "validation": {
+      "negative_sequences": 6311,
+      "positive_sequences": 231,
+      "positive_to_negative_ratio": 0.036602756187609984,
+      "sequences": 6542,
+      "unk_count": 3658,
+      "unk_rate_valid_rows": 0.018508961210317052,
+      "valid_rows": 197634
+    }
+  },
+  "empirical_iid_stored_evaluation": {
+    "hard_validity": {"mask": true, "padding": true, "train_discrete_support": true},
+    "metrics": [
+      {"class": "Y0", "metric": "amount_ks", "pass": false, "ratio": 1.8782817210006166, "threshold": 0.032337004201747566, "value": 0.06073800390406259},
+      {"class": "Y1", "metric": "amount_ks", "pass": false, "ratio": 1.0896790620091228, "threshold": 0.06135753516958309, "value": 0.06686002137078306},
+      {"class": "Y0", "metric": "gap_total_variation", "pass": false, "ratio": 1.5842541059459643, "threshold": 0.019096601122333405, "value": 0.030253868737669005},
+      {"class": "Y1", "metric": "gap_total_variation", "pass": false, "ratio": 1.2628398770276907, "threshold": 0.03952681908465382, "value": 0.04991604335216002},
+      {"class": "Y0", "metric": "receiver_total_variation", "pass": false, "ratio": 1.7630356912928766, "threshold": 0.30471718800231296, "value": 0.5372272781984793},
+      {"class": "Y1", "metric": "receiver_total_variation", "pass": false, "ratio": 1.8004842578213287, "threshold": 0.43586367457491954, "value": 0.7847656846283011},
+      {"class": "Y0", "metric": "short_gap_receiver_repeat_error", "pass": false, "ratio": 13.739364866756338, "threshold": 0.01658125430482188, "value": 0.227815902842422},
+      {"class": "Y1", "metric": "short_gap_receiver_repeat_error", "pass": false, "ratio": 4.971238810691238, "threshold": 0.031414883095152335, "value": 0.15617088607594937}
+    ],
+    "selection_status": "SELECTED",
+    "selection_tier": "FIDELITY_WARNING"
+  },
+  "memory_forensic": {
+    "amlsim_receiver_dense_float64_upper_bound_gib": 65.81011366844177,
+    "concurrent_two_amlsim_tabular_upper_bound_gib": 131.62022733688354,
+    "estimate_arrays_allocated": 0,
+    "sparkov_receiver_dense_float64_upper_bound_gib": 4.650851786136627,
+    "upper_bound_ratio_amlsim_to_sparkov": 14.150120600404891,
+    "upstream_path": "DataTransformer.transform -> _parallel_transform -> Parallel(n_jobs=-1)",
+    "warning": "Conservative non-allocating whole-train shape estimates; separate-class transforms operate on class subsets. These establish scaling risk, not measured peak RSS."
+  },
+  "preservation": {
+    "amlsim_bundle_tree_sha256": "742735126e3a511dc612271102a9d13008e0a8a85552948c9fb9fd1f9709309d",
+    "amlsim_ctgan_attempt_001_tree_sha256": "1da3ef166302a27135d2adace6b4740278ef11e2fe6de8b3312e89f0007d0734",
+    "amlsim_empirical_iid_attempt_002_tree_sha256": "2b602648c70419cb0a055a4d9b2fd3fb9237ccac267cd5f926d4586bdb717248",
+    "amlsim_frozen_cof_attempt_001_tree_sha256": "e660dcdb324cb0f9394b2c69e03c751cdeee73f4b37c61e8b702d5547b0e541e",
+    "amlsim_tvae_attempt_001_tree_sha256": "d98ed71eb09f2ca07c7f53d42c16df0c1035477f783ed3b5733ccd038c2c9272"
+  },
+  "schema_version": "forensic-amlsim-external-validation-v1",
+  "source_evidence": {
+    "ctgan_complete_sha256": "58deb1884cf086a902181d6c30e372d1a04c79e9ff6eb327789a8e3613f38754",
+    "ctgan_evaluation_sha256": "01e5c7dcb041052d9a6cb2e9c0cb7b814653708f909e610d55b4ce15b87c8542",
+    "empirical_iid_complete_sha256": "81c8105f62646d833dcbf016b371c1f22e783988d7d5524f84907d22f87c800a",
+    "empirical_iid_evaluation_sha256": "9510091563d4c5e8f57a654a4b447a9cd0f8087fae0d9d98415f290fba7e1ef3",
+    "empirical_iid_thresholds_sha256": "e715b01a9481e7a539c6661126ddeb04570f08318e409911f3f0d06947ca0330",
+    "frozen_cof_complete_sha256": "e44db66eaaa6c65142df3cde8fa283dd5d05df9f7386a3d35870d51780db7f35",
+    "frozen_cof_evaluation_sha256": "db7f7e99f7a43c6cbdb259b663f32628bd44440e01f145e17be305daf1a5d68a",
+    "frozen_summary_sha256": "c18c1fac704d325cdc78a763a0a73b682f93517c2a674bc21351672b3b95c562",
+    "tvae_failed_sha256": "b0ca730547ef7600577736046bbba0dae39bbb5da7b3f3c1de301d367dae8cdf",
+    "tvae_runner_log_sha256": "b4c95d7246baf7cf4198ac481d7084d212d8ae8f5fa54f439a0a9b361f414c60",
+    "transform_state_sha256": "9bc50911cfd7783504d93b601ba93f17aec498b1c5d961b28460f33d168e5a9c"
+  }
+}

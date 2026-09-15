@@ -1,0 +1,62 @@
+schema_version: external-frozen-materialization-v1
+status: source_only_not_authorized
+source_base_head: 6df83da4f81005b020948fb64ca2de6edb26b77d
+protocol:
+  path: configs/benchmark_v2/external_sequence_protocol_v1.yaml
+  sha256: 434e0694df60a8b85ba073e4bcaed9f6c5a1bf43ca2da61be69d87c845e1e3cc
+
+runtime:
+  attempt: attempt_001
+  data_root: data/external_sequence_protocol_v1/frozen
+  artifact_root: artifacts/external_sequence_protocol_v1/materialization
+  append_only: true
+  overwrite: forbidden
+  authorization_required_for_execute: true
+
+datasets:
+  - amlsim
+  - sparkov
+
+static_compatibility:
+  frozen_source_commit: 99a445f6dc893a8c2240d950de4f92877cc07f8a
+  adapter_path: generators/cof_seqgen_adapter.py
+  adapter_sha256: 48e9e1280bc23a27abf0b5f6447f6682e3b846d0d1773fb96d99abcf407dd7f3
+  denoiser_path: models/seq_denoiser.py
+  amount_input_width: 1
+  gap_bin_cardinality: 16
+  receiver_input_width: 1
+  sequence_length: 32
+  receiver_cardinality_upper_bound:
+    amlsim: 9928 # 9,926 observed raw receivers plus PAD and UNK
+    sparkov: 695 # 693 observed raw merchants plus PAD and UNK
+
+output_contract:
+  raw_schema_manifest: raw_schema_manifest.json
+  entity_split_manifest: entity_split_manifest.json
+  window_manifest: window_manifest.json
+  train_array: train.npz
+  validation_array: validation.npz
+  internal_test_array: internal_test.npz
+  transform_state: train_transform_state.json
+  summary: summary.json
+  leakage_audit: leakage_audit.json
+  provenance_manifest: provenance_manifest.json
+  checksum_manifest: checksum_manifest.json
+  artifact_index: artifact_index.json
+  running_marker: RUNNING.json
+  complete_marker: COMPLETE.json
+  failed_marker: FAILED.json
+
+execution_policy:
+  plan_and_dry_run:
+    raw_access: hash_and_header_only
+    data_write_calls: 0
+    model_calls: 0
+    gpu_calls: 0
+  execute:
+    authorization_scope: external_frozen_data_materialization_v1_only
+    external_test_evaluation: forbidden
+    sparkov_public_test_body_read: forbidden
+    model_fit_sample: forbidden
+    fidelity_coherence: forbidden
+    tstr_privacy: forbidden

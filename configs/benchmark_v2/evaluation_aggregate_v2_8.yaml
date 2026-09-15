@@ -1,0 +1,67 @@
+schema_version: benchmark-v2.8-aggregate-source-only-v1
+mode: SOURCE_ONLY_IMPLEMENTATION
+runtime_root: artifacts/benchmark_v2_8/candidate_selection
+future_output_root: artifacts/benchmark_v2_8/candidate_selection/aggregate_attempt_001
+authorization_required_for_execute: true
+authorization_creation_authorized: false
+execution_authorized: false
+gpu_query_authorized: false
+cuda_authorized: false
+training_authorized: false
+sampling_authorized: false
+guard_recalculation_authorized: false
+candidate_reexecution_authorized: false
+test_split_access: FORBIDDEN
+fresh_test_authorized: false
+tstr_authorized: false
+privacy_authorized: false
+five_seed_full_run_authorized: false
+
+inputs:
+  ctgan_separate_class:
+    candidate_id: ctgan_v28_c01_joint_gap_receiver_decoder
+    source_kind: stored_v2_8_evaluation
+    attempt_path: artifacts/benchmark_v2_8/candidate_selection/evaluations/ctgan_separate_class/ctgan_v28_c01_joint_gap_receiver_decoder/seed_2801/attempt_001
+    worker_terminal_path: artifacts/benchmark_v2_8/candidate_selection/workers/ctgan_separate_class/WORKER_COMPLETE.json
+  cof_seqgen:
+    candidate_id: cof_v28_c01_gap_distribution_sampler
+    source_kind: stored_v2_8_evaluation
+    attempt_path: artifacts/benchmark_v2_8/candidate_selection/evaluations/cof_seqgen/cof_v28_c01_gap_distribution_sampler/seed_2801/attempt_001
+    worker_terminal_path: artifacts/benchmark_v2_8/candidate_selection/workers/cof_seqgen/WORKER_COMPLETE.json
+  tvae_separate_class:
+    candidate_id: tvae_v27_c01_amount_inverse_decoder
+    source_kind: frozen_v2_7_selected_reference
+    attempt_path: artifacts/benchmark_v2_7/candidate_selection/evaluations/tvae_separate_class/tvae_v27_c01_amount_inverse_decoder/seed_2601/attempt_001
+    evaluation_sha256: 56dc7155791440369f4fc23ef791f916cc86417603d7091730efcdd8038581b2
+    candidate_result_sha256: 5c65e3bd0e0331c95af4fd026bc91008253b06e90414bc54a1cb0d2bba0137c0
+    validation_sample_sha256: 57ed7595d6dc9f83a8c9679606cb18d592ceac935f7d1aef2c0356cd1339c90e
+    complete_sha256: 5a7a462f762ea60e2befe9a547eae00725fb180f4d0ed17983f76dbd3f63de90
+
+selection_rule:
+  eligibility: stored_all_five_row_marginal_guards_PASS
+  thresholds:
+    amount_ks: 0.006081138155655141
+    gap_ks: 0.006387882975686154
+    amount_abs_standardized_label_effect: 0.0363693454591819
+    gap_abs_standardized_label_effect: 0.051540527275560376
+    receiver_max_abs_signed_frequency: 0.02
+  tie_break:
+    - minimize_max_amount_ks_gap_ks
+    - minimize_sum_amount_ks_gap_ks
+    - lexicographic_candidate_id
+  primary_models:
+    - ctgan_separate_class
+    - tvae_separate_class
+    - cof_seqgen
+
+frozen_provenance:
+  runner_config_sha256: 2af755a73e2764b060ef880b66e5deea7668919382ae151a11b42f15661feea0
+  candidate_config_sha256: 9e8ecaeab15f28ec05cee27150f4c6f76142dce661536094f41a798a83a7ae98
+  execution_authorization_sha256: 028a6fdc74814ea60e84fa1a027d15abc546c3d5298caa5765db8641d3af6bba
+  train_file_sha256: c67a6fce4593317e11e1b6f36397bfb38f9607916bf8f5b32329d8fa99b700a8
+  train_content_sha256: 0c03f179930cd4d89ccc8a8b66283e620313e16d15fd53f0674c133bcb80c09d
+  validation_file_sha256: 68c15c05c55742bfce0f22560ffe8378d032a7a9fd9a1072e80ec8da5340fba5
+  validation_content_sha256: aa1576b4ccae6a2ca30d0472f0782e1231ecc61ab3d224590a772dc3448b9e66
+  sampling_plan_sha256: 862be1aa149b98e5521d0197a53487c9a9df535fc4853b33b95186cc3fb8cc27
+  v2_7_aggregate_complete_sha256: a40630f51e1a07fb509f8f676eabf52f9bd18affbd7a9de47c510e2e1c0792b2
+  v2_7_selection_report_sha256: 3af94b53f5dbaaeca917a04d2b490c0267f70aa915e38e2f751b449451122ec3

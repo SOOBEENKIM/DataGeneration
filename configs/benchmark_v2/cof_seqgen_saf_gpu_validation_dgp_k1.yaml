@@ -1,0 +1,13 @@
+dataset_dir: data/cof_seqgen_saf/canonical/controlled_coupling_joint_semimarkov_v2b_kappa_1_00
+output_dir: artifacts/cof_seqgen_saf/development/gpu_dgp_k1/validation_converged
+checkpoints:
+  SAF-C0: artifacts/cof_seqgen_saf/development/gpu_dgp_k1/SAF-C0/checkpoint_best.pt
+  SAF-U0: artifacts/cof_seqgen_saf/development/gpu_dgp_k1/SAF-U0/checkpoint_best.pt
+  SAF-O0: artifacts/cof_seqgen_saf/development/gpu_dgp_k1/SAF-O0/checkpoint_best.pt
+  SAF-U1: artifacts/cof_seqgen_saf/development/gpu_dgp_k1/SAF-U1/checkpoint_best.pt
+  SAF-O1: artifacts/cof_seqgen_saf/development/gpu_dgp_k1/SAF-O1/checkpoint_best.pt
+device: cuda:0
+generation_seed: 20261826
+sample_batch_size: 256
+generation_entities: null
+metric_audit_path: artifacts/cof_seqgen_saf/metric_validity_audit_train_only.json

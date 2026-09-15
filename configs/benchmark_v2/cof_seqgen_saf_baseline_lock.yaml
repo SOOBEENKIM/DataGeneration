@@ -1,0 +1,79 @@
+schema_version: cof-seqgen-saf-baseline-lock-v1
+lock_date: '2026-08-26'
+main_runtime:
+  python: '3.10'
+  torch: 2.1.2+cu121
+  numpy: 1.26.4
+  pandas: 2.3.3
+  sdv: 1.38.0
+  sdv_wheel_sha256: 8a325bcccf0458589d27731cfbd0be181fed28532a63545d68f1b7f3785d8bd8
+  realtabformer: 0.2.4
+  realtabformer_wheel_sha256: 852436c5c82a0bf470ca7e9063e5a4f3e250b3ff5b9c8f6c50113c1e9ba76486
+  transformers_for_realtabformer: 4.46.3
+  status: INSTALLED_PIP_CHECK_CLEAN
+baselines:
+  cpar:
+    implementation: sdv.sequential.PARSynthesizer
+    version: 1.38.0
+    exact_length: true
+    context_method: pinned_private_sample_after_data_processor_transform
+    smoke_test_required: true
+  realtabformer:
+    implementation: realtabformer.REaLTabFormer
+    version: 0.2.4
+    exact_length: true
+    exact_length_method: related_num_context_column
+    relational_parent_child: true
+    external_logging: disabled_report_to_empty
+    persisted_artifacts: [parent_model, child_model]
+    compatibility_shims:
+      - serialize_full_save_dir_path_for_0_2_4
+      - promote_recognized_relational_index_to_entity_id
+    smoke_test_required: true
+  tabularargn:
+    implementation: mostlyai.engine.TabularARGN
+    version: 2.6.2
+    git_commit: 0b96f02e4fad47c7c19c985fda4311230e20bbb5
+    source_path: external/cof_seqgen_saf_baselines/mostlyai-engine
+    requires_python: '>=3.11,<3.14'
+    requires_torch: '>=2.11.0,<2.12.0'
+    install_status: ISOLATED_RUNTIME_REQUIRED_NOT_MIXED_WITH_MAIN_ENV
+    exact_length: false
+    length_protocol: planned_length_as_context_native_raw_length_reported
+  tabdit:
+    git_commit: cbb2b9a4866b0071ed9150a552704db188c33d4b
+    source_path: external/cof_seqgen_saf_baselines/TabDiT
+    install_status: BLOCKED_UPSTREAM_GENERATOR_CODE_ABSENT
+    evidence:
+      - repository_tracks_evaluation_and_discriminator_code
+      - generator_architecture_absent
+      - training_loop_absent
+      - sampling_implementation_absent
+    comparison_role: REPORTED_ONLY_NOT_EXECUTED
+  empirical_sequence_sampler:
+    implementation: local_train_only_whole_trajectory_resampler
+    exact_length: true
+    comparison_role: NONPARAMETRIC_MEMORIZATION_CONTROL
+  flattened_controls:
+    implementations:
+      ctgan: sdv.single_table.CTGANSynthesizer
+      tvae: sdv.single_table.TVAESynthesizer
+      gaussian_copula: sdv.single_table.GaussianCopulaSynthesizer
+    sdv_version: 1.38.0
+    comparison_role: MARGINAL_CONTROL_ONLY
+protocol:
+  fitted_split: train
+  identity_as_feature: false
+  timestamp_model_feature: false
+  temporal_model_feature: gap
+  timestamp_projection: cumulative_gap_with_zero_origin
+  first_gap_projection: missing_by_definition
+  external_model_first_gap_placeholder: 0.0
+  external_model_first_gap_placeholder_scope: model_matrix_only_never_canonical_or_evaluated
+  raw_content_repair: forbidden
+  raw_validation_failure: persisted_and_failed_closed
+  exact_length_models: [cpar, realtabformer, empirical_sequence_sampler, SAF-O1]
+  native_length_separate: [tabularargn]
+  reported_only: [tabdit]
+  flattened_only: [ctgan, tvae, gaussian_copula]
+  held_out_test_access: forbidden_during_development

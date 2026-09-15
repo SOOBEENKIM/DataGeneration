@@ -1,0 +1,298 @@
+schema_version: cof-hcmttpp-v2-source-only-implementation-v1
+mode: SOURCE_ONLY_SPECIFICATION
+family: cof_hcmttpp_v2
+display_name: CoF-HCMTTPP-v2
+implementation_status: IMPLEMENTED_SOURCE_ONLY
+candidate_count: 1
+
+implementation:
+  model_path: models/cof_hcmttpp_v2.py
+  model_sha256: f8b73074934b4bb9e2ea46de5cfdd3e35b447b23c9a1f8302b87c4182c0dcbf6
+  public_model_class: CoFHCMTTPPV2H1
+  public_gap_decoder_class: H1HurdleRQSGapDecoder
+  public_tail_state_class: TrainOnlyH1TailState
+  checkpoint_builder: build_h1_checkpoint_bundle
+  checkpoint_loader: load_h1_checkpoint_bundle
+  focused_tests:
+    - tests/test_cof_hcmttpp_v2_model.py
+    - tests/test_cof_hcmttpp_v2_contract.py
+  execution_runner_implemented: false
+
+rqs_inverse_corrective_amendment:
+  failed_execution_source_commit: 70481e2e4b612002fe7d3d074b9b67294869a52b
+  failure: RQS_inverse_root_is_invalid_at_valid_exact_central_endpoint
+  correction: exact_endpoint_geometry_analytic_endpoint_roots_and_float64_rqs_arithmetic
+  interior_quadratic_formula_changed: false
+  low_precision_input_arithmetic: promote_float16_bfloat16_float32_to_float64
+  epsilon_clipping: FORBIDDEN
+  silent_fallback: FORBIDDEN
+  redraw: FORBIDDEN
+  attempt_001_retry: FORBIDDEN
+  scientific_contract_changed: false
+
+signed_tail_scale_amendment:
+  parent_source_only_commit: 19ef5ad6a17d2068d9db3b36d97c4c8faf6072ea
+  superseded_formula: beta_base_y_plus_softplus_r_beta_h_y
+  defect: one_sided_scale_cannot_contract_below_beta_base
+  replacement_formula: beta_base_y_times_exp_r_beta_h_y
+  amendment_scope: documentation_and_config_only
+  candidate_count_changed: false
+  changed_factor_changed: false
+
+tail_conditionality_amendment:
+  parent_source_only_commit: 49130970a360a63f495afa01fae42a01859e778c
+  superseded_contract: fixed_class_level_tail_probability_and_scale
+  defect: fixed_p_tail_y_is_not_conditioned_on_event_history
+  amendment_scope: documentation_and_config_only
+  candidate_count_changed: false
+  changed_factor_changed: false
+
+permanent_v1_stop:
+  state: STOP_CCMTPP_V1_CHAIN_C1_GATE_FAIL
+  c1_retry: FORBIDDEN
+  c2_c3_c4_authorization: FORBIDDEN
+  c2_c3_c4_execution: FORBIDDEN
+  candidate_tuning: FORBIDDEN
+
+safety:
+  model_code_creation_authorized: true
+  cpu_synthetic_fixture_tests_authorized: true
+  cpu_synthetic_model_import_authorized: true
+  runner_creation_authorized: false
+  authorization_creation_authorized: false
+  launch_command_creation_authorized: false
+  runtime_artifact_creation_authorized: false
+  gpu_query_authorized: false
+  cuda_authorized: false
+  model_import_authorized: false
+  fit_authorized: false
+  checkpoint_write_authorized: false
+  sample_authorized: false
+  evaluation_authorized: false
+  selection_authorized: false
+  internal_test_authorized: false
+  sparkov_fraud_test_authorized: false
+  tstr_authorized: false
+  privacy_authorized: false
+  full_run_authorized: false
+  validation_fit_rows: 0
+  internal_test_fit_rows: 0
+  fraud_test_fit_rows: 0
+
+frozen_forensic_basis:
+  commit: 8957c50f939b79eed27c60a108f230afb4b5e5ae
+  chain_state: STOP_CCMTPP_V1_CHAIN_C1_GATE_FAIL
+  conclusion: positive-gap conditional calibration 문제
+  markdown:
+    path: docs/benchmark_v2/forensic_cof_ccmtpp_v1_c1_gap_failure.md
+    sha256: a121a2e627afba325fc36075c5f21ae9d053ed64d13ebcaa64bac143ff85820b
+  json:
+    path: docs/benchmark_v2/forensic_cof_ccmtpp_v1_c1_gap_failure.json
+    sha256: 6737ed983cbe310db5797af001e441bca0709960e3754cb86372b90a711ec280
+  csv:
+    path: docs/benchmark_v2/forensic_cof_ccmtpp_v1_c1_gap_failure.csv
+    sha256: 9ec6ebfaf87cd8ce8e5cfa605064b9bdd75b22aab5aff9d25d80be833ba79895
+
+frozen_c1_contract:
+  source_commit: b3f196a958850110cdbd4dddd3d325398ddc0c3c
+  source_config:
+    path: configs/benchmark_v2/cof_ccmtpp_v1_source_only.yaml
+    sha256: 2f3efe9fb2cc62027a12d7380e340604c6aeaece9b39eab91350e141e7088aa6
+  runner_config:
+    path: configs/benchmark_v2/cof_ccmtpp_v1_execution_runner.yaml
+    sha256: ad43d40baf9a73b3f6d8ecaa26751bbcc2a982a7bebc9aa21b01fa204881a2f8
+  preserved_components:
+    - causal_event_decoder
+    - shifted_history_inputs
+    - causal_and_padding_masks
+    - y_and_target_length_conditioning
+    - frozen_amount_encode_inverse_decode_contract
+    - conditional_amount_head
+    - flat_no_copy_receiver_head
+    - ordinary_valid_event_likelihood_aggregation
+    - fixed_validation_sampling_plan
+    - optimizer_and_budget
+  only_replaced_component: gap_decoder
+
+references:
+  amlsim:
+    frozen_bundle_tree_sha256: cc8f4c9c6ff415ccd4f78ec193122100145e10084751b971dcc0ce5e705fa024
+    c0_sample_sha256: 2ffafd5645aa4673d7e5219fe9abafbd5904c38bc5da1cae98e7b9b691579e8c
+    c0_evaluation_sha256: db7f7e99f7a43c6cbdb259b663f32628bd44440e01f145e17be305daf1a5d68a
+    c1_sample_sha256: 82a33e83e24b5eb41a1e5ddbeea512f21423302002c760dc9781f1d872f26155
+    c1_gate_sha256: 38a3558ce5270af5d7bce5f36f9b195bbfbbf4a74b6fa29a8492b43ec643df70
+    c1_terminal_sha256: aab8014045b056b29a79b40fcf31cf794af4fc26ede0865bd0e0db5046b19db3
+  sparkov:
+    frozen_bundle_tree_sha256: 62fefda6207911104a9bff0ebb41d5edf44c20a4c78dccef5875d9768be6addc
+    c0_sample_sha256: bd97e35de9f41e2d8cd90bd95378fa163764816010983b01422a8c11cca37936
+    c0_evaluation_sha256: 1597b95122d527fed21aa4dbd26448719b28fd5c92102d3722352ac12db0f990
+    c1_sample_sha256: 866b740d77c33a49dce6de03cc2485f36784f40fa6d918c0b871962928483050
+    c1_gate_sha256: c2133eb8d5ce4304ddeb2ecd70b957b19618e16e944ed708cf975ae4cbe074a5
+    c1_terminal_sha256: 76c746eb94472f9ece14efdccb52390ec912d6e759d605af3617508ed1e28ec6
+
+h1:
+  candidate_id: H1
+  model_id: cof_hcmttpp_v2_h1_hurdle_rqs
+  status: IMPLEMENTED_SOURCE_ONLY
+  parent_reference: frozen_ccmtpp_v1_C1
+  changed_factors: [gap_decoder]
+  unchanged_factors:
+    - causal_backbone
+    - y_length_conditioning
+    - valid_padding_mask
+    - amount_path_and_loss
+    - flat_receiver_path_and_loss
+    - non_gap_likelihood_aggregation
+    - optimizer
+    - seed
+    - updates
+    - sampling_plan
+  gap_decoder:
+    zero_atom:
+      distribution: bernoulli_hurdle
+      target_rule: exact_gap_equals_zero
+      epsilon_relabeling: FORBIDDEN
+      fit_split: train
+    positive:
+      variable: u=log1p(gap)
+      density: conditional_monotone_rational_quadratic_quantile_spline
+      central_bins: 16
+      probability_knot_grid: uniform_conditional_central_0_to_1
+      minimum_height_fraction_per_bin: 0.00000625
+      minimum_derivative: 0.001
+      mixture_logistic: FORBIDDEN
+      gap_bin_classifier: FORBIDDEN
+      posthoc_transport: FORBIDDEN
+    tail:
+      fit_split: train
+      fit_by_y_class: true
+      min_strict_exceedances: 128
+      requested_tail_fraction: 0.005
+      threshold_rule: largest_unique_u_with_at_least_m_strict_exceedances
+      m_rule: max_128_ceil_0.005_n_positive
+      strict_exceedance: true
+      baseline_tail_probability_rule: strict_exceedance_fraction_for_initialization_only
+      fixed_class_tail_probability: FORBIDDEN
+      conditional_tail_gate:
+        formula: sigmoid_logit_p_tail_base_y_plus_r_tail_h_y
+        conditioning: [causal_history, y]
+        residual_weight_initialization: zero
+        residual_bias_initialization: zero
+        train_rows_only: true
+      baseline_scale_rule: mean_strict_excess_in_u_space
+      fixed_class_tail_scale: FORBIDDEN
+      conditional_scale:
+        family: exponential_unbounded
+        log_formula: log_beta_h_y_equals_log_beta_base_y_plus_r_beta_h_y
+        formula: beta_base_y_times_exp_r_beta_h_y
+        conditioning: [causal_history, y]
+        residual_domain: signed_real
+        residual_weight_initialization: zero
+        residual_bias_initialization: zero
+        initial_beta_equals_beta_base_exactly: true
+        beta_is_strictly_positive_for_finite_residual: true
+        beta_can_be_below_baseline: true
+        beta_can_be_above_baseline: true
+        initialization_source: train_only_beta_base
+        train_rows_only: true
+        overflow_or_nonfinite: INVALID
+        underflow_to_zero_or_nonpositive: INVALID
+        clip_overflow_or_nonfinite: FORBIDDEN
+        redraw_overflow_or_nonfinite: FORBIDDEN
+      central_event_mass: 1_minus_conditional_pi_tail
+      tail_event_mass: conditional_pi_tail
+      cdf_continuity_at_threshold: REQUIRED
+      cdf_total_mass: 1.0
+      support: positive_unbounded
+      hard_upper_clip: FORBIDDEN
+      redraw_nonfinite: FORBIDDEN
+      validation_fit_rows: 0
+      internal_test_fit_rows: 0
+      fraud_test_fit_rows: 0
+
+fixed_model_and_budget:
+  seed: 4001
+  d_model: 128
+  n_heads: 4
+  n_layers: 2
+  max_length: 64
+  dropout: 0.0
+  receiver_path: flat_no_copy
+  amount_contract: frozen_non_v3_train_only_encode_inverse_decode_v1
+  optimizer: adamw
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_size: 128
+  requested_updates: 20000
+  max_wall_seconds: 7200
+  checkpoint_interval_updates: 1000
+  early_stopping: FORBIDDEN
+  retry: FORBIDDEN
+  sweep: FORBIDDEN
+  update_extension: FORBIDDEN
+
+future_validation_gate:
+  all_datasets_required: [amlsim, sparkov]
+  conjunctive: true
+  hard_validity: PASS_REQUIRED
+  c0_gap_ks_noninferiority:
+    classes: [y0, y1]
+    operator: h1_le_c0
+  c1_positive_gap_ks_improvement:
+    classes: [y0]
+    operator: h1_strictly_less_c1
+  c1_coherence_noninferiority:
+    classes: [y0, y1]
+    operator: h1_le_c1
+  c1_receiver_tv_noninferiority:
+    classes: [y0, y1]
+    full_receiver_tv_required: true
+    operator: h1_le_c1
+  missing_nonfinite_or_provenance_mismatch: FAIL
+  any_failure_family_state: STOP_COF_HCMTTPP_V2_FAMILY_H1_GATE_FAIL
+  pass_does_not_authorize_test: true
+
+diagnostic_schema:
+  gap:
+    - zero_rate_by_class
+    - zero_rate_absolute_error_by_class
+    - overall_gap_ks_by_class
+    - positive_only_gap_ks_by_class
+    - positive_quantile_differences_by_class
+    - central_tail_counts_by_class
+    - tail_mass_error_by_class
+    - conditional_tail_gate_by_class_and_history_stratum
+    - conditional_tail_scale_by_class_and_history_stratum
+    - positive_cdf_total_mass_error
+    - threshold_cdf_continuity_error
+    - finite_nll_count_by_zero_central_tail_route
+    - finite_density_count
+    - sampled_min_max
+    - lower_boundary_rate
+    - exact_upper_clip_count
+    - frozen_bin_mass
+    - raw_vs_mapped_ks_difference
+  preserved:
+    - coherence_by_class
+    - receiver_tv_by_class
+    - full_head_tail_receiver_tv
+    - unk_rate_error
+    - amount_contract_diagnostics
+    - hard_validity
+    - forbidden_access_counters
+
+future_red_green_order:
+  - hurdle_zero_positive_likelihood_and_sampling
+  - rqs_monotonic_inverse_density
+  - train_only_threshold_and_conditional_tail_gate
+  - signed_log_scale_baseline_equality_and_bidirectional_response
+  - tail_finite_nll_cdf_normalization_and_continuity
+  - c1_factor_isolation
+  - split_and_forbidden_access_boundary
+  - append_only_artifact_and_terminal_last
+  - permanent_v1_stop_regression
+
+future_artifact_root_description_only: artifacts/cof_hcmttpp_v2
+future_execution_requires_separate_implementation: true
+future_runner_requires_separate_request: true
+future_authorization_requires_separate_request: true

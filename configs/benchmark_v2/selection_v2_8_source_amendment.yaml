@@ -1,0 +1,244 @@
+schema_version: benchmark-v2.8-source-amendment-v1
+mode: SOURCE_ONLY_PREPARATION
+parent_forensic_commit: de7548d4b22610203be0d320cd25f9491b25aee6
+future_artifact_root: artifacts/benchmark_v2_8/candidate_selection
+execution_authorized: false
+authorization_creation_authorized: false
+gpu_query_authorized: false
+cuda_authorized: false
+training_authorized: false
+checkpoint_update_authorized: false
+sampling_authorized: false
+evaluation_authorized: false
+selection_authorized: false
+fresh_test_authorized: false
+tstr_authorized: false
+privacy_authorized: false
+five_seed_full_run_authorized: false
+test_split_access: FORBIDDEN
+
+frozen_conclusions:
+  tvae_selected_control: tvae_v27_c01_amount_inverse_decoder
+  ctgan_parent: ctgan_v27_c01_amount_quantile_inverse
+  ctgan_remaining_failures:
+    - gap_ks
+    - receiver_max_abs_signed_frequency
+  cof_parent: cof_v27_c01_empirical_residual
+  cof_remaining_failures:
+    - gap_ks
+    - gap_abs_standardized_label_effect
+  primary_c2_selection_ready: false
+  threshold_relaxation: FORBIDDEN
+  test_based_tuning: FORBIDDEN
+  multiple_factor_combination: FORBIDDEN
+
+frozen_contract:
+  scenario: joint_semimarkov_v2b
+  kappa: 1.0
+  selection_seed: 2801
+  endpoint: continuous_association_recovery_error
+  dgp: benchmark_v2_joint_semimarkov_v2b_kappa_1_00_frozen
+  c2_rule: unchanged_v2_7_primary_three_model_rule
+  train_file_sha256: c67a6fce4593317e11e1b6f36397bfb38f9607916bf8f5b32329d8fa99b700a8
+  train_content_sha256: 0c03f179930cd4d89ccc8a8b66283e620313e16d15fd53f0674c133bcb80c09d
+  validation_file_sha256: 68c15c05c55742bfce0f22560ffe8378d032a7a9fd9a1072e80ec8da5340fba5
+  validation_content_sha256: aa1576b4ccae6a2ca30d0472f0782e1231ecc61ab3d224590a772dc3448b9e66
+  sampling_plan_sha256: 862be1aa149b98e5521d0197a53487c9a9df535fc4853b33b95186cc3fb8cc27
+  thresholds:
+    amount_ks: 0.006081138155655141
+    gap_ks: 0.006387882975686154
+    amount_abs_standardized_label_effect: 0.0363693454591819
+    gap_abs_standardized_label_effect: 0.051540527275560376
+    receiver_max_abs_signed_frequency: 0.02
+  v2_5_config_sha256: 81bc16416f6dad3c23eaf1990c3cb76e5449e74f1ddc634f42d3a897cd3c5bb3
+  v2_5_final_complete_sha256: e47d46b995cdaa8f564ccb4cca56eeda4e9a17dba43c1ed2ca8c1a954e657d8a
+  v2_5_frozen_manifest_sha256: b2529f00bae2e534f90805db6cebdf7f19ee93117f34f71015bc6753a9223e05
+  v2_6_forensic_terminal_sha256: 0c2e89a4124d35ccfa565ab504fbedf8819bed2dfe649370f811efe51a408703
+  v2_7_runner_config_sha256: 05435443f69f25f56e6d738dcae7c5a62f0c99096483b5ac26c6f525cffae68c
+  v2_7_candidate_config_sha256: 2737723a05ce8628b7c9b8e1afbe7edae323a06971fbaf1eb00465224e0d654b
+  v2_7_execution_authorization_sha256: ff8bfdab5177d4b067e74f2cf192590b152236406b2eb4c1664878c20b5beea5
+  v2_7_aggregate_authorization_sha256: 5961ce4b042553c7ff058984e37d38b69176118a1e0b3b92898f8f61bccb5d64
+  v2_7_aggregate_complete_sha256: a40630f51e1a07fb509f8f676eabf52f9bd18affbd7a9de47c510e2e1c0792b2
+  v2_7_selection_report_sha256: 3af94b53f5dbaaeca917a04d2b490c0267f70aa915e38e2f751b449451122ec3
+  v2_7_forensic_report_sha256: 37d8f65f09ac17d4bee3284a4b6ff9217e75a10fff23522bf596065a7ff6ded5
+  v2_7_forensic_json_sha256: e6270814967caeb4e71f9a6f4bb394aa4b31e0096331c4cb180e4cedaf7651d1
+  v2_7_forensic_csv_sha256: f434ad6c2541b57985475b24365ea7e72a8e5880ff8076f55465106c4b6e1773
+  v2_7_candidate_input_tree:
+    sha256: de3fda560550cb8c815774a28be9bcc2350db32075a6776750fc66061b3a520e
+    files: 51
+    bytes: 6993542
+  v2_7_aggregate_bundle_tree:
+    sha256: 18d8e4d0fc5dfd148dd6e67036e063b6ad6db1a1f640c322b50bc825aa824378
+    files: 6
+    bytes: 34223
+
+fit_state_contract:
+  fit_split: train
+  fit_input: valid_train_rows_and_fixed_train_only_sampling_plan
+  validation_rows_used: 0
+  test_rows_used: 0
+  hash_algorithm: sha256_canonical_json
+  source_config_data_plan_parent_provenance_required: true
+  state_destination: candidate_artifact
+
+future_evaluation_contract:
+  checkpoint_access: READ_ONLY
+  existing_checkpoint_required: true
+  optimizer_updates: 0
+  training_calls: 0
+  checkpoint_writes: 0
+  validation_sample_generation: FUTURE_SEPARATE_AUTHORIZATION_ONLY
+  evaluation: FUTURE_SEPARATE_AUTHORIZATION_ONLY
+  selection: FUTURE_SEPARATE_AUTHORIZATION_ONLY
+  append_only_artifacts: true
+
+models:
+  ctgan_separate_class:
+    parent:
+      candidate_id: ctgan_v27_c01_amount_quantile_inverse
+      factor: amount_inverse_map
+      source_commit: de57f79b0b15a9086b6ae26beea25c7f55427a7d
+      relevant_source_sha256: c87491ce2b352c3ef6e862e1e67845546c135a46d94d525b5aea43aea9c54df1
+      authorization_sha256: ff8bfdab5177d4b067e74f2cf192590b152236406b2eb4c1664878c20b5beea5
+      candidate_config_sha256: 2737723a05ce8628b7c9b8e1afbe7edae323a06971fbaf1eb00465224e0d654b
+      runner_config_sha256: 05435443f69f25f56e6d738dcae7c5a62f0c99096483b5ac26c6f525cffae68c
+      sampling_plan_sha256: 862be1aa149b98e5521d0197a53487c9a9df535fc4853b33b95186cc3fb8cc27
+      attempt_path: artifacts/benchmark_v2_7/candidate_selection/evaluations/ctgan_separate_class/ctgan_v27_c01_amount_quantile_inverse/seed_2601/attempt_001
+      manifest_sha256: f0be4ee4b59552ef67b08f0677f252576793ab13fd842c1304f22ed86561889f
+      complete_sha256: d1b503d86d2672c01e02581cf66a6c30f907cec26153514d1cd9da03a9f9dce6
+      candidate_result_sha256: e31d1008317729864f659dd94aa3fa66271f4aae1c0deb832548786700a191c1
+      evaluation_sha256: 77a3a1891af4c8a9748997ec5d55cdef2d7b16714305f08f066dd4ead1415d4a
+      fit_state_sha256: 1114c1f8ed7effb1b68e03afd4105594fa1ac71f2c48a4135e924d962624f372
+      validation_sample_sha256: f1e0634576d4b2e65de30138f87c8d8999d18f5969a700921f06dac4f23d7a49
+      checkpoint_path: artifacts/benchmark_v2_6/selection/candidates/_trajectories/ctgan_separate_class/ctgan_native_seed_2601/seed_2601/attempt_001/checkpoints/step_20000.pt
+      checkpoint_sha256: 7e9de7e609ad48e8de687426240fe4fd0a47b5d2d0abcbc70a4edb58f182d10d
+    baseline_dimensions:
+      class_handling: separate_y0_y1_generators
+      amount_inverse_map: train_fitted_monotone_empirical_quantile_257
+      joint_gap_receiver_discrete_decoder: none
+      categorical_temperature: 0.2
+      model_parameters: frozen_native_20000_checkpoint
+    candidates:
+      - candidate_id: ctgan_v28_c00_frozen_amount_inverse
+        execution_kind: reuse_frozen_parent
+        factor: none
+        future_sampling_required: false
+        effective_dimensions:
+          class_handling: separate_y0_y1_generators
+          amount_inverse_map: train_fitted_monotone_empirical_quantile_257
+          joint_gap_receiver_discrete_decoder: none
+          categorical_temperature: 0.2
+          model_parameters: frozen_native_20000_checkpoint
+      - candidate_id: ctgan_v28_c01_joint_gap_receiver_decoder
+        execution_kind: future_evaluate_existing_checkpoint
+        factor: joint_gap_receiver_discrete_decoder
+        future_sampling_required: true
+        calibration_components: 1
+        fit_parameters:
+          rule: class_conditional_joint_gap_receiver_logit_residual
+          base_distribution: parent_checkpoint_train_plan_output
+          target_distribution: valid_train_rows
+          additive_smoothing: 0.5
+          logit_offset_clip: [-2.0, 2.0]
+          support: observed_train_joint_pairs
+        effective_dimensions:
+          class_handling: separate_y0_y1_generators
+          amount_inverse_map: train_fitted_monotone_empirical_quantile_257
+          joint_gap_receiver_discrete_decoder: train_fitted_class_conditional_joint_logit_residual
+          categorical_temperature: 0.2
+          model_parameters: frozen_native_20000_checkpoint
+
+  tvae_separate_class:
+    parent:
+      candidate_id: tvae_v27_c01_amount_inverse_decoder
+      factor: amount_inverse_decoder
+      source_commit: de57f79b0b15a9086b6ae26beea25c7f55427a7d
+      relevant_source_sha256: c87491ce2b352c3ef6e862e1e67845546c135a46d94d525b5aea43aea9c54df1
+      authorization_sha256: ff8bfdab5177d4b067e74f2cf192590b152236406b2eb4c1664878c20b5beea5
+      candidate_config_sha256: 2737723a05ce8628b7c9b8e1afbe7edae323a06971fbaf1eb00465224e0d654b
+      runner_config_sha256: 05435443f69f25f56e6d738dcae7c5a62f0c99096483b5ac26c6f525cffae68c
+      sampling_plan_sha256: 862be1aa149b98e5521d0197a53487c9a9df535fc4853b33b95186cc3fb8cc27
+      attempt_path: artifacts/benchmark_v2_7/candidate_selection/evaluations/tvae_separate_class/tvae_v27_c01_amount_inverse_decoder/seed_2601/attempt_001
+      manifest_sha256: 8206b136920db7848899b323ae74de647a5822582601484612fe0c8971cc803b
+      complete_sha256: 5a7a462f762ea60e2befe9a547eae00725fb180f4d0ed17983f76dbd3f63de90
+      candidate_result_sha256: 5c65e3bd0e0331c95af4fd026bc91008253b06e90414bc54a1cb0d2bba0137c0
+      evaluation_sha256: 56dc7155791440369f4fc23ef791f916cc86417603d7091730efcdd8038581b2
+      fit_state_sha256: 5b0a96f7b2720d95e8a92000fa06ec2398d57170ece9bc464e082ccddba5991f
+      validation_sample_sha256: 57ed7595d6dc9f83a8c9679606cb18d592ceac935f7d1aef2c0356cd1339c90e
+      checkpoint_path: artifacts/benchmark_v2_6/selection/candidates/_trajectories/tvae_separate_class/tvae_native_seed_2601/seed_2601/attempt_001/checkpoints/step_20000.pt
+      checkpoint_sha256: 6f5263a5a40d9513342b33a823a02769bab65f6e1a5bd38c814b87d771a2947c
+    baseline_dimensions:
+      class_handling: separate_y0_y1_generators
+      amount_inverse_decoder: train_fitted_monotone_empirical_quantile_257
+      categorical_decode: temperature_multinomial_gap_receiver
+      categorical_temperature: 0.75
+      model_parameters: frozen_native_20000_checkpoint
+    candidates:
+      - candidate_id: tvae_v28_c00_frozen_selected_amount_inverse
+        execution_kind: reuse_frozen_parent
+        factor: none
+        future_sampling_required: false
+        effective_dimensions:
+          class_handling: separate_y0_y1_generators
+          amount_inverse_decoder: train_fitted_monotone_empirical_quantile_257
+          categorical_decode: temperature_multinomial_gap_receiver
+          categorical_temperature: 0.75
+          model_parameters: frozen_native_20000_checkpoint
+
+  cof_seqgen:
+    parent:
+      candidate_id: cof_v27_c01_empirical_residual
+      factor: amount_residual_sampler
+      source_commit: de57f79b0b15a9086b6ae26beea25c7f55427a7d
+      relevant_source_sha256: c87491ce2b352c3ef6e862e1e67845546c135a46d94d525b5aea43aea9c54df1
+      authorization_sha256: ff8bfdab5177d4b067e74f2cf192590b152236406b2eb4c1664878c20b5beea5
+      candidate_config_sha256: 2737723a05ce8628b7c9b8e1afbe7edae323a06971fbaf1eb00465224e0d654b
+      runner_config_sha256: 05435443f69f25f56e6d738dcae7c5a62f0c99096483b5ac26c6f525cffae68c
+      sampling_plan_sha256: 862be1aa149b98e5521d0197a53487c9a9df535fc4853b33b95186cc3fb8cc27
+      attempt_path: artifacts/benchmark_v2_7/candidate_selection/evaluations/cof_seqgen/cof_v27_c01_empirical_residual/seed_2601/attempt_001
+      manifest_sha256: f04cd5ef65c2d8f9df90e091d88bed94d89b145263dbb8cdac0bc2877da14288
+      complete_sha256: 1b858813a4441e5e8c5e177c0d64eb03f8f99d9748fed6f3ed4d150971af36b9
+      candidate_result_sha256: 2edba78d3e1d31ef3fab345b93f0c303484fc256ff1db8d71b82445bbf4722bb
+      evaluation_sha256: bfa153860fa0ceb187454e77f3284fc1302bfadad16decf9d052023a8d62cbad
+      fit_state_sha256: 93b5bdc74ce97f8d1bf4d0c4a4591ef2e20d76786c9d9c538e83acda8a2f68e7
+      validation_sample_sha256: 364b67ce239b9f692183af00e5f496002d73c9e97d5679d06a7ec168bd8cb2c0
+      checkpoint_path: artifacts/benchmark_v2_6/selection/candidates/_trajectories/cof_seqgen/cof_native_seed_2601/seed_2601/attempt_001/checkpoints/step_20000.pt
+      checkpoint_sha256: 7ce44721cadffef21ade3bf1884421c304f73ea9eff1e9bfb3ca2d9e63cc0c29
+    baseline_dimensions:
+      architecture: frozen_v2_6_seq_denoiser
+      objective: clean_x0_mse_matching_ddim
+      amount_residual_sampler: train_fitted_centered_empirical_quantile_257
+      gap_distribution_sampler: frozen_mask_feedback_argmax
+      receiver_path: frozen_mask_feedback_argmax
+      model_parameters: frozen_native_20000_checkpoint
+    candidates:
+      - candidate_id: cof_v28_c00_frozen_empirical_residual
+        execution_kind: reuse_frozen_parent
+        factor: none
+        future_sampling_required: false
+        effective_dimensions:
+          architecture: frozen_v2_6_seq_denoiser
+          objective: clean_x0_mse_matching_ddim
+          amount_residual_sampler: train_fitted_centered_empirical_quantile_257
+          gap_distribution_sampler: frozen_mask_feedback_argmax
+          receiver_path: frozen_mask_feedback_argmax
+          model_parameters: frozen_native_20000_checkpoint
+      - candidate_id: cof_v28_c01_gap_distribution_sampler
+        execution_kind: future_evaluate_existing_checkpoint
+        factor: gap_distribution_sampler
+        future_sampling_required: true
+        calibration_components: 1
+        fit_parameters:
+          rule: class_conditional_monotone_gap_distribution_transport
+          base_distribution: parent_checkpoint_train_plan_output
+          target_distribution: valid_train_rows
+          support: frozen_train_gap_bins
+          interpolation: discrete_monotone_quantile_transport
+          tie_break: lower_gap_bin
+        effective_dimensions:
+          architecture: frozen_v2_6_seq_denoiser
+          objective: clean_x0_mse_matching_ddim
+          amount_residual_sampler: train_fitted_centered_empirical_quantile_257
+          gap_distribution_sampler: train_fitted_class_conditional_monotone_transport
+          receiver_path: frozen_mask_feedback_argmax
+          model_parameters: frozen_native_20000_checkpoint

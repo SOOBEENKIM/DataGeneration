@@ -1,0 +1,80 @@
+schema_version: cof-seqgen-v3-validation-runner-v1
+mode: SOURCE_ONLY_IMPLEMENTATION
+source_preparation_commit: 165644a06309e3f18cfd34c8dd9ca1728ade192a
+source_config_path: configs/benchmark_v2/cof_seqgen_v3_source_preparation.yaml
+source_config_sha256: 1f9ea3a596509b729e02157a26e60859cccf780621c1439659370c540fec6bd2
+source_relevant_sha256: 84f4afeddcd9b842561b694aac4381803cd812ea88093e3cce3257b076e61de8
+future_runtime_root: artifacts/benchmark_v3/candidate_selection
+authorization_required_for_execute: true
+execution_authorized: false
+authorization_creation_authorized: false
+gpu_query_authorized: false
+cuda_authorized: false
+model_fit_authorized: false
+model_sample_authorized: false
+validation_execution_authorized: false
+selection_authorized: false
+test_authorized: false
+tstr_authorized: false
+privacy_authorized: false
+five_seed_full_run_authorized: false
+test_split_access: FORBIDDEN
+
+data_contract:
+  development_manifest_path: configs/benchmark_v2/development_data_v2_6.yaml
+  development_manifest_sha256: 31ddf45dcf7b4f982ed990ec94281c3e6bad0454ec3182e2434e42358006ade5
+  train_path: data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/train.npz
+  train_file_sha256: c67a6fce4593317e11e1b6f36397bfb38f9607916bf8f5b32329d8fa99b700a8
+  train_content_sha256: 0c03f179930cd4d89ccc8a8b66283e620313e16d15fd53f0674c133bcb80c09d
+  validation_path: data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/validation.npz
+  validation_file_sha256: 68c15c05c55742bfce0f22560ffe8378d032a7a9fd9a1072e80ec8da5340fba5
+  validation_content_sha256: aa1576b4ccae6a2ca30d0472f0782e1231ecc61ab3d224590a772dc3448b9e66
+  sampling_plan_policy: train_policy_entity_count_7989_seed_26001
+  sampling_plan_source_path: data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/shared_sampling_plan.npz
+  sampling_plan_file_sha256: b8876c54983f8af7ed4253f2c25fdf9f351f603bc932a0152ae0a17f896e28e9
+  sampling_plan_sha256: 862be1aa149b98e5521d0197a53487c9a9df535fc4853b33b95186cc3fb8cc27
+  fit_split: train
+  validation_use: post_generation_five_guard_only
+  test_rows_used: 0
+
+execution_contract:
+  candidates:
+    - candidate_id: cof_v3_c01_direct_joint
+      architecture: direct_joint
+    - candidate_id: cof_v3_c02_factorized_joint
+      architecture: factorized_joint
+  seed: 3001
+  requested_updates: 20000
+  max_wall_seconds_per_candidate: 7200
+  termination_grace_seconds: 10
+  maximum_concurrency: 2
+  optimizer: Adam
+  learning_rate: 0.001
+  weight_decay: 0.0
+  batch_size: 256
+  checkpoint_interval_updates: 1000
+  early_stopping: FORBIDDEN
+  sweep: FORBIDDEN
+  post_hoc_calibration: FORBIDDEN
+  legacy_independent_heads: FORBIDDEN
+  aggregate_selection: FORBIDDEN
+  worker_ownership: exclusive_per_candidate
+  artifact_write_mode: append_only_exclusive_create
+
+terminal_contract:
+  required_nonterminal:
+    - manifest.json
+    - runtime.json
+    - checkpoint.pt
+    - checkpoint_provenance.json
+    - joint_support_state.json
+    - amount_fit_state.json
+    - conditioning_binding.json
+    - sample.npz
+    - metrics.json
+    - evaluation.json
+  terminal_markers:
+    - COMPLETE.json
+    - INVALID.json
+    - FAILED.json
+  aggregate_eligibility: all_five_guards_PASS_only

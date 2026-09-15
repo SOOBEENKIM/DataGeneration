@@ -1,0 +1,153 @@
+schema_version: cof-seqgen-v3-source-preparation-v1
+mode: SOURCE_ONLY_IMPLEMENTATION
+parent_spec_commit: 11569ba46b31f2af0b0edb3fad36e0ccb70d3fae
+specification_path: docs/benchmark_v2/cof_seqgen_v3_model_redesign_specification.md
+specification_sha256: 7e7e6a24281f7cd25aeec9f729aeb8cc95b3e9547217aac9eea91ef8ec6b40e6
+future_artifact_root: artifacts/benchmark_v3/candidate_selection
+execution_authorized: false
+authorization_creation_authorized: false
+gpu_query_authorized: false
+cuda_authorized: false
+model_fit_authorized: false
+checkpoint_write_authorized: false
+sampling_authorized: false
+validation_execution_authorized: false
+selection_authorized: false
+test_authorized: false
+tstr_authorized: false
+privacy_authorized: false
+five_seed_full_run_authorized: false
+test_split_access: FORBIDDEN
+
+frozen_contract:
+  scenario: joint_semimarkov_v2b
+  kappa: 1.0
+  training_seed: 3001
+  train_file_path: data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/train.npz
+  train_file_sha256: c67a6fce4593317e11e1b6f36397bfb38f9607916bf8f5b32329d8fa99b700a8
+  train_content_sha256: 0c03f179930cd4d89ccc8a8b66283e620313e16d15fd53f0674c133bcb80c09d
+  validation_file_path: data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/validation.npz
+  validation_file_sha256: 68c15c05c55742bfce0f22560ffe8378d032a7a9fd9a1072e80ec8da5340fba5
+  validation_content_sha256: aa1576b4ccae6a2ca30d0472f0782e1231ecc61ab3d224590a772dc3448b9e66
+  sampling_plan_sha256: 862be1aa149b98e5521d0197a53487c9a9df535fc4853b33b95186cc3fb8cc27
+  amount_contract:
+    algorithm: train_fitted_centered_empirical_residual
+    quantile_grid_size: 257
+    fit_split: train
+    validation_rows_used: 0
+    test_rows_used: 0
+    post_sample_channels_changed: [amount]
+  thresholds:
+    amount_ks: 0.006081138155655141
+    gap_ks: 0.006387882975686154
+    amount_abs_standardized_label_effect: 0.0363693454591819
+    gap_abs_standardized_label_effect: 0.051540527275560376
+    receiver_max_abs_signed_frequency: 0.02
+  selection_rule:
+    eligibility: all_five_row_marginal_guards_PASS
+    tie_break:
+      - minimize_max_amount_ks_gap_ks
+      - minimize_sum_amount_ks_gap_ks
+      - lexicographic_candidate_id
+  v2_5_config_path: configs/benchmark_v2/full_v2_5.yaml
+  v2_5_config_sha256: 81bc16416f6dad3c23eaf1990c3cb76e5449e74f1ddc634f42d3a897cd3c5bb3
+  v2_5_final_complete_path: artifacts/benchmark_v2_5/full/FINAL_COMPLETE.json
+  v2_5_final_complete_sha256: e47d46b995cdaa8f564ccb4cca56eeda4e9a17dba43c1ed2ca8c1a954e657d8a
+  v2_5_frozen_manifest_path: data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/data_manifest.json
+  v2_5_frozen_manifest_sha256: b2529f00bae2e534f90805db6cebdf7f19ee93117f34f71015bc6753a9223e05
+  v2_8_candidate_config_path: configs/benchmark_v2/selection_v2_8_source_amendment.yaml
+  v2_8_candidate_config_sha256: 9e8ecaeab15f28ec05cee27150f4c6f76142dce661536094f41a798a83a7ae98
+  v2_8_runner_config_path: configs/benchmark_v2/evaluation_only_v2_8.yaml
+  v2_8_runner_config_sha256: 2af755a73e2764b060ef880b66e5deea7668919382ae151a11b42f15661feea0
+  v2_8_aggregate_config_path: configs/benchmark_v2/evaluation_aggregate_v2_8.yaml
+  v2_8_aggregate_config_sha256: b3db5f71080df1bfdc051259eb0267cf17629b90c15512916094b4b47890092d
+  v2_8_aggregate_complete_path: artifacts/benchmark_v2_8/candidate_selection/aggregate_attempt_001/AGGREGATE_COMPLETE.json
+  v2_8_aggregate_complete_sha256: 58573dfb93ebed71843f286405e205669140b8cc66811ce61deebe808de513e9
+  v2_8_selection_report_path: artifacts/benchmark_v2_8/candidate_selection/aggregate_attempt_001/selection_report.json
+  v2_8_selection_report_sha256: f7a945483e90178d0d7b6833e69d4c01b5e76102007762b32b20add338f7ad14
+  v2_8_selection_manifest_path: artifacts/benchmark_v2_8/candidate_selection/aggregate_attempt_001/selection_manifest.json
+  v2_8_selection_manifest_sha256: dfc52a92d22900bbb0f71815ab3bb316658277348600eb6d53a515cdfe1b173a
+  v2_8_candidate_tree_sha256: 3d082b1500182ccb05b4772c243a3797f72cdf4ba834e69b1e3beaeb883bcbd7
+  v2_8_input_inventory_sha256: 6ae29bd7ab31a1517ceb5ca4745a58b5cd862c197cdb9bad716d71b97d2e4bac
+
+model_contract:
+  gap_bins: 16
+  receiver_classes: 64
+  d_model: 128
+  n_heads: 4
+  n_layers: 2
+  batch_size: 256
+  optimizer: Adam
+  learning_rate: 0.001
+  weight_decay: 0.0
+  requested_updates: 20000
+  max_wall_seconds: 7200
+  checkpoint_interval_updates: 1000
+  diffusion_steps: 50
+  cfg_dropout: 0.15
+  guidance_scale: 2.0
+  discrete_temperature: 1.0
+  discrete_mask_probability_cap: 0.7
+  paired_discrete_mask: true
+  coherence_lambda: 0.0
+  amount_objective: clean_x0_mse_vp_cosine
+  amount_sampler: fixed_v2_8_centered_empirical_residual_257
+  post_hoc_calibration: FORBIDDEN
+  legacy_independent_heads: FORBIDDEN
+  early_stopping: FORBIDDEN
+  update_sweep: FORBIDDEN
+
+candidates:
+  - candidate_id: cof_v3_ref_v28_frozen
+    architecture: frozen_reference
+    execution_kind: hash_reference_only
+    training_required: false
+    sampling_required: false
+    validation_required: false
+    frozen_reference:
+      candidate_id: cof_v28_c01_gap_distribution_sampler
+      attempt_path: artifacts/benchmark_v2_8/candidate_selection/evaluations/cof_seqgen/cof_v28_c01_gap_distribution_sampler/seed_2801/attempt_001
+      manifest_sha256: f84dbcbe3e3980dd08c4f9104b26c5dae28c26fda0bf71b43f6870645492ef47
+      complete_sha256: 006066948daa2b6c9874ab752720673d10db85ffa99d89cf71e1f15859e625fe
+      candidate_result_sha256: 1f8c225afae8209a0b5e7129ef25511caf2ee725e07a9d818f2c9f830f13cab9
+      evaluation_sha256: 45f406b42eff484782cca66423567e94c849f573cc9ef73a926d6d7b051b506d
+      validation_sample_sha256: bfc9c625b24bb593042370ebad1932372c1db39e519fcd3acbd12a0539ba8fb5
+  - candidate_id: cof_v3_c01_direct_joint
+    architecture: direct_joint
+    execution_kind: future_train_validation_only
+    training_required: true
+    sampling_required: true
+    validation_required: true
+    changed_factor: joint_discrete_parameterization
+    joint_input: one_joint_embedding_and_one_joint_MASK
+    joint_output: one_cartesian_joint_head
+    objective: joint_cross_entropy
+    training_receiver_condition: none
+    sampling_receiver_condition: same_joint_state
+  - candidate_id: cof_v3_c02_factorized_joint
+    architecture: factorized_joint
+    execution_kind: future_train_validation_only
+    training_required: true
+    sampling_required: true
+    validation_required: true
+    changed_factor: joint_discrete_parameterization
+    joint_input: one_joint_embedding_and_one_joint_MASK
+    joint_output: gap_head_then_gap_conditional_receiver_head
+    objective: gap_cross_entropy_plus_conditional_receiver_cross_entropy
+    training_receiver_condition: true_gap
+    sampling_receiver_condition: sampled_gap
+
+future_artifact_contract:
+  write_mode: append_only_exclusive_create
+  runtime_creation_in_source_phase: false
+  authorization_required_for_execution: true
+  authorization_creation_in_source_phase: false
+  checkpoint_records:
+    - source_sha256
+    - config_sha256
+    - train_file_sha256
+    - train_content_sha256
+    - sampling_plan_sha256
+    - joint_support_state_sha256
+    - amount_contract_sha256
+  terminal_marker_last: true

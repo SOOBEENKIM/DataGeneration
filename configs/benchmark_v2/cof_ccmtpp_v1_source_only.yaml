@@ -1,0 +1,194 @@
+schema_version: cof-ccmtpp-v1-source-only-v1
+mode: SOURCE_ONLY
+family: cof_ccmtpp_v1
+future_artifact_root: artifacts/cof_ccmtpp_v1
+future_data_root: data/cof_ccmtpp_v1
+
+safety:
+  execution_authorized: false
+  authorization_creation_authorized: false
+  gpu_query_authorized: false
+  cuda_authorized: false
+  model_fit_authorized: false
+  checkpoint_write_authorized: false
+  model_sample_authorized: false
+  evaluation_authorized: false
+  selection_authorized: false
+  internal_test_authorized: false
+  sparkov_fraud_test_authorized: false
+  tstr_authorized: false
+  privacy_authorized: false
+  full_run_authorized: false
+  entity_id_input: FORBIDDEN
+  validation_fit_rows: 0
+  internal_test_fit_rows: 0
+  fraud_test_fit_rows: 0
+
+common_contract:
+  sequence_label: Y
+  conditioning: [Y, target_length]
+  valid_mask: contiguous_prefix
+  padding_masked_from_attention_and_loss: true
+  amount_contract: frozen_non_v3_train_only_encode_inverse_decode_v1
+  amount_architecture_redesign: false
+  gap_representation: continuous_log1p
+  gap_density: mixture_logistic
+  gap_support_max_rule: train_observed_max_valid_gap
+  gap_bin_classification: FORBIDDEN
+  receiver_vocabulary_fit_split: train
+  hierarchy_fit_split: train
+  receiver_pad_code: 0
+  receiver_unk_code: 1
+  receiver_hierarchy_rule:
+    algorithm: descending_frequency_then_code_round_robin_tail
+    head_min_count: 32
+    max_head_categories: 512
+    tail_cluster_count: 64
+  sampled_gap_receiver_conditioning: model_sample_only
+  full_sequence_denoising_transformer_reuse: false
+  structure_loss: null
+
+model:
+  seed: 4001
+  d_model: 128
+  n_heads: 4
+  n_layers: 2
+  max_length: 64
+  dropout: 0.0
+  gap_mixture_components: 5
+  gap_max_seconds: train_state_bound
+  optimizer: adamw
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_size: 128
+  requested_updates: 20000
+  max_wall_seconds: 7200
+  checkpoint_interval_updates: 1000
+  early_stopping: FORBIDDEN
+  update_sweep: FORBIDDEN
+
+candidates:
+  - candidate_id: C0
+    model_id: frozen_non_v3_cof_control
+    status: FROZEN_REFERENCE_ONLY
+    implemented: false
+    execute: false
+    changes: []
+  - candidate_id: C1
+    model_id: cof_ccmtpp_v1_causal_continuous_flat
+    status: IMPLEMENTED_SOURCE_ONLY
+    implemented: true
+    execute: false
+    parent: C0
+    changes: [causal_decoder, continuous_gap_density]
+    receiver_path: flat_no_copy
+    y_likelihood: ordinary
+  - candidate_id: C2
+    model_id: cof_ccmtpp_v1_sampled_gap_copy
+    status: IMPLEMENTED_SOURCE_ONLY_GATED_ON_C1
+    implemented: true
+    execute: false
+    parent: C1
+    changes: [sampled_gap_receiver_conditioning, causal_copy_gate]
+    receiver_path: flat_new_plus_pointer_copy
+    y_likelihood: ordinary
+  - candidate_id: C3
+    model_id: cof_ccmtpp_v1_hierarchical_receiver
+    status: IMPLEMENTED_SOURCE_ONLY_GATED_ON_C2
+    implemented: true
+    execute: false
+    parent: C2
+    changes: [train_only_head_tail_hierarchy]
+    receiver_path: hierarchical_new_plus_pointer_copy
+    y_likelihood: ordinary
+  - candidate_id: C4
+    model_id: cof_ccmtpp_v1_y_balanced
+    status: IMPLEMENTED_SOURCE_ONLY_GATED_ON_C3
+    implemented: true
+    execute: false
+    parent: C3
+    changes: [y_balanced_conditional_likelihood]
+    receiver_path: hierarchical_new_plus_pointer_copy
+    y_likelihood: equal_class_mean
+
+stop_criteria:
+  C1:
+    required_parent: C0
+    all_datasets_and_classes_required: true
+    gap_fidelity: current_gap_ks_le_parent
+    coherence: current_short_gap_repeat_error_le_parent
+  C2:
+    required_parent: C1
+    all_datasets_and_classes_required: true
+    short_gap_repeat: current_strictly_less_parent
+    receiver_tv: current_le_parent
+  C3:
+    required_parent: C2
+    all_datasets_required: true
+    full_receiver_tv: current_strictly_less_parent
+    decomposition: head_tail_unk_each_le_parent_and_one_strictly_less
+  C4:
+    required_parent: C3
+    all_datasets_required: true
+    y1_composite: current_strictly_less_parent
+    y0_composite_relative_tolerance: 0.05
+    y0_zero_parent_rule: current_must_equal_zero
+
+deferred_C5:
+  status: LOCKED_UNIMPLEMENTED
+  implementation_allowed_only_after: C4_PASS
+  selected_loss: null
+  mutually_exclusive_options:
+    - class_conditional_gap_quantile_x_receiver_frequency_bin_pair_loss
+    - class_conditional_short_gap_x_repeat_coherence_loss
+  simultaneous_losses: FORBIDDEN
+
+diagnostic_schema:
+  gap: [nll, class_0_nll, class_1_nll, finite_density_count, sampled_min, sampled_max]
+  receiver: [overall_nll, head_nll, tail_nll, unk_nll, repeat_nll, new_nll, head_count, tail_count, unk_count, repeat_count, new_count]
+  amount: [normalized_mse, decode_contract_sha256]
+  fidelity: [classwise_gap_ks, full_receiver_tv, head_receiver_tv, tail_receiver_tv, unk_rate_error, short_gap_repeat_error]
+  runtime: [requested_updates, actual_updates, elapsed_seconds, peak_memory_bytes]
+
+preservation:
+  v2_5_config:
+    path: configs/benchmark_v2/full_v2_5.yaml
+    sha256: 81bc16416f6dad3c23eaf1990c3cb76e5449e74f1ddc634f42d3a897cd3c5bb3
+  v2_5_final_complete:
+    path: artifacts/benchmark_v2_5/full/FINAL_COMPLETE.json
+    sha256: e47d46b995cdaa8f564ccb4cca56eeda4e9a17dba43c1ed2ca8c1a954e657d8a
+  v2_5_frozen_manifest:
+    path: data/benchmark_v2_5/frozen/joint_semimarkov_v2b/kappa_1.00/data_manifest.json
+    sha256: b2529f00bae2e534f90805db6cebdf7f19ee93117f34f71015bc6753a9223e05
+  v3_config:
+    path: configs/benchmark_v2/cof_seqgen_v3_source_preparation.yaml
+    sha256: 1f9ea3a596509b729e02157a26e60859cccf780621c1439659370c540fec6bd2
+  v3_forensic:
+    path: docs/benchmark_v2/forensic_v3_attempt_002_evidence.json
+    sha256: e89b6456f5ed404ff9e1fa8ba8fb9f901ade9ced7c4c501fb3b8f66a24f3a538
+  v2_8_candidate_tree_sha256: 3d082b1500182ccb05b4772c243a3797f72cdf4ba834e69b1e3beaeb883bcbd7
+  external_validation_config:
+    path: configs/benchmark_v2/external_validation_v1.yaml
+    sha256: 6c714cb5aa50fd2cbfd959ea97ae455b663c2b7b62498784d5009b2f06e50c56
+  external_confirmatory_forensic:
+    path: docs/benchmark_v2/external_confirmatory_internal_test_aggregate_forensic_v1.json
+    sha256: 16d9e81a0cd06bd37627ba325d596e857fe843612079011b83199b376986a01c
+  external_confirmatory_authorization_checksum:
+    path: artifacts/external_confirmatory_internal_test_v1/authorization_history/authorization_5bebc990_attempt_001/checksum_manifest.json
+    sha256: 8d2348779e271433a2afb1eee6efda1fd7279ed516509cf5002b2b5ce056a7db
+  amlsim_bundle:
+    bundle_root: data/external_sequence_protocol_v1/frozen/amlsim/attempt_001
+    artifact_root: artifacts/external_sequence_protocol_v1/materialization/amlsim/attempt_001
+    tree_sha256: cc8f4c9c6ff415ccd4f78ec193122100145e10084751b971dcc0ce5e705fa024
+  sparkov_bundle:
+    bundle_root: data/external_sequence_protocol_v1/frozen/sparkov/attempt_001
+    artifact_root: artifacts/external_sequence_protocol_v1/materialization/sparkov/attempt_001
+    tree_sha256: 62fefda6207911104a9bff0ebb41d5edf44c20a4c78dccef5875d9768be6addc
+  frozen_non_v3_cof:
+    source_commit: 99a445f6dc893a8c2240d950de4f92877cc07f8a
+    model_path: models/cof_seqgen.py
+    model_sha256: caf5fdb3baf367a28c6081a8ba5f4a89e59dacbba2377636acba5c051ae7006e
+    adapter_path: generators/cof_seqgen_adapter.py
+    adapter_sha256: 48e9e1280bc23a27abf0b5f6447f6682e3b846d0d1773fb96d99abcf407dd7f3
+    denoiser_path: models/seq_denoiser.py
+    denoiser_sha256: bd9a057a880bcfe8918b0ccbcc7bef5ffd9e5d0181a4cac0a17b942ac6cf9dc4

@@ -1,0 +1,53 @@
+schema_version: cof-seqgen-saf-metric-audit-v1
+status: COPY_NEW_V4_TRANSITION_METRIC_ALL_CANONICAL_TRAIN_ONLY_AUDITS_PASSED
+fit_scope: TRAIN_ONLY_ENTITY_DISJOINT
+seed: 20260826
+primary_temporal_relational:
+  - transition_conditioned_mark_tv
+  - short_gap_repeat_curve_l1
+  - gap_repeat_mi_error
+descriptive_temporal_relational:
+  - gap_conditioned_mark_tv
+secondary_temporal:
+  - gap_lag1_acf_error
+  - amount_lag1_acf_error
+noninferiority:
+  marginal:
+    - gap_ks
+    - gap_scaled_w1
+    - gap_zero_rate_error
+    - mark_sparse_tv
+    - amount_ks
+    - amount_scaled_w1
+  structural:
+    - length_scaled_w1
+  utility:
+    - next_gap_tstr_mae_ratio
+    - next_repeat_tstr_brier_ratio
+  privacy:
+    - trajectory_exact_match_rate
+    - transition_ngram_exposure_rate
+margin_calibration:
+  source: repeated_train_only_real_vs_real_pseudo_splits
+  quantile: 0.95
+  repeats: 31
+  candidate_output_access: FORBIDDEN
+validity_corruptions:
+  - permute_marks_preserving_mark_marginal
+  - permute_marks_within_gap_bins_preserving_absolute_gap_conditioned_mark_distribution
+  - permute_nonfirst_gaps_preserving_gap_marginal
+  - shift_scale_numeric
+  - exact_trajectory_copy
+utility_protocol:
+  type: train_synthetic_test_real_next_event
+  train_example_cap: 50000
+  test_example_cap: 50000
+  downstream_models:
+    next_gap: ridge_on_log1p_gap
+    next_repeat: logistic_regression
+  audit: train_only_real_vs_real_and_target_permutation
+seq2synth_interoperability:
+  status: SECONDARY_SUITE
+  primary_variant: raw_unrepaired
+  temporal_postprocessing: SEPARATE_LABELED_SECONDARY_ONLY
+  postprocessing_may_rescue_primary: false

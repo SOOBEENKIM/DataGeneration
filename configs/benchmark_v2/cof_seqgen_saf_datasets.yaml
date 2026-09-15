@@ -1,0 +1,67 @@
+schema_version: cof-seqgen-saf-dataset-materialization-v1
+family: cof_seqgen_saf
+runtime_root: data/cof_seqgen_saf
+split:
+  unit: entity_id
+  seed: 20260826
+  fractions: {train: 0.70, validation: 0.15, test: 0.15}
+  fit_role: train
+  first_gap: missing
+datasets:
+  controlled_coupling_dgp:
+    raw_dir: data/cof_seqgen_saf/raw/controlled_coupling_dgp
+    adapter: controlled_coupling_dgp
+    primary: true
+    generator_config: configs/benchmark_v2/full_v2_5.yaml
+    generation_seed: 42
+    n_entities: 45645
+    n_entities_rationale: preserves_prior_powered_train_count_31951_under_70_percent_train
+    paired_entity_identity_across_cells: true
+    cells:
+      - id: joint_semimarkov_v2b_kappa_0_00
+        scenario: joint_semimarkov_v2b
+        kappa: 0.0
+        role: negative_coupling_control
+      - id: joint_semimarkov_v2b_kappa_1_00
+        scenario: joint_semimarkov_v2b
+        kappa: 1.0
+        role: full_gap_receiver_coupling
+  amlsim:
+    raw_dir: data/cof_seqgen_saf/raw/amlsim
+    adapter: amlsim
+    primary: true
+  sparkov:
+    raw_dir: data/cof_seqgen_saf/raw/sparkov
+    adapter: sparkov
+    primary: true
+    source_scope: fraudTrain_only
+  berka:
+    raw_dir: data/cof_seqgen_saf/raw/berka
+    adapter: berka
+    primary: true
+    auxiliary_scopes:
+      deterministic_nested_900:
+        entity_count: 900
+        per_split_counts: {train: 630, validation: 135, test: 135}
+        selection_seed: 20260826
+        identity_status: deterministic_project_subset_not_tabdit_test_identity
+        seq2synth_comparison_status: NOT_COMPARABLE_WITHOUT_PUBLISHED_TABDIT_TEST_IDS
+        seq2synth_reported_entity_count: 900
+        seq2synth_reported_child_rows: 44766
+        tabdit_tau_max: 50
+  hm:
+    raw_dir: data/cof_seqgen_saf/raw/hm
+    adapter: hm
+    primary: true
+    customer_count: 10000
+    sample_seed: 20260826
+    acquisition_prerequisite: kaggle_rules_and_authentication
+    relational_view: customers_and_articles_parents_with_transactions_child
+    seq2synth_identity_status: deterministic_project_sample_not_published_random_sample
+    seq2synth_comparison_status: NOT_COMPARABLE_WITHOUT_PUBLISHED_CUSTOMER_IDS
+  citi_bike:
+    raw_dir: data/cof_seqgen_saf/raw/citi_bike
+    adapter: citi_bike
+    primary: false
+    source_scope: full_2016_02_archive_member
+    seq2synth_identity_status: schema_aligned_exact_row_identity_unconfirmed

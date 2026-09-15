@@ -1,0 +1,154 @@
+{
+  "artifact_integrity": {
+    "amlsim": {
+      "all_index_file_hashes_match": true,
+      "artifact_index_sha256": "855c3ec5fdb27b5868f1e53d5eef5b5018eb169ef003d631c3743431e1c5dad3",
+      "byte_count": 233903239,
+      "checksum_manifest_sha256": "4b1f308798641885bb9c89ebf2af548bf82d5012cf4ff8f1026f7e905157097b",
+      "extra_files": [],
+      "file_count": 27,
+      "missing_files": [],
+      "status": "PASS",
+      "terminal": "FAILED",
+      "terminal_sha256": "81e450838eaa59c072edbc766804372d45c72af4fbd381f61766f3a9b095723a",
+      "tree_sha256": "fa1648c27cba02e6601677c61645627012fac1df505f5e726f7c0de28f93799e",
+      "worker_terminal_sha256": "0ccf4624109bb22f711938e6f9d7b8fc211109c7d9f09b22fee02b1ef9eb05d1"
+    },
+    "sparkov": {
+      "all_index_file_hashes_match": true,
+      "artifact_index_sha256": "568058a8027e3e2edb408e015b05a922dfb172851f9e5a17ae28c783967c6fd3",
+      "byte_count": 63013817,
+      "checksum_manifest_sha256": "b778208ce364105b1b53051c555683a074fd10a9454dfb32bee1a84280e6b18d",
+      "extra_files": [],
+      "file_count": 41,
+      "missing_files": [],
+      "status": "PASS",
+      "terminal": "COMPLETE",
+      "terminal_sha256": "01e6b08dcfb3b248622046c7b07681b6af8f15409b2c0ca2604d75640fa56e67",
+      "tree_sha256": "41b9fb4b2de9c2a5780127bd29ea0f38e07714bfa1859eb1031a8001708f5681",
+      "worker_terminal_sha256": "766f912108fb4c612b5cdc0b89008bbb6108d5cbcd09e364546e6af566d8de0c"
+    }
+  },
+  "classification": {
+    "component_root_cause": "INSUFFICIENT_PERSISTED_EVIDENCE",
+    "final_family_state": "STOP_COF_HCMTTPP_V2_FAMILY_H1_GATE_FAIL",
+    "selected_state": "H1_NUMERICAL_STABILITY_ARCHITECTURE_LIMITATION",
+    "selected_state_option": "b"
+  },
+  "created_at": "2026-08-06T23:27:30+09:00",
+  "execution_counts": {
+    "attempt_004_authorizations": 0,
+    "cuda_or_gpu_queries": 0,
+    "external_data_body_reads": 0,
+    "fit_or_retraining": 0,
+    "internal_test_reads": 0,
+    "sample_or_evaluation_reruns": 0,
+    "sparkov_fraud_test_reads": 0
+  },
+  "future_authorization_boundary": {
+    "h1_attempt_004": "NOT_AUTHORIZED",
+    "h1_retry": "NOT_AUTHORIZED",
+    "internal_test": "NOT_AUTHORIZED",
+    "sparkov_fraud_test": "NOT_AUTHORIZED"
+  },
+  "failure_boundary": {
+    "amlsim": {
+      "checkpoint_bundle_keys": [
+        "model_config",
+        "provenance",
+        "provenance_sha256",
+        "schema_version",
+        "state_dict",
+        "state_dict_sha256",
+        "tail_state"
+      ],
+      "detection_step_interval_inclusive": [14001, 14099],
+      "elapsed_failure_seconds": 277.67162343789823,
+      "exception": "InvalidH1GapStateError: H1 gap parameters are non-finite or invalid",
+      "first_tensor_identifiable": false,
+      "last_finite_checkpoint": {
+        "all_floating_tensors_finite": true,
+        "element_count": 4169827,
+        "file_sha256": "fc45f0ba44ebaade455018889c5fa3f1972aee1105641b233ef6ecaa66a88b8b",
+        "state_dict_entries": 56,
+        "state_dict_sha256": "1116bc4b776b0fba3ac620c0c3d1952db8590c9859c9113cf86a3546a7dc9623",
+        "step": 14000
+      },
+      "last_finite_progress": {
+        "elapsed_seconds": 274.7764993009623,
+        "loss": -0.4651280343532562,
+        "step": 14000
+      },
+      "not_persisted": [
+        "failed_batch_hidden_state",
+        "failed_batch_hurdle_logit",
+        "failed_batch_rqs_height_fractions",
+        "failed_batch_rqs_derivatives",
+        "failed_batch_r_tail_or_pi_tail",
+        "failed_batch_r_beta_or_beta",
+        "per_component_failed_loss",
+        "gradients",
+        "optimizer_state",
+        "post_step_parameters_between_14000_and_failure"
+      ]
+    }
+  },
+  "hypotheses": {
+    "amount_receiver_backbone_propagation": {
+      "decision": "INCONCLUSIVE_WITH_WEAK_EVIDENCE_AGAINST",
+      "reason": "All checkpointed modules are finite at step 14000; failed hidden activations and gradients are absent."
+    },
+    "evaluator_artifact_runner_defect": {
+      "decision": "REFUTED",
+      "reason": "Failure precedes evaluation, both artifact chains pass, and Sparkov completed under the same source."
+    },
+    "rqs_density_or_jacobian_gradient_instability": {
+      "decision": "INCONCLUSIVE",
+      "reason": "The RQS state is finite through step 14000, but no component gradient is persisted."
+    },
+    "unbounded_exp_r_beta_or_tail_likelihood": {
+      "decision": "INCONCLUSIVE",
+      "reason": "Persisted beta_base and scale-head state are finite, but failed-batch r_beta, beta, tail loss, and gradients are absent."
+    }
+  },
+  "provenance": {
+    "amlsim_authorization_file_sha256": "ff8465c91a3e55456901c130c3e65f73ca04ddf8a9b61e077d4519821ac66499",
+    "amlsim_launch_log_sha256": "a1c72cb392521b94fc69dfb41dda226e7d1ed930292e414a602e5fe98a8fc01b",
+    "model_sha256": "f8b73074934b4bb9e2ea46de5cfdd3e35b447b23c9a1f8302b87c4182c0dcbf6",
+    "relevant_execution_source_sha256": "f5b7ccb42d8e1e430ef2da7945c9f13c0b4ae013ee20804ff97c59c0693581b9",
+    "runner_config_sha256": "fa0ab8cf2e6fd70cfd7dbb43a530f47bbeab5fa59a0ae5aae3923b3edf054329",
+    "source_commit": "8a753e6eed0dbd49b30f93968d98712472a90c4c",
+    "source_config_sha256": "f623c2c6db5843a02404da4ab3824fa1464cbc1380659dbd717e512315aee12e",
+    "sparkov_authorization_file_sha256": "09bbe3b5584393153e30675f8cfcb7bc6e384eccfb62f81fe0626f5a499c4400",
+    "sparkov_launch_log_sha256": "878f7c15e8da871890bcec1dcc5987839219a8c95840eaff1c9fd1eddd35defe"
+  },
+  "schema_version": "cof-hcmttpp-v2-h1-attempt-003-forensic-v1",
+  "sparkov_complete": {
+    "actual_updates": 20000,
+    "evaluation_status": "VALID",
+    "final_checkpoint_all_floating_tensors_finite": true,
+    "final_state_dict_sha256": "89168a8f7a0030f7f0ed0d77a90aa60e2e1c1912c4f7242c97347fd0f96d4fc4",
+    "forbidden_access": {
+      "internal_test": 0,
+      "sparkov_fraud_test": 0
+    },
+    "gate_decision": "FAIL",
+    "gate_values": {
+      "coherence_y0": 0.00047499271317996824,
+      "coherence_y1": 0.0005177323323841573,
+      "full_receiver_tv": 0.054898847631242,
+      "gap_ks_y0": 0.1994332381759053,
+      "gap_ks_y1": 0.11033099297893678,
+      "positive_gap_ks_y0": 0.1994332381759053,
+      "positive_gap_ks_y1": 0.11033099297893678,
+      "receiver_tv_y0": 0.055170394537336215,
+      "receiver_tv_y1": 0.24849548645937813
+    },
+    "hard_validity": {
+      "mask": true,
+      "padding": true,
+      "train_discrete_support": true
+    },
+    "scientific_family_state": "STOP_COF_HCMTTPP_V2_FAMILY_H1_GATE_FAIL"
+  }
+}

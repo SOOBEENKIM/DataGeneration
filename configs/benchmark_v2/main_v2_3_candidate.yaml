@@ -1,0 +1,80 @@
+schema_version: benchmark-v2.3-candidate
+amendment_reason: fanout-semantic-reclassification-and-oriented-auroc-calibration
+name: temporal_coupling_suite_v2_3_candidate
+scenarios: [markov_persistence_v2a, joint_semimarkov_v2b]
+primary_model_challenge_scenario: joint_semimarkov_v2b
+data:
+  n_train: 31951
+  n_test: 31956
+  sequence_length: {min: 16, max: 32}
+  fraud_rate: 0.05
+  n_gap_bins: 16
+  n_receiver_categories: 64
+  padding_side: right
+  window_width: 7.0
+  soft_g_temperature: 1.0
+coupling:
+  kappas: [0.0, 0.3, 0.5, 0.7, 1.0]
+  gap_regime:
+    burst_stationary_probability: 0.30
+    normal_gap_scale: 2.0
+    burst_gap_scale: 0.5
+    rho_nonfraud: 0.0
+    rho_fraud_max: 0.90
+  receiver:
+    rho_nonfraud: 0.0
+    rho_fraud_max: 0.90
+    stationary_distribution: uniform
+  joint_semimarkov:
+    burst_stationary_probability: 0.30
+    duration:
+      family: discrete_lognormal
+      burst_target_mean: 6.0
+      normal_target_mean: 14.0
+      sigma: 0.60
+      max_duration: 128
+    receiver_repeat_probability: {low: 0.05, high: 0.90}
+    equilibrium_initialization: true
+    shared_gap_receiver_state_for_fraud_at_kappa_1: true
+  amount_log: {mean: 5.0, std: 1.0, dependence: iid_label_independent}
+seeds: {base: 42, test_offset: 100000}
+binning: {fit_split: train, shared_across_kappa: true, reference_kappa: 0.0}
+evaluation:
+  primary_endpoint: continuous_association_recovery_error
+  joint_secondary_positive_control: gap_derived_time_window_fanout
+  confirmatory_bins: 8
+  descriptive_bins: [4, 2]
+  minimum_bin_count: 25
+  invalid_generator_bin_policy: invalid_model_score
+  channel_negative_control_abs_standardized_delta_max: 0.10
+  bootstrap_resamples: 2000
+  positionwise:
+    stationary_probability: 0.30
+    equivalence_margin: 0.04
+    minimum_at_risk_per_label: 1500
+    hard_prefix_positions: 16
+    segment_equivalence_margin: 0.025
+    monte_carlo_fixed_direction_fraction_max: 0.80
+receiver_gate:
+  signed_frequency_margin: 0.02
+  clean_seeds: 100
+auroc_calibration:
+  clean_seeds_per_cell: 100
+  train_entities: 31951
+  validation_entities: 7989
+  test_entities: 31956
+  bootstrap_resamples: 200
+  equivalence_interval: [0.48, 0.52]
+  crossfit_folds: 3
+  hgb_max_iter: 30
+  leakage_features: [amount, gap_bin, receiver_category]
+  leakage_magnitudes: [0.01, 0.02, 0.05]
+  receiver_categories: [0, 1, 31, 63]
+  directions: [positive_label, negative_label]
+  maximum_familywise_false_fail_rate: 0.05
+  required_power: {"0.02": 0.80, "0.05": 0.90}
+  selected_method: null
+  selection_status: no_method_met_prespecified_criteria
+learned_smoke:
+  authorized: false
+  blocker: auroc_calibration_no_eligible_gate

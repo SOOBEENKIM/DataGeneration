@@ -1,0 +1,60 @@
+schema_version: benchmark-v2.7-evaluation-only-runner-v1
+mode: SOURCE_ONLY_IMPLEMENTATION
+parent_source_preparation_commit: 7c3a5a017e5652b567d9fbbe437d6ea04105bcb2
+candidate_config_path: configs/benchmark_v2/selection_v2_7_source_preparation.yaml
+candidate_config_sha256: 2737723a05ce8628b7c9b8e1afbe7edae323a06971fbaf1eb00465224e0d654b
+future_runtime_root: artifacts/benchmark_v2_7/candidate_selection
+execution_authorized: false
+authorization_creation_authorized: false
+authorization_required_for_execute: true
+gpu_query_authorized: false
+cuda_authorized: false
+training_authorized: false
+sampling_authorized: false
+validation_selection_authorized: false
+fresh_test_authorized: false
+tstr_authorized: false
+privacy_authorized: false
+five_seed_full_run_authorized: false
+test_split_access: FORBIDDEN
+
+execution_contract:
+  models: [ctgan_separate_class, tvae_separate_class, cof_seqgen]
+  controls: 3
+  evaluation_only_candidates: 6
+  optimizer_updates: 0
+  generator_fit_calls: 0
+  checkpoint_training_calls: 0
+  fit_state_split: train
+  validation_use: five_guard_evaluation_only_after_generation
+  fit_sample_seed: 27011
+  validation_sample_seed: 2601
+  max_wall_seconds_per_candidate: 1800
+  termination_grace_seconds: 10
+  model_worker_ownership: exclusive
+  artifact_write_mode: append_only_exclusive_create
+
+restore_contract:
+  ctgan_separate_class:
+    mode: cpu_first_then_explicit_selected_device
+    checkpoint_path: artifacts/benchmark_v2_6/selection/candidates/_trajectories/ctgan_separate_class/ctgan_native_seed_2601/seed_2601/attempt_001/checkpoints/step_20000.pt
+    checkpoint_sha256: 7e9de7e609ad48e8de687426240fe4fd0a47b5d2d0abcbc70a4edb58f182d10d
+  tvae_separate_class:
+    mode: cpu_first_then_explicit_selected_device
+    checkpoint_path: artifacts/benchmark_v2_6/selection/candidates/_trajectories/tvae_separate_class/tvae_native_seed_2601/seed_2601/attempt_001/checkpoints/step_20000.pt
+    checkpoint_sha256: 6f5263a5a40d9513342b33a823a02769bab65f6e1a5bd38c814b87d771a2947c
+  cof_seqgen:
+    mode: selected_device_restore
+    checkpoint_path: artifacts/benchmark_v2_6/selection/candidates/_trajectories/cof_seqgen/cof_native_seed_2601/seed_2601/attempt_001/checkpoints/step_20000.pt
+    checkpoint_sha256: 7ce44721cadffef21ade3bf1884421c304f73ea9eff1e9bfb3ca2d9e63cc0c29
+
+validation_contract:
+  sampling_plan_sha256: 862be1aa149b98e5521d0197a53487c9a9df535fc4853b33b95186cc3fb8cc27
+  thresholds:
+    amount_ks: 0.006081138155655141
+    gap_ks: 0.006387882975686154
+    amount_abs_standardized_label_effect: 0.0363693454591819
+    gap_abs_standardized_label_effect: 0.051540527275560376
+    receiver_max_abs_signed_frequency: 0.02
+  candidate_selection_inside_worker: FORBIDDEN
+  result_contingent_candidate_change: FORBIDDEN

@@ -1,0 +1,237 @@
+schema_version: benchmark-v2.6-single-factor-amendment-v1
+mode: PREPARATION_ONLY
+parent_forensic_commit: fc503ac9159668cde342f55aa76b40d61d3e0dc0
+execution_authorized: false
+candidate_training_authorized: false
+validation_selection_authorized: false
+fresh_test_authorized: false
+five_seed_full_run_authorized: false
+gpu_execution_authorized: false
+test_split_access: FORBIDDEN
+artifact_root: artifacts/benchmark_v2_6/selection_single_factor
+
+frozen_contract:
+  scenario: joint_semimarkov_v2b
+  kappa: 1.0
+  selection_seed: 2601
+  selection_config_sha256: 0884a0144f74f6317ae9e636c0cf5657dedac21ff12cdf545a6b6e5e29be4c4d
+  development_manifest_sha256: 31ddf45dcf7b4f982ed990ec94281c3e6bad0454ec3182e2434e42358006ade5
+  train_file_sha256: c67a6fce4593317e11e1b6f36397bfb38f9607916bf8f5b32329d8fa99b700a8
+  train_content_sha256: 0c03f179930cd4d89ccc8a8b66283e620313e16d15fd53f0674c133bcb80c09d
+  validation_file_sha256: 68c15c05c55742bfce0f22560ffe8378d032a7a9fd9a1072e80ec8da5340fba5
+  validation_content_sha256: aa1576b4ccae6a2ca30d0472f0782e1231ecc61ab3d224590a772dc3448b9e66
+  sampling_plan_sha256: 862be1aa149b98e5521d0197a53487c9a9df535fc4853b33b95186cc3fb8cc27
+  endpoint: continuous_association_recovery_error
+  dgp: benchmark_v2_joint_semimarkov_v2b_kappa_1_00_frozen
+  c2_rule: unchanged_v2_6_primary_three_model_rule
+  thresholds:
+    amount_ks: 0.006081138155655141
+    gap_ks: 0.006387882975686154
+    amount_abs_standardized_label_effect: 0.0363693454591819
+    gap_abs_standardized_label_effect: 0.051540527275560376
+    receiver_max_abs_signed_frequency: 0.02
+
+selection_rule:
+  eligibility: all_five_row_marginal_guards_PASS
+  primary_objective: minimize_max_amount_ks_gap_ks
+  secondary_objective: minimize_sum_amount_ks_gap_ks
+  final_tiebreaker: lexicographic_candidate_id
+  no_pass_action: PROHIBIT_V2_6_PRIMARY_C2_FULL_RUN
+
+budget:
+  requested_updates_per_new_trajectory: 20000
+  checkpoint_interval_steps: 100
+  max_gpu_wall_seconds_per_new_trajectory: 7200
+  new_training_trajectories: 3
+  max_training_gpu_hours: 6.0
+  evaluation_only_candidates: 3
+  max_gpu_wall_seconds_per_evaluation_only_candidate: 1800
+  max_evaluation_only_gpu_hours: 1.5
+  reused_control_candidates: 3
+  total_evaluation_candidates: 9
+  max_total_gpu_hours: 7.5
+  early_stopping: false
+  update_increase_candidates: 0
+  result_based_extension: FORBIDDEN
+
+models:
+  ctgan_separate_class:
+    baseline_dimensions:
+      class_handling: separate_y0_y1_generators
+      transformer_scope: per_class_train_fitted
+      numeric_representation: native_then_bayesian_gmm
+      categorical_temperature: 0.2
+      requested_updates: 20000
+    diagnostics:
+      - amount_mean_by_class
+      - amount_std_by_class
+      - amount_signed_standardized_class_effect
+      - gap_frequency_by_class
+      - gap_signed_standardized_class_effect
+      - receiver_frequency_by_class
+      - receiver_signed_frequency_by_category
+    frozen_control:
+      candidate_result_path: artifacts/benchmark_v2_6/selection/candidates/ctgan_separate_class/c01_native_checkpoint_20000/seed_2601/attempt_001/candidate_result.json
+      candidate_result_sha256: bccb0143ca6bd3411284443c3b5cb85d8bdcb9cf81d844ec479305fcf7d1dc51
+      checkpoint_path: artifacts/benchmark_v2_6/selection/candidates/_trajectories/ctgan_separate_class/ctgan_native_seed_2601/seed_2601/attempt_001/checkpoints/step_20000.pt
+      checkpoint_sha256: 7e9de7e609ad48e8de687426240fe4fd0a47b5d2d0abcbc70a4edb58f182d10d
+      validation_sample_path: artifacts/benchmark_v2_6/selection/candidates/ctgan_separate_class/c01_native_checkpoint_20000/seed_2601/attempt_001/validation_sample.npz
+      validation_sample_sha256: 59ea09140e8b85e0e4b4eed64f7aba31f52c58ea6b0890e3a680d47c310a161b
+    candidates:
+      - candidate_id: ctgan_sf_c00_frozen_control
+        execution_kind: reuse_frozen_control
+        intervention_dimension: none
+        effective_dimensions:
+          class_handling: separate_y0_y1_generators
+          transformer_scope: per_class_train_fitted
+          numeric_representation: native_then_bayesian_gmm
+          categorical_temperature: 0.2
+          requested_updates: 20000
+      - candidate_id: ctgan_sf_c01_shared_transformer
+        execution_kind: train_new_trajectory
+        intervention_dimension: transformer_scope
+        trajectory_id: ctgan_shared_transformer_seed_2601
+        effective_dimensions:
+          class_handling: separate_y0_y1_generators
+          transformer_scope: shared_all_train_rows_fitted_once
+          numeric_representation: native_then_bayesian_gmm
+          categorical_temperature: 0.2
+          requested_updates: 20000
+      - candidate_id: ctgan_sf_c02_temperature_only
+        execution_kind: evaluate_existing_checkpoint
+        intervention_dimension: categorical_temperature
+        source_checkpoint: frozen_control
+        effective_dimensions:
+          class_handling: separate_y0_y1_generators
+          transformer_scope: per_class_train_fitted
+          numeric_representation: native_then_bayesian_gmm
+          categorical_temperature: 0.5
+          requested_updates: 20000
+
+  tvae_separate_class:
+    baseline_dimensions:
+      class_handling: separate_y0_y1_generators
+      transformer_scope: per_class_train_fitted
+      numeric_representation: native_then_bayesian_gmm
+      categorical_decode: upstream_argmax_inverse
+      channel_weights: {amount: 1.0, gap: 1.0, receiver: 1.0}
+      latent_scale: 1.0
+      requested_updates: 20000
+    diagnostics:
+      - gap_raw_frequency_by_bin
+      - receiver_raw_frequency_by_category
+      - gap_max_category_frequency
+      - receiver_max_category_frequency
+      - gap_frequency_hhi
+      - receiver_frequency_hhi
+      - gap_frequency_by_class
+      - receiver_frequency_by_class
+    frozen_control:
+      candidate_result_path: artifacts/benchmark_v2_6/selection/candidates/tvae_separate_class/c01_native_checkpoint_20000/seed_2601/attempt_001/candidate_result.json
+      candidate_result_sha256: d3c0c486e937bd6c4974c449d4b561e691ff385ebae3f24bdf4ac6c1d0406f0d
+      checkpoint_path: artifacts/benchmark_v2_6/selection/candidates/_trajectories/tvae_separate_class/tvae_native_seed_2601/seed_2601/attempt_001/checkpoints/step_20000.pt
+      checkpoint_sha256: 6f5263a5a40d9513342b33a823a02769bab65f6e1a5bd38c814b87d771a2947c
+      validation_sample_path: artifacts/benchmark_v2_6/selection/candidates/tvae_separate_class/c01_native_checkpoint_20000/seed_2601/attempt_001/validation_sample.npz
+      validation_sample_sha256: 33812d9dec421b4076f41a7ba8774e9dcf44e070216d3c608cb6bead0d984181
+    candidates:
+      - candidate_id: tvae_sf_c00_frozen_control
+        execution_kind: reuse_frozen_control
+        intervention_dimension: none
+        effective_dimensions:
+          class_handling: separate_y0_y1_generators
+          transformer_scope: per_class_train_fitted
+          numeric_representation: native_then_bayesian_gmm
+          categorical_decode: upstream_argmax_inverse
+          channel_weights: {amount: 1.0, gap: 1.0, receiver: 1.0}
+          latent_scale: 1.0
+          requested_updates: 20000
+      - candidate_id: tvae_sf_c01_categorical_decode_only
+        execution_kind: evaluate_existing_checkpoint
+        intervention_dimension: categorical_decode
+        source_checkpoint: frozen_control
+        effective_dimensions:
+          class_handling: separate_y0_y1_generators
+          transformer_scope: per_class_train_fitted
+          numeric_representation: native_then_bayesian_gmm
+          categorical_decode: temperature_multinomial_gap_receiver_0.75
+          channel_weights: {amount: 1.0, gap: 1.0, receiver: 1.0}
+          latent_scale: 1.0
+          requested_updates: 20000
+      - candidate_id: tvae_sf_c02_channel_weight_only
+        execution_kind: train_new_trajectory
+        intervention_dimension: channel_weights
+        trajectory_id: tvae_channel_weight_seed_2601
+        effective_dimensions:
+          class_handling: separate_y0_y1_generators
+          transformer_scope: per_class_train_fitted
+          numeric_representation: native_then_bayesian_gmm
+          categorical_decode: upstream_argmax_inverse
+          channel_weights: {amount: 2.0, gap: 2.0, receiver: 1.0}
+          latent_scale: 1.0
+          requested_updates: 20000
+
+  cof_seqgen:
+    baseline_dimensions:
+      architecture: frozen_v2_6_seq_denoiser
+      discrete_gap_receiver_path: frozen_mask_feedback_argmax
+      numeric_representation: native_raw_amount
+      amount_diffusion_parameterization: clean_x0_mse_matching_ddim
+      amount_residual_sampling: none
+      requested_updates: 20000
+    diagnostics:
+      - generated_amount_mean
+      - generated_amount_std
+      - generated_amount_q01
+      - generated_amount_q05
+      - generated_amount_q25
+      - generated_amount_q50
+      - generated_amount_q75
+      - generated_amount_q95
+      - generated_amount_q99
+    frozen_control:
+      candidate_result_path: artifacts/benchmark_v2_6/selection/candidates/cof_seqgen/c01_native_checkpoint_20000/seed_2601/attempt_001/candidate_result.json
+      candidate_result_sha256: ee901e65572c5f852bce13a6163cb33380084f4c1e7feb30583de067acdfffca
+      checkpoint_path: artifacts/benchmark_v2_6/selection/candidates/_trajectories/cof_seqgen/cof_native_seed_2601/seed_2601/attempt_001/checkpoints/step_20000.pt
+      checkpoint_sha256: 7ce44721cadffef21ade3bf1884421c304f73ea9eff1e9bfb3ca2d9e63cc0c29
+      validation_sample_path: artifacts/benchmark_v2_6/selection/candidates/cof_seqgen/c01_native_checkpoint_20000/seed_2601/attempt_001/validation_sample.npz
+      validation_sample_sha256: 3d0025f7a795aea496ca5523bb2b71dca0986b99252c473ced7bd792881c43d1
+    candidates:
+      - candidate_id: cof_sf_c00_frozen_control
+        execution_kind: reuse_frozen_control
+        intervention_dimension: none
+        effective_dimensions:
+          architecture: frozen_v2_6_seq_denoiser
+          discrete_gap_receiver_path: frozen_mask_feedback_argmax
+          numeric_representation: native_raw_amount
+          amount_diffusion_parameterization: clean_x0_mse_matching_ddim
+          amount_residual_sampling: none
+          requested_updates: 20000
+      - candidate_id: cof_sf_c01_noise_prediction
+        execution_kind: train_new_trajectory
+        intervention_dimension: amount_diffusion_parameterization
+        trajectory_id: cof_noise_prediction_seed_2601
+        effective_dimensions:
+          architecture: frozen_v2_6_seq_denoiser
+          discrete_gap_receiver_path: frozen_mask_feedback_argmax
+          numeric_representation: native_raw_amount
+          amount_diffusion_parameterization: epsilon_mse_matching_reverse_diffusion
+          amount_residual_sampling: none
+          requested_updates: 20000
+      - candidate_id: cof_sf_c02_variance_preserving_residual
+        execution_kind: evaluate_existing_checkpoint
+        intervention_dimension: amount_residual_sampling
+        source_checkpoint: frozen_control
+        residual_contract:
+          fit_split: train
+          rule: add_zero_mean_gaussian_variance_deficit
+          variance_target: valid_train_amount_variance
+          base_variance_source: train_only_sampling_plan_sample
+          variance: max(train_variance_minus_base_variance, 0)
+          validation_refit: FORBIDDEN
+        effective_dimensions:
+          architecture: frozen_v2_6_seq_denoiser
+          discrete_gap_receiver_path: frozen_mask_feedback_argmax
+          numeric_representation: native_raw_amount
+          amount_diffusion_parameterization: clean_x0_mse_matching_ddim
+          amount_residual_sampling: train_fitted_zero_mean_variance_deficit
+          requested_updates: 20000

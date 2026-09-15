@@ -1,0 +1,93 @@
+{
+  "claim_assessment": {
+    "cof_better_than_all_baselines": "NOT_SUPPORTED",
+    "cof_better_than_ctgan_on_stored_combined_score": true,
+    "cof_best_stored_coherence_max_ratio": true,
+    "cof_general_or_statistical_superiority": "NOT_ESTABLISHED",
+    "reason": "CoF ranked third of four on the stored combined score, behind empirical IID and TVAE; all eight CoF metric guards failed, and this is one validation seed without an inferential comparison."
+  },
+  "models": [
+    {
+      "attempt": "attempt_002",
+      "coherence": {"short_gap_receiver_repeat_error_y0": 0.227815902842422, "short_gap_receiver_repeat_error_y1": 0.15617088607594937},
+      "coherence_max_ratio": 13.739364866756338,
+      "combined_score": 7.808823293878477,
+      "evaluation_sha256": "9510091563d4c5e8f57a654a4b447a9cd0f8087fae0d9d98415f290fba7e1ef3",
+      "fidelity": {"amount_ks_y0": 0.06073800390406259, "amount_ks_y1": 0.06686002137078306, "gap_total_variation_y0": 0.030253868737669005, "gap_total_variation_y1": 0.04991604335216002, "receiver_total_variation_y0": 0.5372272781984793, "receiver_total_variation_y1": 0.7847656846283011},
+      "fidelity_all_pass": false,
+      "fidelity_max_ratio": 1.8782817210006166,
+      "hard_validity": {"mask": true, "padding": true, "train_discrete_support": true},
+      "metric_pass_count": 0,
+      "model": "empirical_iid",
+      "rank": 1,
+      "selection_tier": "FIDELITY_WARNING",
+      "terminal": "COMPLETE",
+      "terminal_sha256": "81c8105f62646d833dcbf016b371c1f22e783988d7d5524f84907d22f87c800a"
+    },
+    {
+      "attempt": "attempt_002",
+      "coherence": {"short_gap_receiver_repeat_error_y0": 0.2180254584027883, "short_gap_receiver_repeat_error_y1": 0.1550632911392405},
+      "coherence_max_ratio": 13.148912283396186,
+      "combined_score": 10.02263893408993,
+      "evaluation_sha256": "b8badf398a03cc6b65a46d22f510afb3e7a06a8756f8889f69ad016817b5a4a0",
+      "fidelity": {"amount_ks_y0": 0.223007802891937, "amount_ks_y1": 0.056021981376889074, "gap_total_variation_y0": 0.031295300994855654, "gap_total_variation_y1": 0.03236147153106399, "receiver_total_variation_y0": 0.8469094581935599, "receiver_total_variation_y1": 0.8378873454434437},
+      "fidelity_all_pass": false,
+      "fidelity_max_ratio": 6.896365584783675,
+      "hard_validity": {"mask": true, "padding": true, "train_discrete_support": true},
+      "metric_pass_count": 2,
+      "model": "tvae_separate_class",
+      "rank": 2,
+      "selection_tier": "FIDELITY_WARNING",
+      "terminal": "COMPLETE",
+      "terminal_sha256": "12679b9113d82be0e11aba6019637b7832449112a300ba1144fdff2557954eb0"
+    },
+    {
+      "attempt": "attempt_001",
+      "coherence": {"short_gap_receiver_repeat_error_y0": 0.21397181391119868, "short_gap_receiver_repeat_error_y1": 0.10870253164556962},
+      "coherence_max_ratio": 12.904440760490298,
+      "combined_score": 12.650570037447325,
+      "evaluation_sha256": "db7f7e99f7a43c6cbdb259b663f32628bd44440e01f145e17be305daf1a5d68a",
+      "fidelity": {"amount_ks_y0": 0.3119586776426998, "amount_ks_y1": 0.6345596092199665, "gap_total_variation_y0": 0.2367348220406839, "gap_total_variation_y1": 0.4661883681880629, "receiver_total_variation_y0": 0.7399978020022713, "receiver_total_variation_y1": 0.9335979239810717},
+      "fidelity_all_pass": false,
+      "fidelity_max_ratio": 12.396699314404353,
+      "hard_validity": {"mask": true, "padding": true, "train_discrete_support": true},
+      "metric_pass_count": 0,
+      "model": "cof_seqgen_frozen_non_v3",
+      "rank": 3,
+      "selection_tier": "FIDELITY_WARNING",
+      "terminal": "COMPLETE",
+      "terminal_sha256": "e44db66eaaa6c65142df3cde8fa283dd5d05df9f7386a3d35870d51780db7f35"
+    },
+    {
+      "attempt": "attempt_001",
+      "coherence": {"short_gap_receiver_repeat_error_y0": 0.2280161496330613, "short_gap_receiver_repeat_error_y1": 0.1560126582278481},
+      "coherence_max_ratio": 13.751441564149554,
+      "combined_score": 13.05529835723971,
+      "evaluation_sha256": "01e5c7dcb041052d9a6cb2e9c0cb7b814653708f909e610d55b4ce15b87c8542",
+      "fidelity": {"amount_ks_y0": 0.1056137908657494, "amount_ks_y1": 0.12135551824148985, "gap_total_variation_y0": 0.23601785611488202, "gap_total_variation_y1": 0.1297511830254923, "receiver_total_variation_y0": 0.5465007352825736, "receiver_total_variation_y1": 0.7878186536406655},
+      "fidelity_all_pass": false,
+      "fidelity_max_ratio": 12.359155150329867,
+      "hard_validity": {"mask": true, "padding": true, "train_discrete_support": true},
+      "metric_pass_count": 0,
+      "model": "ctgan_separate_class",
+      "rank": 4,
+      "selection_tier": "FIDELITY_WARNING",
+      "terminal": "COMPLETE",
+      "terminal_sha256": "58deb1884cf086a902181d6c30e372d1a04c79e9ff6eb327789a8e3613f38754"
+    }
+  ],
+  "ranking_contract": {
+    "direction": "lower_is_better",
+    "primary_key": "stored_selection.combined_score",
+    "tie_break": ["combined_score", "fidelity_max_ratio", "coherence_max_ratio", "candidate_id_lexicographic"]
+  },
+  "schema_version": "amlsim-external-validation-stored-aggregate-forensic-v1",
+  "scope": {
+    "dataset": "amlsim",
+    "evaluation_artifacts_only": true,
+    "model_execution_calls": 0,
+    "sample_or_checkpoint_reads": 0,
+    "sparkov_or_internal_test_reads": 0,
+    "terminal_artifacts_only": true
+  }
+}

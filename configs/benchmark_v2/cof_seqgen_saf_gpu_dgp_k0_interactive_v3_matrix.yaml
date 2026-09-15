@@ -1,0 +1,23 @@
+schema_version: cof-seqgen-saf-training-matrix-v1
+model_implementation_version: saf-interactive-gap-route-v3
+dataset_dir: data/cof_seqgen_saf/canonical/controlled_coupling_joint_semimarkov_v2b_kappa_0_00
+output_root: artifacts/cof_seqgen_saf/development/gpu_dgp_k0_interactive_v3
+candidates: [SAF-C0, SAF-U0, SAF-O0, SAF-U1, SAF-O1]
+seeds: [20260826, 20260827, 20260828, 20260829, 20260830]
+gpu_ids: [1, 2]
+training:
+  hidden_dim: 128
+  gap_embedding_dim: 32
+  mark_embedding_dim: 32
+  context_window: 32
+  batch_size: 512
+  epochs: 50
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  gradient_clip: 1.0
+  patience: 5
+  max_positive_gap_states: 31
+  train_entity_limit: null
+  validation_entity_limit: null
+  amp: true
+  resume: true

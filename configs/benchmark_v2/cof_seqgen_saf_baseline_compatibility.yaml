@@ -1,0 +1,38 @@
+schema_version: cof-seqgen-saf-baseline-compatibility-v1
+status: CONTRACT_IMPLEMENTED_INSTALLATION_NOT_ATTEMPTED
+common_primary_protocol:
+  task: child_conditional_sequence_generation
+  context_source: train_only_shared_generation_plan
+  length_source: train_only_shared_generation_plan
+  raw_output_required: true
+  repaired_output_primary: false
+tiers:
+  primary_sequential:
+    - tabularargn
+    - tabdit
+    - cpar
+    - realtabformer
+    - empirical_sequence_sampler
+  flattened_marginal_controls:
+    - ctgan
+    - tvae
+    - gaussian_copula
+  historical_frozen_context:
+    - non_v3_cof
+    - ccmtpp_c1
+    - hcmttpp_h1
+proposed: SAF-O1
+tabpfn:
+  generator_baseline: false
+  allowed_role: downstream_utility_evaluator
+fairness:
+  same_entity_count: true
+  same_train_only_context_and_length_plan: true
+  same_canonical_train_input: true
+  same_random_seed_schedule: true
+  same_raw_metric_suite: true
+  native_end_to_end_generation: SECONDARY_NOT_POOLED
+dependency_policy:
+  install_authorized: false
+  version_lock_status: DEFERRED_TO_INSTALL_COMPATIBILITY_AUDIT
+  importing_during_contract_audit: false

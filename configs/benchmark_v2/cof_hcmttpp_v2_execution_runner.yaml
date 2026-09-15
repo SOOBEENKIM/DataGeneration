@@ -1,0 +1,195 @@
+schema_version: cof-hcmttpp-v2-h1-execution-runner-v3
+mode: FIRST_VALID_ATTEMPT_003_PREPARATION
+family: cof_hcmttpp_v2
+source_preparation_commit: 6773ae1126f145d2e05ab7450a6ca255afeafb77
+source_config_path: configs/benchmark_v2/cof_hcmttpp_v2_source_only.yaml
+source_config_sha256: f623c2c6db5843a02404da4ab3824fa1464cbc1380659dbd717e512315aee12e
+model_path: models/cof_hcmttpp_v2.py
+model_sha256: f8b73074934b4bb9e2ea46de5cfdd3e35b447b23c9a1f8302b87c4182c0dcbf6
+runtime_root: artifacts/cof_hcmttpp_v2/external_validation
+authorization_history_root: artifacts/cof_hcmttpp_v2/authorization_history
+
+candidate_id: H1
+seed: 4001
+attempt: attempt_003
+datasets_allowed: [amlsim, sparkov]
+jobs_per_process: 1
+
+implementation_corrections:
+  execution_class: FIRST_VALID_H1_EVALUATION_AFTER_TWO_DETERMINISTIC_IMPLEMENTATION_FAILURES
+  authorized_attempt: attempt_003
+  generic_retry: false
+  arbitrary_attempt: false
+  attempt_sweep: false
+  provenance_statement: attempt_003_is_the_first_valid_H1_evaluation_after_two_deterministic_implementation_failures_not_architecture_or_tuning_retry
+  rqs_inverse:
+    failed_attempt: attempt_001
+    corrected_source_commit: c809c069b5562e764bfc6e43f4f69e28b34a3404
+    report_path: docs/benchmark_v2/cof_hcmttpp_v2_h1_rqs_inverse_correction.md
+    report_sha256: e78df91540d25d53cf8153125caea676c2bdaf70cd93b4b6328489a947b040bf
+  spawn_ownership:
+    failed_attempt: attempt_002
+    corrected_source_commit: 9e8f737f2db3fbbf16adb3187475b8b08b10b06e
+    report_path: docs/benchmark_v2/cof_hcmttpp_v2_h1_attempt_002_spawn_ownership_correction.md
+    report_sha256: e3cef48e6b76f8dc05079307b98c142c8ffff90b91bdf89237532740f70ec3d3
+  execution_readiness:
+    status: PASS
+    passed_source_commit: f5125fbde533a965b0e3c71b1b3b8950c7fffc85
+    passed_relevant_execution_source_sha256: 14a848a33ef4883bb55c41cb45e9c67c6e3764b7e5bb47d3819b625117567afb
+    passed_boundary_sha256: 77a58fd66a3352adb71c3dce5f56c764414f09afc9ef6ecb1636fa4e9ece5b9f
+    document_path: docs/benchmark_v2/cof_hcmttpp_v2_h1_attempt_003_execution_readiness.md
+    document_sha256: 526b065705500b4dab216b03001102a7181bd72377ae872483c6ec5d119b7c8e
+  failed_attempts:
+    attempt_001:
+      amlsim:
+        path: artifacts/cof_hcmttpp_v2/external_validation/amlsim/H1/seed_4001/attempt_001
+        tree_sha256: 07bca9894bf6b619a4b4d6359773b2da2ac40a7112bebe70096712360671b389
+        failed_sha256: 5a65749584bb9f4a584bd75ed74eb7d10e0547c66c7ffd3c3f9da00431712042
+      sparkov:
+        path: artifacts/cof_hcmttpp_v2/external_validation/sparkov/H1/seed_4001/attempt_001
+        tree_sha256: 309fbd56bc6c522b818e842b8c6082df5a0114b7f840537a0361164c744faf28
+        failed_sha256: 94af493b9dd3f3ddb2847f3cc7d6375ef744d713caf0ad83276d386ba53ed8a3
+    attempt_002:
+      amlsim:
+        path: artifacts/cof_hcmttpp_v2/external_validation/amlsim/H1/seed_4001/attempt_002
+        tree_sha256: 91a4670b6b8bebd47f289f9124d100d4d0f52e704ad02dac73ec23c70a767095
+        failed_sha256: eca6161ad16e2b3de3010d35a318fa4a7e05d0138fe8175c9b293ad704a8f5e9
+      sparkov:
+        path: artifacts/cof_hcmttpp_v2/external_validation/sparkov/H1/seed_4001/attempt_002
+        tree_sha256: b4a900aa1e88fde24299d613fbdf90b67ba648493d904beaf9734ff348fce6a7
+        failed_sha256: c98002596dc43e22866555d280df88eefa18d20a0e19f3bd35deb172d8663ff6
+
+datasets:
+  amlsim:
+    bundle_root: data/external_sequence_protocol_v1/frozen/amlsim/attempt_001
+    materialization_artifact_root: artifacts/external_sequence_protocol_v1/materialization/amlsim/attempt_001
+    materialization_complete_sha256: a7494b9956be4b4c773aaed9f2a6db1266cb65eccd064d0d973814246dc328f6
+    bundle_tree_sha256: cc8f4c9c6ff415ccd4f78ec193122100145e10084751b971dcc0ce5e705fa024
+    train_path: data/external_sequence_protocol_v1/frozen/amlsim/attempt_001/train.npz
+    train_sha256: 4d55aebee884964438c0f46c222e61a5ab6384ac444e76390d2575b1345b014f
+    validation_path: data/external_sequence_protocol_v1/frozen/amlsim/attempt_001/validation.npz
+    validation_sha256: a4cc4792a681d42cdfcf30a3590c7a3a312383028c5f0ed1b7c9008c3b106fec
+    transform_path: data/external_sequence_protocol_v1/frozen/amlsim/attempt_001/train_transform_state.json
+    transform_sha256: 9bc50911cfd7783504d93b601ba93f17aec498b1c5d961b28460f33d168e5a9c
+    provenance_path: data/external_sequence_protocol_v1/frozen/amlsim/attempt_001/provenance_manifest.json
+    provenance_sha256: 83810f5ede9f5d5781e7a4dcdd3b7a2b8a2531782b58f962158d00004cda6fc6
+    summary_path: data/external_sequence_protocol_v1/frozen/amlsim/attempt_001/summary.json
+    summary_sha256: c18c1fac704d325cdc78a763a0a73b682f93517c2a674bc21351672b3b95c562
+    sampling_plan_path: artifacts/external_validation_v1/amlsim/cof_seqgen_frozen_non_v3/attempt_001/validation_sampling_plan.npz
+    sampling_plan_sha256: 9e36a197c631f108a264d020279b89f940b2f581a7a23b8b67b65807fbfb4a9d
+    threshold_path: artifacts/external_validation_v1/amlsim/cof_seqgen_frozen_non_v3/attempt_001/train_bootstrap_thresholds.json
+    threshold_sha256: e715b01a9481e7a539c6661126ddeb04570f08318e409911f3f0d06947ca0330
+    c0:
+      attempt_path: artifacts/external_validation_v1/amlsim/cof_seqgen_frozen_non_v3/attempt_001
+      manifest_sha256: 5d23f8f33f83c8bd64c0864c985d9ab676253402f1f0296e9cda1d7e27f11edf
+      sample_sha256: 2ffafd5645aa4673d7e5219fe9abafbd5904c38bc5da1cae98e7b9b691579e8c
+      evaluation_sha256: db7f7e99f7a43c6cbdb259b663f32628bd44440e01f145e17be305daf1a5d68a
+      complete_sha256: e44db66eaaa6c65142df3cde8fa283dd5d05df9f7386a3d35870d51780db7f35
+    c1:
+      attempt_path: artifacts/cof_ccmtpp_v1/external_validation/amlsim/C1/seed_4001/attempt_001
+      manifest_sha256: 8c48a9f28324d183d784f095084d3a1be8d6b4589fca278ffd8603ad79a95f3b
+      sample_sha256: 82a33e83e24b5eb41a1e5ddbeea512f21423302002c760dc9781f1d872f26155
+      evaluation_sha256: 46a967bba69e1f6ddfbb33858a21c52ec64cabbc14d6f735d8c3a74d78af8e4b
+      gate_sha256: 38a3558ce5270af5d7bce5f36f9b195bbfbbf4a74b6fa29a8492b43ec643df70
+      complete_sha256: aab8014045b056b29a79b40fcf31cf794af4fc26ede0865bd0e0db5046b19db3
+    gate_references:
+      c0_gap_ks: {y0: 0.227623598, y1: 0.466188368}
+      c1_positive_gap_ks: {y0: 0.773860396}
+      c1_coherence: {y0: 0.096367415, y1: 0.046202532}
+      c1_receiver_tv: {y0: 0.567449747, y1: 0.812395054}
+      c1_full_receiver_tv: 0.562529727
+  sparkov:
+    bundle_root: data/external_sequence_protocol_v1/frozen/sparkov/attempt_001
+    materialization_artifact_root: artifacts/external_sequence_protocol_v1/materialization/sparkov/attempt_001
+    materialization_complete_sha256: 02686624b042517daa92b583dcad39448f5bd945f0c613d230d6dee608919cf1
+    bundle_tree_sha256: 62fefda6207911104a9bff0ebb41d5edf44c20a4c78dccef5875d9768be6addc
+    train_path: data/external_sequence_protocol_v1/frozen/sparkov/attempt_001/train.npz
+    train_sha256: 73341c497193497dfa48314f07631afbd98a2b5757debe01bab3dee27be8ae70
+    validation_path: data/external_sequence_protocol_v1/frozen/sparkov/attempt_001/validation.npz
+    validation_sha256: 440e3930e4fb344f247373943612507605e6654b995fc40c7357b6e32e5eca74
+    transform_path: data/external_sequence_protocol_v1/frozen/sparkov/attempt_001/train_transform_state.json
+    transform_sha256: b320c217ff8ec081b491d18dbff65f063cbbddcb09b87f04acf85dd272b18c0b
+    provenance_path: data/external_sequence_protocol_v1/frozen/sparkov/attempt_001/provenance_manifest.json
+    provenance_sha256: da37bd9b74f2ae794250adf7114c9bd73086891e84496c8e353761939da98668
+    summary_path: data/external_sequence_protocol_v1/frozen/sparkov/attempt_001/summary.json
+    summary_sha256: f812f57c2ea247d2781db480b850545687fc49a82ba2d43663e231f9cd04597f
+    sampling_plan_path: artifacts/external_validation_v1/sparkov/cof_seqgen_frozen_non_v3/attempt_001/validation_sampling_plan.npz
+    sampling_plan_sha256: 665c990d78e01bd31844ca5433f177017955b35915941080bc0648deb957e247
+    threshold_path: artifacts/external_validation_v1/sparkov/cof_seqgen_frozen_non_v3/attempt_001/train_bootstrap_thresholds.json
+    threshold_sha256: c091c874e8a32c32eb9516e7d56c5946e15342a6837806f8f3809c7972424efb
+    c0:
+      attempt_path: artifacts/external_validation_v1/sparkov/cof_seqgen_frozen_non_v3/attempt_001
+      manifest_sha256: 3b313ed023dab3217c1105c0750a8adddbb8adae8a7b0af2a38c37f2f9175a71
+      sample_sha256: bd97e35de9f41e2d8cd90bd95378fa163764816010983b01422a8c11cca37936
+      evaluation_sha256: 1597b95122d527fed21aa4dbd26448719b28fd5c92102d3722352ac12db0f990
+      complete_sha256: e891af8bce3bb76d277e2d8139a55f08166745f336550e7e48e84133d6eeb9a6
+    c1:
+      attempt_path: artifacts/cof_ccmtpp_v1/external_validation/sparkov/C1/seed_4001/attempt_001
+      manifest_sha256: 6c1d0659fdb128cb524c07e28c139617f99c26ebc160535662c04dfc09c2b344
+      sample_sha256: 866b740d77c33a49dce6de03cc2485f36784f40fa6d918c0b871962928483050
+      evaluation_sha256: 46a967bba69e1f6ddfbb33858a21c52ec64cabbc14d6f735d8c3a74d78af8e4b
+      gate_sha256: c2133eb8d5ce4304ddeb2ecd70b957b19618e16e944ed708cf975ae4cbe074a5
+      complete_sha256: 76c746eb94472f9ece14efdccb52390ec912d6e759d605af3617508ed1e28ec6
+    gate_references:
+      c0_gap_ks: {y0: 0.042308456, y1: 0.300651956}
+      c1_positive_gap_ks: {y0: 0.069522435}
+      c1_coherence: {y0: 0.000296870, y1: 0.000258866}
+      c1_receiver_tv: {y0: 0.062882329, y1: 0.242978937}
+      c1_full_receiver_tv: 0.062437900
+
+training:
+  optimizer: adamw
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_size: 128
+  requested_updates: 20000
+  max_wall_seconds: 7200
+  checkpoint_interval_updates: 1000
+  progress_interval_updates: 100
+  early_stopping: FORBIDDEN
+  retry: FORBIDDEN
+  sweep: FORBIDDEN
+
+factor_isolation:
+  changed_factors: [gap_decoder]
+  gap_decoder: exact_zero_hurdle_16_bin_rqs_conditional_tail
+  receiver_path: flat_no_copy
+  pointer: FORBIDDEN
+  hierarchy: FORBIDDEN
+  y_balanced_likelihood: false
+  coherence_loss: FORBIDDEN
+  structure_loss: null
+  c1_v1_retry: FORBIDDEN
+  c2_c3_c4: FORBIDDEN
+  h2: FORBIDDEN
+
+watchdog:
+  multiprocessing_start_method: spawn
+  startup_timeout_seconds: 300
+  progress_timeout_seconds: 900
+  queue_poll_seconds: 1
+  termination_grace_seconds: 10
+  kill_grace_seconds: 5
+
+execution:
+  explicit_device: cuda:0
+  gpu_inventory_query: FORBIDDEN
+  validation_sample_batch_size: 128
+  checkpoint_serialization: cpu_first
+  validation_use: final_checkpoint_sampling_and_evaluation_only
+  internal_test: FORBIDDEN
+  sparkov_fraud_test: FORBIDDEN
+
+source_only:
+  authorization_creation: false
+  execute: false
+  gpu_query: false
+  cuda: false
+  data_body_read: false
+  model_import_or_build: false
+  fit: false
+  sample: false
+  evaluation: false
+  runtime_write: false
+  internal_test: false
+  sparkov_fraud_test: false
