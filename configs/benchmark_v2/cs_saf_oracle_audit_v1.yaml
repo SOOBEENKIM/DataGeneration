@@ -1,0 +1,26 @@
+schema_version: cs-saf-oracle-audit-v1
+scope: existing_canonical_train_only_before_any_cs_saf_training
+generator_config: configs/benchmark_v2/full_v2_5.yaml
+scenario: joint_semimarkov_v2b
+cells:
+  - {dataset_id: controlled_coupling_joint_semimarkov_v2b_kappa_0_00, kappa: 0}
+  - {dataset_id: controlled_coupling_joint_semimarkov_v2b_kappa_1_00, kappa: 1}
+max_positive_gap_states: 31
+entity_batch_size: 512
+estimand: predictive_copy_response_to_current_observed_gap_bin_given_strict_past
+history_information: continuous_past_gaps_and_observed_past_mark_repeats
+current_gap_information: train_fitted_bin_not_unobserved_latent_state
+oracle_latent_files_loaded: false
+allowed_content_splits: [train]
+criteria:
+  active_cell_min_mean_range: 0.05
+  noncausal_cell_max_mean_range: 0.05
+  active_to_largest_noncausal_min_ratio: 2.0
+  no_gap_oracle_max_range: 1.0e-8
+  minimum_entities_per_context: 100
+  repeat_calibration_absolute_tolerance: 0.02
+  repeat_calibration_cluster_se_multiplier: 5.0
+prevalence_reweighting: [0.05, 0.10, 0.25, 0.50]
+prevalence_reweighting_role: analytic_diagnostic_not_new_data_or_learned_dilution_evidence
+stop_on_failure: true
+held_out_test_access: false

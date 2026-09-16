@@ -1,6 +1,6 @@
 schema_version: cs-saf-research-protocol-v1
 family: cs_saf
-status: DEFINED_NOT_IMPLEMENTED
+status: ARCHITECTURE_SPECIFIED_ORACLE_IMPLEMENTED_NOT_YET_EXECUTED
 base_commit: de8fa70
 
 claim:
@@ -27,8 +27,10 @@ data:
 model:
   gap_decoder: train_support_aligned
   mark_decoder: copy_new
-  context_gap_interaction: vector_or_bilinear_to_be_frozen_before_training
-  objective: average_nll_plus_context_balanced_copy_loss
+  context_gap_interaction: rank_32_bilinear_history_and_direct_static_by_gap
+  objective: average_nll_plus_context_balanced_observable_repeat_loss
+  exact_architecture_contract: configs/benchmark_v2/cs_saf_architecture_v1.yaml
+  oracle_audit_contract: configs/benchmark_v2/cs_saf_oracle_audit_v1.yaml
   ordered_hazard_primary: false
   matched_ablation_factors:
     - support_alignment

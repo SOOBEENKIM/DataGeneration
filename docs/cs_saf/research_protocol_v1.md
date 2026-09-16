@@ -1,8 +1,15 @@
 # CS-SAF research protocol v1
 
-Status: **research family defined; implementation and execution not started**  
+Status: **architecture specified; oracle implemented; model implementation and training not started**
 Base commit: `de8fa70`  
 Evaluation boundary: **train/validation only; held-out test remains sealed**
+
+The 2026-09-16 pre-training clarification is
+[architecture and oracle contract v1](architecture_and_oracle_v1.md).
+It fixes the bilinear route, uses observable-repeat likelihood rather than
+mislabeling observed repeats as latent copy coins, and defines a train-only
+semi-Markov filtering oracle. Conditional input response is not a causal
+do(gap) effect. The original pilot thresholds and seed sets remain unchanged.
 
 ## Research question
 
@@ -136,4 +143,3 @@ required or defensible claim.
   held-out test.
 - Confirmatory success: freeze code and checkpoints, then run real-data/baseline
   validation and one final held-out evaluation under a separate authorization.
-

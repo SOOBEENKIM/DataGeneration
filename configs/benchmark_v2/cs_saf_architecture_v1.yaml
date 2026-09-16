@@ -1,0 +1,55 @@
+schema_version: cs-saf-architecture-v1
+status: SPECIFIED_NOT_TRAINED
+history: {encoder: shifted_gru, hidden_dim: 128, layers: 1, context_window: 32}
+embeddings: {gap: 32, mark: 32, static_label: 8}
+interaction:
+  family: rank_32_bilinear
+  context: concatenate_history_and_direct_static_embedding
+  context_projection: tanh_linear_with_bias
+  gap_projection: tanh_linear_without_bias
+  logit: base(context) + dot(w, context_projection * gap_projection) / sqrt(32)
+  initialization: w_zero_other_projections_standard
+  zero_gap_control: exact_zero_embedding_before_bias_free_gap_projection
+mark: {decoder: copy_new, new_distribution_context: history_and_static, reserved_outputs: masked}
+gap: {primary_decoder: unordered_categorical, max_positive_states: 31, representatives: observed_train_atoms}
+value: {decoder: inherited_gaussian, context: history_current_gap_current_mark}
+objective:
+  base: event_mean_gap_mark_value_nll
+  auxiliary: observable_repeat_bernoulli_nll
+  repeat_probability: copy_probability + (1-copy_probability)*new_probability_of_previous_mark
+  balanced_auxiliary: mean_over_contexts_of_transition_mean_repeat_nll
+  coefficient: 1.0
+  minibatch_estimator: global_train_transition_inverse_prevalence_weights_without_batch_renormalization
+  oracle_targets_in_training: forbidden
+ablations:
+  CS-C0: {support_aligned: false, route: false, balanced_auxiliary: false}
+  CS-U0: {support_aligned: true, route: false, balanced_auxiliary: false}
+  CS-U1: {support_aligned: true, route: true, balanced_auxiliary: false}
+  CS-B0: {support_aligned: true, route: false, balanced_auxiliary: true}
+  CS-B1: {support_aligned: true, route: true, balanced_auxiliary: true}
+parameter_matching:
+  exact: [CS-U0, CS-U1, CS-B0, CS-B1]
+  continuous_control_exception: CS-C0_gap_head_family_differs_report_parameter_count
+training_budget:
+  optimizer: AdamW
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  gradient_clip: 1.0
+  batch_size: 512
+  maximum_epochs: 50
+  early_stopping_patience: 5
+  selection_metric: validation_base_nll_without_auxiliary
+  paired_seeds_and_minibatch_order: true
+  search: none
+  pilot_seed: 20260930
+  confirmatory_seeds: [20261001, 20261002, 20261003, 20261004, 20261005]
+next_stage_prerequisites:
+  - oracle_audit_pass
+  - prevalence_materializer_preserves_original_entity_split_assignment
+  - architecture_contract_and_gradient_tests
+  - cpu_end_to_end_and_determinism_gate
+  - training_runner_records_frozen_source_commit
+confirmatory_blockers:
+  - new_train_only_noninferiority_calibration_audit
+  - exact_intervention_error_and_transition_tv_aggregation_contract
+held_out_test_access: false
