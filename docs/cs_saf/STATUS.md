@@ -2,6 +2,10 @@
 
 Updated 2026-09-16. Branch: `research/cs-saf`.
 
+New work: [fixed-checkpoint route decomposition](route_decomposition_v1_preregistration.md)
+registered before implementation/execution. It will separate a train-reference
+mean logit from current-gap variation without training or modifying checkpoints.
+
 **Current state: the separately registered three-objective diagnostic is
 COMPLETE. All U/A/B fail the pi=.05 rare-null response gate. No model success
 or expansion to later prevalences is established. V1/v2 failures are preserved.**

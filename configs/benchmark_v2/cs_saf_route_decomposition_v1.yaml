@@ -1,0 +1,62 @@
+schema_version: cs-saf-fixed-checkpoint-route-decomposition-v1
+status_at_registration: PREREGISTERED_NOT_IMPLEMENTED_OR_EXECUTED
+registered_on: '2026-09-16'
+role: exploratory_diagnostic_not_new_trained_model
+parent_result: docs/cs_saf/loss_control_v1_result.json
+parent_result_sha256: 62a27808eae30444a41df8d59a76e1e20deffa6949556c8e9b2ad23953b0eaac
+checkpoint_root: artifacts/cs_saf/loss_control_v1/gpu_v1
+prepared_root: artifacts/cs_saf/prepared_v1
+prevalence: 0.05
+kappas: [0, 1]
+candidates: [CS2-U1, CS2-A1, CS2-B1]
+checkpoint_names: [best, epoch_9]
+checkpoint_count: 12
+content_splits: [train, validation]
+reference_measure:
+  gap_weights: observed_train_nonfirst_transition_bin_counts_by_context
+  binning: saved_model_float32_support_code_including_boundary_ties
+  support: all_31_saved_training_bins
+  reuse_for_validation: true
+  history_dependent_weights: false
+decomposition:
+  scale: copy_logit
+  mean: mu_s(c)=sum_k_train_frequency_s(k)*r_s(c,k)
+  residual: delta_s(c,k)=r_s(c,k)-mu_s(c)
+  full_F: base+mu+delta
+  mean_only_M: base+mu
+  residual_only_R: base+delta
+  zero_Z: base
+  probability: q=sigmoid(logit);p_repeat=q+(1-q)*p_fresh(previous)
+  unchanged: [history_encoder, static_embedding, gap_embedding, fresh_mark_head, all_saved_weights]
+diagnostics:
+  aggregation: mean_nonfirst_histories_per_entity_then_mean_entities_per_context
+  uncertainty: descriptive_entity_standard_error_not_model_seed_uncertainty
+  arms: [F, M, R, Z]
+  per_arm_metrics: [factual_repeat_BCE, factual_mark_NLL, full_support_copy_range, full_support_repeat_range]
+  route_metrics: [mean_logit, absolute_mean_logit, train_weighted_residual_RMS]
+  paired_loss_contrasts: [M_minus_F, M_minus_Z, R_minus_F, F_minus_Z]
+  primary_explanation: U_kappa_0_rare_context_at_best_and_epoch_9
+  controls: all_other_contexts_candidates_and_active_kappa_1_rare
+directional_hypotheses:
+  mean_useful_in_primary_null: M_minus_Z_repeat_BCE_negative_in_train_and_validation_both_checkpoints
+  residual_harmful_in_primary_null: M_minus_F_repeat_BCE_negative_in_train_and_validation_both_checkpoints
+  residual_useful_in_primary_active: M_minus_F_repeat_BCE_positive_in_train_and_validation_both_checkpoints
+  no_significance_or_confirmatory_claim: true
+mechanical_checks:
+  reconstruction_max_absolute_error: 0.000001
+  weighted_residual_mean_max_absolute_error: 0.00000001
+  original_copy_and_repeat_probability_match_max_absolute_error: 0.000001
+  historical_full_zero_BCE_match_max_absolute_error: 0.000001
+  pairwise_repeat_BCE_and_mark_NLL_delta_match_max_absolute_error: 0.000001
+  M_Z_probability_range_max_absolute: 0.00000001
+  checkpoint_and_cache_hashes_unchanged: true
+execution:
+  new_fits: 0
+  optimizer_steps: 0
+  new_sampling: false
+  held_out_test: false
+  real_data: false
+  new_oracle_targets_or_realized_latents: false
+  adaptive_alpha_or_regularization_sweep: false
+  automated_candidate_promotion: false
+  output_namespace: artifacts/cs_saf/route_decomposition_v1
