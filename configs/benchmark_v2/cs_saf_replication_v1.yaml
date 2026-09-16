@@ -1,0 +1,166 @@
+schema_version: cs-saf-fixed-UEER-replication-v1
+registered_on: '2026-09-16'
+status_at_registration: PREREGISTERED_NOT_IMPLEMENTED_OR_TRAINED
+role: training_randomness_and_prevalence_replication_on_existing_data_not_independent_confirmation
+parent_result: docs/cs_saf/v4_pilot_v1_result.json
+parent_contract: configs/benchmark_v2/cs_saf_revision_v4.yaml
+prevalences:
+- 0.05
+- 0.1
+- 0.25
+- 0.5
+kappas:
+- 0
+- 1
+candidates:
+- CS2-U1
+- CS3-E1
+- CS4-ER1
+primary_candidate: CS4-ER1
+excluded_discovery_model_seed: 20260930
+data:
+  new_data_generation: false
+  train_validation_views: immutable_prepared_v1
+  data_generation_seed: 42
+  same_underlying_entities_across_prevalence: true
+  test_access: false
+  no_realized_latents: true
+  oracle_training_targets: false
+models:
+  U: unchanged_v2_ordinary_loss_133549_parameters
+  E: unchanged_v3_raw_forward_base_only_133581_parameters
+  ER: unchanged_v4_raw_forward_plus_centered_penalty_133581_parameters
+  regularization_coefficient: 0.01
+  penalty_epsilon: 0.0001
+  new_architecture_or_search: false
+  U_constant_zero_gap_audit: sigmoid_once_then_broadcast_only_no_training_or_forward_change
+initialization:
+  fresh_every_fit: true
+  warm_start: false
+  common_tensors_identical_within_trial_cell: true
+  E_ER_all_state_tensors_identical: true
+  bank_distribution: same_uniform_fanin_bounds_as_frozen_v2_only_explicit_bank_seed_changes
+  alpha_and_route_interaction_initial: zeros
+  all_initialization_sources_vary_between_trials: true
+  reference: full_train_nonfirst_bin_frequencies_per_context_before_CPU_subset
+training:
+  epochs: 50
+  patience: 5
+  batch_size: 512
+  learning_rate: 0.001
+  weight_decay: 1.0e-05
+  gradient_clip: 1.0
+  optimizer: AdamW
+  precision: float32
+  scheduler: none
+  checkpoint_selection: global_validation_base_nll_without_penalty
+  order: same_trial_model_seed_paired_across_candidates
+  snapshots:
+  - best
+  - epoch_9_if_reached
+  if_early_stop_before_epoch_9: report_missing_do_not_extend_training_or_substitute_snapshot
+cpu_gate:
+  candidate_repeats: 2
+  trial: 0
+  cell: pi_0.05_kappa_1
+  tiny_budget: unchanged_v1_CPU_budget
+  checks:
+  - exact_frozen_forward_objectives_and_gradients
+  - seed_and_bank_variation
+  - common_initialization
+  - deterministic_repeat
+  - reload
+  - loss_decrease
+  - zero_gap
+  - support_and_validity
+  source_must_match_GPU: true
+evaluation:
+  auditor: unchanged_hash_pinned_v3_full_mark_TV
+  splits:
+  - train
+  - validation
+  snapshots:
+  - best
+  - epoch_9_if_available
+  primary: train_context_marginal_bin_weighted_full_mark_TV_entity_first_aggregation
+  paired_contrasts:
+  - ER-E
+  - ER-U
+  - E-U
+  report_each_seed_and_each_context: true
+  generation_entities_per_fit: 2048
+  same_generation_plan_within_trial_cell: true
+  fixed_epoch_is_mandatory_secondary_not_selection_or_gate: true
+statistics:
+  primary_unit: paired_training_trial_mean_on_same_data
+  n_trials: 5
+  report:
+  - all_five_values
+  - mean
+  - sample_SD
+  - SE
+  - two_sided_95_percent_t_interval_df4
+  - direction_count
+  - response_pass_count
+  t_critical_95_df4: 2.7764451051977987
+  intervals_role: descriptive_assumes_independent_training_trials_and_approximately_normal_seed_effects_not_multiplicity_adjusted
+  entity_SE: separate_descriptive_no_pseudoreplication_as_training_trials
+  no_confirmatory_p_values: true
+stage1:
+  prevalence: 0.05
+  scientific_fits: 30
+  complete_all_30_before_scientific_decision: true
+  response_gate: unchanged_v1_active_null_selectivity_zero_gap_support_validity_for_ER_in_all_5_trials
+  accuracy_gate: for_ER-E_and_ER-U_each_mean_over_5_trials_of_equal_three_null_mean_TV_strictly_negative_and_active_TV_nonpositive_at_best_validation
+  per_trial_accuracy_PASS_count: report_only_no_posthoc_majority_threshold
+  advance: all_5_ER_response_gates_PASS_and_both_seed_mean_accuracy_gates_PASS
+  uncertainty_intervals: report_not_gate_not_superiority_or_noninferiority_proof
+  on_failure: stop_prevalence_expansion_preserve_all_30_no_new_seed_lambda_or_model
+stage2:
+  conditional_on: stage1_advance_true
+  prevalences:
+  - 0.1
+  - 0.25
+  - 0.5
+  additional_scientific_fits: 90
+  complete_all_90_even_if_scientific_failure_at_one_prevalence: true
+  report_per_prevalence_same_gates: true
+  global_robustness: all_four_prevalence_gates_PASS_not_a_publication_claim
+execution:
+  output_namespace: artifacts/cs_saf/replication_v1
+  prepared_root: artifacts/cs_saf/prepared_v1
+  max_concurrent_jobs: 4
+  GPU_policy: one_our_job_per_GPU_check_no_compute_process_before_each_launch_never_kill_other_jobs
+  technical_failure: preserve_failed_outputs_stop_new_dispatch_finish_inflight_no_automatic_scientific_retry
+  registered_max_scientific_fits: 120
+  external_baseline_realdata_newDGP_or_heldout_runs: false
+  commit_registration_before_implementation: true
+  commit_tested_source_before_CPU_GPU: true
+parent_result_sha256: 403aefe1a932a7241fcc8e220d5896f1288f0ea2ed49cb8effc8997d15d39e85
+parent_contract_sha256: c7ae36b8d9617f6940c7dca45f679f2b286d2ffcad565c8ac246953242604aa5
+frozen_sources:
+  models/cs_saf.py: 0bf5b6e8b9f9b7ace850ece54aafb63cd6aa8a91faf8733e5832883626cf79ca
+  models/cs_saf_v2.py: 6aca62d5f4323ff51518ca8331764d23f628c63d63ce880ce520f1d940302808
+  models/cs_saf_v3.py: 4fb42b8dc298392a5bee3f911ca463710ec6a31aa546bbf496f9e68bf98bf37c
+  models/cs_saf_v4.py: e2c08866cf6625ff6dcd5a1b28056e09c63bc96b0ed5f8d1d14c7f04750bdbbc
+  experiments/cs_saf_pilot.py: 7492d018d20088ce7b306cb3db541839a6f4d968bd7b4f58abc3a7f0d33c8c36
+  experiments/cs_saf_v3.py: 01a805af4ef32ac196868fbeb3a50ec39bee3cfd9787903d649fa591fa20d6d7
+  benchmarks/cs_saf_oracle.py: ef3856a4321cbee9aeebc8b6663d6d1787531a04fc1ff888c251d6779b6636dd
+  experiments/cs_saf_route_decomposition.py: 1259cf9c51014580fda5356a225c14390bd534428e6aa2e760bcb90a9992ed36
+prepared_index_sha256: dd10a99d29a326728cf3724f073b9d3dfd67fec4f752e8c4dd11db17c4eeb1d9
+trials:
+- model_seed: 20261001
+  bank_seed: 20261101
+  sampling_seed: 20261201
+- model_seed: 20261002
+  bank_seed: 20261102
+  sampling_seed: 20261202
+- model_seed: 20261003
+  bank_seed: 20261103
+  sampling_seed: 20261203
+- model_seed: 20261004
+  bank_seed: 20261104
+  sampling_seed: 20261204
+- model_seed: 20261005
+  bank_seed: 20261105
+  sampling_seed: 20261205

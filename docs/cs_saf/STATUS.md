@@ -2,7 +2,11 @@
 
 Updated 2026-09-16. Branch: `research/cs-saf`.
 
-**Latest v4 comparison COMPLETE: retain E raw forward, add the same .01 centered
+**New fixed-model replication preregistered, not yet implemented/trained:**
+30 fits at pi=.05; remaining 90 conditional on the frozen five-trial gate.
+[Registration](replication_v1_preregistration.md).
+
+**Latest completed v4 comparison COMPLETE: retain E raw forward, add the same .01 centered
 residual penalty. Two fresh GPU fits; original response gates and registered
 best-validation accuracy screens vs E/U PASS. Eligibility for a separately
 registered broader pilot, not multi-seed or external-baseline superiority.**
