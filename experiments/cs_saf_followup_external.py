@@ -11,6 +11,7 @@ from data.cof_seqgen_saf_tensorizer import load_canonical_dataset,SAFTensorizerS
 from generators.cof_seqgen_saf_baselines import SharedGenerationPlan,validate_raw_generated_events
 from generators.cof_seqgen_saf_external_baselines import SDVCPARWrapper,EmpiricalSequenceSampler
 from benchmarks.cof_seqgen_saf_metrics import fit_metric_state,evaluate_metric_suite
+from experiments.cs_saf_cpar_loss import equivalent_par_loss,PINNED_PAR_SOURCE_SHA256
 from scripts.audit_cs_saf_oracle import sha256
 from scripts.materialize_cs_saf_prevalence import write_json
 
@@ -88,7 +89,8 @@ def external_job(pi,kappa,trial,device):
     trial_seeds,_=trial_config(trial)
     _seed_everything(trial_seeds['model_seed'])
     started=time.monotonic()
-    wrapper=SDVCPARWrapper(epochs=c['external']['epochs'],sample_size=1,cuda=True,verbose=True).fit(dataset)
+    with equivalent_par_loss():
+        wrapper=SDVCPARWrapper(epochs=c['external']['epochs'],sample_size=1,cuda=True,verbose=True).fit(dataset)
     fit_seconds=time.monotonic()-started
     wrapper.model.save(folder/'model.pkl')
     losses=wrapper.model.get_loss_values()
@@ -101,7 +103,7 @@ def external_job(pi,kappa,trial,device):
     empirical=EmpiricalSequenceSampler().fit(dataset).sample(plan)
     empirical.to_parquet(folder/'empirical_generated.parquet',index=False)
     report={'prevalence':pi,'kappa':kappa,'trial':trial,'seeds':trial_seeds,'versions':c['external']['package_versions'],
-        'epochs':128,'sample_size':1,'network_parameters':sum(p.numel() for p in wrapper.model._model._model.parameters()),'network_device':str(next(wrapper.model._model._model.parameters()).device),'fit_seconds':fit_seconds,'sample_seconds':sample_seconds,'fit_record':asdict(wrapper.fit_record),
+        'epochs':128,'sample_size':1,'loss_implementation':'vectorized_pinned_0.8.1_equivalent','pinned_PAR_source_sha256':PINNED_PAR_SOURCE_SHA256,'network_parameters':sum(p.numel() for p in wrapper.model._model._model.parameters()),'network_device':str(next(wrapper.model._model._model.parameters()).device),'fit_seconds':fit_seconds,'sample_seconds':sample_seconds,'fit_record':asdict(wrapper.fit_record),
         'cache_sha256':sha256(CACHE/f'pi_{pi:.2f}_kappa_{kappa}.pt'),'sampling_plan_sha256':hashlib.sha256(positions.tobytes()).hexdigest(),
         'data_manifest_sha256':payload['data_manifest_sha256'],'CPAR':metrics,'empirical_copy_control':common_metrics(dataset,empirical,plan),
         'generation_entities':2048,'device':str(device),'raw_likelihood_compared':False,'conditional_oracle_TV_available':False,

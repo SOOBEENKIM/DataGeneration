@@ -197,7 +197,10 @@ def cpu_gate(output):
     _dataset=runpy.run_path(str(ROOT/"tests/test_cof_seqgen_saf_external_baselines.py"))["_dataset"]
     from generators.cof_seqgen_saf_external_baselines import SDVCPARWrapper
     from generators.cof_seqgen_saf_baselines import build_shared_generation_plan,validate_raw_generated_events
-    d=_dataset();w=SDVCPARWrapper(epochs=1,cuda=False).fit(d)
+    from experiments.cs_saf_cpar_loss import equivalent_par_loss
+    d=_dataset()
+    with equivalent_par_loss():
+        w=SDVCPARWrapper(epochs=1,cuda=False).fit(d)
     plan=build_shared_generation_plan(d,n_entities=3,seed=11)
     generated=w.sample(plan);validate_raw_generated_events(generated,plan)
     result={'decision':'PASS' if all(x['PASS'] for x in results.values()) else 'FAIL','source_commit':source,'config_sha256':CONTRACT_SHA,'candidates':results,'CPAR_CPU_adapter_smoke':'PASS','test_accessed':False}
