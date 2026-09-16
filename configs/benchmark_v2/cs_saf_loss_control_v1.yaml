@@ -1,0 +1,63 @@
+schema_version: cs-saf-v2-loss-control-v1
+status_at_registration: PREREGISTERED_NOT_IMPLEMENTED_OR_TRAINED
+registered_on: '2026-09-16'
+role: exploratory_loss_diagnostic_after_v2_failure
+prior_result_sha256: f66f6464585c2967842ba1e569446f439dfe340fcfd753f352654cc45a09f751
+inherited_v2_config_sha256: 057cc59296961e5763b0ee2877fd930bafcab312d6a6637431302424f27f0359
+inherited_pilot_config_sha256: e36f62998dc537e8359d10b8f0bf706dca35dad8279e0f8a51b5454faff5ac8c
+architecture: unchanged_cs_saf_v2_two_rank_16_banks
+parameters: 133549
+model_seed: 20260930
+bank_initializer_seed: 20261010
+prevalence: 0.05
+kappas: [0, 1]
+candidates: [CS2-U1, CS2-A1, CS2-B1]
+objectives:
+  CS2-U1: unchanged_base
+  CS2-A1: base_plus_global_transition_mean_repeat_BCE
+  CS2-B1: unchanged_base_plus_mean_context_transition_mean_repeat_BCE
+auxiliary_coefficient: 1.0
+auxiliary_denominators: fixed_train_counts_never_batch_label_counts
+primary_contrasts: [A_minus_U_added_auxiliary_weight, B_minus_A_context_allocation]
+training: unchanged_v1_pilot_budget_and_global_validation_base_nll_selection
+scientific_fits: 6
+fit_order: kappa_then_U_A_B
+stop_rule: complete_all_six_unless_technical_failure_no_adaptive_candidates
+reuse_old_trained_weights: false
+historical_U_B_reproduction:
+  compare: [initial_state_sha256, best_state_sha256, best_epoch, validation_base_nll, full_support_response]
+  response_absolute_tolerance: 0.000001
+  nll_absolute_tolerance: 0.000001
+  unmatched_results: investigate_before_drawing_loss_contrasts
+cpu_gate:
+  candidates: all_three
+  repeats_each: 2
+  inherited_tiny_training_and_generation_checks: true
+  minimum_relative_train_loss_decrease: 0.10
+  checkpoint_reload_prediction_identity: required
+diagnostics:
+  checkpoints: [best_validation_base_nll, fixed_epoch_9_zero_based]
+  missing_epoch_9: record_missing_without_replacement
+  content_splits: [train, validation]
+  entity_aggregation: mean_nonfirst_histories_then_mean_entities_by_context
+  full_support_bins: all_31_train_fitted_bins
+  central_interval_quantiles: [0.05, 0.95]
+  central_interval_fit: train_context_gap_counts_only_reused_for_validation
+  metrics: [copy_range, repeat_range, central_copy_range, central_repeat_range, observed_repeat_BCE, zero_gap_repeat_BCE, route_minus_zero_repeat_BCE]
+  group_summaries: [mean, entity_standard_error, median, p90, fraction_copy_range_above_005]
+  paired_contrasts: aligned_entity_A_minus_U_and_B_minus_A
+  uncertainty_scope: descriptive_entity_variation_not_model_seed_uncertainty
+  zero_gap_control: same_checkpoint_shared_features_and_heads_unchanged
+response_gate: inherited_v1_full_support_criteria_report_for_each_candidate
+generation: unchanged_2048_train_only_parent_length_plan_per_best_checkpoint
+boundaries:
+  pilot_success_claim: false
+  automatic_winner_selection: false
+  thresholds_changed: false
+  seed_or_hyperparameter_sweep: false
+  later_prevalences: false
+  five_seed_confirmation: false
+  real_data: false
+  held_out_test_access: false
+  oracle_targets_for_training: false
+output_namespace: artifacts/cs_saf/loss_control_v1

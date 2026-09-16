@@ -2,6 +2,10 @@
 
 Updated 2026-09-16. Branch: `research/cs-saf`.
 
+New work: [three-objective loss diagnostic registered](loss_control_v1_preregistration.md),
+before implementation/execution. Six pi=.05 fits and separate train/validation
+null-response diagnostics are planned; previous v2 FAIL is unchanged.
+
 **Current state: v2 implemented, 71 tests and CPU gate PASS; v2 pilot FAIL at
 pi=0.05 in the kappa=0 rare context. V1's pi=0.25 FAIL is also preserved.**
 
