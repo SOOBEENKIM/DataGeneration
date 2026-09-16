@@ -36,6 +36,16 @@ has now completed six pi=.05 fits. All U/A/B fail rare-null response, with exact
 reproduction of prior U/B states; [results](loss_control_v1_report_2026_09_16.md).
 This adds exploratory mechanism evidence, not a successful method or confirmation.
 
+Latest annotation (2026-09-16): the separately registered
+[fixed-checkpoint decomposition](route_decomposition_v1_report_2026_09_16.md)
+is complete with zero new fits. Useful history correction and active gap variation
+coexist in the route; null residual removal helps validation but hurts train.
+The [current research/related-work audit](research_claims_and_related_work_audit_2026_09_16.md)
+supersedes broad novelty interpretations below. In particular, dilution with
+rarity is unproven, marked point processes are also generative, and sequential
+behavioral fidelity already has prior art. Frozen v1 criteria are unchanged;
+a revised method/contribution needs a new contract.
+
 ## Research question
 
 Can a sequential synthetic-data generator preserve both the valid support of
@@ -51,7 +61,9 @@ active only in a small observed context. Standard empirical-risk minimization
 weights that learning signal in proportion to context prevalence, and aggregate
 metrics can hide the resulting failure.
 
-This is a hypothesis to test, not a completed claim.
+This is a hypothesis to test, not a completed claim. The latest pilots learn a
+material active response but fail on spurious null response; they do not yet
+establish the proposed rarity/dilution mechanism.
 
 ## Evidence inherited from `main`
 
@@ -81,9 +93,10 @@ undifferentiated fidelity/utility/privacy score is not the intended claim.
 
 ## Separation from adjacent work
 
-- Marked temporal point-process work models time--mark dependence primarily for
-  likelihood and next-event prediction; CS-SAF targets synthetic-dataset
-  generation under exact support and rare-context mechanism fidelity.
+- Marked temporal point-process work already models time--mark dependence and
+  defines generative distributions. A narrower possible CS-SAF distinction is
+  empirical support alignment together with rare-context active/null conditional
+  fidelity in heterogeneous synthetic datasets; it requires experimental proof.
 - Dependency-repair methods for tabular data commonly reconstruct known
   deterministic rules; CS-SAF must learn a stochastic, history-dependent rule
   from observed sequences.

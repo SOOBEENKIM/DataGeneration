@@ -12,7 +12,16 @@ A separate [three-objective diagnostic](docs/cs_saf/loss_control_v1_report_2026_
 is complete: 82 tests and all CPU gates passed; six GPU fits reproduced the
 earlier U/B results exactly. U/A/B all fail the rare-null response bound. The
 added auxiliary and context balancing each increase that response, while
-whole-route removal worsens factual repeat loss. No later study has started.
+whole-route removal worsens factual repeat loss. No later prevalence study has started.
+
+The subsequent [fixed-checkpoint decomposition](docs/cs_saf/route_decomposition_v1_report_2026_09_16.md)
+is complete: 92 tests, CPU/GPU checks, 12 existing snapshots, **zero new fits**.
+Retaining the route's train-reference mean preserves useful history correction;
+removing only gap variation improves rare-null validation loss slightly but
+worsens train loss, and substantially harms active prediction. The registered
+both-split null-harm hypothesis is not supported. A new trained solution remains
+unproven. See the [model, preprocessing, related-work and claim audit](docs/cs_saf/research_claims_and_related_work_audit_2026_09_16.md)
+for the current contribution scope and actual baseline execution status.
 
 This repository contains the reproducible research code for CoF-SeqGen and its
 support-aligned autoregressive extension (SAF). The `main` branch records the

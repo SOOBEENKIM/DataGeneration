@@ -6,6 +6,12 @@ pins its parent evidence and all 12 saved best/epoch-9 snapshots. This is an
 exploratory analysis of reused train/validation data, with **zero new fits,
 optimizer steps, generated samples or held-out test access**.
 
+Execution annotation, 2026-09-16: registered in `d12021b`, subsequently completed
+with final source `7d5a1be`; [report](route_decomposition_v1_report_2026_09_16.md).
+The YAML and directional criteria below are unchanged. The mean-usefulness and
+active-residual directions hold; the primary null-harm direction is mixed across
+train/validation and does not satisfy its registered both-split condition.
+
 ## Precisely defined question
 
 Whole-route zeroing worsened factual repeat BCE even where the DGP has no

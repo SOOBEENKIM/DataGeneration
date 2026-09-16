@@ -2,20 +2,38 @@
 
 Updated 2026-09-16. Branch: `research/cs-saf`.
 
-New work: [fixed-checkpoint route decomposition](route_decomposition_v1_preregistration.md)
-registered at `d12021b` before implementation/execution. Implementation passes
-92 tests. Initial CPU check passed. The first GPU diagnostic stopped on a
-historical-likelihood mismatch: batch 128 vs the parent's 256 changed GPU GRU
-arithmetic by up to 1.5672e-6, above the fixed 1e-6 limit. A controlled same-state
-comparison with batch 256 reduced the discrepancy below 6.2e-10. Match the
-parent's batch size, retain the failed output, and rerun under a new source/output
-with unchanged tolerances. Literature/claim audit is in progress.
+**Latest work COMPLETE: [fixed-checkpoint route decomposition](route_decomposition_v1_report_2026_09_16.md),
+[evidence](route_decomposition_v1_result.json), and
+[model/theory/data/literature/claim audit](research_claims_and_related_work_audit_2026_09_16.md).**
+
+- Registered `d12021b` before implementation. Final CPU/GPU source `7d5a1be`.
+- 92 tests PASS, same-source CPU PASS; 12 best/epoch-9 snapshot records from
+  six existing pi=.05 U/A/B fits, full train/validation, both contexts/all bins.
+- **New fits, optimizer steps, generated samples and held-out access: zero.**
+- U rare-null best validation repeat BCE: full F **.489598539**, mean-only M
+  **.488799468**, residual-only R **.542980485**, whole-route zero Z **.542022948**.
+  The train-reference mean is useful. Removing the residual improves validation
+  slightly but worsens train (+.000829508); epoch 9 repeats the sign pattern.
+- U rare-active validation F **.451531454 -> M .503302035** (+.051770582).
+  Useful active gap dependence would also be lost by unconditional removal.
+- Registered mean-usefulness and active-residual-usefulness directions hold;
+  **null residual harmful in BOTH train and validation does not hold**.
+  Do not reclassify this mixed result as a fully supported hypothesis.
+- All fixed mechanical checks PASS; 23 file checksums, 12 tensor identities,
+  48 aligned entity-array groups and 4,416 statistics independently rechecked.
+- First `audit_v1` failed a numerical identity: batch 128 vs parent 256 changed
+  CUDA batch-shape arithmetic. Matching 256 resolves it; final historical loss mismatch
+  <=1.37e-9, unchanged 1e-6 limit. Failure preserved; final output `audit_v2`.
+- No new trained candidate, superiority or dilution claim. Centering alone is
+  function-preserving; history capacity and residual regularization require
+  separate controls. Related work already covers copy mixtures, interactions,
+  sequential generation, group weighting and behavioral fidelity diagnostics.
 
 **Current state: the separately registered three-objective diagnostic is
 COMPLETE. All U/A/B fail the pi=.05 rare-null response gate. No model success
 or expansion to later prevalences is established. V1/v2 failures are preserved.**
 
-Latest execution: [loss-control report](loss_control_v1_report_2026_09_16.md)
+Previous training execution: [loss-control report](loss_control_v1_report_2026_09_16.md)
 and [machine-readable evidence](loss_control_v1_result.json).
 
 - Registration `d4069c9` preceded implementation/fits. CPU/GPU source:
@@ -40,8 +58,8 @@ and [machine-readable evidence](loss_control_v1_result.json).
 - 12,288 generated entities / 283,986 nonfirst gaps; generation checks PASS.
   62 checksum comparisons and checkpoint/sample/diagnostic array identities
   verified. No worker error; each candidate's local scientific gate is FAIL.
-- No later prevalence, five-seed, real-data or held-out run. The proposed
-  train-centered route-component diagnostic is **not registered or executed**.
+- No later prevalence, five-seed, real-data or held-out run. The then-proposed
+  train-centered route diagnostic subsequently completed; see latest work above.
 
 Prior v2 implementation and pilot:
 
@@ -119,30 +137,33 @@ V1 execution retained below:
 
 Read these files in order when recovering from a missing conversation:
 
-1. [Latest three-objective result and limits](loss_control_v1_report_2026_09_16.md)
+1. [Latest decomposition and limits](route_decomposition_v1_report_2026_09_16.md),
+   [evidence](route_decomposition_v1_result.json), and
+   [comprehensive research/claim audit](research_claims_and_related_work_audit_2026_09_16.md).
+2. [Decomposition preregistration](route_decomposition_v1_preregistration.md).
+3. [Three-objective result and limits](loss_control_v1_report_2026_09_16.md)
    and [evidence](loss_control_v1_result.json).
-2. [Loss diagnostic preregistration](loss_control_v1_preregistration.md).
-3. [V2 pilot result](v2_pilot_v1_report_2026_09_16.md) and [evidence](v2_pilot_v1_result.json).
-4. [V2 preregistration and implementation contract](revision_v2_preregistration.md).
-5. [Prior checkpoint analysis](checkpoint_forensics_v1_report_2026_09_16.md)
+4. [Loss diagnostic preregistration](loss_control_v1_preregistration.md).
+5. [V2 pilot result](v2_pilot_v1_report_2026_09_16.md) and [evidence](v2_pilot_v1_result.json).
+6. [V2 preregistration and implementation contract](revision_v2_preregistration.md).
+7. [Prior checkpoint analysis](checkpoint_forensics_v1_report_2026_09_16.md)
    and [evidence](checkpoint_forensics_v1_result.json).
-6. [V1 pilot report](pilot_v1_report_2026_09_16.md) and [evidence](pilot_v1_result.json).
-7. [Frozen v1 pilot contract](pilot_execution_contract_v1.md).
-8. [Research protocol](research_protocol_v1.md).
-9. [Exact architecture and oracle contract](architecture_and_oracle_v1.md).
-10. [Earlier oracle-only result](oracle_audit_v1_report_2026_09_16.md).
+8. [V1 pilot report](pilot_v1_report_2026_09_16.md) and [evidence](pilot_v1_result.json).
+9. [Frozen v1 pilot contract](pilot_execution_contract_v1.md).
+10. [Research protocol](research_protocol_v1.md).
+11. [Exact architecture and oracle contract](architecture_and_oracle_v1.md).
+12. [Earlier oracle-only result](oracle_audit_v1_report_2026_09_16.md).
 
-**Next work: separately specify/register a fixed-checkpoint decomposition of
-history correction and current-gap variation.** The proposed diagnostic would
-retain the train-gap-averaged route logit and remove only its gap-varying
-residual, contrasting it with whole-route zeroing. This is a hypothesis, not a
-measured decomposition yet. If supported, a separate history head/centered
-gap residual with selective shrinkage can be considered under a new model
-contract. Centering alone does not guarantee null safety. Do not resume stopped
-v1/v2 prevalences or five-seed confirmation. Subsequent method validation still
-needs a registered prevalence pilot, train-only margin calibration, exact
-conditional-distribution error aggregation and multiple seeds. No superiority,
-learned-dilution or final method-success claim is established.
+**Next work: specify/register a model candidate that separates a history-only
+head and a centered gap residual, with matched history-capacity and unregularized
+controls before testing residual regularization.** This candidate/penalty is
+proposed, not registered, implemented or trained. Centering itself does not change
+predictions or guarantee null safety; oracle active/null masks are inadmissible.
+Do not automatically adopt B or resume stopped v1/v2 prevalences/five-seed work.
+The next contract must fix objectives, budget, active/null conditional-distribution
+accuracy, calibration and stop rules before fitting. Method evidence still needs
+multiple seeds and fair external sequential baselines. Known copy-DGP alignment,
+reused validation and prior-art overlap constrain all claims.
 
 Runtime roots relative to this CS-SAF worktree:
 
@@ -157,6 +178,9 @@ and `pilot_v1/` with terminal records.
 
 Loss diagnostic: `artifacts/cs_saf/loss_control_v1/cpu_v1/` and `gpu_v1/`,
 with best and epoch-9 checkpoints for all six fits, and train/validation entity arrays.
+
+Latest decomposition: `artifacts/cs_saf/route_decomposition_v1/cpu_v2/` and
+`audit_v2/`. The first technical failure is retained in `audit_v1/`.
 
 Each trained job retains its best checkpoint, history/report, intervention
 audit and generated sample. Compact evidence records absolute locations,
