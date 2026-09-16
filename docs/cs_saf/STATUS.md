@@ -2,6 +2,10 @@
 
 Updated 2026-09-16. Branch: `research/cs-saf`.
 
+New work: [v3 history/residual pilot](revision_v3_preregistration.md) is separately
+preregistered before implementation: H/E/C/R, eight fresh pi=.05 fits, one fixed
+smooth-RMS penalty and a conditional-distribution accuracy screen. Not yet run.
+
 **Latest work COMPLETE: [fixed-checkpoint route decomposition](route_decomposition_v1_report_2026_09_16.md),
 [evidence](route_decomposition_v1_result.json), and
 [model/theory/data/literature/claim audit](research_claims_and_related_work_audit_2026_09_16.md).**

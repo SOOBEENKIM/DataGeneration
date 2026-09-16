@@ -1,0 +1,117 @@
+schema_version: cs-saf-history-centered-residual-v3
+status_at_registration: PREREGISTERED_NOT_IMPLEMENTED_OR_TRAINED
+registered_on: '2026-09-16'
+role: exploratory_architecture_and_regularization_pilot
+parent_result: docs/cs_saf/route_decomposition_v1_result.json
+parent_result_sha256: e57cbc92bc3a174ac3b39f31f1a1e0be59f2438206a08c391b7c738780bb0b45
+historical_U_result: docs/cs_saf/loss_control_v1_result.json
+historical_U_result_sha256: 62a27808eae30444a41df8d59a76e1e20deffa6949556c8e9b2ad23953b0eaac
+inherited_pilot: configs/benchmark_v2/cs_saf_pilot_v1.yaml
+inherited_pilot_sha256: e36f62998dc537e8359d10b8f0bf706dca35dad8279e0f8a51b5454faff5ac8c
+oracle_config: configs/benchmark_v2/full_v2_5.yaml
+oracle_config_sha256: 81bc16416f6dad3c23eaf1990c3cb76e5449e74f1ddc634f42d3a897cd3c5bb3
+prevalence: 0.05
+kappas: [0, 1]
+candidates: [CS3-H1, CS3-E1, CS3-C1, CS3-R1]
+primary_candidate: CS3-R1
+scientific_fits: 8
+architecture:
+  inherited: fresh_CS2_U1_common_modules_and_rank16_banks
+  context_features: u_s(c)=tanh(Wc_s*c+bc_s)
+  history_correction: h_s(c)=dot(alpha_s,u_s(c))/sqrt(16)
+  new_parameters: alpha_shape_2_by_16_initialized_zero
+  new_parameter_count: 32
+  total_parameter_count: 133581
+  reference: observed_train_nonfirst_gap_bin_frequencies_per_observed_context
+  reference_fit: full_training_view_before_CPU_subsampling_never_validation
+  raw_route: r_s(c,k)=dot(w_s*u_s(c),tanh(Wg_s*E_gap(k)))/sqrt(16)
+  centered_residual: delta_s(c,k)=r_s(c,k)-sum_j_pi_s(j)*r_s(c,j)
+  CS3-H1: base+history_correction
+  CS3-E1: base+history_correction+raw_route
+  CS3-C1: base+history_correction+centered_residual
+  CS3-R1: base+history_correction+centered_residual
+  H_dormant_parameters: 1056
+  H_dormant_explanation: route_gap_weight_1024_and_route_interaction_weight_32_have_no_predictive_gradient
+  shared_features: history_and_residual_share_u_GRU_and_gap_embedding
+  oracle_active_mask: false
+  zero_gap_control: remove_entire_current_gap_term_preserving_explicit_history_head
+objective:
+  base: unchanged_U_gap_mark_value_mean_NLL
+  auxiliary_repeat_BCE: none
+  H_E_C: base_only
+  R: base_plus_0.01_times_global_transition_mean_smooth_residual_RMS
+  residual_RMS: sqrt(sum_k_pi_s(k)*delta_s(c,k)^2+epsilon^2)-epsilon
+  epsilon: 0.0001
+  regularization_coefficient: 0.01
+  reduction: N_entities_over_batch_size_times_sum_nonfirst_RMS_over_fixed_train_transition_count
+  context_balancing: false
+  hyperparameter_search: false
+  penalty_gradients: residual_features_and_weights_not_direct_history_alpha_or_base
+initialization:
+  model_seed: 20260930
+  inherited_bank_seed: 20261010
+  common_tensors: exact_fresh_v2_U1_initial_state
+  alpha: zeros_without_consuming_random_numbers
+  paired_new_initial_states: identical
+  checkpoint_warm_start: false
+training:
+  epochs: 50
+  patience: 5
+  batch_size: 512
+  optimizer: AdamW
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  gradient_clip: 1.0
+  precision: float32
+  scheduler: none
+  checkpoint_selection: global_validation_base_nll_without_regularizer
+  saved_snapshots: [best, epoch_9]
+  same_entity_order_prefix: true
+cpu_gate:
+  inherited_pilot_subset_budget_and_deterministic_repeats: true
+  candidates: all_four
+  repeats: 2
+  parameter_and_initial_state_checks: true
+  centered_residual_mean_absolute_tolerance: 0.000001
+  explicit_history_survives_zero_gap: true
+  nonfirst_only_regularizer_fixed_denominator: true
+  likelihood_and_response_grid_match_tolerance: 0.000001
+  regularizer_no_direct_alpha_or_base_gradient: true
+  label_permutation_and_strict_past: true
+accuracy_audit:
+  checkpoints: [best, epoch_9]
+  splits: [train, validation]
+  history: all_nonfirst_observed_histories
+  oracle: existing_observable_information_SemiMarkovCopyOracle
+  oracle_current_gap: saved_bin_boundaries_cast_float32_like_model
+  oracle_history: observed_continuous_past_gaps_and_marks_no_realized_latents
+  full_mark_distribution: q*one_hot_previous+(1-q)*fresh_categorical
+  oracle_fresh_distribution: uniform_over_64_DGP_marks
+  primary_error: full_mark_TV_averaged_over_train_reference_gap_bins
+  secondary: [factual_bin_mark_TV, grid_repeat_absolute_error, factual_repeat_BCE, residual_RMS]
+  aggregation: mean_histories_per_entity_then_mean_entities_per_context
+  grid_measure: context_marginal_train_frequency_not_history_conditional_gap_density
+  historical_comparator: both_saved_CS2_U1_best_and_epoch9_evaluated_by_same_auditor
+  historical_retraining: false
+  uncertainty: descriptive_paired_entity_SE_not_seed_uncertainty
+pilot_gate:
+  response_thresholds: unchanged_inherited_copy_and_observable_repeat_active_null_selectivity_gates
+  primary: CS3-R1
+  H_role: negative_control_not_expected_to_pass_active_gate
+  accuracy_screen: R_minus_C_and_R_minus_historical_U_each_negative_in_equal_three_null_mean_TV_and_nonpositive_in_active_TV
+  accuracy_screen_checkpoint: best_validation
+  accuracy_screen_role: conservative_exploratory_direction_not_confirmatory_noninferiority
+  next_stage_eligible: primary_response_PASS_and_accuracy_screen_PASS
+  complete_all_eight_fits: true
+  if_failure: preserve_all_results_no_fallback_or_new_coefficient
+  automatic_later_stage: false
+execution:
+  prepared_root: artifacts/cs_saf/prepared_v1
+  output_namespace: artifacts/cs_saf/revision_v3
+  generation_entities_per_fit: 2048
+  sampling_seed: 20260930
+  no_later_prevalence_or_seed_or_external_baseline_fits: true
+  held_out_test: false
+  realized_latent_targets: false
+  preregister_before_implementation: true
+  commit_tested_source_before_CPU_GPU: true
