@@ -1,0 +1,129 @@
+schema_version: cs-saf-cost-prevalence-external-v1
+registered_on: '2026-09-16'
+role: user_authorized_exploratory_extension_after_failed_replication_not_reclassification
+parent_contract: configs/benchmark_v2/cs_saf_replication_v1.yaml
+parent_contract_sha256: ffbbfefaa7b236e6a595a149e78c6a610ec5e77f75a508398c901814fa562e0e
+parent_result: docs/cs_saf/replication_v1_result.json
+parent_result_sha256: 17d0df6c9c644f8be94374f342f62d1033a7c8bd8366b747a4e714f3fcdf5085
+prevalences:
+- 0.05
+- 0.1
+- 0.25
+- 0.5
+kappas:
+- 0
+- 1
+trials:
+- 0
+- 1
+- 2
+- 3
+- 4
+candidates:
+  U:
+    parent: CS2-U1
+    lambda: 0
+  E:
+    parent: CS3-E1
+    lambda: 0
+  L003:
+    parent: CS4-ER1
+    lambda: 0.003
+  ER:
+    parent: CS4-ER1
+    lambda: 0.01
+  L030:
+    parent: CS4-ER1
+    lambda: 0.03
+internal:
+  new_fits_pi005: 20
+  new_fits_other_prevalences: 150
+  total_new_fits: 170
+  reuse_pi005:
+  - U
+  - E
+  - ER
+  training: exact_parent_seed_budget_initialization_checkpoint_rules
+  fresh_weights: true
+  complete_all_registered_cells_regardless_scientific_FAIL: true
+  original_FAIL_preserved: true
+  selection: none_all_four_lambda_points_reported
+gradient_audit:
+  historical_candidates:
+  - CS3-E1
+  - CS4-ER1
+  prevalence: 0.05
+  snapshots:
+  - best
+  - epoch_9
+  entities_per_context: 256
+  subset_seed_base: 20261301
+  scope: train_only_per_context_local_gradients_no_optimizer_steps
+  lambda_for_comparison: 0.01
+  metrics:
+  - norms_and_cosines_of_mark_NLL_base_NLL_and_penalty_by_parameter_block
+  - first_order_change_of_history_and_raw_gap_mean_under_penalty_descent
+  causal_claim: false
+external:
+  baseline: SDV_PARSynthesizer_CPAR
+  package_versions:
+    sdv: 1.38.0
+    deepecho: 0.8.1
+  epochs: 128
+  sample_size: 1
+  all_prevalences: true
+  all_kappas: true
+  all_five_trials: true
+  new_fits: 40
+  fit_split: full_train
+  preprocessing: existing_pinned_SDVCPARWrapper
+  sample_entities: 2048
+  plan: exact_CS_SAF_train_indices_context_and_lengths_same_sampling_seed
+  checkpoint: final_fixed_128_epochs_no_validation_selection
+  additional_control: whole_train_trajectory_resampling_same_plan_not_neural_baseline
+  no_posthoc_budget_reduction: true
+  fairness_limit: different_optimization_and_representation_default_budget_not_compute_matched
+  conditional_oracle_TV_for_CPAR: not_available_not_imputed
+common_generation_evaluation:
+  reference: validation
+  metric_state: full_train_only_per_context
+  metrics: existing_cof_seqgen_saf_metrics_evaluate_metric_suite_without_privacy
+  report:
+  - pooled
+  - context_0
+  - context_1
+  primary:
+  - transition_conditioned_mark_tv
+  - short_gap_repeat_curve_l1
+  - gap_repeat_mi_error
+  same_saved_CS_samples: true
+  validity: exact_plan_lengths_context_marks_finite_values_nonnegative_nonfirst_gaps
+  no_discretization_of_external_gap_for_common_metrics: true
+  support_comparison: continuous_CPAR_not_required_to_equal_CS_bin_representatives
+  inference: descriptive_paired_training_seed_intervals_no_external_superiority_gate
+statistics:
+  internal: unchanged_parent_entity_and_paired_seed_TV_response_gates_descriptive_only
+  all_lambda_and_prevalence_reported: true
+  95_percent_t_df4: 2.7764451051977987
+  no_new_threshold_or_claim_of_confirmatory_success: true
+data:
+  generation_seed: 42
+  immutable_existing_train_validation: true
+  test_access: false
+  independent_new_data_confirmation: false
+  limitation: same_DGP_same_entities_validation_reused_next_independent_confirmation_requires_new_contract
+execution:
+  max_concurrent: 4
+  gpu: one_job_per_free_GPU_recheck_compute_processes_before_each_launch
+  CPU_gate: repeat_tiny_internal_fits_and_CPAR_adapter_smoke_before_GPU
+  commit_before_training: true
+  technical_failure: preserve_outputs_stop_new_dispatch_finish_inflight_fix_with_logged_amendment_before_resume
+  scientific_failure: continue_all_cells
+  output: artifacts/cs_saf/followup_v1
+  push_results_even_if_negative: true
+frozen_sources:
+  experiments/cs_saf_replication.py: b4d43782bff071591165964b1af80d7b0f8c2111a35205f0ed18994a933df2e0
+  models/cs_saf_v3.py: 4fb42b8dc298392a5bee3f911ca463710ec6a31aa546bbf496f9e68bf98bf37c
+  models/cs_saf_v4.py: e2c08866cf6625ff6dcd5a1b28056e09c63bc96b0ed5f8d1d14c7f04750bdbbc
+  generators/cof_seqgen_saf_external_baselines.py: 5435191ac176486cb302abb25e9d70fd0936e64615fc5a4e5a107adb6b9c4107
+  benchmarks/cof_seqgen_saf_metrics.py: ca8988c3fe0b26faf4c1064d6cd4af8545f94e70bda1e463fa80515633a7a934
