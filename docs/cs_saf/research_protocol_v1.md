@@ -31,6 +31,11 @@ pi=.05 in the dependency-free rare context; see the
 [v2 result](v2_pilot_v1_report_2026_09_16.md). The v1 failure and all original
 criteria are preserved. No confirmatory study has started.
 
+A separately [registered three-objective loss diagnostic](loss_control_v1_preregistration.md)
+has now completed six pi=.05 fits. All U/A/B fail rare-null response, with exact
+reproduction of prior U/B states; [results](loss_control_v1_report_2026_09_16.md).
+This adds exploratory mechanism evidence, not a successful method or confirmation.
+
 ## Research question
 
 Can a sequential synthetic-data generator preserve both the valid support of

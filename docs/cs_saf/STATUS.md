@@ -2,15 +2,39 @@
 
 Updated 2026-09-16. Branch: `research/cs-saf`.
 
-New work: [three-objective loss diagnostic](loss_control_v1_preregistration.md)
-registered in `d4069c9` before implementation/execution. Its implementation now
-passes 82 relevant tests, including historical U/B gradient equivalence and
-the global A auxiliary formula. Same-source CPU gates and six pi=.05 GPU fits
-with separate train/validation null diagnostics are pending. Previous v2 FAIL
-is unchanged; this is a separate exploratory study.
+**Current state: the separately registered three-objective diagnostic is
+COMPLETE. All U/A/B fail the pi=.05 rare-null response gate. No model success
+or expansion to later prevalences is established. V1/v2 failures are preserved.**
 
-**Current state: v2 implemented, 71 tests and CPU gate PASS; v2 pilot FAIL at
-pi=0.05 in the kappa=0 rare context. V1's pi=0.25 FAIL is also preserved.**
+Latest execution: [loss-control report](loss_control_v1_report_2026_09_16.md)
+and [machine-readable evidence](loss_control_v1_result.json).
+
+- Registration `d4069c9` preceded implementation/fits. CPU/GPU source:
+  `f4bed4b9a17970d2cd146515f3e97d1ae0db6947`.
+- **82 tests PASS**, six tiny CPU fits (two each U/A/B), all CPU gates PASS.
+- **Six GPU fits completed**, pi=.05 x kappa 0/1 x U/A/B, same v2 architecture,
+  initial states, data/order, budget and checkpoint selection. A adds a global
+  transition-mean repeat BCE; B retains equal-context repeat BCE.
+- U/B's four prior best states reproduced **bitwise**, with identical epochs,
+  likelihoods and responses; no trained weight warm-start.
+- Kappa=0 rare copy ranges U/A/B: **.055189/.061733/.081949**, all >.05.
+  Repeat ranges also fail. Added auxiliary and context redistribution each
+  increase this null response; the same ordering holds at fixed epoch 9.
+- U train/validation null ranges .054936/.055189; train-defined central-bin
+  ranges .053865/.054159; 89.06%/90.33% of entities individually exceed .05.
+  This is not restricted to validation outliers or extreme gap bins.
+- Turning off the whole U gap route worsens rare-null validation repeat BCE
+  **.489599 -> .542023** at fixed weights. The route cannot be treated as
+  uniformly useless; history correction and current-gap variation may be mixed.
+- B-A validation repeat BCE: rare null **+.006451**, active **-.006080**.
+  This is a tradeoff in one exploratory seed, not universal harm or superiority.
+- 12,288 generated entities / 283,986 nonfirst gaps; generation checks PASS.
+  62 checksum comparisons and checkpoint/sample/diagnostic array identities
+  verified. No worker error; each candidate's local scientific gate is FAIL.
+- No later prevalence, five-seed, real-data or held-out run. The proposed
+  train-centered route-component diagnostic is **not registered or executed**.
+
+Prior v2 implementation and pilot:
 
 V2 implementation preserves the registered 133,549 parameters and fresh-v1
 common initialization. Direct bank-gradient isolation, known-label permutation,
@@ -21,7 +45,7 @@ and reuses the immutable data/oracle index. V2 outputs use a separate namespace.
 The v2 YAML retains its historical preregistration-state metadata; this file
 records current execution state.
 
-Latest v2 execution (2026-09-16):
+V2 execution (2026-09-16, before the separate loss diagnostic):
 
 - Source: `c77d2f9558ca019d14ccf4b833cbc6628728ff44` (committed before CPU/GPU).
 - Immutable registration: `d8302e3`; model seed 20260930; 133,549 parameters.
@@ -39,7 +63,8 @@ Latest v2 execution (2026-09-16):
 - Pi=.10/.25/.50 training stopped by the original rule. No fallback, five-seed,
   real-data or held-out run. Parent exit 2 is scientific FAIL; no worker error.
 - Saved checkpoint/sample identities and 21 artifact checksums rechecked.
-- The proposed three-objective loss control is **not yet preregistered or run**.
+- The then-proposed three-objective control was subsequently registered and
+  completed separately; see the latest result above.
 
 Prior v1 checkpoint forensics (2026-09-16):
 
@@ -85,27 +110,30 @@ V1 execution retained below:
 
 Read these files in order when recovering from a missing conversation:
 
-1. [Latest v2 pilot result, limits and next diagnostic](v2_pilot_v1_report_2026_09_16.md).
-2. [Machine-readable v2 evidence](v2_pilot_v1_result.json).
-3. [V2 preregistration and implementation contract](revision_v2_preregistration.md).
-4. [Prior checkpoint analysis](checkpoint_forensics_v1_report_2026_09_16.md)
+1. [Latest three-objective result and limits](loss_control_v1_report_2026_09_16.md)
+   and [evidence](loss_control_v1_result.json).
+2. [Loss diagnostic preregistration](loss_control_v1_preregistration.md).
+3. [V2 pilot result](v2_pilot_v1_report_2026_09_16.md) and [evidence](v2_pilot_v1_result.json).
+4. [V2 preregistration and implementation contract](revision_v2_preregistration.md).
+5. [Prior checkpoint analysis](checkpoint_forensics_v1_report_2026_09_16.md)
    and [evidence](checkpoint_forensics_v1_result.json).
-5. [V1 pilot report](pilot_v1_report_2026_09_16.md) and [evidence](pilot_v1_result.json).
-6. [Frozen v1 pilot contract](pilot_execution_contract_v1.md).
-7. [Research protocol](research_protocol_v1.md).
-8. [Exact architecture and oracle contract](architecture_and_oracle_v1.md).
-9. [Earlier oracle-only result](oracle_audit_v1_report_2026_09_16.md).
+6. [V1 pilot report](pilot_v1_report_2026_09_16.md) and [evidence](pilot_v1_result.json).
+7. [Frozen v1 pilot contract](pilot_execution_contract_v1.md).
+8. [Research protocol](research_protocol_v1.md).
+9. [Exact architecture and oracle contract](architecture_and_oracle_v1.md).
+10. [Earlier oracle-only result](oracle_audit_v1_report_2026_09_16.md).
 
-**Next work: separately design/register a loss-weighting diagnostic, preserving
-both completed failures.** A proposed extra control adds globally averaged
-repeat BCE to the same v2 base objective. Comparing it with B1 keeps the global
-direct-route loss coefficient equal while changing the allocation by context.
-It must also account for U1's rare-null failure; neither imbalance nor shared
-route interference alone has been shown to explain all results. This control
-is not implemented or run. Do not resume stopped v1/v2 prevalences or move to
-five-seed confirmation. Later confirmation still requires train-only margin
-calibration and exact intervention-error/transition-TV aggregation. No
-superiority, learned-dilution or final method-success claim is established.
+**Next work: separately specify/register a fixed-checkpoint decomposition of
+history correction and current-gap variation.** The proposed diagnostic would
+retain the train-gap-averaged route logit and remove only its gap-varying
+residual, contrasting it with whole-route zeroing. This is a hypothesis, not a
+measured decomposition yet. If supported, a separate history head/centered
+gap residual with selective shrinkage can be considered under a new model
+contract. Centering alone does not guarantee null safety. Do not resume stopped
+v1/v2 prevalences or five-seed confirmation. Subsequent method validation still
+needs a registered prevalence pilot, train-only margin calibration, exact
+conditional-distribution error aggregation and multiple seeds. No superiority,
+learned-dilution or final method-success claim is established.
 
 Runtime roots relative to this CS-SAF worktree:
 
@@ -118,10 +146,13 @@ Runtime roots relative to this CS-SAF worktree:
 V2 output namespace: `artifacts/cs_saf/revision_v2/`, containing `cpu_gate_v1/`
 and `pilot_v1/` with terminal records.
 
+Loss diagnostic: `artifacts/cs_saf/loss_control_v1/cpu_v1/` and `gpu_v1/`,
+with best and epoch-9 checkpoints for all six fits, and train/validation entity arrays.
+
 Each trained job retains its best checkpoint, history/report, intervention
 audit and generated sample. Compact evidence records absolute locations,
 source/config/data hashes and checked artifact checksums (100 for v1,
-24 checkpoint/array checks in forensics, 21 for v2).
+24 checkpoint/array checks in forensics, 21 for v2, 62 for loss control).
 
 Store code/config commits before execution and report commits afterwards.
 Preserve failures as well as successes. Runtime data/checkpoints remain on the

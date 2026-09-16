@@ -12,6 +12,10 @@
 전체 수치와 provenance: [v2_pilot_v1_result.json](v2_pilot_v1_result.json).
 실행 전 등록: [v2 preregistration](revision_v2_preregistration.md).
 
+후속 실행 기록: 아래에서 제안했던 세 목적함수 비교는 이후 별도로
+사전등록·완료했다. [후속 결과](loss_control_v1_report_2026_09_16.md)를 참고한다.
+이 문서의 v2 판정과 당시 제안은 그대로 보존한다.
+
 ## 구현과 검증
 
 `models/cs_saf_v2.py`의 CS2-U1/CS2-B1은 공유 rank-32 bilinear 경로를

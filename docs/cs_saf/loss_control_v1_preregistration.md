@@ -6,6 +6,11 @@ reuse of development data, not an independent confirmation or a resumed v2 pilot
 The immutable [contract](../../configs/benchmark_v2/cs_saf_loss_control_v1.yaml)
 freezes the following scope. Preserve all prior failures and artifacts.
 
+Execution update: registration commit `d4069c9`; source `f4bed4b` passed 82
+tests and all three CPU gates. Six GPU fits are complete; all three objectives
+fail the rare-null response gate. See the [result](loss_control_v1_report_2026_09_16.md).
+The scope below and the original YAML remain unchanged.
+
 ## Question and objectives
 
 At pi=.05, U1 and B1 both have unwanted response in the kappa=0 rare context.
