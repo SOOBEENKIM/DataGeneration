@@ -1,9 +1,11 @@
 # DataGeneration: CoF-SeqGen Research
 
-On `research/cs-saf`, the current stage is **architecture specified and
-train-only oracle audit passed; CS-SAF model implementation/training pending**.
+On `research/cs-saf`, the current stage is **models implemented, prevalence
+data/oracle and CPU gates passed; single-seed pilot stopped at pi=0.25 because
+the full candidate failed null safety**. Pi=0.05/0.10 passed; pi=0.50 training,
+five-seed confirmation and held-out evaluation were not run.
 See the [research status](docs/cs_saf/STATUS.md) and
-[oracle audit report](docs/cs_saf/oracle_audit_v1_report_2026_09_16.md).
+[pilot report](docs/cs_saf/pilot_v1_report_2026_09_16.md).
 
 This repository contains the reproducible research code for CoF-SeqGen and its
 support-aligned autoregressive extension (SAF). The `main` branch records the

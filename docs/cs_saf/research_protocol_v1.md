@@ -1,6 +1,8 @@
 # CS-SAF research protocol v1
 
-Status: **train-only oracle PASS; architecture specified; model implementation and training not started**
+Status (2026-09-16): **implemented; all prevalence oracle and CPU gates PASS;
+single-seed pilot FAIL at pi=0.25 (null safety), after pi=0.05/0.10 PASS**.
+Pi=0.50 training and all confirmatory stages remain unexecuted under the stop rule.
 Base commit: `de8fa70`  
 Evaluation boundary: **train/validation only; held-out test remains sealed**
 
@@ -14,6 +16,13 @@ do(gap) effect. The original pilot thresholds and seed sets remain unchanged.
 The [2026-09-16 oracle report](oracle_audit_v1_report_2026_09_16.md) records
 two byte-identical executions on existing train data. It establishes oracle
 feasibility, not a successful learned model or a completed prevalence study.
+
+The subsequent [pilot execution contract](pilot_execution_contract_v1.md) fixed
+the implementation, data materialization and training budget before execution.
+The [pilot result](pilot_v1_report_2026_09_16.md) records 12 completed fits and the
+failed null-safety gate. The full candidate learned a material active response,
+but did not pass the entire pilot. The v1 criteria below remain unchanged;
+five-seed confirmation must not proceed from this result.
 
 ## Research question
 
