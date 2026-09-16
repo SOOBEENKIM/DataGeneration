@@ -1,5 +1,5 @@
 schema_version: cs-saf-architecture-v1
-status: SPECIFIED_NOT_TRAINED
+status: IMPLEMENTED_PENDING_CPU_AND_PILOT_GATES
 history: {encoder: shifted_gru, hidden_dim: 128, layers: 1, context_window: 32}
 embeddings: {gap: 32, mark: 32, static_label: 8}
 interaction:

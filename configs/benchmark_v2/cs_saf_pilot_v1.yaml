@@ -1,0 +1,49 @@
+schema_version: cs-saf-pilot-v1
+prevalences: [0.05, 0.10, 0.25, 0.50]
+kappas: [0, 1]
+data_generation_seed: 42
+new_mark_stream_seed: 20260930
+model_seed: 20260930
+sampling_seed: 20260930
+pilot_candidates: [CS-U1, CS-B1]
+implemented_controls: [CS-C0, CS-U0, CS-U1, CS-B0, CS-B1]
+stage_order: increasing_prevalence_stop_after_first_failed_full_candidate_gate
+training:
+  epochs: 50
+  batch_size: 512
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  gradient_clip: 1.0
+  patience: 5
+  precision: float32
+  scheduler: none
+  checkpoint_selection: global_validation_base_nll
+cpu_gate:
+  train_entities_per_label: 32
+  validation_entities_per_label: 16
+  epochs: 25
+  batch_size: 16
+  learning_rate: 0.003
+  patience: 25
+  minimum_relative_train_loss_decrease: 0.10
+  independent_initializations: 2
+generation_entities: 2048
+generation_batch_size: 256
+audit_chunk_histories: 4096
+pilot_gate:
+  primary_candidate: CS-B1
+  active_mean_range_min: 0.05
+  noncausal_mean_range_max: 0.05
+  selectivity_ratio_min: 2.0
+  zero_gap_control_max_range: 1.0e-8
+  gap_support_violations: 0
+  apply_to: [latent_copy_probability, observable_repeat_probability]
+  aggregation: mean_histories_within_entity_then_mean_entities_within_context
+  history_source: all_validation_nonfirst_events
+  ordinary_objective_comparator: diagnostic_not_a_pilot_success_requirement
+  model_accuracy_improvement: reserved_for_five_seed_confirmatory_study
+execution_boundary:
+  test_access: false
+  real_data_training: false
+  five_seed_confirmation: false
+  thresholds_changed_after_results: false
