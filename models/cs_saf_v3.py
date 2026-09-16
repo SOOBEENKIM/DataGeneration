@@ -67,9 +67,15 @@ class CSSAFv3(CSSAFv2):
     def response_curves(self, context, previous, *, zero_gap=False, static_codes=None):
         if context.ndim != 2:
             raise ValueError('response audit requires flattened histories')
-        q = self.logit_grid(context, static_codes, zero_gap=zero_gap).sigmoid()
+        logits = self.logit_grid(context, static_codes, zero_gap=zero_gap)
         fresh = self.new_mark_head(context).clone(); fresh[:, :3] = -torch.inf
         p = fresh.softmax(-1).gather(1, previous[:, None])
+        if zero_gap or self.cs_candidate_id == 'CS3-H1':
+            # Evaluate the constant once, then broadcast. CPU vector/tail sigmoid
+            # kernels can differ by an ulp across identical expanded inputs.
+            q = logits[:, :1].contiguous().sigmoid()
+            return q.expand_as(logits), (q+(1-q)*p).expand_as(logits)
+        q = logits.sigmoid()
         return q, q+(1-q)*p
 
     def residual_penalty(self, context, static_codes):

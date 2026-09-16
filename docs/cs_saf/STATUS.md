@@ -5,7 +5,10 @@ Updated 2026-09-16. Branch: `research/cs-saf`.
 New work: [v3 history/residual pilot](revision_v3_preregistration.md) is separately
 preregistered before implementation: H/E/C/R, eight fresh pi=.05 fits, one fixed
 smooth-RMS penalty and a conditional-distribution accuracy screen. Implementation
-and 105 relevant tests PASS; CPU/GPU execution pending. Registration: `9813573`.
+and 106 relevant tests PASS. Initial CPU fits reproduced but zero-gap sigmoid
+rounding exceeded the 1e-8 gate; constant probabilities are now evaluated once
+and broadcast, with no threshold/learning change. Failed CPU artifacts preserved;
+repeat CPU gate before GPU. Registration: `9813573`.
 
 **Latest work COMPLETE: [fixed-checkpoint route decomposition](route_decomposition_v1_report_2026_09_16.md),
 [evidence](route_decomposition_v1_result.json), and

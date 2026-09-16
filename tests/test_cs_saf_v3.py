@@ -107,6 +107,18 @@ def test_history_only_is_gap_invariant_and_dormant_banks_have_no_gradient():
     assert torch.count_nonzero(q-q[:,:1])==0
 
 
+def test_constant_response_is_exact_for_vector_and_tail_element_layouts():
+    torch.manual_seed(17)
+    for candidate in CANDIDATES:
+        m=model(candidate);open_weights(m)
+        c=torch.randn(137,136);codes=torch.tensor([3,4]*68+[3]);prev=torch.full((137,),3)
+        for q in m.response_curves(c,prev,zero_gap=True,static_codes=codes):
+            assert torch.count_nonzero(q-q[:,:1])==0
+        if candidate=='CS3-H1':
+            for q in m.response_curves(c,prev,static_codes=codes):
+                assert torch.count_nonzero(q-q[:,:1])==0
+
+
 def test_strict_past_and_context_permutation_equivariance():
     m=model();open_weights(m);x=inputs();changed=copy.deepcopy(x)
     changed['receiver'][:,2:]=6;changed['gap'][:,2:]=7;changed['numeric_value'][:,2:]=9
