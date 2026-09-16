@@ -211,6 +211,7 @@ def train_job(cache_path, output, candidate, device, *, cpu_gate=False):
               "cache_sha256": sha256(cache_path), "config_sha256": sha256(ROOT/"configs/benchmark_v2/cs_saf_pilot_v1.yaml"),
               "cpu_gate": cpu_gate, "seed": cfg["model_seed"], "options": options,
               "parameters": sum(p.numel() for p in model.parameters()), "initial_state_sha256": initial_digest,
+              "architecture": model.architecture_contract(),
               "best_state_sha256": state_digest(model), "best_epoch": best_epoch, "best_validation_base_nll": best,
               "train_entities": len(train["lengths"]), "validation_entities": len(validation["lengths"]),
               "transition_counts_by_code": counts, "history": history, "seconds": time.monotonic()-started,
@@ -222,7 +223,7 @@ def train_job(cache_path, output, candidate, device, *, cpu_gate=False):
 
 
 @torch.no_grad()
-def audit_model(model, payload, cfg, device):
+def audit_model(model, payload, cfg, device, *, sample_output=None):
     model.eval()
     data = payload["validation"]
     sums = {label: {"copy": [], "repeat": []} for label in (0, 1)}
@@ -260,6 +261,7 @@ def audit_model(model, payload, cfg, device):
     if str(device).startswith("cuda"):
         torch.cuda.manual_seed_all(cfg["sampling_seed"])
     violations, invalid_marks, finite_values, generated = 0, 0, True, 0
+    saved_samples = []
     for start in range(0, len(plan), cfg["generation_batch_size"]):
         ids = torch.tensor(plan[start:start+cfg["generation_batch_size"]])
         sample = model.sample_fixed_lengths(payload["train"]["lengths"][ids].tolist(),
@@ -272,10 +274,34 @@ def audit_model(model, payload, cfg, device):
         if not torch.isnan(sample["gap"][:, 0]).all():
             raise ValueError("first generated gap must be missing")
         generated += int(mask.sum())
+        if sample_output is not None:
+            # Pad each generated batch to the fixed controlled horizon before concatenation.
+            padded = {}
+            for key, values in sample.items():
+                values = values.cpu()
+                if values.ndim == 2:
+                    fill = float("nan") if key == "gap" else 0
+                    full = torch.full((len(values), 32), fill, dtype=values.dtype)
+                    full[:, :values.shape[1]] = values
+                    values = full
+                padded[key] = values
+            saved_samples.append(padded)
+    saved_sha = None
+    if sample_output is not None:
+        if sample_output.exists():
+            raise FileExistsError("generated sample artifact already exists")
+        combined = {key: torch.cat([part[key] for part in saved_samples]) for key in saved_samples[0]}
+        combined["static_codes"] = payload["train"]["codes"][torch.tensor(plan)]
+        combined["plan_train_indices"] = torch.tensor(plan)
+        torch.save({"version": VERSION, "sampling_seed": cfg["sampling_seed"],
+                    "model_state_sha256": state_digest(model), "sample": combined,
+                    "test_accessed": False}, sample_output)
+        saved_sha = sha256(sample_output)
     return {"responses": response, "zero_gap_control_max_range": control_max,
             "generated_gap_count": generated, "gap_support_violations": violations,
             "invalid_reserved_marks": invalid_marks, "finite_generated_values": finite_values,
             "sampling_plan_sha256": hashlib.sha256(plan.tobytes()).hexdigest(),
+            "generated_sample_sha256": saved_sha,
             "test_accessed": False, "validation_accessed": True}
 
 

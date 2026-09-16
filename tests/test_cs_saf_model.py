@@ -114,19 +114,23 @@ def test_pilot_requires_selective_observable_and_latent_response():
     assert decide_pilot(audits, gate)["decision"] == "FAIL"
 
 
-def test_pilot_audit_adapter_generates_and_checks_both_response_definitions():
+def test_pilot_audit_adapter_generates_and_checks_both_response_definitions(tmp_path):
     m = model().eval()
     x = inputs()
     data = {k: v for k, v in x.items() if k != "static_categorical"}
     data.update(codes=x["static_categorical"][0], lengths=torch.tensor([4, 3]), entity_ids=["a", "b"])
     cfg = {"sampling_seed": 42, "generation_entities": 8, "generation_batch_size": 4,
            "audit_chunk_histories": 2}
-    result = audit_model(m, {"train": data, "validation": data}, cfg, torch.device("cpu"))
+    result = audit_model(m, {"train": data, "validation": data}, cfg, torch.device("cpu"),
+                         sample_output=tmp_path/"sample.pt")
     assert result["gap_support_violations"] == 0
     assert result["invalid_reserved_marks"] == 0
     assert result["finite_generated_values"]
     assert result["zero_gap_control_max_range"] == 0
     assert set(result["responses"]) == {"0", "1"}
+    stored = torch.load(tmp_path/"sample.pt")
+    assert stored["sample"]["gap"].shape == (8, 32)
+    assert result["generated_sample_sha256"] is not None
 
 
 def test_public_loss_and_architecture_describe_cs_saf_not_inherited_scalar_gate():

@@ -31,7 +31,8 @@ def cpu_gate(cache_root, output):
     for repeat in (1, 2):
         model, payload, report = train_job(cache_root/"pi_0.05_kappa_1.pt", output/f"run_{repeat}",
                                          "CS-B1", torch.device("cpu"), cpu_gate=True)
-        audits.append(audit_model(model, payload, smoke_cfg, torch.device("cpu")))
+        audits.append(audit_model(model, payload, smoke_cfg, torch.device("cpu"),
+                                   sample_output=output/f"run_{repeat}"/"generated_sample.pt"))
         reports.append(report)
     first, second = reports
     drop = (first["history"][0]["train_objective"]-min(x["train_objective"] for x in first["history"]))/abs(first["history"][0]["train_objective"])
@@ -56,7 +57,7 @@ def job(cache, output, candidate, device):
     try:
         model, payload, report = train_job(cache, output, candidate, torch.device(device))
         cfg = yaml.safe_load((ROOT/"configs/benchmark_v2/cs_saf_pilot_v1.yaml").read_text())
-        audit = audit_model(model, payload, cfg, torch.device(device))
+        audit = audit_model(model, payload, cfg, torch.device(device), sample_output=output/"generated_sample.pt")
         write_json(output/"intervention_audit.json", audit)
         write_json(output/"COMPLETE.json", {"status": "COMPLETE", "source_commit": report["source_commit"],
             "training_report_sha256": sha256(output/"training_report.json"),
