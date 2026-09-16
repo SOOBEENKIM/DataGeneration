@@ -2,8 +2,8 @@
 
 Updated 2026-09-16. Branch: `research/cs-saf`.
 
-**Current state: v1 remains FAIL at pi=0.25; v2 implemented under the frozen
-registration, 71 tests passed; v2 CPU gate and scientific pilot pending.**
+**Current state: v2 implemented, 71 tests and CPU gate PASS; v2 pilot FAIL at
+pi=0.05 in the kappa=0 rare context. V1's pi=0.25 FAIL is also preserved.**
 
 V2 implementation preserves the registered 133,549 parameters and fresh-v1
 common initialization. Direct bank-gradient isolation, known-label permutation,
@@ -14,7 +14,27 @@ and reuses the immutable data/oracle index. V2 outputs use a separate namespace.
 The v2 YAML retains its historical preregistration-state metadata; this file
 records current execution state.
 
-Latest work (2026-09-16):
+Latest v2 execution (2026-09-16):
+
+- Source: `c77d2f9558ca019d14ccf4b833cbc6628728ff44` (committed before CPU/GPU).
+- Immutable registration: `d8302e3`; model seed 20260930; 133,549 parameters.
+- CPU: two identical histories/best states, train objective drop **48.33%**;
+  support, vocabulary, finite-value and zero-gap checks PASS.
+- GPU: **4 fits**, CS2-U1/B1 x kappa 0/1, at pi=.05 only.
+- Primary CS2-B1 fails kappa=0/label=1: copy **0.081949**, repeat **0.080610**,
+  both above .05. The same v1 cell was below .05 (copy 0.045730).
+- At kappa=1/label=0, B1 copy response falls from v1 0.046383 to v2 **0.033930**.
+  Active kappa=1/label=1 copy/repeat responses remain **0.343783/0.338277**.
+- CS2-U1 also fails kappa=0/label=1 (copy **0.055189**, repeat **0.054313**).
+  Thus the new failure is not attributable only to the balanced auxiliary.
+- All four jobs have exact zero-gap invariance and valid generation. Total
+  8,192 entities / 189,324 nonfirst gaps; support violations and reserved marks 0.
+- Pi=.10/.25/.50 training stopped by the original rule. No fallback, five-seed,
+  real-data or held-out run. Parent exit 2 is scientific FAIL; no worker error.
+- Saved checkpoint/sample identities and 21 artifact checksums rechecked.
+- The proposed three-objective loss control is **not yet preregistered or run**.
+
+Prior v1 checkpoint forensics (2026-09-16):
 
 - Forensic source: `d96e1b4966f9fec018aee472a26be579ab9a4d1c`.
 - All 12 saved best checkpoints analyzed on full train histories. New fits and
@@ -58,21 +78,27 @@ V1 execution retained below:
 
 Read these files in order when recovering from a missing conversation:
 
-1. [Latest checkpoint analysis and limits](checkpoint_forensics_v1_report_2026_09_16.md).
-2. [V2 preregistration and implementation contract](revision_v2_preregistration.md).
-3. [Machine-readable forensic evidence](checkpoint_forensics_v1_result.json).
-4. [V1 pilot report](pilot_v1_report_2026_09_16.md) and [evidence](pilot_v1_result.json).
-5. [Frozen v1 pilot contract](pilot_execution_contract_v1.md).
-6. [Research protocol](research_protocol_v1.md).
-7. [Exact architecture and oracle contract](architecture_and_oracle_v1.md).
-8. [Earlier oracle-only result](oracle_audit_v1_report_2026_09_16.md).
+1. [Latest v2 pilot result, limits and next diagnostic](v2_pilot_v1_report_2026_09_16.md).
+2. [Machine-readable v2 evidence](v2_pilot_v1_result.json).
+3. [V2 preregistration and implementation contract](revision_v2_preregistration.md).
+4. [Prior checkpoint analysis](checkpoint_forensics_v1_report_2026_09_16.md)
+   and [evidence](checkpoint_forensics_v1_result.json).
+5. [V1 pilot report](pilot_v1_report_2026_09_16.md) and [evidence](pilot_v1_result.json).
+6. [Frozen v1 pilot contract](pilot_execution_contract_v1.md).
+7. [Research protocol](research_protocol_v1.md).
+8. [Exact architecture and oracle contract](architecture_and_oracle_v1.md).
+9. [Earlier oracle-only result](oracle_audit_v1_report_2026_09_16.md).
 
-**Next work: pass the v2 CPU gate, then execute the separate v2
-pilot with unchanged thresholds and stop rule.** Do not resume v1 pi=.50 or
-five-seed confirmation. V2 success has not been observed. Before later
-confirmation, resolve train-only noninferiority calibration and freeze exact
-intervention-error/transition-TV aggregation. No superiority or learned-dilution
-claim is established. The v2 pilot still reuses development data and is exploratory.
+**Next work: separately design/register a loss-weighting diagnostic, preserving
+both completed failures.** A proposed extra control adds globally averaged
+repeat BCE to the same v2 base objective. Comparing it with B1 keeps the global
+direct-route loss coefficient equal while changing the allocation by context.
+It must also account for U1's rare-null failure; neither imbalance nor shared
+route interference alone has been shown to explain all results. This control
+is not implemented or run. Do not resume stopped v1/v2 prevalences or move to
+five-seed confirmation. Later confirmation still requires train-only margin
+calibration and exact intervention-error/transition-TV aggregation. No
+superiority, learned-dilution or final method-success claim is established.
 
 Runtime roots relative to this CS-SAF worktree:
 
@@ -82,11 +108,13 @@ Runtime roots relative to this CS-SAF worktree:
 - `artifacts/cs_saf/pilot_v1/`
 - `artifacts/cs_saf/forensics_v1/` (entity diagnostics and gradient arrays)
 
-V2 output namespace: `artifacts/cs_saf/revision_v2/` (CPU/pilot pending).
+V2 output namespace: `artifacts/cs_saf/revision_v2/`, containing `cpu_gate_v1/`
+and `pilot_v1/` with terminal records.
 
 Each trained job retains its best checkpoint, history/report, intervention
 audit and generated sample. Compact evidence records absolute locations,
-source/config/data hashes and 100 checked artifact checksums.
+source/config/data hashes and checked artifact checksums (100 for v1,
+24 checkpoint/array checks in forensics, 21 for v2).
 
 Store code/config commits before execution and report commits afterwards.
 Preserve failures as well as successes. Runtime data/checkpoints remain on the

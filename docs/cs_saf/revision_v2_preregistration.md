@@ -5,6 +5,8 @@ after the v1 checkpoint forensics. State at registration:
 **PREREGISTERED, NOT IMPLEMENTED, NOT TRAINED**.
 This document and the immutable YAML describe that registration; the
 [current research status](STATUS.md) records subsequent execution.
+Execution update: source `c77d2f9` passed CPU checks but the v2 pilot failed
+null safety at pi=.05; [complete result](v2_pilot_v1_report_2026_09_16.md).
 Machine-readable contract: [cs_saf_revision_v2.yaml](../../configs/benchmark_v2/cs_saf_revision_v2.yaml).
 
 This is a new exploratory candidate. V1 remains FAIL; its 50% and confirmatory

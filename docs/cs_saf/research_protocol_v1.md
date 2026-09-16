@@ -26,7 +26,10 @@ five-seed confirmation must not proceed from this result.
 
 Subsequent [train-only checkpoint forensics](checkpoint_forensics_v1_report_2026_09_16.md)
 and a [separate v2 preregistration](revision_v2_preregistration.md) are complete.
-V2 has not been implemented or trained; the v1 failure and criteria are preserved.
+V2 was subsequently implemented and CPU-tested, then failed its pilot at
+pi=.05 in the dependency-free rare context; see the
+[v2 result](v2_pilot_v1_report_2026_09_16.md). The v1 failure and all original
+criteria are preserved. No confirmatory study has started.
 
 ## Research question
 
