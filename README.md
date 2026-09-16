@@ -1,5 +1,16 @@
 # DataGeneration: CoF-SeqGen Research
 
+Latest [v3 trained pilot](docs/cs_saf/v3_pilot_v1_report_2026_09_16.md): **eight GPU fits
+complete, 106 tests and CPU checks PASS**. Explicit history correction plus a
+fixed centered-residual penalty passes the original active/null response gate
+at pi=.05, but active conditional mark-distribution accuracy remains worse than
+the saved ordinary-loss model. The registered accuracy screen FAILS; no broader
+stage or final method-success claim follows. [Evidence](docs/cs_saf/v3_pilot_v1_result.json).
+The next proposed comparison separates forward parameterization from residual
+regularization; it has not been registered or run.
+
+Earlier v1/v2 state follows:
+
 On `research/cs-saf`, **v2 passed implementation/CPU checks but failed its pilot
 at pi=0.05 in the dependency-free rare context**. It reduced another null-cell
 response but did not solve full null safety. V1's earlier failure at pi=0.25 is

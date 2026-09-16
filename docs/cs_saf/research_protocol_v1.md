@@ -46,6 +46,11 @@ rarity is unproven, marked point processes are also generative, and sequential
 behavioral fidelity already has prior art. Frozen v1 criteria are unchanged;
 a revised method/contribution needs a new contract.
 
+The subsequent [v3 trained pilot](v3_pilot_v1_report_2026_09_16.md) completes eight
+fresh fits. Explicit history correction plus residual regularization passes the
+original response criteria at pi=.05, but fails its additional registered
+conditional-accuracy screen against ordinary U. No later-stage promotion follows.
+
 ## Research question
 
 Can a sequential synthetic-data generator preserve both the valid support of

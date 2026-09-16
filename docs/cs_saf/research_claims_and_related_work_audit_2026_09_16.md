@@ -2,8 +2,11 @@
 
 2026-09-16 기준. 이번에 실제 읽은 구현, 저장된 실행 근거, 저자 논문/공식 문서를
 대조한 기록이다. 모든 관련 문헌을 망라한 독창성 증명이나 외부 구현의 완전한 검증은 아니다.
-최신 실험은 [고정 checkpoint 분해](route_decomposition_v1_report_2026_09_16.md)이며,
-결론과 원시 요약은 [evidence JSON](route_decomposition_v1_result.json)에 있다.
+감사 직후 [고정 checkpoint 분해](route_decomposition_v1_report_2026_09_16.md)를 근거로
+[v3 모델 구현·학습](v3_pilot_v1_report_2026_09_16.md)까지 진행했다.
+**최신 상태는 v3-R의 pi=.05 반응 기준 PASS / 기존 U 대비 정확도 screen FAIL**이다.
+아래 v1/v2 수식과 전처리·문헌 검토는 그 기반 설명이며, v3는 이력 계수 32개와
+명시적 중심화/잔차 규제를 추가한다. 최신 근거는 [v3 evidence](v3_pilot_v1_result.json)다.
 
 **연구를 발전시킬 근거는 있지만, 기존 baseline보다 우수한 새 모델이 완성됐다는
 근거는 아직 없다.** 지금까지 확인한 핵심은 활성 신호 부재가 아니라, 유용한 이력 보정과
@@ -185,6 +188,7 @@ cofseq 환경의 설치 메타데이터 확인이다. 옛 `NOT_ATTEMPTED` 문서
 | 대상 | 실제 확보된 상태 | 현재 CS-SAF와 공정한 비교 완료? |
 |---|---|---|
 | 내부 U/A/B | 같은 architecture/초기값/순서/예산의 pi=.05 단일 seed 6 fits | 해당 loss 비교만 완료; 새 방법 우위 아님 |
+| 내부 v3 H/E/C/R | 이력 용량·중심화·잔차 규제를 비교한 pi=.05 단일 seed 8 fits | R은 반응 gate PASS, 기존 U 대비 정확도 screen FAIL |
 | CPAR | SDV 1.38.0 wrapper/환경, 이전 SAF 연구에서 kappa=1 20-epoch 단일 full fit 기록 | 아니오; 현재 CS-SAF와 동일 프로토콜의 최종 비교 아님 |
 | REaLTabFormer | 0.2.4 설치, wrapper와 smoke 검증 기록 | 아니오 |
 | TabularARGN | pinned upstream/adapter 경로; 주 cofseq 환경에 mostlyai 미설치, 별도 runtime 필요 | 아니오 |
@@ -205,11 +209,11 @@ history-only 용량, routed U, 같은 용량의 centered-unregularized 모델이
 | train 데이터/gap 표현에 구별 가능한 신호가 있다 | oracle audit이 지지. 학습 성공과 구별 |
 | support alignment가 선택한 train 대표값 밖 출력을 막는다 | 구조 및 실행 확인. 연속분포의 정확한 복원과 구별 |
 | CS-SAF가 active current-gap 반응을 학습했다 | 저장된 pilot에서 확인. 정확한 oracle 분포를 회복했다는 뜻은 아님 |
-| active를 보존하면서 모든 null에서 안전하다 | v1/v2/U/A/B pilot 모두 해당 조건에서 실패 |
+| active를 보존하면서 모든 null에서 안전하다 | v3-R은 pi=.05 단일 seed 반응 gate PASS. 여러 prevalence/seed 보장은 아니며 정확도 screen 실패 |
 | 희소화 때문에 의존성이 희석된다 | 아직 입증하지 못함. prevalence×seed 정확도 분석 미완료; 최신 주요 실패는 spurious null response |
 | route 전체를 끄면 안 되는 이유가 있다 | 고정 가중치 아래 평균 성분의 유용성 확인 |
 | null residual은 항상 해롭다 | 사전등록 조건 미충족: train/validation 부호가 다름 |
-| centered history/residual 모델이 해결한다 | 아직 후보. 새 학습·성능 결과 없음 |
+| centered history/residual 모델이 해결한다 | v3 구현·학습 완료. null 반응 억제에는 진전, 기존 U의 활성 정확도는 회복하지 못함 |
 | balanced auxiliary가 필수이며 우수하다 | 미입증. active 이득과 null 악화의 tradeoff 관찰 |
 | 외부 baseline보다 좋고 논문 기여가 확정됐다 | 미입증. 현재 직접 비교/다중 seed/실데이터/held-out 결과 없음 |
 
@@ -220,10 +224,12 @@ history-only 용량, routed U, 같은 용량의 centered-unregularized 모델이
 
 ## 7. 발전시킬 수 있는 기여와 필요한 다음 실험
 
-가능한 방법 후보는 `history-only correction + train-centered gap residual`을
-명시하고 residual에만 규제를 주는 것이다. 이번 증거는 설계 방향을 제안하지만
-구체적 penalty/lambda/학습 예산을 결정한 사전등록은 아니다.
-다음 모델 계약에서 아래 혼동을 먼저 통제해야 한다.
+이 감사에서 제안한 `history-only correction + train-centered gap residual`은
+이후 v3 계약에서 구체화해 실행했다. R−C는 active와 null 정확도를 모두 개선했지만,
+C 자체가 E보다 active 정확도가 나빴고 R도 기존 U보다 나빴다. 따라서 다음에
+분리할 문제는 **forward의 중심화와, 규제 성분 정의를 위한 중심화의 차이**다.
+E의 forward에 같은 centered-residual penalty를 적용하는 미실행 조합이 후속 가설이며,
+아직 등록·구현·학습하지 않았다. 아래 통제 원칙은 이후에도 유지한다.
 
 1. **표현과 규제 분리:** 충분한 history-only head, 같은 용량의 분리 구조(규제 없음),
    그 구조+residual 규제를 비교. 단순 centering 재표현이면 함수 보존을 검사한다.

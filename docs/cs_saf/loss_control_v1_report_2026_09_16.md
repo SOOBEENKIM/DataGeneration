@@ -170,8 +170,9 @@ r(c,g) = mean_g_train[r(c,g)] + (r(c,g) - mean_g_train[r(c,g)])
 표현력이 제한되거나 null 반응이 자동 해결되는 것은 아니다.
 이 보고서 작성 시 후속 진단·모델은 제안 단계였다. 이후 진단은 별도로 사전등록하고
 [실행을 완료했다](route_decomposition_v1_report_2026_09_16.md): 평균 성분은 유용했고,
-null residual 제거는 validation을 개선하지만 train을 악화시켰다. 수정 모델은 여전히
-**제안이며 사전등록·구현·학습 전**이다.
+null residual 제거는 validation을 개선하지만 train을 악화시켰다. 수정 모델도 이후
+별도 [v3 계약과 학습](v3_pilot_v1_report_2026_09_16.md)으로 이어졌다. v3-R은 pi=.05
+반응 기준을 통과했지만 기존 U 대비 활성 정확도 screen에는 실패했다.
 
 수정 후보가 .05 및 등록된 여러 비율의 반응 기준을 통과해야 그다음으로
 갈 근거가 생긴다. 이후에도 정확한 조건부 분포 오차 집계와 train-only

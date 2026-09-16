@@ -2,15 +2,39 @@
 
 Updated 2026-09-16. Branch: `research/cs-saf`.
 
-New work: [v3 history/residual pilot](revision_v3_preregistration.md) is separately
-preregistered before implementation: H/E/C/R, eight fresh pi=.05 fits, one fixed
-smooth-RMS penalty and a conditional-distribution accuracy screen. Implementation
-and 106 relevant tests PASS. Initial CPU fits reproduced but zero-gap sigmoid
-rounding exceeded the 1e-8 gate; constant probabilities are now evaluated once
-and broadcast, with no threshold/learning change. Failed CPU artifacts preserved;
-repeat CPU gate before GPU. Registration: `9813573`.
+**Latest model result: v3 eight-fit pilot COMPLETE. R passes the original response
+criteria at pi=.05 but FAILS the registered accuracy screen against historical U.
+Do not promote this candidate to later prevalences or confirmation.**
 
-**Latest work COMPLETE: [fixed-checkpoint route decomposition](route_decomposition_v1_report_2026_09_16.md),
+[Full v3 result](v3_pilot_v1_report_2026_09_16.md),
+[machine-readable evidence](v3_pilot_v1_result.json),
+[preregistration](revision_v3_preregistration.md).
+
+- Registration `9813573`; final CPU/GPU source `44a2bd3848abd1fdddf0fc37d2cd6894109e3d65`.
+- Implemented H (history only), E (extra history/raw route), C (centered route),
+  R (same as C + fixed .01 smooth-RMS residual penalty), eight fresh GPU fits.
+  Each adds 32 history coefficients; 133,581 stored parameters. H has 1,056
+  dormant route parameters. Old U evaluated at saved states, zero new U fits.
+- 106 tests PASS; same-source CPU reproducibility, checkpoint, loss-drop,
+  support and zero-gap checks PASS. Initial CPU numeric failure preserved;
+  constant probabilities now evaluated once then broadcast, no tolerance change.
+  All CPU trained states remain bitwise identical before/after this audit fix.
+- R maximum null copy/repeat range **.003943601/.003880979**, active
+  **.340098053/.334719523**. All original response/validity gates PASS.
+- E/C rare-null copy ranges **.056817306/.058481466** still exceed .05.
+- Active conditional mark TV (lower better): U **.086640340**, E **.085479746**,
+  C **.102974418**, R **.096924737**. R improves C by .006049681 but remains
+  .010284397 worse than U. Same direction at fixed epoch 9 and on factual TV.
+- Three-null mean TV R−C **−.000395910**, R−U **−.000113982**. Two individual
+  null cells are slightly worse than U; no universal null-accuracy improvement.
+- Response safety improved in this single pilot; conditional accuracy vs U is
+  unresolved. The centering parameterization already worsens active accuracy
+  before regularization, so blame cannot be assigned solely to the penalty.
+- 97 file checksums, 20 checkpoint tensor identities, 80 aligned array groups,
+  2,240 statistics and paired contrasts verified. 16,384 entities / 378,648 gaps
+  generated, support/mark/value checks PASS. No held-out, later pi or new seed.
+
+**Previous diagnostic COMPLETE: [fixed-checkpoint route decomposition](route_decomposition_v1_report_2026_09_16.md),
 [evidence](route_decomposition_v1_result.json), and
 [model/theory/data/literature/claim audit](research_claims_and_related_work_audit_2026_09_16.md).**
 
@@ -37,7 +61,7 @@ repeat CPU gate before GPU. Registration: `9813573`.
   separate controls. Related work already covers copy mixtures, interactions,
   sequential generation, group weighting and behavioral fidelity diagnostics.
 
-**Current state: the separately registered three-objective diagnostic is
+**Historical training result: the separately registered three-objective diagnostic is
 COMPLETE. All U/A/B fail the pi=.05 rare-null response gate. No model success
 or expansion to later prevalences is established. V1/v2 failures are preserved.**
 
@@ -145,33 +169,36 @@ V1 execution retained below:
 
 Read these files in order when recovering from a missing conversation:
 
-1. [Latest decomposition and limits](route_decomposition_v1_report_2026_09_16.md),
+1. [Latest v3 trained result and limits](v3_pilot_v1_report_2026_09_16.md)
+   and [evidence](v3_pilot_v1_result.json).
+2. [V3 preregistration](revision_v3_preregistration.md).
+3. [Latest decomposition and limits](route_decomposition_v1_report_2026_09_16.md),
    [evidence](route_decomposition_v1_result.json), and
    [comprehensive research/claim audit](research_claims_and_related_work_audit_2026_09_16.md).
-2. [Decomposition preregistration](route_decomposition_v1_preregistration.md).
-3. [Three-objective result and limits](loss_control_v1_report_2026_09_16.md)
+4. [Decomposition preregistration](route_decomposition_v1_preregistration.md).
+5. [Three-objective result and limits](loss_control_v1_report_2026_09_16.md)
    and [evidence](loss_control_v1_result.json).
-4. [Loss diagnostic preregistration](loss_control_v1_preregistration.md).
-5. [V2 pilot result](v2_pilot_v1_report_2026_09_16.md) and [evidence](v2_pilot_v1_result.json).
-6. [V2 preregistration and implementation contract](revision_v2_preregistration.md).
-7. [Prior checkpoint analysis](checkpoint_forensics_v1_report_2026_09_16.md)
+6. [Loss diagnostic preregistration](loss_control_v1_preregistration.md).
+7. [V2 pilot result](v2_pilot_v1_report_2026_09_16.md) and [evidence](v2_pilot_v1_result.json).
+8. [V2 preregistration and implementation contract](revision_v2_preregistration.md).
+9. [Prior checkpoint analysis](checkpoint_forensics_v1_report_2026_09_16.md)
    and [evidence](checkpoint_forensics_v1_result.json).
-8. [V1 pilot report](pilot_v1_report_2026_09_16.md) and [evidence](pilot_v1_result.json).
-9. [Frozen v1 pilot contract](pilot_execution_contract_v1.md).
-10. [Research protocol](research_protocol_v1.md).
-11. [Exact architecture and oracle contract](architecture_and_oracle_v1.md).
-12. [Earlier oracle-only result](oracle_audit_v1_report_2026_09_16.md).
+10. [V1 pilot report](pilot_v1_report_2026_09_16.md) and [evidence](pilot_v1_result.json).
+11. [Frozen v1 pilot contract](pilot_execution_contract_v1.md).
+12. [Research protocol](research_protocol_v1.md).
+13. [Exact architecture and oracle contract](architecture_and_oracle_v1.md).
+14. [Earlier oracle-only result](oracle_audit_v1_report_2026_09_16.md).
 
-**Next work: specify/register a model candidate that separates a history-only
-head and a centered gap residual, with matched history-capacity and unregularized
-controls before testing residual regularization.** This candidate/penalty is
-proposed, not registered, implemented or trained. Centering itself does not change
-predictions or guarantee null safety; oracle active/null masks are inadmissible.
-Do not automatically adopt B or resume stopped v1/v2 prevalences/five-seed work.
-The next contract must fix objectives, budget, active/null conditional-distribution
-accuracy, calibration and stop rules before fitting. Method evidence still needs
-multiple seeds and fair external sequential baselines. Known copy-DGP alignment,
-reused validation and prior-art overlap constrain all claims.
+**Next hypothesis: retain E's uncentered forward parameterization and apply the
+same centered-residual penalty only in the objective.** E has better active
+accuracy than C, while R improves C and removes null response. The missing
+E+penalty combination could separate forward parameterization from functional
+regularization without changing capacity or coefficient. It is proposed, not
+registered, implemented or trained. Do not auto-run a fallback after the failed
+accuracy screen or tune lambda from these results. A new contract must fix
+comparators, budget, accuracy/response gates and stopping rules before execution.
+The present R candidate does not advance. Multiple seeds, prevalence and fair
+external sequential baselines remain required before a method-success claim.
 
 Runtime roots relative to this CS-SAF worktree:
 
@@ -187,8 +214,11 @@ and `pilot_v1/` with terminal records.
 Loss diagnostic: `artifacts/cs_saf/loss_control_v1/cpu_v1/` and `gpu_v1/`,
 with best and epoch-9 checkpoints for all six fits, and train/validation entity arrays.
 
-Latest decomposition: `artifacts/cs_saf/route_decomposition_v1/cpu_v2/` and
+Previous decomposition: `artifacts/cs_saf/route_decomposition_v1/cpu_v2/` and
 `audit_v2/`. The first technical failure is retained in `audit_v1/`.
+
+Latest v3 outputs: `artifacts/cs_saf/revision_v3/cpu_v1/` (preserved failure),
+`cpu_v2/` (PASS), and `gpu_v1/` (eight fits plus fixed U evaluation).
 
 Each trained job retains its best checkpoint, history/report, intervention
 audit and generated sample. Compact evidence records absolute locations,

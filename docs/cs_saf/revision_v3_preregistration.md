@@ -6,6 +6,11 @@ pi=.05 pilot: eight fresh GPU fits, four candidates x kappa 0/1. It follows the
 successful v2 model. [Immutable contract](../../configs/benchmark_v2/cs_saf_revision_v3.yaml).
 Old failures, thresholds, splits and checkpoints remain unchanged.
 
+Execution annotation: registered at `9813573`, final CPU/GPU source `44a2bd3`.
+Eight GPU fits completed; [result](v3_pilot_v1_report_2026_09_16.md).
+Primary R response gate PASS, accuracy screen vs historical U FAIL; no promotion.
+The original YAML and criteria below remain unchanged.
+
 ## Architecture and comparisons
 
 Keep v2's 128-dimensional strict-past GRU, observed static embedding, support,

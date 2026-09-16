@@ -166,8 +166,9 @@ Git에는 코드·계약·compact evidence를 저장한다. Git이 전체 checkp
 regularization 효과가 혼동되지 않도록, 비선형 history-only 대조군과
 규제 없는 동일 구조 대조군이 필요하다.
 
-현재 문서는 후보 제안이다. **후속 모델·penalty·lambda·학습 예산은 아직 사전등록하지
-않았고 구현·학습하지 않았다.** 다음 계약은 null-label oracle mask 없이 같은 규칙을
+이 보고서 작성 당시에는 후보 제안이었다. 이후 별도 등록한
+[v3 구현·학습 결과](v3_pilot_v1_report_2026_09_16.md)가 나왔다: 반응 기준은 통과했지만
+기존 U 대비 활성 조건부 정확도 screen은 실패했다. 아래는 당시 제안의 근거다. 다음 계약은 null-label oracle mask 없이 같은 규칙을
 양 집단에 적용하고, active 분포 오차와 null 오차를 함께 평가하며, U/A/B 중 어떤
 목적함수를 고정할지 정해야 한다. B를 자동 채택할 근거는 없다.
 이후에도 고정 pilot → 조건부 분포 정확도 → 여러 seed → 공정한 외부 baseline/실데이터
