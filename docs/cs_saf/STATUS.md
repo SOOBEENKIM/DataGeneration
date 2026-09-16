@@ -2,9 +2,12 @@
 
 Updated 2026-09-16. Branch: `research/cs-saf`.
 
-New work: [three-objective loss diagnostic registered](loss_control_v1_preregistration.md),
-before implementation/execution. Six pi=.05 fits and separate train/validation
-null-response diagnostics are planned; previous v2 FAIL is unchanged.
+New work: [three-objective loss diagnostic](loss_control_v1_preregistration.md)
+registered in `d4069c9` before implementation/execution. Its implementation now
+passes 82 relevant tests, including historical U/B gradient equivalence and
+the global A auxiliary formula. Same-source CPU gates and six pi=.05 GPU fits
+with separate train/validation null diagnostics are pending. Previous v2 FAIL
+is unchanged; this is a separate exploratory study.
 
 **Current state: v2 implemented, 71 tests and CPU gate PASS; v2 pilot FAIL at
 pi=0.05 in the kappa=0 rare context. V1's pi=0.25 FAIL is also preserved.**

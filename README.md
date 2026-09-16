@@ -8,6 +8,9 @@ evaluation remain unexecuted.
 See the [research status](docs/cs_saf/STATUS.md) and
 [v2 pilot report](docs/cs_saf/v2_pilot_v1_report_2026_09_16.md).
 
+A separate [three-objective diagnostic](docs/cs_saf/loss_control_v1_preregistration.md)
+is preregistered and implemented (82 tests passed); CPU/GPU execution is pending.
+
 This repository contains the reproducible research code for CoF-SeqGen and its
 support-aligned autoregressive extension (SAF). The `main` branch records the
 validated research base through the SAF v6 intervention preflight:
