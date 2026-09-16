@@ -1,0 +1,27 @@
+{
+  "comparisons": {
+    "0.05": {
+      "B1_central_range_fraction_of_full": 0.9496288159716906,
+      "B1_full_mean_of_history_ranges": 0.046376940680714684,
+      "B1_range_of_entity_mean_curve": 0.010323129844753365,
+      "fraction_null_entities_B1_range_above_U1": 0.9997697822798132,
+      "paired_null_copy_range_difference_B1_minus_U1_mean": 0.015904524184761962
+    },
+    "0.10": {
+      "B1_central_range_fraction_of_full": 0.9117652502466199,
+      "B1_full_mean_of_history_ranges": 0.0486654345471048,
+      "B1_range_of_entity_mean_curve": 0.010380086175756087,
+      "fraction_null_entities_B1_range_above_U1": 0.9991664640711284,
+      "paired_null_copy_range_difference_B1_minus_U1_mean": 0.015911776350576102
+    },
+    "0.25": {
+      "B1_central_range_fraction_of_full": 0.8848982620172849,
+      "B1_full_mean_of_history_ranges": 0.05123960390877145,
+      "B1_range_of_entity_mean_curve": 0.013694558441303406,
+      "fraction_null_entities_B1_range_above_U1": 0.928771007965303,
+      "paired_null_copy_range_difference_B1_minus_U1_mean": 0.0061566339270286525
+    }
+  },
+  "source_audit_sha256": "e3b30f169b8dc2555e8ebee6524f08a4648170a569acfd7e19ed5c3df349deb1",
+  "verified_checkpoint_and_array_checksums": 24
+}

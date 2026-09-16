@@ -24,6 +24,10 @@ failed null-safety gate. The full candidate learned a material active response,
 but did not pass the entire pilot. The v1 criteria below remain unchanged;
 five-seed confirmation must not proceed from this result.
 
+Subsequent [train-only checkpoint forensics](checkpoint_forensics_v1_report_2026_09_16.md)
+and a [separate v2 preregistration](revision_v2_preregistration.md) are complete.
+V2 has not been implemented or trained; the v1 failure and criteria are preserved.
+
 ## Research question
 
 Can a sequential synthetic-data generator preserve both the valid support of

@@ -1,0 +1,107 @@
+schema_version: cs-saf-context-separated-route-v2-preregistration
+status: PREREGISTERED_NOT_IMPLEMENTED_OR_TRAINED
+registered_on: '2026-09-16'
+design_role: exploratory_revision_after_failed_v1_pilot
+forensic_source_commit: d96e1b4966f9fec018aee472a26be579ab9a4d1c
+forensic_audit_sha256: e3b30f169b8dc2555e8ebee6524f08a4648170a569acfd7e19ed5c3df349deb1
+single_changed_factor: allocation_of_bilinear_route_parameters_by_observed_context
+primary_candidate: CS2-B1
+ordinary_objective_comparator: CS2-U1
+architecture:
+  common_modules: unchanged_fresh_initialization_from_cs_saf_v1
+  history_dim: 128
+  direct_static_embedding_dim: 8
+  context_dim: 136
+  gap_embedding_dim: 32
+  known_static_codes: [3, 4]
+  context_slot: static_code_minus_3
+  unknown_or_missing_context: reject
+  context_slots: 2
+  rank_per_context: 16
+  total_route_rank_budget: 32
+  context_weight_shape: [2, 16, 136]
+  context_bias_shape: [2, 16]
+  gap_weight_shape: [2, 16, 32]
+  gap_bias: false
+  interaction_weight_shape: [2, 16]
+  logit: base(context) + dot(w_s, tanh(Wc_s*context+b_s)*tanh(Wg_s*gap_embedding))/sqrt(16)
+  direct_route_parameter_count: 5440
+  total_parameter_count_controlled_data: 133549
+  common_parameters_remain_shared: [encoder, static_embedding, gap_embedding, gap_decoder, copy_base, fresh_mark_head, value_decoder]
+  hard_coded_active_context: false
+  oracle_inputs_or_targets: false
+  guaranteed_property: cross_context_direct_route_parameter_derivative_is_zero_at_fixed_features
+  not_guaranteed: learned_null_safety_or_independence_of_shared_feature_updates
+initialization:
+  model_seed: 20260930
+  common_tensors: bitwise_equal_to_fresh_v1_initial_tensors_under_same_seed_and_tensorizer
+  bank_generator_device: cpu
+  bank_initializer_seed: 20261010
+  draw_order: [context_weight, context_bias, gap_weight]
+  context_weight_and_bias: uniform_minus_plus_1_over_sqrt_136
+  gap_weight: uniform_minus_plus_1_over_sqrt_32
+  interaction_weight: zeros
+  paired_candidates_identical_initial_state: true
+objective:
+  CS2-U1: unchanged_v1_base_gap_mark_value_nll
+  CS2-B1: unchanged_v1_base_plus_balanced_observable_repeat_nll
+  auxiliary_coefficient: 1.0
+  new_regularizer: none
+  loss_renormalization: false
+  context_oversampling: false
+pilot:
+  inherited_config: configs/benchmark_v2/cs_saf_pilot_v1.yaml
+  inherited_config_sha256: e36f62998dc537e8359d10b8f0bf706dca35dad8279e0f8a51b5454faff5ac8c
+  prevalences: [0.05, 0.10, 0.25, 0.50]
+  kappas: [0, 1]
+  candidates: [CS2-U1, CS2-B1]
+  stage_order: increasing_prevalence_stop_after_first_failed_full_candidate_gate
+  maximum_model_fits: 16
+  model_seed: 20260930
+  epochs: 50
+  patience: 5
+  batch_size: 512
+  optimizer: AdamW
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  gradient_clip: 1.0
+  precision: float32
+  scheduler: none
+  checkpoint_selection: global_validation_base_nll_without_auxiliary
+  generation_entities: 2048
+  sampling_seed: 20260930
+  response_histories: all_validation_nonfirst_events
+  gap_grid: all_31_train_fitted_support_bins
+  response_aggregation: mean_histories_within_entity_then_mean_entities
+  active_mean_range_min: 0.05
+  all_three_null_mean_ranges_max: 0.05
+  active_to_max_null_min: 2.0
+  apply_to: [copy_probability, observable_repeat_probability]
+  matched_zero_gap_control_max: 1.0e-8
+  generated_gap_support_violations: 0
+  output_validity: finite_values_and_no_reserved_marks
+cpu_prerequisites:
+  inherited_end_to_end_and_determinism_gate: unchanged_v1_64_train_32_validation_entities_25_epochs
+  minimum_relative_train_loss_decrease: 0.10
+  new_checks:
+    - exact_parameter_budget_and_paired_initialization
+    - common_initial_tensors_match_fresh_v1
+    - both_context_banks_receive_own_context_gradients
+    - direct_route_cross_context_gradients_exactly_zero
+    - simultaneous_label_embedding_and_bank_permutation_equivariance
+    - zero_gap_invariance
+    - past_only_encoder_and_no_current_mark_leakage
+    - fixed_global_auxiliary_denominators
+execution:
+  new_candidate_implementation_complete: false
+  new_candidate_training_started: false
+  data_root: data/cs_saf/prevalence_v1
+  prepared_root: artifacts/cs_saf/prepared_v1
+  future_output_namespace: artifacts/cs_saf/revision_v2
+  preserve_v1_artifacts: true
+  threshold_changes_after_results: false
+  hyperparameter_or_rank_sweep: false
+  fallback_candidate_after_failure: none
+  five_seed_confirmation: false
+  real_data_training: false
+  test_access: false

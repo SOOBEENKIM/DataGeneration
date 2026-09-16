@@ -1,11 +1,11 @@
 # DataGeneration: CoF-SeqGen Research
 
-On `research/cs-saf`, the current stage is **models implemented, prevalence
-data/oracle and CPU gates passed; single-seed pilot stopped at pi=0.25 because
-the full candidate failed null safety**. Pi=0.05/0.10 passed; pi=0.50 training,
-five-seed confirmation and held-out evaluation were not run.
+On `research/cs-saf`, **v1 failed null safety at pi=0.25; train-only checkpoint
+forensics are complete and one context-separated v2 revision is preregistered**.
+V2 is not implemented or trained. V1 pi=0.05/0.10 passed; v1 pi=0.50 training,
+five-seed confirmation and held-out evaluation remain unexecuted.
 See the [research status](docs/cs_saf/STATUS.md) and
-[pilot report](docs/cs_saf/pilot_v1_report_2026_09_16.md).
+[checkpoint analysis](docs/cs_saf/checkpoint_forensics_v1_report_2026_09_16.md).
 
 This repository contains the reproducible research code for CoF-SeqGen and its
 support-aligned autoregressive extension (SAF). The `main` branch records the
