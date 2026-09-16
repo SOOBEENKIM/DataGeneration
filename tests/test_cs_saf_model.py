@@ -127,3 +127,12 @@ def test_pilot_audit_adapter_generates_and_checks_both_response_definitions():
     assert result["finite_generated_values"]
     assert result["zero_gap_control_max_range"] == 0
     assert set(result["responses"]) == {"0", "1"}
+
+
+def test_public_loss_and_architecture_describe_cs_saf_not_inherited_scalar_gate():
+    m = model()
+    contract = m.architecture_contract()
+    assert contract["family"] == "CS-SAF"
+    assert contract["gap_to_mark_route"] == "rank_32_bilinear"
+    losses = m.compute_loss(**inputs(), train_entities=2, transition_counts_by_code={3: 3, 4: 2})
+    assert torch.allclose(losses["loss"], losses["base_nll"]+losses["balanced_repeat_nll"])

@@ -130,6 +130,18 @@ class CSSAF(CoFSeqGenSAF):
         auxiliary = (terms["repeat_per_entity"]*weights[terms["static_code"]]).mean()
         return base+(auxiliary if self.balanced else 0), base, auxiliary
 
+    def compute_loss(self, *, train_entities, transition_counts_by_code, **inputs):
+        loss, base, auxiliary = self.objective(self.loss_terms(**inputs),
+            train_entities=train_entities, transition_counts_by_code=transition_counts_by_code)
+        return {"loss": loss, "base_nll": base, "balanced_repeat_nll": auxiliary}
+
+    def architecture_contract(self):
+        return {"implementation_version": VERSION, "family": "CS-SAF",
+                "candidate": self.cs_candidate_id, "history": "strictly_past_shifted_gru",
+                "gap_to_mark_route": "rank_32_bilinear" if self.route_enabled else "matched_zero_gap",
+                "direct_static_embedding_dim": 8, "balanced_observable_repeat_loss": self.balanced,
+                "reserved_mark_outputs": "masked", "controlled_schema_only": True}
+
     @torch.no_grad()
     def response_curves(self, context, previous, *, zero_gap=False):
         gaps = torch.tensor(self.support.representatives, device=context.device, dtype=context.dtype)
