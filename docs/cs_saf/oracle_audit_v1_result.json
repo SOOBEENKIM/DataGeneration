@@ -1,0 +1,316 @@
+{
+  "active_mean_range": 0.4137424164072561,
+  "causal_do_gap_effect_claimed": false,
+  "cells": {
+    "0": {
+      "0": {
+        "entity_count": 30406,
+        "max_copy_probability_range": 0.0,
+        "mean_copy_probability_range": 0.0,
+        "mean_observed_repeat": 0.31692970364688955,
+        "mean_predicted_repeat": 0.3163617866545724,
+        "mean_repeat_probability_range": 0.0,
+        "repeat_calibration_entity_cluster_se": 0.0004848635645400722,
+        "repeat_calibration_mean_residual": 0.000567916992317228,
+        "transition_count": 699442
+      },
+      "1": {
+        "entity_count": 1545,
+        "max_copy_probability_range": 0.0,
+        "mean_copy_probability_range": 0.0,
+        "mean_observed_repeat": 0.3077983232546111,
+        "mean_predicted_repeat": 0.3115482231453476,
+        "mean_repeat_probability_range": 0.0,
+        "repeat_calibration_entity_cluster_se": 0.002144430401817334,
+        "repeat_calibration_mean_residual": -0.0037498998907364313,
+        "transition_count": 35542
+      }
+    },
+    "1": {
+      "0": {
+        "entity_count": 30406,
+        "max_copy_probability_range": 0.0,
+        "mean_copy_probability_range": 0.0,
+        "mean_observed_repeat": 0.31632275888633,
+        "mean_predicted_repeat": 0.3162067976725175,
+        "mean_repeat_probability_range": 0.0,
+        "repeat_calibration_entity_cluster_se": 0.00048422036614247473,
+        "repeat_calibration_mean_residual": 0.00011596121381241596,
+        "transition_count": 699442
+      },
+      "1": {
+        "entity_count": 1545,
+        "max_copy_probability_range": 0.8248397600387998,
+        "mean_copy_probability_range": 0.4137424164072561,
+        "mean_observed_repeat": 0.3206838214404818,
+        "mean_predicted_repeat": 0.31960797318948336,
+        "mean_repeat_probability_range": 0.40727769115089274,
+        "repeat_calibration_entity_cluster_se": 0.0019747678390395393,
+        "repeat_calibration_mean_residual": 0.0010758482509983561,
+        "transition_count": 35542
+      }
+    }
+  },
+  "checks": {
+    "active_response_material": true,
+    "no_gap_oracle_invariant": true,
+    "null_response_small": true,
+    "observable_repeat_calibrated": true,
+    "paired_entity_splits": true,
+    "paired_train_static": true,
+    "selectivity": true,
+    "sufficient_context_entities": true
+  },
+  "criteria": {
+    "active_cell_min_mean_range": 0.05,
+    "active_to_largest_noncausal_min_ratio": 2.0,
+    "minimum_entities_per_context": 100,
+    "no_gap_oracle_max_range": 1e-08,
+    "noncausal_cell_max_mean_range": 0.05,
+    "repeat_calibration_absolute_tolerance": 0.02,
+    "repeat_calibration_cluster_se_multiplier": 5.0
+  },
+  "decision": "PASS",
+  "estimand": "predictive_copy_response_to_current_observed_gap_bin_given_strict_past",
+  "generated_model_samples_evaluated": false,
+  "largest_null_mean_range": 0.0,
+  "loaded_content_splits": [
+    "train"
+  ],
+  "model_training_performed": false,
+  "next_stage": "IMPLEMENT_MODEL_AND_PREVALENCE_DATA_CONTRACT",
+  "prevalence_grid_materialized": false,
+  "prevalence_reweighting": [
+    {
+      "aggregate_copy_response_range": 0.02068712082036281,
+      "pi": 0.05
+    },
+    {
+      "aggregate_copy_response_range": 0.04137424164072562,
+      "pi": 0.1
+    },
+    {
+      "aggregate_copy_response_range": 0.10343560410181403,
+      "pi": 0.25
+    },
+    {
+      "aggregate_copy_response_range": 0.20687120820362806,
+      "pi": 0.5
+    }
+  ],
+  "prevalence_reweighting_role": "analytic_diagnostic_not_new_data_or_learned_dilution_evidence",
+  "provenance": {
+    "0": {
+      "canonical_manifest_sha256": "d10d58ff0e070ea818f6487dd16d64b6f18cc16a8df21b5a20778c6ce6484ec6",
+      "dataset_id": "controlled_coupling_joint_semimarkov_v2b_kappa_0_00",
+      "event_file_full_hash_recomputed": false,
+      "full_hash_note": "sealed rows not read; filtered train rows hashed instead",
+      "gap_support": {
+        "fit_split": "train",
+        "representatives": [
+          0.017437513917684555,
+          0.052730780094861984,
+          0.09024699032306671,
+          0.12966860830783844,
+          0.17118841409683228,
+          0.21523909270763397,
+          0.2622765898704529,
+          0.3131701648235321,
+          0.3665408492088318,
+          0.4245361387729645,
+          0.48632797598838806,
+          0.5526826977729797,
+          0.6246597766876221,
+          0.7038993835449219,
+          0.789629340171814,
+          0.8833410739898682,
+          0.9855889081954956,
+          1.1012072563171387,
+          1.228846788406372,
+          1.3708328008651733,
+          1.5292797088623047,
+          1.709789752960205,
+          1.9176501035690308,
+          2.1537654399871826,
+          2.4281468391418457,
+          2.755207061767578,
+          3.1481051445007324,
+          3.6438021659851074,
+          4.3151044845581055,
+          5.328018665313721,
+          7.503626823425293
+        ],
+        "source_unique_count": 729995,
+        "upper_bounds": [
+          0.03508414700627327,
+          0.07148888520896435,
+          0.10995779931545258,
+          0.15042851120233536,
+          0.19321375340223312,
+          0.23875784128904343,
+          0.2877233773469925,
+          0.33985550701618195,
+          0.39553849399089813,
+          0.45543205738067627,
+          0.5195053368806839,
+          0.5886712372303009,
+          0.664279580116272,
+          0.7467643618583679,
+          0.8364852070808411,
+          0.9344649910926819,
+          1.0433980822563171,
+          1.1650270223617554,
+          1.2998397946357727,
+          1.450056254863739,
+          1.6195347309112549,
+          1.813719928264618,
+          2.0357077717781067,
+          2.290956139564514,
+          2.591676950454712,
+          2.9516561031341553,
+          3.39595365524292,
+          3.9794533252716064,
+          4.821561574935913,
+          6.415822744369507,
+          null
+        ],
+        "zero_is_explicit": false
+      },
+      "loaded_content_splits": [
+        "train"
+      ],
+      "metadata_integrity_checked": true,
+      "no_gap_oracle_max_range": 0.0,
+      "observed_context_prevalence": 0.04835529404400488,
+      "oracle_latent_files_loaded": false,
+      "split_assignment_sha256": "7289abc42613012557f7692ef4094a127787899a768581a72b6f3b00d095d094",
+      "static_codec_codes": [
+        3,
+        4
+      ],
+      "support_representatives_not_observed_count": 0,
+      "train_entity_count": 31951,
+      "train_event_count": 766935,
+      "train_events_sha256": "d2fc5284290e5b684e5926bea8e801f0160b2c53a78ce1cedb9d54b16e9c19aa",
+      "train_static_sha256": "c51b429e5115e7777973461130096ed966a46994b8820cc968dabb1f81bd3aed"
+    },
+    "1": {
+      "canonical_manifest_sha256": "247cc11a636295794b55363072924e5e8aba8007c60e5d61b367a9f8ed0ff43a",
+      "dataset_id": "controlled_coupling_joint_semimarkov_v2b_kappa_1_00",
+      "event_file_full_hash_recomputed": false,
+      "full_hash_note": "sealed rows not read; filtered train rows hashed instead",
+      "gap_support": {
+        "fit_split": "train",
+        "representatives": [
+          0.01716754585504532,
+          0.05241028591990471,
+          0.09025974571704865,
+          0.12939579784870148,
+          0.17094655334949493,
+          0.2151600867509842,
+          0.26213937997817993,
+          0.3127117156982422,
+          0.366966187953949,
+          0.42448118329048157,
+          0.48574209213256836,
+          0.5527116060256958,
+          0.6249817609786987,
+          0.7046059966087341,
+          0.7910280823707581,
+          0.886375904083252,
+          0.9907308220863342,
+          1.1060616970062256,
+          1.2337275743484497,
+          1.3759489059448242,
+          1.536531925201416,
+          1.7172391414642334,
+          1.9226478338241577,
+          2.1619205474853516,
+          2.439011573791504,
+          2.7641823291778564,
+          3.163760185241699,
+          3.660445213317871,
+          4.331790924072266,
+          5.346854209899902,
+          7.537265300750732
+        ],
+        "source_unique_count": 730050,
+        "upper_bounds": [
+          0.034788915887475014,
+          0.07133501581847668,
+          0.10982777178287506,
+          0.1501711755990982,
+          0.19305332005023956,
+          0.23864973336458206,
+          0.28742554783821106,
+          0.3398389518260956,
+          0.39572368562221527,
+          0.45511163771152496,
+          0.5192268490791321,
+          0.5888466835021973,
+          0.6647938787937164,
+          0.7478170394897461,
+          0.838701993227005,
+          0.9385533630847931,
+          1.04839625954628,
+          1.1698946356773376,
+          1.304838240146637,
+          1.4562404155731201,
+          1.6268855333328247,
+          1.8199434876441956,
+          2.0422841906547546,
+          2.3004660606384277,
+          2.60159695148468,
+          2.963971257209778,
+          3.412102699279785,
+          3.9961180686950684,
+          4.839322566986084,
+          6.442059755325317,
+          null
+        ],
+        "zero_is_explicit": false
+      },
+      "loaded_content_splits": [
+        "train"
+      ],
+      "metadata_integrity_checked": true,
+      "no_gap_oracle_max_range": 0.0,
+      "observed_context_prevalence": 0.04835529404400488,
+      "oracle_latent_files_loaded": false,
+      "split_assignment_sha256": "7289abc42613012557f7692ef4094a127787899a768581a72b6f3b00d095d094",
+      "static_codec_codes": [
+        3,
+        4
+      ],
+      "support_representatives_not_observed_count": 0,
+      "train_entity_count": 31951,
+      "train_event_count": 766935,
+      "train_events_sha256": "e44ae125bfe7d654227eefb5fc55b1a9a2497e7f6956c6256359e8b976c86a8d",
+      "train_static_sha256": "c51b429e5115e7777973461130096ed966a46994b8820cc968dabb1f81bd3aed"
+    }
+  },
+  "runtime": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "python": "3.10.20"
+  },
+  "schema_version": "cs-saf-oracle-audit-result-v1",
+  "scope": "existing_canonical_train_only_before_any_cs_saf_training",
+  "selectivity_ratio": null,
+  "selectivity_ratio_note": "unbounded_when_null_zero",
+  "source_commit": "34cdf667b5932cefbfa42dcc3e0443210b644749",
+  "source_sha256": {
+    "benchmarks/cs_saf_oracle.py": "ef3856a4321cbee9aeebc8b6663d6d1787531a04fc1ff888c251d6779b6636dd",
+    "benchmarks/semi_markov.py": "94e9bcbeb8a067623d206677a827d4ef8f77bb7d224910fdd7189190ecd0e21f",
+    "benchmarks/temporal_coupling_v2.py": "fd63ef3ae5e4c4010ee2fe1fa9d444cd0320f777e98147167363792e761791af",
+    "configs/benchmark_v2/cs_saf_architecture_v1.yaml": "582a88a02f69f9ba4dd77fdc9cee409ce882a9f18a6acf5feae347b7ebe17df1",
+    "configs/benchmark_v2/cs_saf_oracle_audit_v1.yaml": "1cede3f871e71aa98f06cc6eaf2544b6a00446349d5ec1eb7f30000208c52daf",
+    "configs/benchmark_v2/full_v2_5.yaml": "81bc16416f6dad3c23eaf1990c3cb76e5449e74f1ddc634f42d3a897cd3c5bb3",
+    "data/cof_seqgen_saf_contract.py": "4452d90c2c98a8152a551f1f0c0534bf5e372bfa1cacae9adfe3ec09fb004f12",
+    "data/cof_seqgen_saf_tensorizer.py": "9bb3c40254ff8357797d1bfefb4e7455c07cd90d3963a8c1af9a9eb0410c333e",
+    "models/cof_seqgen_saf.py": "38d6556dcb88a35edffcda6d169273df8a45ab42cc1c9c733c145e1dc46fae29",
+    "scripts/audit_cs_saf_oracle.py": "ebca5d0361b37e4f1074ced14d14ccb1866fc2223c20fb6cd3e73910be90f528"
+  },
+  "test_accessed": false,
+  "validation_accessed": false
+}

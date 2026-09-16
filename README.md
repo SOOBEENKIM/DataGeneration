@@ -1,5 +1,10 @@
 # DataGeneration: CoF-SeqGen Research
 
+On `research/cs-saf`, the current stage is **architecture specified and
+train-only oracle audit passed; CS-SAF model implementation/training pending**.
+See the [research status](docs/cs_saf/STATUS.md) and
+[oracle audit report](docs/cs_saf/oracle_audit_v1_report_2026_09_16.md).
+
 This repository contains the reproducible research code for CoF-SeqGen and its
 support-aligned autoregressive extension (SAF). The `main` branch records the
 validated research base through the SAF v6 intervention preflight:

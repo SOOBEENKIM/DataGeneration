@@ -1,6 +1,7 @@
 schema_version: cs-saf-research-protocol-v1
 family: cs_saf
-status: ARCHITECTURE_SPECIFIED_ORACLE_IMPLEMENTED_NOT_YET_EXECUTED
+status: TRAIN_ONLY_ORACLE_PASSED_MODEL_NOT_IMPLEMENTED
+oracle_result: docs/cs_saf/oracle_audit_v1_result.json
 base_commit: de8fa70
 
 claim:

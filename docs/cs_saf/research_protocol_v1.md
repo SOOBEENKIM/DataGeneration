@@ -1,6 +1,6 @@
 # CS-SAF research protocol v1
 
-Status: **architecture specified; oracle implemented; model implementation and training not started**
+Status: **train-only oracle PASS; architecture specified; model implementation and training not started**
 Base commit: `de8fa70`  
 Evaluation boundary: **train/validation only; held-out test remains sealed**
 
@@ -10,6 +10,10 @@ It fixes the bilinear route, uses observable-repeat likelihood rather than
 mislabeling observed repeats as latent copy coins, and defines a train-only
 semi-Markov filtering oracle. Conditional input response is not a causal
 do(gap) effect. The original pilot thresholds and seed sets remain unchanged.
+
+The [2026-09-16 oracle report](oracle_audit_v1_report_2026_09_16.md) records
+two byte-identical executions on existing train data. It establishes oracle
+feasibility, not a successful learned model or a completed prevalence study.
 
 ## Research question
 
