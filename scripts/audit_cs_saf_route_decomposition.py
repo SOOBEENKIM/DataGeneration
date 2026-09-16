@@ -101,7 +101,7 @@ def job(kappa,candidate,output,device,cpu_path):
                     for a,b in [("F_repeat_BCE","observed_repeat_BCE"),("Z_repeat_BCE","zero_gap_repeat_BCE")]:
                         error=max(error,abs(new[a]["mean"]-old[b]["mean"]))
                 if error>cfg["mechanical_checks"]["historical_full_zero_BCE_match_max_absolute_error"]:
-                    raise RuntimeError("historical full/zero loss mismatch")
+                    raise RuntimeError(f"historical full/zero loss mismatch: {name}/{split}, max={error}")
                 summary["historical_full_zero_BCE_max_absolute_difference"]=error
                 item["splits"][split]=summary
                 arrays.update({f"{name}_{split}_{key}":v for key,v in raw.items()})

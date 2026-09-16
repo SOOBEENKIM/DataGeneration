@@ -111,7 +111,9 @@ def audit_payload(model, payload):
 
 
 @torch.no_grad()
-def analyze(model, data, weights, device, *, batch_size=128):
+def analyze(model, data, weights, device, *, batch_size=256):
+    # Match the parent audit's group-wise GRU batch shape: CUDA arithmetic can
+    # differ with batch shape even when all checkpoint tensors are unchanged.
     model.eval()
     checks = {"reconstruction_max_absolute_error": 0., "weighted_residual_mean_max_absolute_error": 0.,
               "original_copy_and_repeat_probability_match_max_absolute_error": 0.,
@@ -158,4 +160,5 @@ def analyze(model, data, weights, device, *, batch_size=128):
         groups[str(label)] = {"entities": len(values), "metrics": {name:summarize(values[:,j]) for j,name in enumerate(COLUMNS)}}
         arrays[f"label_{label}_metrics"] = values
         arrays[f"label_{label}_entity_ids"] = np.asarray(names,dtype=str)
-    return {"groups":groups,"columns":list(COLUMNS),"mechanical_errors":checks,"test_accessed":False},arrays
+    return {"groups":groups,"columns":list(COLUMNS),"mechanical_errors":checks,
+            "entity_batch_size":batch_size,"test_accessed":False},arrays
