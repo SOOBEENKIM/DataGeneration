@@ -1,0 +1,21 @@
+schema_version: cs-saf-checkpoint-forensics-v1
+purpose: diagnose_saved_v1_checkpoint_null_response_without_fitting
+prevalences: [0.05, 0.10, 0.25]
+kappas: [0, 1]
+candidates: [CS-U1, CS-B1]
+content_splits: [train]
+entity_batch_size: 256
+central_observed_gap_mass: [0.10, 0.90]
+position_bands: [[1, 4], [5, 8], [9, 16], [17, 31]]
+route_parameters: [interaction_weight, context_projection.weight, context_projection.bias, gap_projection.weight]
+response_aggregation: mean_histories_within_entity_then_mean_entities
+gradient_loss: context_transition_mean_observable_repeat_nll
+gradient_response: context_entity_mean_full_gap_copy_range
+gradient_features: frozen_history_static_and_gap_embeddings
+directional_probe: negative_dot_response_gradient_with_loss_gradient
+optimizer_steps: 0
+new_model_fits: 0
+validation_content_access: false
+test_content_access: false
+oracle_latent_access: false
+reinterpret_failed_pilot: false
