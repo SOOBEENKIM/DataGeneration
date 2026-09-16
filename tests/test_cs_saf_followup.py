@@ -67,3 +67,21 @@ def test_existing_sample_plan_and_decode_roundtrip():
     assert frame.groupby('entity_id',sort=False).size().tolist()==list(plan.lengths)
     bad=dict(s,plan_train_indices=s['plan_train_indices'].roll(1))
     with pytest.raises(AssertionError):sample_to_frame(bad,p,plan,pos)
+
+
+@pytest.mark.skipif(not torch.cuda.is_available(),reason='requires CUDA regression check')
+def test_dropout_free_GRU_backward_mode_preserves_eval_forward(payload):
+    m=make_model(payload,'ER',torch.device('cuda:0'),0).eval()
+    with torch.no_grad():m.route_interaction_weight.fill_(.2)
+    before={k:v.clone() for k,v in m.state_dict().items()}
+    x=batch(payload['train'],torch.arange(6),torch.device('cuda:0'))
+    with torch.no_grad():expected=m.loss_terms(**x)
+    assert m.encoder.gru.dropout==0
+    m.encoder.gru.train()
+    terms=m.loss_terms(**x)
+    for k in ('gap_sum','mark_sum','value_sum','residual_per_entity'):
+        torch.testing.assert_close(terms[k],expected[k],rtol=1e-5,atol=1e-6)
+    loss=terms['mark_sum']/terms['mark_count']+.01*terms['residual_per_entity'].mean()
+    grads=torch.autograd.grad(loss,tuple(m.parameters()),allow_unused=True)
+    assert all(g is None or torch.isfinite(g).all() for g in grads)
+    assert all(torch.equal(v,before[k]) for k,v in m.state_dict().items())

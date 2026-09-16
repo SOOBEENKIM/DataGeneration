@@ -233,7 +233,12 @@ def gradient_job(kappa,trial,device):
             if not path.exists(): results.append({'candidate':candidate,'snapshot':snapshot,'missing':True});continue
             file_before=sha256(path);cp=torch.load(path,map_location=device)
             model=make_model(payload,candidate,device,trial);model.load_state_dict(cp['model_state']);model.eval()
-            before=state_digest(model);names,params=zip(*model.named_parameters())
+            before=state_digest(model)
+            # cuDNN needs reserve space for backward. With dropout=0 this mode
+            # leaves the GRU function unchanged; no optimizer step is performed.
+            if model.encoder.gru.dropout!=0: raise ValueError('diagnostic requires dropout-free GRU')
+            model.encoder.gru.train()
+            names,params=zip(*model.named_parameters())
             groups=sorted(set(parameter_block(n) for n in names))
             for label in (0,1):
                 eligible=torch.where(data['codes']==label+3)[0].numpy()

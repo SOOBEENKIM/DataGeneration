@@ -29,7 +29,7 @@ def tasks():
 
 
 def validate_cpu():
-    path=OUTPUT/'cpu_v1/COMPLETE.json';r=json.loads(path.read_text())
+    path=OUTPUT/'cpu_v2/COMPLETE.json';r=json.loads(path.read_text())
     if r['decision']!='PASS' or r['source_commit']!=frozen_source() or r['config_sha256']!=CONTRACT_SHA:raise RuntimeError('same-source CPU gate required')
     return r
 
@@ -92,7 +92,7 @@ def main():
     p.add_argument('--kappa',type=int);p.add_argument('--trial',type=int);p.add_argument('--candidate');p.add_argument('--device',default='cpu')
     args=p.parse_args();load_contract();OUTPUT.mkdir(exist_ok=True)
     if args.phase=='cpu':
-        r=cpu_gate(OUTPUT/'cpu_v1');print(json.dumps(r),flush=True)
+        r=cpu_gate(OUTPUT/'cpu_v2');print(json.dumps(r),flush=True)
         if r['decision']!='PASS':raise SystemExit(2)
     elif args.phase=='run':
         validate_cpu();gpu,cpu=tasks()
@@ -100,7 +100,7 @@ def main():
         write_json(OUTPUT/'COMPLETE.json',{'status':'COMPLETE','source_commit':frozen_source(),'config_sha256':CONTRACT_SHA,
             'new_internal_fits':170,'reused_internal_fits':30,'CPAR_fits':40,'gradient_jobs':10,'common_internal_generation_evaluations':200,
             'test_accessed':False,'independent_data_confirmation':False,'original_replication_gate':'FAIL',
-            'gpu_progress_sha256':sha256(OUTPUT/'gpu_progress.json'),'generation_progress_sha256':sha256(OUTPUT/'generation_progress.json')})
+            'cpu_gate_path':str(OUTPUT/'cpu_v2/COMPLETE.json'),'cpu_gate_sha256':sha256(OUTPUT/'cpu_v2/COMPLETE.json'),'gpu_progress_sha256':sha256(OUTPUT/'gpu_progress.json'),'generation_progress_sha256':sha256(OUTPUT/'generation_progress.json')})
     else:
         validate_cpu();task=(args.kind,args.pi,args.kappa,args.trial,args.candidate)
         gpu,cpu=tasks()
