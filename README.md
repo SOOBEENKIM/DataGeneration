@@ -1,13 +1,18 @@
 # DataGeneration: CoF-SeqGen Research
 
-Latest [v4 comparison](docs/cs_saf/v4_pilot_v1_report_2026_09_16.md): **two fresh GPU
-fits complete, 123 tests and CPU checks PASS**. Keeping E's raw prediction while
-applying the same centered-residual penalty passes the registered response and
-best-validation accuracy screens against E/U. E's active accuracy is nearly
-preserved, but its tiny best-checkpoint improvement reverses at fixed epoch 9.
-This supports broader registered replication, not multi-seed/external-baseline
-superiority. [Evidence](docs/cs_saf/v4_pilot_v1_result.json),
-[current research state](docs/cs_saf/STATUS.md).
+Latest [fixed-model replication](docs/cs_saf/replication_v1_report_2026_09_16.md):
+**30 fresh GPU fits across five paired training trials, 135 tests and CPU checks PASS**.
+ER passes response criteria in 5/5 trials (U 2/5, E 1/5) and improves null TV vs E
+in 5/5. Its active TV is worse than E in 4/5, with mean change +.000047795, so the
+registered accuracy gate FAILS and the conditional 90-fit prevalence expansion
+was not started. ER and E both improve active accuracy vs internal U in all five
+trials; this does not establish external-baseline superiority.
+[Professor briefing](docs/cs_saf/professor_brief_replication_2026_09_16.md),
+[evidence](docs/cs_saf/replication_v1_result.json), [status](docs/cs_saf/STATUS.md).
+
+The [v4 discovery pilot](docs/cs_saf/v4_pilot_v1_report_2026_09_16.md) remains preserved:
+its single-seed gate PASS motivated this replication. New trials are reported
+separately; no post-hoc seed selection or threshold relaxation is used.
 
 The previous [v3 result](docs/cs_saf/v3_pilot_v1_report_2026_09_16.md) is preserved:
 R passed response criteria but failed accuracy against U. No later prevalence,

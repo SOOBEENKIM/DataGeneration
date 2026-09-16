@@ -3,6 +3,9 @@
 2026-09-16. **두 GPU 학습 완료. 사전등록한 반응 기준과 best-validation 정확도
 방향성 기준 모두 PASS. 다중 시드·외부 baseline 우수성을 입증한 결과는 아니다.**
 
+후속 진행: [다섯 시드 재현성 실험](replication_v1_report_2026_09_16.md)은 이후 30회를
+완료했으며, 등록된 확대 기준 미달로 추가 비율 실행을 보류했다. 아래는 당시 v4 단일 시드 기록이다.
+
 [사전등록](revision_v4_preregistration.md) / [기계 판독 근거](v4_pilot_v1_result.json)
 / [이전 v3 결과](v3_pilot_v1_report_2026_09_16.md).
 등록 커밋 `642b878`, CPU/GPU 소스 `635664954057bf037ef04c572ac113db8fb28767`.

@@ -4,6 +4,12 @@ Registered 2026-09-16 before new implementation or outcomes. The user authorized
 sequential execution after the v4 exploratory PASS. [Immutable contract](../../configs/benchmark_v2/cs_saf_replication_v1.yaml).
 All prior failures and discovery seed 20260930 remain separate.
 
+Execution annotation: registered `8f5eaef`; CPU/GPU source `e35c6c2`.
+All 30 stage-1 fits completed. ER response PASS 5/5 and null TV vs E improves 5/5,
+but ER-E mean active TV +.000047795 fails the exact registered directional gate.
+The conditional 90-fit expansion was not started. [Result](replication_v1_report_2026_09_16.md).
+Original YAML and decision rules below remain unchanged.
+
 ## Fixed methods and paired randomness
 
 U is ordinary-loss v2 (133,549 parameters); E is raw b+h+r with base loss;

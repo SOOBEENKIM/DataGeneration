@@ -2,11 +2,41 @@
 
 Updated 2026-09-16. Branch: `research/cs-saf`.
 
-**New fixed-model replication preregistered, not yet implemented/trained:**
-30 fits at pi=.05; remaining 90 conditional on the frozen five-trial gate.
-[Registration](replication_v1_preregistration.md).
+**Latest fixed U/E/ER replication COMPLETE: 30 fresh GPU fits at pi=.05,
+five new paired training trials. ER response PASS 5/5; registered accuracy
+screen vs E FAIL. Conditional 90-fit prevalence expansion NOT STARTED.**
 
-**Latest completed v4 comparison COMPLETE: retain E raw forward, add the same .01 centered
+[Full report](replication_v1_report_2026_09_16.md),
+[professor briefing](professor_brief_replication_2026_09_16.md),
+[machine-readable evidence](replication_v1_result.json),
+[preregistration](replication_v1_preregistration.md),
+[figure PDF](replication_v1_pi_0.05_seed_results.pdf).
+
+- Registration `8f5eaef`; CPU/GPU source `e35c6c275eec2b8ae13824d73aa3abee2865579e`.
+- Frozen U/E/ER models, no lambda/architecture search or warm start. Five new
+  model/order seeds, bank seeds and sampling seeds; same initial distributions.
+  Existing data/validation reused; discovery seed excluded from new aggregates.
+- 135 tests and six tiny deterministic CPU fits PASS. Remote GPUs 0/1/2/3 checked
+  free before each job; all 30 training/evaluation jobs completed without technical failure.
+- Response PASS counts: **U 2/5, E 1/5, ER 5/5**. ER worst null copy .022911737.
+- Active best-validation TV mean: U **.082549503**, E **.075247675**, ER **.075295470**.
+  E-U improves in all five trials; ER-U also improves in all five, mean −.007254033.
+  This does not assign U-relative accuracy improvement entirely to regularization.
+- ER-E equal-three-null mean TV **−.000395125**, improves 5/5.
+  ER-E active TV **+.000047795**, worsens 4/5; one large gain offsets four losses.
+  Descriptive 95% seed t interval [−.003575428,+.003671019] includes zero;
+  neither consistent accuracy superiority nor equivalence is established.
+- Fixed epoch 9 ER-E active TV **+.000297833**, also worse 4/5.
+  No post-hoc threshold relaxation; stage-1 gate FAIL and other prevalences withheld.
+- 346 checksums, 60 checkpoint tensor identities, 240 aligned array groups,
+  6,720 entity statistics and all paired seed intervals/gates independently rechecked.
+  Generated 61,440 entities / 1,413,672 nonfirst gaps valid. No missing epoch-9 states.
+- Reporting conclusion: repeatable history-head active benefit and residual-penalty
+  null benefit, but combined zero-active-cost requirement unfulfilled. Next bounded
+  penalty tradeoff study is proposed only, not registered or run. No new DGP,
+  external baseline, real-data or held-out test; no final method-superiority claim.
+
+**Previous single-seed v4 comparison COMPLETE: retain E raw forward, add the same .01 centered
 residual penalty. Two fresh GPU fits; original response gates and registered
 best-validation accuracy screens vs E/U PASS. Eligibility for a separately
 registered broader pilot, not multi-seed or external-baseline superiority.**
@@ -34,10 +64,9 @@ registered broader pilot, not multi-seed or external-baseline superiority.**
 - 101 checksum comparisons, 20 checkpoint tensor identities, 80 aligned entity
   groups, 2,240 statistics and paired factorial contrasts verified. 4,096 generated
   entities / 94,662 nonfirst gaps valid. No held-out, later pi, new seed or baseline run.
-- Next proposed work: freeze U/E/ER and separately preregister seed/prevalence
-  replication; external sequential baselines and broader validity follow. This
-  broader experiment is proposed only. Do not keep modifying until a win or
-  reclassify this single-seed adaptive pilot as independent confirmation.
+- The then-proposed U/E/ER seed/prevalence replication subsequently completed
+  its 30-fit stage and stopped at the registered gate; see the latest result above.
+  Do not reclassify the single-seed discovery pilot as independent confirmation.
 
 **Previous v3 model result: v3 eight-fit pilot COMPLETE. R passes the original response
 criteria at pi=.05 but FAILS the registered accuracy screen against historical U.
