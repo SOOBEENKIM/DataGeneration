@@ -6,8 +6,9 @@ fixed centered-residual penalty passes the original active/null response gate
 at pi=.05, but active conditional mark-distribution accuracy remains worse than
 the saved ordinary-loss model. The registered accuracy screen FAILS; no broader
 stage or final method-success claim follows. [Evidence](docs/cs_saf/v3_pilot_v1_result.json).
-The next proposed comparison separates forward parameterization from residual
-regularization; it has not been registered or run.
+The [v4 comparison](docs/cs_saf/revision_v4_preregistration.md) is separately
+preregistered: preserve E forward and add the same residual penalty. It has not
+yet been implemented or run.
 
 Earlier v1/v2 state follows:
 

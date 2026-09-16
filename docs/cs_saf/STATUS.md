@@ -2,7 +2,9 @@
 
 Updated 2026-09-16. Branch: `research/cs-saf`.
 
-**Latest model result: v3 eight-fit pilot COMPLETE. R passes the original response
+**New bounded v4 comparison preregistered, not yet implemented/trained:** retain E raw forward and apply the same .01 centered-residual penalty. Two fresh fits only; [registration](revision_v4_preregistration.md).
+
+**Latest completed model result: v3 eight-fit pilot COMPLETE. R passes the original response
 criteria at pi=.05 but FAILS the registered accuracy screen against historical U.
 Do not promote this candidate to later prevalences or confirmation.**
 

@@ -1,0 +1,114 @@
+schema_version: cs-saf-raw-forward-centered-penalty-v4
+status_at_registration: PREREGISTERED_NOT_IMPLEMENTED_OR_TRAINED
+registered_on: '2026-09-16'
+role: exploratory_missing_factorial_cell_not_confirmation
+parent_result: docs/cs_saf/v3_pilot_v1_result.json
+parent_result_sha256: 8116dc11ce9388fd799eeb4121b28d851d76ea9d364a1506fea0135095df5c91
+inherited_contract: configs/benchmark_v2/cs_saf_revision_v3.yaml
+inherited_contract_sha256: 5ca902201d932a990cda77b92a79944812078d437eb4df820e3c7c523a7f6b63
+frozen_parent_files:
+  models/cs_saf_v3.py: 4fb42b8dc298392a5bee3f911ca463710ec6a31aa546bbf496f9e68bf98bf37c
+  experiments/cs_saf_v3.py: 01a805af4ef32ac196868fbeb3a50ec39bee3cfd9787903d649fa591fa20d6d7
+  experiments/cs_saf_pilot.py: 7492d018d20088ce7b306cb3db541839a6f4d968bd7b4f58abc3a7f0d33c8c36
+  benchmarks/cs_saf_oracle.py: ef3856a4321cbee9aeebc8b6663d6d1787531a04fc1ff888c251d6779b6636dd
+  experiments/cs_saf_route_decomposition.py: 1259cf9c51014580fda5356a225c14390bd534428e6aa2e760bcb90a9992ed36
+prevalence: 0.05
+kappas:
+- 0
+- 1
+candidates:
+- CS4-ER1
+primary_candidate: CS4-ER1
+scientific_fits: 2
+saved_comparators:
+- CS3-E1
+- CS3-C1
+- CS3-R1
+- CS2-U1
+architecture:
+  forward: exact_CS3_E1_base_plus_history_plus_raw_route
+  center_only_in_penalty: true
+  total_parameter_count: 133581
+  new_parameters: 0
+  reference: same_fixed_full_train_context_marginal_gap_bin_frequencies_as_v3
+  shared_features: unchanged_GRU_context_and_gap_features
+  known_active_mask: false
+objective:
+  base: unchanged_U_gap_mark_value_mean_NLL
+  penalty: exact_CS3_R1_smooth_RMS_of_train_reference_centered_raw_route
+  regularization_coefficient: 0.01
+  epsilon: 0.0001
+  reduction: unchanged_fixed_train_transition_denominator_entity_sampling_correction
+  first_and_padding_excluded: true
+  auxiliary_repeat_BCE: false
+  hyperparameter_search: false
+training:
+  inherit_exact_v3_options_seed_initialization_and_order: true
+  model_seed: 20260930
+  epochs: 50
+  patience: 5
+  batch_size: 512
+  learning_rate: 0.001
+  weight_decay: 1.0e-05
+  gradient_clip: 1.0
+  optimizer: AdamW
+  precision: float32
+  checkpoint_selection: global_validation_base_nll_without_penalty
+  saved_snapshots:
+  - best
+  - epoch_9
+  warm_start: false
+comparisons:
+  primary:
+  - ER-E
+  - ER-U
+  mandatory_secondary:
+  - ER-R
+  - C-E
+  - R-C
+  - ER-C
+  interaction: (ER-E)-(R-C)_paired_entity_difference_descriptive_only
+  control_reuse: verify_saved_artifact_hashes_and_same_cache_initial_states_orders_reference_sampling_plans
+  retraining_saved_controls: false
+accuracy_audit:
+  inherit_exact_v3_auditor: true
+  checkpoints:
+  - best
+  - epoch_9
+  splits:
+  - train
+  - validation
+  primary: full_64_mark_TV_integrated_over_train_context_marginal_gap_bins_then_entity_means
+  secondary:
+  - factual_mark_TV
+  - grid_repeat_L1
+  - repeat_BCE
+  - residual_RMS
+  uncertainty: paired_entity_SE_not_seed_uncertainty
+  held_out_test: false
+  oracle_training_targets: false
+pilot_gate:
+  response_thresholds: unchanged_v1_copy_and_repeat_active_null_selectivity_support_validity
+  accuracy_screen: ER-E_and_ER-U_each_equal_three_null_mean_TV_strictly_negative_and_active_TV_nonpositive
+  accuracy_checkpoint: best_validation
+  next_stage_eligible: response_PASS_and_both_accuracy_screens_PASS
+  R_comparison_role: mandatory_report_not_primary_gate
+  if_failure: preserve_all_results_no_automatic_lambda_seed_architecture_or_prevalence_search
+  automatic_later_stage: false
+cpu_gate:
+  deterministic_repeats: 2
+  budget: inherited_v1_tiny_budget
+  forward_and_base_gradients: exact_E_at_matched_nonzero_weights
+  penalty_and_gradients: exact_R_at_matched_nonzero_weights
+  parameter_rng_and_initial_state: exact_E
+  source_must_match_GPU: true
+execution:
+  prepared_root: artifacts/cs_saf/prepared_v1
+  saved_control_root: artifacts/cs_saf/revision_v3/gpu_v1
+  output_namespace: artifacts/cs_saf/revision_v4
+  generation_entities_per_fit: 2048
+  sampling_seed: 20260930
+  complete_both_fits: true
+  preregister_before_implementation: true
+  commit_tested_source_before_CPU_GPU: true
+  later_prevalence_seed_baseline_or_test_fits: false
