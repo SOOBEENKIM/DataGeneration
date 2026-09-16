@@ -1,8 +1,8 @@
 # DataGeneration: CoF-SeqGen Research
 
 On `research/cs-saf`, **v1 failed null safety at pi=0.25; train-only checkpoint
-forensics are complete and one context-separated v2 revision is preregistered**.
-V2 is not implemented or trained. V1 pi=0.05/0.10 passed; v1 pi=0.50 training,
+forensics are complete and the registered context-separated v2 is implemented**.
+V2 passed 71 tests; its CPU gate and pilot are pending. V1 pi=0.05/0.10 passed; v1 pi=0.50 training,
 five-seed confirmation and held-out evaluation remain unexecuted.
 See the [research status](docs/cs_saf/STATUS.md) and
 [checkpoint analysis](docs/cs_saf/checkpoint_forensics_v1_report_2026_09_16.md).

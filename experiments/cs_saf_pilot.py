@@ -16,13 +16,40 @@ import yaml
 
 from data.cof_seqgen_saf_tensorizer import SAFTensorizer, SAFTensorizerState, load_canonical_dataset
 from experiments.cof_seqgen_saf_training import _seed_everything, _atomic_torch_save
-from models.cs_saf import CSSAF, VERSION
+from models.cs_saf import CSSAF
+from models.cs_saf_v2 import CSSAFv2, BANK_NAMES
 from benchmarks.cs_saf_oracle import SemiMarkovCopyOracle, summarize_context, decide_oracle
 from benchmarks.temporal_coupling_v2 import BenchmarkConfig
 from scripts.audit_cs_saf_oracle import sha256
 from scripts.materialize_cs_saf_prevalence import write_json
 
 ROOT = Path(__file__).resolve().parents[1]
+V2_PREREGISTRATION_SHA256 = "057cc59296961e5763b0ee2877fd930bafcab312d6a6637431302424f27f0359"
+
+
+def load_pilot_config(revision="v1"):
+    if revision == "v1":
+        path = ROOT/"configs/benchmark_v2/cs_saf_pilot_v1.yaml"
+        return yaml.safe_load(path.read_text()), path
+    if revision != "v2":
+        raise ValueError("unknown CS-SAF revision")
+    path = ROOT/"configs/benchmark_v2/cs_saf_revision_v2.yaml"
+    if sha256(path) != V2_PREREGISTRATION_SHA256:
+        raise ValueError("v2 preregistration changed; do not silently revise the experiment")
+    registration = yaml.safe_load(path.read_text())
+    inherited = ROOT/registration["pilot"]["inherited_config"]
+    if sha256(inherited) != registration["pilot"]["inherited_config_sha256"]:
+        raise ValueError("inherited v1 budget or criteria changed")
+    cfg = yaml.safe_load(inherited.read_text())
+    cfg["pilot_candidates"] = registration["pilot"]["candidates"]
+    cfg["pilot_gate"]["primary_candidate"] = registration["primary_candidate"]
+    return cfg, path
+
+
+def verify_v2_cache_index(cache_root):
+    prior = json.loads((ROOT/"docs/cs_saf/pilot_v1_result.json").read_text())
+    if sha256(cache_root/"COMPLETE.json") != prior["terminal_sha256"]["prepared"]:
+        raise ValueError("v2 must reuse the immutable v1 prepared data/oracle index")
 
 
 def frozen_source():
@@ -121,7 +148,32 @@ def subset(data, per_label):
 
 def make_model(payload, candidate, device):
     state = SAFTensorizerState.from_dict(payload["tensorizer_state"])
-    return CSSAF(candidate, state.gap_support, **state.model_config_kwargs()).to(device)
+    cls = CSSAFv2 if candidate.startswith("CS2-") else CSSAF
+    return cls(candidate, state.gap_support, **state.model_config_kwargs()).to(device)
+
+
+def verify_v2_initialization(model, payload, seed):
+    state = SAFTensorizerState.from_dict(payload["tensorizer_state"])
+    # Seed only the CPU initializer and restore its RNG state afterwards.
+    with torch.random.fork_rng(devices=[]):
+        torch.random.default_generator.manual_seed(seed)
+        reference = CSSAF(model.cs_candidate_id.replace("CS2-", "CS-"),
+                         state.gap_support, **state.model_config_kwargs())
+    reference_state = reference.state_dict()
+    common = {k: v for k, v in model.state_dict().items() if k not in BANK_NAMES}
+    if not all(k in reference_state and torch.equal(v.cpu(), reference_state[k]) for k, v in common.items()):
+        raise ValueError("v2 common initialization differs from fresh v1")
+    count = sum(p.numel() for p in model.parameters())
+    route_count = sum(getattr(model, name).numel() for name in BANK_NAMES)
+    if count != 133549 or route_count != 5440:
+        raise ValueError("production v2 parameter budget changed")
+    digest = hashlib.sha256()
+    for key, value in sorted(common.items()):
+        digest.update(key.encode()); digest.update(value.cpu().contiguous().numpy().tobytes())
+    return {"common_initial_tensors_match_fresh_v1": True,
+            "common_initial_state_sha256": digest.hexdigest(),
+            "parameters": count, "direct_route_parameters": route_count,
+            "bank_initializer_seed": 20261010}
 
 
 def state_digest(model):
@@ -148,7 +200,12 @@ def evaluate(model, data, size, device):
 def train_job(cache_path, output, candidate, device, *, cpu_gate=False):
     source_commit = frozen_source()
     output.mkdir(parents=True, exist_ok=False)
-    cfg = yaml.safe_load((ROOT/"configs/benchmark_v2/cs_saf_pilot_v1.yaml").read_text())
+    revision = "v2" if candidate.startswith("CS2-") else "v1"
+    cfg, config_path = load_pilot_config(revision)
+    if candidate not in cfg["pilot_candidates"]:
+        raise ValueError("candidate is outside the registered pilot")
+    if revision == "v2":
+        verify_v2_cache_index(cache_path.parent)
     payload = torch.load(cache_path, map_location="cpu")
     cache_index = json.loads((cache_path.parent/"COMPLETE.json").read_text())
     if sha256(cache_path) != cache_index["cells"][cache_path.stem]["cache_sha256"]:
@@ -163,6 +220,8 @@ def train_job(cache_path, output, candidate, device, *, cpu_gate=False):
     _seed_everything(cfg["model_seed"])
     model = make_model(payload, candidate, device)
     initial_digest = state_digest(model)
+    initialization = verify_v2_initialization(model, payload, cfg["model_seed"]) if revision == "v2" else None
+    version = model.architecture_contract()["implementation_version"]
     optimizer = torch.optim.AdamW(model.parameters(), lr=options["learning_rate"], weight_decay=options["weight_decay"])
     counts = {c: int((train["lengths"][train["codes"] == c]-1).sum()) for c in (3, 4)}
     generator = torch.Generator().manual_seed(cfg["model_seed"])
@@ -197,7 +256,7 @@ def train_job(cache_path, output, candidate, device, *, cpu_gate=False):
         stale = 0 if improved else stale+1
         if improved:
             best, best_epoch = metrics["base_nll"], epoch
-            _atomic_torch_save({"version": VERSION, "candidate": candidate, "model_state": model.state_dict(),
+            _atomic_torch_save({"version": version, "candidate": candidate, "model_state": model.state_dict(),
                                "tensorizer_state": payload["tensorizer_state"], "epoch": epoch,
                                "source_commit": source_commit, "data_manifest_sha256": payload["data_manifest_sha256"],
                                "test_accessed": False}, output/"checkpoint_best.pt")
@@ -206,12 +265,13 @@ def train_job(cache_path, output, candidate, device, *, cpu_gate=False):
             break
     checkpoint = torch.load(output/"checkpoint_best.pt", map_location=device)
     model.load_state_dict(checkpoint["model_state"])
-    report = {"version": VERSION, "source_commit": source_commit, "candidate": candidate,
+    report = {"version": version, "revision": revision, "source_commit": source_commit, "candidate": candidate,
               "data_cell": cache_path.stem, "data_manifest_sha256": payload["data_manifest_sha256"],
-              "cache_sha256": sha256(cache_path), "config_sha256": sha256(ROOT/"configs/benchmark_v2/cs_saf_pilot_v1.yaml"),
+              "cache_sha256": sha256(cache_path), "config_sha256": sha256(config_path),
               "cpu_gate": cpu_gate, "seed": cfg["model_seed"], "options": options,
               "parameters": sum(p.numel() for p in model.parameters()), "initial_state_sha256": initial_digest,
               "architecture": model.architecture_contract(),
+              "initialization_contract": initialization,
               "best_state_sha256": state_digest(model), "best_epoch": best_epoch, "best_validation_base_nll": best,
               "train_entities": len(train["lengths"]), "validation_entities": len(validation["lengths"]),
               "transition_counts_by_code": counts, "history": history, "seconds": time.monotonic()-started,
@@ -236,11 +296,13 @@ def audit_model(model, payload, cfg, device, *, sample_output=None):
         mask = inputs["valid_mask"].clone(); mask[:, 0] = False
         previous = inputs["receiver"].roll(1, dims=1)
         flat_context, flat_previous = contexts[mask], previous[mask]
+        flat_codes = inputs["static_categorical"][0][:, None].expand_as(mask)[mask]
         copy_parts, repeat_parts = [], []
         for j in range(0, len(flat_context), cfg["audit_chunk_histories"]):
             c, p = flat_context[j:j+cfg["audit_chunk_histories"]], flat_previous[j:j+cfg["audit_chunk_histories"]]
-            copy, repeat = model.response_curves(c, p)
-            zero_copy, zero_repeat = model.response_curves(c, p, zero_gap=True)
+            codes = flat_codes[j:j+cfg["audit_chunk_histories"]]
+            copy, repeat = model.response_curves(c, p, static_codes=codes)
+            zero_copy, zero_repeat = model.response_curves(c, p, zero_gap=True, static_codes=codes)
             control_max = max(control_max, float((zero_copy.max(1).values-zero_copy.min(1).values).max()),
                               float((zero_repeat.max(1).values-zero_repeat.min(1).values).max()))
             copy_parts.append(copy.max(1).values-copy.min(1).values)
@@ -293,7 +355,7 @@ def audit_model(model, payload, cfg, device, *, sample_output=None):
         combined = {key: torch.cat([part[key] for part in saved_samples]) for key in saved_samples[0]}
         combined["static_codes"] = payload["train"]["codes"][torch.tensor(plan)]
         combined["plan_train_indices"] = torch.tensor(plan)
-        torch.save({"version": VERSION, "sampling_seed": cfg["sampling_seed"],
+        torch.save({"version": model.architecture_contract()["implementation_version"], "sampling_seed": cfg["sampling_seed"],
                     "model_state_sha256": state_digest(model), "sample": combined,
                     "test_accessed": False}, sample_output)
         saved_sha = sha256(sample_output)

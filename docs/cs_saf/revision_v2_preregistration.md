@@ -1,7 +1,10 @@
 # CS-SAF v2: observed-context-separated bilinear route
 
-Registered 2026-09-16, **before v2 implementation or training**, after the v1
-checkpoint forensics. Status: **PREREGISTERED, NOT IMPLEMENTED, NOT TRAINED**.
+Registered 2026-09-16 at `d8302e3`, **before v2 implementation or training**,
+after the v1 checkpoint forensics. State at registration:
+**PREREGISTERED, NOT IMPLEMENTED, NOT TRAINED**.
+This document and the immutable YAML describe that registration; the
+[current research status](STATUS.md) records subsequent execution.
 Machine-readable contract: [cs_saf_revision_v2.yaml](../../configs/benchmark_v2/cs_saf_revision_v2.yaml).
 
 This is a new exploratory candidate. V1 remains FAIL; its 50% and confirmatory

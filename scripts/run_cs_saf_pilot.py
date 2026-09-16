@@ -8,7 +8,6 @@ import subprocess
 import sys
 
 import torch
-import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -16,21 +15,22 @@ if str(ROOT) not in sys.path:
 
 from experiments.cs_saf_pilot import (
     prepare_data, train_job, audit_model, decide_pilot, frozen_source,
+    load_pilot_config, verify_v2_cache_index,
 )
 from scripts.materialize_cs_saf_prevalence import write_json
 from scripts.audit_cs_saf_oracle import sha256
 
 
-def cpu_gate(cache_root, output):
+def cpu_gate(cache_root, output, revision="v1"):
     frozen_source()
     output.mkdir(parents=True, exist_ok=False)
-    cfg = yaml.safe_load((ROOT/"configs/benchmark_v2/cs_saf_pilot_v1.yaml").read_text())
+    cfg, config_path = load_pilot_config(revision)
     reports = []
     audits = []
     smoke_cfg = dict(cfg, generation_entities=32, generation_batch_size=32)
     for repeat in (1, 2):
         model, payload, report = train_job(cache_root/"pi_0.05_kappa_1.pt", output/f"run_{repeat}",
-                                         "CS-B1", torch.device("cpu"), cpu_gate=True)
+                                         cfg["pilot_gate"]["primary_candidate"], torch.device("cpu"), cpu_gate=True)
         audits.append(audit_model(model, payload, smoke_cfg, torch.device("cpu"),
                                    sample_output=output/f"run_{repeat}"/"generated_sample.pt"))
         reports.append(report)
@@ -44,8 +44,8 @@ def cpu_gate(cache_root, output):
               "zero_gap_invariant": all(a["zero_gap_control_max_range"] <= 1e-8 for a in audits)}
     result = {"decision": "PASS" if all(checks.values()) else "FAIL", "checks": checks,
               "relative_loss_decrease": drop, "best_state_sha256": first["best_state_sha256"],
-              "source_commit": first["source_commit"], "test_accessed": False,
-              "audits": audits, "config_sha256": sha256(ROOT/"configs/benchmark_v2/cs_saf_pilot_v1.yaml")}
+              "source_commit": first["source_commit"], "revision": revision, "test_accessed": False,
+              "audits": audits, "config_sha256": sha256(config_path)}
     write_json(output/"COMPLETE.json", result)
     print(json.dumps(result), flush=True)
     return result
@@ -56,7 +56,7 @@ def job(cache, output, candidate, device):
         raise FileExistsError("choose a new job directory; prior artifacts are immutable")
     try:
         model, payload, report = train_job(cache, output, candidate, torch.device(device))
-        cfg = yaml.safe_load((ROOT/"configs/benchmark_v2/cs_saf_pilot_v1.yaml").read_text())
+        cfg, _ = load_pilot_config("v2" if candidate.startswith("CS2-") else "v1")
         audit = audit_model(model, payload, cfg, torch.device(device), sample_output=output/"generated_sample.pt")
         write_json(output/"intervention_audit.json", audit)
         write_json(output/"COMPLETE.json", {"status": "COMPLETE", "source_commit": report["source_commit"],
@@ -68,21 +68,24 @@ def job(cache, output, candidate, device):
         raise
 
 
-def pilot(cache_root, cpu_gate_path, output, gpus):
+def pilot(cache_root, cpu_gate_path, output, gpus, revision="v1"):
     commit = frozen_source()
-    cfg = yaml.safe_load((ROOT/"configs/benchmark_v2/cs_saf_pilot_v1.yaml").read_text())
+    cfg, config_path = load_pilot_config(revision)
     cpu = json.loads(cpu_gate_path.read_text())
     if cpu["decision"] != "PASS" or cpu["source_commit"] != commit:
         raise RuntimeError("current source CPU gate is required")
-    if cpu["config_sha256"] != sha256(ROOT/"configs/benchmark_v2/cs_saf_pilot_v1.yaml"):
+    if cpu["config_sha256"] != sha256(config_path) or cpu.get("revision", "v1") != revision:
         raise RuntimeError("CPU gate config mismatch")
+    if revision == "v2":
+        verify_v2_cache_index(cache_root)
     prepared = json.loads((cache_root/"COMPLETE.json").read_text())
     if not all(g["decision"] == "PASS" for g in prepared["oracle_gates"].values()):
         raise RuntimeError("all prevalence oracle gates must pass before training")
     if len(gpus) != 4 or len(set(gpus)) != 4:
         raise ValueError("four distinct GPU IDs required for the frozen four-job stage")
     output.mkdir(parents=True, exist_ok=False)
-    result = {"source_commit": commit, "model_seed": cfg["model_seed"], "test_accessed": False,
+    result = {"source_commit": commit, "revision": revision, "config_sha256": sha256(config_path),
+              "model_seed": cfg["model_seed"], "test_accessed": False,
               "five_seed_started": False, "stages": {}, "decision": "IN_PROGRESS"}
     for pi in cfg["prevalences"]:
         processes = []
@@ -115,10 +118,13 @@ def pilot(cache_root, cpu_gate_path, output, gpus):
                 raise RuntimeError("training checksum mismatch")
             audits[(kappa, candidate)] = json.loads((destination/"intervention_audit.json").read_text())
             training[(kappa, candidate)] = json.loads((destination/"training_report.json").read_text())
-        full = {k: audits[(k, "CS-B1")] for k in (0, 1)}
+        comparator, primary = cfg["pilot_candidates"]
+        if primary != cfg["pilot_gate"]["primary_candidate"]:
+            raise RuntimeError("registered candidate order mismatch")
+        full = {k: audits[(k, primary)] for k in (0, 1)}
         decision = decide_pilot(full, cfg["pilot_gate"])
-        matched = all(training[(k, "CS-U1")]["initial_state_sha256"] == training[(k, "CS-B1")]["initial_state_sha256"]
-                      and audits[(k, "CS-U1")]["sampling_plan_sha256"] == audits[(k, "CS-B1")]["sampling_plan_sha256"] for k in (0, 1))
+        matched = all(training[(k, comparator)]["initial_state_sha256"] == training[(k, primary)]["initial_state_sha256"]
+                      and audits[(k, comparator)]["sampling_plan_sha256"] == audits[(k, primary)]["sampling_plan_sha256"] for k in (0, 1))
         decision["checks"]["matched_initialization_and_sampling"] = matched
         decision["decision"] = "PASS" if all(decision["checks"].values()) else "FAIL"
         stage = {**decision, "audits": {f"kappa_{k}_{c}": a for (k, c), a in audits.items()},
@@ -143,20 +149,22 @@ def main():
     sub = parser.add_subparsers(dest="phase", required=True)
     p = sub.add_parser("prepare"); p.add_argument("--data-root", type=Path, required=True); p.add_argument("--cache-root", type=Path, required=True)
     p = sub.add_parser("cpu"); p.add_argument("--cache-root", type=Path, required=True); p.add_argument("--output", type=Path, required=True)
+    p.add_argument("--revision", choices=["v1", "v2"], default="v1")
     p = sub.add_parser("job"); p.add_argument("--cache", type=Path, required=True); p.add_argument("--output", type=Path, required=True)
-    p.add_argument("--candidate", choices=["CS-U1", "CS-B1"], required=True); p.add_argument("--device", required=True)
+    p.add_argument("--candidate", choices=["CS-U1", "CS-B1", "CS2-U1", "CS2-B1"], required=True); p.add_argument("--device", required=True)
     p = sub.add_parser("pilot"); p.add_argument("--cache-root", type=Path, required=True); p.add_argument("--cpu-gate", type=Path, required=True)
     p.add_argument("--output", type=Path, required=True); p.add_argument("--gpus", default="0,1,2,3")
+    p.add_argument("--revision", choices=["v1", "v2"], default="v1")
     args = parser.parse_args()
     if args.phase == "prepare":
         prepare_data(args.data_root, args.cache_root)
     elif args.phase == "cpu":
-        if cpu_gate(args.cache_root, args.output)["decision"] != "PASS":
+        if cpu_gate(args.cache_root, args.output, args.revision)["decision"] != "PASS":
             raise SystemExit(2)
     elif args.phase == "job":
         job(args.cache, args.output, args.candidate, args.device)
     else:
-        if pilot(args.cache_root, args.cpu_gate, args.output, [int(x) for x in args.gpus.split(",")])["decision"] != "PASS":
+        if pilot(args.cache_root, args.cpu_gate, args.output, [int(x) for x in args.gpus.split(",")], args.revision)["decision"] != "PASS":
             raise SystemExit(2)
 
 

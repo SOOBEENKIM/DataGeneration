@@ -2,8 +2,17 @@
 
 Updated 2026-09-16. Branch: `research/cs-saf`.
 
-**Current state: v1 remains FAIL at pi=0.25; train-only checkpoint forensics
-complete; one v2 revision preregistered, not implemented or trained.**
+**Current state: v1 remains FAIL at pi=0.25; v2 implemented under the frozen
+registration, 71 tests passed; v2 CPU gate and scientific pilot pending.**
+
+V2 implementation preserves the registered 133,549 parameters and fresh-v1
+common initialization. Direct bank-gradient isolation, known-label permutation,
+strict-past behavior, likelihood/audit agreement, support, checkpoint roundtrip
+and fixed auxiliary denominators passed. The revision-aware runner pins the
+original v2 YAML hash and inherited v1 budget, requires the same-source CPU gate,
+and reuses the immutable data/oracle index. V2 outputs use a separate namespace.
+The v2 YAML retains its historical preregistration-state metadata; this file
+records current execution state.
 
 Latest work (2026-09-16):
 
@@ -58,8 +67,7 @@ Read these files in order when recovering from a missing conversation:
 7. [Exact architecture and oracle contract](architecture_and_oracle_v1.md).
 8. [Earlier oracle-only result](oracle_audit_v1_report_2026_09_16.md).
 
-**Next work: implement the registered v2 route, verify exact capacity and
-cross-bank gradient isolation, pass the CPU gate, then execute the separate v2
+**Next work: pass the v2 CPU gate, then execute the separate v2
 pilot with unchanged thresholds and stop rule.** Do not resume v1 pi=.50 or
 five-seed confirmation. V2 success has not been observed. Before later
 confirmation, resolve train-only noninferiority calibration and freeze exact
@@ -74,7 +82,7 @@ Runtime roots relative to this CS-SAF worktree:
 - `artifacts/cs_saf/pilot_v1/`
 - `artifacts/cs_saf/forensics_v1/` (entity diagnostics and gradient arrays)
 
-Future v2 output namespace: `artifacts/cs_saf/revision_v2/` (not executed).
+V2 output namespace: `artifacts/cs_saf/revision_v2/` (CPU/pilot pending).
 
 Each trained job retains its best checkpoint, history/report, intervention
 audit and generated sample. Compact evidence records absolute locations,

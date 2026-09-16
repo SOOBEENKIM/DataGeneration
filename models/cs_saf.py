@@ -55,7 +55,7 @@ class CSSAF(CoFSeqGenSAF):
             embedding = embedding[:, None, :].expand(-1, hidden.shape[1], -1)
         return torch.cat([hidden, embedding], dim=-1)
 
-    def copy_logits(self, context, gap, *, zero_gap=False):
+    def copy_logits(self, context, gap, *, zero_gap=False, static_codes=None):
         e = self.gap_route(self._support_code(gap))
         if zero_gap or not self.route_enabled:
             e = torch.zeros_like(e)
@@ -63,13 +63,13 @@ class CSSAF(CoFSeqGenSAF):
                        * torch.tanh(self.gap_projection(e)) * self.interaction_weight).sum(-1)
         return self.copy_base(context).squeeze(-1)+interaction/math.sqrt(32)
 
-    def mark_distribution(self, context, gap, previous, has_previous):
+    def mark_distribution(self, context, gap, previous, has_previous, *, static_codes=None):
         new_logits = self.new_mark_head(context)
         # Controlled data have a closed vocabulary: all reserved codes are excluded.
         new_logits = new_logits.clone()
         new_logits[..., :LEARNED_START_CODE] = -torch.inf
         log_new = F.log_softmax(new_logits, dim=-1)
-        logit = self.copy_logits(context, gap)
+        logit = self.copy_logits(context, gap, static_codes=static_codes)
         new_component = F.logsigmoid(-logit).unsqueeze(-1)+log_new
         indicator = F.one_hot(previous, self.config.receiver_vocab_size).bool()
         mixture = torch.where(indicator,
@@ -98,7 +98,8 @@ class CSSAF(CoFSeqGenSAF):
         has_previous[:, 1:] = valid_mask[:, 1:] & valid_mask[:, :-1]
         previous = torch.full_like(receiver, UNK_CODE)
         previous[:, 1:] = receiver[:, :-1]
-        log_mark, log_repeat, log_nonrepeat = self.mark_distribution(context, gap, previous, has_previous)
+        log_mark, log_repeat, log_nonrepeat = self.mark_distribution(context, gap, previous, has_previous,
+            static_codes=static_categorical[0][:, None].expand_as(valid_mask))
         per_mark = -log_mark.gather(-1, receiver.unsqueeze(-1)).squeeze(-1)
         if isinstance(self.gap_decoder, HurdleLogNormalGapDecoder):
             per_gap = self.gap_decoder.nll(hidden, gap)
@@ -143,7 +144,7 @@ class CSSAF(CoFSeqGenSAF):
                 "reserved_mark_outputs": "masked", "controlled_schema_only": True}
 
     @torch.no_grad()
-    def response_curves(self, context, previous, *, zero_gap=False):
+    def response_curves(self, context, previous, *, zero_gap=False, static_codes=None):
         gaps = torch.tensor(self.support.representatives, device=context.device, dtype=context.dtype)
         e = self.gap_route(self._support_code(gaps))
         if zero_gap or not self.route_enabled:
@@ -181,7 +182,8 @@ class CSSAF(CoFSeqGenSAF):
                     emitted = self.support.decode_tensor(emitted)
                 gap[active, t] = emitted[active]
             previous = receiver[:, t-1] if t else torch.full_like(receiver[:, 0], UNK_CODE)
-            logp, _, _ = self.mark_distribution(context, gap[:, t], previous, active & (t > 0))
+            logp, _, _ = self.mark_distribution(context, gap[:, t], previous, active & (t > 0),
+                                                static_codes=codes[0])
             mark = torch.distributions.Categorical(logits=logp).sample()
             receiver[active, t] = mark[active]
             location, scale = self._value_parameters(hidden, gap[:, t], mark)
