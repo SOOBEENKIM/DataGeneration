@@ -9,6 +9,12 @@ on reused validation data, not independent confirmation.
 [Immutable contract](../../configs/benchmark_v2/cs_saf_revision_v4.yaml).
 [Parent evidence](v3_pilot_v1_result.json). Original failures and contracts remain.
 
+Execution annotation: registered `642b878`; CPU/GPU source `6356649`. Both fresh
+fits completed; [result](v4_pilot_v1_report_2026_09_16.md). Response and registered
+best-validation accuracy screens PASS. Fixed epoch 9 active TV is worse than E;
+no robust E accuracy superiority, later-stage run or final method-success claim.
+The original YAML and criteria below remain unchanged.
+
 ## Exact intervention
 
 Let h_s(c)=alpha_s dot u_s(c)/4, r_s(c,k)=(w_s*u_s(c)) dot v_s(k)/4,

@@ -2,9 +2,40 @@
 
 Updated 2026-09-16. Branch: `research/cs-saf`.
 
-**New bounded v4 comparison preregistered, not yet implemented/trained:** retain E raw forward and apply the same .01 centered-residual penalty. Two fresh fits only; [registration](revision_v4_preregistration.md).
+**Latest v4 comparison COMPLETE: retain E raw forward, add the same .01 centered
+residual penalty. Two fresh GPU fits; original response gates and registered
+best-validation accuracy screens vs E/U PASS. Eligibility for a separately
+registered broader pilot, not multi-seed or external-baseline superiority.**
 
-**Latest completed model result: v3 eight-fit pilot COMPLETE. R passes the original response
+[Full v4 result](v4_pilot_v1_report_2026_09_16.md),
+[machine-readable evidence](v4_pilot_v1_result.json),
+[preregistration](revision_v4_preregistration.md).
+
+- Registration `642b878`; CPU/GPU source `635664954057bf037ef04c572ac113db8fb28767`.
+- New ER predicts b+h+r exactly as E; only the regularizer centers r. Same
+  133,581 parameters, pi=.05, seed 20260930, kappa 0/1, no warm start/search.
+  Saved E/C/R/U reused with verified hashes, matching data, states/order/measures.
+- 123 tests and same-source repeated CPU gate PASS. Remote GPU **2**, selected
+  after confirming no compute process; busy GPUs 0/1/3 avoided. Two GPU fits complete.
+- ER max null copy/repeat **.018631945/.018336381**, active **.354965944/.349362813**.
+  Original response/zero-gap/generated-validity gates PASS.
+- Active best-validation mark TV: U .086640340, E .085479746, R .096924737,
+  **ER .085439410**. ER-E active delta −.000040335, entity SE .000098938;
+  this very small difference is not robust accuracy-superiority evidence.
+- Three-null mean TV ER-E **−.000336656**, ER-U **−.000073495**. Individual null
+  cells can worsen; no universal per-cell accuracy improvement.
+- **Fixed epoch 9 ER-E active TV +.000509623 (worse)**. Preserve this limitation:
+  the registered best-checkpoint screen passes but E accuracy improvement is
+  checkpoint-sensitive. ER-R active improvement remains at best and epoch 9.
+- 101 checksum comparisons, 20 checkpoint tensor identities, 80 aligned entity
+  groups, 2,240 statistics and paired factorial contrasts verified. 4,096 generated
+  entities / 94,662 nonfirst gaps valid. No held-out, later pi, new seed or baseline run.
+- Next proposed work: freeze U/E/ER and separately preregister seed/prevalence
+  replication; external sequential baselines and broader validity follow. This
+  broader experiment is proposed only. Do not keep modifying until a win or
+  reclassify this single-seed adaptive pilot as independent confirmation.
+
+**Previous v3 model result: v3 eight-fit pilot COMPLETE. R passes the original response
 criteria at pi=.05 but FAILS the registered accuracy screen against historical U.
 Do not promote this candidate to later prevalences or confirmation.**
 

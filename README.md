@@ -1,14 +1,17 @@
 # DataGeneration: CoF-SeqGen Research
 
-Latest [v3 trained pilot](docs/cs_saf/v3_pilot_v1_report_2026_09_16.md): **eight GPU fits
-complete, 106 tests and CPU checks PASS**. Explicit history correction plus a
-fixed centered-residual penalty passes the original active/null response gate
-at pi=.05, but active conditional mark-distribution accuracy remains worse than
-the saved ordinary-loss model. The registered accuracy screen FAILS; no broader
-stage or final method-success claim follows. [Evidence](docs/cs_saf/v3_pilot_v1_result.json).
-The [v4 comparison](docs/cs_saf/revision_v4_preregistration.md) is separately
-preregistered: preserve E forward and add the same residual penalty. It has not
-yet been implemented or run.
+Latest [v4 comparison](docs/cs_saf/v4_pilot_v1_report_2026_09_16.md): **two fresh GPU
+fits complete, 123 tests and CPU checks PASS**. Keeping E's raw prediction while
+applying the same centered-residual penalty passes the registered response and
+best-validation accuracy screens against E/U. E's active accuracy is nearly
+preserved, but its tiny best-checkpoint improvement reverses at fixed epoch 9.
+This supports broader registered replication, not multi-seed/external-baseline
+superiority. [Evidence](docs/cs_saf/v4_pilot_v1_result.json),
+[current research state](docs/cs_saf/STATUS.md).
+
+The previous [v3 result](docs/cs_saf/v3_pilot_v1_report_2026_09_16.md) is preserved:
+R passed response criteria but failed accuracy against U. No later prevalence,
+new seed, external baseline or held-out test has been run for ER.
 
 Earlier v1/v2 state follows:
 
