@@ -1,8 +1,54 @@
 # CS-SAF recoverable research state
 
-Updated 2026-09-16. Branch: `research/cs-saf`.
+Updated 2026-09-17. Branch: `research/cs-saf`.
 
-**Latest fixed U/E/ER replication COMPLETE: 30 fresh GPU fits at pi=.05,
+**Latest follow-up COMPLETE: 170 new internal GPU fits + 30 reused fits, 40 CPAR
+fits (128 epochs each), 200 matched internal generation evaluations, and
+40 saved-checkpoint gradient snapshots. All four prevalences and all lambda
+points are reported; the original replication FAIL is preserved.**
+
+[Full result and failure analysis](followup_v1_report_2026_09_17.md),
+[professor briefing](professor_brief_followup_2026_09_17.md),
+[verified evidence](followup_v1_result.json),
+[preregistration](followup_v1_preregistration.md).
+
+- Pi=.05/.10/.25/.50, two kappa conditions, five paired trials. No selected-lambda
+  expansion: all U/E/.003/.01/.03 cells completed regardless of scientific direction.
+- E improves active conditional grid TV vs U in 5/5 trials at each prevalence.
+  E adds 32 history coefficients; this is not a regularization-only contrast.
+- Lambda .003 passes the original mean-based diagnostic screen at all four
+  prevalences. Active E-relative means: −.0001548/−.0004432/−.0006499/−.0008660,
+  improving in 2/4/3/4 of five trials. Every descriptive 95% t interval includes zero.
+  Do not relabel these mean-screen PASS results as robust superiority.
+- Lambda .01 fails the same screen at 5/10/25%, passes at 50%; .03 worsens active
+  mean TV at every prevalence. Fixed epoch 9 preserves the strong-penalty cost.
+- Free generation reveals a remaining problem: .003 worsens active repeat-curve
+  L1 and gap-repeat MI error vs E in mean at every prevalence, and in 5/5 trials
+  for both metrics at 10/25/50%. Conditional oracle improvement is not an
+  established improvement to the complete sequence generator.
+- Every internal arm beats the pinned CPAR execution in 5/5 trials at each
+  prevalence on the three active-context primary generation metrics. U does too:
+  this does not attribute the CPAR-relative difference to the new penalty.
+  CPAR has 11,370 neural parameters vs E's 133,581; optimization and selection
+  budgets differ. The pinned continuous-target alignment convention is disclosed.
+  One external family does not establish general sequential SOTA superiority.
+- Shared-feature penalty gradients affect history indirectly, while direct
+  gap-route fit/penalty conflict is also present. The snapshot geometry does not
+  identify a unique historical cause or prove that feature separation will help.
+- 2,500 artifact checksum entries, 400 checkpoint identities, 1,600 aligned
+  array groups and all paired summaries verified. The versioned verifier
+  regenerates identical JSON. No missing snapshots. Two PNG/PDF figures reviewed.
+- Registration 0bbd049; internal sources fccc7bb (20), 926b505 (20), e408966 (130).
+  Gradient jobs use 926b505, CPAR uses e408966. Three early failed gradient
+  attempts and both implementation amendments are preserved. GPU availability
+  was checked before each launch; unrelated later GPU allocations sometimes
+  overlapped, so uninterrupted exclusivity or clean speed comparison is not claimed.
+- Same DGP/data seed42 and reused validation. No new-data confirmation, test or
+  real-data access. Proposed next step: fixed-checkpoint generation-error diagnosis,
+  followed by evidence-led changes and stronger external/independent confirmation.
+  These next steps have not been registered or run.
+
+**Historical fixed U/E/ER replication COMPLETE: 30 fresh GPU fits at pi=.05,
 five new paired training trials. ER response PASS 5/5; registered accuracy
 screen vs E FAIL. Conditional 90-fit prevalence expansion NOT STARTED.**
 
@@ -32,9 +78,10 @@ screen vs E FAIL. Conditional 90-fit prevalence expansion NOT STARTED.**
   6,720 entity statistics and all paired seed intervals/gates independently rechecked.
   Generated 61,440 entities / 1,413,672 nonfirst gaps valid. No missing epoch-9 states.
 - Reporting conclusion: repeatable history-head active benefit and residual-penalty
-  null benefit, but combined zero-active-cost requirement unfulfilled. Next bounded
-  penalty tradeoff study is proposed only, not registered or run. No new DGP,
-  external baseline, real-data or held-out test; no final method-superiority claim.
+  null benefit, but combined zero-active-cost requirement unfulfilled. At that stage the bounded
+  penalty study and external comparison were proposals; the separate follow-up
+  above has since completed them. New DGP, real-data and held-out testing remain
+  unexecuted; no final method-superiority claim.
 
 **Previous single-seed v4 comparison COMPLETE: retain E raw forward, add the same .01 centered
 residual penalty. Two fresh GPU fits; original response gates and registered

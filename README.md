@@ -1,6 +1,23 @@
 # DataGeneration: CoF-SeqGen Research
 
-Latest [fixed-model replication](docs/cs_saf/replication_v1_report_2026_09_16.md):
+Latest [lambda/prevalence/external follow-up](docs/cs_saf/followup_v1_report_2026_09_17.md)
+is **COMPLETE: 170 new internal fits, 30 reused fits, 40 CPAR fits and 200 matched
+internal generation evaluations**, across 5/10/25/50% prevalence and five paired trials.
+Lambda .003 passes the mean-based conditional-accuracy screen at all four
+prevalences, but its active paired intervals include zero and its generated
+gap–repeat errors worsen vs E. All internal arms, including U, beat this pinned
+CPAR implementation on the three active-context primary generation metrics;
+this is not evidence that the new regularizer provides that advantage.
+The report preserves the old FAIL, numerical results, gradient diagnosis,
+CPAR implementation/budget limitations and concrete next experiments.
+[Professor briefing](docs/cs_saf/professor_brief_followup_2026_09_17.md),
+[verified evidence](docs/cs_saf/followup_v1_result.json),
+[research status](docs/cs_saf/STATUS.md).
+No independent-data, held-out-test or real-data confirmation has been performed.
+
+Earlier stages below describe their status at the time of those experiments.
+
+Historical [fixed-model replication](docs/cs_saf/replication_v1_report_2026_09_16.md):
 **30 fresh GPU fits across five paired training trials, 135 tests and CPU checks PASS**.
 ER passes response criteria in 5/5 trials (U 2/5, E 1/5) and improves null TV vs E
 in 5/5. Its active TV is worse than E in 4/5, with mean change +.000047795, so the
@@ -15,8 +32,9 @@ its single-seed gate PASS motivated this replication. New trials are reported
 separately; no post-hoc seed selection or threshold relaxation is used.
 
 The previous [v3 result](docs/cs_saf/v3_pilot_v1_report_2026_09_16.md) is preserved:
-R passed response criteria but failed accuracy against U. No later prevalence,
-new seed, external baseline or held-out test has been run for ER.
+R passed response criteria but failed accuracy against U. At that stage no later prevalence,
+new seed, external baseline or held-out test had been run for ER; see the
+completed follow-up above for the subsequent experiments.
 
 Earlier v1/v2 state follows:
 
@@ -32,7 +50,7 @@ A separate [three-objective diagnostic](docs/cs_saf/loss_control_v1_report_2026_
 is complete: 82 tests and all CPU gates passed; six GPU fits reproduced the
 earlier U/B results exactly. U/A/B all fail the rare-null response bound. The
 added auxiliary and context balancing each increase that response, while
-whole-route removal worsens factual repeat loss. No later prevalence study has started.
+whole-route removal worsens factual repeat loss. No later prevalence study had started at that diagnostic stage.
 
 The subsequent [fixed-checkpoint decomposition](docs/cs_saf/route_decomposition_v1_report_2026_09_16.md)
 is complete: 92 tests, CPU/GPU checks, 12 existing snapshots, **zero new fits**.
@@ -41,7 +59,8 @@ removing only gap variation improves rare-null validation loss slightly but
 worsens train loss, and substantially harms active prediction. The registered
 both-split null-harm hypothesis is not supported. A new trained solution remains
 unproven. See the [model, preprocessing, related-work and claim audit](docs/cs_saf/research_claims_and_related_work_audit_2026_09_16.md)
-for the current contribution scope and actual baseline execution status.
+for the contribution audit at that stage; the latest follow-up report updates
+the external execution status.
 
 This repository contains the reproducible research code for CoF-SeqGen and its
 support-aligned autoregressive extension (SAF). The `main` branch records the
