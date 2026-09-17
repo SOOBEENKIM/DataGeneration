@@ -90,7 +90,10 @@ def oracle_arrays(oracle, data, kappa, *, binned_history=False):
 def inverse_cdf(probabilities, uniforms):
     # Normalize like Categorical(probs=...), then pin the terminal CDF to one.
     p = probabilities.double(); p = p / p.sum(-1, keepdim=True)
-    cumulative = p.cumsum(-1); cumulative[..., -1] = 1.
+    # Pinned torch 2.1.2 rejects CUDA cumsum under deterministic algorithms.
+    # The short float64 CDF scan is deterministic on CPU; probabilities/tapes
+    # and all registered sampling distributions remain unchanged.
+    cumulative = p.cpu().cumsum(-1).to(p.device); cumulative[..., -1] = 1.
     return (uniforms.double()[..., None] >= cumulative).sum(-1).long()
 
 

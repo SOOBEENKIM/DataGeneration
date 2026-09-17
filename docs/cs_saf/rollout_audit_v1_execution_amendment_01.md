@@ -1,0 +1,5 @@
+# Technical execution amendment 01
+
+The first GPU attempt, source `ad97c240d7785f7d5c581485bf80c3f46d8153ec`, stopped on the first checkpoint's first controlled rollout: pinned PyTorch 2.1.2 does not implement CUDA `cumsum` with deterministic algorithms enabled. CPU gates had passed; zero full checkpoint jobs completed. The saved validation/native partial arrays were not used to change any scientific comparison or threshold. Preserve the failed attempt under `artifacts/cs_saf/rollout_audit_v1/technical_failure_1/`.
+
+Perform only the short float64 cumulative probability scan on CPU and transfer its CDF back to the assigned GPU. Keep model inference, categorical probabilities, normalization, uniform tapes, inverse-CDF rule, numeric tapes, panel identities, all seeds, every diagnostic arm and publication screen unchanged. Do not disable deterministic execution. Commit this correction, repeat the CPU gate, add a functional GPU rollout check, then restart the complete audit from the beginning. This is a runtime compatibility correction, not a scientific revision.
