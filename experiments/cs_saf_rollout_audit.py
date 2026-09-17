@@ -382,6 +382,7 @@ def job(pi, kappa, trial, candidate, device, cell, source):
 def main():
     parser = argparse.ArgumentParser(); parser.add_argument('--device', default='cpu')
     parser.add_argument('--cpu-gate', action='store_true')
+    parser.add_argument('--gpu-gate', action='store_true')
     args = parser.parse_args(); c = contract(); source = frozen_source()
     torch.set_num_threads(1); torch.set_num_interop_threads(1)
     out = ROOT/c['output']; out.mkdir(parents=True, exist_ok=True)
@@ -397,18 +398,46 @@ def main():
         return
     os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
     _seed_everything(c['panel_seed'])
+    torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
     device = torch.device(args.device)
     if device.type == 'cuda':
         torch.cuda.set_device(device); torch.cuda.set_per_process_memory_fraction(.25, device)
+    if args.gpu_gate:
+        if device.type != 'cuda': raise ValueError('GPU gate requires CUDA')
+        payload, _, panel, _ = load_cell(.05, 1)
+        small = select(panel, torch.tensor([0, 1, 2, 128, 129, 130]))
+        errors = {}
+        for candidate in c['candidates']:
+            model = make_model(payload, candidate, device, 0)
+            cp = torch.load(folder_for(.05, 1, 0, candidate)/'checkpoint_best.pt', map_location='cpu', weights_only=False)
+            model.load_state_dict(cp['model_state']); model.eval(); before = state_digest(model)
+            oracle = make_oracle(model, 1)
+            reference = np.full((2, len(model.support.representatives)), 1/len(model.support.representatives))
+            for arm in c['rollout_arms']:
+                gen, during = rollout(model, small, arm, c['sampling_seeds'][0], device)
+                after = evaluate_histories(model, gen, oracle, 1, reference, device)
+                mask = gen['valid_mask'].numpy().copy(); mask[:, 0] = False
+                error = float(np.max(np.abs(during[mask]-after['repeat'][mask])))
+                if error > c['numerical_identity_atol']: raise ValueError('GPU probability replay mismatch')
+                errors[candidate+'/'+arm] = error
+            if state_digest(model) != before: raise ValueError('GPU gate mutated model')
+        write_json(out/'gpu_gate.json', {'PASS': True, 'source_commit': source, 'config_sha256': CONFIG_SHA,
+            'functional_sequences_per_arm': 6, 'TF32': False, 'max_probability_errors': errors})
+        print(json.dumps(errors), flush=True)
+        return
     if not (out/'cpu_gate.json').exists() or not json.loads((out/'cpu_gate.json').read_text())['PASS']:
         raise RuntimeError('CPU gate must pass before scientific execution')
     gate = json.loads((out/'cpu_gate.json').read_text())
     if gate['source_commit'] != source: raise RuntimeError('CPU gate source mismatch')
+    if device.type == 'cuda':
+        gate = json.loads((out/'gpu_gate.json').read_text())
+        if not gate['PASS'] or gate['source_commit'] != source: raise RuntimeError('GPU gate source mismatch')
     write_json(out/'execution.json', {'source_commit': source, 'config_sha256': CONFIG_SHA,
         'python': platform.python_version(), 'torch': torch.__version__, 'numpy': np.__version__,
         'device': str(device), 'CUDA_VISIBLE_DEVICES': os.environ.get('CUDA_VISIBLE_DEVICES'),
         'gpu_name': torch.cuda.get_device_name(device) if device.type == 'cuda' else None,
-        'status': 'RUNNING', 'new_fits': 0, 'test_accessed': False})
+        'TF32': False, 'status': 'RUNNING', 'new_fits': 0, 'test_accessed': False})
     for pi in c['prevalences']:
         for kappa in c['kappas']:
             cell = load_cell(pi, kappa)
