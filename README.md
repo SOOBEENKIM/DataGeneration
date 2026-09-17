@@ -1,6 +1,27 @@
 # DataGeneration: CoF-SeqGen Research
 
-Latest [fixed-checkpoint generation diagnosis](docs/cs_saf/rollout_audit_v1_report_2026_09_17.md)
+**Latest research is on `research/cs-saf`; default `main` remains the earlier SAF base.**
+Code, preregistrations, reports and numerical evidence are versioned. Large data,
+checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
+
+Latest [cross-history replay and joint-oracle diagnosis](docs/cs_saf/replay_oracle_v1_report_2026_09_17.md)
+is **COMPLETE: 120 saved models, 2,160 cross-history evaluations, 153,600 oracle
+sequences, zero new fits**. The exact online oracle also loses gap–repeat fidelity
+when observed gaps are forced and only marks are regenerated. Thus the earlier
+OBS result does not uniquely identify a neural history-feedback defect.
+On exactly the same generated histories, L003 still has worse repeat-curve
+calibration than E at all four prevalences in each of five paired model trials.
+Predictor differences are more consistent than source-history differences.
+The report preserves all contrary results, quantifies the null-benefit/active-cost
+tradeoff, and proposes a bounded calibration comparison; that new model is not
+registered or trained. GPU execution has finished.
+[Professor briefing](docs/cs_saf/professor_brief_replay_oracle_2026_09_17.md),
+[numerical evidence](docs/cs_saf/replay_oracle_v1_result.json),
+[all binwise contrasts](docs/cs_saf/replay_oracle_v1_binwise.json),
+[preregistration](docs/cs_saf/replay_oracle_v1_preregistration.md),
+[recoverable status](docs/cs_saf/STATUS.md).
+
+Previous [fixed-checkpoint generation diagnosis](docs/cs_saf/rollout_audit_v1_report_2026_09_17.md)
 is **COMPLETE: 120 saved models, zero new fits, 368,640 prefix-anchored diagnostic
 sequences**. Replacing real mark histories with recursively generated marks while
 retaining observed gaps/values increases the paired expected repeat-curve error:

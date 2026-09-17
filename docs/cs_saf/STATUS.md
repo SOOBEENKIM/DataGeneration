@@ -2,7 +2,47 @@
 
 Updated 2026-09-17. Branch: `research/cs-saf`.
 
-**Latest fixed-checkpoint rollout audit COMPLETE: 120 saved U/E/L003 models,
+**Latest cross-history/joint-oracle diagnosis COMPLETE. 120 fixed models,
+2,160 cross-history evaluations, 153,600 oracle sequences, zero new fits.
+14 CPU tests, GPU replay gate and independent full-array arithmetic verification PASS.
+GPU process finished; all registered outcomes preserved. Default main is still
+`de8fa70` and does not contain this latest CS-SAF research.**
+
+[Full report and tradeoff explanation](replay_oracle_v1_report_2026_09_17.md),
+[professor briefing](professor_brief_replay_oracle_2026_09_17.md),
+[complete contrast evidence](replay_oracle_v1_result.json),
+[all binwise calibration evidence](replay_oracle_v1_binwise.json),
+[independent verification](replay_oracle_v1_verification.json),
+[preregistration](replay_oracle_v1_preregistration.md).
+
+- Base `30f2d37`; registration `5eb7217`; scientific execution `6e022a7`.
+  Same four prevalences, both kappas, five paired model trials and three tapes.
+- Corrected interpretation: even exact online oracle marks lose joint fidelity
+  when forced onto the observed gap path. Active FIX_CONT minus JOINT_CONT L1
+  is +.0228 to +.0347, positive in every sampling trial at each prevalence.
+  Binned controls agree. Oracle trials are sampling repeats, not learned models.
+  The old numerical observation remains; it cannot uniquely diagnose a neural
+  mark-history defect or exonerate the gap component.
+- Cross-replay: same-history predictor F for L003-E is positive in 5/5 model
+  trials at every prevalence for both OBS and FULL. FULL F +.00266 to +.00299.
+  Source-history H lacks the registered three-prevalence consistency. This is
+  an algebraic decomposition, not a unique causal attribution.
+- The active repeat curve is flatter with L003 even on identical E histories:
+  more short-gap underprediction and long-gap overprediction in mean. E itself
+  also has calibration errors. Full binwise tables include all source/target/null cells.
+- Tradeoff remains: three-null copy range improves in 5/5 trials per prevalence,
+  while native active repeat L1 costs 2.6/6.7/11.7/11.5% and MI error costs
+  7.8/9.1/13.2/18.7% relative to E. Active conditional TV intervals include zero.
+  Retrospective required margins are not justified acceptance thresholds or PASS.
+  Scientific diagnosis may proceed despite failures; prior ER FAIL is unchanged.
+- Next bounded proposal: E/L003 with/without the same train-only repeat-probability
+  calibration, checking joint generation and null-response costs, then independent
+  data/seed confirmation if promising. NOT registered or trained. No automatic fits.
+- Raw evidence lives in the separate `research-cs-saf-replay-oracle` worktree under
+  `artifacts/cs_saf/replay_oracle_v1/`, linked into the original research worktree.
+  Git versions code/contracts/verified summaries, not a full raw-checkpoint backup.
+
+**Previous fixed-checkpoint rollout audit COMPLETE: 120 saved U/E/L003 models,
 zero new fits, 368,640 prefix-anchored diagnostic sequences, 1,440 input/output
 checksum checks. Registered descriptive diagnostic screen PASS. GPU returned.**
 
@@ -34,7 +74,8 @@ checksum checks. Registered descriptive diagnostic screen PASS. GPU returned.**
   amendments, with original tolerances and scientific comparisons retained.
 - Next proposed diagnostic: cross-replay shared generated histories and include
   a proper joint-oracle rollout control before choosing a bounded training fix.
-  These next experiments are not registered or executed. Current request finished.
+  These next experiments subsequently completed above. Their joint-oracle controls
+  qualify the interpretation of this historical audit; its original numbers remain.
 
 **Previous follow-up COMPLETE: 170 new internal GPU fits + 30 reused fits, 40 CPAR
 fits (128 epochs each), 200 matched internal generation evaluations, and
@@ -316,36 +357,29 @@ V1 execution retained below:
 
 Read these files in order when recovering from a missing conversation:
 
-1. [Latest v3 trained result and limits](v3_pilot_v1_report_2026_09_16.md)
-   and [evidence](v3_pilot_v1_result.json).
-2. [V3 preregistration](revision_v3_preregistration.md).
-3. [Latest decomposition and limits](route_decomposition_v1_report_2026_09_16.md),
-   [evidence](route_decomposition_v1_result.json), and
-   [comprehensive research/claim audit](research_claims_and_related_work_audit_2026_09_16.md).
-4. [Decomposition preregistration](route_decomposition_v1_preregistration.md).
-5. [Three-objective result and limits](loss_control_v1_report_2026_09_16.md)
-   and [evidence](loss_control_v1_result.json).
-6. [Loss diagnostic preregistration](loss_control_v1_preregistration.md).
-7. [V2 pilot result](v2_pilot_v1_report_2026_09_16.md) and [evidence](v2_pilot_v1_result.json).
-8. [V2 preregistration and implementation contract](revision_v2_preregistration.md).
-9. [Prior checkpoint analysis](checkpoint_forensics_v1_report_2026_09_16.md)
-   and [evidence](checkpoint_forensics_v1_result.json).
-10. [V1 pilot report](pilot_v1_report_2026_09_16.md) and [evidence](pilot_v1_result.json).
-11. [Frozen v1 pilot contract](pilot_execution_contract_v1.md).
-12. [Research protocol](research_protocol_v1.md).
-13. [Exact architecture and oracle contract](architecture_and_oracle_v1.md).
-14. [Earlier oracle-only result](oracle_audit_v1_report_2026_09_16.md).
+1. [Latest cross-history/oracle diagnosis and tradeoff](replay_oracle_v1_report_2026_09_17.md),
+   [professor briefing](professor_brief_replay_oracle_2026_09_17.md), and numerical evidence linked above.
+2. [Previous rollout audit](rollout_audit_v1_report_2026_09_17.md), whose OBS
+   interpretation is qualified by the latest proper joint-oracle controls.
+3. [Lambda/prevalence/external baseline study](followup_v1_report_2026_09_17.md).
+4. [Fixed U/E/ER multi-seed replication](replication_v1_report_2026_09_16.md),
+   [v4 discovery](v4_pilot_v1_report_2026_09_16.md), and
+   [v3 pilot](v3_pilot_v1_report_2026_09_16.md).
+5. [Model, preprocessing and related-work audit](research_claims_and_related_work_audit_2026_09_16.md).
+   Its then-unexecuted external comparison has since completed in the follow-up.
+6. [Route decomposition](route_decomposition_v1_report_2026_09_16.md),
+   [loss controls](loss_control_v1_report_2026_09_16.md),
+   [v2](v2_pilot_v1_report_2026_09_16.md),
+   [checkpoint forensics](checkpoint_forensics_v1_report_2026_09_16.md),
+   [v1](pilot_v1_report_2026_09_16.md), and their linked registrations/evidence.
+7. [Original architecture/oracle contract](architecture_and_oracle_v1.md),
+   [original research protocol](research_protocol_v1.md), and
+   [oracle-only signal audit](oracle_audit_v1_report_2026_09_16.md).
 
-**Next hypothesis: retain E's uncentered forward parameterization and apply the
-same centered-residual penalty only in the objective.** E has better active
-accuracy than C, while R improves C and removes null response. The missing
-E+penalty combination could separate forward parameterization from functional
-regularization without changing capacity or coefficient. It is proposed, not
-registered, implemented or trained. Do not auto-run a fallback after the failed
-accuracy screen or tune lambda from these results. A new contract must fix
-comparators, budget, accuracy/response gates and stopping rules before execution.
-The present R candidate does not advance. Multiple seeds, prevalence and fair
-external sequential baselines remain required before a method-success claim.
+The former next hypothesis, retaining E forward while penalizing only the centered
+residual, was subsequently implemented as ER and tested in discovery, replication
+and the lambda follow-up. It is historical, not an unexecuted next task. The latest
+bounded proposal and remaining independent confirmation are stated at the top.
 
 Runtime roots relative to this CS-SAF worktree:
 

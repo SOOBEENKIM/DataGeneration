@@ -1,0 +1,53 @@
+{
+  "PASS": true,
+  "config_sha256": "65ebc689fea1df2d9c7714d248f80a02ee32761299d8079fa796d4ed39b4b3ed",
+  "source_commit": "6e022a7373d11035da4ec2ef64ec62e0b6794443",
+  "compact_result_sha256": "79fd9ffc861a1c18fb25ff164694002d6ebcf452319d4af08121397ace9e7572",
+  "verifier_sha256": "07f78e8945d343f2363995b7497f5ab919a0b54c6f664230cbfc40a02c8ad44d",
+  "binwise_result_sha256": "389882b8b41f1f48b7b540b1aeaa858118d2533c0de35f3a2e2d23bcb91bd02a",
+  "joint_sampler_support_prevalence": 0.05,
+  "counts": {
+    "output_checksums": 160,
+    "parent_checksums": 480,
+    "checkpoint_file_and_state_identities": 120,
+    "replay_group_metric_checks": 4320,
+    "oracle_group_metric_checks": 2400,
+    "oracle_replay_arrays": 600,
+    "decomposition_statistic_groups": 192,
+    "oracle_statistic_groups": 480,
+    "binwise_statistic_groups": 4480,
+    "tradeoff_statistic_groups": 16
+  },
+  "maximum_independent_metric_error": 1.2212453270876722e-15,
+  "joint_sampler_moment_checks": {
+    "JOINT_CONT/context_0": {
+      "PASS": true,
+      "max_error": 0.0022568044354823735,
+      "max_error_over_tolerance": 0.1953670318652602,
+      "features": 63,
+      "entities": 2048
+    },
+    "JOINT_CONT/context_1": {
+      "PASS": true,
+      "max_error": 0.0035798891129016908,
+      "max_error_over_tolerance": 0.19428012726956237,
+      "features": 63,
+      "entities": 2048
+    },
+    "JOINT_BIN/context_0": {
+      "PASS": true,
+      "max_error": 0.0022568044354823735,
+      "max_error_over_tolerance": 0.1845028441360197,
+      "features": 63,
+      "entities": 2048
+    },
+    "JOINT_BIN/context_1": {
+      "PASS": true,
+      "max_error": 0.005139238911288702,
+      "max_error_over_tolerance": 0.2710819250365334,
+      "features": 63,
+      "entities": 2048
+    }
+  },
+  "scope": "All stored arrays/metrics and decompositions; independent histogram/MI arithmetic, same filter replay plus separate dense-recursion/factorization CPU tests. No new fitting."
+}

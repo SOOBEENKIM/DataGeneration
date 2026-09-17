@@ -1,5 +1,7 @@
 # CS-SAF 저장 모델의 조건부 정확도–생성 품질 차이 진단
 
+> 후속 진단 완료: [동일 이력 교차 평가와 joint-oracle 결과](replay_oracle_v1_report_2026_09_17.md)를 함께 읽어야 한다. 정확한 online oracle도 gap 경로를 강제하면 반복관계가 왜곡됐다. 아래의 역사적 수치는 유지하지만, OBS의 증가만으로 신경망 mark 이력 결함을 단정할 수 없다. 다음 진단은 더 이상 미실행 상태가 아니다.
+
 2026-09-17. 기준 버전 `65be9bdee506dfee8245f05e711840638b1f559e`. [사전등록](rollout_audit_v1_preregistration.md) · [수치 근거](rollout_audit_v1_result.json) · [별도 산술 검증](rollout_audit_v1_verification.json) · [교수님 보고용 요약](professor_brief_rollout_audit_2026_09_17.md).
 
 **원인 범위를 좁히는 진단 근거를 확보했다.** 실제 gap 경로와 수치값을 유지한 상태에서도, 실제 mark 이력을 모델이 생성한 mark 이력으로 바꾸는 단계에서 E−U 및 L003−E의 반복 관계 오차 차이가 증가했다. 사전등록한 일관성·크기 기준은 E−U에서 5/10/25%, L003−E에서 네 비율 모두 통과했다. **이는 mark 이력의 재귀적 사용에 대한 민감도를 확인한 결과이며, 유일한 인과 원인 규명이나 새 모델의 학습 성공이 아니다.** 기존 실패와 비교 결과는 유지한다.
