@@ -1,11 +1,13 @@
 """Verify the complete registered audit before computing its descriptive screens."""
 from __future__ import annotations
 import json
+import hashlib
+import copy
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import numpy as np
-from experiments.cs_saf_rollout_audit import ROOT, CONFIG_SHA, contract, write_json, sha256
+from experiments.cs_saf_rollout_audit import ROOT, CONFIG_SHA, contract, write_json, sha256, folder_for
 
 
 def statistics(values):
@@ -29,7 +31,13 @@ def main():
     c = contract(); root = ROOT/c['output']
     execution = json.loads((root/'execution.json').read_text())
     if execution['status'] != 'COMPLETE': raise RuntimeError('scientific audit incomplete')
-    reports = {}; checksums = 0; raw = []
+    cpu_gate = json.loads((root/'cpu_gate.json').read_text())
+    gpu_gate = json.loads((root/'gpu_gate.json').read_text())
+    for gate in (cpu_gate, gpu_gate):
+        if not gate['PASS'] or gate['source_commit'] != execution['source_commit'] or gate['config_sha256'] != CONFIG_SHA:
+            raise ValueError('gate/source/config mismatch')
+    if sha256(root/'cpu_gate.log') != cpu_gate['log_sha256']: raise ValueError('CPU gate log changed')
+    reports = {}; checksums = 0; input_checksums = 0; raw = []; reproduction_errors = []
     for pi in c['prevalences']:
         for kappa in c['kappas']:
             panel = None
@@ -43,6 +51,16 @@ def main():
                         if sha256(path/name) != digest: raise ValueError('changed output '+str(path/name))
                         checksums += 1
                     report = json.loads((path/'diagnosis.json').read_text())
+                    original = folder_for(pi, kappa, trial, candidate)
+                    for name, digest in report['input_artifact_sha256'].items():
+                        if sha256(original/name) != digest: raise ValueError('changed input '+str(original/name))
+                        input_checksums += 1
+                    old = json.loads((original/'conditional_accuracy.json').read_text())['checkpoints']['best']
+                    for label in ('0', '1'):
+                        for metric in ('grid_mark_TV', 'grid_repeat_L1', 'factual_mark_TV'):
+                            error = abs(report['TF_all'][label]['conditional'][metric]-old['splits']['validation']['groups'][label]['metrics'][metric]['mean'])
+                            if error > c['numerical_identity_atol']: raise ValueError('legacy conditional reproduction failed')
+                            reproduction_errors.append(error)
                     if panel is not None and report['panel_entity_ids'] != panel: raise ValueError('unpaired panel')
                     panel = report['panel_entity_ids']
                     if len(report['rollouts']) != 12 or report['parameters_changed'] or report['test_accessed']:
@@ -104,13 +122,33 @@ def main():
             screen[pair]['stage_'+name] = directions
     result = {'version': c['version'], 'base_commit': c['base_commit'], 'source_commit': execution['source_commit'],
         'config_sha256': CONFIG_SHA, 'new_fits': 0, 'models': len(reports), 'rollout_sequences': len(reports)*256*12,
-        'verified_output_checksums': checksums, 'execution': execution,
-        'cpu_gate': json.loads((root/'cpu_gate.json').read_text()), 'technical_checks': 'PASS',
+        'verified_output_checksums': checksums, 'verified_input_checksums': input_checksums,
+        'legacy_conditional_reproduction_max_absolute_error': max(reproduction_errors), 'execution': execution,
+        'cpu_gate': cpu_gate, 'gpu_gate': gpu_gate,
+        'technical_amendments': ['deterministic_CPU_CDF_scan', 'disable_TF32_for_consistent_GRU_replay'],
+        'technical_checks': 'PASS',
         'publication_screen': 'PASS' if screen_passes else 'FAIL', 'passing_screens': screen_passes,
         'screens': screen, 'paired_contrasts': contrasts,
         'uncertainty': 'five paired model trials; three tapes averaged within trial; descriptive intervals; no multiplicity adjustment; same DGP data',
         'raw_reports': raw}
     write_json(root/'summary.json', result)
+    compact = copy.deepcopy(result)
+    for report in compact['raw_reports']:
+        ids = report.pop('panel_entity_ids')
+        report['panel_entity_ids_sha256'] = hashlib.sha256(json.dumps(ids, separators=(',', ':')).encode()).hexdigest()
+        report['panel_entities'] = len(ids)
+        for domain in ('TF_all', 'TF_panel', 'TF_quantized_panel', 'native'):
+            for group in report[domain].values():
+                for key in list(group):
+                    if key.startswith('step_'): del group[key]
+        for arm in report['rollouts'].values():
+            for group in arm.values():
+                for key in list(group):
+                    if key.startswith('step_'): del group[key]
+    compact['full_step_and_entity_evidence'] = {'local_summary': str(root/'summary.json'), 'sha256': sha256(root/'summary.json'),
+        'omitted_from_compact': ['per-step profiles', 'panel entity ID strings'],
+        'per_checkpoint_raw_files': ['diagnosis.json', 'validation_scores.npz', 'native_probability_audit.npz', 'panel_rollouts.pt']}
+    write_json(root/'compact_result.json', compact)
     print(json.dumps({k: result[k] for k in ('models', 'rollout_sequences', 'verified_output_checksums', 'technical_checks', 'publication_screen', 'passing_screens')}, indent=2))
 
 

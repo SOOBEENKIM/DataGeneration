@@ -1,6 +1,19 @@
 # DataGeneration: CoF-SeqGen Research
 
-Latest [lambda/prevalence/external follow-up](docs/cs_saf/followup_v1_report_2026_09_17.md)
+Latest [fixed-checkpoint generation diagnosis](docs/cs_saf/rollout_audit_v1_report_2026_09_17.md)
+is **COMPLETE: 120 saved models, zero new fits, 368,640 prefix-anchored diagnostic
+sequences**. Replacing real mark histories with recursively generated marks while
+retaining observed gaps/values increases the paired expected repeat-curve error:
+the preregistered descriptive screen passes for E-U at 3/4 prevalences and
+L003-E at 4/4. This identifies a history-feedback sensitivity, not a unique causal
+mechanism or an improved trained model. Hybrid gap/mark paths, reused data and
+uncertain seed intervals limit the interpretation. All contrary results and
+technical amendments are preserved. GPU execution has finished.
+[Professor briefing](docs/cs_saf/professor_brief_rollout_audit_2026_09_17.md),
+[verified evidence](docs/cs_saf/rollout_audit_v1_result.json),
+[preregistration](docs/cs_saf/rollout_audit_v1_preregistration.md).
+
+The preceding [lambda/prevalence/external follow-up](docs/cs_saf/followup_v1_report_2026_09_17.md)
 is **COMPLETE: 170 new internal fits, 30 reused fits, 40 CPAR fits and 200 matched
 internal generation evaluations**, across 5/10/25/50% prevalence and five paired trials.
 Lambda .003 passes the mean-based conditional-accuracy screen at all four

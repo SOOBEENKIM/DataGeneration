@@ -1,0 +1,29 @@
+{
+  "PASS": true,
+  "audit_source_commit": "fadf2722bfcc9b12d1b2c33cc2d26833c12517fb",
+  "verification_source_sha256": "7cbb88f75b5b366da640f46447e04d5a8aa0338c215317f483441b1e91a7fba2",
+  "compact_result_sha256": "c0bf61a10da984c9b591b9deed6f58db1aec0cf5f6eebb0bc503f4b8e85dddb4",
+  "full_summary_sha256": "b0ab4782ce649106d2cef5ac753fa71b6de612034c49765a44b5321f7d5e4d9f",
+  "entity_array_groups_checked": 120,
+  "signed_decompositions_and_curves_checked": 3840,
+  "maximum_signed_reconstruction_error": 0.0,
+  "independently_reconstructed_mark_feedback_screens": {
+    "E_minus_U": {
+      "eligible_prevalences": [
+        0.05,
+        0.1,
+        0.25
+      ],
+      "PASS": true
+    },
+    "L003_minus_E": {
+      "eligible_prevalences": [
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "PASS": true
+    }
+  }
+}

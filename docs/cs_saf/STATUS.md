@@ -2,7 +2,41 @@
 
 Updated 2026-09-17. Branch: `research/cs-saf`.
 
-**Latest follow-up COMPLETE: 170 new internal GPU fits + 30 reused fits, 40 CPAR
+**Latest fixed-checkpoint rollout audit COMPLETE: 120 saved U/E/L003 models,
+zero new fits, 368,640 prefix-anchored diagnostic sequences, 1,440 input/output
+checksum checks. Registered descriptive diagnostic screen PASS. GPU returned.**
+
+[Full diagnosis and limits](rollout_audit_v1_report_2026_09_17.md),
+[professor briefing](professor_brief_rollout_audit_2026_09_17.md),
+[compact numerical evidence](rollout_audit_v1_result.json),
+[local-before-execution preregistration](rollout_audit_v1_preregistration.md).
+
+- Base `65be9bd`; registration `fd78ae5`; final execution source `fadf272`.
+  Four prevalences, both kappas, five paired model trials, three sampling tapes.
+- With observed gaps/values held fixed, replacing real marks with recursively
+  generated mark histories increases paired expected repeat-curve L1. The
+  registered materiality/consistency screen passes E-U at 5/10/25% (not 50%),
+  and L003-E at all four prevalences. The 25% stage-effect t intervals include zero;
+  this is a descriptive exploratory screen, not confirmatory significance.
+- Full-mark TV, grid repeat error and factual TV all improve in active mean for
+  both pairs at all prevalences: the endpoint-mismatch screen does not pass.
+  Yet L003 worsens aggregate real-history repeat-curve calibration at 25/50%.
+- Quantization, own-gap and own-value stages do not pass the cross-prevalence
+  screen. Some individual effects remain; these components are not exonerated.
+  Null controls have mixed effects; active-exclusive sensitivity is not proven.
+- Observed-gap/generated-mark paths are hybrid inputs, not an exact joint-DGP
+  causal control or an exact conditional generator given all future gaps.
+  Model-specific history occupancy remains confounded with the conditional map.
+  No unique root cause, repaired model, new external advantage or independent
+  data confirmation is claimed. The original ER accuracy FAIL remains unchanged.
+- CPU 9 tests, GPU 12 functional comparisons and all 120 scientific jobs pass.
+  First CUDA cumsum failure and TF32 replay correction are recorded in two
+  amendments, with original tolerances and scientific comparisons retained.
+- Next proposed diagnostic: cross-replay shared generated histories and include
+  a proper joint-oracle rollout control before choosing a bounded training fix.
+  These next experiments are not registered or executed. Current request finished.
+
+**Previous follow-up COMPLETE: 170 new internal GPU fits + 30 reused fits, 40 CPAR
 fits (128 epochs each), 200 matched internal generation evaluations, and
 40 saved-checkpoint gradient snapshots. All four prevalences and all lambda
 points are reported; the original replication FAIL is preserved.**
@@ -44,9 +78,9 @@ points are reported; the original replication FAIL is preserved.**
   was checked before each launch; unrelated later GPU allocations sometimes
   overlapped, so uninterrupted exclusivity or clean speed comparison is not claimed.
 - Same DGP/data seed42 and reused validation. No new-data confirmation, test or
-  real-data access. Proposed next step: fixed-checkpoint generation-error diagnosis,
-  followed by evidence-led changes and stronger external/independent confirmation.
-  These next steps have not been registered or run.
+  real-data access. The fixed-checkpoint generation diagnosis is now complete
+  above; evidence-led model changes and stronger independent confirmation remain
+  unexecuted.
 
 **Historical fixed U/E/ER replication COMPLETE: 30 fresh GPU fits at pi=.05,
 five new paired training trials. ER response PASS 5/5; registered accuracy
