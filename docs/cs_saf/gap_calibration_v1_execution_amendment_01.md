@@ -1,0 +1,7 @@
+# Technical amendment 01 — metadata storage types, 2026-09-20
+
+Registration `db76b85`, first implementation `b9251b6`. The first two workers (.05/k0/trial0, Ugap/Egap) completed fitting, conditional evaluation, and their first generation, then stopped at the metric-state equality check before saving comparison.json. The scheduler dispatched no further work.
+
+Reconstructing all three group metric states from the unchanged train data showed identical serialized values. Python dataclass state holds gap_bin_edges and mark_groups as tuples; historical JSON reloads them as lists. The direct Python dictionary comparison incorrectly treated these storage types as different scientific definitions. Quantile boundaries, group mappings, scales and every other serialized field were exactly identical.
+
+Correction: compare lossless JSON-normalized metric states. Add a regression that a JSON round trip passes and an actual boundary change still fails. No model, constraint, optimizer, regularization, binning, seed, target, metric, endpoint, budget or decision rule changes. Preserve the entire original output in artifacts/cs_saf/gap_calibration_v1_attempt01_failed. Recommit the implementation, rerun same-source CPU/GPU gates and restart the fixed grid. Verify identical fitted parameters, full checkpoint tensors, conditional endpoints and previously saved first generated arrays for both restarted fits. Report 80 unique completed calibrations plus two technical repeats; do not hide the failed attempt or count it as new independent evidence.

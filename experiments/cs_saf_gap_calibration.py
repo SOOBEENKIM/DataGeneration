@@ -45,6 +45,11 @@ def verify(folder):
     return m
 
 
+def metric_states_equal(actual,expected):
+    """Metric tuples become JSON arrays on disk; compare lossless JSON forms."""
+    return json.loads(json.dumps(actual,allow_nan=False))==json.loads(json.dumps(expected,allow_nan=False))
+
+
 def old_digest(model):return tensor_digest({k:v for k,v in model.state_dict().items() if k not in NEW_BUFFERS})
 
 
@@ -161,7 +166,7 @@ def fit_job(pi,k,trial,parent_name,device):
             old=repeats.folder_for(pi,k,trial)/parent_name/f'repeat_{r}';repeats.verify(old)
             previous=json.loads((old/'comparison.json').read_text())
             for g in metrics:
-                if metrics[g]['train_metric_state']!=previous['metrics'][g]['train_metric_state']:raise ValueError('metric definitions changed')
+                if not metric_states_equal(metrics[g]['train_metric_state'],previous['metrics'][g]['train_metric_state']):raise ValueError('metric definitions changed')
             write_json(folder/'comparison.json',dict(prevalence=pi,kappa=k,trial=trial,model=name,repeat=r,
                 sampling_seed=seed,sampling_plan_sha256=hashlib.sha256(positions.tobytes()).hexdigest(),metrics=metrics,
                 parent_reference_manifest_sha256=sha256(old/'COMPLETE.json'),test_accessed=False))
@@ -169,6 +174,21 @@ def fit_job(pi,k,trial,parent_name,device):
         if sha256(Path(provenance['checkpoint_path']))!=provenance['checkpoint_sha256']:raise ValueError('parent checkpoint changed')
         reloaded=adapter(control,payload,parent_name,device);reloaded.load_state_dict(torch.load(out/'checkpoint_gap_calibrated.pt',map_location='cpu')['model_state'])
         if state_digest(reloaded)!=before:raise ValueError('checkpoint reload failed')
+        archived=ROOT/'artifacts/cs_saf/gap_calibration_v1_attempt01_failed'/out.relative_to(OUTPUT)
+        if (archived/'fit.json').exists():
+            oldfit=json.loads((archived/'fit.json').read_text())
+            for key in ('delta','groups'):
+                if fit[key]!=oldfit[key]:raise ValueError('technical rerun changed fitted offsets')
+            oldcp=torch.load(archived/'checkpoint_gap_calibrated.pt',map_location='cpu')
+            if tensor_digest(oldcp['model_state'])!=before:raise ValueError('technical rerun changed checkpoint')
+            for saved_path in sorted(archived.glob('repeat_*/generated_sample.pt')):
+                previous=torch.load(saved_path,map_location='cpu')['sample']
+                current=torch.load(out/saved_path.relative_to(archived),map_location='cpu')['sample']
+                repeats.compare_samples(previous,current)
+            for filename in ('conditional_accuracy.json','control_conditional_accuracy.json'):
+                if json.loads((archived/filename).read_text())!=json.loads((out/filename).read_text()):raise ValueError('technical rerun changed conditional results')
+            write_json(out/'technical_rerun_identity.json',dict(parameters_identical=True,checkpoint_identical=True,
+                conditional_endpoints_identical=True,first_saved_generation_identical=True,archived=str(archived)))
         write_json(out/'execution.json',dict(source_commit=source,device=str(device),seconds=time.monotonic()-started,
             new_fits=1,new_generated_datasets=5,all_old_tensors_unchanged=True,checkpoint_reload=True,
             architecture=model.architecture_contract(),matmul_allow_tf32=torch.backends.cuda.matmul.allow_tf32,cudnn_allow_tf32=torch.backends.cudnn.allow_tf32))

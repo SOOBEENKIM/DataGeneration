@@ -75,3 +75,13 @@ def test_zero_identity_and_factual_grid_law_zero_control_and_first_event(case,na
         torch.testing.assert_close(c2[:,1],context[:,1],atol=0,rtol=0)
         assert old_digest(m)==state_digest(base)
         m.set_gap_correction(bins['mapping'],weights,np.zeros((2,5)))
+
+
+def test_metric_contract_survives_json_storage_but_rejects_changed_edges():
+    from experiments.cs_saf_gap_calibration import metric_states_equal
+    import json
+    state={'gap_bin_edges':(.2,.4,.6,.8),'mark_groups':('a','b'),'gap_scale':1.2}
+    stored=json.loads(json.dumps(state))
+    assert metric_states_equal(state,stored)
+    stored['gap_bin_edges'][0]=.21
+    assert not metric_states_equal(state,stored)
