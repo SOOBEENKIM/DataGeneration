@@ -1,0 +1,18 @@
+{
+  "version": "external-port-pilot-v1",
+  "datasets": ["berka", "sparkov"],
+  "fit_seed": 20260925,
+  "generation_seeds": [20261021, 20261022],
+  "generation_entities": 128,
+  "partition_seed": 20260921,
+  "model_ids": ["U", "G", "ARGN", "CPAR", "empirical_marginal", "empirical_transition"],
+  "ug": {"hidden_dim":128,"rank":32,"context_window":32,"batch_size":512,"max_epochs":30,"patience":5,"learning_rate":0.001,"weight_decay":0.0,"gradient_clip":1.0,"max_fit_seconds":1200},
+  "calibration": {"penalty":0.001,"bounds":[-5.0,5.0],"maxiter":100,"fit_role":"fit","scope":"pooled_observable_repeat_gap_bins"},
+  "argn": {"version":"2.4.0","model":"MOSTLY_AI/Medium","max_epochs":64,"max_training_minutes":20,"batch_size":64,"max_sequence_window":32,"value_protection":false,"enable_flexible_generation":false},
+  "cpar": {"sdv_version":"1.38.0","deepecho_version":"0.8.1","epochs":64,"segment_size":32,"sample_size":1,"max_fit_seconds":1800},
+  "empirical": {"smoothing_grid":[20.0,200.0,2000.0],"selection":"fit_to_internal_check_joint_categorical_nll"},
+  "primary_metrics": {"berka":["daily_gap_mark_joint_tv","root_amount_joint_tv"],"sparkov":["gap_root_transition_joint_tv","root_amount_joint_tv"]},
+  "test_outcome_analysis":false,
+  "confirmatory_superiority_claim":false,
+  "automatic_architecture_followup":false
+}
