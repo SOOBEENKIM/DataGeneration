@@ -1,0 +1,95 @@
+{
+  "version": "cs-saf-fixed-generation-repeats-v1",
+  "registered_on": "2026-09-20",
+  "parent_commit": "c2e74dc58528cee32c868ca96e0af57e407e46b6",
+  "prevalences": [
+    0.05,
+    0.1,
+    0.25,
+    0.5
+  ],
+  "kappas": [
+    0,
+    1
+  ],
+  "trials": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "models": [
+    "U",
+    "Ucal",
+    "E",
+    "Ecal"
+  ],
+  "repeats": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "generation_seeds": {
+    "0": [
+      2026092100,
+      2026092101,
+      2026092102,
+      2026092103,
+      2026092104
+    ],
+    "1": [
+      2026092200,
+      2026092201,
+      2026092202,
+      2026092203,
+      2026092204
+    ],
+    "2": [
+      2026092300,
+      2026092301,
+      2026092302,
+      2026092303,
+      2026092304
+    ],
+    "3": [
+      2026092400,
+      2026092401,
+      2026092402,
+      2026092403,
+      2026092404
+    ],
+    "4": [
+      2026092500,
+      2026092501,
+      2026092502,
+      2026092503,
+      2026092504
+    ]
+  },
+  "generation_entities": 2048,
+  "generation_batch_size": 256,
+  "new_generated_datasets": 800,
+  "base_model_fits": 0,
+  "calibration_fits": 0,
+  "output": "artifacts/cs_saf/generation_repeats_v1",
+  "max_workers": 2,
+  "primary_metric": "short_gap_repeat_curve_l1",
+  "primary_contrast": "Ecal_minus_Ucal",
+  "test_accessed": false,
+  "independent_data_confirmation": false,
+  "frozen_sources": {
+    "docs/cs_saf/generation_repeats_v1_preregistration.md": "088daeadd602b26126cc74d1bb3e7eaca697c12573db5d9f6cceccc382af3373",
+    "docs/cs_saf/calibration_u_control_v1_result.json": "28261316691953320f77edc0e4c51ca34674b436aa99ca5649dff3d084727317",
+    "experiments/cs_saf_calibration_u.py": "2b1abff260a122ac8522d9521cc0e2c15138d5628b9df9e8949930e7f97fdc97",
+    "experiments/cs_saf_calibration.py": "c3760d1a850c8e95e8ec831cc27bda2278d42ae07e44e80c7a3abf43948de60f",
+    "models/cs_saf_calibration_u.py": "ff6466eeea39a2dac3f3a9c531fb7488bb663d703b17cfc22361a2711e5f7969",
+    "models/cs_saf_calibration.py": "c5478c90b1dc6ffe3eeca45b229b088fd7c16a1e1d01d929111668769ec3e7c4",
+    "experiments/cs_saf_followup_external.py": "5a2a19a8b23fdb00d23ed45d38a7b68b8653cb610a0454dc33de59a25f266850",
+    "benchmarks/cof_seqgen_saf_metrics.py": "ca8988c3fe0b26faf4c1064d6cd4af8545f94e70bda1e463fa80515633a7a934",
+    "scripts/summarize_cs_saf_calibration_u.py": "ffc06de4dbd8e95db04add5632599ddfe6eb1c8b1407e01c80dad8099a739f26",
+    "scripts/verify_cs_saf_calibration_u_native.py": "6f964c9807ada2b81ce96e5d7c8b904bf1c15da6a5465636bbce4d95e10df45f"
+  }
+}
