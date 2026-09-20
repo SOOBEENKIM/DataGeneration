@@ -51,7 +51,7 @@
 - **근거:** 금융 거래를 포함한 6개 공개 데이터, 조건부/비조건부 생성, 시퀀스 판별·하위 예측 효용, AR·REaLTabFormer 등의 비교.
 - **우리에게 의미:** 가장 직접적인 강한 외부 비교 대상이다. “시퀀스에 diffusion을 붙인다”나 “이질적 거래의 관계를 학습한다”는 것만으로 차별화되지 않는다.
 - **읽기:** 본문 §4–5 및 결론. 행 내부 AR과 시간축 전체 잠재 시퀀스 diffusion을 구분했다.
-- [학회 원문](https://proceedings.iclr.cc/paper_files/paper/2025/file/e90ba1fc564a69809d7391bf76a5f087-Paper-Conference.pdf) · [본문](https://arxiv.org/html/2504.07566) · [공식 코드](https://github.com/fabriziogaruti/TabDiT)
+- [학회 원문](https://proceedings.iclr.cc/paper_files/paper/2025/file/e90ba1fc564a69809d7391bf76a5f087-Paper-Conference.pdf) · [본문](https://arxiv.org/html/2504.07566) · [공식 저장소—현재 평가 코드만 공개](https://github.com/fabriziogaruti/TabDiT)
 
 ### 3.2 TabularARGN — 2025 preprint
 

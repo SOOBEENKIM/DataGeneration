@@ -108,7 +108,9 @@ def audit(kappa, seed, device):
             part['event_index'] = np.arange(len(part))
             part['predicted_repeat'] = rep
             part['observed_mark_probability'] = obs
-            part['actual_repeat'] = part.receiver_or_mark.eq(part.receiver_or_mark.shift()).astype(int)
+            # Nullable string equality has NA at the first event, whose repeat
+            # is undefined and excluded from every relation score.
+            part['actual_repeat'] = part.receiver_or_mark.eq(part.receiver_or_mark.shift()).fillna(False).astype(int)
             output.append(part)
         pd.concat(output, ignore_index=True).to_parquet(folder/f'replay_{name}.parquet', index=False)
         checks[name] = {'max_current_target_future_or_prefix_difference': max(error), 'entities': len(ids)}
