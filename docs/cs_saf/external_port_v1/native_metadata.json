@@ -1,0 +1,181 @@
+[
+  {
+    "dataset": "berka",
+    "model": "ARGN",
+    "parameters": 2345953,
+    "checkpoint_sha256": "509644b93e2cd097f8dc58a870bb27c3d1971fc967de93c4246e20653d5048a1",
+    "sequence_length_stats": {
+      "min": 9,
+      "median": 207,
+      "max": 675
+    },
+    "version": "2.4.0",
+    "model_config": {
+      "model_id": "MOSTLY_AI/Medium",
+      "model_units": {
+        "embedder@ctxflt:t0/c0__cat": 4,
+        "embedder@ctxflt:t1/c1__cat": 10,
+        "embedder@ctxflt:t2/c2__cat": 10,
+        "embedder@ctxflt:t3/c3__cat": 9,
+        "embedder@ctxflt:t4/c4__bin": 12,
+        "embedder@tgt:/__sidx_E2": 7,
+        "embedder@tgt:/__sidx_E1": 10,
+        "embedder@tgt:/__sidx_E0": 10,
+        "embedder@tgt:/__slen_E2": 7,
+        "embedder@tgt:/__slen_E1": 10,
+        "embedder@tgt:/__slen_E0": 10,
+        "embedder@tgt:/__ridx_E2": 7,
+        "embedder@tgt:/__ridx_E1": 10,
+        "embedder@tgt:/__ridx_E0": 10,
+        "embedder@tgt:t0/c0__cat": 10,
+        "embedder@tgt:t1/c1__cat": 7,
+        "embedder@tgt:t2/c2__bin": 12,
+        "embedder@tgt:t3/c3__cat": 4,
+        "flat_context@": [
+          32
+        ],
+        "history@": [
+          640
+        ],
+        "regressor@tgt:/__sidx_E2": [
+          32
+        ],
+        "regressor@tgt:/__sidx_E1": [
+          32
+        ],
+        "regressor@tgt:/__sidx_E0": [
+          32
+        ],
+        "regressor@tgt:/__slen_E2": [
+          32
+        ],
+        "regressor@tgt:/__slen_E1": [
+          32
+        ],
+        "regressor@tgt:/__slen_E0": [
+          32
+        ],
+        "regressor@tgt:/__ridx_E2": [
+          32
+        ],
+        "regressor@tgt:/__ridx_E1": [
+          32
+        ],
+        "regressor@tgt:/__ridx_E0": [
+          32
+        ],
+        "regressor@tgt:t0/c0__cat": [
+          64
+        ],
+        "regressor@tgt:t1/c1__cat": [
+          32
+        ],
+        "regressor@tgt:t2/c2__bin": [
+          80
+        ],
+        "regressor@tgt:t3/c3__cat": [
+          16
+        ]
+      },
+      "enable_flexible_generation": false
+    },
+    "load_verified": true,
+    "new_training_updates": 0,
+    "new_generations": 0
+  },
+  {
+    "dataset": "sparkov",
+    "model": "ARGN",
+    "parameters": 3599240,
+    "checkpoint_sha256": "2978038282faf4b4bea6fbee1a2a836875c78365baa9286496a447d62c7d69cd",
+    "sequence_length_stats": {
+      "min": 7,
+      "median": 1267,
+      "max": 3123
+    },
+    "version": "2.4.0",
+    "model_config": {
+      "model_id": "MOSTLY_AI/Medium",
+      "model_units": {
+        "embedder@ctxflt:t0/c0__cat": 3,
+        "embedder@ctxflt:t1/c1__cat": 10,
+        "embedder@ctxflt:t2/c2__cat": 10,
+        "embedder@ctxflt:t3/c3__bin": 12,
+        "embedder@tgt:/__sidx_E3": 4,
+        "embedder@tgt:/__sidx_E2": 10,
+        "embedder@tgt:/__sidx_E1": 10,
+        "embedder@tgt:/__sidx_E0": 10,
+        "embedder@tgt:/__slen_E3": 4,
+        "embedder@tgt:/__slen_E2": 10,
+        "embedder@tgt:/__slen_E1": 10,
+        "embedder@tgt:/__slen_E0": 10,
+        "embedder@tgt:/__ridx_E3": 4,
+        "embedder@tgt:/__ridx_E2": 10,
+        "embedder@tgt:/__ridx_E1": 10,
+        "embedder@tgt:/__ridx_E0": 10,
+        "embedder@tgt:t0/c0__bin": 12,
+        "embedder@tgt:t1/c1__cat": 18,
+        "embedder@tgt:t2/c2__bin": 12,
+        "embedder@tgt:t3/c3__cat": 10,
+        "flat_context@": [
+          32
+        ],
+        "history@": [
+          768
+        ],
+        "regressor@tgt:/__sidx_E3": [
+          16
+        ],
+        "regressor@tgt:/__sidx_E2": [
+          32
+        ],
+        "regressor@tgt:/__sidx_E1": [
+          32
+        ],
+        "regressor@tgt:/__sidx_E0": [
+          32
+        ],
+        "regressor@tgt:/__slen_E3": [
+          16
+        ],
+        "regressor@tgt:/__slen_E2": [
+          32
+        ],
+        "regressor@tgt:/__slen_E1": [
+          32
+        ],
+        "regressor@tgt:/__slen_E0": [
+          32
+        ],
+        "regressor@tgt:/__ridx_E3": [
+          16
+        ],
+        "regressor@tgt:/__ridx_E2": [
+          32
+        ],
+        "regressor@tgt:/__ridx_E1": [
+          32
+        ],
+        "regressor@tgt:/__ridx_E0": [
+          32
+        ],
+        "regressor@tgt:t0/c0__bin": [
+          80
+        ],
+        "regressor@tgt:t1/c1__cat": [
+          112
+        ],
+        "regressor@tgt:t2/c2__bin": [
+          80
+        ],
+        "regressor@tgt:t3/c3__cat": [
+          48
+        ]
+      },
+      "enable_flexible_generation": false
+    },
+    "load_verified": true,
+    "new_training_updates": 0,
+    "new_generations": 0
+  }
+]

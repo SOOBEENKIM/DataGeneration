@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "phase": "post_run_read_only",
+  "new_fits": 0,
+  "new_generations": 0,
+  "test_outcomes_accessed": false,
+  "reuses_frozen_forward_not_loss_reducer": true,
+  "verifier_sha256": "dfa93ea20f7faae6578c69eced9bb10b7047a96c40b5afe31b88c6bdceb5254a",
+  "rows": [
+    {
+      "dataset": "berka",
+      "model": "U",
+      "variant": "raw",
+      "validation_events": 157661,
+      "validation_transitions": 156986,
+      "identical_ug_initial_tensors": true,
+      "checkpoint_and_update_count_verified": true,
+      "max_score_absolute_error": 4.96743490785434e-09,
+      "real_history_expected_negative_amount_probability": 0.006564608323885741,
+      "checkpoint_sha256": "e18b27b7b64951f7facfabfee6a6e9a778d4415cfb385ac1a16e4e22aeaac3ba"
+    },
+    {
+      "dataset": "berka",
+      "model": "U",
+      "variant": "gap",
+      "validation_events": 157661,
+      "validation_transitions": 156986,
+      "identical_ug_initial_tensors": true,
+      "checkpoint_and_update_count_verified": true,
+      "max_score_absolute_error": 5.983533002407171e-09,
+      "real_history_expected_negative_amount_probability": 0.006564608323885741,
+      "checkpoint_sha256": "e18b27b7b64951f7facfabfee6a6e9a778d4415cfb385ac1a16e4e22aeaac3ba"
+    },
+    {
+      "dataset": "berka",
+      "model": "G",
+      "variant": "raw",
+      "validation_events": 157661,
+      "validation_transitions": 156986,
+      "identical_ug_initial_tensors": true,
+      "checkpoint_and_update_count_verified": true,
+      "max_score_absolute_error": 8.778998306091523e-09,
+      "real_history_expected_negative_amount_probability": 0.008175625014205446,
+      "checkpoint_sha256": "844c203c1d8696338af4f089ee6b5a491a94a0060a1718ce942c514711dfc336"
+    },
+    {
+      "dataset": "berka",
+      "model": "G",
+      "variant": "gap",
+      "validation_events": 157661,
+      "validation_transitions": 156986,
+      "identical_ug_initial_tensors": true,
+      "checkpoint_and_update_count_verified": true,
+      "max_score_absolute_error": 8.778998306091523e-09,
+      "real_history_expected_negative_amount_probability": 0.008175625014205446,
+      "checkpoint_sha256": "844c203c1d8696338af4f089ee6b5a491a94a0060a1718ce942c514711dfc336"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U",
+      "variant": "raw",
+      "validation_events": 177997,
+      "validation_transitions": 177850,
+      "identical_ug_initial_tensors": true,
+      "checkpoint_and_update_count_verified": true,
+      "max_score_absolute_error": 1.9713852772440532e-08,
+      "real_history_expected_negative_amount_probability": 0.010923381470310245,
+      "checkpoint_sha256": "a3a226de8ad53925c490cbfbd9b3281ce2030440a9162031a361d9a7b3cfaf3b"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U",
+      "variant": "gap",
+      "validation_events": 177997,
+      "validation_transitions": 177850,
+      "identical_ug_initial_tensors": true,
+      "checkpoint_and_update_count_verified": true,
+      "max_score_absolute_error": 1.9713852772440532e-08,
+      "real_history_expected_negative_amount_probability": 0.010923381470310245,
+      "checkpoint_sha256": "a3a226de8ad53925c490cbfbd9b3281ce2030440a9162031a361d9a7b3cfaf3b"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G",
+      "variant": "raw",
+      "validation_events": 177997,
+      "validation_transitions": 177850,
+      "identical_ug_initial_tensors": true,
+      "checkpoint_and_update_count_verified": true,
+      "max_score_absolute_error": 2.4445842683462615e-08,
+      "real_history_expected_negative_amount_probability": 0.01077425540474901,
+      "checkpoint_sha256": "c09328729973c666c2d88b75538a06c9322848d47d9bd79b3a997c08c4eab31b"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G",
+      "variant": "gap",
+      "validation_events": 177997,
+      "validation_transitions": 177850,
+      "identical_ug_initial_tensors": true,
+      "checkpoint_and_update_count_verified": true,
+      "max_score_absolute_error": 2.1221176815799936e-08,
+      "real_history_expected_negative_amount_probability": 0.01077425540474901,
+      "checkpoint_sha256": "c09328729973c666c2d88b75538a06c9322848d47d9bd79b3a997c08c4eab31b"
+    }
+  ]
+}

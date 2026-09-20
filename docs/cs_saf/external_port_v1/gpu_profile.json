@@ -1,0 +1,28 @@
+{
+  "berka": {
+    "batch_size": 512,
+    "forward_backward_seconds": [
+      0.2023053360171616,
+      0.0073882199940271676,
+      0.007986192998941988,
+      0.007846949039958417
+    ],
+    "peak_reserved_bytes": 432013312,
+    "optimizer_updates": 0,
+    "cuda_device": "NVIDIA GeForce RTX 3090",
+    "estimated_fit_epoch_seconds": 8.882276804114477
+  },
+  "sparkov": {
+    "batch_size": 512,
+    "forward_backward_seconds": [
+      0.009960844996385276,
+      0.007859161996748298,
+      0.007249646994750947,
+      0.006566492025740445
+    ],
+    "peak_reserved_bytes": 452984832,
+    "optimizer_updates": 0,
+    "cuda_device": "NVIDIA GeForce RTX 3090",
+    "estimated_fit_epoch_seconds": 10.100027032401007
+  }
+}

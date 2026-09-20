@@ -2,7 +2,51 @@
 
 Updated 2026-09-21. Current branch: `research/cs-saf-external-audit-v1`.
 
-**Latest experiment COMPLETE: [external Berka/Sparkov relationship and preprocessing audit](external_relations_v1/README.md).**
+**Latest experiment COMPLETE: [external U/G port and Berka/Sparkov pilot](external_port_v1/README.md).**
+
+- Registration/source `676fe6a`; CPAR input/API amendment `ebad17d`. Common
+  fit/check/validation entities; no test outcomes or oracle objectives. External
+  static/auxiliary fields, shared rank-32 route and all-event rolling windows
+  are explicit port changes. Recent history is still limited to 31 events.
+- Eight valid neural fits (U/G/ARGN/CPAR-tail x two datasets), four train-only
+  repeat-calibration fits, two empirical controls per dataset; 32 generated
+  datasets / 3,066,189 events. One training seed, two generation tapes. Two
+  original CPAR attempts were excluded and preserved for tail/API violations;
+  no generated quality from those attempts was used to select a correction.
+- Berka day-gap/operation TV U/G/ARGN/Transition = .2430/.2022/.0884/.0931.
+  Operation/amount TV = .3187/.3012/.2185/.0587. G improves on U but does not
+  reach the external/simple controls on these aggregate metrics.
+- Sparkov gap/category-transition TV U/G/ARGN/Transition =
+  .1586/.1618/.1962/.0774; category/amount TV = .1887/.1843/.2244/.0488.
+  U/G beat this ARGN setting but trail the simple transition control. Equal
+  gap calibration does not resolve the primary errors. CPAR-tail results are
+  reported with its still-decreasing 64-epoch loss, not as a converged baseline.
+- Raw U/G generate about 2.3% negative amounts on Berka and 1.3% on Sparkov.
+  All 1,990,071 observed development amounts are nonnegative. The Gaussian
+  signed-log output has negative mass even on real histories. Changing only
+  invalid records cannot close the amount-TV gap. Full nonrepeat relative mark
+  probabilities also lack a direct current-gap input; its causal contribution
+  to these errors remains unisolated.
+- Validation PASS: 42 unique tests; 608 independently recomputed generation
+  values, max difference 2.34e-15; eight checkpoint score reductions, max
+  difference 2.45e-8; input/plan/output hashes and exact U/G initial tensors.
+  Native ARGN checkpoint reload verified; CPAR retained every fitting event.
+- All experiment and verification jobs finished. GPU dispatch admitted only
+  idle cards; other users' work was not terminated. Full outputs remain at
+  `artifacts/cs_saf/external_port_v1/`; compact evidence is on this branch.
+- Do not adopt U/G as final or claim conference-level method superiority.
+  Aggregate fidelity is not personalized generation/privacy/fraud utility.
+  ARGN native lengths/encoding statistics and CPAR training adequacy remain
+  comparison limitations. Next proposals: valid/flexible amount outputs and
+  ordinary full-gap action controls, separately tested before a new specialized
+  module. No new amount/action candidate has been trained. Prior failures stand.
+
+[Results/figures](external_port_v1/README.md), [methods](external_port_v1/methods.md),
+[all metrics](external_port_v1/generation_metrics.csv),
+[independent verification](external_port_v1/independent_verification.json),
+[execution notes](external_port_v1/execution_notes.md).
+
+**Previous experiment COMPLETE: [external Berka/Sparkov relationship and preprocessing audit](external_relations_v1/README.md).**
 Registered `e9e61d2`, science source `6726a8e`. Raw/canonical equality checked on
 1,990,071 development events. Seven unit checks and independent reductions of
 270 profile rows / 40 prediction rows pass (maximum difference 3.34e-14).
@@ -20,9 +64,9 @@ fit, but zero neural fits, zero new generations, no test outcome analysis.
   tables worsen NLL: 6.4927 → 7.0539 → 8.3999. Post-run coverage: 61.15% of
   validation previous-merchant/gap/current-merchant triples were unseen in train.
   Do not infer absent temporal signal or new-model necessity from that baseline.
-- Existing U/G requires two contexts, no auxiliary fields, lengths <=32;
+- Historical controlled U/G requires two contexts, no auxiliary fields, lengths <=32;
   98.37%/91.84% of Berka/Sparkov validation entities exceed that length. External
-  input/sequence handling needs an explicit, tested port before neural comparison.
+  input/sequence handling needed the explicit, tested port completed above.
   Never create fake groups or truncate full trajectories silently. Exclude
   whole-trajectory `entity_any_fraud` from predictors. Seven Sparkov merchant
   names have multiple categories; category is not a deterministic lookup.

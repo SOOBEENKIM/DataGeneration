@@ -1,0 +1,18 @@
+{
+  "berka": {
+    "development_events": 895507,
+    "negative_amounts": 0,
+    "zero_amounts": 12,
+    "nonfinite_amounts": 0,
+    "minimum": 0.0,
+    "maximum": 87400.0
+  },
+  "sparkov": {
+    "development_events": 1094564,
+    "negative_amounts": 0,
+    "zero_amounts": 0,
+    "nonfinite_amounts": 0,
+    "minimum": 1.0,
+    "maximum": 28948.9
+  }
+}

@@ -5,7 +5,37 @@ the earlier U/E study is on `research/cs-saf`, and `main` remains the earlier SA
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [Berka/Sparkov observed-relation audit](docs/cs_saf/external_relations_v1/README.md)
+Latest [external U/G port and Berka/Sparkov pilot](docs/cs_saf/external_port_v1/README.md)
+is **COMPLETE: 8 valid neural fits, 4 frozen-network calibration fits and 32
+generated datasets (3,066,189 events).** External static/auxiliary fields and
+target-complete long trajectories are supported; each U/G prediction still uses
+only the most recent 31 events. The external shared-rank adapter is an explicit
+change, not the unchanged two-group controlled model.
+
+The current U/G ports are **not established final models**. On Berka, G improves
+day-gap/operation TV over U (.2022 vs .2430), but trails official ARGN (.0884)
+and a simple transition control (.0931). On Sparkov, U/G improve category-transition
+TV over this ARGN run (.1586/.1618 vs .1962), but the transition control reaches
+.0774. Amount relations remain substantially worse than empirical resampling.
+Raw U/G also produce about 2.3% negative amounts on Berka and 1.3% on Sparkov;
+their signed-log Gaussian permits this even on observed histories. Repairing only
+negative records cannot close the much larger amount-distribution discrepancy.
+
+All 42 unique engineering tests pass. Independent reductions verify 608 stored
+metric values (maximum difference 2.34e-15); checkpoint score reconstruction,
+matched initial tensors, input/output hashes and all CPAR tail events also pass.
+Two original CPAR attempts are excluded and preserved after a documented tail/API
+correction; valid results use **official CPAR + a tail-preserving input adapter**.
+One training seed/two generation seeds, different native ARGN lengths/encoding
+statistics and unresolved CPAR training adequacy limit interpretation. Aggregate
+fidelity does not establish personalized generation, privacy or fraud utility.
+All jobs finished. Next proposed work is basic amount-support/distribution and
+ordinary gap-conditioned action controls, not another repeat-coefficient search;
+no new candidate has been trained. [Full tables and figures](docs/cs_saf/external_port_v1/README.md),
+[methods](docs/cs_saf/external_port_v1/methods.md),
+[execution record](docs/cs_saf/external_port_v1/execution_notes.md).
+
+Previous [Berka/Sparkov observed-relation audit](docs/cs_saf/external_relations_v1/README.md)
 is **COMPLETE: 1,990,071 development transactions checked against raw data,
 empirical prediction tables evaluated, zero neural fits or new generations.**
 Adding observed gap to a previous-operation table improves Berka validation NLL
@@ -16,9 +46,10 @@ relations are more appropriate targets than long merchant runs. Its sparse
 merchant transition tables worsen NLL, so this is not evidence of a useful strong
 baseline or proposed-model superiority. Seven unit checks and 310 independent
 aggregate-row checks pass. The [next comparison contract](docs/cs_saf/external_relations_v1/next_comparison_contract.md)
-requires explicit external U/G ports: current code enforces two contexts, no
-auxiliary fields and at most 32 events. Full external neural training remains
-unexecuted. Previous failures and the unproven contribution remain unchanged.
+requires explicit external U/G ports: the historical controlled code enforces two
+contexts, no auxiliary fields and at most 32 events. That diagnostic did not run
+external neural training; the subsequent port/pilot is complete above. Previous
+failures and the unproven contribution remain unchanged.
 
 Previous [dataset literature and research-process audit](docs/cs_saf/dataset_literature_and_process_audit_2026_09_20.md)
 checks 14 original papers and inventories 22 completed CS-SAF result bundles.

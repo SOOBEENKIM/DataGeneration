@@ -1,0 +1,49 @@
+{
+  "berka": {
+    "START.json": {
+      "config_sha256": "9037bd62a2c08caf72fcf83f45c0d02cd420728a0c998b660752bb5ad782a5b7",
+      "source_commit": "676fe6a93ed8b6259df7b9164c033efb64788d73",
+      "input_sha256": "fcf6fa7523ad6af1089dbfcac1789145d67e4d4d9046465012bf86e01650c736",
+      "fit_seed": 20260925,
+      "physical_gpu": "3",
+      "model": "CPAR",
+      "dataset": "berka",
+      "versions": {
+        "torch": "2.1.2+cu121",
+        "numpy": "1.26.4",
+        "pandas": "2.3.3"
+      },
+      "test_outcomes_accessed": false
+    },
+    "ABORTED_PROTOCOL.json": {
+      "reason": "Native segment_by_size discards non-full tails, contrary to registered full-data requirement. Detected before reviewing any CPAR generation result. This attempt is excluded and preserved.",
+      "caller_stopped_only_owned_process": true
+    },
+    "FAILED.json": {
+      "error_type": "AttributeError",
+      "message": "'PARSynthesizer' object has no attribute '_set_random_state'",
+      "elapsed_seconds": 49.7938594139996
+    }
+  },
+  "sparkov": {
+    "START.json": {
+      "config_sha256": "9037bd62a2c08caf72fcf83f45c0d02cd420728a0c998b660752bb5ad782a5b7",
+      "source_commit": "676fe6a93ed8b6259df7b9164c033efb64788d73",
+      "input_sha256": "757805a22a7f24a160667d236fd27843d56ee3c666f10f86a1dd13aababfcc39",
+      "fit_seed": 20260925,
+      "physical_gpu": "3",
+      "model": "CPAR",
+      "dataset": "sparkov",
+      "versions": {
+        "torch": "2.1.2+cu121",
+        "numpy": "1.26.4",
+        "pandas": "2.3.3"
+      },
+      "test_outcomes_accessed": false
+    },
+    "ABORTED_PROTOCOL.json": {
+      "reason": "Native fixed-size segmentation drops tail; abort for explicit tail-preserving adapter. No generated evaluation from this attempt used.",
+      "owned_process_only": true
+    }
+  }
+}

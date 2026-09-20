@@ -1,0 +1,306 @@
+{
+  "passed": true,
+  "verifier_sha256": "a6fb7bceb4bb303f19726d63c047a68692e652cb11cdf46e345fa557d0ec3183",
+  "implementation_imported": false,
+  "test_outcomes_accessed": false,
+  "runs": [
+    {
+      "dataset": "berka",
+      "model": "U",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 32314,
+      "source_sha256": "6b5d8f0759fdb961a804d3dd6e64a132154dc30ffedcd61543be128253e7a531",
+      "done_sha256": "c19d54f5da1f9b3fb1cfc19a3b870ee4428eba87052ec21567e38f83857394b3"
+    },
+    {
+      "dataset": "berka",
+      "model": "U",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 32314,
+      "source_sha256": "ba5d5de9906c0d3d5de3be13769d2957520e4b0938aab92e6ad5a3c28db1ac40",
+      "done_sha256": "c19d54f5da1f9b3fb1cfc19a3b870ee4428eba87052ec21567e38f83857394b3"
+    },
+    {
+      "dataset": "berka",
+      "model": "U",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 32314,
+      "source_sha256": "d9fb43f2a1fc518741bd1aa25bab18616d331190b53e6fa76079105ea402612e",
+      "done_sha256": "c19d54f5da1f9b3fb1cfc19a3b870ee4428eba87052ec21567e38f83857394b3"
+    },
+    {
+      "dataset": "berka",
+      "model": "U",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 32314,
+      "source_sha256": "819adce2e6d192beeb75058eeef58d02f8b72c39a8421acd760a5bef7caf5027",
+      "done_sha256": "c19d54f5da1f9b3fb1cfc19a3b870ee4428eba87052ec21567e38f83857394b3"
+    },
+    {
+      "dataset": "berka",
+      "model": "G",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 32314,
+      "source_sha256": "c24389813638a748ce6b5bf89df7875132864aea41b27a3008c6b12fa8203ff8",
+      "done_sha256": "066bca689b1ce285c6bb86e2e6f00432017fb165b4857f17150eb4ddac27db93"
+    },
+    {
+      "dataset": "berka",
+      "model": "G",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 32314,
+      "source_sha256": "ea8f557dd34ff86064c8b32824b8555478d0ef2cc40fb17bc0265dcae8f6da53",
+      "done_sha256": "066bca689b1ce285c6bb86e2e6f00432017fb165b4857f17150eb4ddac27db93"
+    },
+    {
+      "dataset": "berka",
+      "model": "G",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 32314,
+      "source_sha256": "db1d6549969665acc636cf6dc8e4c4c260e6af3eea910f91bccc353fabaa44d5",
+      "done_sha256": "066bca689b1ce285c6bb86e2e6f00432017fb165b4857f17150eb4ddac27db93"
+    },
+    {
+      "dataset": "berka",
+      "model": "G",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 32314,
+      "source_sha256": "bbe94c0b27f6d7b7ce773a36c2d523ee393bfb3ce38bc2e5bbff1119a334f8d4",
+      "done_sha256": "066bca689b1ce285c6bb86e2e6f00432017fb165b4857f17150eb4ddac27db93"
+    },
+    {
+      "dataset": "berka",
+      "model": "ARGN",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 31678,
+      "source_sha256": "9d3c3209bd5eef481086d407daa61bcdc8451104bc4e6b4c77eff6edddc04862",
+      "done_sha256": "310a49a885466c418962bc39906e16b91cd67b1329730b529faf9115bb27d2ff"
+    },
+    {
+      "dataset": "berka",
+      "model": "ARGN",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 29958,
+      "source_sha256": "4abab2b03eb50791d6fc774e9be953d3eef0e384bb65694ff5838c3d3d59c051",
+      "done_sha256": "310a49a885466c418962bc39906e16b91cd67b1329730b529faf9115bb27d2ff"
+    },
+    {
+      "dataset": "berka",
+      "model": "empirical",
+      "variant": "marginal",
+      "seed": 20261021,
+      "events": 32314,
+      "source_sha256": "f2e6448e9bd9794fcf51ede82afbb96715d834665af5b4f555735f64be527371",
+      "done_sha256": "1e1cc483dd9c46207c14f47e36f8d32f5ee7202b4fb9ce13812eccfc95ebdd15"
+    },
+    {
+      "dataset": "berka",
+      "model": "empirical",
+      "variant": "marginal",
+      "seed": 20261022,
+      "events": 32314,
+      "source_sha256": "429a0e25974664f3b93a4ae8777bd83e0c60e8f494d3b70f2a19889e5fd1c509",
+      "done_sha256": "1e1cc483dd9c46207c14f47e36f8d32f5ee7202b4fb9ce13812eccfc95ebdd15"
+    },
+    {
+      "dataset": "berka",
+      "model": "empirical",
+      "variant": "transition",
+      "seed": 20261021,
+      "events": 32314,
+      "source_sha256": "0efafbfd7b8161c11938432c9967dc83ff4c3353c6f08a65aafaf4e4f4bb37f9",
+      "done_sha256": "1e1cc483dd9c46207c14f47e36f8d32f5ee7202b4fb9ce13812eccfc95ebdd15"
+    },
+    {
+      "dataset": "berka",
+      "model": "empirical",
+      "variant": "transition",
+      "seed": 20261022,
+      "events": 32314,
+      "source_sha256": "e74401b1874d42a2b534312e447c5d3e30c6505665e468c46de5ab02974fb372",
+      "done_sha256": "1e1cc483dd9c46207c14f47e36f8d32f5ee7202b4fb9ce13812eccfc95ebdd15"
+    },
+    {
+      "dataset": "berka",
+      "model": "CPAR_tail",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 32314,
+      "source_sha256": "b6226ab6ac7b77ecdb73e1dbd11a23aedca940e7502b325dd5a2301066281d03",
+      "done_sha256": "8149d9400dea7371bb9fe133a5f3a6ef1061389b785ac9ac7707258a304ca8cd"
+    },
+    {
+      "dataset": "berka",
+      "model": "CPAR_tail",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 32314,
+      "source_sha256": "4a847525aeadeeb1c9ceef778ceb32179e7054865c62aaf7becb2f27536e01a1",
+      "done_sha256": "8149d9400dea7371bb9fe133a5f3a6ef1061389b785ac9ac7707258a304ca8cd"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 165024,
+      "source_sha256": "a5986786766a1a805bd18d96dcf4fe3c5780e629083ad6b89f8c5d650fe8862f",
+      "done_sha256": "b74b0f2b14901d3c90eefc2aae859dbf4388b302fd94f87a1a11cad3c196fa9b"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 165024,
+      "source_sha256": "6156bc1fb1b9f6f3638bf55fb9eb46616c9e23a4f3c9d7fc34946b3702f57422",
+      "done_sha256": "b74b0f2b14901d3c90eefc2aae859dbf4388b302fd94f87a1a11cad3c196fa9b"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 165024,
+      "source_sha256": "a06d0c2c107cde4b500a2262079cfcc1252352a64905af98cbacbbabe7356874",
+      "done_sha256": "b74b0f2b14901d3c90eefc2aae859dbf4388b302fd94f87a1a11cad3c196fa9b"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 165024,
+      "source_sha256": "2b07220519027e2f23298e6d6ae73b6eaaa69c9bff7ae1641d76aff506527bb9",
+      "done_sha256": "b74b0f2b14901d3c90eefc2aae859dbf4388b302fd94f87a1a11cad3c196fa9b"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 165024,
+      "source_sha256": "f7dc5c6776c72e32bb1b024118e2f103c56291272a3d16f52a8750aa9825520b",
+      "done_sha256": "77dd5675d3ae769d9263fd24bbe7d535231e802a3fefc7670041b0b979764b47"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 165024,
+      "source_sha256": "3f907035ee56e92642064f26e1c0d4f6148c6f2ae1aaa86035732951182c8d83",
+      "done_sha256": "77dd5675d3ae769d9263fd24bbe7d535231e802a3fefc7670041b0b979764b47"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 165024,
+      "source_sha256": "cb5d4fafe0f731846a34fe89d2eaecf2819af2b3450a000c52a19dbcbb4ece3c",
+      "done_sha256": "77dd5675d3ae769d9263fd24bbe7d535231e802a3fefc7670041b0b979764b47"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 165024,
+      "source_sha256": "bf11bd2db7165979e3cf79c64fe8c06962f93acf852b369eb42ea9359216ce58",
+      "done_sha256": "77dd5675d3ae769d9263fd24bbe7d535231e802a3fefc7670041b0b979764b47"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "ARGN",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 115787,
+      "source_sha256": "e597afe5e3f470ee768442dc6901b633f65c25e41afc796aacffc5bda968c3e5",
+      "done_sha256": "daed5661e77cae1378c7b892db6dc2797de7f8f224b90ffdd620bc4a905e5a60"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "ARGN",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 126034,
+      "source_sha256": "1f097873432b42dc78000542f3f8d0acfbc96e4ead651c4c6d71794f6c47010f",
+      "done_sha256": "daed5661e77cae1378c7b892db6dc2797de7f8f224b90ffdd620bc4a905e5a60"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "empirical",
+      "variant": "marginal",
+      "seed": 20261021,
+      "events": 165024,
+      "source_sha256": "1af9ae4273d3cbce9b0ad7fe97baf6f016f3fd1345135555c07b1f24d0cea8cc",
+      "done_sha256": "15510dc2a90743d353a2a1e3b50193f0ea2a74af3fe7978a43fb4ede50e499cf"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "empirical",
+      "variant": "marginal",
+      "seed": 20261022,
+      "events": 165024,
+      "source_sha256": "b6508d749e5ed3930c74dab068c1a595869bcb155fef08cff712fe97b9b28b02",
+      "done_sha256": "15510dc2a90743d353a2a1e3b50193f0ea2a74af3fe7978a43fb4ede50e499cf"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "empirical",
+      "variant": "transition",
+      "seed": 20261021,
+      "events": 165024,
+      "source_sha256": "bd940b2f2476f010426f0b6b77fc125c8e9c5a55d130c94e5aa8ffa289b488be",
+      "done_sha256": "15510dc2a90743d353a2a1e3b50193f0ea2a74af3fe7978a43fb4ede50e499cf"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "empirical",
+      "variant": "transition",
+      "seed": 20261022,
+      "events": 165024,
+      "source_sha256": "75d035bdc0d6af114dd841f133bcd06451ff33e1a1c26738b21b3e867e563409",
+      "done_sha256": "15510dc2a90743d353a2a1e3b50193f0ea2a74af3fe7978a43fb4ede50e499cf"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "CPAR_tail",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 165024,
+      "source_sha256": "977272e765369154363e03a4c21cc6939b51e5a72d54dc9045f68982680b02b5",
+      "done_sha256": "21c5d3f0b1669726cc874c3c1fda62e42907e279794a259760cf68f4e83d6c1c"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "CPAR_tail",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 165024,
+      "source_sha256": "d77a016197c944955e469d2e91472e5d55795bf6669045808a40589cd299dd83",
+      "done_sha256": "21c5d3f0b1669726cc874c3c1fda62e42907e279794a259760cf68f4e83d6c1c"
+    }
+  ],
+  "scalar_metrics_verified": 608,
+  "max_absolute_error": 2.3314683517128287e-15,
+  "events_in_generated_datasets": 3066189,
+  "old_files_unchanged": [
+    "models/cs_saf.py",
+    "models/cs_saf_v2.py",
+    "models/cs_saf_structure.py",
+    "models/cof_seqgen_saf.py",
+    "data/cof_seqgen_saf_tensorizer.py"
+  ]
+}
