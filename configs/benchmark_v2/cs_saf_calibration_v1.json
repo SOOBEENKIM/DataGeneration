@@ -1,0 +1,80 @@
+{
+  "version": "cs-saf-frozen-copy-calibration-v1",
+  "registered_on": "2026-09-20",
+  "parent_commit": "cfbe3655c011a585bbcdd4a74e56d489e95c6286",
+  "prevalences": [
+    0.05,
+    0.1,
+    0.25,
+    0.5
+  ],
+  "kappas": [
+    0,
+    1
+  ],
+  "trials": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "parents": [
+    "E",
+    "L003"
+  ],
+  "references": [
+    "U",
+    "E",
+    "L003"
+  ],
+  "fit_split": "train",
+  "new_fits": 80,
+  "parameters_per_model": 4,
+  "output": "artifacts/cs_saf/calibration_v1",
+  "optimizer": {
+    "method": "L-BFGS-B",
+    "bounds": [
+      [
+        -8.0,
+        8.0
+      ],
+      [
+        0.05,
+        20.0
+      ]
+    ],
+    "initial": [
+      0.0,
+      1.0
+    ],
+    "options": {
+      "maxiter": 500,
+      "maxfun": 2000,
+      "maxls": 40,
+      "ftol": 1e-12,
+      "gtol": 1e-08
+    }
+  },
+  "feature_batch_size": 512,
+  "generation_entities": 2048,
+  "generation_batch_size": 256,
+  "max_workers": 2,
+  "scientific_failure_stops_grid": false,
+  "test_accessed": false,
+  "independent_confirmation": false,
+  "frozen_sources": {
+    "docs/cs_saf/replay_oracle_v1_result.json": "79fd9ffc861a1c18fb25ff164694002d6ebcf452319d4af08121397ace9e7572",
+    "docs/cs_saf/calibration_v1_preregistration.md": "c88511d02c16778b9addc0db7031d244b2309e03eb19b9eae2c2731cd1146421",
+    "experiments/cs_saf_followup.py": "418f2670d9d94534323e80c11e6abf4cdce6922ddb13a6ac5ad92cd46f6ef74b",
+    "experiments/cs_saf_followup_external.py": "5a2a19a8b23fdb00d23ed45d38a7b68b8653cb610a0454dc33de59a25f266850",
+    "experiments/cs_saf_replication.py": "b4d43782bff071591165964b1af80d7b0f8c2111a35205f0ed18994a933df2e0",
+    "experiments/cs_saf_v3.py": "01a805af4ef32ac196868fbeb3a50ec39bee3cfd9787903d649fa591fa20d6d7",
+    "experiments/cs_saf_pilot.py": "7492d018d20088ce7b306cb3db541839a6f4d968bd7b4f58abc3a7f0d33c8c36",
+    "models/cs_saf.py": "0bf5b6e8b9f9b7ace850ece54aafb63cd6aa8a91faf8733e5832883626cf79ca",
+    "models/cs_saf_v2.py": "6aca62d5f4323ff51518ca8331764d23f628c63d63ce880ce520f1d940302808",
+    "models/cs_saf_v3.py": "4fb42b8dc298392a5bee3f911ca463710ec6a31aa546bbf496f9e68bf98bf37c",
+    "models/cs_saf_v4.py": "e2c08866cf6625ff6dcd5a1b28056e09c63bc96b0ed5f8d1d14c7f04750bdbbc",
+    "benchmarks/cof_seqgen_saf_metrics.py": "ca8988c3fe0b26faf4c1064d6cd4af8545f94e70bda1e463fa80515633a7a934"
+  }
+}
