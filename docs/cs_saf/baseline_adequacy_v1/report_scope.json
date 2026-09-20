@@ -1,0 +1,8 @@
+{
+  "training_replicates_per_family_per_condition": 2,
+  "generation_tapes_per_parent": 3,
+  "independent_dataset_replicates": 0,
+  "thresholds_changed": false,
+  "new_fits_from_reporting": false,
+  "error_bars": "range_of_two_parent_values_not_confidence_intervals"
+}

@@ -1,10 +1,28 @@
 # DataGeneration: CoF-SeqGen Research
 
-**Latest research is on `research/cs-saf`; default `main` remains the earlier SAF base.**
+**Latest external-baseline research is on `research/cs-saf-external-audit-v1`;
+the earlier U/E study is on `research/cs-saf`, and `main` remains the earlier SAF base.**
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [equal gap-bin calibration](docs/cs_saf/gap_calibration_v1_report_2026_09_20.md)
+Latest [bounded baseline adequacy and equal repeat controls](docs/cs_saf/baseline_adequacy_v1/README.md)
+is **COMPLETE: 4 ARGN continuations, 12 parent models, 144 generation conditions
+(132 new datasets, 12 reused)**. Raw ARGN still fails basic prediction screens
+in 4/4 continuations. U+gap and continued ARGN+direct meet both registered
+prediction/generation screens in 4/4 parents. Simple controls therefore already
+meet this coarse target; their gains are not evidence for a new coupling module.
+Direct repetition improves U's generated active L1 from .02788 (gap correction)
+to .01107, but worsens event-level Brier from .14133 to .18563. Preserving both
+prediction and generation is the remaining question. Independent optimizer,
+native replay and artifact checks pass; all stage-one jobs finished. No new
+proposed neural architecture was trained. [Full tables](docs/cs_saf/baseline_adequacy_v1/result_tables.md),
+[methods and limitations](docs/cs_saf/baseline_adequacy_v1/methods.md),
+[verification](docs/cs_saf/baseline_adequacy_v1/verification.json).
+The [preceding official ARGN audit](docs/cs_saf/external_audit_v1/README.md)
+and [proposed architecture, still untrained](docs/cs_saf/external_audit_v1/research_decision.md)
+remain available. The historical U/E findings below are unchanged.
+
+Earlier [equal gap-bin calibration](docs/cs_saf/gap_calibration_v1_report_2026_09_20.md)
 is **COMPLETE: 80 frozen-network correction fits and 400 new generated datasets**.
 Both U and E improve native active repeat-curve L1 in all 5 trials at every
 prevalence (U: 8.4–21.7%; E: 13.4–18.3%). However, equally corrected E still has

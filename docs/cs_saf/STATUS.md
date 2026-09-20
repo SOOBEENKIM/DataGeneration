@@ -1,6 +1,47 @@
 # CS-SAF recoverable research state
 
-Updated 2026-09-20. Branch: `research/cs-saf`.
+Updated 2026-09-20. Current branch: `research/cs-saf-external-audit-v1`.
+
+**Latest Stage 1 COMPLETE: four bounded ARGN continuations and shared observable-repeat
+controls on 12 parents; 144 generated conditions evaluated, 132 newly generated.**
+
+[Korean report and decision](baseline_adequacy_v1/README.md),
+[all result tables](baseline_adequacy_v1/result_tables.md),
+[preregistration](baseline_adequacy_v1/preregistration.md),
+[implementation/evaluation scope](baseline_adequacy_v1/methods.md),
+[verification](baseline_adequacy_v1/verification.json).
+
+- Same existing artificial data seed42, pi=.10, kappa0/1; two ARGN seeds and two
+  existing U trials. No independent data, test, real-data utility or new-method training.
+- Four continuations add 100 epochs each, restore optimizer/scheduler, and extend
+  only stopping patience. Raw selected AND final checkpoints remain inadequate.
+  Budget-contribution screen meets in only one seed per kappa, not both.
+- Raw / group level / group-by-gap / empirical direct-repeat controls fit train only.
+  The shared target is observed repeat probability, not U's latent copy variable.
+  Native gap quantization, historical training budgets and length handling still differ.
+- U+gap and continued ARGN+direct each pass conditional and generation/cost screens
+  in 4/4 parents. Coarse relation matching alone does not require the proposed module.
+  Direct is a statistical control, not an implemented/trained neural repeat head.
+- U+gap active generation L1 .027880 and Brier .141335; U+direct L1 .011075 but Brier
+  .185631. This exposes the curve-matching / per-event prediction tradeoff.
+  Continued ARGN+gap active prediction curve L1 .009524 but generated L1 .047604;
+  marginal mark costs and repeat-level drift remain in several cells.
+- All null centered-shape screens pass (max parent-mean .014981). Large null repeat
+  error is not evidence of a large fake gap shape. Small borderline cost failures
+  and substantial ones are separately reported, not hidden behind a binary label.
+- Independent scalar optimizers agree within 9.92e-8; native replay difference 0;
+  original inputs/states unchanged and all hashes checked. Execution implementation
+  is a03739e, preregistration 0672e82. All GPU and CPU stage-one workers finished.
+- Stop registered Stage 1 here. Any next neural-head / constrained-coupling comparison
+  needs matched capacity, likelihood and calibration, plus prospective event-prediction
+  cost limits against U+gap. No rollout loss is automatically added. Simple-control
+  gains cannot be reassigned to E or the new coupling; old negative results remain.
+- This branch contains the preceding external audit too. Neither this extension nor
+  its results are merged into main or research/cs-saf. Raw stage-one files remain in
+  artifacts/cs_saf/baseline_adequacy_v1; Git contains compact reviewable outputs.
+
+The following is the inherited U/E history from `research/cs-saf`; its findings are
+preserved. Its historical "next" proposals are superseded by the current report above.
 
 **Latest equal limited gap calibration COMPLETE: 80 unique corrections,
 400 new native datasets (819,200 sequences), 400 reused controls. All GPU jobs

@@ -1,0 +1,13 @@
+family,variant,parent_count,parents_passing_conditional,parents_passing_generation,parents_passing_both
+U,direct,4,4,4,4
+U,gap,4,4,4,4
+U,level,4,4,2,2
+U,raw,4,4,2,2
+argn_continued,direct,4,4,4,4
+argn_continued,gap,4,3,0,0
+argn_continued,level,4,1,0,0
+argn_continued,raw,4,0,0,0
+argn_original,direct,4,4,2,2
+argn_original,gap,4,4,1,1
+argn_original,level,4,2,0,0
+argn_original,raw,4,0,0,0

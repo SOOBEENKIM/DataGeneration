@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "parents": [
+    {
+      "family": "argn_original",
+      "kappa": 0,
+      "index": 20260920,
+      "independent_offset_optimum_max_error": 3.923765135027679e-08,
+      "direct_probability_max_error": 0.0
+    },
+    {
+      "family": "argn_original",
+      "kappa": 0,
+      "index": 20260921,
+      "independent_offset_optimum_max_error": 1.4518443780531243e-08,
+      "direct_probability_max_error": 0.0
+    },
+    {
+      "family": "argn_continued",
+      "kappa": 0,
+      "index": 20260920,
+      "independent_offset_optimum_max_error": 2.9438753657018424e-09,
+      "direct_probability_max_error": 0.0
+    },
+    {
+      "family": "argn_continued",
+      "kappa": 0,
+      "index": 20260921,
+      "independent_offset_optimum_max_error": 8.337079693276905e-09,
+      "direct_probability_max_error": 0.0
+    },
+    {
+      "family": "U",
+      "kappa": 0,
+      "index": 0,
+      "independent_offset_optimum_max_error": 2.8553574227263567e-08,
+      "direct_probability_max_error": 0.0
+    },
+    {
+      "family": "U",
+      "kappa": 0,
+      "index": 1,
+      "independent_offset_optimum_max_error": 7.936528935483249e-08,
+      "direct_probability_max_error": 0.0
+    },
+    {
+      "family": "argn_original",
+      "kappa": 1,
+      "index": 20260920,
+      "independent_offset_optimum_max_error": 1.4084493571431267e-08,
+      "direct_probability_max_error": 0.0
+    },
+    {
+      "family": "argn_original",
+      "kappa": 1,
+      "index": 20260921,
+      "independent_offset_optimum_max_error": 1.9260629091633064e-08,
+      "direct_probability_max_error": 0.0
+    },
+    {
+      "family": "argn_continued",
+      "kappa": 1,
+      "index": 20260920,
+      "independent_offset_optimum_max_error": 4.336084824529962e-09,
+      "direct_probability_max_error": 0.0
+    },
+    {
+      "family": "argn_continued",
+      "kappa": 1,
+      "index": 20260921,
+      "independent_offset_optimum_max_error": 1.4043348095515995e-08,
+      "direct_probability_max_error": 0.0
+    },
+    {
+      "family": "U",
+      "kappa": 1,
+      "index": 0,
+      "independent_offset_optimum_max_error": 9.912551454660523e-08,
+      "direct_probability_max_error": 0.0
+    },
+    {
+      "family": "U",
+      "kappa": 1,
+      "index": 1,
+      "independent_offset_optimum_max_error": 1.1099836258465778e-08,
+      "direct_probability_max_error": 0.0
+    }
+  ],
+  "old_argn_replay_max_probability_difference": 0.0,
+  "implementation_commit": "a03739e1d8564709f79ed5984b1ebee4131eed01",
+  "implementation_unchanged_during_execution": true,
+  "originals_unchanged": true,
+  "all_generated_hashes_match": true,
+  "calibration_optimizer_verified_with_independent_scalar_roots": true
+}
