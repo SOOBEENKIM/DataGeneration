@@ -1,0 +1,17 @@
+{
+  "error": "TypeError: dict() got multiple values for keyword argument reference",
+  "scope": "oracle curve-row serialization only",
+  "source_commit_before_fix": "f00cfada00037d7a1089dcc1b3d559eb5e51f2e1",
+  "no_model_refit": true,
+  "no_model_reevaluation": true,
+  "same_oracle_seeds_and_settings": true,
+  "files": {
+    "oracle_--kappa_0.log": "3bbb768c24ab2faa0e7c586db65dd93356d60ca2b27f4c735ffab8a67a3d27ba",
+    "oracle_--kappa_1.log": "3bbb768c24ab2faa0e7c586db65dd93356d60ca2b27f4c735ffab8a67a3d27ba",
+    "dispatch.log": "0265f086a491d37be39f1f65cb7d1f88682ef9b5abcbfecefd6c7c9279d2f437",
+    "oracle/kappa_1/generated_JOINT_CONT_20264501.parquet": "a3ee07bee79db04488d103874eccb7e03d87c817c10d0312f1e3b0c87a07ba61",
+    "oracle/kappa_1/sampler_gate.json": "4bd60257abb40987e788067e20068ca4e70744f3b42a1dc92c8e04964de1442b",
+    "oracle/kappa_0/generated_JOINT_CONT_20264501.parquet": "bf3fddc5d44fbf8a7f3ccd6b897e6bf5b0c5499ed5ad889290136c073c4d1eac",
+    "oracle/kappa_0/sampler_gate.json": "8f1e3337c82d46638a4b7ef27ff2542f3f43619dd317a285041e4fbdc03a7d38"
+  }
+}

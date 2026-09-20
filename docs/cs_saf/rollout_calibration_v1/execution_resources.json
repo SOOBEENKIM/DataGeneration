@@ -1,0 +1,20 @@
+{
+  "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+  "torch": "2.1.2+cu121",
+  "cuda_build": "12.1",
+  "numpy": "1.26.4",
+  "pandas": "2.3.3",
+  "scipy": "1.15.3",
+  "physical_gpus": [
+    "0",
+    "2"
+  ],
+  "fit_minutes": 74.34717261938009,
+  "maximum_reserved_bytes": 50331648,
+  "fit_start_time": 1789908231.9897707,
+  "fit_end_time": 1789912727.1599789,
+  "cpu_evaluation_workers": 2,
+  "threads_per_worker": 1,
+  "scientific_fitting_retries": 0
+}

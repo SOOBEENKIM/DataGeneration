@@ -12,3 +12,11 @@
 - 평가 전에 학습 결과를 고정하는 barrier와 각 평가 manifest의 시작 시각을 확인한다. 정답 생성기를 호출하는 경로는 평가 함수로 분리했으며 학습 목표나 선택에 사용하지 않는다. 평가 전 source 목록에 기존 semi-Markov 지속시간 코드의 hash도 추가했다.
 
 최종 완료 여부와 원본 목록은 실행 후 만들어지는 `execution_summary.json`, 검증 결과는 `verification.json`을 기준으로 확인한다. 과거 C의 실패와 과거 E/ER 결과는 변경하지 않는다.
+
+## 평가 중 기술 오류 01
+
+24회 보정과 108개 모델 생성 평가를 모두 완료한 뒤, oracle 곡선 결과의 행을 만드는 과정에서 `reference`라는 이름이 두 번 전달되어 중단됐다. 하나는 raw/quantized라는 reference 종류, 다른 하나는 구간의 기준 반복확률이었다. κ0/1 각각 첫 CONT 표본을 저장한 뒤 발생했다. 기존 sampler gate는 둘 다 통과했다.
+
+원본 디렉터리와 로그, 첫 생성물 hash를 `artifacts/cs_saf/rollout_calibration_v1/technical_failure_01/` 및 [실패 목록](technical_failure_01.json)에 보존했다. 곡선 행에서만 종류 이름을 `reference_kind`로 바꾼다. 지표 행의 `reference`와 모든 확률·생성·평가식은 유지한다. 24개 보정값과 108개 모델 생성물은 변경하지 않으며, 같은 120개 oracle 설정·난수로 평가를 재개한다. 실패한 첫 표본이 동일하게 재생성되는지도 hash로 확인한다.
+
+수정 전 완료된 모델 평가의 evaluator는 기록된 Git commit의 원본 hash로 검증한다. 학습·모델·지표·oracle 계산 의존성은 현재 코드와도 같아야 한다. 기준 변경, 성능에 따른 후보 추가, 신경망 재학습은 없다. 오류가 생긴 평가 2개 조건의 재실행을 결과에 공개한다.

@@ -68,7 +68,8 @@ def score(frame,ev,metadata):
         centered=float(w@abs((fake-w@fake)-(real-w@real)))
         rows.append(dict(**metadata,group=g,**scores,null_centered_shape_l1=centered,
             generated_repeat_level=float(w@fake),reference_repeat_level=float(w@real)))
-        for j in range(5):curves.append(dict(**metadata,group=g,bin=j,reference=float(real[j]),generated=float(fake[j])))
+        curve_metadata={('reference_kind' if key=='reference' else key):value for key,value in metadata.items()}
+        for j in range(5):curves.append(dict(**curve_metadata,group=g,bin=j,reference=float(real[j]),generated=float(fake[j])))
     return rows,curves
 
 

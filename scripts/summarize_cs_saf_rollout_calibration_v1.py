@@ -1,5 +1,7 @@
 """Prospective decision, complete inventory, and independently recomputed metrics."""
 import json
+import hashlib
+import subprocess
 import sys
 from pathlib import Path
 import numpy as np
@@ -11,6 +13,16 @@ from scripts.evaluate_cs_saf_rollout_calibration_v1 import inputs,evaluators,val
 from scripts.summarize_cs_saf_structure_v1 import basic
 from scripts.run_cs_saf_external_audit_v1 import digest,write
 from benchmarks.cof_seqgen_saf_metrics import evaluate_metric_suite
+
+
+def verify_evaluation_source(source):
+    for file,expected in source['hashes'].items():
+        snapshot=subprocess.check_output(['git','show',f'{source["commit"]}:{file}'],cwd=ROOT)
+        assert hashlib.sha256(snapshot).hexdigest()==expected
+        # The preserved model evaluations precede the oracle-only curve-column
+        # naming fix. Verify that evaluator against its committed snapshot.
+        # Every training/model/metric/oracle dependency must still match now.
+        if file!='scripts/evaluate_cs_saf_rollout_calibration_v1.py':assert digest(ROOT/file)==expected
 
 
 def decision(cond,means,responses):
@@ -88,7 +100,7 @@ def main():
                 assert done['all_fits']==fitting
                 assert done['weights_unchanged'] and not done['test_accessed']
                 for f,h in done['files'].items():assert digest(evaluation/f)==h
-                for f,h in done['source']['hashes'].items():assert digest(ROOT/f)==h
+                verify_evaluation_source(done['source'])
                 for f,h in c['parents'][f'{k}/{t}/{name}'].items():assert digest(run.parent.folder_for(k,t,name)/f)==h
                 old=run.parent.folder_for(k,t,name)/'evaluation'
                 a=json.loads((old/'fit.json').read_text())['controls']['gap'];controls={'A':a}
@@ -157,7 +169,7 @@ def main():
         assert done['start_time']>=latest_fit and done['evaluation_only'] and len(done['inventory'])==60
         assert done['all_fits']==fitting
         for f,h in done['files'].items():assert digest(oracle_path/f)==h
-        for f,h in done['source']['hashes'].items():assert digest(ROOT/f)==h
+        verify_evaluation_source(done['source'])
         o=pd.read_csv(oracle_path/'generation_metrics.csv',dtype={'group':str});oracle_rows.extend(o.to_dict('records'))
         # All oracle raw-reference repeat scores independently recomputed.
         for f in done['inventory']:
@@ -199,7 +211,8 @@ def main():
         final_and_oracle_sequences=228*2048,fit_seconds=sum(f['seconds'] for f in fits),
         max_reserved_bytes=max(f['peak_reserved_bytes'] for f in fits),config_sha256=digest(run.CONFIG),inventory=inventory,
         fitting_manifests=fitting,
-        independent_data=False,test_accessed=False,scientific_retries=0))
+        independent_data=False,test_accessed=False,scientific_fitting_retries=0,
+        technical_oracle_retry_cells=2,technical_failure_events=1))
     print(json.dumps(decisions,indent=2),flush=True)
 
 
