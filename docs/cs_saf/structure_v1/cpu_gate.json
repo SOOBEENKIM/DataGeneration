@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "source_hashes": {
+    "models/cs_saf_structure.py": "0b56f6dc24c405f5ccdc4a1b1b22f1c3ca8d4c30c5b669ec03828e70a8d76c5c",
+    "experiments/cs_saf_structure_v1.py": "69466cea7c484631755fd60faf5c653ed66ec642ed77667ce3c242183841d9f9",
+    "models/cs_saf.py": "0bf5b6e8b9f9b7ace850ece54aafb63cd6aa8a91faf8733e5832883626cf79ca",
+    "models/cs_saf_v2.py": "6aca62d5f4323ff51518ca8331764d23f628c63d63ce880ce520f1d940302808",
+    "models/cof_seqgen_saf.py": "38d6556dcb88a35edffcda6d169273df8a45ab42cc1c9c733c145e1dc46fae29",
+    "experiments/cs_saf_replication.py": "b4d43782bff071591165964b1af80d7b0f8c2111a35205f0ed18994a933df2e0",
+    "experiments/cs_saf_pilot.py": "7492d018d20088ce7b306cb3db541839a6f4d968bd7b4f58abc3a7f0d33c8c36",
+    "experiments/cs_saf_generation_repeats.py": "16c3e2ca3579492b4ef893b3ee7eecf498d6feca135c3523c69d0ac49f0aef73",
+    "models/cs_saf_observed_repeat_control.py": "c0552b731732c2b4c209cb498208a5630b969a93dcaba9a7856f6f3c04339eb5",
+    "scripts/run_cs_saf_u_repeat_controls.py": "04837bd32f2e56334c537e75411565bde56543be0d45868d451165c828661c7a",
+    "scripts/cs_saf_repeat_control_common.py": "a94393ba54cf2259898ee0b3e02273844102adfaee393b960c888260ad652edd",
+    "experiments/cs_saf_generation_metrics.py": "6438710a393e6170130026272ce0ae0d187b638458ea40ccb7211b0b27579b2d",
+    "data/cof_seqgen_saf_tensorizer.py": "9bb3c40254ff8357797d1bfefb4e7455c07cd90d3963a8c1af9a9eb0410c333e",
+    "configs/benchmark_v2/cs_saf_structure_v1.json": "34856f265f6294a4256ce20af41db52dc5151d8f7b470c4c6aa3921dd200cf6d"
+  },
+  "source_commit": "d32a786f14f6258ae1e2896927d393550fad943b",
+  "common_initial_state_sha256": {
+    "U": "542d1a628d195525d7af1a44874346c32673ba2b2535a6f479baf3392b551ac1",
+    "G": "542d1a628d195525d7af1a44874346c32673ba2b2535a6f479baf3392b551ac1",
+    "C": "542d1a628d195525d7af1a44874346c32673ba2b2535a6f479baf3392b551ac1"
+  },
+  "gradient_check": true,
+  "old_coupling_probability_max_error": 1.1102230246251565e-15,
+  "C_fixed_history_marginal_max_error": 1.1920928955078125e-07,
+  "extreme_logits_gradient_finite": true,
+  "checks": {
+    "U": {
+      "normalized": true,
+      "first_step_uses_common_head": true,
+      "strict_past": true,
+      "nll_factorization": true,
+      "finite_gradients": true,
+      "deterministic_reload_generation": true,
+      "forced_repeat_group_alignment": true,
+      "parameters": 133549
+    },
+    "G": {
+      "normalized": true,
+      "first_step_uses_common_head": true,
+      "strict_past": true,
+      "nll_factorization": true,
+      "finite_gradients": true,
+      "deterministic_reload_generation": true,
+      "forced_repeat_group_alignment": true,
+      "parameters": 133549
+    },
+    "C": {
+      "normalized": true,
+      "first_step_uses_common_head": true,
+      "strict_past": true,
+      "nll_factorization": true,
+      "finite_gradients": true,
+      "deterministic_reload_generation": true,
+      "forced_repeat_group_alignment": true,
+      "parameters": 133549
+    }
+  },
+  "tiny_training": {
+    "U": {
+      "initial_nll": 8.95814058903263,
+      "best_nll": 8.325974427255293,
+      "final_train_nll": 4.162769901612735,
+      "best_checkpoint_selection_verified": true,
+      "exact_repeated_training": true,
+      "best_state_sha256": "5c1614aa79f15e331da0727bb94d7f7a8ba3d9dfe4d5379a0f1e106e83ffeb21"
+    },
+    "G": {
+      "initial_nll": 8.95221993667338,
+      "best_nll": 8.324834549345839,
+      "final_train_nll": 4.135301496630686,
+      "best_checkpoint_selection_verified": true,
+      "exact_repeated_training": true,
+      "best_state_sha256": "52ee8e3afd0c9d8a96dd68e8f1ab4f6a397bdf2cf55a969ebcbf0b19f3e533f8"
+    },
+    "C": {
+      "initial_nll": 8.95221993667338,
+      "best_nll": 8.324832949044149,
+      "final_train_nll": 4.1272116706819375,
+      "best_checkpoint_selection_verified": true,
+      "exact_repeated_training": true,
+      "best_state_sha256": "c08f504f2cc85ce08ead32a1b9d638b00364de0bf99b865c09b43d3428136a87"
+    }
+  },
+  "scientific_fits": 0
+}
