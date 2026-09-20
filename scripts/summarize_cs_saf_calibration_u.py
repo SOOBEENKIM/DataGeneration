@@ -120,6 +120,17 @@ def main():
         bound_hits=sum(x['bound_hit'] for fit in fits for x in fit['contexts'].values()),
         train_loss_change=[x['after_nll']-x['before_nll'] for fit in fits for x in fit['contexts'].values()],
         test_accessed=False,independent_data_confirmation=False,old_ER_FAIL_unchanged=True)
+    result['new_fit_parameters']=[dict(prevalence=pk,trial=int(name.split('_')[-1]),kappa=int(k),
+        offset=r['fit']['offset'],slope=r['fit']['slope'],contexts=r['fit']['contexts'],
+        parent_checkpoint_sha256=r['fit']['parent']['checkpoint_sha256'],
+        artifact_manifest=r['manifest'])
+        for pk,cell in raw.items() for name,conditions in cell.items() if name.startswith('Ucal/')
+        for k,r in conditions.items()]
+    result['gates']={name:json.loads((OUTPUT/name/'gate.json').read_text())
+                     for name in ('cpu_gate','gpu_gate')}
+    if any(g['decision']!='PASS' or g['source_commit']!=terminal['source_commit']
+           for g in result['gates'].values()):
+        raise ValueError('same-source CPU/GPU gates missing')
     precision_files=list(OUTPUT.glob('pi_*/kappa_*/trial_*/*cal/response_precision_verification.json'))
     precision=[json.loads(p.read_text()) for p in precision_files]
     result['precision_verification']=dict(full_precision_verifications=len(precision),
@@ -131,6 +142,11 @@ def main():
         raise ValueError('independent native verification missing or failed')
     result['native_verification']={k:v for k,v in native.items() if k!='records'}
     result['native_verification']['evidence_sha256']=sha256(OUTPUT/'native_verification.json')
+    pairing=json.loads((OUTPUT/'pairing_verification.json').read_text())
+    if pairing['status']!='PASS' or pairing['paired_cells']!=40:
+        raise ValueError('independent U/E pairing verification missing')
+    result['pairing_verification']={k:v for k,v in pairing.items() if k!='records'}
+    result['pairing_verification']['evidence_sha256']=sha256(OUTPUT/'pairing_verification.json')
     result['scientific_source_commits']=sorted({r['manifest']['source_commit']
         for cell in raw.values() for name,conditions in cell.items() if name.split('/')[0].endswith('cal')
         for r in conditions.values()})

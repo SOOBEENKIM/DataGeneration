@@ -4,7 +4,24 @@
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [frozen repeat-probability calibration](docs/cs_saf/calibration_v1_report_2026_09_20.md)
+Latest [equal-calibration U control](docs/cs_saf/calibration_u_control_v1_report_2026_09_20.md)
+is **COMPLETE: 40 U calibration fits, zero neural retraining, 120 reused U/E/Ecal
+references**. Ucal lowers mean active generated repeat-curve L1 at all four
+prevalences; Ecal has higher mean L1 than Ucal at every prevalence. All four paired
+L1 intervals include zero, and the registered consistency screen is not met.
+Ecal nevertheless retains lower conditional TV and null response in 5/5 trials
+at each prevalence. Calibration helps U too; E's conditional benefit does not
+establish a native generation benefit. 40 frozen-base and paired-input checks,
+CPU/GPU gates, and independent recomputation of 960 generation values passed
+(maximum discrepancy zero). No technical retries; GPU jobs have ended.
+[Professor briefing](docs/cs_saf/professor_brief_calibration_u_2026_09_20.md),
+[verified numbers and fitted parameters](docs/cs_saf/calibration_u_control_v1_result.json),
+[preregistration](docs/cs_saf/calibration_u_control_v1_preregistration.md),
+[recoverable state](docs/cs_saf/STATUS.md).
+Next proposal is fixed-model evaluation with additional generation tapes;
+independent data confirmation remains unexecuted.
+
+Previous [frozen repeat-probability calibration](docs/cs_saf/calibration_v1_report_2026_09_20.md)
 is **COMPLETE: 80 four-scalar calibration fits, zero base-model retraining,
 120 reused U/E/L003 references**. Calibration decreases active native repeat-curve
 L1 in mean at all four prevalences, and decreases MI error in 5/5 paired trials
@@ -19,7 +36,8 @@ failure and its identical scientific rerun are preserved; GPU execution has ende
 [verified numbers](docs/cs_saf/calibration_v1_result.json),
 [preregistration](docs/cs_saf/calibration_v1_preregistration.md),
 [execution amendment](docs/cs_saf/calibration_v1_execution_amendment_01.md).
-U+calibration and independent-data confirmation remain unexecuted.
+U+calibration was missing at that stage and is now completed above. Independent-data
+confirmation remains unexecuted.
 
 Previous [cross-history replay and joint-oracle diagnosis](docs/cs_saf/replay_oracle_v1_report_2026_09_17.md)
 is **COMPLETE: 120 saved models, 2,160 cross-history evaluations, 153,600 oracle

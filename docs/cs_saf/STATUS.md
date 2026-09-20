@@ -2,7 +2,48 @@
 
 Updated 2026-09-20. Branch: `research/cs-saf`.
 
-**Latest frozen copy-probability calibration COMPLETE. 80 four-scalar fits,
+**Latest equal-calibration U control COMPLETE: 40 four-scalar U fits, zero neural
+retraining, 120 reused U/E/Ecal references. All four prevalences, both kappas,
+five paired trials completed without a technical retry. GPU jobs have ended.**
+
+[Full result](calibration_u_control_v1_report_2026_09_20.md),
+[professor briefing](professor_brief_calibration_u_2026_09_20.md),
+[verified numbers and coefficients](calibration_u_control_v1_result.json),
+[preregistration](calibration_u_control_v1_preregistration.md).
+
+- Registration `de011db`; all 40 scientific cells from `c39313f`.
+- Ucal-U active native L1 mean reductions: 6.8/14.6/9.4/0.3%, improving
+  3/5, 4/5, 4/5, 3/5 trials. MI error improves 5/5 at every prevalence.
+  Mean null response and mark-transition TV increase slightly.
+- Primary Ecal-Ucal L1 means: +.002877/+.002542/+.001873/+.000326;
+  Ecal improves only 1/5, 3/5, 1/5, 3/5 trials. All four descriptive paired
+  intervals include zero. Registered consistency screen NOT MET (0/4).
+  Ucal-U also misses it (2/4). No superiority/equivalence claim; old ER FAIL remains.
+- Ecal retains lower conditional full-mark TV and null copy/repeat range than
+  Ucal in 5/5 trials at each prevalence. Its conditional advantage does not
+  establish a native relation advantage. The conditional TV interval includes
+  zero at 50%. Ecal MI and mark-transition TV means worsen at 5/10/25%, improve
+  at 50%; all endpoint vectors and factorial interactions are preserved.
+- CPU tests 10 PASS (2 CUDA tests skipped), U-specific GPU environment tests 3
+  PASS; same-source CPU/GPU gates PASS. Identity calibration exactly preserves
+  original U likelihood and seeded samples; no history parameters added.
+- 40 frozen-base identities, 80 fit-context objectives, 80 conditional groups,
+  40 paired train-target/order/generation-plan/precision checks PASS.
+  Independent native arithmetic: 480 groups, 960 values, maximum difference 0.
+  Full-precision response checks: 40 PASS, maximum entity discrepancy 3.875e-8.
+  Converged fits, no optimizer bound hits. No test access.
+- Scope: existing seed42 data and reused validation; one sampling tape per
+  training trial. This completes a missing control, not independent confirmation.
+- Next proposal (not registered/executed): keep U/Ucal/E/Ecal and their fitted
+  parameters fixed, preregister additional common generation tapes, and separate
+  sampling variation from training-trial effects before another architecture
+  revision. Then confirm any justified candidate with new data/training seeds.
+  Native differences cannot uniquely identify a mark-history mechanism.
+- Raw evidence: `artifacts/cs_saf/calibration_u_control_v1/`. Git versions code,
+  protocols, summaries, calibration coefficients and figures, not raw checkpoints.
+  Research remains on `research/cs-saf`; no merge into `main`.
+
+**Previous frozen copy-probability calibration COMPLETE. 80 four-scalar fits,
 zero base neural fits, 120 reused U/E/L003 reference models. All four prevalences,
 both kappa conditions and all five paired trials completed. One additional
 technical attempt preserved. GPU jobs have finished.**
@@ -25,8 +66,8 @@ technical attempt preserved. GPU jobs have finished.**
   reduces null copy range vs Ecal 5/5 per prevalence, but native L1 and MI
   means are worse at all four prevalences. The tradeoff persists.
 - Ecal native L1 vs U improves only in mean at 10/25%, and all four paired
-  intervals include zero. Ucal was not run; a generic calibration benefit
-  cannot be assigned to the extra history structure alone.
+  intervals include zero. Ucal was not run at that stage; the missing control
+  is now completed above. Generic calibration is not a history-only contribution.
 - 17 CPU tests and same-source CPU/GPU gates PASS; saved-state GPU regression
   PASS. The single TF32 response verification failure is archived. Full-precision
   control keeps the 1e-6 limit, while fit/generation/scientific scores retain
@@ -37,9 +78,9 @@ technical attempt preserved. GPU jobs have finished.**
   and MI values independently recomputed with maximum difference zero.
 - Same data seed42 and reused validation; no test/real-data access or independent
   data confirmation. Native sampling uses one existing tape per training trial.
-- Next proposal: a separately fixed U/Ucal/E/Ecal comparison to isolate generic
-  calibration from added history capacity, with fresh data/training seeds and
-  multiple paired generation tapes. No further fits automatically launched.
+- Historical next proposal: U/Ucal/E/Ecal, followed by fresh data/training
+  seeds and multiple paired generation tapes. The same-data missing control is
+  now completed above; fresh-data and multiple-tape confirmation remain pending.
   If null suppression is the main aim, retain L003cal as an explicit tradeoff
   and justify an application-based active cost before a new confirmation.
 - Raw evidence: `artifacts/cs_saf/calibration_v1/`. Git keeps reviewed source,
