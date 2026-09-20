@@ -1,0 +1,20 @@
+{
+  "version": "external-relations-v1",
+  "datasets": ["berka", "sparkov"],
+  "allowed_splits": ["train", "validation"],
+  "fit_fraction": 0.8,
+  "partition_seed": 20260921,
+  "positive_gap_quantiles": [0.2, 0.4, 0.6, 0.8],
+  "amount_high_quantile": 0.95,
+  "marginal_pseudocount": 0.5,
+  "conditional_pseudocount": 20.0,
+  "bootstrap_repetitions": 500,
+  "bootstrap_seed": 20260922,
+  "tie_seeds": [101, 102, 103],
+  "min_transitions": 500,
+  "min_entities": 30,
+  "relative_nll_improvement_screen": 0.01,
+  "neural_fits": 0,
+  "generations": 0,
+  "test_outcome_analysis": false
+}
