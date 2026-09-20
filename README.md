@@ -5,7 +5,16 @@ the earlier U/E study is on `research/cs-saf`, and `main` remains the earlier SA
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [matched internal structure comparison](docs/cs_saf/structure_v1/README.md)
+Current [frozen U/G rollout-calibration comparison](docs/cs_saf/rollout_calibration_v1/preregistration.md)
+is **RUNNING, not a completed result**. CPU/GPU gates passed; 24 bounded B/P
+correction searches reuse 12 frozen U/G parents and the same ten parameters as
+the existing A correction. All fits must finish before 108 model and 120
+evaluation-only oracle datasets are scored. No oracle/validation target is used
+for correction fitting. [Methods](docs/cs_saf/rollout_calibration_v1/methods.md),
+[execution notes](docs/cs_saf/rollout_calibration_v1/execution_notes.md).
+The previous C failure is unchanged.
+
+Latest completed [matched internal structure comparison](docs/cs_saf/structure_v1/README.md)
 is **COMPLETE: 18 fresh U/G/C fits and 162 newly generated datasets**.
 All models have 133,549 parameters, paired initial states and data orders, the same
 base likelihood, training budget and checkpoint rule. C's constrained repeat head

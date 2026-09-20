@@ -2,7 +2,22 @@
 
 Updated 2026-09-20. Current branch: `research/cs-saf-external-audit-v1`.
 
-**Latest Stage 2 COMPLETE: matched U/G/C structure comparison. 18 fresh neural fits,
+**Current follow-up RUNNING: frozen U/G with A (observed-history calibration),
+B (generated-relation calibration), and P (same objective with prediction guards).**
+Registration `13dc0ac`, fitting implementation `027bc55`, CPU/GPU gates `429172e`.
+24 bounded searches / zero neural fits. Train-only observed joint-frequency targets;
+same ten correction parameters, sequential feedback. No scientific outcomes yet.
+Every correction must be saved before 108 final model datasets and 120 oracle
+datasets are evaluated. Evaluation-only oracle is not a target or a lower bound.
+No extra scientific fits/coefficients. Previous C failure is preserved.
+[Registration](rollout_calibration_v1/preregistration.md),
+[methods](rollout_calibration_v1/methods.md),
+[execution notes](rollout_calibration_v1/execution_notes.md).
+Workstation outputs: `artifacts/cs_saf/rollout_calibration_v1/`.
+The `ALL_FITS_DONE.json` manifest marks the fitting barrier; the eventual
+`docs/cs_saf/rollout_calibration_v1/execution_summary.json` marks full completion.
+
+**Previous Stage 2 COMPLETE: matched U/G/C structure comparison. 18 fresh neural fits,
 162 new generated datasets, 331,776 sequences. Primary candidate C FAILS; stop expansion.**
 
 [Korean result and decision](structure_v1/README.md),
