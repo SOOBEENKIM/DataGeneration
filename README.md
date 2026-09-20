@@ -5,7 +5,26 @@ the earlier U/E study is on `research/cs-saf`, and `main` remains the earlier SA
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [frozen U/G rollout-calibration comparison](docs/cs_saf/rollout_calibration_v1/README.md)
+Latest [frozen history/run-state diagnostic](docs/cs_saf/history_diagnostic_v1/README.md)
+is **COMPLETE: 84 predictor/history replays on existing U/G+A, 36 stored model
+and 120 stored oracle datasets; zero new fits or generations, CPU only.**
+Active real-history repeat probability is underestimated after runs of 2-3 by
+4.66 percentage points (U) / 4.51 (G). Generated continuation in that state is
+54.14% / 54.36% versus 64.26% for the matched oracle; all three parent seeds show
+the discrepancy. Long-prefix mean-bias screens do not flag progressive collapse.
+Cross-history predictions show similar errors for U/G; both conditional mapping
+and visited-history composition matter, without causal attribution. Long-run
+minority generation cells have insufficient coverage. The detailed
+[architecture/theory/code audit](docs/cs_saf/history_diagnostic_v1/architecture_audit.md)
+finds no result-invalidating error in the inspected path, while documenting
+component-normalized loss, continuous-training/support-valued-generation history
+differences, local rather than global C guarantees, and limited nonrepeat gap
+expressivity. 106 tests and 13,608 independent metric checks pass. U/G+A remain
+controls; C/B/P failures stand. A state-aware simple control is a justified next
+candidate, **not yet registered or trained**. No independent confirmation,
+new-method superiority or fraud utility claim is made.
+
+Previous [frozen U/G rollout-calibration comparison](docs/cs_saf/rollout_calibration_v1/README.md)
 is **COMPLETE: 24 correction searches, zero neural refits, 108 model and 120 oracle
 generation datasets. Neither B nor prediction-protected P passes the joint criteria.**
 Relative to observed-history correction A, active generated L1 improves by 7.85%

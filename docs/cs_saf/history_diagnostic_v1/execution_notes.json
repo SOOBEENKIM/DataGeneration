@@ -1,0 +1,15 @@
+{
+  "audit_utc": "2026-09-20T14:33:08.981860+00:00",
+  "execution_start_utc": "2026-09-20T14:33:18.267551+00:00",
+  "execution_end_utc": "2026-09-20T14:35:44.786454+00:00",
+  "device": "cpu",
+  "threads": 1,
+  "raw_output_bytes": 177424375,
+  "tests_passed": 106,
+  "test_environment_repairs": [
+    "read-only use of local symlinks to original prepared_v1, followup_v1, calibration_v1, calibration_u_control_v1, generation_repeats_v1, replication_v1 artifacts"
+  ],
+  "initial_test_errors": "all missing historical worktree artifact paths; no mathematical assertion failures",
+  "source_scientific_run": "36d9050f72106249a6c080d4d9ea26b978f2f693",
+  "previous_decisions_unchanged": true
+}

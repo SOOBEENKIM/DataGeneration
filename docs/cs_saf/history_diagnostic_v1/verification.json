@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "independent_scalar_checks": 13608,
+  "scalar_max_error": 8.881784197001252e-16,
+  "independent_state_and_outcome_rows": 1687392,
+  "input_hashes_unchanged": true,
+  "previous_failure_decisions_unchanged": true,
+  "diagnostic_runtime_seconds": 146.51890325546265,
+  "fits": 0,
+  "new_generations": 0,
+  "gpu_used": false
+}
