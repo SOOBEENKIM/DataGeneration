@@ -19,7 +19,7 @@ from scripts.run_cs_saf_external_audit_v1 import digest,write
 
 EVAL_SOURCES=['scripts/evaluate_cs_saf_rollout_calibration_v1.py','benchmarks/cs_saf_joint_oracle.py',
     'benchmarks/cs_saf_oracle.py','benchmarks/temporal_coupling_v2.py','configs/benchmark_v2/full_v2_5.yaml',
-    'benchmarks/cof_seqgen_saf_metrics.py']
+    'benchmarks/cof_seqgen_saf_metrics.py','benchmarks/semi_markov.py']
 
 
 def source():
