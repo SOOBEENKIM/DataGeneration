@@ -76,7 +76,7 @@ def independent_repeat(frame,reference,edges):
 
 
 def main():
-    fitting=run.all_fitted();c=run.config();cond=[];gen=[];curves=[];responses=[];fits=[];inventory=[]
+    fitting=run.all_fitted();c=run.config();cond=[];gen=[];curves=[];responses=[];fits=[];inventory=[];traces=[]
     conditional_errors=[];repeat_errors=[];native_errors=[];oracle_rows=[]
     latest_fit=max(x['end_time'] for x in fitting)
     for k in c['kappas']:
@@ -116,6 +116,10 @@ def main():
                     fits.append(dict(kappa=k,trial=t,name=name,variant=m,seconds=fit['seconds'],sample_calls=fit['sample_calls'],
                         selected_endpoint=search['selected_endpoint'],training_guard_satisfied=fit['training_guard_satisfied'],
                         peak_reserved_bytes=fit['peak_reserved_bytes'],control=fit['control'],training_cost_delta=fit['training_cost_delta']))
+                    traces.append(dict(kappa=k,trial=t,name=name,variant=m,source=fit['source'],
+                        initial_control=fit['initial_control'],target=fit['target'],search=fit['search'],
+                        start_manifest_sha256=digest(dest/f'{m}_START.json'),
+                        done_manifest_sha256=digest(dest/f'{m}_DONE.json')))
                 rows=json.loads((evaluation/'conditional.json').read_text())
                 for row in rows:
                     if row['variant']=='raw':continue
@@ -181,7 +185,9 @@ def main():
     summary.to_csv(run.DOC/'oracle_repeat_summary.csv',index=False)
     decisions=decision(conditional,means,response)
     write(run.DOC/'calibration_runs.json',fits)
+    write(run.DOC/'optimization_traces.json',traces)
     write(run.DOC/'verification.json',dict(status='PASS',all_24_fits_precede_all_evaluation=True,
+        source_hashes=done['source']['hashes'],
         original_weights_and_inputs_hashes_verified=True,all_generation_plans_and_hashes_verified=True,
         ten_parameters_unchanged_capacity=True,train_only_targets_recomputed=True,
         guard_eligibility_and_selection_verified=True,conditional_independent_values=len(conditional_errors),
@@ -192,6 +198,7 @@ def main():
         fit_sample_calls=24*130,fit_generated_sequences=24*130*2048,final_datasets=108,oracle_datasets=120,
         final_and_oracle_sequences=228*2048,fit_seconds=sum(f['seconds'] for f in fits),
         max_reserved_bytes=max(f['peak_reserved_bytes'] for f in fits),config_sha256=digest(run.CONFIG),inventory=inventory,
+        fitting_manifests=fitting,
         independent_data=False,test_accessed=False,scientific_retries=0))
     print(json.dumps(decisions,indent=2),flush=True)
 
