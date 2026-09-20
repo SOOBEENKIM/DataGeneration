@@ -1,0 +1,77 @@
+{
+  "version": "cs-saf-u-calibration-control-v1",
+  "registered_on": "2026-09-20",
+  "parent_commit": "bdfcafdf7f2094736f66288b2937f231d0f3d1da",
+  "prevalences": [
+    0.05,
+    0.1,
+    0.25,
+    0.5
+  ],
+  "kappas": [
+    0,
+    1
+  ],
+  "trials": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "parents": [
+    "U"
+  ],
+  "references": [
+    "U",
+    "E",
+    "Ecal"
+  ],
+  "fit_split": "train",
+  "new_fits": 40,
+  "parameters_per_model": 4,
+  "output": "artifacts/cs_saf/calibration_u_control_v1",
+  "optimizer": {
+    "method": "L-BFGS-B",
+    "bounds": [
+      [
+        -8.0,
+        8.0
+      ],
+      [
+        0.05,
+        20.0
+      ]
+    ],
+    "initial": [
+      0.0,
+      1.0
+    ],
+    "options": {
+      "maxiter": 500,
+      "maxfun": 2000,
+      "maxls": 40,
+      "ftol": 1e-12,
+      "gtol": 1e-08
+    }
+  },
+  "feature_batch_size": 512,
+  "generation_entities": 2048,
+  "generation_batch_size": 256,
+  "max_workers": 2,
+  "scientific_failure_stops_grid": false,
+  "test_accessed": false,
+  "independent_confirmation": false,
+  "frozen_sources": {
+    "configs/benchmark_v2/cs_saf_calibration_v1.json": "50b947e4755d44c623fa343d5a8116c197c388e0221e7095b39f1388b558655c",
+    "docs/cs_saf/calibration_u_control_v1_preregistration.md": "21eb2caba73ffffd03e0b9035b09fd3925312e72784d6a7b22590153da076455",
+    "docs/cs_saf/calibration_v1_result.json": "0e3574c2dade105c0a708e94da61b1339158f77230dbae5c765b1a03f83062be",
+    "models/cs_saf_calibration.py": "c5478c90b1dc6ffe3eeca45b229b088fd7c16a1e1d01d929111668769ec3e7c4",
+    "experiments/cs_saf_calibration.py": "c3760d1a850c8e95e8ec831cc27bda2278d42ae07e44e80c7a3abf43948de60f",
+    "scripts/run_cs_saf_calibration.py": "5fe19d20ea5d56f5bdae03962a562b9dfefc1a95238a37f88529105698f81638",
+    "scripts/summarize_cs_saf_calibration.py": "66acf9ff04e392456c4f542a42cd462da08f3dce705bde3423839b874c1d6c00",
+    "scripts/verify_cs_saf_calibration_native.py": "c01bb249ac49823e3e5cd682bd688e86bd1456d05a4d5dc0d699e4a7c3b1dd78"
+  },
+  "primary_contrast": "Ecal_minus_Ucal",
+  "generation_tapes_per_trial": 1
+}
