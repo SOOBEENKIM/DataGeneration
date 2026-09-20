@@ -1,0 +1,11 @@
+{
+  "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "pyarrow": "24.0.0",
+    "matplotlib": "3.10.9",
+    "pytest": "9.1.1"
+  }
+}

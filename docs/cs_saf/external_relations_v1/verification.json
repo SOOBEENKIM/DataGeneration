@@ -1,0 +1,202 @@
+{
+  "passed": true,
+  "run_manifest_sha256": "b56820508e1b0da6b99a62a9f0c6595fb9cab22bd88757d91442646407eeca03",
+  "verifier_sha256": "8d54c2f85e7f3286b3ed56537ab50beef599caa59bb6ebae59939aff919da54f",
+  "independently_imports_experiment": false,
+  "point_estimates_only": true,
+  "interval_algorithm_unit_tested_not_independently_recomputed": true,
+  "test_outcome_analysis": false,
+  "new_fits": 0,
+  "datasets": {
+    "berka": {
+      "development_rows": 895507,
+      "profile_rows_verified": 168,
+      "score_rows_verified": 20,
+      "max_absolute_error": 3.3350058825654116e-14,
+      "postrun_empirical_support_diagnostic": {
+        "internal_check": {
+          "evaluation_events": 58748,
+          "unseen_previous_mark_fraction": 0.0,
+          "unseen_previous_gap_fraction": 0.0,
+          "unseen_previous_current_pair_fraction": 0.0,
+          "unseen_previous_gap_current_triple_fraction": 0.0,
+          "median_training_count_for_observed_pair": 16258.0,
+          "median_training_count_for_observed_triple": 4091.0
+        },
+        "validation": {
+          "evaluation_events": 61295,
+          "unseen_previous_mark_fraction": 0.0,
+          "unseen_previous_gap_fraction": 0.0,
+          "unseen_previous_current_pair_fraction": 0.0,
+          "unseen_previous_gap_current_triple_fraction": 0.0,
+          "median_training_count_for_observed_pair": 20117.0,
+          "median_training_count_for_observed_triple": 5055.0
+        }
+      },
+      "complete_run_coverage": [
+        {
+          "split": "train",
+          "run_bin": "1",
+          "transitions": 236391,
+          "entities": 3150,
+          "repeats": 56611,
+          "estimable": true
+        },
+        {
+          "split": "train",
+          "run_bin": "2-3",
+          "transitions": 44291,
+          "entities": 3084,
+          "repeats": 18579,
+          "estimable": true
+        },
+        {
+          "split": "train",
+          "run_bin": "4-7",
+          "transitions": 4018,
+          "entities": 1506,
+          "repeats": 2509,
+          "estimable": true
+        },
+        {
+          "split": "train",
+          "run_bin": "8+",
+          "transitions": 42,
+          "entities": 24,
+          "repeats": 25,
+          "estimable": false
+        },
+        {
+          "split": "validation",
+          "run_bin": "1",
+          "transitions": 50829,
+          "entities": 675,
+          "repeats": 12282,
+          "estimable": true
+        },
+        {
+          "split": "validation",
+          "run_bin": "2-3",
+          "transitions": 9545,
+          "entities": 657,
+          "repeats": 4082,
+          "estimable": true
+        },
+        {
+          "split": "validation",
+          "run_bin": "4-7",
+          "transitions": 901,
+          "entities": 343,
+          "repeats": 525,
+          "estimable": true
+        },
+        {
+          "split": "validation",
+          "run_bin": "8+",
+          "transitions": 20,
+          "entities": 11,
+          "repeats": 11,
+          "estimable": false
+        }
+      ],
+      "postrun_category_mapping_check": {}
+    },
+    "sparkov": {
+      "development_rows": 1094564,
+      "profile_rows_verified": 102,
+      "score_rows_verified": 20,
+      "max_absolute_error": 5.329070518200751e-15,
+      "postrun_empirical_support_diagnostic": {
+        "internal_check": {
+          "evaluation_events": 200688,
+          "unseen_previous_mark_fraction": 0.0,
+          "unseen_previous_gap_fraction": 0.0,
+          "unseen_previous_current_pair_fraction": 0.2050097664035717,
+          "unseen_previous_gap_current_triple_fraction": 0.6726959260145101,
+          "median_training_count_for_observed_pair": 2.0,
+          "median_training_count_for_observed_triple": 0.0
+        },
+        "validation": {
+          "evaluation_events": 177844,
+          "unseen_previous_mark_fraction": 0.0,
+          "unseen_previous_gap_fraction": 0.0,
+          "unseen_previous_current_pair_fraction": 0.14215267312925936,
+          "unseen_previous_gap_current_triple_fraction": 0.6114853467083511,
+          "median_training_count_for_observed_pair": 2.0,
+          "median_training_count_for_observed_triple": 0.0
+        }
+      },
+      "complete_run_coverage": [
+        {
+          "split": "train",
+          "run_bin": "1",
+          "transitions": 913951,
+          "entities": 688,
+          "repeats": 1889,
+          "estimable": true
+        },
+        {
+          "split": "train",
+          "run_bin": "2-3",
+          "transitions": 1892,
+          "entities": 548,
+          "repeats": 4,
+          "estimable": true
+        },
+        {
+          "split": "train",
+          "run_bin": "4-7",
+          "transitions": 0,
+          "entities": 0,
+          "repeats": 0,
+          "estimable": false
+        },
+        {
+          "split": "train",
+          "run_bin": "8+",
+          "transitions": 0,
+          "entities": 0,
+          "repeats": 0,
+          "estimable": false
+        },
+        {
+          "split": "validation",
+          "run_bin": "1",
+          "transitions": 177482,
+          "entities": 147,
+          "repeats": 361,
+          "estimable": true
+        },
+        {
+          "split": "validation",
+          "run_bin": "2-3",
+          "transitions": 362,
+          "entities": 113,
+          "repeats": 1,
+          "estimable": false
+        },
+        {
+          "split": "validation",
+          "run_bin": "4-7",
+          "transitions": 0,
+          "entities": 0,
+          "repeats": 0,
+          "estimable": false
+        },
+        {
+          "split": "validation",
+          "run_bin": "8+",
+          "transitions": 0,
+          "entities": 0,
+          "repeats": 0,
+          "estimable": false
+        }
+      ],
+      "postrun_category_mapping_check": {
+        "train_merchant_categories_max": 2,
+        "train_merchants_with_multiple_categories": 7,
+        "validation_events_violating_train_merchant_category_map": 1536
+      }
+    }
+  }
+}

@@ -1,8 +1,38 @@
 # CS-SAF recoverable research state
 
-Updated 2026-09-20. Current branch: `research/cs-saf-external-audit-v1`.
+Updated 2026-09-21. Current branch: `research/cs-saf-external-audit-v1`.
 
-**Latest review COMPLETE: [dataset literature and research-process audit](dataset_literature_and_process_audit_2026_09_20.md).**
+**Latest experiment COMPLETE: [external Berka/Sparkov relationship and preprocessing audit](external_relations_v1/README.md).**
+Registered `e9e61d2`, science source `6726a8e`. Raw/canonical equality checked on
+1,990,071 development events. Seven unit checks and independent reductions of
+270 profile rows / 40 prediction rows pass (maximum difference 3.34e-14).
+CPU ~39.73 seconds on `finx-System-Product-Name`; empirical frequency/mean tables
+fit, but zero neural fits, zero new generations, no test outcome analysis.
+
+- Berka: observed-gap-conditioned transition table validation NLL 1.360426 →
+  1.239030 (8.92% gain), internal check 9.28% gain. Only 39.04% of validation
+  adjacent pairs are unambiguous. Full-pair operation repeat changes from 25.54%
+  to 21.31% under reversed unknown within-day order. Require order-invariant
+  daily evaluation alongside unambiguous transition results.
+- Sparkov: same-merchant repeat only 0.204%; same-category repeat varies
+  14.12/12.85/10.12/4.01/8.50% across train-defined gap bins and agrees with train.
+  Merchant-conditioned amount log-MAE improves 18.58%. Sparse merchant transition
+  tables worsen NLL: 6.4927 → 7.0539 → 8.3999. Post-run coverage: 61.15% of
+  validation previous-merchant/gap/current-merchant triples were unseen in train.
+  Do not infer absent temporal signal or new-model necessity from that baseline.
+- Existing U/G requires two contexts, no auxiliary fields, lengths <=32;
+  98.37%/91.84% of Berka/Sparkov validation entities exceed that length. External
+  input/sequence handling needs an explicit, tested port before neural comparison.
+  Never create fake groups or truncate full trajectories silently. Exclude
+  whole-trajectory `entity_any_fraud` from predictors. Seven Sparkov merchant
+  names have multiple categories; category is not a deterministic lookup.
+- [Next comparison contract](external_relations_v1/next_comparison_contract.md):
+  prepare common external schema/evaluator and U_ext/G_ext ports, then register
+  budgets and compare official ARGN, CPAR and adequate simple controls. No new
+  architecture, external neural result, fraud utility or contribution claim here.
+  Failed prior candidates remain failed. Results are on this branch, not main.
+
+**Previous review COMPLETE: [dataset literature and research-process audit](dataset_literature_and_process_audit_2026_09_20.md).**
 Fourteen original papers were checked for datasets/evaluation, and 22 completed
 CS-SAF result bundles were inventoried (not 22 architecture changes). Controlled
 simulation remains useful for diagnosis; current-method external relevance and
@@ -11,7 +41,7 @@ another state/gap correction. Existing materialization is documented, but remote
 raw-file availability/hashes were not revalidated in this review. Berka marks
 encode operation/type, not counterparties. No training or new evaluation here.
 
-**Latest experiment COMPLETE: [frozen history/run-state diagnostic](history_diagnostic_v1/README.md).**
+**Previous experiment COMPLETE: [frozen history/run-state diagnostic](history_diagnostic_v1/README.md).**
 84 fixed-model/history replays, 36 stored U/G+A generation datasets and 120 stored
 oracle datasets; zero fits/new generation, CPU only. Active real-history run-2/3
 repeat bias is -4.66/-4.51 percentage points for U/G. Generated continuation is

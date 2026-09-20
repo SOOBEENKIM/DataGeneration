@@ -5,7 +5,22 @@ the earlier U/E study is on `research/cs-saf`, and `main` remains the earlier SA
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [dataset literature and research-process audit](docs/cs_saf/dataset_literature_and_process_audit_2026_09_20.md)
+Latest [Berka/Sparkov observed-relation audit](docs/cs_saf/external_relations_v1/README.md)
+is **COMPLETE: 1,990,071 development transactions checked against raw data,
+empirical prediction tables evaluated, zero neural fits or new generations.**
+Adding observed gap to a previous-operation table improves Berka validation NLL
+by 8.92%, but only 39.04% of its adjacent pairs have unambiguous date ordering.
+Changing within-day order changes full-pair repeat rate by 4.22 percentage points.
+Sparkov same-merchant repetition is only 0.204%; gap/category and merchant/amount
+relations are more appropriate targets than long merchant runs. Its sparse
+merchant transition tables worsen NLL, so this is not evidence of a useful strong
+baseline or proposed-model superiority. Seven unit checks and 310 independent
+aggregate-row checks pass. The [next comparison contract](docs/cs_saf/external_relations_v1/next_comparison_contract.md)
+requires explicit external U/G ports: current code enforces two contexts, no
+auxiliary fields and at most 32 events. Full external neural training remains
+unexecuted. Previous failures and the unproven contribution remain unchanged.
+
+Previous [dataset literature and research-process audit](docs/cs_saf/dataset_literature_and_process_audit_2026_09_20.md)
 checks 14 original papers and inventories 22 completed CS-SAF result bundles.
 **Prioritize problem validation on external Berka/Sparkov data before another
 architecture or state/gap correction.** Simulations are legitimate diagnostic
@@ -15,7 +30,7 @@ marks have different meanings. Historical materialization and older CoF external
 results are distinguished from current U/G evidence. No new model was trained
 for this review; previous failures remain unchanged.
 
-Latest [frozen history/run-state diagnostic](docs/cs_saf/history_diagnostic_v1/README.md)
+Previous [frozen history/run-state diagnostic](docs/cs_saf/history_diagnostic_v1/README.md)
 is **COMPLETE: 84 predictor/history replays on existing U/G+A, 36 stored model
 and 120 stored oracle datasets; zero new fits or generations, CPU only.**
 Active real-history repeat probability is underestimated after runs of 2-3 by

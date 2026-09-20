@@ -1,0 +1,115 @@
+{
+  "dataset": "sparkov",
+  "gap_edges": [
+    4627.0,
+    11700.0,
+    23752.0,
+    49651.0
+  ],
+  "gap_bin_count": 6,
+  "gap_units": "seconds",
+  "amount_fit_p95": 191.1,
+  "fit_entities": 550,
+  "internal_check_entities": 138,
+  "fit_mark_vocabulary_size": 693,
+  "fit_ids_sha256": "9f6c675183d6fc350b528e2807499b1c5edd543f15bd1ea6f7d9724a3e8c3a8d",
+  "vocabulary_sha256": "230f2ff0e088088d04a3ede36767a01c3686477661b5eef8798d6a4a3a8f2f26",
+  "raw_verification": {
+    "development_rows_verified": 1094564,
+    "compared_columns": [
+      "timestamp",
+      "mark",
+      "amount",
+      "category",
+      "event_is_fraud"
+    ],
+    "exact_equality": true,
+    "test_outcome_analysis": false,
+    "provided_unix_offset_min_seconds": 220838400.0,
+    "provided_unix_offset_max_seconds": 220924800.0,
+    "provided_unix_offset_unique": 2
+  },
+  "order_invariance_checks": 5,
+  "inputs": [
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/raw/sparkov/fraudTrain.csv",
+      "sha256": "fd7139200dbfcbed0b6742bbe05a4f1abce532c4fef20918228a651647a3e75d",
+      "kind": "raw_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/dataset_report.json",
+      "sha256": "024933de899e6f72f0eab142eb1dfcb0bada0c61f981093c55bf17453e93b3a7",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/entity_splits.parquet",
+      "sha256": "553f1bc4344fea005cc698daa0a67639a6e8de31491fcad14933caf8e9752a65",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/events.parquet",
+      "sha256": "227fe8f2b5af13776bd85a7fb76542b932bbdd2e750652ce5d3f29949c7cac85",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/schema.json",
+      "sha256": "b73497dbb9b7f4c67aff389f9bc1914fea0a99746cfebbcce83445ba82bda041",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/split_ids/test.json",
+      "sha256": "c2012cf20ae63b3f583834b7d69dddb39a845f7c6c432895f5a3a4d6b94388cf",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/split_ids/train.json",
+      "sha256": "771adbbe83a04b774ce6f4636c06ab56d9b2a24104f2e0ac621804e77b89c15d",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/split_ids/validation.json",
+      "sha256": "bfc01fe588a9580d198873164ccf2abfadb4dd8791988b5c5c2afd07e73efef3",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/static_context.parquet",
+      "sha256": "db72a745e2b174f9fb527dede412979f4e70df1da08da07186a9c64111a55e71",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/train_transforms/gap_state.json",
+      "sha256": "ff9e09aa08e8ef321dec101d24173031ca1d2306250eb9a4579b475c89832fb8",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/train_transforms/gap_support_counts.parquet",
+      "sha256": "2eaad9992c5033162854754f70851584428f33552356e275f1fb4dbbd1e0ec16",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/train_transforms/numeric_state.json",
+      "sha256": "3f6c94bb1d366dce50e5ef49ee56dfd55c9a8d0fe451dc6ecf8401cd59b3b1f6",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/train_transforms/train_only_provenance.json",
+      "sha256": "f6b345ef3d5706c6ccf5d23e7f92fcec97580704470c8db1f5af8c1126f3c326",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/train_transforms/vocabularies.json",
+      "sha256": "0d035d536d0ba01dbbf56a2a231a3f736b967de013613bdb1e0c8d09b786a736",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/manifests/acquisition/sparkov.json",
+      "sha256": "9d84e919ddc630ab7ccb0d1627c1816e9a32dd2acb326aa9dbf19b6f5e261ef6",
+      "kind": "manifest"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/sparkov/canonical_manifest.json",
+      "sha256": "5ec8d547e72823b90a989a9bb596b2aa96be2b50673518a85b17adf7bd731cc0",
+      "kind": "manifest"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+dataset,split,entities,events,transitions,unambiguous_transitions,unambiguous_fraction,tied_event_fraction,zero_gap_fraction,length_median,length_p95,length_max,fraction_entities_over_32,vocabulary_size,fit_vocabulary_oov_fraction,missing_first_gap,fraud_events,fraud_entities
+sparkov,train,688,916567,915879,915843,0.9999606934977219,2.618466516904929e-05,1.3102167426046454e-05,1267.5,2808.599999999993,3123,0.9244186046511628,693,0.0,688,5214,533
+sparkov,validation,147,177997,177850,177844,0.9999662637053697,2.247228885880099e-05,1.1245431543435479e-05,1040.0,2903.8999999999955,3119,0.9183673469387755,693,0.0,147,1146,114

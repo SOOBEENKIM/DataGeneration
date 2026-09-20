@@ -1,0 +1,157 @@
+{
+  "dataset": "berka",
+  "gap_edges": [
+    2.0,
+    4.0,
+    6.0,
+    11.0
+  ],
+  "gap_bin_count": 6,
+  "gap_units": "days",
+  "amount_fit_p95": 25300.0,
+  "fit_entities": 2520,
+  "internal_check_entities": 630,
+  "fit_mark_vocabulary_size": 6,
+  "fit_ids_sha256": "abee7aeb87ba8c9b3a2c930b6f274bff8f547f6a39c52ccec10d89e0a64d261f",
+  "vocabulary_sha256": "112aa70392ed1dd80d92ca39c2bbbf6e5e7bdb11ef5a1828c8457e933998f22c",
+  "raw_verification": {
+    "development_rows_verified": 895507,
+    "compared_columns": [
+      "timestamp",
+      "mark",
+      "amount",
+      "balance",
+      "transaction_type"
+    ],
+    "exact_equality": true,
+    "test_outcome_analysis": false
+  },
+  "order_invariance_checks": 5,
+  "inputs": [
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/raw/berka/account.asc",
+      "sha256": "58d7f50abd72e9b1a5568346f74bb54cd71224ee1db9f09a27d7cac563f38cc6",
+      "kind": "raw_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/raw/berka/card.asc",
+      "sha256": "fc669bde6adf6457d87421c0bfb218e9c384a7032c6accd348d207a405e72109",
+      "kind": "raw_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/raw/berka/client.asc",
+      "sha256": "e435c6b92d246f4f0dfd5e2827469d745c06238714c32b3ffb415eebe794e1a7",
+      "kind": "raw_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/raw/berka/disp.asc",
+      "sha256": "ebd801f77b6d322e8ebc08e52f188e7c8fca539325f85f57f8c73434da9d32d8",
+      "kind": "raw_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/raw/berka/district.asc",
+      "sha256": "7f03cf3b9b82f0fdcc3abdf6cc716f145db8e9875c68e2d2e2f7151e9ecf4df3",
+      "kind": "raw_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/raw/berka/loan.asc",
+      "sha256": "68535f609a254aa7a3f03dd8e27dcb822b532df12a0d6046f0666b8dc0b8ae8e",
+      "kind": "raw_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/raw/berka/order.asc",
+      "sha256": "035930fa6acd2ca42a935e654b21e1bb260248f49b6dc6e7de6351b7c4d56d02",
+      "kind": "raw_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/raw/berka/trans.asc",
+      "sha256": "75ab2f39df9d79d79c5c900de90ddd28248b689f214598ac9fa2ff0f574a70d2",
+      "kind": "raw_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/raw/berka/Financial Data description.pdf",
+      "sha256": "67227f33f4fc6f8526ca5216fc6ac55ef86393b4f6b3cb6c69a0969c9ffa2b16",
+      "kind": "raw_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/raw/berka/README.md",
+      "sha256": "f7e0229da5dc9c4abde12a8abeb066a2ebd0891fb6e2d87fdc7c0c11797f75ea",
+      "kind": "raw_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/dataset_report.json",
+      "sha256": "d4cb6b5c0a2c5d07beed2a7ebcd0a22ae0651c70571a7e3e85bae5638110971a",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/entity_splits.parquet",
+      "sha256": "8948349af2438df3d00ff951f4ec6add4840c958c371e0dfaf78305478764e8e",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/events.parquet",
+      "sha256": "a35759d49b3db112579c968827cb8732b20d4b7a6146feba1743dfda157c3ffd",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/schema.json",
+      "sha256": "8d0150bebd17e5d527d348a2632c2cb3b7c33bf2dd233c1561cf4d6549ffccd1",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/split_ids/test.json",
+      "sha256": "368806dab6bb1735e63611683db618e90f35af4fee8701d5d1432d94c3dad5aa",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/split_ids/train.json",
+      "sha256": "74e2adbdcc16d9017034e633696754c565a56b7b59acb87c91f9a90ac23b3b58",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/split_ids/validation.json",
+      "sha256": "824b3fe168b6811e31f1971406e8df35506e58557e79d242185791d8bad0eda6",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/static_context.parquet",
+      "sha256": "221ceac18517cb3da70ae1edb54c95f5a868d645d1f6566fe55ce7f8af27b575",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/train_transforms/gap_state.json",
+      "sha256": "f080f4f311253b3c068a145451c61c52ad1bee324f865bb752a25d55937e4a5e",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/train_transforms/gap_support_counts.parquet",
+      "sha256": "85124e373d67a779746c40cf54c244122360c49615c54a67af1a1253b1bda0df",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/train_transforms/numeric_state.json",
+      "sha256": "84e9af8503372e1ba435d9611c59e9dcfd242644d4c49069c993b0c873dc3645",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/train_transforms/train_only_provenance.json",
+      "sha256": "ac2acce97824cf3299d775b554dfc5adf0fbb53e41b87fe8fee86155fe974a2b",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/train_transforms/vocabularies.json",
+      "sha256": "2ab95851d7731e0e113b59b099a74934a804f592ad9682d96306f8da759eb915",
+      "kind": "canonical_bytes_only"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/manifests/acquisition/berka.json",
+      "sha256": "00219c81395f6b4849afe765b96be76a466102cfe97408692e57579737b25bb0",
+      "kind": "manifest"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/data/cof_seqgen_saf/canonical/berka/canonical_manifest.json",
+      "sha256": "76a568f0db09b5fa5b951bb33e0d04bd20870b0df0e2d4b7e26851fe74244237",
+      "kind": "manifest"
+    }
+  ]
+}

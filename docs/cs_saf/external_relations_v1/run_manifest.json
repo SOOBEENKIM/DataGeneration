@@ -1,0 +1,31 @@
+{
+  "version": "external-relations-v1",
+  "source_commit": "6726a8eab25fd27b79da3b0e8b900f3ef2b8a8b9",
+  "source_sha256": "f628233f3fd2a008cd3abf91c9667df9a2c775975fef4c7317cfcde69c55b605",
+  "config_sha256": "f5f0f55254e5600475b8311fbf5de151628f9d9404360d7d39804b76d63c38b8",
+  "host": "finx-System-Product-Name",
+  "elapsed_seconds": 39.72875189781189,
+  "datasets": [
+    "berka",
+    "sparkov"
+  ],
+  "neural_fits": 0,
+  "new_generations": 0,
+  "test_outcome_analysis": false,
+  "files": {
+    "berka_audit.json": "ad91fa7181b4dab25e0efb54b95dffa372a2af63f8b7e07cfbd5df9d70833680",
+    "berka_balance_profiles.csv": "929688f811af28a4bf404587d5a0cd8dca8ca9f6d88fae5e6fbca95242a97564",
+    "berka_coverage.csv": "fed2f5dbfcb4a2cdd8a6842a93a6e31b17a4bc2472cd4ccbc9fd8e8b73383aa6",
+    "berka_empirical_scores.csv": "6d4fb9ebc4cb791ea03d378b15d5d6edf09b4d10ee94f9d45d82e8175924c366",
+    "berka_profiles.csv": "42f8f012c5857511984e2b450df60a15defbd0ae74064611328daafbe4145f0b",
+    "berka_tie_sensitivity.csv": "315f192e24a330acae4221df8e37b767bcec2851b27ccbb114470ebb8667e4a3",
+    "empirical_nll.png": "bbbfd363b314662a8e69d3f16af7a9175a4840e916d591b92f9c3dc683e5976c",
+    "gap_repeat.png": "4e36d4b3ca8c5c3b4632bd6ec454c0edc0ac858a22efa0db502add8fee00178c",
+    "sparkov_audit.json": "7f9b334f1f8d0cdf790d09926d6a6f538b128cc637c5e79026db2f2a97aa4073",
+    "sparkov_coverage.csv": "dd0b4c04e142d753b9dbc89a7be8dcc23b5771a7e51b70eb3625e8f6f7ca878b",
+    "sparkov_empirical_scores.csv": "a829c46d4f41a435e1e136221b0ac3780831187238053ece2c673ff5d2e84cd4",
+    "sparkov_fraud_profiles.csv": "1352c48a3f1e8e442bb17367dbcb1d19acbc254b94f225b5b8884cd73699f369",
+    "sparkov_profiles.csv": "ccab3a3c45507970dd5880ff58c5fa8bd6d7cd5fe7c12f4be1a607ebcf501402",
+    "sparkov_tie_sensitivity.csv": "25e088e5eec3f4cb98b32fe2c68f488c6ef281ca22a500f1599ba03bb7fb1c9b"
+  }
+}
