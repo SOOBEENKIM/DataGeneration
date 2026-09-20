@@ -56,7 +56,7 @@ def cpu_gate():
         torch.testing.assert_close(lp.exp().sum(-1),torch.ones_like(mask,dtype=lp.dtype),atol=3e-7,rtol=0)
         assert (lp.exp()[...,:3]==0).all()
         if name!='U':
-            torch.testing.assert_close(lp.exp()[mask].gather(-1,previous[mask,None])[:,0],lr[mask].exp())
+            torch.testing.assert_close(lp.exp()[mask].gather(-1,previous[mask][:,None])[:,0],lr[mask].exp())
             logits=m.new_mark_head(h).clone();logits[...,:3]=-torch.inf
             nonrepeat=F.log_softmax(logits.scatter(-1,previous[...,None],-torch.inf),-1)
             target=x['receiver'];repeated=(target==previous)
