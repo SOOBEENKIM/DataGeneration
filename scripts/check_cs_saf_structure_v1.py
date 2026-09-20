@@ -96,11 +96,13 @@ def cpu_gate():
         results=[]
         for repeat in ('a','b'):
             _,r=train(1,0,name,'cpu',f'{name}_{repeat}')
-            assert r['best_train_nll']<.9*r['initial_train_nll']
+            assert r['final_train_nll']<.9*r['initial_train_nll']
+            assert r['best_epoch']==min(r['history'],key=lambda row:row['validation']['base_nll'])['epoch']
             results.append(r)
         assert results[0]['best_state_sha256']==results[1]['best_state_sha256']
         assert results[0]['history']==results[1]['history']
         training[name]=dict(initial_nll=results[0]['initial_train_nll'],best_nll=results[0]['best_train_nll'],
+            final_train_nll=results[0]['final_train_nll'],best_checkpoint_selection_verified=True,
             exact_repeated_training=True,best_state_sha256=results[0]['best_state_sha256'])
     write(DOC/'cpu_gate.json',dict(status='PASS',source_hashes=source['hashes'],source_commit=source['commit'],
         common_initial_state_sha256=initial,gradient_check=True,old_coupling_probability_max_error=equivalent,

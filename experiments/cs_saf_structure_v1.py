@@ -130,6 +130,7 @@ def train(kappa, trial, name, device, smoke_name=None):
             print(f'TRAIN {kappa} {trial} {name} epoch={epoch} val={val["base_nll"]:.6f}',flush=True)
             if stale>=opts['patience']:break
         _atomic_torch_save(checkpoint,dest/'checkpoint_last.pt')
+        final_train = evaluate(model,tr,opts['batch_size'],device)['base_nll'] if smoke_name else None
         model.load_state_dict(torch.load(dest/'checkpoint_best.pt',map_location=device)['model_state'])
         report=dict(kappa=kappa,trial=trial,name=name,source=source,data=provenance,
             initial_state_sha256=initial,best_state_sha256=state_digest(model),
@@ -138,6 +139,7 @@ def train(kappa, trial, name, device, smoke_name=None):
             epochs=len(history),history=history,seconds=time.monotonic()-started,
             checkpoint_sha256=digest(dest/'checkpoint_best.pt'),last_checkpoint_sha256=digest(dest/'checkpoint_last.pt'),
             initial_train_nll=initial_train,
+            final_train_nll=final_train,
             best_train_nll=evaluate(model,tr,opts['batch_size'],device)['base_nll'] if smoke_name else None,
             peak_reserved_bytes=torch.cuda.max_memory_reserved() if str(device).startswith('cuda') else None,
             device=str(device),torch=torch.__version__,smoke=smoke_name is not None,test_accessed=False)
