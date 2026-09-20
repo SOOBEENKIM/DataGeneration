@@ -11,6 +11,10 @@ import numpy as np
 import pandas as pd
 import torch
 
+# Same explicit FP32 policy for all three structures; avoid TF32/CPU drift.
+torch.backends.cuda.matmul.allow_tf32 = False
+torch.backends.cudnn.allow_tf32 = False
+
 from data.cof_seqgen_saf_tensorizer import SAFTensorizerState
 from experiments.cs_saf_pilot import batch, subset, evaluate, state_digest
 from experiments.cs_saf_replication import ReplicationU, initialize_banks, load_cache
@@ -142,7 +146,8 @@ def train(kappa, trial, name, device, smoke_name=None):
             final_train_nll=final_train,
             best_train_nll=evaluate(model,tr,opts['batch_size'],device)['base_nll'] if smoke_name else None,
             peak_reserved_bytes=torch.cuda.max_memory_reserved() if str(device).startswith('cuda') else None,
-            device=str(device),torch=torch.__version__,smoke=smoke_name is not None,test_accessed=False)
+            device=str(device),torch=torch.__version__,smoke=smoke_name is not None,test_accessed=False,
+            matmul_allow_tf32=torch.backends.cuda.matmul.allow_tf32,cudnn_allow_tf32=torch.backends.cudnn.allow_tf32)
         write(dest/'TRAIN_DONE.json',report)
         return model,report
     except Exception as exc:
