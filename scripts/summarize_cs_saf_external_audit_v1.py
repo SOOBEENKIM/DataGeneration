@@ -108,6 +108,27 @@ def main(allow_partial=False):
         ax.set_title(title);ax.set_ylabel('Repeat-curve L1 (lower is better)')
     fig.text(.01,.015,f'{len(fits)}/4 fits completed. * Re-encoded histories with realized length controls; not an isolated causal decomposition.',fontsize=9)
     fig.tight_layout(rect=(0,.055,1,1));fig.savefig(report/'diagnostic_overview.png',dpi=180);fig.savefig(report/'diagnostic_overview.pdf');plt.close(fig)
+    curves = pd.DataFrame(binrows)
+    fig, axes = plt.subplots(1, 2, figsize=(10, 3.8), sharey=True)
+    for ax, (k, title) in zip(axes, [(1, 'Relationship present / 10% group'), (0, 'Null data / 10% group')]):
+        selected = curves[(curves.kappa == k) & (curves.group == 'context_1')]
+        ref = selected.groupby('bin').observed_repeat.mean()
+        ax.plot(ref.index + 1, ref.values, 'o-', color='#263238', label='Observed validation')
+        for i, (seed, rows) in enumerate(selected.groupby('seed')):
+            mean = rows.groupby('bin')[['observed_history_prediction', 'generated_repeat']].mean()
+            color = ['#2471a3', '#d35400'][i]
+            ax.plot(mean.index + 1, mean.observed_history_prediction, '--', color=color,
+                    label=f'Real-history prediction / seed {i+1}')
+            ax.plot(mean.index + 1, mean.generated_repeat, 'o-', color=color,
+                    label=f'Generated repetition / seed {i+1}')
+        ax.set_title(title); ax.set_xlabel('Train-defined gap bin (short to long)')
+        ax.set_xticks(range(1, 6)); ax.set_ylim(0, 0.8)
+    axes[0].set_ylabel('Observable repetition probability')
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc='lower center', ncol=3, fontsize=8)
+    fig.tight_layout(rect=(0, .16, 1, 1))
+    fig.savefig(report/'repeat_probability_curves.png', dpi=180)
+    fig.savefig(report/'repeat_probability_curves.pdf'); plt.close(fig)
 
 
 if __name__=='__main__':

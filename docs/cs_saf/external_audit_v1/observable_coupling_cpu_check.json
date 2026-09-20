@@ -1,0 +1,13 @@
+{
+  "first_order_gradient_check": true,
+  "row_marginal_max_error": 0.0,
+  "repeat_marginal_max_error": 1.1102230246251565e-16,
+  "zero_score_independence_max_error": 5.551115123125783e-17,
+  "common_score_shift_max_error": 4.440892098500626e-16,
+  "neural_training_performed": false,
+  "float32_31_gap_repeat_error": 5.960464477539063e-08,
+  "float32_gradient_finite": true,
+  "final_architecture_adopted": false,
+  "novel_algorithm_claim": false,
+  "scope": "known conditional coupling component; not a complete trained generator"
+}

@@ -1,0 +1,187 @@
+{
+  "contract_sha256": "be9a66910c4009f638fbe8255faeb1d4ffec4b90f668e8ef267bf7dbde895f68",
+  "fits": [
+    {
+      "kappa": 0,
+      "seed": 20260920,
+      "parameters": 1150543,
+      "last_epoch": 100.0,
+      "selected_epoch": 97.0,
+      "fit_seconds": 469.82972710201284,
+      "weights_sha256": "6d22eb304ff0d0e9b9d93b6b115f08725e7629d1069c792db12fbffefba33e51",
+      "final_logged_loss": 0.1004,
+      "selected_logged_loss": 0.1004,
+      "stopped_at_epoch_cap": true,
+      "replay_checks": {
+        "checks": {
+          "validation": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 6846
+          },
+          "generated_20261001": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261002": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261003": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261004": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261005": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          }
+        },
+        "parameters": 1150543,
+        "weights_unchanged": true,
+        "caveat": "reencoded observed paths; sequence control uses realized length; no isolated causal exposure-bias claim"
+      }
+    },
+    {
+      "kappa": 0,
+      "seed": 20260921,
+      "parameters": 1150543,
+      "last_epoch": 49.0,
+      "selected_epoch": 44.0,
+      "fit_seconds": 324.01616590603953,
+      "weights_sha256": "c53c2b57fbb258438dcbe3f6390f614342299c7e51388610b7a8ac2b1517befe",
+      "final_logged_loss": 0.1016,
+      "selected_logged_loss": 0.1016,
+      "stopped_at_epoch_cap": false,
+      "replay_checks": {
+        "checks": {
+          "validation": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 6846
+          },
+          "generated_20261001": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261002": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261003": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261004": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261005": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          }
+        },
+        "parameters": 1150543,
+        "weights_unchanged": true,
+        "caveat": "reencoded observed paths; sequence control uses realized length; no isolated causal exposure-bias claim"
+      }
+    },
+    {
+      "kappa": 1,
+      "seed": 20260920,
+      "parameters": 1150543,
+      "last_epoch": 48.0,
+      "selected_epoch": 43.0,
+      "fit_seconds": 295.4932838230161,
+      "weights_sha256": "4d3b7872dce073acb687c8c10574dfb6333b2a2e56dd9bb743b6313542959e23",
+      "final_logged_loss": 0.103,
+      "selected_logged_loss": 0.103,
+      "stopped_at_epoch_cap": false,
+      "replay_checks": {
+        "checks": {
+          "validation": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 6846
+          },
+          "generated_20261001": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261002": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261003": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261004": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261005": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          }
+        },
+        "parameters": 1150543,
+        "weights_unchanged": true,
+        "caveat": "reencoded observed paths; sequence control uses realized length; no isolated causal exposure-bias claim"
+      }
+    },
+    {
+      "kappa": 1,
+      "seed": 20260921,
+      "parameters": 1150543,
+      "last_epoch": 40.0,
+      "selected_epoch": 35.0,
+      "fit_seconds": 271.7502113439841,
+      "weights_sha256": "daf56da48644a3f8a1d8de0a8f92661e8c9d60fd55f24b0d4f519addb6a43ffc",
+      "final_logged_loss": 0.1022,
+      "selected_logged_loss": 0.1022,
+      "stopped_at_epoch_cap": false,
+      "replay_checks": {
+        "checks": {
+          "validation": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 6846
+          },
+          "generated_20261001": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261002": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261003": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261004": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          },
+          "generated_20261005": {
+            "max_current_target_future_or_prefix_difference": 0.0,
+            "entities": 2048
+          }
+        },
+        "parameters": 1150543,
+        "weights_unchanged": true,
+        "caveat": "reencoded observed paths; sequence control uses realized length; no isolated causal exposure-bias claim"
+      }
+    }
+  ],
+  "status": "COMPLETE",
+  "registered_fits": 4,
+  "completed_fits": 4,
+  "new_generated_datasets": 20,
+  "new_generated_sequences": 40960,
+  "independent_repeat_l1_max_error": 5.551115123125783e-17,
+  "test_accessed": false,
+  "independent_new_DGP": false,
+  "version": "official-mostlyai-engine-2.4.0",
+  "causal_exposure_bias_isolated": false
+}

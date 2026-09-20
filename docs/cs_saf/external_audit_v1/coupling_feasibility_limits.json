@@ -1,0 +1,37 @@
+{
+  "role": "exact_toy_counterexamples_not_neural_success_or_novel_theorems",
+  "fixed_wrong_repeat_marginal_cannot_be_corrected_by_coupling": [
+    {
+      "strength": -5.0,
+      "conditional_repeat": [
+        0.11999999971893359,
+        2.810664022328162e-10
+      ],
+      "integrated_repeat": 0.06,
+      "level_error": 0.25
+    },
+    {
+      "strength": 0.0,
+      "conditional_repeat": [
+        0.06,
+        0.06
+      ],
+      "integrated_repeat": 0.06,
+      "level_error": 0.25
+    },
+    {
+      "strength": 5.0,
+      "conditional_repeat": [
+        2.810664022328162e-10,
+        0.11999999971893359
+      ],
+      "integrated_repeat": 0.06,
+      "level_error": 0.25
+    }
+  ],
+  "local_marginals_do_not_preserve_future_marginals": {
+    "before": 0.5,
+    "after": 0.8200000000000001
+  },
+  "decision": "do_not_freeze_uncalibrated_history_conditioned_marginals_or_claim_global_preservation"
+}

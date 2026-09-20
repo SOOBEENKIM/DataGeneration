@@ -1,0 +1,10 @@
+{
+  "role": "CPU timing only; no optimizer step or model save",
+  "seconds_per_forward_backward_batch": [
+    1.36490069195861,
+    1.2139441469917074,
+    1.1232824819744565,
+    1.119396479043644
+  ],
+  "estimated_100_epochs_99_batches_seconds": 11406.856256432366
+}
