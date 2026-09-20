@@ -1,0 +1,10 @@
+{
+  "roundtrip_rows": 1000,
+  "roundtrip_identity_order_preserved": true,
+  "saved_weights_reloaded_by_official_generate": true,
+  "native_generated_rows": 394,
+  "native_generated_entities": 16,
+  "finite_nonnegative_gaps": true,
+  "finite_amounts": true,
+  "registered_scientific_results": false
+}
