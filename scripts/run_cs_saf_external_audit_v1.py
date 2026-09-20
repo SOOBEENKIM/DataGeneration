@@ -64,7 +64,7 @@ def prepare(source):
               files={p.name: digest(p) for p in sorted(dest.glob('*.parquet'))}))
 
 
-def fit(kappa, seed, device, smoke):
+def fit(kappa, seed, device, smoke, gpu_memory_fraction=None):
     import numpy as np
     import pandas as pd
     import torch
@@ -78,7 +78,9 @@ def fit(kappa, seed, device, smoke):
     assert kappa in c['kappas'] and seed in c['training_seeds']
     torch.set_num_threads(c['cpu_threads'])
     if device.startswith('cuda'):
-        torch.cuda.set_per_process_memory_fraction(c['gpu_memory_fraction'])
+        memory_limit = c['gpu_memory_fraction'] if gpu_memory_fraction is None else gpu_memory_fraction
+        assert 0 < memory_limit <= c['gpu_memory_fraction']
+        torch.cuda.set_per_process_memory_fraction(memory_limit)
     else:
         assert smoke, 'scientific fits use the registered GPU budget'
     inp = OUT / f'kappa_{kappa}' / 'input'
@@ -107,6 +109,8 @@ def fit(kappa, seed, device, smoke):
     write(folder / 'start.json', dict(contract_sha256=digest(CONTRACT), kappa=kappa, seed=seed,
         smoke=smoke, source_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         versions={x: importlib.metadata.version(x) for x in ['mostlyai-engine','torch','pandas','numpy']},
+        physical_gpu=os.environ.get('CUDA_VISIBLE_DEVICES'),
+        gpu_memory_fraction=memory_limit if device.startswith('cuda') else None,
         train_entities=len(parent), test_accessed=False))
     started = time.monotonic()
     model = TabularARGN(**options).fit(child)
@@ -142,6 +146,8 @@ def fit(kappa, seed, device, smoke):
         print('SAMPLE_COMPLETE', kappa, seed, gen_seed, len(generated), flush=True)
         assert digest(weights) == weights_digest, 'sampling modified fitted weights'
     write(folder / 'DONE.json', dict(fit_seconds=fit_seconds, total_seconds=time.monotonic()-started,
+          peak_allocated_bytes=torch.cuda.max_memory_allocated() if device.startswith('cuda') else None,
+          peak_reserved_bytes=torch.cuda.max_memory_reserved() if device.startswith('cuda') else None,
           weights_sha256=weights_digest, test_accessed=False, smoke=smoke))
 
 
@@ -196,6 +202,7 @@ if __name__ == '__main__':
     p.add_argument('--kappa', type=int, default=1)
     p.add_argument('--seed', type=int, default=20260920)
     p.add_argument('--device', default='cpu')
+    p.add_argument('--gpu-memory-fraction', type=float)
     a = p.parse_args()
     if a.mode == 'prepare':
         assert a.source_root is not None
@@ -203,4 +210,4 @@ if __name__ == '__main__':
     elif a.mode == 'evaluate':
         evaluate()
     else:
-        fit(a.kappa, a.seed, a.device, a.mode == 'smoke')
+        fit(a.kappa, a.seed, a.device, a.mode == 'smoke', a.gpu_memory_fraction)

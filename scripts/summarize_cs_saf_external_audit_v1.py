@@ -1,6 +1,7 @@
 """Aggregate all registered runs, with an independent repeat-curve calculation."""
 from __future__ import annotations
 import json
+import argparse
 from pathlib import Path
 import sys
 import numpy as np
@@ -24,7 +25,7 @@ def curve(frame, edges, prediction=None):
     return sums/n,n
 
 
-def main():
+def main(allow_partial=False):
     c=json.loads(CONTRACT.read_text()); report=ROOT/'docs/cs_saf/external_audit_v1'
     metrics=pd.read_csv(report/'metrics.csv'); records=[]; binrows=[]; fits=[]
     verification=[]
@@ -36,6 +37,8 @@ def main():
         val=pd.read_parquet(inp/'validation_canonical.parquet'); plan=pd.read_parquet(inp/'plan.parquet')
         for seed in c['training_seeds']:
             f=OUT/f'kappa_{k}/seed_{seed}'
+            if allow_partial and not (f/'replay_checks.json').exists():
+                continue
             done=json.loads((f/'DONE.json').read_text()); check=json.loads((f/'replay_checks.json').read_text())
             prog=pd.read_csv(f/'workspace/ModelStore/model-data/progress-messages.csv')
             best=prog[prog.is_checkpoint==1].iloc[-1]
@@ -60,7 +63,12 @@ def main():
                     row=dict(kappa=k,seed=seed,tape=tape,group=group,
                         observed_history_curve_l1=float(weights@np.abs(teacher-reference)),
                         generated_history_reencoded_curve_l1=float(weights@np.abs(predicted-reference)),
-                        native_generated_curve_l1=float(weights@np.abs(empirical-reference)))
+                        native_generated_curve_l1=float(weights@np.abs(empirical-reference)),
+                        reference_repeat_level=float(weights@reference),
+                        observed_history_repeat_level=float(weights@teacher),
+                        generated_repeat_level_reference_weighted=float(weights@empirical),
+                        native_level_error=float(abs(weights@(empirical-reference))),
+                        native_centered_shape_l1=float(weights@np.abs((empirical-weights@empirical)-(reference-weights@reference))))
                     records.append(row)
                     registered=metrics[(metrics.kappa==k)&(metrics.seed==seed)&(metrics.tape==tape)&(metrics.group==group)&(metrics.kind=='generated')].iloc[0].short_gap_repeat_curve_l1
                     verification.append(abs(registered-row['native_generated_curve_l1']))
@@ -75,6 +83,8 @@ def main():
     pd.DataFrame(records).to_csv(report/'prediction_diagnostics.csv',index=False)
     pd.DataFrame(binrows).to_csv(report/'repeat_curves.csv',index=False)
     write(report/'execution_summary.json',dict(contract_sha256=digest(CONTRACT),fits=fits,
+         status='COMPLETE' if len(fits)==len(c['kappas'])*len(c['training_seeds']) else 'PARTIAL_GPU_WAIT',
+         registered_fits=len(c['kappas'])*len(c['training_seeds']),
          completed_fits=len(fits),new_generated_datasets=len(fits)*5,new_generated_sequences=len(fits)*5*2048,
          independent_repeat_l1_max_error=max(verification),test_accessed=False,
          independent_new_DGP=False,version='official-mostlyai-engine-2.4.0',
@@ -96,8 +106,10 @@ def main():
         ax.bar(range(4),values,color=['#90a4ae','#3498db','#9075bb','#e67e22'])
         ax.set_xticks(range(4),['Encode/\ndecode','Observed\nhistory','Generated\nhistory*','Generated\noutcomes'])
         ax.set_title(title);ax.set_ylabel('Repeat-curve L1 (lower is better)')
-    fig.text(.01,.015,'* Re-encoded histories with realized length controls; diagnostic comparison, not an isolated causal decomposition.',fontsize=9)
+    fig.text(.01,.015,f'{len(fits)}/4 fits completed. * Re-encoded histories with realized length controls; not an isolated causal decomposition.',fontsize=9)
     fig.tight_layout(rect=(0,.055,1,1));fig.savefig(report/'diagnostic_overview.png',dpi=180);fig.savefig(report/'diagnostic_overview.pdf');plt.close(fig)
 
 
-if __name__=='__main__': main()
+if __name__=='__main__':
+    p=argparse.ArgumentParser();p.add_argument('--allow-partial',action='store_true')
+    main(p.parse_args().allow_partial)
