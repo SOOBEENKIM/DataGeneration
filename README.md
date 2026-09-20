@@ -4,7 +4,27 @@
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [equal-calibration U control](docs/cs_saf/calibration_u_control_v1_report_2026_09_20.md)
+Latest [fixed-model generation repeats](docs/cs_saf/generation_repeats_v1_report_2026_09_20.md)
+is **COMPLETE: 800 fresh generation datasets (1,638,400 sequences), zero model or
+calibration fits**. Five fresh tapes per frozen model were averaged within each
+of five training trials; original tapes were excluded from the new primary mean.
+Ecal has higher mean active repeat-curve L1 than Ucal at 5/10/25%, with positive
+trial effects in 4/5, 5/5, 4/5 trials, satisfying the preregistered persistent-cost
+screen. At 50% the mean difference is small and directions are mixed. Fixed-model
+MC intervals exclude zero at 5/10/25%, but between-trial intervals include zero
+at 5/25%; neither a unique cause nor general superiority is established.
+Ucal-U passes the primary benefit screen at 5/10/25%; no comparison meets the
+joint improvement screen. E's previously measured conditional/null-response
+advantages remain separate fixed-model evidence. CPU/GPU gates, 1,248 cached-metric
+comparisons, 800 saved-plan/model checks and 4,800 independent native values all
+passed. GPU work is finished. Next proposal is matched-history cross-evaluation
+of calibrated U/E using saved samples, not yet registered or executed.
+[Professor briefing](docs/cs_saf/professor_brief_generation_repeats_2026_09_20.md),
+[all 31,200 scalar metrics](docs/cs_saf/generation_repeats_v1_all_metrics.csv),
+[nested statistics and verification](docs/cs_saf/generation_repeats_v1_result.json),
+[preregistration](docs/cs_saf/generation_repeats_v1_preregistration.md).
+
+Previous [equal-calibration U control](docs/cs_saf/calibration_u_control_v1_report_2026_09_20.md)
 is **COMPLETE: 40 U calibration fits, zero neural retraining, 120 reused U/E/Ecal
 references**. Ucal lowers mean active generated repeat-curve L1 at all four
 prevalences; Ecal has higher mean L1 than Ucal at every prevalence. All four paired
@@ -18,8 +38,8 @@ CPU/GPU gates, and independent recomputation of 960 generation values passed
 [verified numbers and fitted parameters](docs/cs_saf/calibration_u_control_v1_result.json),
 [preregistration](docs/cs_saf/calibration_u_control_v1_preregistration.md),
 [recoverable state](docs/cs_saf/STATUS.md).
-Next proposal is fixed-model evaluation with additional generation tapes;
-independent data confirmation remains unexecuted.
+Its proposed additional-tape evaluation is now complete above; independent
+data confirmation remains unexecuted.
 
 Previous [frozen repeat-probability calibration](docs/cs_saf/calibration_v1_report_2026_09_20.md)
 is **COMPLETE: 80 four-scalar calibration fits, zero base-model retraining,

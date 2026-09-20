@@ -1,5 +1,5 @@
 """Registered nested comparisons of five tapes within five frozen trials."""
-import json
+import csv,json
 from pathlib import Path
 import numpy as np
 from experiments.cs_saf_generation_repeats import ROOT,OUTPUT,CONFIG_SHA,contract,folder_for,verify,sha256,write_json
@@ -99,8 +99,33 @@ def main():
         mean_sample_seconds=float(np.mean(sample_seconds)),test_accessed=False,
         independent_data_confirmation=False,old_ER_failure_unchanged=True,
         between_trial_variation_includes_fixed_generation_plan=True)
+    csv_path=ROOT/'docs/cs_saf/generation_repeats_v1_all_metrics.csv'
+    metric_states={};row_count=0
+    with csv_path.open('w',newline='') as handle:
+        fields=['prevalence','kappa','trial','model','repeat','generation_seed','group',
+                'generated_entities','validation_entities']+metrics
+        writer=csv.DictWriter(handle,fieldnames=fields,lineterminator='\n');writer.writeheader()
+        for cell,models in cells.items():
+            pk,k,j=cell.split('/')
+            for name,repeats in models.items():
+                for repeat,groups in enumerate(repeats):
+                    for group,block in groups.items():
+                        state_key=f'{pk}/{k}/{group}'
+                        if state_key in metric_states and metric_states[state_key]!=block['train_metric_state']:
+                            raise ValueError('metric state varied across models/trials/tapes')
+                        metric_states[state_key]=block['train_metric_state']
+                        writer.writerow(dict(prevalence=pk,kappa=int(k),trial=int(j),model=name,repeat=repeat,
+                            generation_seed=c['generation_seeds'][j][repeat],group=group,
+                            generated_entities=block['generated_entities'],validation_entities=block['validation_entities'],
+                            **block['metrics']))
+                        row_count+=1
+    if row_count!=2400:raise ValueError('all generated scalar metrics must be exported')
+    result['all_metrics_csv']=dict(path=str(csv_path.relative_to(ROOT)),sha256=sha256(csv_path),
+        rows=row_count,metric_columns=len(metrics),metric_values=row_count*len(metrics))
+    result['fixed_metric_states']=metric_states
     write_json(OUTPUT/'summary.json',result)
-    compact=dict(result,full_evidence_path=str(OUTPUT/'summary.json'),full_evidence_sha256=sha256(OUTPUT/'summary.json'))
+    compact={k:v for k,v in result.items() if k!='all_cell_metrics'}
+    compact.update(full_evidence_path=str(OUTPUT/'summary.json'),full_evidence_sha256=sha256(OUTPUT/'summary.json'))
     write_json(ROOT/'docs/cs_saf/generation_repeats_v1_result.json',compact)
     print(json.dumps(dict(screens=screens,native=result['native_verification']),indent=2))
 

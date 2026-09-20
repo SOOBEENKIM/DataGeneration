@@ -2,7 +2,56 @@
 
 Updated 2026-09-20. Branch: `research/cs-saf`.
 
-**Latest equal-calibration U control COMPLETE: 40 four-scalar U fits, zero neural
+**Latest fixed-model generation repeats COMPLETE: 800 generated datasets,
+1,638,400 sequences, 160 frozen U/Ucal/E/Ecal states, zero neural/calibration fits.
+All four prevalences, both kappas, five trials and five NEW generation tapes
+completed. No generation failure/retry; GPU work is finished.**
+
+[Full result](generation_repeats_v1_report_2026_09_20.md),
+[professor briefing](professor_brief_generation_repeats_2026_09_20.md),
+[all scalar metrics CSV](generation_repeats_v1_all_metrics.csv),
+[statistics and verification](generation_repeats_v1_result.json),
+[preregistration](generation_repeats_v1_preregistration.md).
+
+- Registration `70ce09d`; all 800 scientific generations from `16bd9ac`.
+  Models, calibration buffers, original 2,048-entity plans and batch size 256
+  fixed. Only generation seeds change: 2026092100+100*trial+repeat (five repeats).
+- Primary Ecal-Ucal mean L1 differences: +.003740/+.004941/+.001932/+.000019.
+  Positive tape-averaged trial effects: 4/5, 5/5, 4/5, 2/5. Persistent-cost
+  screen MET at 5/10/25%; benefit screen NOT MET. Relative costs approximately
+  11.9/16.1/6.7/0.1%. At 50%, differences remain mixed; no equivalence claim.
+- Generation-only conditional MC intervals exclude zero at 5/10/25%.
+  Between-trial df4 intervals exclude zero only at 10%. Current fixed-model
+  sampling uncertainty is distinct from uncertainty across models/data.
+  Between-trial variance also includes trial-linked fixed-plan differences.
+  Negative raw variance-component estimate at 10% is preserved, not interpreted
+  as proof that true between-trial variance is zero.
+- Ucal-U primary benefit screen MET at 5/10/25% (5/5,4/5,4/5,3/5 improvements).
+  Ecal-E mean L1 improves everywhere, but consistency only at 25%. Both reduce
+  MI error in 5/5 trials at each prevalence. No joint improvement screen passes;
+  Ucal retains slight null-response and transition-TV costs. Old ER FAIL remains.
+- Ecal's prior conditional TV/null-response benefits are unchanged fixed-model
+  endpoints; they are not new repeated observations. The generated relation
+  benefit of the extra history structure is unsupported by these comparisons.
+- CPU unit tests 6 PASS; same-source CPU/GPU gates PASS, including exact full
+  historical sample reproduction for four models. Cached 13-metric evaluator
+  matches 1,248 historical values (max8.327e-17). Independent raw-array checks:
+  2,400 groups / 4,800 L1 and MI values, max difference0; 800 saved model/seed/plan
+  identities PASS. All 31,200 native metric values exported, no test accessed.
+- Scope: reused seed42 data/validation/checkpoints. Five tapes are averaged
+  within five trials, never counted as 25 independent trained models. Original
+  tape is reference-only. Finite-sample metric bias/data uncertainty unestimated.
+- Next proposal, not yet registered/executed: cross-evaluate calibrated U/E on
+  identical saved raw generated histories, separating predictor differences
+  from history-distribution differences before a targeted change. This is an
+  algebraic diagnostic, not exclusive causal identification or permission to
+  claim improved generation. Then independent data/training-seed confirmation
+  and fair external comparisons if a justified candidate emerges.
+- Raw evidence: `artifacts/cs_saf/generation_repeats_v1/`. Git stores reviewed
+  source/contracts/scalars/statistics/plots; raw arrays/checkpoints remain on the
+  workstation. Branch research/cs-saf, no main merge.
+
+**Previous equal-calibration U control COMPLETE: 40 four-scalar U fits, zero neural
 retraining, 120 reused U/E/Ecal references. All four prevalences, both kappas,
 five paired trials completed without a technical retry. GPU jobs have ended.**
 
@@ -34,10 +83,8 @@ five paired trials completed without a technical retry. GPU jobs have ended.**
   Converged fits, no optimizer bound hits. No test access.
 - Scope: existing seed42 data and reused validation; one sampling tape per
   training trial. This completes a missing control, not independent confirmation.
-- Next proposal (not registered/executed): keep U/Ucal/E/Ecal and their fitted
-  parameters fixed, preregister additional common generation tapes, and separate
-  sampling variation from training-trial effects before another architecture
-  revision. Then confirm any justified candidate with new data/training seeds.
+- Historical next proposal: fixed-model additional generation tapes. It is now
+  completed above. Independent data/training-seed confirmation remains pending.
   Native differences cannot uniquely identify a mark-history mechanism.
 - Raw evidence: `artifacts/cs_saf/calibration_u_control_v1/`. Git versions code,
   protocols, summaries, calibration coefficients and figures, not raw checkpoints.
