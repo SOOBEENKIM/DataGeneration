@@ -1,0 +1,65 @@
+{
+  "version": "cs-saf-calibrated-matched-history-replay-v1",
+  "registered_on": "2026-09-20",
+  "parent_commit": "39525ff3fcf8e106dacb685c7d799b413b5a5a0d",
+  "prevalences": [
+    0.05,
+    0.1,
+    0.25,
+    0.5
+  ],
+  "kappas": [
+    0,
+    1
+  ],
+  "trials": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "repeats": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "models": [
+    "Ucal",
+    "Ecal"
+  ],
+  "groups": [
+    "pooled",
+    "context_0",
+    "context_1"
+  ],
+  "source_paths": 400,
+  "predictor_path_evaluations": 800,
+  "new_fits": 0,
+  "new_sequences": 0,
+  "entity_batch_size": 128,
+  "transition_batch_size": 2048,
+  "replay_atol": 3e-06,
+  "algebra_atol": 1e-12,
+  "materiality": 0.001,
+  "minimum_directional_trials": 4,
+  "minimum_prevalences": 3,
+  "output": "artifacts/cs_saf/calibrated_replay_v1",
+  "frozen_sources": {
+    "docs/cs_saf/calibrated_replay_v1_preregistration.md": "6c789581d82c4973a6ce4dec08d20b0ec36807f765dc4f823af7cb01541a7c7e",
+    "docs/cs_saf/generation_repeats_v1_result.json": "801073f59237aead3b5c22e9e0ab30b852585ec56c7379b04c4232ec7a6c51bd",
+    "configs/benchmark_v2/cs_saf_generation_repeats_v1.json": "99f139e6b650b8aec18bf284aef72262f7159fb5d455fed88d548c5f1dd38bc8",
+    "experiments/cs_saf_generation_repeats.py": "16c3e2ca3579492b4ef893b3ee7eecf498d6feca135c3523c69d0ac49f0aef73",
+    "experiments/cs_saf_generation_repeat_stats.py": "a0e6af077b8a4707888fdefd1f49ef6f9d4ad347d8012f1793f089529cfae379",
+    "experiments/cs_saf_rollout_audit.py": "89e8c4be274ae4f6e247738f16a5cf4c00f6b6ef03633fad354c6659f1b73489",
+    "models/cs_saf_calibration.py": "c5478c90b1dc6ffe3eeca45b229b088fd7c16a1e1d01d929111668769ec3e7c4",
+    "models/cs_saf_calibration_u.py": "ff6466eeea39a2dac3f3a9c531fb7488bb663d703b17cfc22361a2711e5f7969",
+    "models/cs_saf.py": "0bf5b6e8b9f9b7ace850ece54aafb63cd6aa8a91faf8733e5832883626cf79ca",
+    "models/cs_saf_v2.py": "6aca62d5f4323ff51518ca8331764d23f628c63d63ce880ce520f1d940302808",
+    "models/cs_saf_v3.py": "4fb42b8dc298392a5bee3f911ca463710ec6a31aa546bbf496f9e68bf98bf37c",
+    "models/cof_seqgen_saf.py": "38d6556dcb88a35edffcda6d169273df8a45ab42cc1c9c733c145e1dc46fae29"
+  },
+  "parent_native_verification_sha256": "61bfead39eade3c004a5112ba157816d61496ce7584d094122b8a922b1ed91df"
+}
