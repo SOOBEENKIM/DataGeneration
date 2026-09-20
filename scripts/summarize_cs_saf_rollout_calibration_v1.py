@@ -85,6 +85,7 @@ def main():
             for name in c['models']:
                 dest=run.folder(k,t,name);evaluation=dest/'evaluation'
                 done=json.loads((evaluation/'DONE.json').read_text());assert done['start_time']>=latest_fit
+                assert done['all_fits']==fitting
                 assert done['weights_unchanged'] and not done['test_accessed']
                 for f,h in done['files'].items():assert digest(evaluation/f)==h
                 for f,h in done['source']['hashes'].items():assert digest(ROOT/f)==h
@@ -109,8 +110,9 @@ def main():
                         for row in search['trace']+search['selections']:assert target.feasible(row['parameters'])==row['eligible']
                     else:assert all(x['eligible'] for x in search['trace']+search['selections'])
                     expected=min((r for r in search['selections'] if r['eligible']),key=lambda r:(r['objective'],r['endpoint']))
-                    assert expected['endpoint']==search['selected_endpoint']
-                    np.testing.assert_array_equal(np.asarray(fit['control']['parameters']).reshape(-1),expected['parameters'])
+                    selected=search['selections'][search['selected_endpoint']]
+                    assert selected['eligible'] and selected['objective']<=expected['objective']+c['tie_improvement']
+                    np.testing.assert_array_equal(np.asarray(fit['control']['parameters']).reshape(-1),selected['parameters'])
                     fits.append(dict(kappa=k,trial=t,name=name,variant=m,seconds=fit['seconds'],sample_calls=fit['sample_calls'],
                         selected_endpoint=search['selected_endpoint'],training_guard_satisfied=fit['training_guard_satisfied'],
                         peak_reserved_bytes=fit['peak_reserved_bytes'],control=fit['control'],training_cost_delta=fit['training_cost_delta']))
@@ -149,6 +151,7 @@ def main():
                     path=str(evaluation.relative_to(ROOT)),files=done['files']))
         oracle_path=run.OUT/f'oracle/kappa_{k}';done=json.loads((oracle_path/'DONE.json').read_text())
         assert done['start_time']>=latest_fit and done['evaluation_only'] and len(done['inventory'])==60
+        assert done['all_fits']==fitting
         for f,h in done['files'].items():assert digest(oracle_path/f)==h
         for f,h in done['source']['hashes'].items():assert digest(ROOT/f)==h
         o=pd.read_csv(oracle_path/'generation_metrics.csv',dtype={'group':str});oracle_rows.extend(o.to_dict('records'))
