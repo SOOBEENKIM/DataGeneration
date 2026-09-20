@@ -1,0 +1,113 @@
+{
+  "version": "cs-saf-limited-gap-calibration-v1",
+  "registered_on": "2026-09-20",
+  "parent_commit": "dceb203ed09c88400d232170332ecc874172186b",
+  "prevalences": [
+    0.05,
+    0.1,
+    0.25,
+    0.5
+  ],
+  "kappas": [
+    0,
+    1
+  ],
+  "trials": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "parents": [
+    "Ucal",
+    "Ecal"
+  ],
+  "variants": {
+    "Ucal": "Ugap",
+    "Ecal": "Egap"
+  },
+  "repeats": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "generation_seeds": {
+    "0": [
+      2026092100,
+      2026092101,
+      2026092102,
+      2026092103,
+      2026092104
+    ],
+    "1": [
+      2026092200,
+      2026092201,
+      2026092202,
+      2026092203,
+      2026092204
+    ],
+    "2": [
+      2026092300,
+      2026092301,
+      2026092302,
+      2026092303,
+      2026092304
+    ],
+    "3": [
+      2026092400,
+      2026092401,
+      2026092402,
+      2026092403,
+      2026092404
+    ],
+    "4": [
+      2026092500,
+      2026092501,
+      2026092502,
+      2026092503,
+      2026092504
+    ]
+  },
+  "new_fits": 80,
+  "new_datasets": 400,
+  "output": "artifacts/cs_saf/gap_calibration_v1",
+  "quantiles": [
+    0.2,
+    0.4,
+    0.6,
+    0.8
+  ],
+  "bins_per_context": 5,
+  "lambda_ridge": 0.001,
+  "delta_bound": 0.5,
+  "optimizer": {
+    "method": "SLSQP",
+    "options": {
+      "maxiter": 500,
+      "ftol": 1e-12
+    }
+  },
+  "feature_batch_size": 512,
+  "max_workers": 2,
+  "generation_entities": 2048,
+  "generation_batch_size": 256,
+  "matmul_allow_tf32": false,
+  "cudnn_allow_tf32": true,
+  "frozen_sources": {
+    "docs/cs_saf/gap_calibration_v1_preregistration.md": "e43675a32b79c67b4214942a5b8545356058461696a4e0df624f38ce273a47bd",
+    "docs/cs_saf/calibrated_replay_v1_result.json": "b72e650becb143de2ff555e5a26154fb0221dd46655ac1eead48eed05757c208",
+    "docs/cs_saf/generation_repeats_v1_result.json": "801073f59237aead3b5c22e9e0ab30b852585ec56c7379b04c4232ec7a6c51bd",
+    "experiments/cs_saf_generation_repeats.py": "16c3e2ca3579492b4ef893b3ee7eecf498d6feca135c3523c69d0ac49f0aef73",
+    "experiments/cs_saf_generation_metrics.py": "6438710a393e6170130026272ce0ae0d187b638458ea40ccb7211b0b27579b2d",
+    "experiments/cs_saf_generation_repeat_stats.py": "a0e6af077b8a4707888fdefd1f49ef6f9d4ad347d8012f1793f089529cfae379",
+    "experiments/cs_saf_calibration.py": "c3760d1a850c8e95e8ec831cc27bda2278d42ae07e44e80c7a3abf43948de60f",
+    "experiments/cs_saf_calibration_u.py": "2b1abff260a122ac8522d9521cc0e2c15138d5628b9df9e8949930e7f97fdc97",
+    "experiments/cs_saf_v3.py": "01a805af4ef32ac196868fbeb3a50ec39bee3cfd9787903d649fa591fa20d6d7",
+    "models/cs_saf_calibration.py": "c5478c90b1dc6ffe3eeca45b229b088fd7c16a1e1d01d929111668769ec3e7c4",
+    "models/cs_saf_calibration_u.py": "ff6466eeea39a2dac3f3a9c531fb7488bb663d703b17cfc22361a2711e5f7969",
+    "models/cs_saf_v3.py": "4fb42b8dc298392a5bee3f911ca463710ec6a31aa546bbf496f9e68bf98bf37c"
+  }
+}
