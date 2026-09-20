@@ -9,6 +9,7 @@ import random
 import subprocess
 import sys
 import time
+from contextlib import nullcontext
 
 os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG',':4096:8')
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
@@ -225,6 +226,7 @@ def train_cpar(name,folder,cfg):
     from sdv.sequential import PARSynthesizer
     from experiments.cs_saf_cpar_loss import equivalent_par_loss
     from deepecho.models.par import PARModel
+    from generators.cs_saf_cpar_tail import retain_cpar_tails
     assert importlib.metadata.version('sdv')==cfg['cpar']['sdv_version']
     assert importlib.metadata.version('deepecho')==cfg['cpar']['deepecho_version']
     inp,parents,ids,frames,plan,state=inputs(name)
@@ -243,7 +245,9 @@ def train_cpar(name,folder,cfg):
     model=PARSynthesizer(metadata,context_columns=context_cols,epochs=opts['epochs'],
                         segment_size=opts['segment_size'],sample_size=1,cuda=True,verbose=True)
     seed(cfg['fit_seed']);started=time.monotonic()
-    with equivalent_par_loss():
+    coverage={}
+    adapter=retain_cpar_tails() if cfg['cpar'].get('retain_tails') else nullcontext(coverage)
+    with adapter as coverage,equivalent_par_loss():
         original=PARModel._compute_loss
         def bounded(self,*args):
             if time.monotonic()-started>opts['max_fit_seconds']:raise TimeoutError('registered CPAR time budget')
@@ -251,6 +255,9 @@ def train_cpar(name,folder,cfg):
         PARModel._compute_loss=bounded
         try:model.fit(data)
         finally:PARModel._compute_loss=original
+    if cfg['cpar'].get('retain_tails'):
+        assert coverage['input_events']==coverage['segmented_events']==len(data)
+    write(folder/'segmentation_coverage.json',coverage)
     fit_seconds=time.monotonic()-started;model.save(folder/'model.pkl')
     model.get_loss_values().to_csv(folder/'history.csv',index=False)
     # Same pinned context-transform route as the previously verified wrapper.
@@ -260,7 +267,7 @@ def train_cpar(name,folder,cfg):
     processed=model._data_processor.transform(stub)[['entity_id',*context_cols]]
     generations=[]
     for gs in cfg['generation_seeds']:
-        seed(gs);model._set_random_state(gs);started=time.monotonic();pieces=[]
+        seed(gs);model._data_processor.reset_sampling();started=time.monotonic();pieces=[]
         for length in sorted(plan.length.unique()):
             selected=plan.length.eq(length)
             pieces.append(model._sample(processed.loc[selected],sequence_length=int(length)))
@@ -271,32 +278,36 @@ def train_cpar(name,folder,cfg):
         output.to_parquet(folder/f'generated_raw_{gs}.parquet',index=False)
         generations.append(dict(seed=gs,seconds=time.monotonic()-started,metrics=evaluate(frames['validation'],output,state)))
         print(name,'CPAR GENERATED',gs,len(output),flush=True)
-    return dict(model='CPAR',dataset=name,fit_seconds=fit_seconds,epochs=opts['epochs'],
+    return dict(model='CPAR_tail' if cfg['cpar'].get('retain_tails') else 'CPAR',dataset=name,fit_seconds=fit_seconds,epochs=opts['epochs'],
+                segmentation_coverage=coverage,
                 parameters=sum(p.numel() for p in model._model._model.parameters()),
                 results={'raw':dict(generations=generations)})
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('model',choices=['U','G','ARGN','CPAR','empirical'])
+    parser=argparse.ArgumentParser();parser.add_argument('model',choices=['U','G','ARGN','CPAR','CPAR_tail','empirical'])
     parser.add_argument('dataset',choices=['berka','sparkov']);a=parser.parse_args()
     cfg=json.loads(CONFIG.read_text());folder=OUT/'runs'/a.dataset/a.model
+    if a.model=='CPAR_tail':cfg['cpar']['retain_tails']=True
     assert not folder.exists(),'never overwrite a scientific run'
     folder.mkdir(parents=True)
     torch.set_num_threads(1)
     if a.model!='empirical':
         assert torch.cuda.is_available(),'scientific neural fits require admitted GPU'
-        torch.cuda.set_per_process_memory_fraction(.88 if a.model=='CPAR' else .5)
+        torch.cuda.set_per_process_memory_fraction(.88 if a.model.startswith('CPAR') else .5)
         torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False
         torch.backends.cudnn.benchmark=False;torch.backends.cudnn.deterministic=True
     write(folder/'START.json',dict(config_sha256=digest(CONFIG),source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
         input_sha256=digest(OUT/'input'/a.dataset/'preflight.json'),fit_seed=cfg['fit_seed'],
         physical_gpu=os.environ.get('CUDA_VISIBLE_DEVICES'),model=a.model,dataset=a.dataset,
         versions={p:importlib.metadata.version(p) for p in ('torch','numpy','pandas')},test_outcomes_accessed=False))
+    if a.model=='CPAR_tail':
+        write(folder/'amendment.json',dict(sha256=digest(ROOT/'configs/cs_saf_external_port_v1_cpar_tail.json'),retained_tail=True))
     started=time.monotonic()
     try:
         if a.model in ('U','G'):result=train_ug(a.dataset,a.model,folder,cfg)
         elif a.model=='ARGN':result=train_argn(a.dataset,folder,cfg)
-        elif a.model=='CPAR':result=train_cpar(a.dataset,folder,cfg)
+        elif a.model.startswith('CPAR'):result=train_cpar(a.dataset,folder,cfg)
         else:result=empirical(a.dataset,folder,cfg)
         result.update(total_seconds=time.monotonic()-started,config_sha256=digest(CONFIG),
                       peak_reserved_bytes=torch.cuda.max_memory_reserved() if a.model!='empirical' else None,

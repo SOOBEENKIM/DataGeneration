@@ -1,0 +1,10 @@
+{
+  "version":"external-port-cpar-tail-amendment-v1",
+  "parent_config":"configs/cs_saf_external_port_v1.json",
+  "run_model_id":"CPAR_tail",
+  "retain_incomplete_segments":true,
+  "network_or_loss_change":false,
+  "change_selected_using_generated_quality":false,
+  "failed_original_attempts_preserved":true,
+  "sampling_rng":"Python/NumPy/Torch seeds; reset SDV data-processor sampling before each tape"
+}
