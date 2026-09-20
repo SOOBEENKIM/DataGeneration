@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 import numpy as np
 import torch
-from scipy.special import expit
+from data.cof_seqgen_saf_tensorizer import SAFTensorizerState
 from experiments.cs_saf_gap_calibration import ROOT,OUTPUT,CONFIG_SHA,contract,folder_for,verify,sha256,write_json,repeats
 from experiments.cs_saf_replication import tensor_digest
 from scripts.verify_cs_saf_calibration_u_native import sample_table,scores
@@ -12,6 +12,10 @@ from scripts.verify_cs_saf_calibration_u_native import sample_table,scores
 def main():
     c=contract();torch.set_num_threads(1);terminal=json.loads((OUTPUT/'GRID_COMPLETE.json').read_text())
     if terminal['calibration_fits']!=80 or terminal['new_generated_datasets']!=400:raise ValueError('incomplete grid')
+    if terminal['config_sha256']!=CONFIG_SHA:raise ValueError('terminal contract mismatch')
+    for gate in ('cpu_gate','gpu_gate'):
+        gm=verify(OUTPUT/gate);g=json.loads((OUTPUT/gate/'gate.json').read_text())
+        if gm['source_commit']!=terminal['source_commit'] or g['source_commit']!=terminal['source_commit'] or g['decision']!='PASS':raise ValueError('gate source mismatch')
     previous=json.loads((ROOT/'docs/cs_saf/generation_repeats_v1_result.json').read_text())
     if sha256(repeats.OUTPUT/'native_verification.json')!=previous['native_verification_sha256']:raise ValueError('old reference verification changed')
     refs={}
@@ -23,6 +27,16 @@ def main():
     for pi in c['prevalences']:
         for k in c['kappas']:
             payload=repeats.parent.load_cache(repeats.parent.CACHE/f'pi_{pi:.2f}_kappa_{k}.pt');train=payload['train']
+            expected_mask=train['valid_mask'].clone();expected_mask[:,0]=False
+            expected_rows,expected_cols=torch.where(expected_mask)
+            support=SAFTensorizerState.from_dict(payload['tensorizer_state']).gap_support
+            expected_support=np.searchsorted(np.asarray(support.upper_bounds[:-1],dtype=np.float32),
+                train['gap'][expected_mask].numpy(),side='left')
+            reps=np.asarray(support.representatives,dtype=np.float32).astype(float)
+            all_codes=train['codes'][expected_rows].numpy();expected_maps=[];expected_edges=[]
+            for code in (3,4):
+                edges=np.quantile(reps[expected_support[all_codes==code]],[.2,.4,.6,.8],method='linear')
+                expected_edges.append(edges.tolist());expected_maps.append(np.searchsorted(edges,reps,side='right').tolist())
             for t in c['trials']:
                 plan=torch.load(repeats.folder_for(pi,k,t)/'plan.pt',map_location='cpu')
                 for parent,name in c['variants'].items():
@@ -35,6 +49,17 @@ def main():
                     if tensor_digest(old)!=fit['parent']['state_sha256']:raise ValueError('old neural/affine tensors changed')
                     if sha256(Path(fit['parent']['checkpoint_path']))!=fit['parent']['checkpoint_sha256']:raise ValueError('old checkpoint changed')
                     rows,cols=f['entity_index'],f['event_index']
+                    np.testing.assert_array_equal(rows,expected_rows.numpy())
+                    np.testing.assert_array_equal(cols,expected_cols.numpy())
+                    np.testing.assert_array_equal(f['support_bin'],expected_support)
+                    if b['mapping']!=expected_maps or b['edges']!=expected_edges:raise ValueError('independent train bin reconstruction differs')
+                    np.testing.assert_array_equal(f['bin'],np.asarray(b['mapping'])[f['code'].astype(int)-3,f['support_bin']])
+                    np.testing.assert_array_equal(cp['model_state']['gap_bin_map'].numpy(),np.asarray(b['mapping']))
+                    np.testing.assert_allclose(cp['model_state']['gap_bin_weights'].numpy(),np.asarray(b['weights']),rtol=0,atol=0)
+                    precision=json.loads((folder/'response_precision.json').read_text())
+                    if precision['decision']!='PASS' or not precision['tf32_flags_restored']:raise ValueError('response precision gate failed')
+                    response=json.loads((folder/'intervention_audit.json').read_text())
+                    if response['zero_gap_control_max_range']>1e-8:raise ValueError('zero-gap control failed')
                     np.testing.assert_array_equal(f['equality'],(train['receiver'][rows,cols]==train['receiver'][rows,cols-1]).numpy())
                     np.testing.assert_array_equal(f['code'],train['codes'][rows].numpy())
                     if len(rows)!=int((train['lengths']-1).sum()) or (cols<1).any():raise ValueError('incorrect fitting transitions')
@@ -76,6 +101,7 @@ def main():
                 print(f'verified {pi} {k} {t}',flush=True)
     result=dict(status='PASS',source_commit=terminal['source_commit'],fits_checked=fits,old_states_unchanged=fits,
         conditional_means_checked=cond,native_groups_checked=n,native_values_checked=2*n,
+        exact_train_transition_order_checked=fits,response_precision_checks=fits,zero_gap_checks=fits,
         max_native_error=max_native,max_conditional_error=max_cond,max_fit_error=max_fit,
         max_historical_control_mean_difference=max_historical,verifier_sha256=sha256(Path(__file__)),records=records)
     write_json(OUTPUT/'verification.json',result);print(json.dumps({k:v for k,v in result.items() if k!='records'}))

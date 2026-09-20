@@ -29,11 +29,11 @@ def main():
                             report=json.loads((dirname/f'repeat_{r}/comparison.json').read_text());gen.append(report['metrics'])
                             for g,block in report['metrics'].items():rows.append(dict(prevalence=pi,kappa=k,trial=t,repeat=r,model=name,group=g,**block['metrics']))
                         records[(pk,k,t,name)]=dict(conditional=conditional,generation=gen)
-    metrics=list(rows[0])[6:];vectors={};summaries={};contrasts={}
+    metrics=list(rows[0])[6:];vectors={};summaries={};contrasts={};worst_cell_means={}
     for pi in c['prevalences']:
-        pk=f'{pi:.2f}';vectors[pk]={};summaries[pk]={};contrasts[pk]={}
+        pk=f'{pi:.2f}';vectors[pk]={};summaries[pk]={};contrasts[pk]={};worst_cell_means[pk]={}
         for name in NAMES:
-            vals={}
+            vals={};worst_cell_means[pk][name]={}
             for metric in metrics:
                 vals['active_'+metric]=np.array([[records[(pk,1,t,name)]['generation'][r]['context_1']['metrics'][metric] for r in c['repeats']] for t in c['trials']])
                 vals['three_null_generation_'+metric]=np.array([[np.mean([records[(pk,k,t,name)]['generation'][r]['context_'+label]['metrics'][metric] for k,label in NULLS]) for r in c['repeats']] for t in c['trials']])
@@ -44,7 +44,12 @@ def main():
                     vals[f'null_k{k}_c{label}_'+metric]=np.array([records[(pk,k,t,name)]['conditional'][label]['metrics'][metric]['mean'] for t in c['trials']])
                 ns=np.stack([vals[f'null_k{k}_c{label}_'+metric] for k,label in NULLS])
                 vals['three_null_'+metric]=ns.mean(0)
-                if metric in ('copy_range','repeat_range'):vals['worst_null_'+metric]=ns.max(0)
+                if metric in ('copy_range','repeat_range'):
+                    # Distinguish E_trial[max_cell(range)] from max_cell[E_trial(range)].
+                    vals['mean_trial_worst_null_'+metric]=ns.max(0)
+                    cell_means={f'k{k}_c{g}':float(ns[i].mean()) for i,(k,g) in enumerate(NULLS)}
+                    worst_cell_means[pk][name][metric]=dict(cell_means=cell_means,
+                        worst_cell=max(cell_means,key=cell_means.get),mean=max(cell_means.values()))
             vectors[pk][name]=vals
             summaries[pk][name]={m:(repeat_statistics(a) if a.ndim==2 else seed_statistics(a)) for m,a in vals.items()}
         for a,b in PAIRS:
@@ -69,6 +74,14 @@ def main():
         w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n');w.writeheader();w.writerows(rows)
     result=dict(source_commit=end['source_commit'],config_sha256=CONFIG_SHA,new_calibration_fits=80,new_base_fits=0,new_generated_datasets=400,
         existing_generation_datasets=400,summaries=summaries,contrasts=contrasts,diagnostic_screens=screens,fits=fits,
+        worst_null_cell_mean_ranges=worst_cell_means,
+        shared_conditional_weight_verification=json.loads((OUTPUT/'shared_conditional_weights_check.json').read_text()),
+        shared_conditional_weight_verification_sha256=sha256(OUTPUT/'shared_conditional_weights_check.json'),
+        environment=json.loads((OUTPUT/'environment.json').read_text()),
+        worst_null_aggregation_note='max of three cell means is separate from mean of per-trial maxima; joint screen checks each cell',
+        technical_attempt_01=dict(unique_interrupted_fits=2,technical_reruns=2,
+            amendment='docs/cs_saf/gap_calibration_v1_execution_amendment_01.md',
+            rerun_identity=[json.loads((folder_for(.05,0,0,n)/'technical_rerun_identity.json').read_text()) for n in ('Ugap','Egap')]),
         bound_hits=sum(len(g['bound_hits']) for fit in fits for g in fit['groups'].values()),
         verification={k:v for k,v in verification.items() if k!='records'},verification_sha256=sha256(OUTPUT/'verification.json'),
         gates={g:json.loads((OUTPUT/g/'gate.json').read_text()) for g in ('cpu_gate','gpu_gate')},manifests=manifests,

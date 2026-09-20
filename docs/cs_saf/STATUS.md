@@ -2,7 +2,62 @@
 
 Updated 2026-09-20. Branch: `research/cs-saf`.
 
-**Latest calibrated U/E matched-history replay COMPLETE: 400 immutable native
+**Latest equal limited gap calibration COMPLETE: 80 unique corrections,
+400 new native datasets (819,200 sequences), 400 reused controls. All GPU jobs
+finished. Two interrupted fits were rerun identically after a metadata-only fix.**
+
+[Full report](gap_calibration_v1_report_2026_09_20.md),
+[professor brief](professor_brief_gap_calibration_2026_09_20.md),
+[statistics, coefficients, verification](gap_calibration_v1_result.json),
+[all scalar metrics](gap_calibration_v1_all_metrics.csv),
+[registration](gap_calibration_v1_preregistration.md),
+[execution amendment](gap_calibration_v1_execution_amendment_01.md).
+
+- Registration `db76b85`, initial implementation `b9251b6`, all completed scientific
+  execution `547bce0c0dde6a2c59d7513b0b020f010c9d87b8`. Four prevalences, both kappas,
+  five existing training trials, five fixed generation tapes. No new neural fits.
+- Same five train-support quantile bins per context for U/E; 8 new effective
+  degrees, bounds ±.5, train-weighted centered logits, ridge .001. Every neural
+  weight AND old affine scalar frozen. Only observed TRAIN repeat targets fit.
+  No oracle/validation fitting, new continuous information or coefficient search.
+- Ugap-Ucal and Egap-Ecal native active L1 improve in 5/5 trials at EACH prevalence.
+  U reductions 11.0/8.4/10.6/21.7%; E reductions 17.5/16.7/13.4/18.3%. Both primary
+  improvement screens meet at 4/4. Active conditional grid/factual TV improves too.
+- Egap-Ugap means +.001048/+.001583/+.000857/+.000640; E has lower trial means in
+  1/5,2/5,1/5,1/5. Primary improvement 0/4; symmetric cost screen meets at 5/25/50%.
+  All between-trial AND fixed-model conditional MC intervals include zero.
+  Do not reinterpret directional screens as statistical superiority/inferiority.
+- E retains lower mean active conditional TV and all three null-cell copy/repeat
+  responses than equally corrected U. But correction increases ALL three null-cell
+  means for BOTH parents at EVERY prevalence. U MI error increases at 5/10%.
+  No joint lead, including own-parent improvements. Full 13-metric evidence retained.
+- Claim revision: do not call E's added history structure a demonstrated contributor
+  to native-generation improvement. Keep E's conditional/null benefits as a tradeoff.
+  Generic gap calibration improves U too and is not by itself a novel contribution.
+  E vs U compares all learned model states; it does not isolate 32 coefficients as
+  the sole cause. Earlier ER failures remain unchanged; no overall final model chosen.
+- 6 CPU tests and CPU/GPU gates pass; original full 2,048-sequence plans reproduced.
+  80 old states unchanged; independent train rows/bin maps/constraints/objectives,
+  2,240 conditional means, 2,400 raw native L1/MI values pass, max discrepancy 0.
+  All 40 U/E conditional reference measures identical; historical control means
+  differ by 0. All 160 group optimizers converge, no bound hit, max |offset| .386088.
+- Initial .05/k0/trial0 U/E workers stopped on tuple-vs-JSON-list comparison after
+  first generation. Original output archived; JSON-normalized metadata check fixes
+  only storage comparison. Identical offsets, checkpoints, conditional endpoints
+  and first generated paths verified for both repeats. No later scientific retry.
+- Reporting separates max of null-cell means from mean of trial-wise maxima.
+  The registered joint screen still checks each cell separately; no rule changed.
+  CSV 2,400 rows /31,200 values. Raw artifacts in gap_calibration_v1 and failed archive.
+- Same artificial data seed42/explored validation/training trials. No test, real data,
+  new external baseline or independent confirmation. Next proposal only: lock U/E
+  with/without correction, justify endpoint priorities and any acceptable cost
+  prospectively, then preregister independent data/training-seed confirmation.
+  Do not keep adding correction capacity until E wins. Later compare external models
+  fairly and evaluate behavior–fraud relations/real detection utility.
+- Branch remains research/cs-saf, main remains earlier SAF base. Git stores reviewed
+  code/contracts/scalars/plots/reports; raw checkpoints and paths stay on workstation.
+
+**Previous calibrated U/E matched-history replay COMPLETE: 400 immutable native
 paths, 80 frozen calibrated states, 800 predictor/path evaluations. No training,
 calibration fitting or generation. All GPU work finished.**
 
@@ -46,10 +101,10 @@ calibration fitting or generation. All GPU work finished.**
   native generation. Generic calibration/history use or teacher-forcing mismatch
   is not a novel E contribution. Conditional gains remain; native superiority
   is unsupported. The report links relevant primary literature and limitations.
-- Next proposal only: limited gap-dependent probability calibration applied equally
+- Historical next proposal (now completed above): limited gap-dependent probability calibration applied equally
   to U/E, learned solely from observed training labels, with equal capacity/budget,
-  original controls and joint conditional/native/null evaluation. Not registered,
-  implemented or fitted. Never fit to the plotted validation biases or oracle law.
+  original controls and joint conditional/native/null evaluation. It was fitted only
+  to observed train labels, never to plotted validation biases or oracle law.
   If E adds no benefit over equally corrected U, revise the E-specific claim rather
   than repeatedly expanding coefficient/model searches. Existing ER failure stays.
 

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "statistics_reconstructed": 2268,
+  "max_difference": 0.0,
+  "csv_rows": 2400,
+  "native_scalar_values": 31200,
+  "all_four_comparison_screens_verified": true,
+  "result_sha256": "d802a834d186faa92b6f51f02f8e63cc3b601b0e4bea510ec831c77f41c10d57"
+}

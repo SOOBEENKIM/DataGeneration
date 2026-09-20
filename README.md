@@ -4,7 +4,30 @@
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [calibrated U/E matched-history replay](docs/cs_saf/calibrated_replay_v1_report_2026_09_20.md)
+Latest [equal gap-bin calibration](docs/cs_saf/gap_calibration_v1_report_2026_09_20.md)
+is **COMPLETE: 80 frozen-network correction fits and 400 new generated datasets**.
+Both U and E improve native active repeat-curve L1 in all 5 trials at every
+prevalence (U: 8.4–21.7%; E: 13.4–18.3%). However, equally corrected E still has
+higher mean L1 than U at every prevalence: +.001048/+.001583/+.000857/+.000640.
+E wins only 1/5, 2/5, 1/5, 1/5 trials; its primary benefit screen fails and the
+symmetric cost screen meets at 5/25/50%. All paired between-trial and conditional
+MC intervals include zero; this is not established universal inferiority.
+E retains lower mean conditional TV and each null-cell response, but adding
+correction increases null response for BOTH models. U's MI error also rises at
+5/10%. No joint screen passes. **E-specific native-generation superiority is
+removed from the current claim; generic correction gains are not E's contribution.**
+Independent reconstruction of 80 fits, 2,240 conditional means and 2,400 native
+values passes with zero arithmetic discrepancy. One metadata-type failure and
+two identical technical reruns are preserved. All experiment GPU work finished.
+Next proposal: lock these controls, justify acceptable costs before evaluation,
+and preregister independent data/training-seed confirmation; not run here.
+[Professor brief](docs/cs_saf/professor_brief_gap_calibration_2026_09_20.md),
+[all statistics and coefficients](docs/cs_saf/gap_calibration_v1_result.json),
+[all 31,200 native values](docs/cs_saf/gap_calibration_v1_all_metrics.csv),
+[registration](docs/cs_saf/gap_calibration_v1_preregistration.md),
+[technical amendment](docs/cs_saf/gap_calibration_v1_execution_amendment_01.md).
+
+Previous [calibrated U/E matched-history replay](docs/cs_saf/calibrated_replay_v1_report_2026_09_20.md)
 is **COMPLETE: 400 immutable native paths, 800 predictor/path evaluations, zero
 new training, calibration fits or generations**. On identical source histories
 and current gaps, Ecal has higher probability-curve L1 than Ucal at 5/10/25%,
@@ -17,7 +40,7 @@ or proof that 32 added parameters are responsible. Conditional benefits remain
 separate; E's generated-relation superiority is unsupported. All 1,200 empirical
 and 2,400 probability-curve L1 values plus 600 decompositions passed independent
 verification. GPU work finished. Next proposed bounded change is equal,
-train-only gap-dependent calibration for U/E, not yet registered or executed.
+train-only gap-dependent calibration for U/E; that comparison is now complete above.
 [Professor brief](docs/cs_saf/professor_brief_calibrated_replay_2026_09_20.md),
 [full statistics](docs/cs_saf/calibrated_replay_v1_result.json),
 [all scalar values](docs/cs_saf/calibrated_replay_v1_scalars.csv),
