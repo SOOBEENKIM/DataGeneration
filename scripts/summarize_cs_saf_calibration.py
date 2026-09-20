@@ -122,6 +122,14 @@ def main():
         largest_full_precision_entity_delta=max([p['full_precision_max_entity_delta'] for p in precision] or [0]),
         archived_technical_attempts=len(list(OUTPUT.glob('pi_*/kappa_*/trial_*/*_attempt01_failed'))),
         scientific_numeric_settings_unchanged=True)
+    native=json.loads((OUTPUT/'native_verification.json').read_text())
+    if native['status']!='PASS' or native['groups_checked']!=600 or native['max_absolute_error']>1e-12:
+        raise ValueError('independent native verification missing or failed')
+    result['native_verification']={k:v for k,v in native.items() if k!='records'}
+    result['native_verification']['evidence_sha256']=sha256(OUTPUT/'native_verification.json')
+    result['scientific_source_commits']=sorted({r['manifest']['source_commit']
+        for cell in raw.values() for name,conditions in cell.items() if name.split('/')[0].endswith('cal')
+        for r in conditions.values()})
     write_json(OUTPUT/'summary.json',result)
     compact={k:v for k,v in result.items() if k!='raw_records'}
     compact['full_evidence_path']=str(OUTPUT/'summary.json');compact['full_evidence_sha256']=sha256(OUTPUT/'summary.json')

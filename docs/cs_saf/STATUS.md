@@ -1,8 +1,51 @@
 # CS-SAF recoverable research state
 
-Updated 2026-09-17. Branch: `research/cs-saf`.
+Updated 2026-09-20. Branch: `research/cs-saf`.
 
-**Latest cross-history/joint-oracle diagnosis COMPLETE. 120 fixed models,
+**Latest frozen copy-probability calibration COMPLETE. 80 four-scalar fits,
+zero base neural fits, 120 reused U/E/L003 reference models. All four prevalences,
+both kappa conditions and all five paired trials completed. One additional
+technical attempt preserved. GPU jobs have finished.**
+
+[Full result](calibration_v1_report_2026_09_20.md),
+[professor briefing](professor_brief_calibration_2026_09_20.md),
+[verified evidence](calibration_v1_result.json),
+[preregistration](calibration_v1_preregistration.md),
+[execution amendment](calibration_v1_execution_amendment_01.md).
+
+- Registration `54811a1`; 23 complete cells from `b66c2f1`, 57 from `405b318`.
+  The latter changes numeric verification, not fitting or reported science.
+- Ecal-E active native L1 means improve 11.1/10.4/10.0/4.0%; improvement
+  counts 3/5, 5/5, 4/5, 3/5. L003cal-L003 improves 10.6/7.3/13.8/6.3%,
+  counts 3/5, 4/5, 5/5, 3/5. Both improve MI error 5/5 at each prevalence.
+- Registered primary consistency screen NOT MET: only 10% and 25% qualify,
+  fewer than three of four. Old ER FAIL remains. Mean improvement is not
+  independent confirmation or broad superiority.
+- Calibration slightly raises mean null response in both arms. L003cal still
+  reduces null copy range vs Ecal 5/5 per prevalence, but native L1 and MI
+  means are worse at all four prevalences. The tradeoff persists.
+- Ecal native L1 vs U improves only in mean at 10/25%, and all four paired
+  intervals include zero. Ucal was not run; a generic calibration benefit
+  cannot be assigned to the extra history structure alone.
+- 17 CPU tests and same-source CPU/GPU gates PASS; saved-state GPU regression
+  PASS. The single TF32 response verification failure is archived. Full-precision
+  control keeps the 1e-6 limit, while fit/generation/scientific scores retain
+  historical numeric settings. The technical rerun's fitted parameters, model,
+  generated arrays and conditional endpoints are identical to its first attempt.
+- 80 frozen-base identities, 160 fit-context losses and conditional groups,
+  paired generation plans verified. 600 native evaluation groups / 1,200 L1
+  and MI values independently recomputed with maximum difference zero.
+- Same data seed42 and reused validation; no test/real-data access or independent
+  data confirmation. Native sampling uses one existing tape per training trial.
+- Next proposal: a separately fixed U/Ucal/E/Ecal comparison to isolate generic
+  calibration from added history capacity, with fresh data/training seeds and
+  multiple paired generation tapes. No further fits automatically launched.
+  If null suppression is the main aim, retain L003cal as an explicit tradeoff
+  and justify an application-based active cost before a new confirmation.
+- Raw evidence: `artifacts/cs_saf/calibration_v1/`. Git keeps reviewed source,
+  protocols, summaries and figures, not the full checkpoint archive.
+
+**Previous cross-history/joint-oracle diagnosis COMPLETE. 120 fixed models,
 2,160 cross-history evaluations, 153,600 oracle sequences, zero new fits.
 14 CPU tests, GPU replay gate and independent full-array arithmetic verification PASS.
 GPU process finished; all registered outcomes preserved. Default main is still
@@ -37,7 +80,8 @@ GPU process finished; all registered outcomes preserved. Default main is still
   Scientific diagnosis may proceed despite failures; prior ER FAIL is unchanged.
 - Next bounded proposal: E/L003 with/without the same train-only repeat-probability
   calibration, checking joint generation and null-response costs, then independent
-  data/seed confirmation if promising. NOT registered or trained. No automatic fits.
+  data/seed confirmation if promising. Subsequently registered/executed above;
+  that historical proposal is no longer the current unexecuted step.
 - Raw evidence lives in the separate `research-cs-saf-replay-oracle` worktree under
   `artifacts/cs_saf/replay_oracle_v1/`, linked into the original research worktree.
   Git versions code/contracts/verified summaries, not a full raw-checkpoint backup.

@@ -4,7 +4,24 @@
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [cross-history replay and joint-oracle diagnosis](docs/cs_saf/replay_oracle_v1_report_2026_09_17.md)
+Latest [frozen repeat-probability calibration](docs/cs_saf/calibration_v1_report_2026_09_20.md)
+is **COMPLETE: 80 four-scalar calibration fits, zero base-model retraining,
+120 reused U/E/L003 references**. Calibration decreases active native repeat-curve
+L1 in mean at all four prevalences, and decreases MI error in 5/5 paired trials
+at every prevalence for both E and L003. However, only two of four prevalences
+meet the preregistered primary consistency screen. L003cal still trades lower
+null response for worse active generation than Ecal; Ecal has no consistent
+primary advantage over U. This is a partial repair, not established model superiority.
+17 CPU tests, CPU/GPU gates, a saved-state GPU regression and independent native
+arithmetic (1,200 values, maximum discrepancy zero) passed. One TF32 verification
+failure and its identical scientific rerun are preserved; GPU execution has ended.
+[Professor briefing](docs/cs_saf/professor_brief_calibration_2026_09_20.md),
+[verified numbers](docs/cs_saf/calibration_v1_result.json),
+[preregistration](docs/cs_saf/calibration_v1_preregistration.md),
+[execution amendment](docs/cs_saf/calibration_v1_execution_amendment_01.md).
+U+calibration and independent-data confirmation remain unexecuted.
+
+Previous [cross-history replay and joint-oracle diagnosis](docs/cs_saf/replay_oracle_v1_report_2026_09_17.md)
 is **COMPLETE: 120 saved models, 2,160 cross-history evaluations, 153,600 oracle
 sequences, zero new fits**. The exact online oracle also loses gap–repeat fidelity
 when observed gaps are forced and only marks are regenerated. Thus the earlier
@@ -13,8 +30,8 @@ On exactly the same generated histories, L003 still has worse repeat-curve
 calibration than E at all four prevalences in each of five paired model trials.
 Predictor differences are more consistent than source-history differences.
 The report preserves all contrary results, quantifies the null-benefit/active-cost
-tradeoff, and proposes a bounded calibration comparison; that new model is not
-registered or trained. GPU execution has finished.
+tradeoff, and proposed the bounded calibration comparison subsequently completed
+above. Its original diagnostic outcomes remain preserved.
 [Professor briefing](docs/cs_saf/professor_brief_replay_oracle_2026_09_17.md),
 [numerical evidence](docs/cs_saf/replay_oracle_v1_result.json),
 [all binwise contrasts](docs/cs_saf/replay_oracle_v1_binwise.json),
