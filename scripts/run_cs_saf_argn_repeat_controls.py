@@ -89,6 +89,16 @@ def run(kappa,seed,parent_kind,smoke=False):
             sample.to_parquet(out/f'generated_{kind}_{tape}.parquet',index=False)
             print('GENERATED',parent_kind,kappa,seed,kind,tape,flush=True)
     assert original==digest(ws.model_tabular_weights_path)==digest(Workspace(source/'workspace').model_tabular_weights_path)
+    if parent_kind=='continued' and not smoke:
+        # A fixed secondary diagnostic, not another selected/generative candidate.
+        last_model,*_=_initialize_model(workspace=ws,device='cpu')
+        last_path=source/'checkpoint_last.pt';last_hash=digest(last_path)
+        last_model.load_state_dict(torch.load(last_path,map_location='cpu',weights_only=True),strict=True)
+        last_model.eval()
+        last_features,last_error=extract(last_model,stats,ctx_stats,val,vp)
+        write(out/'last_conditional.json',dict(metrics=conditional_metrics(features,last_features,{}),
+             invariance_error=last_error,checkpoint_sha256=last_hash,role='secondary_fixed_final_checkpoint_no_calibration_or_generation'))
+        assert digest(last_path)==last_hash
     write(out/'DONE.json',dict(seconds=time.monotonic()-started,weights_sha256=original,weights_unchanged=True,
         validation_invariance_error=val_error,executions=executions,smoke=smoke,test_accessed=False))
 

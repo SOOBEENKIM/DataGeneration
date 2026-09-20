@@ -1,0 +1,10 @@
+{
+  "first_events_unchanged": true,
+  "group0_never_repeat": true,
+  "group1_always_repeat": true,
+  "unequal_lengths_exercised": true,
+  "transitions_checked": 554,
+  "identity_sample_exact": true,
+  "weights_unchanged": true,
+  "technical_fixture_only": true
+}

@@ -1,0 +1,12 @@
+{
+  "first_events_unchanged": true,
+  "group0_never_repeat": true,
+  "group1_always_repeat": true,
+  "unequal_lengths_exercised": true,
+  "transitions_checked": 554,
+  "identity_sample_exact": true,
+  "weights_unchanged": true,
+  "official_generation_source_sha256": "60d285a905fa6b2eca02d9817739098d79a5372739352f8cf737ecd013da5b19",
+  "normalization_max_error": 1.1920928955078125e-07,
+  "technical_fixture_only": true
+}
