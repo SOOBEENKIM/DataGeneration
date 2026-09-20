@@ -114,6 +114,14 @@ def main():
         bound_hits=sum(x['bound_hit'] for fit in fits for x in fit['contexts'].values()),
         train_loss_change=[x['after_nll']-x['before_nll'] for fit in fits for x in fit['contexts'].values()],
         test_accessed=False,independent_data_confirmation=False,old_ER_FAIL_unchanged=True)
+    precision_files=list(OUTPUT.glob('pi_*/kappa_*/trial_*/*cal/response_precision_verification.json'))
+    precision=[json.loads(p.read_text()) for p in precision_files]
+    result['execution_amendment']=dict(full_precision_verifications=len(precision),
+        original_passing_verifications=80-len(precision),
+        historical_tf32_discrepancies_over_tolerance=sum(p['historical_precision_exceeds_tolerance'] for p in precision),
+        largest_full_precision_entity_delta=max([p['full_precision_max_entity_delta'] for p in precision] or [0]),
+        archived_technical_attempts=len(list(OUTPUT.glob('pi_*/kappa_*/trial_*/*_attempt01_failed'))),
+        scientific_numeric_settings_unchanged=True)
     write_json(OUTPUT/'summary.json',result)
     compact={k:v for k,v in result.items() if k!='raw_records'}
     compact['full_evidence_path']=str(OUTPUT/'summary.json');compact['full_evidence_sha256']=sha256(OUTPUT/'summary.json')

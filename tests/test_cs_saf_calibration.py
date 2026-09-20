@@ -104,3 +104,24 @@ def test_registration_is_fixed_and_contains_all_cells():
     c=contract()
     assert len(c['prevalences'])*len(c['kappas'])*len(c['trials'])*len(c['parents'])==80
     assert not c['scientific_failure_stops_grid'] and c['fit_split']=='train'
+
+
+@pytest.mark.skipif(not torch.cuda.is_available(),reason='requires CUDA TF32 regression')
+def test_saved_tf32_failure_has_passing_full_precision_control():
+    import json
+    from experiments.cs_saf_calibration import OUTPUT,verify_response_precision
+    torch.set_num_threads(1)
+    folder=OUTPUT/'pi_0.10/kappa_1/trial_0/Ecal_attempt01_failed'
+    if not folder.exists():folder=folder.with_name('Ecal')
+    p=parent.load_cache(parent.CACHE/'pi_0.10_kappa_1.pt')
+    base,_=load_parent(p,.1,1,0,'E','cuda:0')
+    m=calibrated_model(base,p,'cuda:0')
+    m.load_state_dict(torch.load(folder/'checkpoint_calibrated.pt',map_location='cuda:0')['model_state'])
+    audit=json.loads((folder/'intervention_audit.json').read_text())
+    conditional=json.loads((folder/'conditional_accuracy.json').read_text())
+    old_flags=(torch.backends.cudnn.allow_tf32,torch.backends.cuda.matmul.allow_tf32)
+    result=verify_response_precision(m,p['validation'],'cuda:0',audit,conditional)
+    assert result['historical_precision_exceeds_tolerance']
+    assert result['decision']=='PASS' and result['mean_tolerance']==1e-6
+    assert result['full_precision_max_entity_delta']<1e-6
+    assert old_flags==(torch.backends.cudnn.allow_tf32,torch.backends.cuda.matmul.allow_tf32)

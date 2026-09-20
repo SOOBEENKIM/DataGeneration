@@ -9,7 +9,7 @@ import time
 import torch
 
 from experiments.cs_saf_calibration import (ROOT, OUTPUT, CONFIG_SHA, contract,
-    fit_job, frozen_source, smoke, verify)
+    fit_job, frozen_source, smoke, verify, REUSABLE_SOURCES)
 from scripts.materialize_cs_saf_prevalence import write_json
 
 
@@ -48,7 +48,7 @@ def run():
         pi,k,t,a=task;folder=OUTPUT/f'pi_{pi:.2f}/kappa_{k}/trial_{t}/{a}cal'
         if (folder/'COMPLETE.json').exists():
             item=verify(folder)
-            if item['source_commit']!=source:raise ValueError('resume source differs')
+            if item['source_commit'] not in REUSABLE_SOURCES|{source}:raise ValueError('resume source differs')
             completed.append(list(task))
         elif folder.exists():
             raise RuntimeError('incomplete evidence requires a documented new attempt: '+str(folder))

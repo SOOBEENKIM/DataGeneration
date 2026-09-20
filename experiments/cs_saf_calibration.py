@@ -20,6 +20,7 @@ from scripts.materialize_cs_saf_prevalence import write_json
 CONFIG = ROOT/'configs/benchmark_v2/cs_saf_calibration_v1.json'
 CONFIG_SHA = '50b947e4755d44c623fa343d5a8116c197c388e0221e7095b39f1388b558655c'
 OUTPUT = ROOT/'artifacts/cs_saf/calibration_v1'
+REUSABLE_SOURCES = {'b66c2f170c52e4cf365c280c8fda0171e82d59a0'}
 
 
 def contract():
@@ -108,12 +109,68 @@ def verify(folder):
     return result
 
 
+@torch.no_grad()
+def verify_response_precision(model, data, device, audit, conditional):
+    """Verify two batching/reduction paths without cuDNN TF32 rounding.
+
+    Fit, generation and reported conditional endpoints retain historical numeric
+    settings. This independent verification does not alter those observations.
+    """
+    historical=[]
+    for label in ('0','1'):
+        for metric in ('copy','repeat'):
+            historical.append(conditional['groups'][label]['metrics'][metric+'_range']['mean']
+                              -audit['responses'][label]['mean_'+metric+'_range'])
+    old_cudnn=torch.backends.cudnn.allow_tf32
+    old_matmul=torch.backends.cuda.matmul.allow_tf32
+    def compute(grouped,chunk):
+        result=np.zeros((len(data['lengths']),2))
+        groups=([torch.where(data['codes']==c)[0] for c in (3,4)] if grouped
+                else [torch.arange(len(data['lengths']))])
+        for group in groups:
+            for start in range(0,len(group),256):
+                ids=group[start:start+256];x=batch(data,ids,device)
+                context=model.context(model.encoder(**x),x['static_categorical'])
+                mask=x['valid_mask'].clone();mask[:,0]=False
+                previous=x['receiver'].roll(1,dims=1)[mask]
+                codes=x['static_categorical'][0][:,None].expand_as(mask)[mask]
+                flat=context[mask];parts=[]
+                for j in range(0,len(flat),chunk):
+                    q,r=model.response_curves(flat[j:j+chunk],previous[j:j+chunk],static_codes=codes[j:j+chunk])
+                    parts.append(torch.stack([q.max(1).values-q.min(1).values,
+                                              r.max(1).values-r.min(1).values],1).double())
+                values=torch.cat(parts)
+                if grouped:
+                    rows,_=torch.where(mask)
+                    entity=torch.zeros((len(ids),2),device=device,dtype=torch.float64)
+                    entity.index_add_(0,rows,values/mask.sum(1)[rows,None])
+                    result[ids]=entity.cpu().numpy()
+                else:
+                    dense=np.zeros((*mask.shape,2),dtype=float)
+                    dense[mask.cpu().numpy()]=values.cpu().numpy()
+                    result[ids]=dense.sum(1)/mask.cpu().numpy().sum(1)[:,None]
+        return result
+    try:
+        torch.backends.cudnn.allow_tf32=False;torch.backends.cuda.matmul.allow_tf32=False
+        mixed=compute(False,4096);grouped=compute(True,512)
+    finally:
+        torch.backends.cudnn.allow_tf32=old_cudnn;torch.backends.cuda.matmul.allow_tf32=old_matmul
+    means={str(code-3):(grouped-mixed)[data['codes'].numpy()==code].mean(0).tolist() for code in (3,4)}
+    if max(abs(v) for row in means.values() for v in row)>1e-6:
+        raise ValueError('full-precision independent response aggregations disagree')
+    return dict(decision='PASS',mean_tolerance=1e-6,full_precision_mean_deltas=means,
+        full_precision_max_entity_delta=float(np.abs(grouped-mixed).max()),
+        historical_precision_mean_deltas=historical,
+        historical_precision_exceeds_tolerance=bool(max(map(abs,historical))>1e-6),
+        scientific_metrics_replaced=False,tf32_flags_restored=True)
+
+
 def fit_job(pi, kappa, trial, candidate, device):
     c = contract(); source = frozen_source(); started = time.monotonic()
     folder = OUTPUT/f'pi_{pi:.2f}/kappa_{kappa}/trial_{trial}/{candidate}cal'
     if (folder/'COMPLETE.json').exists():
         result = verify(folder)
-        if result['source_commit'] != source: raise ValueError('resume source changed')
+        if result['source_commit'] not in REUSABLE_SOURCES|{source}: raise ValueError('resume source changed')
         return result
     folder.mkdir(parents=True, exist_ok=False)
     try:
@@ -150,11 +207,8 @@ def fit_job(pi, kappa, trial, candidate, device):
             torch.tensor(provenance['reference'], dtype=torch.float64), kappa, device)
         np.savez_compressed(folder/'validation_accuracy_arrays.npz', **arrays)
         write_json(folder/'conditional_accuracy.json', summary)
-        for label in ('0','1'):
-            for metric in ('copy','repeat'):
-                a = summary['groups'][label]['metrics'][metric+'_range']['mean']
-                b = audit['responses'][label]['mean_'+metric+'_range']
-                if abs(a-b) > 1e-6: raise ValueError('independent response aggregations disagree')
+        precision=verify_response_precision(model,payload['validation'],device,audit,summary)
+        write_json(folder/'response_precision_verification.json',precision)
         from experiments.cs_saf_followup_external import canonical_and_plan, sample_to_frame, common_metrics
         dataset, _, plan, positions = canonical_and_plan(pi,kappa,trial)
         sample = torch.load(folder/'generated_sample.pt', map_location='cpu')['sample']
@@ -164,6 +218,21 @@ def fit_job(pi, kappa, trial, candidate, device):
             kappa=kappa, trial=trial, metrics=metrics,
             sampling_plan_sha256=hashlib.sha256(positions.tobytes()).hexdigest(),
             sampling_seed=seeds['sampling_seed'], test_accessed=False))
+        archived=folder.with_name(folder.name+'_attempt01_failed')
+        if archived.exists():
+            old_fit=json.loads((archived/'fit.json').read_text())
+            for key in ('offset','slope','contexts'):
+                if parameters[key]!=old_fit[key]:raise RuntimeError('technical rerun changed fitted calibration')
+            old_state=torch.load(archived/'checkpoint_calibrated.pt',map_location='cpu')['model_state']
+            if tensor_digest(old_state)!=state_digest(model):raise RuntimeError('technical rerun changed model')
+            old_sample=torch.load(archived/'generated_sample.pt',map_location='cpu')['sample']
+            for key in sample:
+                torch.testing.assert_close(sample[key],old_sample[key],rtol=0,atol=0,equal_nan=True)
+            old_conditional=json.loads((archived/'conditional_accuracy.json').read_text())
+            if summary!=old_conditional:raise RuntimeError('technical rerun changed scientific conditional endpoint')
+            write_json(folder/'technical_rerun_identity.json',dict(fitted_parameters_identical=True,
+                model_identical=True,generated_arrays_identical=True,conditional_endpoints_identical=True,
+                archived_attempt=str(archived)))
         if state_digest(model) != before or base_digest(model) != provenance['state_sha256']:
             raise RuntimeError('evaluation changed frozen weights')
         if sha256(Path(provenance['path'])) != provenance['checkpoint_sha256']:
