@@ -1,0 +1,242 @@
+{
+  "id": "cs-saf-rollout-calibration-v1",
+  "base_commit": "12ce8d332ced89b069f142859720fcdfc68c2e36",
+  "role": "bounded_exploratory_frozen_backbone_training_objective_comparison",
+  "parents": {
+    "0/0/U": {
+      "TRAIN_DONE.json": "00f4842220d77b9b1bec75089f2e5b733e1ad4563148bcf66ffc9527d9a2f77d",
+      "EVAL_DONE.json": "218b459f9380c0054be5aae68329835637708cb3eb6cbe6e1b23006bbbc3822a",
+      "checkpoint_best.pt": "ad1f6ef9b7427847e0a57cd20be25adc5e8bf070e021cc5bf70bba75a2a30934",
+      "evaluation/fit.json": "a029892be5f4fe695b5428757b178d92f5a0d960fc8a7e099340805c4858b19a",
+      "evaluation/train_features.parquet": "cf423cf125e8c9128e308eb5baf7a590f59e11888752109cbcad94d2874c5a68"
+    },
+    "0/0/G": {
+      "TRAIN_DONE.json": "dcf1dadd99ff5c9c66b71dc81db7b1fb3eed929f2890ef7a4071355f6e5992d5",
+      "EVAL_DONE.json": "a85492513ee0f3d24e5811c19f904703903e394c9220f5b86fac6e8e909da260",
+      "checkpoint_best.pt": "5883e36b772af5b532536995b969f01a4dadbf6d079019cf590461ba9f169315",
+      "evaluation/fit.json": "65b1b65e515db34a58b97c25a5572df95e8fa31add9699540ab8bc85363a30b4",
+      "evaluation/train_features.parquet": "a387728dafbbcffb0d0bfe2eaf1efff110eea4f46832ea24794da0b55ea31ac9"
+    },
+    "0/1/U": {
+      "TRAIN_DONE.json": "b0bcbe41feb3cfa117799e45a49e2b6793e778777524ad052d741203c24451fa",
+      "EVAL_DONE.json": "677cf0fcff617467057f6b26fa4134421c2b24b42d69f18ac63287f436f3ca11",
+      "checkpoint_best.pt": "8613ace23e07efb4152bc3c1df27a46eedf0a6653405fc68a790572e131b2775",
+      "evaluation/fit.json": "9e44cf7ba6c5ebfa7777a1873ac35c3ea646c934fa055e0a18532bc1541a9fdd",
+      "evaluation/train_features.parquet": "071df043cd89f4e21cf53f8e4e2c0e4631a494cd2de53dfe1f74b590bbcd4194"
+    },
+    "0/1/G": {
+      "TRAIN_DONE.json": "e1bf50c5d88ea8b1f3e64faac71b8cac1ddf0cd30945d2f5cd2f12747d5954e5",
+      "EVAL_DONE.json": "b4653a5743eeff3f0c72b6dba2f0f1df515f69e2f3389115b3370d793aa96037",
+      "checkpoint_best.pt": "5e50f1e3488f1f730991164bb5bdd380ce01d917467c9944733cc5cf0d8c015b",
+      "evaluation/fit.json": "28afad927b959009d1e3ac6b26a90c7c84fc8da02bf443f24d130554bbc62412",
+      "evaluation/train_features.parquet": "b795cc90b71b746adfda0a27dbb4dbd11ebe0ab1d63f139de7ff5726a96145a1"
+    },
+    "0/2/U": {
+      "TRAIN_DONE.json": "b34f51998299c580a7d5fcc7571710e2d9a494faf1d1a7cb92f82e26a5cb8b85",
+      "EVAL_DONE.json": "5314e74cb0f9a6370addf05af3788e1bacf322e86f71fd2bbb81257f7b1913ff",
+      "checkpoint_best.pt": "640d1625bbb4cc2a378576abe261822ff695cc27060df3cbdc1d56e468339581",
+      "evaluation/fit.json": "4600ec671d230b6cbf06ef2ace5c30adce6bfe2b3bb582d4c4f25abaa28631ff",
+      "evaluation/train_features.parquet": "6ac351760dff1d9f5929cade1b482ca4a1e122cb314f8c3bc029378305e18053"
+    },
+    "0/2/G": {
+      "TRAIN_DONE.json": "08ca0e8ccf0adc981ba5e13393edac9dd25b4aab735ae0aa4a1629c137c1e4a7",
+      "EVAL_DONE.json": "81e8c7983ea4e81ed5a5ab3b3ad4203e6bbb1c08c27b0ea0cc21c357a27c7f9e",
+      "checkpoint_best.pt": "b93da9e30dc9b2b7a540b939a9ee58f6294a76fc626922fa1a45fe16b4dc9d2c",
+      "evaluation/fit.json": "1ec073611123a8ed94a43b03d02b8a8ecbd23f4e803feea4e7db9c56f9b14c16",
+      "evaluation/train_features.parquet": "8ef241f84f40fd99e5885c837f90da3ef8cbb56d6ce680afb84ae83381b3dce6"
+    },
+    "1/0/U": {
+      "TRAIN_DONE.json": "31cb177a3e628f5d370c9e82ad69b6bc33a656b59d5520eb21b9daed56a2ad9e",
+      "EVAL_DONE.json": "7d8c51f465fad6ce8e420288cb8e3f4bab93355ed7766041dc10ed5f2b7af7de",
+      "checkpoint_best.pt": "61b1cdee4cc08dde15f947782a70d2a78738d3399ce5ae78cea643cff689b779",
+      "evaluation/fit.json": "cd2ec5a138756d616591ffc7649e7591c867853493705a3060447840a10e655d",
+      "evaluation/train_features.parquet": "73ec9c38694231bb2f92325093ef290a1f5a62c9ba315aab8c8161f6786ecfdd"
+    },
+    "1/0/G": {
+      "TRAIN_DONE.json": "94fa1d21539506b4969dd922bc1bca745e351706526f947ab76bd58688d4b58b",
+      "EVAL_DONE.json": "fc884164145feadf1407cab54f921ced2beabf8b577a514cc1f78fffaf33aa3c",
+      "checkpoint_best.pt": "ce401dceaacb17492f3faf160c6c7a568a285b7c593aa400c63ed8ef4272317e",
+      "evaluation/fit.json": "1543e860bc35ce53aa50be0e896690766d4302011c16a5540c6d7e8699af8129",
+      "evaluation/train_features.parquet": "d7432ae9d1772c11fea35fdea384960a53bd5282a5ec40c194ad46a8e622c87f"
+    },
+    "1/1/U": {
+      "TRAIN_DONE.json": "d0e333c636d779f6e4e862ae69fb8591597287ef0e29933f77a312768d3ddbc6",
+      "EVAL_DONE.json": "6edc0bbd4de9e2bf17e76525df7bcb2567c1dbdf11d8a6f8e3021b80aeeda4d3",
+      "checkpoint_best.pt": "f2dd81c141c852305304d88cb182bde747b188125b445321b5c0d44dc7ffba96",
+      "evaluation/fit.json": "c073aa6a0a497ecac3d48c30da91bee7315963aa72b7e10a66cc65ed82ed08f1",
+      "evaluation/train_features.parquet": "092005cc1e33263b04d87eb0298da7b67ae81729f2f5361684ea94e461417bc4"
+    },
+    "1/1/G": {
+      "TRAIN_DONE.json": "83c1bfa5c0c457ce5a5feb294897334b7f36671e3d2721f3955904256841a441",
+      "EVAL_DONE.json": "ace9fb11669a75db222cd51421e27c8d72de30e39e9a7521e6ef267808916599",
+      "checkpoint_best.pt": "8a6b18d694a73590116fc885d225ca11ac6625c46ac7b9621021f8dd56497cb0",
+      "evaluation/fit.json": "56ee713dfd20724a24a5f135e5e7b579a625f8cc47f91b27765a4fb0aae2a4f5",
+      "evaluation/train_features.parquet": "c57b7dabb515c9e2cd80eaff24308cf59ed9e915a1bec93338b715743b5c9f29"
+    },
+    "1/2/U": {
+      "TRAIN_DONE.json": "6e996f2860a26a6b412acd125cb2697fd105c43bf4128c400a9eed313f7522fe",
+      "EVAL_DONE.json": "7c17d127b8d5382d9b03c8e1c88da7bf92ee80bfc2718b17d674d6acb176a6e2",
+      "checkpoint_best.pt": "337440c58ac7f385047e54f93f53f2a98471345456ba28fffd7097ea4c713283",
+      "evaluation/fit.json": "b888b1837ae63543aa4ae6ddc87fa48efe7035831c4f1b61d5ed3d8f8cafbc1a",
+      "evaluation/train_features.parquet": "149ffb7fb3741259bbef4d902fc1d5b02e3274eb79e78d449b9077471ac98fc5"
+    },
+    "1/2/G": {
+      "TRAIN_DONE.json": "4aead79910fd227c6cc5e65db80034348419e097e91838305c3beb83aa20135b",
+      "EVAL_DONE.json": "5c87b10a7ea4c1977ac34fead2d13f87d566ee375aef879efb766e273236e0fc",
+      "checkpoint_best.pt": "09539c2cc317cbf356553f46a11bdb086ab31b408b9e21259901528306b76be0",
+      "evaluation/fit.json": "64fa8a549e54d97fd33f2590de27d4ee717c89b21ab250cb3b2c67777689462d",
+      "evaluation/train_features.parquet": "ab5e6c035a6c0c1c76526074ca03e0aed89f8a85067505176abda4c31b12afb0"
+    }
+  },
+  "models": [
+    "U",
+    "G"
+  ],
+  "kappas": [
+    0,
+    1
+  ],
+  "trials": [
+    0,
+    1,
+    2
+  ],
+  "prevalence": 0.1,
+  "data_generation_seed": 42,
+  "methods": [
+    "A",
+    "B",
+    "P"
+  ],
+  "neural_fits": 0,
+  "new_calibration_fits": 24,
+  "calibration_parameters": 10,
+  "parameterization": "same_2_groups_by_5_native_gap_bin_logit_offsets_as_A",
+  "absolute_offset_bound": 8.0,
+  "training_objective": "mean_over_groups_sum_squared_error_of_gap_bin_by_observable_repeat_joint_frequencies",
+  "target_split": "outer_train_only",
+  "target_includes_oracle": false,
+  "target_includes_validation": false,
+  "optimizer": "paired_common_random_number_coordinate_pattern_search",
+  "step_sizes": [
+    0.4,
+    0.2,
+    0.1
+  ],
+  "coordinate_seed_base": 20264101,
+  "coordinate_seed_trial_offset": 1,
+  "search_signs": [
+    -1,
+    1
+  ],
+  "tie_improvement": 1e-12,
+  "candidate_evaluations_per_fit": 60,
+  "search_rollouts_per_objective": 2,
+  "plan_entities_per_group": 1024,
+  "plan_seed_base": 20264120,
+  "search_seeds": [
+    20264201,
+    20264202
+  ],
+  "selection_seeds": [
+    20264301,
+    20264302
+  ],
+  "seed_trial_offset": 100,
+  "candidate_selection": "minimum_train_only_selection_tape_objective_among_A_and_three_sweep_endpoints",
+  "prediction_guard": {
+    "training_brier_increase_each_group": 0.001,
+    "training_mark_nll_increase_each_group": 0.01,
+    "relative_to": "A",
+    "mode": "reject_infeasible_candidates_after_equal_rollout_evaluation",
+    "fallback": "A"
+  },
+  "fit_sample_calls_per_calibration": 130,
+  "generation_batch_size": 256,
+  "final_generation_seeds": [
+    20264401,
+    20264402,
+    20264403
+  ],
+  "final_generation_entities": 2048,
+  "final_generation_datasets": 108,
+  "oracle_modes": [
+    "JOINT_CONT",
+    "JOINT_BIN"
+  ],
+  "oracle_seeds": [
+    20264501,
+    20264502,
+    20264503,
+    20264504,
+    20264505,
+    20264506,
+    20264507,
+    20264508,
+    20264509,
+    20264510,
+    20264511,
+    20264512,
+    20264513,
+    20264514,
+    20264515,
+    20264516,
+    20264517,
+    20264518,
+    20264519,
+    20264520,
+    20264521,
+    20264522,
+    20264523,
+    20264524,
+    20264525,
+    20264526,
+    20264527,
+    20264528,
+    20264529,
+    20264530
+  ],
+  "oracle_datasets": 120,
+  "oracle_role": "evaluation_only_same_fixed_lengths_groups_and_sample_size_not_a_proven_error_lower_bound",
+  "oracle_run_only_after_all_fits_complete": true,
+  "primary_generation_improvement": {
+    "cell": "kappa_1_group_1",
+    "minimum_relative_mean_reduction": 0.1,
+    "minimum_absolute_mean_reduction": 0.002,
+    "minimum_improving_training_seeds": 2,
+    "maximum_single_seed_L1_increase": 0.005,
+    "maximum_candidate_L1_each_seed": 0.03
+  },
+  "prediction_cost_limits": {
+    "max_brier_increase": 0.002,
+    "max_mark_nll_increase": 0.02
+  },
+  "basic_prediction": {
+    "max_absolute_repeat_mean_bias": 0.02,
+    "max_brier_above_train_mean_control": 0.002,
+    "min_mark_nll_improvement_over_uniform": 0.02,
+    "active_curve_l1_max": 0.03
+  },
+  "generation_cost_limits": {
+    "max_gap_ks_increase": 0.01,
+    "max_mark_sparse_tv_increase": 0.01,
+    "max_amount_ks_increase": 0.01,
+    "max_length_scaled_w1_increase": 0.02,
+    "max_null_repeat_curve_L1": 0.03,
+    "max_null_centered_shape_L1": 0.02
+  },
+  "max_null_fixed_history_range_increase": 0.01,
+  "protection_attribution": "P_joint_pass_and_B_generation_pass_but_B_prediction_cost_fail; otherwise_no_essential_protection_claim",
+  "report_individual_seed_values": true,
+  "independent_data": false,
+  "test_access": false,
+  "validation_used_for_selection": false,
+  "performance_based_extra_fits": false,
+  "external_training": false,
+  "gpu_min_free_mib": 2048,
+  "gpu_max_utilization_at_admission": 65,
+  "gpu_memory_fraction": 0.04,
+  "max_gpu_jobs": 1,
+  "cpu_threads": 1,
+  "max_cpu_evaluation_workers": 2
+}
