@@ -1,0 +1,10 @@
+{
+  "gate": "real_official_sequential_network",
+  "source": "cpu_smoke_train_only",
+  "rows": 733,
+  "entities": 32,
+  "max_current_target_future_difference": 0.0,
+  "max_prefix_difference": 0.0,
+  "tolerance": 1e-05,
+  "scientific_metrics": false
+}
