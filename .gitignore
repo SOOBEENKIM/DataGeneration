@@ -27,6 +27,7 @@ data/benchmark_v2/
 
 # Third-party baseline repositories are acquired from pinned upstream revisions.
 external/cof_seqgen_saf_baselines/
+external/cs_saf_external_audit/
 
 # User-supplied raw sources referenced by the public acquisition configs.
 local_data/
