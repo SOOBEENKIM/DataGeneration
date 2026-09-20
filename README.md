@@ -5,6 +5,16 @@ the earlier U/E study is on `research/cs-saf`, and `main` remains the earlier SA
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
+Latest [dataset literature and research-process audit](docs/cs_saf/dataset_literature_and_process_audit_2026_09_20.md)
+checks 14 original papers and inventories 22 completed CS-SAF result bundles.
+**Prioritize problem validation on external Berka/Sparkov data before another
+architecture or state/gap correction.** Simulations are legitimate diagnostic
+tools, but repeated exploration on the existing artificial data has not established
+current-method external usefulness. Berka operation/type and Sparkov merchant
+marks have different meanings. Historical materialization and older CoF external
+results are distinguished from current U/G evidence. No new model was trained
+for this review; previous failures remain unchanged.
+
 Latest [frozen history/run-state diagnostic](docs/cs_saf/history_diagnostic_v1/README.md)
 is **COMPLETE: 84 predictor/history replays on existing U/G+A, 36 stored model
 and 120 stored oracle datasets; zero new fits or generations, CPU only.**
@@ -20,8 +30,9 @@ finds no result-invalidating error in the inspected path, while documenting
 component-normalized loss, continuous-training/support-valued-generation history
 differences, local rather than global C guarantees, and limited nonrepeat gap
 expressivity. 106 tests and 13,608 independent metric checks pass. U/G+A remain
-controls; C/B/P failures stand. A state-aware simple control is a justified next
-candidate, **not yet registered or trained**. No independent confirmation,
+controls; C/B/P failures stand. A state-aware simple control remains a possible
+candidate, **not yet registered or trained**; the later dataset review prioritizes
+external problem validation first. No independent confirmation,
 new-method superiority or fraud utility claim is made.
 
 Previous [frozen U/G rollout-calibration comparison](docs/cs_saf/rollout_calibration_v1/README.md)

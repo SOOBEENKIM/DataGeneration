@@ -2,7 +2,27 @@
 
 Updated 2026-09-20. Current branch: `research/cs-saf-external-audit-v1`.
 
-**Latest follow-up COMPLETE: frozen U/G with A (observed-history calibration),
+**Latest review COMPLETE: [dataset literature and research-process audit](dataset_literature_and_process_audit_2026_09_20.md).**
+Fourteen original papers were checked for datasets/evaluation, and 22 completed
+CS-SAF result bundles were inventoried (not 22 architecture changes). Controlled
+simulation remains useful for diagnosis; current-method external relevance and
+utility are unproven. Prioritize problem validation on Berka/Sparkov before
+another state/gap correction. Existing materialization is documented, but remote
+raw-file availability/hashes were not revalidated in this review. Berka marks
+encode operation/type, not counterparties. No training or new evaluation here.
+
+**Latest experiment COMPLETE: [frozen history/run-state diagnostic](history_diagnostic_v1/README.md).**
+84 fixed-model/history replays, 36 stored U/G+A generation datasets and 120 stored
+oracle datasets; zero fits/new generation, CPU only. Active real-history run-2/3
+repeat bias is -4.66/-4.51 percentage points for U/G. Generated continuation is
+54.14/54.36% versus oracle 64.26%; all three parent seeds show the discrepancy.
+Long-prefix mean-bias screens do not flag progressive collapse; long-run generated
+minority cells lack coverage. U/G cross-history errors are similar. Mapping and
+history composition both contribute descriptively, without causal attribution.
+106 tests and 13,608 independent reductions pass. Existing failures stand; no
+external-data superiority, independent confirmation or fraud utility is shown.
+
+**Previous follow-up COMPLETE: frozen U/G with A (observed-history calibration),
 B (generated-relation calibration), and P (prediction-protected relation calibration).
 24 bounded searches / zero neural refits; 108 model and 120 unique oracle datasets.
 No B/P candidate passes the joint preregistered criteria. Stop this recipe.**
@@ -38,9 +58,8 @@ No B/P candidate passes the joint preregistered criteria. Stop this recipe.**
   kappas. Failure artifacts preserved; same seeds rerun after serialization fix;
   first-sample hashes identical. No new model fit/generation. All jobs ended.
 - Retain U/G+A; previous C and E/ER failures unchanged. No external/independent
-  expansion. A next proposal is to localize reproducible errors by history/run
-  length against oracle variation using saved outputs, before a new architecture.
-  This proposal is unregistered and unexecuted; no claim of method novelty yet.
+  expansion in this stage. The subsequent history/run diagnostic completed;
+  see the latest experiment above. No claim of method novelty yet.
 - Full outputs (~152MiB) stay at `artifacts/cs_saf/rollout_calibration_v1/`;
   compact code/results/figures/optimization traces are on this branch, not main.
 
