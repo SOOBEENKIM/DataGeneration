@@ -20,6 +20,13 @@ def main():
     c=pd.read_csv(DOC/'conditional_metrics.csv',dtype={'group':str})
     g=pd.read_csv(DOC/'generation_by_parent.csv',dtype={'group':str})
     decision=json.loads((DOC/'decision.json').read_text())
+    responses=[]
+    for run in json.loads((DOC/'response_diagnostics.json').read_text()):
+        for variant,groups in run['entity_mean_observable_repeat_range'].items():
+            for group,value in groups.items():
+                responses.append(dict(kappa=run['kappa'],trial=run['trial'],name=run['name'],
+                    variant=variant,group=group,mean_range=value))
+    pd.DataFrame(responses).to_csv(DOC/'fixed_history_response.csv',index=False)
     variants=['raw','gap','direct'];names=['U','G','C'];colors=['#18836d','#95688b','#3b6ea8']
     rows=[]
     for name in names:

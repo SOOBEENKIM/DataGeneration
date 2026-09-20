@@ -2,7 +2,49 @@
 
 Updated 2026-09-20. Current branch: `research/cs-saf-external-audit-v1`.
 
-**Latest Stage 1 COMPLETE: four bounded ARGN continuations and shared observable-repeat
+**Latest Stage 2 COMPLETE: matched U/G/C structure comparison. 18 fresh neural fits,
+162 new generated datasets, 331,776 sequences. Primary candidate C FAILS; stop expansion.**
+
+[Korean result and decision](structure_v1/README.md),
+[all result tables](structure_v1/result_tables.md),
+[methods](structure_v1/methods.md), [registration](structure_v1/preregistration.md),
+[artifact verification](structure_v1/verification.json),
+[independent arithmetic](structure_v1/independent_arithmetic.json).
+
+- Same existing artificial seed42, pi=.10, kappa0/1, three new paired training seeds.
+  All U/G/C have 133,549 parameters, identical initial tensors and shared epoch
+  orders, base NLL, budget and selection rule. No rollout/auxiliary/repeat loss.
+- U retains the old copy mixture; G directly predicts observable repetition;
+  C uses the same tensors with a fixed-history marginal constraint. C is not E/ER.
+- Raw/gap/direct on every parent, train-only controls; three identical generation
+  tapes and the same 2,048-entity length/group plan. C/raw is primary; posthoc C/gap
+  generally breaks the original rho constraint and cannot rescue its primary fail.
+- Active generated L1 C/raw .055305 vs G/raw .028320 and U/gap .026435. C is worse
+  in 3/3 seeds against both (+95.3%/+109.2% means); all C seed L1 values exceed .03.
+- Active Brier C/raw .146700 vs U/gap .141890; each seed exceeds the allowed .002
+  cost against both controls. NLL cost passes. Conditional cost passes 18/24 cells,
+  basic prediction eligibility 24/24, distribution costs 24/24, null generation 9/9.
+- C/gap L1 .039241 remains worse than G/gap .026150 and U/gap in all seeds.
+  G/gap vs U/gap difference is only -.000285 with mixed directions; no G superiority.
+  Direct U L1 .017730 trades off Brier .185631. Do not assign this to C's contribution.
+- Null fixed-history sensitivity is higher for C than G in all three null cell means;
+  passing null generated curves is not evidence of reduced spurious sensitivity.
+- C constraint max error 2.39e-7; all initial states/orders/input/checkpoint/generation
+  hashes and train-only calibration optimum checks pass. Independent recomputation
+  of 324 prediction values / 972 generated relation values passes (max 4.91e-7/1e-16).
+- Preregistration 892a5d1, scientific execution 6afb05b4ec06b255d0cd9b74a4f9df8276ecbd9e.
+  CPU test-index/test-design fixes and TF32 discrepancy were resolved before science;
+  all three structures use explicit FP32. No scientific training/evaluation retries.
+  All jobs finished; GPU training single admitted job, max reserved 412MiB.
+- Do not adopt C as a final model/contribution or automatically add rollout loss.
+  C already loses real-history prediction; marginal-head capacity and gradient
+  coupling remain unseparated possible causes. U/G+gap remain the working controls.
+  Any causal follow-up is unregistered/unexecuted. No independent data/test/real
+  finance utility or new external comparison was performed in this internal stage.
+- Compact results/code are on this branch, not main. Raw files (~440MiB) remain in
+  artifacts/cs_saf/structure_v1. Earlier historical findings are preserved below.
+
+**Previous Stage 1 COMPLETE: four bounded ARGN continuations and shared observable-repeat
 controls on 12 parents; 144 generated conditions evaluated, 132 newly generated.**
 
 [Korean report and decision](baseline_adequacy_v1/README.md),

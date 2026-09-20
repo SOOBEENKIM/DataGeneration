@@ -1,0 +1,109 @@
+{
+  "primary_pass": false,
+  "advance": false,
+  "generation_contrasts": [
+    {
+      "candidate": "C/raw",
+      "comparator": "G/raw",
+      "role": "primary",
+      "candidate_values": [
+        0.056567762788726945,
+        0.05314182742240851,
+        0.05620509660922468
+      ],
+      "comparator_values": [
+        0.03362108520059564,
+        0.0275760742099659,
+        0.023762611808304232
+      ],
+      "paired_differences": [
+        0.022946677588131306,
+        0.025565753212442605,
+        0.03244248480092045
+      ],
+      "absolute_mean_reduction": -0.02698497186716479,
+      "relative_mean_reduction": -0.9528617419760412,
+      "improving_seeds": 0,
+      "passes_generation_improvement": false
+    },
+    {
+      "candidate": "C/raw",
+      "comparator": "U/gap",
+      "role": "primary",
+      "candidate_values": [
+        0.056567762788726945,
+        0.05314182742240851,
+        0.05620509660922468
+      ],
+      "comparator_values": [
+        0.02903958431269557,
+        0.023509642730200748,
+        0.02675482974961682
+      ],
+      "paired_differences": [
+        0.027528178476031374,
+        0.02963218469220776,
+        0.02945026685960786
+      ],
+      "absolute_mean_reduction": -0.02887021000928234,
+      "relative_mean_reduction": -1.0921336629026484,
+      "improving_seeds": 0,
+      "passes_generation_improvement": false
+    },
+    {
+      "candidate": "C/gap",
+      "comparator": "G/gap",
+      "role": "secondary",
+      "candidate_values": [
+        0.04021951251709767,
+        0.03757412794859199,
+        0.03992841723840281
+      ],
+      "comparator_values": [
+        0.02797479133265617,
+        0.025273059699604947,
+        0.02520072210575273
+      ],
+      "paired_differences": [
+        0.0122447211844415,
+        0.012301068248987041,
+        0.014727695132650081
+      ],
+      "absolute_mean_reduction": -0.013091161522026207,
+      "relative_mean_reduction": -0.5006271369268266,
+      "improving_seeds": 0,
+      "passes_generation_improvement": false
+    },
+    {
+      "candidate": "C/gap",
+      "comparator": "U/gap",
+      "role": "secondary",
+      "candidate_values": [
+        0.04021951251709767,
+        0.03757412794859199,
+        0.03992841723840281
+      ],
+      "comparator_values": [
+        0.02903958431269557,
+        0.023509642730200748,
+        0.02675482974961682
+      ],
+      "paired_differences": [
+        0.011179928204402098,
+        0.01406448521839124,
+        0.013173587488785991
+      ],
+      "absolute_mean_reduction": -0.012806000303859776,
+      "relative_mean_reduction": -0.4844392893051375,
+      "improving_seeds": 0,
+      "passes_generation_improvement": false
+    }
+  ],
+  "conditional_cost_all_pass": false,
+  "distribution_cost_all_pass": true,
+  "null_all_pass": true,
+  "basic_prediction_all_pass": true,
+  "thresholds_changed": false,
+  "secondary_cannot_rescue_primary": true,
+  "not_statistical_superiority": true
+}

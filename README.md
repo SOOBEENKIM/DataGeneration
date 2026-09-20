@@ -1,11 +1,31 @@
 # DataGeneration: CoF-SeqGen Research
 
-**Latest external-baseline research is on `research/cs-saf-external-audit-v1`;
+**Latest research is on `research/cs-saf-external-audit-v1`;
 the earlier U/E study is on `research/cs-saf`, and `main` remains the earlier SAF base.**
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [bounded baseline adequacy and equal repeat controls](docs/cs_saf/baseline_adequacy_v1/README.md)
+Latest [matched internal structure comparison](docs/cs_saf/structure_v1/README.md)
+is **COMPLETE: 18 fresh U/G/C fits and 162 newly generated datasets**.
+All models have 133,549 parameters, paired initial states and data orders, the same
+base likelihood, training budget and checkpoint rule. C's constrained repeat head
+**fails the preregistered primary criteria**: active generated repeat-curve L1 is
+.055305, versus .028320 for general head G and .026435 for U+gap; C is worse in
+all three paired training seeds. Active Brier .146700 also exceeds U+gap .141890
+by more than the allowed .002 in every seed. Equal gap calibration does not
+rescue C (.039241 generated L1). Distribution-cost and null-generation screens
+pass, but null fixed-history sensitivity is higher in C than G. The fixed-history
+constraint is numerically verified; it does not guarantee generated fidelity.
+All scientific jobs and independent arithmetic checks are finished. **Do not
+advance this candidate to external/independent expansion or add rollout loss
+automatically.** Old E/ER failures remain unchanged. New training seeds are not
+new synthetic datasets; this is exploratory evidence on existing data seed42.
+[Result tables](docs/cs_saf/structure_v1/result_tables.md),
+[methods](docs/cs_saf/structure_v1/methods.md),
+[preregistration](docs/cs_saf/structure_v1/preregistration.md),
+[verification](docs/cs_saf/structure_v1/verification.json).
+
+Previous [bounded baseline adequacy and equal repeat controls](docs/cs_saf/baseline_adequacy_v1/README.md)
 is **COMPLETE: 4 ARGN continuations, 12 parent models, 144 generation conditions
 (132 new datasets, 12 reused)**. Raw ARGN still fails basic prediction screens
 in 4/4 continuations. U+gap and continued ARGN+direct meet both registered
@@ -15,11 +35,11 @@ Direct repetition improves U's generated active L1 from .02788 (gap correction)
 to .01107, but worsens event-level Brier from .14133 to .18563. Preserving both
 prediction and generation is the remaining question. Independent optimizer,
 native replay and artifact checks pass; all stage-one jobs finished. No new
-proposed neural architecture was trained. [Full tables](docs/cs_saf/baseline_adequacy_v1/result_tables.md),
+proposed neural architecture was trained in that earlier stage. [Full tables](docs/cs_saf/baseline_adequacy_v1/result_tables.md),
 [methods and limitations](docs/cs_saf/baseline_adequacy_v1/methods.md),
 [verification](docs/cs_saf/baseline_adequacy_v1/verification.json).
 The [preceding official ARGN audit](docs/cs_saf/external_audit_v1/README.md)
-and [proposed architecture, still untrained](docs/cs_saf/external_audit_v1/research_decision.md)
+and [original architecture proposal, now tested above](docs/cs_saf/external_audit_v1/research_decision.md)
 remain available. The historical U/E findings below are unchanged.
 
 Earlier [equal gap-bin calibration](docs/cs_saf/gap_calibration_v1_report_2026_09_20.md)

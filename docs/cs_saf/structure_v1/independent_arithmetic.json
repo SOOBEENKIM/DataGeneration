@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "conditional_values": 324,
+  "independent_conditional_max_error": 4.905342740890717e-07,
+  "generation_values": 972,
+  "independent_generation_max_error": 9.974659986866641e-17,
+  "precision_unchanged": true,
+  "training_implementation_unchanged": true,
+  "scope": "saved outputs only; no fitting, generation, selection or threshold change"
+}
