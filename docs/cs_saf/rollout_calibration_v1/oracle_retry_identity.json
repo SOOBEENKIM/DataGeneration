@@ -1,0 +1,12 @@
+[
+  {
+    "kappa": 0,
+    "sha256": "bf3fddc5d44fbf8a7f3ccd6b897e6bf5b0c5499ed5ad889290136c073c4d1eac",
+    "identical_to_preserved_first_sample": true
+  },
+  {
+    "kappa": 1,
+    "sha256": "a3ee07bee79db04488d103874eccb7e03d87c817c10d0312f1e3b0c87a07ba61",
+    "identical_to_preserved_first_sample": true
+  }
+]

@@ -1,0 +1,13 @@
+kappa,trial,name,B_selected_meets_training_guard,identical_BP,P_rejected_search_candidates,B_selected_endpoint,P_selected_endpoint
+0,0,G,True,True,2,0,0
+0,0,U,True,True,2,0,0
+0,1,G,True,True,2,0,0
+0,1,U,True,True,2,0,0
+0,2,G,True,True,2,3,3
+0,2,U,True,True,2,0,0
+1,0,G,True,False,10,3,3
+1,0,U,True,False,8,3,2
+1,1,G,True,True,8,2,2
+1,1,U,True,False,9,2,3
+1,2,G,True,True,10,2,2
+1,2,U,True,True,10,2,2

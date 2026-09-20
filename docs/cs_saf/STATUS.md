@@ -2,20 +2,47 @@
 
 Updated 2026-09-20. Current branch: `research/cs-saf-external-audit-v1`.
 
-**Current follow-up RUNNING: frozen U/G with A (observed-history calibration),
-B (generated-relation calibration), and P (same objective with prediction guards).**
-Registration `13dc0ac`, fitting implementation `027bc55`, CPU/GPU gates `429172e`.
-24 bounded searches / zero neural fits. Train-only observed joint-frequency targets;
-same ten correction parameters, sequential feedback. No scientific outcomes yet.
-Every correction must be saved before 108 final model datasets and 120 oracle
-datasets are evaluated. Evaluation-only oracle is not a target or a lower bound.
-No extra scientific fits/coefficients. Previous C failure is preserved.
+**Latest follow-up COMPLETE: frozen U/G with A (observed-history calibration),
+B (generated-relation calibration), and P (prediction-protected relation calibration).
+24 bounded searches / zero neural refits; 108 model and 120 unique oracle datasets.
+No B/P candidate passes the joint preregistered criteria. Stop this recipe.**
+[Korean result and decision](rollout_calibration_v1/README.md),
+[tables](rollout_calibration_v1/result_tables.md),
 [Registration](rollout_calibration_v1/preregistration.md),
 [methods](rollout_calibration_v1/methods.md),
-[execution notes](rollout_calibration_v1/execution_notes.md).
-Workstation outputs: `artifacts/cs_saf/rollout_calibration_v1/`.
-The `ALL_FITS_DONE.json` manifest marks the fitting barrier; the eventual
-`docs/cs_saf/rollout_calibration_v1/execution_summary.json` marks full completion.
+[execution notes](rollout_calibration_v1/execution_notes.md),
+[verification](rollout_calibration_v1/verification.json).
+
+- Registration `13dc0ac`, fitting implementation `027bc55`, CPU/GPU gates `429172e`.
+  Existing seed42 / pi .10 / kappa0/1 / three parent training seeds. Frozen weights,
+  same ten correction parameters, sequential feedback; train-only observed targets.
+  All 24 selected corrections precede every final model/oracle evaluation.
+- Active generated L1 U A/B/P=.018815/.017339/.018857;
+  G A/B/P=.019031/.017257/.017133. Improvements 7.85% / -0.22% / 9.32% / 9.97%.
+  G/B and G/P improve in 3/3 seeds, U/B in 2/3, U/P in 1/3. All fail the registered
+  mean 10% AND .002 improvement; G/P gain=.001898, close but below both thresholds.
+- Prediction costs, basic eligibility, other-distribution costs and null generated
+  curves pass. Maximum Brier cost .001064 (<.002), mark NLL cost .002873 (<.02).
+  Null fixed-history response fails separately: max increases .023367/.016865/
+  .024921/.024921 vs limit .01 for U/B, U/P, G/B, G/P (1/9,1/9,2/9,2/9 failures).
+- All 12 selected B corrections already satisfy P's training prediction limits.
+  B/P outputs are identical for 9/12 parents. No essential protection contribution.
+- Same-size continuous-oracle active L1 mean .015876; single-generation 5–95% MC
+  range .009115–.022901. BIN/raw .014855; BIN/quantized-reference .014048.
+  These are finite-sample references, not lower bounds, equivalence tests, or an
+  error decomposition. New A tapes must not be called an improvement over old A.
+- Verification PASS: 324 conditional values max difference 4.54e-10; 1,368 repeat
+  values 9.98e-17; 468 representative native values 1.25e-16. Hashes/plans/guards
+  and pre-evaluation fitting barrier verified. No fitting retries or extra settings.
+- One oracle metadata-column collision affected the first evaluation in both
+  kappas. Failure artifacts preserved; same seeds rerun after serialization fix;
+  first-sample hashes identical. No new model fit/generation. All jobs ended.
+- Retain U/G+A; previous C and E/ER failures unchanged. No external/independent
+  expansion. A next proposal is to localize reproducible errors by history/run
+  length against oracle variation using saved outputs, before a new architecture.
+  This proposal is unregistered and unexecuted; no claim of method novelty yet.
+- Full outputs (~152MiB) stay at `artifacts/cs_saf/rollout_calibration_v1/`;
+  compact code/results/figures/optimization traces are on this branch, not main.
 
 **Previous Stage 2 COMPLETE: matched U/G/C structure comparison. 18 fresh neural fits,
 162 new generated datasets, 331,776 sequences. Primary candidate C FAILS; stop expansion.**

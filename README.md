@@ -5,16 +5,28 @@ the earlier U/E study is on `research/cs-saf`, and `main` remains the earlier SA
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Current [frozen U/G rollout-calibration comparison](docs/cs_saf/rollout_calibration_v1/preregistration.md)
-is **RUNNING, not a completed result**. CPU/GPU gates passed; 24 bounded B/P
-correction searches reuse 12 frozen U/G parents and the same ten parameters as
-the existing A correction. All fits must finish before 108 model and 120
-evaluation-only oracle datasets are scored. No oracle/validation target is used
-for correction fitting. [Methods](docs/cs_saf/rollout_calibration_v1/methods.md),
-[execution notes](docs/cs_saf/rollout_calibration_v1/execution_notes.md).
-The previous C failure is unchanged.
+Latest [frozen U/G rollout-calibration comparison](docs/cs_saf/rollout_calibration_v1/README.md)
+is **COMPLETE: 24 correction searches, zero neural refits, 108 model and 120 oracle
+generation datasets. Neither B nor prediction-protected P passes the joint criteria.**
+Relative to observed-history correction A, active generated L1 improves by 7.85%
+for U/B, 9.32% for G/B, and 9.97% for G/P; U/P worsens by 0.22%.
+All miss the registered 10% AND .002 mean improvement. Prediction and other
+distribution costs pass, but null fixed-history response increases exceed .01
+in 1/9, 1/9, 2/9, and 2/9 null cells for U/B, U/P, G/B, and G/P respectively.
+Every selected B already meets the training prediction guard; no essential
+protection contribution is demonstrated. Same-size continuous-oracle active L1
+is .015876 (5–95% Monte Carlo range .009115–.022901), a finite-sample reference,
+not an error lower bound or proof of model equivalence. All fits precede evaluation;
+no oracle/validation target is used for fitting. One oracle result-column naming
+error was preserved and fixed without refitting or changing model outputs.
+All verification passed; all jobs ended. **Stop this bounded recipe, retain U/G+A
+as controls, and preserve the previous C failure.** No new data, external comparison,
+or finance utility claim is made. [Tables](docs/cs_saf/rollout_calibration_v1/result_tables.md),
+[methods](docs/cs_saf/rollout_calibration_v1/methods.md),
+[registration](docs/cs_saf/rollout_calibration_v1/preregistration.md),
+[verification](docs/cs_saf/rollout_calibration_v1/verification.json).
 
-Latest completed [matched internal structure comparison](docs/cs_saf/structure_v1/README.md)
+Previous [matched internal structure comparison](docs/cs_saf/structure_v1/README.md)
 is **COMPLETE: 18 fresh U/G/C fits and 162 newly generated datasets**.
 All models have 133,549 parameters, paired initial states and data orders, the same
 base likelihood, training budget and checkpoint rule. C's constrained repeat head

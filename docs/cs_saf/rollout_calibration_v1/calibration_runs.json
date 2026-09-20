@@ -1,0 +1,1418 @@
+[
+  {
+    "kappa": 0,
+    "trial": 0,
+    "name": "U",
+    "variant": "B",
+    "seconds": 184.21625821397174,
+    "sample_calls": 130,
+    "selected_endpoint": 0,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          0.03961734055335916,
+          0.04856117320952201,
+          0.05077375920582538,
+          0.056451060681030375,
+          0.034045065331508105
+        ],
+        [
+          0.04300913922674824,
+          0.03135730253601655,
+          0.06149353734928741,
+          0.06333035338352237,
+          0.05863365846825692
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "kappa": 0,
+    "trial": 0,
+    "name": "U",
+    "variant": "P",
+    "seconds": 186.45859509095317,
+    "sample_calls": 130,
+    "selected_endpoint": 0,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          0.03961734055335916,
+          0.04856117320952201,
+          0.05077375920582538,
+          0.056451060681030375,
+          0.034045065331508105
+        ],
+        [
+          0.04300913922674824,
+          0.03135730253601655,
+          0.06149353734928741,
+          0.06333035338352237,
+          0.05863365846825692
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "kappa": 0,
+    "trial": 0,
+    "name": "G",
+    "variant": "B",
+    "seconds": 185.868779240991,
+    "sample_calls": 130,
+    "selected_endpoint": 0,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          0.04375209513300927,
+          0.04797263214581347,
+          0.04938708329644371,
+          0.054778099946583,
+          0.03910536598381535
+        ],
+        [
+          0.043862640875373504,
+          0.03678469216070667,
+          0.06194342376941378,
+          0.06503395441374561,
+          0.05853526433795555
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "kappa": 0,
+    "trial": 0,
+    "name": "G",
+    "variant": "P",
+    "seconds": 188.14469879999524,
+    "sample_calls": 130,
+    "selected_endpoint": 0,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          0.04375209513300927,
+          0.04797263214581347,
+          0.04938708329644371,
+          0.054778099946583,
+          0.03910536598381535
+        ],
+        [
+          0.043862640875373504,
+          0.03678469216070667,
+          0.06194342376941378,
+          0.06503395441374561,
+          0.05853526433795555
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "kappa": 0,
+    "trial": 1,
+    "name": "U",
+    "variant": "B",
+    "seconds": 183.03970465896418,
+    "sample_calls": 130,
+    "selected_endpoint": 0,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          0.014745718489022884,
+          0.019601428937574272,
+          0.01952200574633987,
+          0.013547685533109878,
+          0.00514830156247172
+        ],
+        [
+          0.010232656127815314,
+          -0.01498768196128029,
+          0.0010003476980462056,
+          0.015476345500030823,
+          0.011397491118908698
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "kappa": 0,
+    "trial": 1,
+    "name": "U",
+    "variant": "P",
+    "seconds": 185.629928749986,
+    "sample_calls": 130,
+    "selected_endpoint": 0,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          0.014745718489022884,
+          0.019601428937574272,
+          0.01952200574633987,
+          0.013547685533109878,
+          0.00514830156247172
+        ],
+        [
+          0.010232656127815314,
+          -0.01498768196128029,
+          0.0010003476980462056,
+          0.015476345500030823,
+          0.011397491118908698
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "kappa": 0,
+    "trial": 1,
+    "name": "G",
+    "variant": "B",
+    "seconds": 188.19069549901178,
+    "sample_calls": 130,
+    "selected_endpoint": 0,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          0.013549575518601616,
+          0.017014801928154532,
+          0.019209334416403663,
+          0.012221971316923678,
+          0.004967995721421025
+        ],
+        [
+          0.007572145225558432,
+          -0.015187772364101173,
+          -0.002238300744456435,
+          0.014673289828098363,
+          0.00989129675312911
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "kappa": 0,
+    "trial": 1,
+    "name": "G",
+    "variant": "P",
+    "seconds": 189.7316459749709,
+    "sample_calls": 130,
+    "selected_endpoint": 0,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          0.013549575518601616,
+          0.017014801928154532,
+          0.019209334416403663,
+          0.012221971316923678,
+          0.004967995721421025
+        ],
+        [
+          0.007572145225558432,
+          -0.015187772364101173,
+          -0.002238300744456435,
+          0.014673289828098363,
+          0.00989129675312911
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "kappa": 0,
+    "trial": 2,
+    "name": "U",
+    "variant": "B",
+    "seconds": 187.83456056501018,
+    "sample_calls": 130,
+    "selected_endpoint": 0,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          -0.004618022605300718,
+          0.0023415622688866987,
+          -0.00021070417241207128,
+          0.0032673875478014115,
+          -0.006914578185341204
+        ],
+        [
+          -0.008192377307589083,
+          -0.023085457421360117,
+          0.0029232823450795692,
+          -0.00032187052591849016,
+          -0.00982155668162566
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "kappa": 0,
+    "trial": 2,
+    "name": "U",
+    "variant": "P",
+    "seconds": 188.35866573400563,
+    "sample_calls": 130,
+    "selected_endpoint": 0,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          -0.004618022605300718,
+          0.0023415622688866987,
+          -0.00021070417241207128,
+          0.0032673875478014115,
+          -0.006914578185341204
+        ],
+        [
+          -0.008192377307589083,
+          -0.023085457421360117,
+          0.0029232823450795692,
+          -0.00032187052591849016,
+          -0.00982155668162566
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "kappa": 0,
+    "trial": 2,
+    "name": "G",
+    "variant": "B",
+    "seconds": 185.11414910998428,
+    "sample_calls": 130,
+    "selected_endpoint": 3,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          -0.009733811429482197,
+          -0.003825605461333726,
+          -0.0015248635786446676,
+          -0.0014535657001788869,
+          -0.011118858547624582
+        ],
+        [
+          -0.007944414676651898,
+          -0.02350171720666174,
+          -0.09982821015137566,
+          -0.001700068471047057,
+          -0.011144969229036447
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        5.541322147820105e-05,
+        0.00015022782340884389
+      ]
+    ]
+  },
+  {
+    "kappa": 0,
+    "trial": 2,
+    "name": "G",
+    "variant": "P",
+    "seconds": 187.4755765250302,
+    "sample_calls": 130,
+    "selected_endpoint": 3,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          -0.009733811429482197,
+          -0.003825605461333726,
+          -0.0015248635786446676,
+          -0.0014535657001788869,
+          -0.011118858547624582
+        ],
+        [
+          -0.007944414676651898,
+          -0.02350171720666174,
+          -0.09982821015137566,
+          -0.001700068471047057,
+          -0.011144969229036447
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        5.541322147820105e-05,
+        0.00015022782340884389
+      ]
+    ]
+  },
+  {
+    "kappa": 1,
+    "trial": 0,
+    "name": "U",
+    "variant": "B",
+    "seconds": 183.5268790840055,
+    "sample_calls": 130,
+    "selected_endpoint": 3,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          0.026832082108842435,
+          -0.07119651900466095,
+          0.033589165337829414,
+          0.04062490181173195,
+          0.14092270882801508
+        ],
+        [
+          0.26126509051945523,
+          0.19778336104106584,
+          0.09190132675437046,
+          -0.16898090560548798,
+          -0.4865342121729791
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.00011186568864607338,
+        0.0003315396116075897
+      ],
+      [
+        0.0009233506668299973,
+        0.0023573215449690377
+      ]
+    ]
+  },
+  {
+    "kappa": 1,
+    "trial": 0,
+    "name": "U",
+    "variant": "P",
+    "seconds": 187.00995816802606,
+    "sample_calls": 130,
+    "selected_endpoint": 2,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          0.026832082108842435,
+          0.028803480995339047,
+          0.033589165337829414,
+          0.04062490181173195,
+          0.04092270882801507
+        ],
+        [
+          0.26126509051945523,
+          0.19778336104106584,
+          -0.008098673245629549,
+          0.031019094394512028,
+          -0.2865342121729791
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0006612245159542118,
+        0.00144054567881291
+      ]
+    ]
+  },
+  {
+    "kappa": 1,
+    "trial": 0,
+    "name": "G",
+    "variant": "B",
+    "seconds": 184.53378986398457,
+    "sample_calls": 130,
+    "selected_endpoint": 3,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          0.02783604631681901,
+          -0.07225037643895454,
+          0.032371474952729226,
+          0.032093093496399536,
+          0.13396010816868575
+        ],
+        [
+          0.2575883950212602,
+          0.19622813680401172,
+          -0.00717239704162519,
+          -0.16049967786833946,
+          -0.4605059998452644
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.00011434737672350037,
+        0.00033144153189168524
+      ],
+      [
+        0.0008655419675403231,
+        0.0021945957089901658
+      ]
+    ]
+  },
+  {
+    "kappa": 1,
+    "trial": 0,
+    "name": "G",
+    "variant": "P",
+    "seconds": 186.08440496498952,
+    "sample_calls": 130,
+    "selected_endpoint": 3,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          0.02783604631681901,
+          -0.07225037643895454,
+          0.032371474952729226,
+          0.032093093496399536,
+          0.13396010816868575
+        ],
+        [
+          0.2575883950212602,
+          0.19622813680401172,
+          0.0928276029583748,
+          -0.060499677868339465,
+          -0.4605059998452644
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.00011434737672350037,
+        0.00033144153189168524
+      ],
+      [
+        0.0007770288831861205,
+        0.002013497117706431
+      ]
+    ]
+  },
+  {
+    "kappa": 1,
+    "trial": 1,
+    "name": "U",
+    "variant": "B",
+    "seconds": 184.00734475796344,
+    "sample_calls": 130,
+    "selected_endpoint": 2,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          -0.006992621419823858,
+          -0.016744966880766335,
+          -0.01525127308788102,
+          -0.0020306689487561962,
+          -0.008612379510056627
+        ],
+        [
+          0.208599825294062,
+          0.19281079140399437,
+          -0.013320912749937311,
+          -0.18905270151898496,
+          -0.47191156747612634
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0008651113114750697,
+        0.002185343305855514
+      ]
+    ]
+  },
+  {
+    "kappa": 1,
+    "trial": 1,
+    "name": "U",
+    "variant": "P",
+    "seconds": 186.31615136296023,
+    "sample_calls": 130,
+    "selected_endpoint": 3,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          -0.006992621419823858,
+          -0.11674496688076634,
+          -0.01525127308788102,
+          -0.0020306689487561962,
+          0.09138762048994338
+        ],
+        [
+          0.20859982529406204,
+          0.19281079140399437,
+          -0.013320912749937311,
+          -0.08905270151898495,
+          -0.3719115674761263
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.00011652119820845797,
+        0.00033250461815270693
+      ],
+      [
+        0.000718573201773598,
+        0.0016280886792413574
+      ]
+    ]
+  },
+  {
+    "kappa": 1,
+    "trial": 1,
+    "name": "G",
+    "variant": "B",
+    "seconds": 184.50573741301196,
+    "sample_calls": 130,
+    "selected_endpoint": 2,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          -0.012393138827824014,
+          -0.020907995425849535,
+          -0.019612800186809835,
+          -0.007846786308577562,
+          -0.013864241173269402
+        ],
+        [
+          0.21161988886332195,
+          0.19188022629388207,
+          -0.013869645069250192,
+          0.010859448603940966,
+          -0.43938862069112483
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0006208030910844486,
+        0.0017083250526334082
+      ]
+    ]
+  },
+  {
+    "kappa": 1,
+    "trial": 1,
+    "name": "G",
+    "variant": "P",
+    "seconds": 187.62528224400012,
+    "sample_calls": 130,
+    "selected_endpoint": 2,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          -0.012393138827824014,
+          -0.020907995425849535,
+          -0.019612800186809835,
+          -0.007846786308577562,
+          -0.013864241173269402
+        ],
+        [
+          0.21161988886332195,
+          0.19188022629388207,
+          -0.013869645069250192,
+          0.010859448603940966,
+          -0.43938862069112483
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0006208030910844486,
+        0.0017083250526334082
+      ]
+    ]
+  },
+  {
+    "kappa": 1,
+    "trial": 2,
+    "name": "U",
+    "variant": "B",
+    "seconds": 182.6350478079985,
+    "sample_calls": 130,
+    "selected_endpoint": 2,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          -0.003662276283923762,
+          1.599011737989828e-05,
+          -0.007203719026885345,
+          0.004343170483587547,
+          -0.0014179416980103293
+        ],
+        [
+          0.20311602548774071,
+          0.1530529947271695,
+          -0.032646891966325,
+          -0.18049784466266386,
+          -0.4576894384060433
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0008479074873208314,
+        0.0021629334277541434
+      ]
+    ]
+  },
+  {
+    "kappa": 1,
+    "trial": 2,
+    "name": "U",
+    "variant": "P",
+    "seconds": 185.01717878098134,
+    "sample_calls": 130,
+    "selected_endpoint": 2,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          -0.003662276283923762,
+          1.599011737989828e-05,
+          -0.007203719026885345,
+          0.004343170483587547,
+          -0.0014179416980103293
+        ],
+        [
+          0.20311602548774071,
+          0.1530529947271695,
+          -0.032646891966325,
+          -0.18049784466266386,
+          -0.4576894384060433
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0008479074873208314,
+        0.0021629334277541434
+      ]
+    ]
+  },
+  {
+    "kappa": 1,
+    "trial": 2,
+    "name": "G",
+    "variant": "B",
+    "seconds": 183.80779819597956,
+    "sample_calls": 130,
+    "selected_endpoint": 2,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          -0.008447856410951258,
+          -0.005212846404816969,
+          -0.2148763674344566,
+          0.0019031845918794125,
+          0.004508200071623402
+        ],
+        [
+          0.2031668077097909,
+          0.15485324437063105,
+          -0.030081634201157732,
+          -0.1803226592567923,
+          -0.4399481656870698
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.00021354715979893246,
+        0.0006037554080380869
+      ],
+      [
+        0.0008359573997614445,
+        0.0021690092188456633
+      ]
+    ]
+  },
+  {
+    "kappa": 1,
+    "trial": 2,
+    "name": "G",
+    "variant": "P",
+    "seconds": 185.69752635603072,
+    "sample_calls": 130,
+    "selected_endpoint": 2,
+    "training_guard_satisfied": true,
+    "peak_reserved_bytes": 50331648,
+    "control": {
+      "kind": "gap",
+      "edges": [
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ],
+        [
+          6.0,
+          12.0,
+          18.0,
+          24.0
+        ]
+      ],
+      "parameters": [
+        [
+          -0.008447856410951258,
+          -0.005212846404816969,
+          -0.2148763674344566,
+          0.0019031845918794125,
+          0.004508200071623402
+        ],
+        [
+          0.2031668077097909,
+          0.15485324437063105,
+          -0.030081634201157732,
+          -0.1803226592567923,
+          -0.4399481656870698
+        ]
+      ],
+      "fit_split": "outer_train",
+      "validation_used": false,
+      "oracle_used": false,
+      "target": "outer_train_observed_gap_bin_repeat_joint_frequency",
+      "native_gap_codes": true
+    },
+    "training_cost_delta": [
+      [
+        0.00021354715979893246,
+        0.0006037554080380869
+      ],
+      [
+        0.0008359573997614445,
+        0.0021690092188456633
+      ]
+    ]
+  }
+]

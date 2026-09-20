@@ -38,7 +38,7 @@ def main():
         '|---|---|---:|---:|---:|---:|---:|'])
     for d in decisions['comparisons']:
         lines.append(f'| {d["name"]} | {d["variant"]} | '+' | '.join(f'{x:.6f}' for x in d['candidate_values'])+
-            f' | {d["relative_reduction"]*100:.1f}% | {d["improving_seeds"]}/3 |')
+            f' | {d["relative_reduction"]*100:.2f}% | {d["improving_seeds"]}/3 |')
     lines.extend(['','## 비용의 최댓값','',
         '예측·분포 비용은 각 조건/집단/학습 시드에서 A 대비 증가한 값이다. 반응 비용은 비활성 조건만 포함한다. 서로 다른 열의 최댓값은 다른 조건에서 발생할 수 있다.','',
         '| 모델 | 보정 | Brier 증가 | NLL 증가 | gap KS 증가 | 행동 TV 증가 | 수치값 KS 증가 | 비활성 반응 증가 |',
@@ -67,7 +67,8 @@ def main():
         axes[0].errorbar(i,mean,yerr=[[mean-lo],[hi-mean]],fmt=shapes[m],color=colors[name],capsize=4,ms=8)
         axes[1].scatter(f.repeat_brier,f.short_gap_repeat_curve_l1,color=colors[name],marker=shapes[m],alpha=.25,s=35)
         axes[1].scatter(f.repeat_brier.mean(),mean,color=colors[name],marker=shapes[m],s=80)
-        axes[1].annotate(f'{name}/{m}',(f.repeat_brier.mean(),mean),xytext=(5,4),textcoords='offset points',fontsize=9)
+        offset=(-32,-13) if (name,m)==('G','P') else ((5,10) if (name,m)==('G','B') else (5,4))
+        axes[1].annotate(f'{name}/{m}',(f.repeat_brier.mean(),mean),xytext=offset,textcoords='offset points',fontsize=9)
     axes[0].set_xticks(range(6),['U/A','U/B','U/P','G/A','G/B','G/P'])
     axes[0].axhline(.03,color='#a22',ls='--',lw=1,label='Registered per-parent L1 limit')
     axes[0].set(ylabel='Generated repeat-curve L1',title='Active group: mean and training-seed range')
@@ -85,6 +86,17 @@ def main():
         ax.set(title=f'{name}: active group',xlabel='Gap bin (short to long)',xticks=range(1,6));ax.legend()
     axes[0].set_ylabel('Observable repeat probability')
     fig.savefig(DOC/'active_repeat_curves.png',dpi=180);plt.close(fig)
+    fig,ax=plt.subplots(figsize=(8.5,4.3),constrained_layout=True)
+    for i,(name,m) in enumerate([(n,v) for n in ['U','G'] for v in ['B','P']]):
+        f=costs[(costs.name==name)&(costs.variant==m)&((costs.kappa==0)|(costs.group=='0'))].sort_values(['kappa','trial','group'])
+        y=f.delta_fixed_history_range.to_numpy();assert len(y)==9
+        ax.scatter(i+np.linspace(-.15,.15,len(y)),y,c=[colors[name] if v<=.01 else '#af2727' for v in y],s=45)
+        ax.annotate(f'max {max(y):.4f}',(i,max(y)),xytext=(0,9),textcoords='offset points',ha='center',fontsize=9)
+    ax.axhline(.01,color='#af2727',ls='--',label='Registered increase limit: 0.01')
+    ax.axhline(0,color='gray',lw=.7)
+    ax.set(xticks=range(4),xticklabels=['U/B','U/P','G/B','G/P'],ylim=(-.003,.03),
+        ylabel='Added fixed-history repeat-probability range',title='Null groups: each dot is one condition / training seed')
+    ax.legend(loc='upper left',fontsize=9);fig.savefig(DOC/'null_response_cost.png',dpi=180);plt.close(fig)
 
 
 if __name__=='__main__':main()
