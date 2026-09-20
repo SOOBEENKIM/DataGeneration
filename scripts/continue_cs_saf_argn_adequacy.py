@@ -14,6 +14,7 @@ import torch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+os.environ.setdefault('HF_DATASETS_CACHE', str(ROOT / 'external/cs_saf_external_audit/datasets_cache'))
 from scripts.run_cs_saf_external_audit_v1 import digest, write
 
 CONFIG = ROOT / 'configs/benchmark_v2/cs_saf_baseline_adequacy_v1.json'
@@ -24,6 +25,7 @@ OLD = ROOT / 'artifacts/cs_saf/external_audit_v1'
 def run(kappa, seed, device, smoke=False):
     from mostlyai.engine import set_random_state
     from mostlyai.engine._workspace import Workspace
+    from mostlyai.engine.domain import ModelStateStrategy
     tr = importlib.import_module('mostlyai.engine._tabular.training')
     c = json.loads(CONFIG.read_text())
     assert kappa in c['kappas'] and seed in c['argn_seeds']
@@ -70,7 +72,7 @@ def run(kappa, seed, device, smoke=False):
         tr.EarlyStopper = RegisteredPatience
         tr.TabularModelCheckpoint = IncludeExistingBest
         tr._calculate_sample_losses = keep_final_model
-        tr.train(workspace_dir=out / 'workspace', model_state_strategy='resume',
+        tr.train(workspace_dir=out / 'workspace', model_state_strategy=ModelStateStrategy.resume,
                  max_epochs=float(selected.epoch) + (.01 if smoke else c['additional_epochs']),
                  max_training_time=float(selected.total_time) / 60 + (2 if smoke else c['additional_minutes']),
                  batch_size=32 if smoke else c['batch_size'], max_sequence_window=32,

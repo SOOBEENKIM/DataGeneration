@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "numpy_torch_max_error": 0.0,
+  "identity_probability_max_error": 4.163336342344337e-17,
+  "nonrepeat_relative_probability_max_error": 3.3306690738754696e-16,
+  "not_a_scientific_fit": true
+}
