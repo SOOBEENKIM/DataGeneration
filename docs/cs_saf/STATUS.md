@@ -2,7 +2,58 @@
 
 Updated 2026-09-20. Branch: `research/cs-saf`.
 
-**Latest fixed-model generation repeats COMPLETE: 800 generated datasets,
+**Latest calibrated U/E matched-history replay COMPLETE: 400 immutable native
+paths, 80 frozen calibrated states, 800 predictor/path evaluations. No training,
+calibration fitting or generation. All GPU work finished.**
+
+[Full report](calibrated_replay_v1_report_2026_09_20.md),
+[professor brief](professor_brief_calibrated_replay_2026_09_20.md),
+[statistics](calibrated_replay_v1_result.json),
+[all scalars](calibrated_replay_v1_scalars.csv),
+[all bin curves](calibrated_replay_v1_bins.csv),
+[registration](calibrated_replay_v1_preregistration.md).
+
+- Registration `5f3c745`, all execution `035473d967d66e9aeff886aaac7dba7aa25a54c6`.
+  Reuses both calibrated models and all 5 latest tapes, 4 prevalences, both kappas,
+  all 5 paired trials. Both predictors receive exactly the same raw source path;
+  each recomputes its own hidden states. Generated first events are retained.
+- Active same-input predictor F means: +.003157/+.002620/+.001024/-.000234.
+  Positive trial means 4/5,4/5,4/5,2/5; positive materiality screen met at 5/10/25%.
+  Both directional source comparisons have the same trial counts. 25% is only
+  slightly above .001. Between-trial intervals include zero at 5/25/50%, so no
+  confirmatory all-condition inferiority claim.
+- Source history/current-gap composition H: +.000476/+.001257/+.000569/+.000323.
+  Empirical-versus-probability score remainder S: +.000108/+.001065/+.000339/-.000071.
+  H and S each qualify only at 10%; their across-prevalence materiality screens
+  fail. Do not interpret that as zero history influence or independent noise.
+- F+H+S exactly recovers every previous native Ecal-Ucal contrast (max error0).
+  F compares all learned weights/calibration, not just E's additional 32 parameters.
+  H includes current gaps and all past generated variables, not pure mark feedback.
+  Probability-curve L1 is not the expected empirical L1 or event-level oracle TV.
+- Bin evidence: at 5/10/25%, E increases short-gap underprediction and long-gap
+  overprediction on BOTH fixed sources; some middle bins improve. At 50%, the
+  endpoints improve slightly. All null contexts/pooled groups and stage-specific
+  matched-input full-mark TV are retained; model-model TV is not truth accuracy.
+- CPU tests 6 PASS; CPU/GPU gates PASS, max CPU/GPU difference2.543e-7.
+  Every cell's sequential checks pass, max3.688e-7. Independent verification of
+  native L1 1,200, probability-curve L1 2,400 and 600 decompositions PASS,
+  max3.469e-18. No technical failure/retry. GPU0 single low-priority process,
+  allocator cap20%, 175 seconds, now finished without stopping other work.
+- Git exports 1,200 scalar rows and 6,000 bin rows; raw arrays/checkpoints stay
+  on workstation. Same artificial seed42/validation, no independent data/training
+  seed, test, real-data or new external-baseline experiment.
+- Research claim remains selective gap-behavior preservation across groups AND
+  native generation. Generic calibration/history use or teacher-forcing mismatch
+  is not a novel E contribution. Conditional gains remain; native superiority
+  is unsupported. The report links relevant primary literature and limitations.
+- Next proposal only: limited gap-dependent probability calibration applied equally
+  to U/E, learned solely from observed training labels, with equal capacity/budget,
+  original controls and joint conditional/native/null evaluation. Not registered,
+  implemented or fitted. Never fit to the plotted validation biases or oracle law.
+  If E adds no benefit over equally corrected U, revise the E-specific claim rather
+  than repeatedly expanding coefficient/model searches. Existing ER failure stays.
+
+**Previous fixed-model generation repeats COMPLETE: 800 generated datasets,
 1,638,400 sequences, 160 frozen U/Ucal/E/Ecal states, zero neural/calibration fits.
 All four prevalences, both kappas, five trials and five NEW generation tapes
 completed. No generation failure/retry; GPU work is finished.**
@@ -41,9 +92,8 @@ completed. No generation failure/retry; GPU work is finished.**
 - Scope: reused seed42 data/validation/checkpoints. Five tapes are averaged
   within five trials, never counted as 25 independent trained models. Original
   tape is reference-only. Finite-sample metric bias/data uncertainty unestimated.
-- Next proposal, not yet registered/executed: cross-evaluate calibrated U/E on
-  identical saved raw generated histories, separating predictor differences
-  from history-distribution differences before a targeted change. This is an
+- Historical next proposal: cross-evaluate calibrated U/E on identical saved
+  raw generated histories. This is now complete above. This is an
   algebraic diagnostic, not exclusive causal identification or permission to
   claim improved generation. Then independent data/training-seed confirmation
   and fair external comparisons if a justified candidate emerges.

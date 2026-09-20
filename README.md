@@ -4,7 +4,27 @@
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [fixed-model generation repeats](docs/cs_saf/generation_repeats_v1_report_2026_09_20.md)
+Latest [calibrated U/E matched-history replay](docs/cs_saf/calibrated_replay_v1_report_2026_09_20.md)
+is **COMPLETE: 400 immutable native paths, 800 predictor/path evaluations, zero
+new training, calibration fits or generations**. On identical source histories
+and current gaps, Ecal has higher probability-curve L1 than Ucal at 5/10/25%,
+in 4/5 trials at each prevalence. The symmetric predictor term F satisfies the
+registered .001 / 4-of-5 / 3-of-4 materiality screen; source-composition H and
+empirical-score remainder S qualify only at 10%. Native error is recovered exactly
+as F+H+S. F's between-trial intervals include zero at 5/25%; at 50% F is slightly
+negative with mixed trials. This is an algebraic diagnosis, not unique causation
+or proof that 32 added parameters are responsible. Conditional benefits remain
+separate; E's generated-relation superiority is unsupported. All 1,200 empirical
+and 2,400 probability-curve L1 values plus 600 decompositions passed independent
+verification. GPU work finished. Next proposed bounded change is equal,
+train-only gap-dependent calibration for U/E, not yet registered or executed.
+[Professor brief](docs/cs_saf/professor_brief_calibrated_replay_2026_09_20.md),
+[full statistics](docs/cs_saf/calibrated_replay_v1_result.json),
+[all scalar values](docs/cs_saf/calibrated_replay_v1_scalars.csv),
+[all bin curves](docs/cs_saf/calibrated_replay_v1_bins.csv),
+[preregistration](docs/cs_saf/calibrated_replay_v1_preregistration.md).
+
+Previous [fixed-model generation repeats](docs/cs_saf/generation_repeats_v1_report_2026_09_20.md)
 is **COMPLETE: 800 fresh generation datasets (1,638,400 sequences), zero model or
 calibration fits**. Five fresh tapes per frozen model were averaged within each
 of five training trials; original tapes were excluded from the new primary mean.
@@ -17,8 +37,8 @@ Ucal-U passes the primary benefit screen at 5/10/25%; no comparison meets the
 joint improvement screen. E's previously measured conditional/null-response
 advantages remain separate fixed-model evidence. CPU/GPU gates, 1,248 cached-metric
 comparisons, 800 saved-plan/model checks and 4,800 independent native values all
-passed. GPU work is finished. Next proposal is matched-history cross-evaluation
-of calibrated U/E using saved samples, not yet registered or executed.
+passed. GPU work is finished. Its proposed matched-history cross-evaluation
+of calibrated U/E is now complete above.
 [Professor briefing](docs/cs_saf/professor_brief_generation_repeats_2026_09_20.md),
 [all 31,200 scalar metrics](docs/cs_saf/generation_repeats_v1_all_metrics.csv),
 [nested statistics and verification](docs/cs_saf/generation_repeats_v1_result.json),
