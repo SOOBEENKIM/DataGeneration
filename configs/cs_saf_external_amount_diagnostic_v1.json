@@ -1,0 +1,15 @@
+{
+  "parent_commit": "c4d4c721481b804ec0ee29ab530c3df84cac411d",
+  "datasets": ["berka", "sparkov"],
+  "model": "D_both",
+  "variant": "raw",
+  "saved_generation_seeds": [20261021, 20261022],
+  "thresholds": ["fit_q99", "fit_q999", "fit_max", "ten_fit_max"],
+  "cases": ["RR", "GR", "RG", "GG", "AG", "OG"],
+  "batch_size": 512,
+  "position_edges": [1, 8, 32, 128],
+  "neural_fits": 0,
+  "calibration_fits": 0,
+  "new_rollouts": 0,
+  "test_outcomes_accessed": false
+}
