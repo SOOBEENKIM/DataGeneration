@@ -2,7 +2,29 @@
 
 Updated 2026-09-21. Current branch: `research/cs-saf-external-audit-v1`.
 
-**Latest experiment COMPLETE: [bounded external amount/action controls](external_controls_v1/README.md).**
+**Latest diagnostic COMPLETE: [frozen D amount tails and crossed histories](external_amount_diagnostic_v1/README.md).**
+
+- Registration/source `76f8230`, parent `c4d4c7`. Two stored D checkpoints,
+  four existing raw generation tapes; zero fitting, recalibration or new rollouts.
+- Berka fit-q99.9 threshold 62,500: actual validation exceedance .1091%,
+  prediction on real histories .9540%. The amount-tail error already exists
+  before generated-history feedback. Sparkov rates .0921% versus .1363%.
+- Matched training contexts/lengths: Berka real-history/real-current probability
+  .8134%, generated-history/same-real-current 2.2152–2.2589%; both generated
+  2.2924–2.3434%. History substitution amplifies the tail in both saved draws.
+  Sparkov does not show this amplification. This is model-input sensitivity,
+  not a real-world causal attribution or independent-seed confirmation.
+- Amount-only/other-only hybrid pasts worsen Berka more than fully generated
+  pasts; do not identify past amount alone as the cause or claim that substituting
+  real amounts would fix generation. Mixed histories can be inconsistent.
+- CPU3 checks, 26 arrays, 40 independent raw-rate reductions, 320 prefix boundary
+  checks; source/input/checkpoint hashes unchanged. No scientific failures.
+- Close the diagnostic. A train-defined bin/empirical amount output with unchanged
+  D history/action architecture is a next ordinary-control proposal, not registered/trained.
+  Basic sequential factorization remains understood; final structure and special
+  U/G contribution remain unestablished. Previous failure judgments are preserved.
+
+**Previous experiment COMPLETE: [bounded external amount/action controls](external_controls_v1/README.md).**
 
 - Registration/scientific source `e1d44f2`, based on `34ee431`. Four-way
   amount/action ablations within U/G plus direct categorical D; 14 new neural

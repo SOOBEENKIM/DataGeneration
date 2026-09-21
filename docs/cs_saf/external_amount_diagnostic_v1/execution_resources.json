@@ -1,0 +1,37 @@
+{
+  "start_utc": "2026-09-21T12:35:27.013175+00:00",
+  "gpu_query": [
+    [
+      0,
+      0,
+      52
+    ],
+    [
+      1,
+      0,
+      117
+    ],
+    [
+      2,
+      0,
+      52
+    ],
+    [
+      3,
+      0,
+      93
+    ]
+  ],
+  "selected_gpu": 0,
+  "other_processes_terminated": false,
+  "new_training": 0,
+  "new_generation": 0,
+  "completed": true,
+  "all_diagnostic_processes_exited": true,
+  "selected_gpu_after": {
+    "index": 0,
+    "utilization_percent": 0,
+    "memory_used_mib": 52
+  },
+  "scientific_failed_runs": 0
+}

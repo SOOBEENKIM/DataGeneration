@@ -5,7 +5,16 @@ the earlier U/E study is on `research/cs-saf`, and `main` remains the earlier SA
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [bounded amount/action output comparison](docs/cs_saf/external_controls_v1/README.md)
+Latest [frozen D amount/history diagnostic](docs/cs_saf/external_amount_diagnostic_v1/README.md)
+is **COMPLETE: zero training and zero new generation**, using two stored checkpoints
+and four saved tapes. Berka's amount tail is already excessive on real histories
+(above fit q99.9: observed .1091%, predicted .9540%) and increases further under
+generated pasts with the same current gap/mark. Sparkov does not show the same
+amplification. Hybrid amount/other pasts reveal strong interactions, so this does
+not identify past amounts alone as the cause. The next output-control candidate
+is only a proposal; no new architecture/head fit or seed expansion is running.
+
+Previous [bounded amount/action output comparison](docs/cs_saf/external_controls_v1/README.md)
 is **COMPLETE: 14 new neural fits, 14 common calibration fits and 56 generated
 datasets (5,525,464 events).** Registration and scientific source: `e1d44f2`.
 Amount-only, action-only and combined U/G changes were compared with a direct

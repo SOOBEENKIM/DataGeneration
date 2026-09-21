@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "input_hashes_verified": true,
+  "new_fits": 0,
+  "new_rollouts": 0,
+  "test_outcomes_accessed": false,
+  "max_probability_reduction_error": 0.0,
+  "max_decomposition_error": 1.1102230246251565e-16,
+  "arrays": 26,
+  "independent_raw_rate_checks": 40,
+  "max_independent_raw_rate_error": 0.0
+}
