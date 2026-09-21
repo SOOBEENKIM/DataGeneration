@@ -2,7 +2,42 @@
 
 Updated 2026-09-21. Current branch: `research/cs-saf-external-audit-v1`.
 
-**Latest experiment COMPLETE: [external U/G port and Berka/Sparkov pilot](external_port_v1/README.md).**
+**Latest experiment COMPLETE: [bounded external amount/action controls](external_controls_v1/README.md).**
+
+- Registration/scientific source `e1d44f2`, based on `34ee431`. Four-way
+  amount/action ablations within U/G plus direct categorical D; 14 new neural
+  fits, 14 train-only calibration fits, 56 generated datasets / 5,525,464 events.
+  Common initial tensors, information, data splits, length plans and budgets;
+  D's parameter count differs from U/G_both by less than .14%.
+- Amount replacement removes negative/nonfinite outputs and improves amount
+  relations, but only Berka G_amount and Sparkov U_amount pass the complete
+  raw amount-only screen. Other distribution costs remain. Combined Berka G
+  passes the improvement screen against its original G, not against general D.
+- Sparkov D time/action TV .0880, amount TV .0825 versus U_both .1563/.0839 and
+  G_both .1881/.1007. D also improves observed-history mark NLL. Berka G_both
+  time/action .1184 is below D .1311, but amount TV .2388 exceeds D .1650 and
+  conditional mark NLL/repeat Brier also cost more. No U/G passes the overall
+  promotion criteria, raw or calibrated. Do not assert repeat-structure novelty.
+- D still trails Transition on both primary relations in both datasets. Berka
+  positive amount outputs retain excessive tails: raw 99.9th quantiles about
+  12–23 times validation. This descriptive audit does not replace fixed screens.
+  D is a strong internal comparator, not an automatically adopted final model.
+- CPU34 checks; all development amount targets and boundary inputs; GPU8
+  forward/backward checks with zero updates. Independent generation reduction:
+  1,064 scalar values, maximum difference 1.42e-15. Checkpoint audit: 28 raw/gap
+  scores, max difference 6.10e-8, initial tensors/selected epochs/update counts
+  and scientific-source hashes verified. No failed/retried scientific runs.
+- All registered work is finished. Stop at result/model understanding; no
+  automatic coefficient/architecture/seed expansion. One fit seed, two draws,
+  reused development data, some epoch caps and existing external-baseline
+  limitations prevent confirmatory/conference-superiority/fraud-utility claims.
+
+[One-page explanation](external_controls_v1/model_explanation.md),
+[exact methods](external_controls_v1/methods.md),
+[all screens](external_controls_v1/screens.csv),
+[execution record](external_controls_v1/execution_notes.md).
+
+**Previous experiment COMPLETE: [external U/G port and Berka/Sparkov pilot](external_port_v1/README.md).**
 
 - Registration/source `676fe6a`; CPAR input/API amendment `ebad17d`. Common
   fit/check/validation entities; no test outcomes or oracle objectives. External
@@ -39,7 +74,7 @@ Updated 2026-09-21. Current branch: `research/cs-saf-external-audit-v1`.
   ARGN native lengths/encoding statistics and CPAR training adequacy remain
   comparison limitations. Next proposals: valid/flexible amount outputs and
   ordinary full-gap action controls, separately tested before a new specialized
-  module. No new amount/action candidate has been trained. Prior failures stand.
+  module. That amount/action follow-up is now completed above. Prior failures stand.
 
 [Results/figures](external_port_v1/README.md), [methods](external_port_v1/methods.md),
 [all metrics](external_port_v1/generation_metrics.csv),

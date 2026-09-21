@@ -1,0 +1,467 @@
+{
+  "passed": true,
+  "scalar_metrics_verified": 1064,
+  "max_absolute_error": 1.4155343563970746e-15,
+  "events": 5525464,
+  "runs": [
+    {
+      "dataset": "berka",
+      "model": "U_amount",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "6f091d357dbf8b743af00c6a2a2ba4e4d3dca5fb4dd348b7e1817ce70443714d"
+    },
+    {
+      "dataset": "berka",
+      "model": "U_amount",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "74de9558047554b35485ddc2d688049ed3aafdc11e830e1cd5098f85080ccd00"
+    },
+    {
+      "dataset": "berka",
+      "model": "U_amount",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "18783dc5df9e186c88090805d05a3055a373bcccc9a2930c7ec719d906c4060e"
+    },
+    {
+      "dataset": "berka",
+      "model": "U_amount",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "beb993ed71e4722f263abf7dc6395d2535d95ff939c6de342c72cf0356a85a17"
+    },
+    {
+      "dataset": "berka",
+      "model": "G_amount",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "f7c3634fd861f9945e73a2399934cca8d3c067dead961c8698175edcd634dd8e"
+    },
+    {
+      "dataset": "berka",
+      "model": "G_amount",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "97afd9ba9f046eff6ebfbb5b378d35bbfcd4ff6a659138a72a2abc4ecdf9001c"
+    },
+    {
+      "dataset": "berka",
+      "model": "G_amount",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "e36f580219ec4316bc2f00be073b7e33ef63030ddfe543b63691e8934a1c1e0a"
+    },
+    {
+      "dataset": "berka",
+      "model": "G_amount",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "6f8af603dffb9d1561e64b8dfbfee07dfa498217e249b4e8201675a2aa1a8f28"
+    },
+    {
+      "dataset": "berka",
+      "model": "U_action",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "d59ecc0e118c6db21f5a2d23eab7118233676a63010b45f65cd966525a052539"
+    },
+    {
+      "dataset": "berka",
+      "model": "U_action",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "453bf3e9302335736e746c8bc697778bf0a4c64887578d8e51ca2f3e313b512c"
+    },
+    {
+      "dataset": "berka",
+      "model": "U_action",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "589726e4f172c59841d0aaec76209e369a31d086efc49b796a5589561ae1f751"
+    },
+    {
+      "dataset": "berka",
+      "model": "U_action",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "3b870b99d8c055c123976605fddba02c6cf85f946890c29e39ec499f5d162d32"
+    },
+    {
+      "dataset": "berka",
+      "model": "G_action",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "1879ad5157bde40766663498e62b67ae6d8911e34dcc722fccc483a82c80f512"
+    },
+    {
+      "dataset": "berka",
+      "model": "G_action",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "185e9e9119ff22275f1377de896a7247a7286d342a35778d4f2b3cd4f3c0070f"
+    },
+    {
+      "dataset": "berka",
+      "model": "G_action",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "5cd0360fda7996b7618df7e351c56a2583e4f78b7e97fbdeb730d5e41e57b1f8"
+    },
+    {
+      "dataset": "berka",
+      "model": "G_action",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "ca820aa835285b40e05f95b2f215fc7a0722ca3fcc7a5c1a05550faf99e03690"
+    },
+    {
+      "dataset": "berka",
+      "model": "U_both",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "7d75ac1583da00b03e1607d7c6b37e4728942ce2a960eca1dbe5a473b8cba452"
+    },
+    {
+      "dataset": "berka",
+      "model": "U_both",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "fce0aaa9000b06b78ef463b6c43752407da91c3369c2f61384fed961acf2e9ec"
+    },
+    {
+      "dataset": "berka",
+      "model": "U_both",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "81f038ad486f11eff180f47ab6325dbb56e2aea9132ec8af15df7aa0ab6fea14"
+    },
+    {
+      "dataset": "berka",
+      "model": "U_both",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "c8b86fc14fddd8692a69bd100970ef20e6e23a04d161b06c3161e7ddb9db946e"
+    },
+    {
+      "dataset": "berka",
+      "model": "G_both",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "c2efcf8a272b14b2f430705ec4d8bf4dd2135958b8c62f2992c792c819e6501b"
+    },
+    {
+      "dataset": "berka",
+      "model": "G_both",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "d39fc715ec48666a1437427795840744457d4b0a89dc37770c6ad3190eda40c9"
+    },
+    {
+      "dataset": "berka",
+      "model": "G_both",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "3f5dee5e4c7185f1fda8071f7bcc50ca54067bf2429b94c717aef1d2d5ad8dde"
+    },
+    {
+      "dataset": "berka",
+      "model": "G_both",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "2104a34306eba0852d81acfb322ff15930606abfdfb88ddfda05cec467aa7000"
+    },
+    {
+      "dataset": "berka",
+      "model": "D_both",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "04cf18ae7a248904ef7b89c66b97d1bcf749b02a18ae2c83374b752e7060ecf2"
+    },
+    {
+      "dataset": "berka",
+      "model": "D_both",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "deaff6d0d3a1e554453e04648b8d4dfcf47aa9d222acc1cbf3bf493d2437bf7a"
+    },
+    {
+      "dataset": "berka",
+      "model": "D_both",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 32314,
+      "sha256": "a10d8d9236b64137555ba4cbd6401f4ee51aa5a19230228b08fb3936357196ba"
+    },
+    {
+      "dataset": "berka",
+      "model": "D_both",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 32314,
+      "sha256": "526f2349295ec74c8bbc7441d02747ba0f80f5641082f9dfb5e48f4a83f9995b"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U_amount",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "5448a61dcbaf8287dda6b678d79153934d1ddfb08eedf58cf428bc71ffda83aa"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U_amount",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "949cb3efad7468a677cbc958a68cb68162e98a7cb89dc84f322faac97ed5435f"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U_amount",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "f95ef61a49bd2496e1569f2f116efc5852186a111f61a7b89e20278441529be2"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U_amount",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "a4cd6071ff55df2e9320149784eb891fd28fed2f3434dcbfa46c32ca34257427"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_amount",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "500617dfb77b265ecff92d5d33714ffed7078d4c706e1a73d1723afcaad0e738"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_amount",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "17a233865208b2f23c265cda5b969c879f3513ced29e4dc7a8a2ffb4ae0810f6"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_amount",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "3dbda78b2515a51a58af79ec2fb08bdee70294960105ed344d38b633350fc9ef"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_amount",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "d87a7e607dbc7fb3e9f7c9ef7bc290125424bf1eaca6fd4eb9c20fd457959007"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U_action",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "d7a9fb4fb6deae5bfb870f845002024156133eb16a1204bf35011350e4a96a78"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U_action",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "1b21f3c6cb5b691b07788a031c57c114eb14b729bbd404f910e295db4c08987a"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U_action",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "eb985b2fefaf2d4530fd01935d9d460f2c6b0a269c9d06164b8944ae83dbbf7e"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U_action",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "4a0138db74eed09d161614616240e633ff945eb21c5f45f9b839070d20909275"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_action",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "b22aab5accc13bf159f2759f2723b49b75bace1fed1ff08197e757a79ad0751b"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_action",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "6c1f926d61de78d93ccfcd5f0fd6814381f39a309dd4bf976430f5848fedc313"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_action",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "c8f2a2585fd13434389ed19ee16bf3ce370283a2c1cae80c3f56c5fbe85f23ff"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_action",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "c256f64f27982fab510d759493b8c94917d13508239115a6f5c7198d578962ac"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U_both",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "edd6ba26f36fa1b01ffbdd22c0e571b511a193382fbf410e350bf8ab9a52daf7"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U_both",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "08e7dac616b82903abed9f21ecc0c8882da4770e273ede0b77205a4f8e8e0da9"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U_both",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "3ceea9db0ce3a2554218ef9b664ebfd1e67a45155a08012bf7776b3243ac1559"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U_both",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "9fc8fd76bf69be34a031d1f2235ae9b897a325b9adf0e96fa131b51ea0686632"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_both",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "05e716725ac0ca9b28ba253dcfd2597c5120a031103dee7704b53f3ebcc00146"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_both",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "07a3795822b64a2aafdae366c49de7659b83f0d173e24e07bdd4085d979b5d7b"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_both",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "0a3e172077245e42f80ea1d9347cfc1041c5b157266d40dea1093bab392a499b"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_both",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "9a08fabd9aac4838a880d419b92006b835423378191019e9bbd89db8b69a8cda"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "D_both",
+      "variant": "raw",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "7f9d4a8cd0a48d5d0994bf5e6de344ed34ca3c0906c71c2760407781d4e30def"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "D_both",
+      "variant": "raw",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "d0fb4096e6fefb8fe6f261153c72a186651765ed1c46f1477195ce91c23fafeb"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "D_both",
+      "variant": "gap",
+      "seed": 20261021,
+      "events": 165024,
+      "sha256": "772697f55c9bcedd30280456506dde1c07ffb7c562d8ddfc0ab76b3ee2398ff8"
+    },
+    {
+      "dataset": "sparkov",
+      "model": "D_both",
+      "variant": "gap",
+      "seed": 20261022,
+      "events": 165024,
+      "sha256": "a43baacdc81b9f0446856b620446d790b7b2c46797a3d59934754395da156a39"
+    }
+  ],
+  "evaluator_imported": false,
+  "test_outcomes_accessed": false,
+  "verifier_sha256": "8d3ee4b036933a311c91b141808ad0202c9911c7305e34aa26eadee13306477e",
+  "old_files_unchanged": [
+    "models/cs_saf_external.py",
+    "models/cof_seqgen_saf.py",
+    "data/cof_seqgen_saf_tensorizer.py",
+    "data/cs_saf_external.py",
+    "benchmarks/cs_saf_external.py",
+    "scripts/run_cs_saf_external_port.py"
+  ]
+}

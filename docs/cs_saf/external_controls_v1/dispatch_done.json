@@ -1,0 +1,86 @@
+[
+  {
+    "dataset": "berka",
+    "model": "U_amount",
+    "exit_code": 0,
+    "gpu": 0
+  },
+  {
+    "dataset": "berka",
+    "model": "G_amount",
+    "exit_code": 0,
+    "gpu": 0
+  },
+  {
+    "dataset": "berka",
+    "model": "U_both",
+    "exit_code": 0,
+    "gpu": 0
+  },
+  {
+    "dataset": "berka",
+    "model": "D_both",
+    "exit_code": 0,
+    "gpu": 0
+  },
+  {
+    "dataset": "sparkov",
+    "model": "U_amount",
+    "exit_code": 0,
+    "gpu": 1
+  },
+  {
+    "dataset": "sparkov",
+    "model": "G_amount",
+    "exit_code": 0,
+    "gpu": 1
+  },
+  {
+    "dataset": "sparkov",
+    "model": "U_both",
+    "exit_code": 0,
+    "gpu": 1
+  },
+  {
+    "dataset": "sparkov",
+    "model": "D_both",
+    "exit_code": 0,
+    "gpu": 1
+  },
+  {
+    "dataset": "berka",
+    "model": "U_action",
+    "exit_code": 0,
+    "gpu": 2
+  },
+  {
+    "dataset": "berka",
+    "model": "G_action",
+    "exit_code": 0,
+    "gpu": 2
+  },
+  {
+    "dataset": "berka",
+    "model": "G_both",
+    "exit_code": 0,
+    "gpu": 2
+  },
+  {
+    "dataset": "sparkov",
+    "model": "U_action",
+    "exit_code": 0,
+    "gpu": 3
+  },
+  {
+    "dataset": "sparkov",
+    "model": "G_action",
+    "exit_code": 0,
+    "gpu": 3
+  },
+  {
+    "dataset": "sparkov",
+    "model": "G_both",
+    "exit_code": 0,
+    "gpu": 3
+  }
+]

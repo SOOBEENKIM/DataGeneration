@@ -1,0 +1,122 @@
+{
+  "admissions": [
+    {
+      "gpu": 0,
+      "memory_used_before": 52,
+      "utilization_before": 0,
+      "pid": 3178220,
+      "started_unix": 1789991860.2800834,
+      "job": "berka_D_both"
+    },
+    {
+      "gpu": 2,
+      "memory_used_before": 52,
+      "utilization_before": 0,
+      "pid": 3175084,
+      "started_unix": 1789990532.6635792,
+      "job": "berka_G_action"
+    },
+    {
+      "gpu": 0,
+      "memory_used_before": 52,
+      "utilization_before": 0,
+      "pid": 3175472,
+      "started_unix": 1789990698.355152,
+      "job": "berka_G_amount"
+    },
+    {
+      "gpu": 2,
+      "memory_used_before": 52,
+      "utilization_before": 2,
+      "pid": 3176479,
+      "started_unix": 1789990982.4539611,
+      "job": "berka_G_both"
+    },
+    {
+      "gpu": 2,
+      "memory_used_before": 52,
+      "utilization_before": 0,
+      "pid": 3173706,
+      "started_unix": 1789990141.7620075,
+      "job": "berka_U_action"
+    },
+    {
+      "gpu": 0,
+      "memory_used_before": 52,
+      "utilization_before": 0,
+      "pid": 3173708,
+      "started_unix": 1789990141.8111084,
+      "job": "berka_U_amount"
+    },
+    {
+      "gpu": 0,
+      "memory_used_before": 52,
+      "utilization_before": 0,
+      "pid": 3177130,
+      "started_unix": 1789991270.2593927,
+      "job": "berka_U_both"
+    },
+    {
+      "gpu": 1,
+      "memory_used_before": 117,
+      "utilization_before": 0,
+      "pid": 3176880,
+      "started_unix": 1789991172.5486221,
+      "job": "sparkov_D_both"
+    },
+    {
+      "gpu": 3,
+      "memory_used_before": 93,
+      "utilization_before": 0,
+      "pid": 3174706,
+      "started_unix": 1789990434.9682083,
+      "job": "sparkov_G_action"
+    },
+    {
+      "gpu": 1,
+      "memory_used_before": 117,
+      "utilization_before": 0,
+      "pid": 3174889,
+      "started_unix": 1789990492.5019662,
+      "job": "sparkov_G_amount"
+    },
+    {
+      "gpu": 3,
+      "memory_used_before": 93,
+      "utilization_before": 0,
+      "pid": 3175556,
+      "started_unix": 1789990708.5522752,
+      "job": "sparkov_G_both"
+    },
+    {
+      "gpu": 3,
+      "memory_used_before": 93,
+      "utilization_before": 0,
+      "pid": 3173705,
+      "started_unix": 1789990141.7021503,
+      "job": "sparkov_U_action"
+    },
+    {
+      "gpu": 1,
+      "memory_used_before": 117,
+      "utilization_before": 0,
+      "pid": 3173707,
+      "started_unix": 1789990141.7644634,
+      "job": "sparkov_U_amount"
+    },
+    {
+      "gpu": 1,
+      "memory_used_before": 117,
+      "utilization_before": 0,
+      "pid": 3176109,
+      "started_unix": 1789990823.2367527,
+      "job": "sparkov_U_both"
+    }
+  ],
+  "other_processes_terminated": false,
+  "scientific_fits": 14,
+  "calibration_fits": 14,
+  "new_generated_datasets": 56,
+  "new_generated_events": 5525464,
+  "failed_scientific_runs": 0
+}

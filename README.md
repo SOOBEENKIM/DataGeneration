@@ -5,7 +5,31 @@ the earlier U/E study is on `research/cs-saf`, and `main` remains the earlier SA
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [external U/G port and Berka/Sparkov pilot](docs/cs_saf/external_port_v1/README.md)
+Latest [bounded amount/action output comparison](docs/cs_saf/external_controls_v1/README.md)
+is **COMPLETE: 14 new neural fits, 14 common calibration fits and 56 generated
+datasets (5,525,464 events).** Registration and scientific source: `e1d44f2`.
+Amount-only, action-only and combined U/G changes were compared with a direct
+categorical action head D, using the same history information and closely
+matched capacity. [One-page model explanation](docs/cs_saf/external_controls_v1/model_explanation.md).
+
+The positive three-component amount output removes negative draws and improves
+amount relations, but **U/G's additional repeat-specific contribution is not
+established**. On Sparkov, direct D achieves time/action TV .0880 versus combined
+U/G .1563/.1881. On Berka, G's .1184 improves that metric over D .1311, but costs
+amount TV (.2388 vs .1650), mark NLL and repeat Brier. Neither U/G passes the
+registered overall promotion screen, before or after the common calibration.
+Berka's positive outputs still have excessive upper tails: generated 99.9th
+percentiles are roughly 12–23 times the observed validation value. D also trails
+the simple transition control on both primary relations in both datasets and
+is not automatically adopted as a final model.
+
+All 34 CPU checks, 1,064 independent generation-metric checks (max difference
+1.42e-15) and 28 checkpoint prediction reductions (max difference 6.10e-8) pass.
+No scientific run failed or was retried. One fit seed, two generation draws and
+reused development data limit the claims. **The bounded comparison is closed;
+no extra architecture search or seed expansion is running.**
+
+Previous [external U/G port and Berka/Sparkov pilot](docs/cs_saf/external_port_v1/README.md)
 is **COMPLETE: 8 valid neural fits, 4 frozen-network calibration fits and 32
 generated datasets (3,066,189 events).** External static/auxiliary fields and
 target-complete long trajectories are supported; each U/G prediction still uses
@@ -29,9 +53,9 @@ correction; valid results use **official CPAR + a tail-preserving input adapter*
 One training seed/two generation seeds, different native ARGN lengths/encoding
 statistics and unresolved CPAR training adequacy limit interpretation. Aggregate
 fidelity does not establish personalized generation, privacy or fraud utility.
-All jobs finished. Next proposed work is basic amount-support/distribution and
-ordinary gap-conditioned action controls, not another repeat-coefficient search;
-no new candidate has been trained. [Full tables and figures](docs/cs_saf/external_port_v1/README.md),
+All jobs from that pilot finished. Its proposed amount-support/distribution and
+ordinary gap-conditioned action follow-up is now completed above; the original
+pilot outcomes are preserved. [Full tables and figures](docs/cs_saf/external_port_v1/README.md),
 [methods](docs/cs_saf/external_port_v1/methods.md),
 [execution record](docs/cs_saf/external_port_v1/execution_notes.md).
 

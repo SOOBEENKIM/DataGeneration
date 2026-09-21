@@ -1,0 +1,27 @@
+{
+  "cpu_tests": {
+    "command": "python -m pytest tests/test_cs_saf_external_controls.py tests/test_cs_saf_external_port.py tests/test_cs_saf_external_metrics.py -q",
+    "passed": 34,
+    "seconds": 3.43,
+    "files_sha256": {
+      "tests/test_cs_saf_external_controls.py": "3e87182645eb9020a94ace07852e366c5bfe97038ed89d331c5901926b825f94",
+      "tests/test_cs_saf_external_port.py": "a57262c3ab63324d875f1386e514fc63bfd51e5269c76b6a3ef7c56b1a1ac76c",
+      "tests/test_cs_saf_external_metrics.py": "215a42877fd3df816c43bca48f4cff4e10cfe451218f865ef4c34c7f333a5d71"
+    }
+  },
+  "observed_zero_targets_verified": {
+    "berka": {
+      "fit": 8,
+      "check": 1,
+      "validation": 3
+    },
+    "sparkov": {
+      "fit": 0,
+      "check": 0,
+      "validation": 0
+    }
+  },
+  "scientific_source_commit": "e1d44f2",
+  "gpu_preflight_optimizer_updates": 0,
+  "original_files_unchanged": true
+}

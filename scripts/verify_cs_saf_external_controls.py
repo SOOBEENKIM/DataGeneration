@@ -4,6 +4,8 @@ from pathlib import Path
 import subprocess
 import sys
 import hashlib
+import argparse
+import time
 
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 import numpy as np
@@ -15,6 +17,8 @@ OLD=ROOT/'artifacts/cs_saf/external_port_v1'
 
 
 def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--wait',action='store_true')
+    args=parser.parse_args()
     config=ROOT/'configs/cs_saf_external_controls_v1.json'
     cfg=json.loads(config.read_text())
     result=dict(passed=True,scalar_metrics_verified=0,max_absolute_error=0.,events=0,runs=[],
@@ -28,7 +32,14 @@ def main():
         val=events.loc[events.entity_id.isin(roles.loc[roles.role.eq('validation'),'entity_id'])]
         state=transforms(fit,name);reference,rinfo=distributions(val,state,name)
         for model in cfg['new_models']:
-            folder=OUT/'runs'/name/model;done=json.loads((folder/'DONE.json').read_text())
+            folder=OUT/'runs'/name/model
+            if args.wait:
+                deadline=time.monotonic()+7200
+                while not (folder/'DONE.json').exists():
+                    assert not (folder/'FAILED.json').exists(),(name,model,'registered fit failed')
+                    assert time.monotonic()<deadline,'verification wait expired'
+                    time.sleep(5)
+            done=json.loads((folder/'DONE.json').read_text())
             assert done['config_sha256']==sha(config)
             for f,h in done['files'].items():assert sha(folder/f)==h
             for variant,data in done['results'].items():
@@ -55,6 +66,7 @@ def main():
                     result['events']+=len(frame)
                     result['runs'].append(dict(dataset=name,model=model,variant=variant,seed=gs,events=len(frame),sha256=sha(path)))
             print(name,model,'independent metrics PASS',flush=True)
+            (OUT/'independent_verification.partial.json').write_text(json.dumps(result,indent=2)+'\n')
     result['old_files_unchanged']=[]
     for file in ('models/cs_saf_external.py','models/cof_seqgen_saf.py','data/cof_seqgen_saf_tensorizer.py',
                  'data/cs_saf_external.py','benchmarks/cs_saf_external.py','scripts/run_cs_saf_external_port.py'):
