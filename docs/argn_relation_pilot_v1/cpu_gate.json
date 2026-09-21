@@ -1,0 +1,32 @@
+[
+  {
+    "test": "test_native_initial_equivalence_and_exact_capacity",
+    "pass": true,
+    "seconds": 2.5733297381084412
+  },
+  {
+    "test": "test_current_and_future_category_do_not_leak",
+    "pass": true,
+    "seconds": 0.0266267410479486
+  },
+  {
+    "test": "test_gradient_and_roundtrip",
+    "pass": true,
+    "seconds": 0.07192257000133395
+  },
+  {
+    "test": "test_training_and_recursive_generation_agree",
+    "pass": true,
+    "seconds": 0.03306755796074867
+  },
+  {
+    "test": "test_same_observed_prefix_training_generation_logit_match",
+    "pass": true,
+    "seconds": 0.07129517302382737
+  },
+  {
+    "test": "test_generator_source_and_class_restoration_on_exception",
+    "pass": true,
+    "seconds": 0.021866984898224473
+  }
+]
