@@ -1,0 +1,22 @@
+{
+  "G": {
+    "selected_extra_parameter_changes_l2": {
+      "previous.weight": 0.9277384877204895,
+      "gap.weight": 1.388564944267273,
+      "output.weight": 0.47133156657218933,
+      "output.bias": 0.1280783712863922
+    },
+    "all_finite": true,
+    "all_extra_parameter_blocks_updated": true
+  },
+  "R": {
+    "selected_extra_parameter_changes_l2": {
+      "previous.weight": 0.4327499270439148,
+      "gap.weight": 1.1163785457611084,
+      "output.weight": 0.33456313610076904,
+      "output.bias": 0.11452289670705795
+    },
+    "all_finite": true,
+    "all_extra_parameter_blocks_updated": true
+  }
+}
