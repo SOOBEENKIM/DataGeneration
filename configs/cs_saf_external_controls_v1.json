@@ -1,0 +1,19 @@
+{
+  "version": "external-controls-v1",
+  "parent_commit": "34ee431bdf55777cbe36c2422d736bc1bf96123c",
+  "datasets": ["berka", "sparkov"],
+  "fit_seed": 20260925,
+  "generation_seeds": [20261021, 20261022],
+  "new_models": ["U_amount", "G_amount", "U_action", "G_action", "U_both", "G_both", "D_both"],
+  "reused_models": ["U", "G", "empirical", "ARGN", "CPAR_tail"],
+  "variants": ["raw", "gap"],
+  "primary_variant": "raw",
+  "ug": {"hidden_dim":128,"rank":32,"context_window":32,"batch_size":512,"max_epochs":30,"patience":5,"learning_rate":0.001,"weight_decay":0.0,"gradient_clip":1.0,"max_fit_seconds":1200},
+  "amount": {"distribution":"hurdle_lognormal3","components":3,"initial_quantiles":[0.2,0.5,0.8],"initial_standardized_scale":0.5,"scale_bounds":[0.03,3.0],"point_quadrature_nodes":16,"zero_atom":"enabled_if_observed_in_fit","output_clipping":false},
+  "calibration": {"penalty":0.001,"bounds":[-5.0,5.0],"maxiter":100,"fit_role":"fit","scope":"pooled_observable_repeat_gap_bins"},
+  "screens": {"amount_abs_improvement":0.02,"action_abs_improvement":0.01,"relative_improvement":0.10,"joint_tv_max_cost":0.01,"marginal_max_cost":0.01,"mark_nll_max_cost":0.02,"repeat_brier_max_cost":0.002,"amount_log_mae_relative_cost":0.05,"amount_log_mae_abs_cost":0.01,"direct_parameter_relative_tolerance":0.01},
+  "test_outcome_analysis":false,
+  "confirmatory_superiority_claim":false,
+  "automatic_architecture_followup":false,
+  "automatic_seed_expansion":false
+}

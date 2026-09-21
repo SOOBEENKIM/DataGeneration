@@ -1,0 +1,55 @@
+{
+  "device": "NVIDIA GeForce RTX 3090",
+  "checks": [
+    {
+      "dataset": "berka",
+      "model": "U_amount",
+      "finite_forward_backward": true,
+      "optimizer_updates": 0
+    },
+    {
+      "dataset": "berka",
+      "model": "G_action",
+      "finite_forward_backward": true,
+      "optimizer_updates": 0
+    },
+    {
+      "dataset": "berka",
+      "model": "G_both",
+      "finite_forward_backward": true,
+      "optimizer_updates": 0
+    },
+    {
+      "dataset": "berka",
+      "model": "D_both",
+      "finite_forward_backward": true,
+      "optimizer_updates": 0
+    },
+    {
+      "dataset": "sparkov",
+      "model": "U_amount",
+      "finite_forward_backward": true,
+      "optimizer_updates": 0
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_action",
+      "finite_forward_backward": true,
+      "optimizer_updates": 0
+    },
+    {
+      "dataset": "sparkov",
+      "model": "G_both",
+      "finite_forward_backward": true,
+      "optimizer_updates": 0
+    },
+    {
+      "dataset": "sparkov",
+      "model": "D_both",
+      "finite_forward_backward": true,
+      "optimizer_updates": 0
+    }
+  ],
+  "scientific_fits": 0,
+  "optimizer_updates": 0
+}
