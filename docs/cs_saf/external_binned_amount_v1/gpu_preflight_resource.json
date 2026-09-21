@@ -1,0 +1,28 @@
+{
+  "phase": "zero_update_preflight",
+  "utc": "2026-09-21T13:15:26.981082+00:00",
+  "query": [
+    [
+      0,
+      0,
+      52
+    ],
+    [
+      1,
+      0,
+      117
+    ],
+    [
+      2,
+      0,
+      52
+    ],
+    [
+      3,
+      0,
+      93
+    ]
+  ],
+  "selected_gpu": 0,
+  "other_jobs_terminated": false
+}

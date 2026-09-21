@@ -1,0 +1,18 @@
+{
+  "parent_commit": "5f81c5e8ca60648b03f263750d3309d6abdf35c3",
+  "datasets": ["berka", "sparkov"],
+  "primary_repair_dataset": "berka",
+  "model": "D_bin",
+  "reference": "D_both",
+  "fit_seed": 20260925,
+  "generation_seeds": [20261021, 20261022],
+  "variant": "raw",
+  "amount": {"positive_equal_mass_bins": 32, "extra_positive_quantiles": [0.99, 0.999], "zero_bin": "only_if_observed_in_fit", "coordinate": "original_float32_log1p_codec", "within_bin": "uniform_over_fit_events_with_replacement", "pool_conditioning": "selected_bin_only", "head": "linear_same_history_gap_mark_features"},
+  "training": {"batch_size":512, "max_epochs":30, "patience":5, "learning_rate":0.001, "weight_decay":0.0, "gradient_clip":1.0, "max_fit_seconds":1200},
+  "screens": {"berka_amount_tv_abs_gain":0.02, "berka_amount_tv_relative_gain":0.10, "other_joint_tv_max_cost":0.01, "marginal_max_cost":0.01, "mark_nll_max_cost":0.02, "repeat_brier_max_cost":0.002, "amount_log_mae_relative_cost":0.05, "amount_log_mae_abs_cost":0.01, "berka_teacher_tail_error_ratio_max":0.5, "generated_tail_rate_ratio_min":0.5, "generated_tail_rate_ratio_max":2.0, "q99_tail_relation_max_cost":0.002, "q999_tail_relation_max_cost":0.0005, "sparkov_q99_teacher_tail_error_max_cost":0.002, "sparkov_q999_teacher_tail_error_max_cost":0.0005},
+  "new_neural_fits": 2,
+  "new_generations": 4,
+  "new_calibration_fits": 0,
+  "test_outcomes_accessed": false,
+  "automatic_followup": false
+}
