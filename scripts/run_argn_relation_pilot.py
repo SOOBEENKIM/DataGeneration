@@ -60,6 +60,22 @@ def inputs():
     return frames, parents, plan, fit_state(frames['fit'], 'sparkov')
 
 
+def prepare_workspace(wsdir):
+    from mostlyai.engine._workspace import Workspace
+    source = SOURCE / 'runs/sparkov/ARGN/workspace'
+    for relative in ('OriginalData', 'ModelStore/tgt-stats', 'ModelStore/ctx-stats'):
+        shutil.copytree(source / relative, wsdir / relative)
+    ws = Workspace(wsdir)
+    assert ws.tgt_stats.read()['is_sequential'] is True
+    assert ws.tgt_stats.read()['columns']['category']['cardinalities']['cat'] == 15
+    assert ws.tgt_stats.read()['columns']['gap']['cardinalities']['bin'] == 103
+    assert ws.encoded_data_trn.fetch_all() and ws.encoded_data_val.fetch_all()
+    assert not ws.model_tabular_weights_path.exists()
+    assert not ws.model_optimizer_path.exists()
+    for relative in ('ModelStore/tgt-stats/stats.json', 'ModelStore/ctx-stats/stats.json'):
+        assert digest(wsdir / relative) == digest(source / relative)
+
+
 def encoded_validation(raw, parents, ts, cs):
     from mostlyai.engine._common import get_sequence_length_stats
     from mostlyai.engine._tabular.encoding import (
@@ -143,7 +159,7 @@ def run(arm, device):
         test_outcomes_accessed=False))
     try:
         wsdir = folder / 'workspace'
-        shutil.copytree(SOURCE / 'runs/sparkov/ARGN/workspace/OriginalData', wsdir / 'OriginalData')
+        prepare_workspace(wsdir)
         models = []
         def on_init(model, base_hash):
             models.append(model)

@@ -136,3 +136,11 @@ def test_generator_source_and_class_restoration_on_exception():
     except RuntimeError:
         pass
     assert argn.SequentialModel is old
+
+
+def test_workspace_copies_encoding_metadata_without_checkpoint():
+    import tempfile
+    from pathlib import Path
+    from scripts.run_argn_relation_pilot import prepare_workspace
+    with tempfile.TemporaryDirectory(prefix='argn-pilot-cpu-') as folder:
+        prepare_workspace(Path(folder) / 'workspace')
