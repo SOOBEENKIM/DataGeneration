@@ -2,6 +2,12 @@
 
 Updated 2026-09-21. Current branch: `research/cs-saf-external-audit-v1`.
 
+**Latest interpretation audit (no new runs): [D architecture and research judgment](d_architecture_research_judgment_2026_09_21.md).**
+D remains an internal general comparator, not a finalized proposed architecture.
+The audit separates verified output improvements, remaining basic fidelity costs,
+code-level expressivity constraints, unproven causes and the evidence in nearby
+primary papers. No previous experiment decision or stopping rule is changed.
+
 **Latest bounded experiment COMPLETE AND CLOSED: [D empirical-bin amount control](external_binned_amount_v1/README.md).**
 
 - Registration/source `1579ee4`, parent `5f81c5e`. Two fresh D_bin fits, four
