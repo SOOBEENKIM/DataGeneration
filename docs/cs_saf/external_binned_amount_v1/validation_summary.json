@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "cpu_unit_tests": 5,
+  "development_events_checked": 1990071,
+  "all_registered_scientific_runs_completed": true,
+  "new_fits": 2,
+  "new_generation_tapes": 4,
+  "new_generated_events": 394676,
+  "new_calibration_fits": 0,
+  "scientific_failures": 0,
+  "scientific_retries": 0,
+  "criterion_rows": 38,
+  "failed_criteria": 3,
+  "distinct_failed_cost_types": 2,
+  "documentation_links_checked": true,
+  "main_result_table_checked": true
+}

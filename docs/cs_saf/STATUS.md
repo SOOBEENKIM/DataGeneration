@@ -2,7 +2,39 @@
 
 Updated 2026-09-21. Current branch: `research/cs-saf-external-audit-v1`.
 
-**Latest diagnostic COMPLETE: [frozen D amount tails and crossed histories](external_amount_diagnostic_v1/README.md).**
+**Latest bounded experiment COMPLETE AND CLOSED: [D empirical-bin amount control](external_binned_amount_v1/README.md).**
+
+- Registration/source `1579ee4`, parent `5f81c5e`. Two fresh D_bin fits, four
+  generated tapes/394,676 events, no calibration. D history/action architecture,
+  common initial tensors, information, split, budget and plan preserved; whole
+  model jointly trained. Only the amount output construction was replaced.
+- Both datasets improve generated relations: Berka time/action .1311→.1167,
+  action/amount .1650→.1225; Sparkov .0880→.0732 and .0825→.0583.
+  Berka above62,500: real .1091%, teacher D .9540%→D_bin .1123%, generated
+  2.3380%→.1269%. The model preserves rare large events rather than deleting them.
+- **No common adoption.** Berka operation marginal TV .0573→.0829 costs .0256
+  versus allowance .01, and amount log-MAE .4660→.5097 costs9.4% versus5%.
+  mark/root failures here are the same operation marginal. Sparkov passes every
+  registered screen; this does not override the primary Berka cost failure.
+- Sparkov time/action is better than the reused Transition .0774, but amount
+  remains worse than .0488. Berka still trails Transition on both relations.
+  No external-superiority, repeat-module, privacy or fraud-utility claim.
+- CPU5 tests, all development codes/pools and GPU0-update preflight. Independent
+  verification: 76 generated metrics,48 tail values,2 checkpoint score reductions,
+  shared initials, selected epochs, updates and exact pool support. Maximum
+  generation error3.61e-16, prediction error3.02e-8. No scientific failures/retries.
+- Berka selected26/ended30 at epoch cap; Sparkov selected8/ended13 by patience.
+  One fit seed/two draws and reused development data remain limitations.
+- **Stop this output-modification direction.** Preserve D as reference and D_bin
+  as a completed control; do not add bins/heads/coefficients/epochs/seeds. Move to
+  explanation and research-claim synthesis. No model has been declared a common
+  final architecture or independently validated novel method.
+
+[One-page architecture](external_binned_amount_v1/model_explanation.md),
+[fixed screens](external_binned_amount_v1/screens.csv),
+[decision](external_binned_amount_v1/decision.json).
+
+**Previous diagnostic COMPLETE: [frozen D amount tails and crossed histories](external_amount_diagnostic_v1/README.md).**
 
 - Registration/source `76f8230`, parent `c4d4c7`. Two stored D checkpoints,
   four existing raw generation tapes; zero fitting, recalibration or new rollouts.
@@ -19,10 +51,13 @@ Updated 2026-09-21. Current branch: `research/cs-saf-external-audit-v1`.
   real amounts would fix generation. Mixed histories can be inconsistent.
 - CPU3 checks, 26 arrays, 40 independent raw-rate reductions, 320 prefix boundary
   checks; source/input/checkpoint hashes unchanged. No scientific failures.
-- Close the diagnostic. A train-defined bin/empirical amount output with unchanged
-  D history/action architecture is a next ordinary-control proposal, not registered/trained.
+- At the diagnostic's close, a train-defined bin/empirical amount output with unchanged
+  D history/action architecture was proposed; that comparison is now completed above.
   Basic sequential factorization remains understood; final structure and special
   U/G contribution remain unestablished. Previous failure judgments are preserved.
+
+The proposed bin/empirical control was subsequently completed and closed above;
+the original diagnostic conclusions remain unchanged.
 
 **Previous experiment COMPLETE: [bounded external amount/action controls](external_controls_v1/README.md).**
 

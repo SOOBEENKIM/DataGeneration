@@ -1,0 +1,21 @@
+{
+  "decision": "reject_amount_change_keep_D_reference",
+  "passed_by_dataset": {
+    "berka": false,
+    "sparkov": true
+  },
+  "failed_checks": {
+    "berka": [
+      "mark_tv_cost",
+      "root_tv_cost",
+      "amount_log_mae_cost"
+    ],
+    "sparkov": []
+  },
+  "new_fits": 2,
+  "new_generations": 4,
+  "new_calibrations": 0,
+  "automatic_followup": false,
+  "novel_method_claim": false,
+  "independent_validation": false
+}

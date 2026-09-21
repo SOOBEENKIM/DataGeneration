@@ -1,0 +1,5 @@
+dataset,model,reused,parameters,selected_epoch,last_epoch,stop_reason,fit_seconds,optimizer_updates,source_commit
+berka,D,True,127378,24,29,check_patience,426.88152315595653,33292,e1d44f2a6028972e30f1e3f9f7ce0c6dd0b5dd3d
+berka,D_bin,False,131624,26,30,epoch_budget,409.1007090759231,34440,1579ee4bbe0afe3d822799a8afdb94c0fbf147c5
+sparkov,D,True,288877,11,16,check_patience,281.6771489729872,22368,e1d44f2a6028972e30f1e3f9f7ce0c6dd0b5dd3d
+sparkov,D_bin,False,293509,8,13,check_patience,207.1032658549957,18174,1579ee4bbe0afe3d822799a8afdb94c0fbf147c5

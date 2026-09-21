@@ -1,0 +1,7 @@
+dataset,role,events,outside_fit_range,exact_amount_not_in_fit
+berka,fit,587527,0,0
+berka,check,150319,0,21787
+berka,validation,157661,0,22518
+sparkov,fit,715729,0,0
+sparkov,check,200838,1,4549
+sparkov,validation,177997,0,4489

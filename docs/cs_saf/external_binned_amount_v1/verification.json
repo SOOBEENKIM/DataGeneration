@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "metrics": 76,
+  "tail_scalars": 48,
+  "max_metric_error": 3.608224830031759e-16,
+  "max_prediction_error": 3.01282270243064e-08,
+  "max_tail_error": 1.0827953464409568e-10,
+  "new_fits": 0,
+  "new_generations": 0,
+  "test_outcomes_accessed": false,
+  "evaluator_imported": false,
+  "forward_reused_reductions_independent": true,
+  "verifier_sha256": "ba201fbd82e0da05bb311f523adb377d4e8b9c29a263ab80a5c23ee11b74f7b1",
+  "rows": [
+    {
+      "dataset": "berka",
+      "generations": 2,
+      "prediction_events": 157661,
+      "selected_epoch": 26,
+      "initial_tensors_verified": true,
+      "optimizer_updates_verified": true,
+      "exact_fit_pool_and_generated_support_verified": true,
+      "prediction_errors": {
+        "loss": 1.1874185190663411e-08,
+        "amount_log_mae": 9.59309731651814e-09,
+        "repeat_brier": 1.1269554733850384e-10,
+        "gap": 2.5870137143613192e-09,
+        "mark": 4.002420894710923e-10,
+        "amount": 9.305413772864313e-09,
+        "aux_0": 4.184846497112815e-10
+      },
+      "teacher_tail_error": 7.63070735071425e-11
+    },
+    {
+      "dataset": "sparkov",
+      "generations": 2,
+      "prediction_events": 177997,
+      "selected_epoch": 8,
+      "initial_tensors_verified": true,
+      "optimizer_updates_verified": true,
+      "exact_fit_pool_and_generated_support_verified": true,
+      "prediction_errors": {
+        "loss": 3.01282270243064e-08,
+        "amount_log_mae": 1.3030532208802015e-09,
+        "repeat_brier": 3.5425590412530017e-12,
+        "gap": 7.1718444516477575e-09,
+        "mark": 5.976638739468854e-09,
+        "amount": 1.6793184176577824e-08,
+        "aux_0": 1.865594224242928e-10
+      },
+      "teacher_tail_error": 1.0827953464409568e-10
+    }
+  ]
+}

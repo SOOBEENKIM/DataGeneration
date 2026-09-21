@@ -1,0 +1,65 @@
+{
+  "start_utc": "2026-09-21T13:16:30.952747+00:00",
+  "query": [
+    [
+      0,
+      0,
+      52
+    ],
+    [
+      1,
+      0,
+      117
+    ],
+    [
+      2,
+      0,
+      52
+    ],
+    [
+      3,
+      0,
+      93
+    ]
+  ],
+  "other_jobs_terminated": false,
+  "assignments": [
+    {
+      "dataset": "berka",
+      "gpu": 0,
+      "pid": 3231643,
+      "log": "artifacts/cs_saf/external_binned_amount_v1/berka.log"
+    },
+    {
+      "dataset": "sparkov",
+      "gpu": 2,
+      "pid": 3231644,
+      "log": "artifacts/cs_saf/external_binned_amount_v1/sparkov.log"
+    }
+  ],
+  "completed": true,
+  "end_utc": "2026-09-21T13:23:34.033223+00:00",
+  "all_training_generation_verification_processes_exited": true,
+  "final_gpu_state": [
+    {
+      "gpu": 0,
+      "utilization_percent": 0,
+      "memory_mib": 52
+    },
+    {
+      "gpu": 1,
+      "utilization_percent": 0,
+      "memory_mib": 117
+    },
+    {
+      "gpu": 2,
+      "utilization_percent": 0,
+      "memory_mib": 52
+    },
+    {
+      "gpu": 3,
+      "utilization_percent": 0,
+      "memory_mib": 93
+    }
+  ]
+}
