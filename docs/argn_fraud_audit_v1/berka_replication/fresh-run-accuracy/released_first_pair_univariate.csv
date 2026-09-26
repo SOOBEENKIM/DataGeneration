@@ -1,0 +1,10 @@
+column,accuracy,accuracy_max
+tgt::Sequence Length,0.97244,0.96432
+tgt::account,0.96844,0.99819
+tgt::amount,0.91111,0.96437
+tgt::balance,0.19911,0.96438
+tgt::bank,0.97244,0.99888
+tgt::date,0.95422,0.96948
+tgt::k_symbol,0.964,0.99929
+tgt::operation,0.91956,0.99888
+tgt::type,0.93289,1.0

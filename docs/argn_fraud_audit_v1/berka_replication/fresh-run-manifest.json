@@ -1,0 +1,53 @@
+{
+  "status": "accuracy_evaluation_complete",
+  "seed": 20260927,
+  "paper_repo": "paper-tabular-argn",
+  "engine_version": "1.0.4",
+  "hardware": "CPU, 4 torch threads",
+  "training_accounts": 2250,
+  "training_transactions": 526442,
+  "author_exact_version_known": false,
+  "date_handling": "categorical_strings_as_supplied",
+  "max_training_time_minutes_per_table": 300,
+  "other_model_parameters": "engine defaults",
+  "dtypes": {
+    "account": {
+      "account_id": "int64",
+      "district_id": "Int64",
+      "frequency": "string",
+      "date": "string"
+    },
+    "transaction": {
+      "trans_id": "int64",
+      "account_id": "int64",
+      "date": "string",
+      "type": "string",
+      "operation": "string",
+      "amount": "Float64",
+      "balance": "Float64",
+      "k_symbol": "string",
+      "bank": "string",
+      "account": "Int64"
+    }
+  },
+  "stages": {
+    "parent": {
+      "preprocessing_seconds": 1.5773830190300941,
+      "training_seconds": 9.448084515053779,
+      "generation_seconds": 0.04042864800430834,
+      "generated_rows": 2250
+    },
+    "child": {
+      "preprocessing_seconds": 16.084418855956756,
+      "training_seconds": 1245.3439456349006,
+      "generation_seconds": 45.55595040903427,
+      "generated_rows": 522392
+    }
+  },
+  "evaluation": {
+    "results_directory": "../fresh-run-20260927-accuracy",
+    "privacy_evaluated": false,
+    "complete_fresh_fits": 1,
+    "exact_author_configuration_verified": false
+  }
+}

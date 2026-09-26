@@ -1,0 +1,29 @@
+{
+  "accounts": 2250,
+  "transactions": 522392,
+  "unique_account_keys": 2250,
+  "unique_transaction_keys": 522392,
+  "zero_transaction_accounts": 0,
+  "dangling_account_references": 0,
+  "account_rare_date": 2247,
+  "transaction_invalid_date": 99,
+  "transaction_known_adjacent_date_decreases": 41402,
+  "stages": {
+    "parent": {
+      "last_epoch": 24.0,
+      "selected_epoch": 19.0,
+      "steps": 3024,
+      "resolved_max_epochs": 45,
+      "stop_reason": "native_validation_early_stopping",
+      "checkpoint_sha256": "87109eacb875962827d1d0d201668574df8870cb69bc4fd6a088ee2a1a2ef38c"
+    },
+    "child": {
+      "last_epoch": 45.0,
+      "selected_epoch": 43.0,
+      "steps": 5670,
+      "resolved_max_epochs": 45,
+      "stop_reason": "native_small_sample_epoch_cap",
+      "checkpoint_sha256": "34486daf847b0d52bea29c369b8d9e29d2a832350967d1918fcd67e0a2a75851"
+    }
+  }
+}

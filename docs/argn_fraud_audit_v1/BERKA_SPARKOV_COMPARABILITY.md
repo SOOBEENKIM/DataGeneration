@@ -15,7 +15,7 @@
 | codec 분석 | native analyze, 내부 train/validation | fit만으로 분석하는 별도 처리 |
 | 학습 배치 | native 자동 결정 16 | 명시한 64 |
 | 최대 sequence window | native 기본값 100 | 명시한 100 |
-| 최대 epoch / 시간 | 기본 100 / 테이블당 300분 | 100 / 30분 |
+| 최대 epoch / 시간 | API 기본 100 → native 계좌 수 규칙으로 45 / 테이블당 300분 | 100 / 30분 |
 | 모델 선택 | native 검증·조기 종료 | native 검증·조기 종료 |
 | 대표 평가 | QA 1.5.3의 구간화된 저차 분포 점수 | 가맹점–유형 전체 범주 공동분포, 사기 조건별 관계 등 |
 

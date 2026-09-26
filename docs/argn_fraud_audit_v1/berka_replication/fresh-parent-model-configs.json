@@ -1,0 +1,18 @@
+{
+    "model_id": "MOSTLY_AI/Medium",
+    "model_units": {
+        "embedder@tgt:t0/c0__cat": 10,
+        "embedder@tgt:t1/c1__cat": 4,
+        "embedder@tgt:t2/c2__cat": 2,
+        "regressor@tgt:t0/c0__cat": [
+            64
+        ],
+        "regressor@tgt:t1/c1__cat": [
+            16
+        ],
+        "regressor@tgt:t2/c2__cat": [
+            16
+        ]
+    },
+    "enable_flexible_generation": true
+}

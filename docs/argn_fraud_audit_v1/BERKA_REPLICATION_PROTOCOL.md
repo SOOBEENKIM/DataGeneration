@@ -19,12 +19,16 @@ Declare account_id as parent primary key and transaction foreign key; trans_id a
 
 Use unmodified engine `split → analyze → encode → train → generate`; native internal 90/10 subject split; `train(max_training_time=300)` and other model defaults. The 300-minute limit is per table; native early stopping applies. Do not alter native validation, model size, encoding heuristics, sequence window, batch size or sampling temperature. Capture resolved settings in workspaces and logs. Run one complete fit first, not five trials presented as completed in advance.
 
+Resolved during execution: engine 1.0.4 caps the default 100 epochs at `ceil((train subjects + validation subjects) / 50)`, which is 45 here. The parent stopped by validation at epoch 24; the child reached this native 45-epoch cap and selected epoch 43. This was not a manual budget change and does not establish convergence of the child model.
+
 ## Evaluation before and after training
 
 1. Score author-provided non-DP run 1 first. It is a reference artifact, never counted as our newly trained model.
 2. Use QA 1.5.3's native data preparation, binning, univariate/bivariate aggregation and coherence. Include the context table, exclude primary IDs, preserve date strings. Accuracy-only execution does not evaluate DCR/privacy or produce a fraud-detection score.
 3. Preserve the released sampler as the primary compatibility score. Source inspection found `np.random.random(...).astype(int)` occurs before multiplication, so every sampled starting position is zero. Verify on an independent 100-subject fixture. Record that this assesses first-pair relationships.
 4. Separately report a predeclared random-adjacent-pair sensitivity matching Appendix E's verbal sampling description, with identical seeds and remaining QA operations. This locally replaces only the sampler during the diagnostic call and restores it afterward; never modify installed QA or training code. The paper additionally describes all-row univariates/bivariates, whereas this QA version samples one row per subject for those too. Thus neither score alone establishes exact paper metric replication.
+
+   Native QA derives bins from the sampled real rows in each view; changing the sampler therefore also changes those reference bins. The score difference is sensitivity of the full evaluation procedure, not a controlled estimate of a causal effect of sequence position. Do not interpret the higher random-pair score as proof of an initial-state architectural failure.
 5. Compare author-artifact and freshly generated scores under the same explicit scoring procedure. Paper table 7 means/ranges (.79 overall [.77,.80], .87 univariate [.85,.88], .68 bivariate [.66,.69], .82 coherence [.81,.83]) are contextual references, not thresholds to tune against.
 
 Follow-up after run 1 matched the approximate table values: evaluate the remaining four public author transaction artifacts with the same fixed seed and both predeclared samplers. Keep the one public author account table and assert foreign-key coverage for every transaction artifact. This checks the reported five-run aggregate; it does not add four new model fits.

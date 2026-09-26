@@ -19,7 +19,7 @@ Berka는 account와 transaction 테이블을 사용한다. 외부 train/holdout 
 - 공개 순차 스크립트는 먼저 정적 부모 테이블 모델을 학습·생성하고, 그 합성 부모에 조건화해 자식 거래열을 생성한다. `train(max_training_time=300)` 이외 대부분은 당시 기본값에 의존한다. 우리 실험의 실제 validation 고객 조건, 명시적인 window/batch, 2.4.0 설치 버전과 동일함이 입증된 것은 아니다.
 - 공개 flat 평가 notebook은 `mostlyai.qa.report`를 사용한다. 현재 engine 실험 venv에는 `mostlyai-qa`가 설치되지 않았다. 평가 환경은 기존 학습 환경을 변경하지 않고 별도로 구성해야 한다.
 
-자료의 로컬 보관 위치는 worktree의 이웃 `research-reporting/argn-paper-reproduction-2026-09-27/paper-tabular-argn`이다. 표에 기록된 원문 규모와 실제 다운로드 자료가 일치함까지 확인했다. **논문의 학습 및 점수 재현은 아직 완료하지 않았다.**
+자료의 로컬 보관 위치는 worktree의 이웃 `research-reporting/argn-paper-reproduction-2026-09-27/paper-tabular-argn`이다. 이 우선순위를 정정한 시점에는 자료 확보만 끝났고 학습 및 점수 재현은 완료하지 않은 상태였다. **후속으로 새 Berka 학습·생성·평가 1회를 완료했다. 현재 결과와 제한은 [완료 보고서](BERKA_REPLICATION_RESULTS.md)에 기록한다.**
 
 ### 후속 실행: 저자 생성물 점수 대조 완료
 
