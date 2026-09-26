@@ -1,0 +1,49 @@
+{
+  "config_sha256": "2fde06746d0b8e52bb37939ce7207c9284e27d6aa0b2cb80e618750b43de86a9",
+  "roles_sha256": "b7598f39deff20cc04e38fe387140d831e3f25946f4d09b12fe4e29671586b74",
+  "source_schema_sha256": "b73497dbb9b7f4c67aff389f9bc1914fea0a99746cfebbcce83445ba82bda041",
+  "prepared_files": {
+    "check.parquet": "22c74cbd966d4f2982bcca479f8ae0931a270e4fc5fabc8da3cde880b2ad7d8e",
+    "fit.parquet": "37f23c818144fdd171cb2cd72a95043afbe2edcc716e6d69d515c4064e397c09",
+    "roles.parquet": "83dbd73b12e6e1d4e9003ad3b88ac91ccd924e391ed11486f199f3276a44e788",
+    "context.parquet": "0661612978ef4978c70e9797db08c595a5a8182ba6d47a5bd334c2ac585d8319",
+    "validation.parquet": "ca42ae521cc5cf79b25d7b8e2a6327776939fa24f3d4a0339af65990ad9412e2"
+  },
+  "counts": {
+    "fit": {
+      "customers": 550,
+      "events": 715729,
+      "frauds": 4245
+    },
+    "check": {
+      "customers": 138,
+      "events": 200838,
+      "frauds": 969
+    },
+    "validation": {
+      "customers": 147,
+      "events": 177997,
+      "frauds": 1146
+    }
+  },
+  "fit_only_codec_columns_sha256": "c3f970431947c165b48eea4b8d57de3fa24b948a30d00c54c78722806a01c91a",
+  "codec_types": {
+    "gap": "TABULAR_NUMERIC_BINNED",
+    "receiver_or_mark": "TABULAR_CATEGORICAL",
+    "amount_or_numeric_value": "TABULAR_NUMERIC_BINNED",
+    "category": "TABULAR_CATEGORICAL",
+    "event_is_fraud": "TABULAR_CATEGORICAL"
+  },
+  "fraud_codes": {
+    "_RARE_": 0,
+    "0": 1,
+    "1": 2
+  },
+  "test_outcomes_accessed": false,
+  "engine_version": "2.4.0",
+  "official_source_hashes": {
+    "_tabular/training.py": "135991206b7dbedf8c697617bea5dbfd163d3a143d5d6ecc808f268556e07d33",
+    "_tabular/argn.py": "9e017db8bc407af6e0f494e40e74b47e2392cff441ec4af74d06e3a271f405ac",
+    "_tabular/generation.py": "af29e479d4e09a289c2abab571c07def72119cc500492ad9789052ac3fe56d10"
+  }
+}

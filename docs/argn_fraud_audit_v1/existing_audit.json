@@ -1,0 +1,36 @@
+{
+  "local_parent_commit": "c1463e52f3d5785d25dcd78a82c553d2c13e804e",
+  "generated_hashes": {
+    "artifacts/argn_relation_pilot_v1/A/generated_20261021.parquet": "449b2b95171e4e961efa132bdba51a2c03913c707dfa6a8f52025e853ade8c48",
+    "artifacts/argn_relation_pilot_v1/A/generated_20261022.parquet": "1d8e11de290dad388c07b2159848bcdf68f86f4226460af3910cf6e88380d150",
+    "artifacts/argn_relation_pilot_v1/G/generated_20261021.parquet": "2faaf007b4cbc9fb82777855206ab26fe77f0c23ea6714f971d5b7da6c260c7d",
+    "artifacts/argn_relation_pilot_v1/G/generated_20261022.parquet": "b1a93db24586f4d519231f7e7f376f4c2c015f6aa4c176ea9635f2a636c25a62",
+    "artifacts/argn_relation_pilot_v1/R/generated_20261021.parquet": "50f584a5cdcc38713b1989bcac0bac7532ecde8f4c3bf538c3c33ccd246be0b4",
+    "artifacts/argn_relation_pilot_v1/R/generated_20261022.parquet": "34e211576459b2ef6c8aa6a1534da1d37374f023d35d3c101739403498615e0f"
+  },
+  "old_outputs_include_fraud": false,
+  "codec_roundtrip": {
+    "real_events": 177997,
+    "generated_events": 177997,
+    "real_customers": 147,
+    "generated_customers": 147,
+    "invalid_amount_rate": 0.0,
+    "invalid_gap_rate": 0.0,
+    "merchant_category_tv": 0.0,
+    "category_amount_tv": 0.0017022758810541802,
+    "gap_previous_category_category_tv": 0.005504638740511665,
+    "history_amount_tv": 0.0017472204587717826,
+    "category_tv": 0.0,
+    "merchant_tv": 0.0,
+    "amount_tv": 0.0005955156547582212,
+    "gap_tv": 0.0004891762721394699
+  },
+  "codec_target_types": {
+    "gap": "TABULAR_NUMERIC_BINNED",
+    "receiver_or_mark": "TABULAR_CATEGORICAL",
+    "amount_or_numeric_value": "TABULAR_NUMERIC_BINNED",
+    "category": "TABULAR_CATEGORICAL"
+  },
+  "test_outcomes_accessed": false,
+  "validation_status": "previously reused development split"
+}

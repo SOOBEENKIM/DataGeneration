@@ -99,6 +99,11 @@ def probe(name):
                     acc[0] += float(losses[use].double().sum()); acc[1] += int(use.sum()); acc[2] += int(correct[use].sum())
     rows = [dict(run=name, intervention=k[0], field=k[1], group=k[2], events=v[1],
                  nll=v[0]/v[1] if v[1] else None, accuracy=v[2]/v[1] if v[1] else None) for k,v in totals.items()]
+    # Interventions must not change information paths upstream of the altered component.
+    for field in ['gap', MERCHANT]:
+        assert np.allclose(totals[('teacher',field,'all')], totals[('shuffle_current_merchant',field,'all')])
+    for field in names:
+        assert np.allclose(totals[('teacher',field,'first')], totals[('zero_history_after_first',field,'first')])
     assert digest(ws.model_tabular_weights_path) == before
     pd.DataFrame(rows).to_csv(DOCS/f'probe_{name}.csv', index=False)
     write(DOCS/f'probe_{name}.json', dict(checkpoint_sha256=before, protocol_sha256=digest(DOCS/'PROBE_PROTOCOL.md'),
@@ -107,6 +112,20 @@ def probe(name):
     print(pd.DataFrame(rows).query("field == 'category' or (field == @LABEL and group == 'all')").to_string(index=False), flush=True)
 
 
+def lookup():
+    config(); base, _ = load_prepared()
+    fit = pd.read_parquet(base/'fit.parquet'); real = pd.read_parquet(base/'validation.parquet')
+    table = fit.groupby(MERCHANT).category.agg(['nunique', lambda x: x.mode().iloc[0]])
+    pred = real[MERCHANT].map(table.iloc[:,1])
+    result = dict(fit_merchants=len(table), fit_merchants_with_multiple_categories=int(table['nunique'].gt(1).sum()),
+        validation_events=len(real), merchant_coverage=float(pred.notna().mean()),
+        lookup_category_accuracy=float(pred.eq(real.category).mean()),
+        uses='fit-only modal-category lookup; diagnostic, not a sequence generator')
+    write(DOCS/'merchant_lookup_diagnostic.json', result)
+    print(json.dumps(result, indent=2))
+
+
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(); parser.add_argument('name', choices=['old_A','seed_20260927','seed_20260928'])
-    probe(parser.parse_args().name)
+    parser = argparse.ArgumentParser(); parser.add_argument('name', choices=['old_A','seed_20260927','seed_20260928','lookup'])
+    name = parser.parse_args().name
+    lookup() if name == 'lookup' else probe(name)
