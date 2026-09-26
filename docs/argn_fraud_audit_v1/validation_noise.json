@@ -1,0 +1,12 @@
+{
+  "checkpoint_hashes": {
+    "20260927": "1caa0f3ceb622087d0b0ccd4718e8a64cf1b345c050d74c4eb1e6a20f1194c03",
+    "20260928": "0d5739237d9a7fdb55abf16168ca2e8ffc4a8b26320f354b127c44ae979cb7ee"
+  },
+  "checkpoints_unchanged": true,
+  "protocol_sha256": "aa8fd6b6845feae860fbec4ec7ac03c2a4420a3d2dd1f9e93d98e33bc9ae559d",
+  "script_sha256": "5065e73c8887beae58497badc38de94039d5060147ef0220027f0f18bc5e012e",
+  "repeated_evaluations": 48,
+  "training_updates": 0,
+  "test_outcomes_accessed": false
+}

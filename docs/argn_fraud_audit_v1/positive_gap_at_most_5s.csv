@@ -1,0 +1,6 @@
+source,events,frauds,invalid_labels,fraud_rate
+original_validation,45,1,0,0.022222222222222223
+seed_20260927/generated_20260929,42,0,0,0.0
+seed_20260927/generated_20260930,26,0,0,0.0
+seed_20260928/generated_20260929,36,1,0,0.027777777777777776
+seed_20260928/generated_20260930,25,0,0,0.0

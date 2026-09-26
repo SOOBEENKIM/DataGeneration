@@ -120,6 +120,8 @@ def lookup():
     result = dict(fit_merchants=len(table), fit_merchants_with_multiple_categories=int(table['nunique'].gt(1).sum()),
         validation_events=len(real), merchant_coverage=float(pred.notna().mean()),
         lookup_category_accuracy=float(pred.eq(real.category).mean()),
+        prefix_events=int(real.event_index.lt(512).sum()),
+        prefix_lookup_category_accuracy=float(pred[real.event_index.lt(512)].eq(real.loc[real.event_index.lt(512),'category']).mean()),
         uses='fit-only modal-category lookup; diagnostic, not a sequence generator')
     write(DOCS/'merchant_lookup_diagnostic.json', result)
     print(json.dumps(result, indent=2))

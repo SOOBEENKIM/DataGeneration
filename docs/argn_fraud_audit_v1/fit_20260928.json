@@ -1,0 +1,12 @@
+{
+  "seed": 20260928,
+  "device": "cpu",
+  "seconds": 512.9544274549698,
+  "last_epoch": 32.0,
+  "selected_epoch": 27.0,
+  "updates": 256,
+  "selected_check_loss": 1.0273,
+  "checkpoint_sha256": "0d5739237d9a7fdb55abf16168ca2e8ffc4a8b26320f354b127c44ae979cb7ee",
+  "native_early_stop": true,
+  "budget_reached": false
+}
