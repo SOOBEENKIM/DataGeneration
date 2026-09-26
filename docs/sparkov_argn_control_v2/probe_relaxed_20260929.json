@@ -1,0 +1,9 @@
+{
+  "weights_sha256": "0ccf98de746b0510dd9195adcb0017d9c598dcc756f353e3ab40dbcc75cf836d",
+  "weights_unchanged": true,
+  "customers": 147,
+  "prefix_limit": 512,
+  "uses_true_sequence_length_positional_encoding": true,
+  "interpretation": "conditional teacher diagnostic; not free-running quality or architectural proof",
+  "script_sha256": "e448c70af69d880e33a9f73206fa62030cb603f831fe053687577d35f651a685"
+}

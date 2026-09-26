@@ -1,0 +1,17 @@
+{
+  "config_sha256": "659580be732e1645a49e45c9014cac4d1aa5454bee3cecaa85d87d0f0c49b6d7",
+  "script_sha256": "1e4699a636e9ffc01c46c2a234e592cf65033a0203a623b77576e5d2f3c5384f",
+  "versions": {
+    "sdv": "1.38.0",
+    "deepecho": "0.8.1",
+    "torch": "2.1.2+cu121",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3"
+  },
+  "training_events": 916567,
+  "training_customers": 688,
+  "segment_size": null,
+  "epochs": 128,
+  "device": "cpu",
+  "source_of_context": "validation static attributes only"
+}

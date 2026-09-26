@@ -1,0 +1,7 @@
+{
+  "only_changed_target_column": "gap",
+  "context_stats_sha256": "87ee63989b7b9a363af653f4a6d7c5305b33a0156911ce5a820a77872b2f2768",
+  "context_stats_equal": true,
+  "protocol_sha256": "dcb9afb28cff365ca2482894311d313a027d795044fd8028aa369bb4e5f70c3c",
+  "neural_fit_started": false
+}

@@ -1,0 +1,18 @@
+{
+  "training_merchants": 693,
+  "merchants_with_multiple_categories": 7,
+  "validation_merchant_coverage": 1.0,
+  "validation_category_accuracy": 0.9921796434771373,
+  "prefix_category_accuracy": 0.9921547057290913,
+  "role": "ARGN internal 619-customer fit-only modal category diagnostic, not sequence generation",
+  "outer_training_lookup_original": {
+    "training_merchants": 693,
+    "merchants_with_multiple_categories": 7,
+    "validation_merchant_coverage": 1.0,
+    "validation_category_accuracy": 0.9921796434771373,
+    "prefix_category_accuracy": 0.9921547057290913,
+    "role": "fit-only modal category diagnostic, not sequence generation"
+  },
+  "training_customers": 619,
+  "training_events": 816341
+}

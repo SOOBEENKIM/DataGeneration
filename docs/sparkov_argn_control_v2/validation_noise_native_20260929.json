@@ -1,0 +1,10 @@
+{
+  "weights_unchanged": true,
+  "weights_sha256": "c7f9eb243589d5834fa0ad295da328189671a70fcf609edcd80ec29a6b02421a",
+  "customers": 69,
+  "batch_size": 4,
+  "window": 100,
+  "repeats": 20,
+  "script_sha256": "0e46fe2fd6ece45d1f299ea8db4645bdd86ab6660972d004c65e148becbdddff",
+  "protocol_sha256": "bd9d5b2c630c9e4fe6091ce4a4a61db3370adf46eea958af98f028929dbdbdda"
+}
