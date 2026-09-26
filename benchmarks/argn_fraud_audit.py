@@ -24,6 +24,9 @@ def metric_state(fit, config):
 
 def features(frame, state):
     d = frame.sort_values(['entity_id', 'event_index'], kind='stable').copy().reset_index(drop=True)
+    # Native parquet uses pandas nullable numeric dtypes; normalize missing values to numpy NaN.
+    for c in ['gap', AMOUNT]:
+        d[c] = pd.to_numeric(d[c], errors='raise').astype(float)
     if d.duplicated(['entity_id', 'event_index']).any():
         raise ValueError('Duplicated customer/event position')
     d['gap_bin'] = np.searchsorted(state['gap_edges'], d.gap.fillna(-1).to_numpy(), side='left')

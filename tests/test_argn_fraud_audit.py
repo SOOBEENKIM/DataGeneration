@@ -36,6 +36,13 @@ def test_labels_are_counted_not_string_concatenated_and_invalids_retained():
     assert tab.events.sum()==14 and tab.invalid_labels.sum()==1
 
 
+def test_native_nullable_numeric_dtype_matches_plain_numeric():
+    d=example();s=state(d);native=d.copy()
+    native['gap']=native.gap.astype('Float64')
+    native['amount_or_numeric_value']=native.amount_or_numeric_value.astype('Float64')
+    assert summaries(d,native,s)==summaries(d,d,s)
+
+
 def test_first_event_and_customer_boundaries_and_pair_support():
     d=example();s=state(d);out=features(d,s)
     assert out.loc[out.event_index.eq(0),'gap_bin'].eq(-1).all()
