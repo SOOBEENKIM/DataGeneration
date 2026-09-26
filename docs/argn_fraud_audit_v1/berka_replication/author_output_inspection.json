@@ -1,0 +1,24 @@
+{
+  "account_date_counts": {
+    "_RARE_": 2247,
+    "1996-11-24": 3
+  },
+  "transaction_date_rare": 105,
+  "transaction_invalid_date": 105,
+  "adjacent_known_date_decreases": 46545,
+  "dangling_accounts": 0,
+  "first_account_dates": [
+    "1995-09-27",
+    "1996-12-08",
+    "1996-07-10",
+    "1996-07-31",
+    "1996-08-07",
+    "1996-08-31",
+    "1996-08-31",
+    "1996-09-06",
+    "1996-09-10",
+    "1996-09-30",
+    "1996-10-08",
+    "1996-10-11"
+  ]
+}

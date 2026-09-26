@@ -1,0 +1,143 @@
+col1,col2,type,accuracy,accuracy_max
+tgt::Sequence Length,tgt::account,tgt,0.94844,0.9631
+tgt::Sequence Length,tgt::amount,tgt,0.83333,0.88242
+tgt::Sequence Length,tgt::balance,tgt,0.19689,0.88244
+tgt::Sequence Length,tgt::bank,tgt,0.94933,0.9631
+tgt::Sequence Length,tgt::date,tgt,0.87822,0.9047
+tgt::Sequence Length,tgt::k_symbol,tgt,0.95067,0.96383
+tgt::Sequence Length,tgt::operation,tgt,0.94444,0.9631
+tgt::Sequence Length,tgt::type,tgt,0.94622,0.96432
+tgt::account,tgt::amount,tgt,0.90533,0.96315
+tgt::account,tgt::balance,tgt,0.19867,0.96316
+tgt::account,tgt::bank,tgt,0.99156,0.99819
+tgt::account,tgt::date,tgt,0.96444,0.96814
+tgt::account,tgt::k_symbol,tgt,0.988,0.99819
+tgt::account,tgt::operation,tgt,0.97911,0.99819
+tgt::account,tgt::type,tgt,0.98089,0.99819
+tgt::amount,tgt::balance,tgt,0.13511,0.96205
+tgt::amount,tgt::bank,tgt,0.90578,0.96384
+tgt::amount,tgt::date,tgt,0.86978,0.8956
+tgt::amount,tgt::k_symbol,tgt,0.90711,0.96403
+tgt::amount,tgt::operation,tgt,0.89956,0.96384
+tgt::amount,tgt::type,tgt,0.89911,0.96437
+tgt::balance,tgt::bank,tgt,0.19956,0.96385
+tgt::balance,tgt::date,tgt,0.19911,0.89564
+tgt::balance,tgt::k_symbol,tgt,0.19911,0.96404
+tgt::balance,tgt::operation,tgt,0.196,0.96385
+tgt::balance,tgt::type,tgt,0.19556,0.96438
+tgt::bank,tgt::date,tgt,0.96489,0.96828
+tgt::bank,tgt::k_symbol,tgt,0.98889,0.99865
+tgt::bank,tgt::operation,tgt,0.97956,0.99888
+tgt::bank,tgt::type,tgt,0.98133,0.99888
+tgt::date,tgt::k_symbol,tgt,0.96533,0.969
+tgt::date,tgt::operation,tgt,0.96,0.96828
+tgt::date,tgt::type,tgt,0.96267,0.96935
+tgt::k_symbol,tgt::operation,tgt,0.97911,0.99865
+tgt::k_symbol,tgt::type,tgt,0.98044,0.99929
+tgt::operation,tgt::type,tgt,0.97689,0.99888
+tgt::Sequence Length,ctx::district_id,ctx,0.87956,0.883
+tgt::Sequence Length,ctx::date,ctx,0.00133,0.9044
+tgt::Sequence Length,ctx::frequency,ctx,0.94267,0.95126
+tgt::account,ctx::district_id,ctx,0.94889,0.96336
+tgt::account,ctx::date,ctx,0.00133,0.96861
+tgt::account,ctx::frequency,ctx,0.99111,0.99094
+tgt::amount,ctx::district_id,ctx,0.85378,0.88307
+tgt::amount,ctx::date,ctx,0.00133,0.8968
+tgt::amount,ctx::frequency,ctx,0.89422,0.95118
+tgt::balance,ctx::district_id,ctx,0.19956,0.88312
+tgt::balance,ctx::date,ctx,0.00133,0.89686
+tgt::balance,ctx::frequency,ctx,0.19556,0.95119
+tgt::bank,ctx::district_id,ctx,0.94978,0.96336
+tgt::bank,ctx::date,ctx,0.00133,0.96861
+tgt::bank,ctx::frequency,ctx,0.99156,0.99144
+tgt::date,ctx::district_id,ctx,0.88178,0.89622
+tgt::date,ctx::date,ctx,0.00133,0.91526
+tgt::date,ctx::frequency,ctx,0.948,0.95809
+tgt::k_symbol,ctx::district_id,ctx,0.95156,0.96409
+tgt::k_symbol,ctx::date,ctx,0.00133,0.96935
+tgt::k_symbol,ctx::frequency,ctx,0.992,0.99185
+tgt::operation,ctx::district_id,ctx,0.94622,0.96336
+tgt::operation,ctx::date,ctx,0.00133,0.96861
+tgt::operation,ctx::frequency,ctx,0.97911,0.99144
+tgt::type,ctx::district_id,ctx,0.94978,0.96458
+tgt::type,ctx::date,ctx,0.00133,0.96983
+tgt::type,ctx::frequency,ctx,0.98267,0.99222
+tgt::account,nxt::account,nxt,0.95156,0.97147
+tgt::amount,nxt::amount,nxt,0.81511,0.88242
+tgt::balance,nxt::balance,nxt,0.19378,0.88262
+tgt::bank,nxt::bank,nxt,0.956,0.97273
+tgt::date,nxt::date,nxt,0.88533,0.9096
+tgt::k_symbol,nxt::k_symbol,nxt,0.92711,0.99028
+tgt::operation,nxt::operation,nxt,0.96222,0.98695
+tgt::type,nxt::type,nxt,0.98044,0.99877
+tgt::account,tgt::Sequence Length,tgt,0.94844,0.9631
+tgt::amount,tgt::Sequence Length,tgt,0.83333,0.88242
+tgt::balance,tgt::Sequence Length,tgt,0.19689,0.88244
+tgt::bank,tgt::Sequence Length,tgt,0.94933,0.9631
+tgt::date,tgt::Sequence Length,tgt,0.87822,0.9047
+tgt::k_symbol,tgt::Sequence Length,tgt,0.95067,0.96383
+tgt::operation,tgt::Sequence Length,tgt,0.94444,0.9631
+tgt::type,tgt::Sequence Length,tgt,0.94622,0.96432
+tgt::amount,tgt::account,tgt,0.90533,0.96315
+tgt::balance,tgt::account,tgt,0.19867,0.96316
+tgt::bank,tgt::account,tgt,0.99156,0.99819
+tgt::date,tgt::account,tgt,0.96444,0.96814
+tgt::k_symbol,tgt::account,tgt,0.988,0.99819
+tgt::operation,tgt::account,tgt,0.97911,0.99819
+tgt::type,tgt::account,tgt,0.98089,0.99819
+tgt::balance,tgt::amount,tgt,0.13511,0.96205
+tgt::bank,tgt::amount,tgt,0.90578,0.96384
+tgt::date,tgt::amount,tgt,0.86978,0.8956
+tgt::k_symbol,tgt::amount,tgt,0.90711,0.96403
+tgt::operation,tgt::amount,tgt,0.89956,0.96384
+tgt::type,tgt::amount,tgt,0.89911,0.96437
+tgt::bank,tgt::balance,tgt,0.19956,0.96385
+tgt::date,tgt::balance,tgt,0.19911,0.89564
+tgt::k_symbol,tgt::balance,tgt,0.19911,0.96404
+tgt::operation,tgt::balance,tgt,0.196,0.96385
+tgt::type,tgt::balance,tgt,0.19556,0.96438
+tgt::date,tgt::bank,tgt,0.96489,0.96828
+tgt::k_symbol,tgt::bank,tgt,0.98889,0.99865
+tgt::operation,tgt::bank,tgt,0.97956,0.99888
+tgt::type,tgt::bank,tgt,0.98133,0.99888
+tgt::k_symbol,tgt::date,tgt,0.96533,0.969
+tgt::operation,tgt::date,tgt,0.96,0.96828
+tgt::type,tgt::date,tgt,0.96267,0.96935
+tgt::operation,tgt::k_symbol,tgt,0.97911,0.99865
+tgt::type,tgt::k_symbol,tgt,0.98044,0.99929
+tgt::type,tgt::operation,tgt,0.97689,0.99888
+ctx::district_id,tgt::Sequence Length,ctx,0.87956,0.883
+ctx::date,tgt::Sequence Length,ctx,0.00133,0.9044
+ctx::frequency,tgt::Sequence Length,ctx,0.94267,0.95126
+ctx::district_id,tgt::account,ctx,0.94889,0.96336
+ctx::date,tgt::account,ctx,0.00133,0.96861
+ctx::frequency,tgt::account,ctx,0.99111,0.99094
+ctx::district_id,tgt::amount,ctx,0.85378,0.88307
+ctx::date,tgt::amount,ctx,0.00133,0.8968
+ctx::frequency,tgt::amount,ctx,0.89422,0.95118
+ctx::district_id,tgt::balance,ctx,0.19956,0.88312
+ctx::date,tgt::balance,ctx,0.00133,0.89686
+ctx::frequency,tgt::balance,ctx,0.19556,0.95119
+ctx::district_id,tgt::bank,ctx,0.94978,0.96336
+ctx::date,tgt::bank,ctx,0.00133,0.96861
+ctx::frequency,tgt::bank,ctx,0.99156,0.99144
+ctx::district_id,tgt::date,ctx,0.88178,0.89622
+ctx::date,tgt::date,ctx,0.00133,0.91526
+ctx::frequency,tgt::date,ctx,0.948,0.95809
+ctx::district_id,tgt::k_symbol,ctx,0.95156,0.96409
+ctx::date,tgt::k_symbol,ctx,0.00133,0.96935
+ctx::frequency,tgt::k_symbol,ctx,0.992,0.99185
+ctx::district_id,tgt::operation,ctx,0.94622,0.96336
+ctx::date,tgt::operation,ctx,0.00133,0.96861
+ctx::frequency,tgt::operation,ctx,0.97911,0.99144
+ctx::district_id,tgt::type,ctx,0.94978,0.96458
+ctx::date,tgt::type,ctx,0.00133,0.96983
+ctx::frequency,tgt::type,ctx,0.98267,0.99222
+nxt::account,tgt::account,nxt,0.95156,0.97147
+nxt::amount,tgt::amount,nxt,0.81511,0.88242
+nxt::balance,tgt::balance,nxt,0.19378,0.88262
+nxt::bank,tgt::bank,nxt,0.956,0.97273
+nxt::date,tgt::date,nxt,0.88533,0.9096
+nxt::k_symbol,tgt::k_symbol,nxt,0.92711,0.99028
+nxt::operation,tgt::operation,nxt,0.96222,0.98695
+nxt::type,tgt::type,nxt,0.98044,0.99877

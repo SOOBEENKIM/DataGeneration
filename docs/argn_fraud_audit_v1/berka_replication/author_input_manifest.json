@@ -1,0 +1,48 @@
+{
+  "berka_account_trn.csv": {
+    "rows": 2250,
+    "columns": [
+      "account_id",
+      "district_id",
+      "frequency",
+      "date"
+    ],
+    "dtypes": {
+      "account_id": "int64",
+      "district_id": "int64",
+      "frequency": "object",
+      "date": "object"
+    },
+    "sha256": "1a920bd05c52c70b1a741a21c1d182c14783a475dbe5111c33a3144533bd151d",
+    "accounts": 2250
+  },
+  "berka_trans_trn.csv.gz": {
+    "rows": 526442,
+    "columns": [
+      "trans_id",
+      "account_id",
+      "date",
+      "type",
+      "operation",
+      "amount",
+      "balance",
+      "k_symbol",
+      "bank",
+      "account"
+    ],
+    "dtypes": {
+      "trans_id": "int64",
+      "account_id": "int64",
+      "date": "object",
+      "type": "object",
+      "operation": "object",
+      "amount": "float64",
+      "balance": "float64",
+      "k_symbol": "object",
+      "bank": "object",
+      "account": "float64"
+    },
+    "sha256": "4571f4ac248ee871b32ef3214ca73554346cbb9dad2206b1624b1966e35aea2c",
+    "accounts": 2250
+  }
+}

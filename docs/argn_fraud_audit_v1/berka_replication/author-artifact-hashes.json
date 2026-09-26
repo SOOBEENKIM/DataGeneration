@@ -1,0 +1,13 @@
+{
+  "data_synthetic/berka/TabARGN_berka_account/TabARGN_berka_account.parquet": "a650e58c65c1fb6db41e60404a41dea829604fca39cac56ca54c50cf1eb21c77",
+  "data_synthetic/berka/TabARGN_berka_transaction_run_1/part.000000.000000.parquet": "f4c30cdd48ff5712de0bd498e6d9ebe4064010b74967cd0c116b8a68c3cc716b",
+  "data_synthetic/berka/TabARGN_berka_transaction_run_1/part.000001.000000.parquet": "8aecec9e1b99523a9869e89a39a52265f2566024fec4796918294a7cf389934e",
+  "data_synthetic/berka/TabARGN_berka_transaction_run_2/part.000000.000000.parquet": "317c14dcf7a1fd69fd2ffbe9ea3f03483caa493f9c93755e36d56ad78aee1da3",
+  "data_synthetic/berka/TabARGN_berka_transaction_run_2/part.000001.000000.parquet": "0dc43b5c10541d4b3aa89b89fb21e51ed051adea38d6d021d422bb40ee496967",
+  "data_synthetic/berka/TabARGN_berka_transaction_run_3/part.000000.000000.parquet": "6b3624c0203e94ea51edd831096f724ab936568426fc41926fc890c75d16cd35",
+  "data_synthetic/berka/TabARGN_berka_transaction_run_3/part.000001.000000.parquet": "f027338a0bb3d7452d393dcd84dc20b33ec8a0edbe5e74f6e277b99bff120837",
+  "data_synthetic/berka/TabARGN_berka_transaction_run_4/part.000000.000000.parquet": "156fcf4b97a7a60f2e7956293e3c7203f2a6c67fa6dd727028706afc92fc34cf",
+  "data_synthetic/berka/TabARGN_berka_transaction_run_4/part.000001.000000.parquet": "0d15f9522b50183dbfc150d5c1db502efb59bf3e890301759860c85dcbebb982",
+  "data_synthetic/berka/TabARGN_berka_transaction_run_5/part.000000.000000.parquet": "4af42d6261ecfc5639fc81f40cbc2c8f3f8ee4399ce41bf63cd01f68c7ac8b4e",
+  "data_synthetic/berka/TabARGN_berka_transaction_run_5/part.000001.000000.parquet": "f3233f3da87e170c367ea5bb54a6a14bb96e6ac8ed57b6fe2d6425cc1d809c5f"
+}

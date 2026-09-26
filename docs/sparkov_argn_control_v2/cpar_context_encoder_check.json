@@ -1,0 +1,12 @@
+{
+  "requested_customers": 147,
+  "supported_customers": 143,
+  "native_errors": {
+    "'RI'": 1,
+    "'DE'": 1,
+    "'HI'": 2
+  },
+  "observed_support_matches_registered_cohort": true,
+  "protocol_sha256": "314e5aaca69abca17f5863c096030c0aa5ee0a277fb7a44aa0b70148b2735e59",
+  "model_sha256": "a5ac80ffaee8dd78781811ebc02b4796e7d346df408798fa88d3bdf7ef5b9305"
+}

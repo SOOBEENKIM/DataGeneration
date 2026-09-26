@@ -1,0 +1,10 @@
+{
+  "fit_merchants": 693,
+  "fit_merchants_with_multiple_categories": 7,
+  "validation_events": 177997,
+  "merchant_coverage": 1.0,
+  "lookup_category_accuracy": 0.9921796434771373,
+  "prefix_events": 69086,
+  "prefix_lookup_category_accuracy": 0.9921547057290913,
+  "uses": "fit-only modal-category lookup; diagnostic, not a sequence generator"
+}

@@ -1,0 +1,15 @@
+{
+  "checkpoint_sha256": "84ef37530e96aca41c82c6f2e716dab940139434c5f4c931c3230b80fb7a3b9a",
+  "protocol_sha256": "0d687185eb86c4ec8ec17f96eaac04170dae4715746a9e5a42eb280363ab2d29",
+  "script_sha256": "2c671db19cdd934bbbb0c5f4971b0a648aac2f42f98e530e5119d69fece247fa",
+  "customers": 147,
+  "prefix_limit": 512,
+  "native_loss_batch_scaling": {
+    "batch_size": 3,
+    "native_loss": 10.928882598876953,
+    "duplicated_batch_loss": 5.464441299438477,
+    "ratio": 0.5
+  },
+  "test_outcomes_accessed": false,
+  "checkpoint_unchanged": true
+}

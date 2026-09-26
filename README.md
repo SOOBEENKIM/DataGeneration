@@ -1,11 +1,23 @@
 # DataGeneration: CoF-SeqGen Research
 
-**Latest research is on `research/cs-saf-external-audit-v1`;
+**Latest ARGN research is on `research/argn-fraud-audit-v1`;
+the preceding external audit is on `research/cs-saf-external-audit-v1`;
 the earlier U/E study is on `research/cs-saf`, and `main` remains the earlier SAF base.**
 Code, preregistrations, reports and numerical evidence are versioned. Large data,
 checkpoints and raw paths remain on the workstation; GitHub is not their full backup.
 
-Latest [D empirical-bin amount control](docs/cs_saf/external_binned_amount_v1/README.md)
+Latest [controlled Sparkov ARGN audit](docs/sparkov_argn_control_v2/README.md)
+uses transaction fraud labels and the version-qualified engine from the completed
+[Berka replication](docs/argn_fraud_audit_v1/BERKA_REPLICATION_RESULTS.md).
+It separates numeric encode/decode damage, the native training cap, frozen-weight
+generation order and residual fraud/history errors, with CPAR and resampling
+comparators. Raw-scale checks complement coarse-bin metrics; a good overall fraud
+rate does not establish good transaction relationships. These diagnostics do not
+establish an architectural limitation or a new model contribution.
+The [preceding engine-2.4 audit](docs/argn_fraud_audit_v1/README.md) and failed
+[earlier ARGN relation-path pilot](docs/argn_relation_pilot_v1/README.md) remain available.
+
+Previous [D empirical-bin amount control](docs/cs_saf/external_binned_amount_v1/README.md)
 is **COMPLETE AND CLOSED: two fresh fits, four generated tapes, no calibration.**
 Both datasets improve generated relations and Berka's excessive amount tail is
 substantially corrected. However, Berka operation marginal TV and amount log-MAE

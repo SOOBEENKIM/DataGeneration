@@ -1,0 +1,46 @@
+{
+  "appendix_random_pair_sensitivity": {
+    "overall": {
+      "mean": 0.8832,
+      "min": 0.876,
+      "max": 0.888
+    },
+    "univariate": {
+      "mean": 0.9588,
+      "min": 0.954,
+      "max": 0.964
+    },
+    "bivariate": {
+      "mean": 0.7824,
+      "min": 0.776,
+      "max": 0.787
+    },
+    "coherence": {
+      "mean": 0.9086000000000001,
+      "min": 0.897,
+      "max": 0.913
+    }
+  },
+  "released_first_pair": {
+    "overall": {
+      "mean": 0.7936000000000001,
+      "min": 0.775,
+      "max": 0.803
+    },
+    "univariate": {
+      "mean": 0.8758,
+      "min": 0.852,
+      "max": 0.885
+    },
+    "bivariate": {
+      "mean": 0.6812,
+      "min": 0.66,
+      "max": 0.69
+    },
+    "coherence": {
+      "mean": 0.8236,
+      "min": 0.812,
+      "max": 0.834
+    }
+  }
+}

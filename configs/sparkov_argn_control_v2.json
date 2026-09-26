@@ -1,0 +1,13 @@
+{
+  "version": "sparkov-argn-control-v2",
+  "engine_version": "1.0.4",
+  "preparation_seed": 20260928,
+  "fit_seeds": [20260928, 20260929],
+  "generation_seeds": [20261011, 20261012],
+  "max_training_minutes": 120,
+  "cpu_threads": 4,
+  "gap_edges_seconds": [0, 5, 60, 300, 1800, 7200, 86400],
+  "position_edges": [0, 31, 99, 499],
+  "cpar_epochs": 128,
+  "bootstrap_repeats": 500
+}

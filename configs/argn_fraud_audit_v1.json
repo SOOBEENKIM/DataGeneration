@@ -1,0 +1,18 @@
+{
+  "version": "argn-fraud-audit-v1",
+  "engine_version": "2.4.0",
+  "model": "MOSTLY_AI/Medium",
+  "fit_seeds": [20260927, 20260928],
+  "generation_seeds": [20260929, 20260930],
+  "max_epochs": 100,
+  "max_training_minutes": 30,
+  "batch_size": 64,
+  "max_sequence_window": 100,
+  "enable_flexible_generation": true,
+  "value_protection": true,
+  "cpu_threads": 4,
+  "gap_edges_seconds": [0, 5, 60, 300, 1800, 7200, 86400],
+  "position_edges": [0, 31, 99, 499],
+  "real_real_repeats": 12,
+  "notes": "Diagnostic baseline, not a proposed method. Native optimizer/scheduler/early-stop. No test outcomes or external class rebalancing. All generated labels must be audited; no filtering."
+}

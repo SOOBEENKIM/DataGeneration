@@ -1,0 +1,76 @@
+[
+  {
+    "provenance": "author_provided_run_4_not_our_fit",
+    "sampler": "released_first_pair",
+    "seed": 20260927,
+    "qa_version": "1.5.3",
+    "date_handling": "categorical_strings_as_supplied",
+    "synthetic_accounts": 2250,
+    "synthetic_transactions": 512453,
+    "training_metric_rows": 2250,
+    "synthetic_metric_rows": 2250,
+    "privacy_evaluated": false,
+    "metrics": {
+      "accuracy": {
+        "overall": 0.8,
+        "univariate": 0.884,
+        "bivariate": 0.689,
+        "coherence": 0.826,
+        "overall_max": 0.963,
+        "univariate_max": 0.984,
+        "bivariate_max": 0.957,
+        "coherence_max": 0.949
+      },
+      "similarity": {
+        "cosine_similarity_training_synthetic": null,
+        "cosine_similarity_training_holdout": null,
+        "discriminator_auc_training_synthetic": null,
+        "discriminator_auc_training_holdout": null
+      },
+      "distances": {
+        "ims_training": null,
+        "ims_holdout": null,
+        "dcr_training": null,
+        "dcr_holdout": null,
+        "dcr_share": null
+      }
+    }
+  },
+  {
+    "provenance": "author_provided_run_4_not_our_fit",
+    "sampler": "appendix_random_pair_sensitivity",
+    "seed": 20260927,
+    "qa_version": "1.5.3",
+    "date_handling": "categorical_strings_as_supplied",
+    "synthetic_accounts": 2250,
+    "synthetic_transactions": 512453,
+    "training_metric_rows": 2250,
+    "synthetic_metric_rows": 2250,
+    "privacy_evaluated": false,
+    "metrics": {
+      "accuracy": {
+        "overall": 0.876,
+        "univariate": 0.954,
+        "bivariate": 0.776,
+        "coherence": 0.897,
+        "overall_max": 0.943,
+        "univariate_max": 0.973,
+        "bivariate_max": 0.929,
+        "coherence_max": 0.929
+      },
+      "similarity": {
+        "cosine_similarity_training_synthetic": null,
+        "cosine_similarity_training_holdout": null,
+        "discriminator_auc_training_synthetic": null,
+        "discriminator_auc_training_holdout": null
+      },
+      "distances": {
+        "ims_training": null,
+        "ims_holdout": null,
+        "dcr_training": null,
+        "dcr_holdout": null,
+        "dcr_share": null
+      }
+    }
+  }
+]

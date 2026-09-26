@@ -1,0 +1,325 @@
+{
+  "status": "PASS",
+  "scope": "ARGN and descriptive controls only; CPAR pending",
+  "outputs": [
+    {
+      "path": "runs/native_20260928/generated_validation_20261011.parquet",
+      "sha256": "e997ce191db4d6be821c72ecc695be2f1725cbf9c6707625451ea7558f47a7d2",
+      "events": 189389,
+      "customers": 147
+    },
+    {
+      "path": "runs/native_20260928/generated_validation_20261012.parquet",
+      "sha256": "de1aca0d6421ebdb638234ab10fe0980b5b9af1b4a2f61c7f8abca26bd3777fb",
+      "events": 184841,
+      "customers": 147
+    },
+    {
+      "path": "runs/native_20260928/generated_synthetic_20261011.parquet",
+      "sha256": "b797e0e4341a155562dfbb1644361dd3d6013918b22a25d828e064f17846cdad",
+      "events": 196276,
+      "customers": 147
+    },
+    {
+      "path": "runs/native_20260928/generated_synthetic_20261012.parquet",
+      "sha256": "c3831092bee3c8886b6059130664739f750a37e53bfee7484a7322255bafc4dd",
+      "events": 184678,
+      "customers": 147
+    },
+    {
+      "path": "runs/relaxed_20260928/generated_validation_20261011.parquet",
+      "sha256": "20a6eff4dc3ec2dd3721b416e1fe167ed14c65dd3d2a92db86d63f78c4e224c7",
+      "events": 193361,
+      "customers": 147
+    },
+    {
+      "path": "runs/relaxed_20260928/generated_validation_20261012.parquet",
+      "sha256": "a41ddd9ee41e1fcda8af20b862e6910ab5eb4d6ff660e588ce342e47a885ed83",
+      "events": 193625,
+      "customers": 147
+    },
+    {
+      "path": "runs/relaxed_20260928/generated_synthetic_20261011.parquet",
+      "sha256": "bb1bd81e5d02de0ca32b38082a04a8affcd7a7233cd8bf5b77a5b39c3c2a2372",
+      "events": 201203,
+      "customers": 147
+    },
+    {
+      "path": "runs/relaxed_20260928/generated_synthetic_20261012.parquet",
+      "sha256": "ed18e02baae87b645b1a152df4388b35a9d64c2290fdf462293550fed4a5cc14",
+      "events": 197948,
+      "customers": 147
+    },
+    {
+      "path": "runs/digit_relaxed_20260928/generated_validation_20261011.parquet",
+      "sha256": "e6afc1c523d0bf946a55a7a348814ee2d29bc58d5632b49e7668af608a9db304",
+      "events": 194267,
+      "customers": 147
+    },
+    {
+      "path": "runs/digit_relaxed_20260928/generated_validation_20261012.parquet",
+      "sha256": "43ca3d06e50323aaf834272dbc23b78c65d246a4249ba5cc78bc8d43f98eb6ea",
+      "events": 190450,
+      "customers": 147
+    },
+    {
+      "path": "runs/digit_relaxed_20260928/generated_synthetic_20261011.parquet",
+      "sha256": "8d29e9305679b26a8835a88bd8fb600944fc02da52f94df7c408f8a8e5134910",
+      "events": 190935,
+      "customers": 147
+    },
+    {
+      "path": "runs/digit_relaxed_20260928/generated_synthetic_20261012.parquet",
+      "sha256": "6cb560f4b934dcf6bb8cfc43dd1ef5e8e61b3ad5829819417c8e851c3457d85c",
+      "events": 181504,
+      "customers": 147
+    },
+    {
+      "path": "runs/numeric_digit_relaxed_20260928/generated_validation_20261011.parquet",
+      "sha256": "ec1f37d90758bade94829c4a2d9293b12c7e1c50f3f53c760499cea1b2a77453",
+      "events": 166146,
+      "customers": 147
+    },
+    {
+      "path": "runs/numeric_digit_relaxed_20260928/generated_validation_20261012.parquet",
+      "sha256": "a30ee05757743a7ab0fe5dfe76c9db29fc70d9f4827f149120ed59ec34c4306c",
+      "events": 175666,
+      "customers": 147
+    },
+    {
+      "path": "runs/numeric_digit_relaxed_20260928/generated_synthetic_20261011.parquet",
+      "sha256": "7cf4541e7f32e259d6e168adb8cede114960e77413acd3223d0ace1bdbaa76c0",
+      "events": 176368,
+      "customers": 147
+    },
+    {
+      "path": "runs/numeric_digit_relaxed_20260928/generated_synthetic_20261012.parquet",
+      "sha256": "2baadd43fb7963f0f11b78ed1b4cfbef0c29eea5f2396137117a88f1d9d7a0d6",
+      "events": 187438,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_category_relaxed_20260928/generated_validation_20261011.parquet",
+      "sha256": "0576c3186d57722f42ee32a6e7d877b8b72829e16fc7228630546d5ce507ad75",
+      "events": 193361,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_category_relaxed_20260928/generated_validation_20261012.parquet",
+      "sha256": "020fe1491fbc5ae0e8df5ff30cfcd29e6756651d8a34965a7bb7d9498a13e196",
+      "events": 193625,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_event_is_fraud_relaxed_20260928/generated_validation_20261011.parquet",
+      "sha256": "66a760b61048aae29e6a910a26dc1c8821d6c2e710df813da3e7391a6df6ed19",
+      "events": 193361,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_event_is_fraud_relaxed_20260928/generated_validation_20261012.parquet",
+      "sha256": "bd2d56d19c4d28395c7285448df7eb858c4cf65f7f70ac1ee65383a4226fc04e",
+      "events": 193625,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_category_digit_relaxed_20260928/generated_validation_20261011.parquet",
+      "sha256": "6b4fa1d4f842d8b012cfd282e9354461e5aa2ec903a2ac5ddfc0644bd8130add",
+      "events": 194267,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_category_digit_relaxed_20260928/generated_validation_20261012.parquet",
+      "sha256": "2740563c4c982487bca23985e82fe0149bf474737d132c98bea4080c796f84bb",
+      "events": 190450,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_category_numeric_digit_relaxed_20260928/generated_validation_20261011.parquet",
+      "sha256": "7da77d698d3ad6abce5c29b5e16916b9486a04d4448646ad63c529a489f6bdd2",
+      "events": 166146,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_category_numeric_digit_relaxed_20260928/generated_validation_20261012.parquet",
+      "sha256": "05c0767a90bc8d17faf2d3d6b5b7a6231755abdc8756949288002ba8b34dff4e",
+      "events": 175666,
+      "customers": 147
+    },
+    {
+      "path": "runs/native_20260929/generated_validation_20261011.parquet",
+      "sha256": "5afa4abfd09e31fa9fef71d6ff8179dcce4a09e93941a85b13558fa516082263",
+      "events": 215719,
+      "customers": 147
+    },
+    {
+      "path": "runs/native_20260929/generated_validation_20261012.parquet",
+      "sha256": "e6121f77d6e1e9537d8b6da52f5d354412cbb7661bab8678f0f7569dfa40f8f5",
+      "events": 186716,
+      "customers": 147
+    },
+    {
+      "path": "runs/native_20260929/generated_synthetic_20261011.parquet",
+      "sha256": "0167d231c303ac6a6529fb6a64e660cb208616dcc7a0c6b3c7c13f028780306f",
+      "events": 196396,
+      "customers": 147
+    },
+    {
+      "path": "runs/native_20260929/generated_synthetic_20261012.parquet",
+      "sha256": "46afa4f85d495f77539341fedcfd7dbdae620aada094d091dd364caecadc46c2",
+      "events": 187736,
+      "customers": 147
+    },
+    {
+      "path": "runs/relaxed_20260929/generated_validation_20261011.parquet",
+      "sha256": "14d48f8abead48c264f9d79b156671536679b4cba49c791817f9e60a77ee2883",
+      "events": 213945,
+      "customers": 147
+    },
+    {
+      "path": "runs/relaxed_20260929/generated_validation_20261012.parquet",
+      "sha256": "9c03f7cf2fcdc1eabbe293f12c044c814d08e6f763510e16489cc821d027b50b",
+      "events": 201587,
+      "customers": 147
+    },
+    {
+      "path": "runs/relaxed_20260929/generated_synthetic_20261011.parquet",
+      "sha256": "9fd4eaaa2f7f9955feed13c53d7ee4d42b740af18a481d6704aa9dff8746ae8b",
+      "events": 202207,
+      "customers": 147
+    },
+    {
+      "path": "runs/relaxed_20260929/generated_synthetic_20261012.parquet",
+      "sha256": "8479127f02bc6438fd97bd8e8303c043794ba43e2a6722b8a9d585760cbb101c",
+      "events": 180552,
+      "customers": 147
+    },
+    {
+      "path": "runs/digit_relaxed_20260929/generated_validation_20261011.parquet",
+      "sha256": "fd3a3aca464f93f11061d85016206226e627698ff9d81edb8d0b5834d5d15952",
+      "events": 196919,
+      "customers": 147
+    },
+    {
+      "path": "runs/digit_relaxed_20260929/generated_validation_20261012.parquet",
+      "sha256": "34f6ba697b0ee7a4e4c635e3c62f14c9571907899e0634dab8dc5897064292fa",
+      "events": 181584,
+      "customers": 147
+    },
+    {
+      "path": "runs/digit_relaxed_20260929/generated_synthetic_20261011.parquet",
+      "sha256": "480242612cc89e809e6d8c6c708cee0e702a2aeb261bcf54075eb609286f612d",
+      "events": 182192,
+      "customers": 147
+    },
+    {
+      "path": "runs/digit_relaxed_20260929/generated_synthetic_20261012.parquet",
+      "sha256": "848c15482eb040c2f080eae3a37bcadf351ef02a445f066d9325b4c7d254556e",
+      "events": 178106,
+      "customers": 147
+    },
+    {
+      "path": "runs/numeric_digit_relaxed_20260929/generated_validation_20261011.parquet",
+      "sha256": "b0c75b89eed2225e8e540b255285b287badaaf1cc00b980e09458f26fcb264ff",
+      "events": 199636,
+      "customers": 147
+    },
+    {
+      "path": "runs/numeric_digit_relaxed_20260929/generated_validation_20261012.parquet",
+      "sha256": "c8dd8b9db02ff6bfde9f6346731bf195c8002079b19523fa1b58d2e7e4c79f4b",
+      "events": 204133,
+      "customers": 147
+    },
+    {
+      "path": "runs/numeric_digit_relaxed_20260929/generated_synthetic_20261011.parquet",
+      "sha256": "1c2d551ccc2561ede276e309d5d05b17f1add0dee38d0b844516926338d68ec0",
+      "events": 181559,
+      "customers": 147
+    },
+    {
+      "path": "runs/numeric_digit_relaxed_20260929/generated_synthetic_20261012.parquet",
+      "sha256": "4cb05d8b6050917b1297a58030293773f6a441db83bdceeddb2983a740c63fa7",
+      "events": 182617,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_category_relaxed_20260929/generated_validation_20261011.parquet",
+      "sha256": "fab4f1a90cc51fb0767eec2a59d258d6f384a1272f479925ebafc86dd84fb70a",
+      "events": 213945,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_category_relaxed_20260929/generated_validation_20261012.parquet",
+      "sha256": "01cfe8af1e703a60e4a36a1c7e18c1204a01b0b2c83c0966b2c4699b33c09e67",
+      "events": 201587,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_event_is_fraud_relaxed_20260929/generated_validation_20261011.parquet",
+      "sha256": "bc75b43bca173761ffcb6f3d7da3657f6bfa5ed3c72517e17468e3a223621e9a",
+      "events": 213945,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_event_is_fraud_relaxed_20260929/generated_validation_20261012.parquet",
+      "sha256": "4255ab2f6c7102f5a9b2044ceb180369fdd839e34b47f7c574823de99c3d47d5",
+      "events": 201587,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_category_digit_relaxed_20260929/generated_validation_20261011.parquet",
+      "sha256": "dc8a27ecab9d737868c520817614dbee657e660bbaf15c1437d433a6f20bc33c",
+      "events": 196919,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_category_digit_relaxed_20260929/generated_validation_20261012.parquet",
+      "sha256": "fe7c1805fd0c74b03d7a9cb7d2d984accba37210b0ae8f08790bf39750cd7a2d",
+      "events": 181584,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_category_numeric_digit_relaxed_20260929/generated_validation_20261011.parquet",
+      "sha256": "1f2c8d9e22a5483992bb906d21c0322379edcd2bb528e5597efb06ce2de42915",
+      "events": 199636,
+      "customers": 147
+    },
+    {
+      "path": "runs/order_category_numeric_digit_relaxed_20260929/generated_validation_20261012.parquet",
+      "sha256": "4a3408be8233a3ea79c6cbac397fde52e139610b9d25372221e6e812baa98f71",
+      "events": 204133,
+      "customers": 147
+    },
+    {
+      "path": "runs/row_resampling/generated_validation_20261011.parquet",
+      "sha256": "0c9ff7eeac96dd2588f837db28e98b037236797437a5ad401f5a735ffb1f73a5",
+      "events": 194397,
+      "customers": 147
+    },
+    {
+      "path": "runs/row_resampling/generated_validation_20261012.parquet",
+      "sha256": "5e09e64b7b00d5466a558dcfeeede66774cd32d13acd766556a66dbaa4f2424c",
+      "events": 191268,
+      "customers": 147
+    },
+    {
+      "path": "runs/transition_resampling/generated_validation_20261011.parquet",
+      "sha256": "d42a7ce71f123eae81acbf1ecdb6dcc0b546edf8c9c663701929c39b90174360",
+      "events": 191031,
+      "customers": 147
+    },
+    {
+      "path": "runs/transition_resampling/generated_validation_20261012.parquet",
+      "sha256": "1d8b5c9a9efb14bdd3670d23036065763b280580c42ef41a0c653e663cf907b5",
+      "events": 195297,
+      "customers": 147
+    }
+  ],
+  "paired_first14_progress_equal": true,
+  "generation_order_planned_lengths_equal": true,
+  "digit_control_other_column_statistics_equal": true,
+  "installed_argn_training_unchanged": true,
+  "outer_validation_excluded_from_fit": true,
+  "test_events_loaded": false,
+  "verification_script_sha256": "4f5372740485c2df9f303a344e041e35eb779724ddbabe33bce18fd9845e9811"
+}

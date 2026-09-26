@@ -1,0 +1,75 @@
+{
+    "model_id": "MOSTLY_AI/Medium",
+    "model_units": {
+        "embedder@ctxflt:t0/c0__cat": 10,
+        "embedder@ctxflt:t1/c1__cat": 4,
+        "embedder@ctxflt:t2/c2__cat": 2,
+        "embedder@tgt:/__slen_E2": 7,
+        "embedder@tgt:/__slen_E1": 10,
+        "embedder@tgt:/__slen_E0": 10,
+        "embedder@tgt:/__sidx_E2": 7,
+        "embedder@tgt:/__sidx_E1": 10,
+        "embedder@tgt:/__sidx_E0": 10,
+        "embedder@tgt:/__sdec_cat": 10,
+        "embedder@tgt:t0/c0__cat": 21,
+        "embedder@tgt:t1/c1__cat": 4,
+        "embedder@tgt:t2/c2__cat": 7,
+        "embedder@tgt:t3/c3__bin": 12,
+        "embedder@tgt:t4/c4__bin": 12,
+        "embedder@tgt:t5/c5__cat": 10,
+        "embedder@tgt:t6/c6__cat": 10,
+        "embedder@tgt:t7/c7__bin": 12,
+        "flat_context@": [
+            192
+        ],
+        "history@": [
+            640
+        ],
+        "regressor@tgt:/__slen_E2": [
+            32
+        ],
+        "regressor@tgt:/__slen_E1": [
+            32
+        ],
+        "regressor@tgt:/__slen_E0": [
+            32
+        ],
+        "regressor@tgt:/__sidx_E2": [
+            32
+        ],
+        "regressor@tgt:/__sidx_E1": [
+            32
+        ],
+        "regressor@tgt:/__sidx_E0": [
+            32
+        ],
+        "regressor@tgt:/__sdec_cat": [
+            32
+        ],
+        "regressor@tgt:t0/c0__cat": [
+            128
+        ],
+        "regressor@tgt:t1/c1__cat": [
+            16
+        ],
+        "regressor@tgt:t2/c2__cat": [
+            32
+        ],
+        "regressor@tgt:t3/c3__bin": [
+            80
+        ],
+        "regressor@tgt:t4/c4__bin": [
+            80
+        ],
+        "regressor@tgt:t5/c5__cat": [
+            32
+        ],
+        "regressor@tgt:t6/c6__cat": [
+            48
+        ],
+        "regressor@tgt:t7/c7__bin": [
+            80
+        ]
+    },
+    "enable_flexible_generation": true
+}

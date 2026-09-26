@@ -1,0 +1,56 @@
+{
+  "passed_tests": [
+    "test_future_values_cannot_change_past_history",
+    "test_labels_are_counted_not_string_concatenated_and_invalids_retained",
+    "test_native_nullable_numeric_dtype_matches_plain_numeric",
+    "test_first_event_and_customer_boundaries_and_pair_support"
+  ],
+  "generated_datasets": [
+    {
+      "run": "seed_20260927/generated_20260929",
+      "events": 165897,
+      "customers": 147,
+      "zero_event_customers": 0,
+      "frauds": 575,
+      "merchant_category_tv": 0.8666642555320704,
+      "first_pair_absent_from_fit": 0.891156462585034,
+      "sha256": "6b3f1634ee12765de56c4f631cfb9c314c047129e29972ed99ff433f212d1946"
+    },
+    {
+      "run": "seed_20260927/generated_20260930",
+      "events": 182364,
+      "customers": 147,
+      "zero_event_customers": 0,
+      "frauds": 665,
+      "merchant_category_tv": 0.8671667653703421,
+      "first_pair_absent_from_fit": 0.8775510204081632,
+      "sha256": "c45811d684586189224c55620f415f92b914052bee7b4a6b3d9fd0123df08285"
+    },
+    {
+      "run": "seed_20260928/generated_20260929",
+      "events": 158274,
+      "customers": 147,
+      "zero_event_customers": 0,
+      "frauds": 2210,
+      "merchant_category_tv": 0.8315200222399772,
+      "first_pair_absent_from_fit": 0.8299319727891157,
+      "sha256": "97178a19b95455367101939052775e78cbe0bbba3169eaa0e3d20f60a3299a28"
+    },
+    {
+      "run": "seed_20260928/generated_20260930",
+      "events": 174299,
+      "customers": 147,
+      "zero_event_customers": 0,
+      "frauds": 1638,
+      "merchant_category_tv": 0.8302113035645593,
+      "first_pair_absent_from_fit": 0.8095238095238095,
+      "sha256": "c59e5bc8668788e82005bc6ff983c3ce9cd2b40b84d54adc0dfa787a6a78ad9e"
+    }
+  ],
+  "official_sources_unchanged": true,
+  "legacy_generations_unchanged": true,
+  "generated_labels_counted_directly": true,
+  "joint_tv_checked_with_counter": true,
+  "final_test_outcomes_accessed": false,
+  "quality_or_novelty_proven": false
+}

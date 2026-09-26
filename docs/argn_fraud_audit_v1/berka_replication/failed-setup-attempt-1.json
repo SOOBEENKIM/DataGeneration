@@ -1,0 +1,39 @@
+{
+  "status": "failed",
+  "seed": 20260927,
+  "paper_repo": "paper-tabular-argn",
+  "engine_version": "1.0.4",
+  "hardware": "CPU, 4 torch threads",
+  "training_accounts": 2250,
+  "training_transactions": 526442,
+  "author_exact_version_known": false,
+  "date_handling": "categorical_strings_as_supplied",
+  "max_training_time_minutes_per_table": 300,
+  "other_model_parameters": "engine defaults",
+  "dtypes": {
+    "account": {
+      "account_id": "Int64",
+      "district_id": "Int64",
+      "frequency": "string",
+      "date": "string"
+    },
+    "transaction": {
+      "trans_id": "Int64",
+      "account_id": "Int64",
+      "date": "string",
+      "type": "string",
+      "operation": "string",
+      "amount": "Float64",
+      "balance": "Float64",
+      "k_symbol": "string",
+      "bank": "string",
+      "account": "Int64"
+    }
+  },
+  "stages": {
+    "parent": {
+      "preprocessing_seconds": 1.537449380964972
+    }
+  },
+  "error": "OSError(30, 'Read-only file system')"
+}

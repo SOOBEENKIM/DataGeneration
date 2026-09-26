@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "meaning": "147-customer primary metrics unchanged by supported-cohort code amendment",
+  "unchanged_files": {
+    "metrics.csv": true,
+    "positions.csv": true,
+    "conditional_rates_customer_bootstrap.csv": true,
+    "risk_cells.csv": true,
+    "lengths.csv": true,
+    "numeric_metrics.csv": true
+  }
+}
