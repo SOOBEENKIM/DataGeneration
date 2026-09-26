@@ -27,6 +27,20 @@ Use unmodified engine `split → analyze → encode → train → generate`; nat
 4. Separately report a predeclared random-adjacent-pair sensitivity matching Appendix E's verbal sampling description, with identical seeds and remaining QA operations. This locally replaces only the sampler during the diagnostic call and restores it afterward; never modify installed QA or training code. The paper additionally describes all-row univariates/bivariates, whereas this QA version samples one row per subject for those too. Thus neither score alone establishes exact paper metric replication.
 5. Compare author-artifact and freshly generated scores under the same explicit scoring procedure. Paper table 7 means/ranges (.79 overall [.77,.80], .87 univariate [.85,.88], .68 bivariate [.66,.69], .82 coherence [.81,.83]) are contextual references, not thresholds to tune against.
 
+Follow-up after run 1 matched the approximate table values: evaluate the remaining four public author transaction artifacts with the same fixed seed and both predeclared samplers. Keep the one public author account table and assert foreign-key coverage for every transaction artifact. This checks the reported five-run aggregate; it does not add four new model fits.
+
+## Rerunning
+
+Python 3.10 was used. Install `berka_replication/runtime-freeze.txt` in a separate virtual environment with `--extra-index-url https://download.pytorch.org/whl/cpu`; `pip check` passed in the recorded environment. Preserve the author checkout at the pinned revision. From the project repository, invoke the script with explicit paths:
+
+```bash
+python scripts/reproduce_argn_berka.py score --paper-repo /path/to/paper-tabular-argn --out /path/to/author-evaluation --author-run 1
+python scripts/reproduce_argn_berka.py train --paper-repo /path/to/paper-tabular-argn --out /path/to/new-run --seed 20260927
+python scripts/reproduce_argn_berka.py score --paper-repo /path/to/paper-tabular-argn --out /path/to/new-run-evaluation --synthetic-run /path/to/new-run
+```
+
+Set `OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 LOKY_MAX_CPU_COUNT=4 OPENBLAS_NUM_THREADS=4` for the recorded CPU resource cap. The runner places its default HF cache beside the output directory. It refuses to overwrite a training run, records failures in its manifest, and never reads the external holdout during training or the accuracy-only evaluation.
+
 ## Completion wording
 
 Distinguish author-output evaluation, one fresh Berka run, and exact paper reproduction. A fresh run is a version-qualified replication until the missing author version, Berka configuration and sequential scoring protocol are reconciled. The author output's categorical date suppression and non-monotonic dates are observations about that released artifact, not proof that ARGN intrinsically cannot model time. Retain all outputs and failed attempts with their provenance.

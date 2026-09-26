@@ -91,8 +91,8 @@ def score(args):
     real_account, real_transaction = load_train(args.paper_repo)
     if args.synthetic_run is None:
         synthetic_account = pd.read_parquet(args.paper_repo / "data_synthetic/berka/TabARGN_berka_account")
-        synthetic_transaction = pd.read_parquet(args.paper_repo / "data_synthetic/berka/TabARGN_berka_transaction_run_1")
-        provenance = "author_provided_run_1_not_our_fit"
+        synthetic_transaction = pd.read_parquet(args.paper_repo / f"data_synthetic/berka/TabARGN_berka_transaction_run_{args.author_run}")
+        provenance = f"author_provided_run_{args.author_run}_not_our_fit"
     else:
         synthetic_account = pd.read_parquet(args.synthetic_run / "parent/SyntheticData")
         synthetic_transaction = pd.read_parquet(args.synthetic_run / "child/SyntheticData")
@@ -198,6 +198,7 @@ if __name__ == "__main__":
     parser.add_argument("--paper-repo", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--synthetic-run", type=Path)
+    parser.add_argument("--author-run", type=int, choices=range(1, 6), default=1)
     parser.add_argument("--seed", type=int, default=20260927)
     args = parser.parse_args()
     os.environ.setdefault("HF_HOME", str(args.out.resolve().parent / "hf-cache"))

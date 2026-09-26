@@ -27,6 +27,8 @@ Berka는 account와 transaction 테이블을 사용한다. 외부 train/holdout 
 
 QA 1.5.3의 연속 거래 추출은 정수 변환 순서 때문에 첫 두 거래만 선택한다는 것을 독립 fixture로 확인했다. Appendix E 설명대로 임의의 인접 쌍을 뽑은 사전 명시 민감도 분석에서는 overall .888, coherence .912였다. 평가 방식에 따른 차이를 섞지 않는다. 또한 저자 합성 계좌 개설일 2,250개 중 2,247개가 `_RARE_`이며, 날짜가 범주형으로 처리된 정황을 확인했다. 이 관찰을 ARGN 모델 자체의 필연적 한계로 일반화하지 않는다.
 
+후속으로 저자 공개 5회분 모두를 같은 설정에서 평가했다. 공개 sampler 기준 평균은 overall .7936 [.775,.803], univariate .8758 [.852,.885], bivariate .6812 [.660,.690], coherence .8236 [.812,.834]다. 원문 값에 근접하며, 반올림된 평균/범위가 완전히 일치한다고 주장하지 않는다. [5회 집계](berka_replication/author-five-run-summary.json), [공개 생성물 SHA256](berka_replication/author-artifact-hashes.json). 여기서 5회는 저자 제공 생성물 수이며 우리 재학습 횟수가 아니다.
+
 ## 바로잡은 실행 순서
 
 1. 저자 공개 생성물을 논문 지표로 평가해 데이터 읽기·전처리·지표 구현부터 확인한다. 정확한 당시 QA 버전/순차 평가 설정의 미확인 부분을 기록한다.
