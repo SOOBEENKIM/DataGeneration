@@ -21,6 +21,12 @@ Berka는 account와 transaction 테이블을 사용한다. 외부 train/holdout 
 
 자료의 로컬 보관 위치는 worktree의 이웃 `research-reporting/argn-paper-reproduction-2026-09-27/paper-tabular-argn`이다. 표에 기록된 원문 규모와 실제 다운로드 자료가 일치함까지 확인했다. **논문의 학습 및 점수 재현은 아직 완료하지 않았다.**
 
+### 후속 실행: 저자 생성물 점수 대조 완료
+
+[실행 프로토콜](BERKA_REPLICATION_PROTOCOL.md)에 따라 별도 환경(engine 1.0.4, QA 1.5.3)을 구성했다. 저자 run 1의 QA 공개 코드 그대로의 결과는 overall .797, univariate .884, bivariate .688, coherence .821이다. 원문 표7의 평균/범위와 가깝다. 이것은 **저자 생성물의 재평가**이며 새 모델 학습 성공을 의미하지 않는다. 기록은 [원시 결과](berka_replication/author-run-1-accuracy/accuracy_results.json)에 있다.
+
+QA 1.5.3의 연속 거래 추출은 정수 변환 순서 때문에 첫 두 거래만 선택한다는 것을 독립 fixture로 확인했다. Appendix E 설명대로 임의의 인접 쌍을 뽑은 사전 명시 민감도 분석에서는 overall .888, coherence .912였다. 평가 방식에 따른 차이를 섞지 않는다. 또한 저자 합성 계좌 개설일 2,250개 중 2,247개가 `_RARE_`이며, 날짜가 범주형으로 처리된 정황을 확인했다. 이 관찰을 ARGN 모델 자체의 필연적 한계로 일반화하지 않는다.
+
 ## 바로잡은 실행 순서
 
 1. 저자 공개 생성물을 논문 지표로 평가해 데이터 읽기·전처리·지표 구현부터 확인한다. 정확한 당시 QA 버전/순차 평가 설정의 미확인 부분을 기록한다.
