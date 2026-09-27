@@ -1,0 +1,6 @@
+{
+  "training_initial_fraud_max_length": 15,
+  "training_initial_normal_min_length": 471,
+  "source_sha256": "76f19573b0ab0419bf85ed56213f30dbbaf4161cf917bc90b01e0ce9a9f6d274",
+  "note": "post-registration read-only audit, not a new threshold imposed on generation"
+}

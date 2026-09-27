@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/Zh-Shuai/LBDTPP",
+  "commit": "0ca4817bde2333ce0dcbf156496f7fed9fd48050",
+  "files": {
+    "README.md": "4f1ad43157c533a1e1c65ce4a708573b34e7aaae69687e206e1fa8113b125f30",
+    "dataloader/dataset.py": "9f59d136ed95bb2e4397bdf1478936a3eae108b3f160af23ba1b861efa7a79eb",
+    "dataloader/get_data.py": "0ac8e9926fd5ac396565eda73da3247b78cf147ed74d691178566d4c416ea940",
+    "exp_conditional.sh": "ab1dbca20ec82cc9f889cbb249a328655beb57c5325edee82ab5ccb28d010750",
+    "exp_unconditional.sh": "ce1688067c60603f6397344904700142c466c4255ef0795fe9c6dda0d5ce21ab",
+    "main.py": "1b944c758e736ae45c8f913d23eba0cf2dfc67f4bb67fe0a5cca6df12bbd0d40",
+    "model/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model/bdtpp_model.py": "d325493d8de4b7405511a6f1f597e585806deb22852ef05fec6c2a2377aa742f",
+    "model/block_dit.py": "f761a0e1437c87ac5f27421ded6eb9bdc44533d14d7e713f8b48d3e088c96211",
+    "model/diffusion_model.py": "7cf62afb18d3fc45845300887c4656f14088f7c0cbbd947cd6ec7e399c83f2ba",
+    "requirements.txt": "5a06660e5c2121a99c0142e54b105da17edb8f5ff5d7ebc02b8e4bb7cce0e5f5",
+    "tpp_experiment/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tpp_experiment/args.py": "370e924bf903e7fe1c45c177f345d0e17c3149d0e1d69157ecb59ae2743a8a34",
+    "tpp_experiment/experiment.py": "4ec07311760cbd5b655bec21fc6873be23b1fd3a103a33c3f3775f098856759a",
+    "tpp_experiment/metrics.py": "018c2bfe792a6a2707d0e6fe7237675d03b95509a4f2d924e6303044aeab7e67",
+    "tpp_experiment/optim.py": "67aad318ce9b101029da860c316ad23765d2b862f994aec5a8e98d2174600f80",
+    "tpp_experiment/utils.py": "35ec84e93ae25042caf6ca3f99474744c1c6ed6e47a0f1bb10fc7b4074784520"
+  },
+  "executed": false
+}

@@ -1,0 +1,85 @@
+{
+  "recorded_utc": "2026-09-27T03:44:22.089620+00:00",
+  "status": "training started; quality not evaluated",
+  "preparation": {
+    "encoded_splits": {
+      "part.000000-trn.parquet": {
+        "customers": 619,
+        "events": 816283,
+        "max_length": 3106,
+        "sha256": "3e0d57588bc0405b3461cc1e7e524068f654fb6d46715438594b97dfadc95962"
+      },
+      "part.000000-val.parquet": {
+        "customers": 69,
+        "events": 100226,
+        "max_length": 3099,
+        "sha256": "26e8c7bb3455ff604cd0f6040d207daeb8a6c0a0f3cf8bab66ff145ce307e1d4"
+      }
+    },
+    "source_hashes": {
+      "configs/argn_state_first_v1.json": "fb1a3265e6ca3e037615d16ac936ecf56ce2d2da2b5f38acd317d498cbe1e846",
+      "scripts/run_argn_state_first.py": "e7b708b05fe1b26b0c94d1c0999d5f9e0671a96e4037ea3f21988392458d5bdd",
+      "benchmarks/argn_past_state.py": "ab9c777fb8a169f72b58491c6a0e1a35a4166cd5f0f04130b13287e609787b53",
+      "benchmarks/argn_state_adapter.py": "d3e14e2b18a48ad862a07413d8f338d0b73fc25cd6d898ee44a5e9ad320a133f",
+      "docs/argn_state_first_v1/PROTOCOL.md": "a8dc5e283b01136d98df7b0819c5f1ffe8038ff5e33bc44f65531c03d084e8a4"
+    },
+    "inherited_trimmed_optimization_events": 58,
+    "test_events_read": false
+  },
+  "tests": "6 passed; CPU native equivalence, causality, state transitions, teacher-stepwise, filtering, tail invariance",
+  "gpu_smoke": {
+    "purpose": "integration only, discarded weights",
+    "device": "cuda:0",
+    "torch": "2.5.1+cu121",
+    "arms": {
+      "B": {
+        "elapsed_seconds": 3.294065334019251,
+        "gpu_peak_allocated_bytes": 1434508288,
+        "checkpoint_sha256": "8cc390437bd68d7a84a567e8a26093fe99f0e6b348d0792c7af340a4fe8ec558",
+        "state_parameters": 8320,
+        "generated_events": 16,
+        "all_weights_finite": true
+      },
+      "B_S": {
+        "elapsed_seconds": 2.0943388149607927,
+        "gpu_peak_allocated_bytes": 1500071936,
+        "checkpoint_sha256": "931cb06d31671145506219ead49b80fe5ba41987e1f5cf981b4e05c51dd265d0",
+        "state_parameters": 8320,
+        "generated_events": 16,
+        "all_weights_finite": true
+      }
+    }
+  },
+  "queues": {
+    "B": {
+      "pid": 1033304,
+      "gpu_index": 1,
+      "gpu_uuid": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9"
+    },
+    "B_S": {
+      "pid": 1033305,
+      "gpu_index": 2,
+      "gpu_uuid": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637"
+    }
+  },
+  "parameters": {
+    "both_arms": 4815662,
+    "state_projection": 8320,
+    "baseline_state_data_gradient": 0
+  },
+  "versions": {
+    "mostlyai-engine": "1.0.4",
+    "torch": "2.5.1+cu121",
+    "pandas": "2.2.3",
+    "numpy": "1.26.4",
+    "datasets": "2.21.0",
+    "opacus": "1.5.4",
+    "pytest": "8.3.5",
+    "setuptools": "75.8.2"
+  },
+  "engine_source_sha256": {
+    "argn.py": "3480fc1c615415f691c01b000d4209b2c2af8c33ba9c1113dac255c0215c9f38",
+    "training.py": "11273a2896776abc2e275045e16be229cb9663fe4915d72879423c7a985d8706",
+    "generation.py": "e408df1831580ba154e8b3992ed37f6a0cd9f59fde8221a219bd099562f892a3"
+  }
+}

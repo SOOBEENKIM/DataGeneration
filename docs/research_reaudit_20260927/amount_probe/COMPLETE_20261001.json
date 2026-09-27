@@ -1,0 +1,11 @@
+{
+  "seconds": 67.63450997998007,
+  "selection_sha256": "9a85bbcffc972bba70fb7266e047200bbc8fa1bf2bc5752a477622a558d9d559",
+  "rows": {
+    "optimization": "c6757541b7bfb0acb45101fb7940123147fc9b0ebcb10eada8f40e6af8845260",
+    "development": "e1c820b09fa7522c1dea62e58bd93650835fbb262abe3e16bd7ca41454ab1d4d"
+  },
+  "first_digit_teacher_generation_equivalence_checks": 11770,
+  "weights_unchanged": true,
+  "test_events_read": false
+}

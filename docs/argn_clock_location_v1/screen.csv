@@ -1,0 +1,5 @@
+fit_seed,arm,normal_better_than_GMR_and_history,costs,passes_screen,rollout_added_effect
+20260930,clock_prefix,True,,True,False
+20260930,clock_rollout,False,phase_GMM:normal_gap_seconds_log_w1,False,False
+20261001,clock_prefix,False,,False,False
+20261001,clock_rollout,False,phase_GMM:normal_gap_seconds_log_w1,False,False

@@ -1,0 +1,61 @@
+{
+  "unchanged_candidate": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_joint_preservation_v1/MODEL_REGISTRY.json",
+  "candidate_promoted": false,
+  "models": [
+    {
+      "arm": "history_only",
+      "fit_seed": 20260930,
+      "head_path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_time_density_v1/worker_20260930/history_only/time_head.pt",
+      "sha256": "c2c904552926e0df07f9eee1b84c31f1560f3e850bba0771941b369f67986133",
+      "selected_step": 100,
+      "status": "known_neural_density_control_with_costs"
+    },
+    {
+      "arm": "history_clock",
+      "fit_seed": 20260930,
+      "head_path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_time_density_v1/worker_20260930/history_clock/time_head.pt",
+      "sha256": "e86ab8b958731b903aff285964ab7a18be5dc470d24b81b029b8b8d27ffd188a",
+      "selected_step": 100,
+      "status": "known_neural_density_control_with_costs"
+    },
+    {
+      "arm": "history_relative",
+      "fit_seed": 20260930,
+      "head_path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_time_density_v1/worker_20260930/history_relative/time_head.pt",
+      "sha256": "14063125f5ac7f81f40761a29513451e0af554857e965d43e6b3cfe9080a34b0",
+      "selected_step": 0,
+      "status": "rejected_relative_representation"
+    },
+    {
+      "arm": "history_only",
+      "fit_seed": 20261001,
+      "head_path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_time_density_v1/worker_20261001/history_only/time_head.pt",
+      "sha256": "76f5efb2dc5aafc09f9b75dbff25262d89a265046d0b8bb258f0b09ecd253b6e",
+      "selected_step": 100,
+      "status": "known_neural_density_control_with_costs"
+    },
+    {
+      "arm": "history_clock",
+      "fit_seed": 20261001,
+      "head_path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_time_density_v1/worker_20261001/history_clock/time_head.pt",
+      "sha256": "66932c451a4f7c86d7395778d3f1f07d5ed1b59bedfa208363386405129ac094",
+      "selected_step": 100,
+      "status": "known_neural_density_control_with_costs"
+    },
+    {
+      "arm": "history_relative",
+      "fit_seed": 20261001,
+      "head_path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_time_density_v1/worker_20261001/history_relative/time_head.pt",
+      "sha256": "a35474d394b1afc9d367f2c5edc815f9b83c4de0fce33893ed90fd88854bc0a3",
+      "selected_step": 0,
+      "status": "rejected_relative_representation"
+    },
+    {
+      "arm": "clock_joint",
+      "head_path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/time_head.pt",
+      "sha256": "8591324e9757504a783821042737a487a7fea660a6b4d089f7681a0f038f78c0",
+      "status": "known_strong_statistical_control_normal_marginal_cost_remaining"
+    }
+  ],
+  "test_events_read": false
+}

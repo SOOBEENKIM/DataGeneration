@@ -1,0 +1,29 @@
+{
+  "files": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/audit_argn_fit_generalization.py": "2c4b4640c4659330a52f8ba821a4acad0904475afefe73c0ebb4b477dfa827f2",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/research_reaudit_20260927/PROTOCOL.md": "c28175a074eb2f648a0c0e247bb1123115fdbf6773fa05b49d0cf758a5eff861",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/prepared/MANIFEST.json": "d46ea88574b558da19af13f4189db67160fc1f75cd168e13d9ece872f4503a02",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_followup_diagnostics_v1/encoded_development.pkl": "272ef86a092ce0c97732fd84cab27680f274ba7bf7ebaaaea1acf54044276d71",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20260930/workspace/ModelStore/model-data/model-weights.pt": "78d26d2710627561eb4fc9637d78fc4dc7c73e6f1292c263c31a5f1405a5b8e0",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20261001/workspace/ModelStore/model-data/model-weights.pt": "d8a836c5856a581e08f051535701f586ced9de38049d949aa488d593e85472c7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20260930/workspace/ModelStore/model-data/model-weights.pt": "7763b9819c5fd020ca43aa219e4ed976838b20a9737ba830d21ca8220f028779",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20261001/workspace/ModelStore/model-data/model-weights.pt": "ea5017388ae68a123f7fa76bf3da5620c7a1f0d31123f66c6baf9f8fb909be1e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20260930/workspace/ModelStore/model-data/model-weights.pt": "4404641f3420a0ff26596cf9e93556179e439f7f35bf98ef3c3fa88ed4bf90f8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20261001/workspace/ModelStore/model-data/model-weights.pt": "68e26028d624e7b2571079bf3f90cfe682eec5bd0f336cf1cdfb428303beae51",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_label_first_20260930/workspace/ModelStore/model-data/model-weights.pt": "2029e48b045b275abcb4f4dfaa771580cb91b57f0696f56798c16cfa7ae82494",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_label_first_20261001/workspace/ModelStore/model-data/model-weights.pt": "4794c7fae66e3354494c1dffa79161eaab28a0566cf10e339a89a928f45d460d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_event_label_first_20260930/workspace/ModelStore/model-data/model-weights.pt": "c03642cfea96247115ff30a9261b71f9c9c53df29d149995bd39e8c078fc2d67",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_event_label_first_20261001/workspace/ModelStore/model-data/model-weights.pt": "25420f1a56a9eff8f6350508d274aa896e32fdbc1587f688b9e55cb6e8a50e59"
+  },
+  "split_events": {
+    "optimization": 816283,
+    "internal_validation": 100226,
+    "development": 177997
+  },
+  "split_customers": {
+    "optimization": 619,
+    "internal_validation": 69,
+    "development": 147
+  },
+  "test_events_read": false
+}

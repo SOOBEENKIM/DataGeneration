@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "jobs": {
+    "20261001": {
+      "pid": 1395816,
+      "exit_code": 0
+    },
+    "20260930": {
+      "pid": 1395809,
+      "exit_code": 0
+    }
+  },
+  "source_sha256": "49b84f0d222fe75d708c5a1781214a7d8dc0e6c0f6f8b7a4c240b8e115ab3e50",
+  "completed_utc": "2026-09-27T14:21:43.719035+00:00"
+}

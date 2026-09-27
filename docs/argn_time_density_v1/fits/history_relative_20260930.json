@@ -1,0 +1,22 @@
+{
+  "arm": "history_relative",
+  "fit_seed": 20260930,
+  "selected_step": 0,
+  "steps": 600,
+  "initial_nll": 11.442249023832986,
+  "best_nll": 11.442249023832986,
+  "train_positions": [
+    810543,
+    433,
+    431,
+    4257
+  ],
+  "validation_positions": [
+    99639,
+    48,
+    46,
+    424
+  ],
+  "parameters": 85641,
+  "sha256": "14063125f5ac7f81f40761a29513451e0af554857e965d43e6b3cfe9080a34b0"
+}

@@ -1,0 +1,8 @@
+{
+  "source_sha256": "1a2c83f6ca5bc5f8e5cacb92802be396c7d7ff0535ad8a3a10b6f6d50d92c023",
+  "plan_sha256": "0025b3b6d8199b36d4c756a2bbec24618eccb04bf1b957ff8a698cc5446fbb03",
+  "test_events_read": false,
+  "new_training": 0,
+  "new_generation": 0,
+  "completed_utc": "2026-09-27T15:27:01.349561+00:00"
+}

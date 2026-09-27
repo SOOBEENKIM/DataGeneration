@@ -1,0 +1,25 @@
+{
+  "new_small_neural_fits": 6,
+  "new_statistical_phase_fits": 4,
+  "new_output_generations": 32,
+  "additional_frozen_control_generations": 8,
+  "new_output_rows": 6327024,
+  "additional_control_rows": 1554322,
+  "total_new_full_generations": 40,
+  "total_new_rows": 7881346,
+  "matched_gpu_outputs_compared": 56,
+  "targeted_unit_checks_passed": 4,
+  "all_gpu_workers_finished": true,
+  "final_gpu_utilization": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "remaining_compute_processes": "CUDA MPS service only",
+  "original_candidate_unchanged": true,
+  "new_candidate_promoted": false,
+  "test_events_read": false,
+  "outputs_sha256": {},
+  "completed_utc": "2026-09-27T15:32:36.911563+00:00"
+}

@@ -1,0 +1,18 @@
+{
+  "small_gap_head_fits": 4,
+  "new_full_generations": 24,
+  "new_rows": 4692975,
+  "new_native_argn_fits": 0,
+  "independent_parent_fits": 2,
+  "final_test_events_read": false,
+  "all_experiment_workers_completed": true,
+  "source_manifests_verified": true,
+  "latest_baseline_training_completed": false,
+  "candidate": "onset_fit unchanged",
+  "next_focal_hypothesis": "Personal-relative onset timing with population temporal fidelity using one conditional time output",
+  "completion_sources": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_boundary_gap_v1/COMPLETE.json": "11a0f429a77d92fd10e45b98a4e224be1b59722199138fb7e75b8671f7f56590",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_phase_gap_v1/COMPLETE.json": "d269a4ca7bc8044fda44af9ee16805717bd3bf275f2aa15d4696d813a2949d14",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_phase_gap_v1/confirmation_cpu/COMPLETE.json": "9ea1c070028a15852866a6798cde164be2903886b47e9f682b5e7d93446394b7"
+  }
+}

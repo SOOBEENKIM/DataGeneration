@@ -1,0 +1,16 @@
+split,phase,events,zero_gaps,negative_gaps,missing_gaps
+optimization,continuation,3825,0,0,0
+optimization,left_fraud,432,0,0,0
+optimization,normal_stay,810543,10,0,0
+optimization,onset,433,0,0,0
+optimization,return_normal,431,0,0,0
+internal_validation,continuation,401,0,0,0
+internal_validation,left_fraud,23,0,0,0
+internal_validation,normal_stay,99639,2,0,0
+internal_validation,onset,48,0,0,0
+internal_validation,return_normal,46,0,0,0
+development,continuation,912,0,0,0
+development,left_fraud,120,0,0,0
+development,normal_stay,176615,2,0,0
+development,onset,102,0,0,0
+development,return_normal,101,0,0,0

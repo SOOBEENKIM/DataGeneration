@@ -1,0 +1,18 @@
+{
+  "version": "argn-label-first-control-v1",
+  "arms": {"B_label_first": "customer", "B_event_label_first": "event"},
+  "fit_seeds": [20260930, 20261001],
+  "generation_seeds": [20261011, 20261012],
+  "paired_existing_arms": {"B_label_first": "B", "B_event_label_first": "B_event_weighted"},
+  "parent_study": "argn-state-first-v1",
+  "intervention": "move event_is_fraud before all current transaction fields in training and generation",
+  "order": ["length/position", "event_is_fraud", "category", "gap", "receiver_or_mark", "amount_or_numeric_value"],
+  "state_features_enabled": false,
+  "hyperparameters": "unchanged argn_state_first_v1.json, including full retained history",
+  "checkpoint": "native minimum internal validation objective, patience 4",
+  "cpu_threads_per_worker": 4,
+  "max_concurrent_workers": 2,
+  "allowed_gpu_uuids": ["GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637", "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"],
+  "test_access": false,
+  "purpose": "order by objective diagnostic, not a proposed novel method"
+}

@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-09-27T15:16:27.092171+00:00",
+  "config": {
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012,
+      20261021,
+      20261022
+    ],
+    "arms": [
+      "clock_joint"
+    ],
+    "sampling_seeds": [
+      20261111,
+      20261112,
+      20261113,
+      20261114
+    ],
+    "allowed_gpu_uuids": [
+      "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+    ]
+  },
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_regression.py": "9e167f32041b192e0f773868e19d0c93ace342dcfc9e3945b8b750e5ca7b61ab",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_clock_regression.py": "59a84c8d942899dfb4ffaa9d463371c0a584dc013a66fa556580bcae03d0d4a7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/tests/test_argn_clock_regression.py": "5372c31238e8693872d7ddf23fadc913e5f723df22d23f23ff67aa8e438db46e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_regression_v1/PROTOCOL.md": "f2be16014574208093c11fb51db2a8ad8a209ffa70d9e93b7c55a1118f5481d3",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_time_density_v1/MANIFEST.json": "173b39afeb1d0039ada47b63808686410be2829a8c6e69040e06a51b5296276b"
+  },
+  "test_events_read": false
+}

@@ -1,0 +1,21 @@
+{
+  "version": "argn-joint-preservation-v1",
+  "fit_seeds": [20260930, 20261001],
+  "generation_seeds": [20261011, 20261012],
+  "components": 3,
+  "learning_rate": 0.001,
+  "weight_decay": 0.01,
+  "batch_size": 128,
+  "max_steps": 1500,
+  "validation_every": 25,
+  "patience": 8,
+  "min_delta": 0.00001,
+  "gradient_clip": 1.0,
+  "generation_arms": {
+    "count_only": {"count": "conditional", "hazard": false},
+    "hazard_only": {"count": null, "hazard": true},
+    "count_hazard": {"count": "conditional", "hazard": true},
+    "count_hazard_no_context": {"count": "unconditional", "hazard": true}
+  },
+  "allowed_gpu_uuids": ["GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637", "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"]
+}

@@ -1,0 +1,45 @@
+{
+  "created_utc": "2026-09-27T13:12:35.755694+00:00",
+  "config": {
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261021,
+      20261022
+    ],
+    "sampling_seeds": [
+      20261101,
+      20261102,
+      20261103,
+      20261104
+    ],
+    "arms": [
+      "onset_fit",
+      "all_fraud_fit"
+    ],
+    "learning_rate": 0.0001,
+    "weight_decay": 0.001,
+    "batch_size": 256,
+    "max_steps": 1000,
+    "validation_every": 50,
+    "patience": 5,
+    "min_delta": 1e-05,
+    "gradient_clip": 1.0,
+    "allowed_gpu_uuids": [
+      "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+    ]
+  },
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/confirm_argn_onset_output.py": "b4074748a22df923b9157bf5e187ef4961997311c6d0cf0945cee2c128232333",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/dispatch_argn_onset_confirmation.py": "23b88ba392dc5a8c6e678fc1a5caa2217bce534dad21571ecba1cca9a2427a48",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_joint_preservation_v1/onset_output/CONFIRMATION_PROTOCOL.md": "ef50907bb8f228c6f2560c2048dbcc911d117897295bf1638656643e75949c6d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_joint_preservation_v1/onset_output/COMPLETE.json": "0763a2350cfc641cf48550f30c46abfbcfe6d4afa51c21ac8f3c22bc3f9d1001",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_preservation_v1/onset_output/worker_20260930/onset_fit/onset_head.pt": "4fdf0e998397beb37a65d63230f349743c4d1057284575f89453b6a767d1ef26",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_preservation_v1/onset_output/worker_20261001/onset_fit/onset_head.pt": "8c4bce8c8c8f0117969a40838b4a3a78e1eb5d724455bd1824faf2d1d1deacab"
+  },
+  "new_training": 0,
+  "test_events_read": false
+}

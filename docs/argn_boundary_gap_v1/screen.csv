@@ -1,0 +1,5 @@
+fit_seed,arm,boundary_improved,better_than_equal_capacity_control,costs,passes_screen
+20260930,all_label_fit,False,,,False
+20260930,boundary_fit,True,True,fraud_gap_seconds_log_w1,False
+20261001,all_label_fit,True,,,True
+20261001,boundary_fit,True,True,fraud_gap_seconds_log_w1,False

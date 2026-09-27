@@ -1,0 +1,27 @@
+{
+  "support": [
+    {
+      "split": "optimization",
+      "customers": 619,
+      "nonfirst_events": 513464,
+      "normal": 509367,
+      "fraud": 3760,
+      "normal_personal": 506529,
+      "onset_personal": 333,
+      "horizon": 1024
+    },
+    {
+      "split": "internal_validation",
+      "customers": 69,
+      "nonfirst_events": 59814,
+      "normal": 59483,
+      "fraud": 303,
+      "normal_personal": 59158,
+      "onset_personal": 28,
+      "horizon": 1024
+    }
+  ],
+  "conditional_on_actual_labels": true,
+  "not_full_free_generation": true,
+  "test_events_read": false
+}

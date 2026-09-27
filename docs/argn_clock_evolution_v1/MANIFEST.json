@@ -1,0 +1,53 @@
+{
+  "config": {
+    "arms": [
+      "progress_joint",
+      "progress_prefix",
+      "progress_rollout"
+    ],
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012,
+      20261021,
+      20261022
+    ],
+    "allowed_gpu_uuids": [
+      "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+      "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+      "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+    ],
+    "horizon": 1024,
+    "fit_noise_seed": 20261201,
+    "diagnostic_seeds": [
+      20261202,
+      20261203
+    ],
+    "maxfev": 48,
+    "bounds": [
+      [
+        -0.35,
+        0.35
+      ],
+      [
+        -1.0,
+        1.0
+      ]
+    ]
+  },
+  "created_utc": "2026-09-27T15:55:20.215304+00:00",
+  "test_events_read": false,
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_evolution.py": "05f838ce88f38bc6d26539315bdf567baf0d5126cc3dd53742a8e79dccf1122c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_clock_evolution.py": "92b34dced6c4ee04668bde030427ee787f4b8fe1c1a3540df39defa89b1076f2",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/tests/test_argn_clock_evolution.py": "2e980ade68fdf5a160f8628c34380c2392ace86656b9e1db84451fd7ddbd88ef",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_evolution_v1/PROTOCOL.md": "1a786ba8247cf1c605024c582407a76d0d1f19aa69d69dba1542dbe7961a5bf5",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/time_head.pt": "8591324e9757504a783821042737a487a7fea660a6b4d089f7681a0f038f78c0",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/MANIFEST.json": "a416734f68e296324da56d369775f909b742d1fb11e45c7dd63271e095234a5c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/AMENDMENT_01.json": "84d92960b7dbba31ad4579e4cea3df5c43120402b4d6bde01069bded04f4cd61"
+  }
+}

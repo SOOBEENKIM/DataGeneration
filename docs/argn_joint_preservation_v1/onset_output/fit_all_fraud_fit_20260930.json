@@ -1,0 +1,12 @@
+{
+  "arm": "all_fraud_fit",
+  "fit_seed": 20260930,
+  "initial_validation_nll": 9.688384056091309,
+  "best_validation_nll": 9.58126449584961,
+  "selected_step": 350,
+  "last_step": 600,
+  "train_events": 4739,
+  "validation_events": 48,
+  "parameters": 282591,
+  "head_sha256": "3d7bb72aebfc468f0867098726a87fe7c5d77b476d3a7117dfa1dfcf67c3ebf8"
+}

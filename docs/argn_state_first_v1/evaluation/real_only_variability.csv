@@ -1,0 +1,9 @@
+metric,reference_value,ci_low,ci_high,valid_repeats,kind
+fraud_rate,0.006438310758046484,0.005455128202852522,0.007565635312534727,500,customer-bootstrap scalar
+onset_rate,0.0005771940447155621,0.000499607725335404,0.0006740144875722918,500,customer-bootstrap scalar
+continuation_rate,0.910856134157105,0.9033803244252538,0.9178477733324588,500,customer-bootstrap scalar
+fraud_rate_absolute_error,0.0,1.860823959215065e-05,0.0011938751851004088,500,real-real resample vs fixed reference
+onset_rate_absolute_error,0.0,1.1765544073004297e-06,0.0001003189137981473,500,real-real resample vs fixed reference
+continuation_rate_absolute_error,0.0,0.00011786503063905276,0.008190775730592788,500,real-real resample vs fixed reference
+run_length_log_w1,0.0,0.013874452580858182,0.057134367819515024,500,real-real resample vs fixed reference
+fraud_ratio_log_w1,0.0,0.024016310536563043,0.1241944406457578,500,real-real resample vs fixed reference

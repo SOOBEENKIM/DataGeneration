@@ -1,0 +1,250 @@
+{
+  "dispatcher_pid": 1289977,
+  "launch": {
+    "B_event_label_first_20260930": {
+      "pid": 1290079,
+      "gpu": {
+        "index": 2,
+        "uuid": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+        "memory_mib": 52,
+        "utilization": 0,
+        "has_compute_process": false
+      },
+      "command": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_label_first_control.py",
+        "run",
+        "--arm",
+        "B_event_label_first",
+        "--seed",
+        "20260930",
+        "--device",
+        "cuda:0"
+      ],
+      "started_utc": "2026-09-27T08:19:34.660225+00:00"
+    },
+    "B_event_label_first_20261001": {
+      "pid": 1290086,
+      "gpu": {
+        "index": 3,
+        "uuid": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+        "memory_mib": 93,
+        "utilization": 0,
+        "has_compute_process": false
+      },
+      "command": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_label_first_control.py",
+        "run",
+        "--arm",
+        "B_event_label_first",
+        "--seed",
+        "20261001",
+        "--device",
+        "cuda:0"
+      ],
+      "started_utc": "2026-09-27T08:19:34.863682+00:00"
+    }
+  },
+  "observed_gpu_use": {
+    "2": {
+      "used_mib": 2701,
+      "utilization_percent": 76,
+      "training_pid": 1290079
+    },
+    "3": {
+      "used_mib": 3140,
+      "utilization_percent": 71,
+      "training_pid": 1290086
+    }
+  },
+  "tests": {
+    "state_order_weight_evaluation": 13,
+    "gpu_dispatch": 1,
+    "failed": 0
+  },
+  "manifest": {
+    "created_utc": "2026-09-27T08:18:51.360125+00:00",
+    "config": {
+      "version": "argn-label-first-control-v1",
+      "arms": {
+        "B_label_first": "customer",
+        "B_event_label_first": "event"
+      },
+      "fit_seeds": [
+        20260930,
+        20261001
+      ],
+      "generation_seeds": [
+        20261011,
+        20261012
+      ],
+      "paired_existing_arms": {
+        "B_label_first": "B",
+        "B_event_label_first": "B_event_weighted"
+      },
+      "parent_study": "argn-state-first-v1",
+      "intervention": "move event_is_fraud before all current transaction fields in training and generation",
+      "order": [
+        "length/position",
+        "event_is_fraud",
+        "category",
+        "gap",
+        "receiver_or_mark",
+        "amount_or_numeric_value"
+      ],
+      "state_features_enabled": false,
+      "hyperparameters": "unchanged argn_state_first_v1.json, including full retained history",
+      "checkpoint": "native minimum internal validation objective, patience 4",
+      "cpu_threads_per_worker": 4,
+      "max_concurrent_workers": 2,
+      "allowed_gpu_uuids": [
+        "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+        "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+      ],
+      "test_access": false,
+      "purpose": "order by objective diagnostic, not a proposed novel method"
+    },
+    "inherited_config": {
+      "version": "argn-state-first-v1",
+      "engine_version": "1.0.4",
+      "torch_version": "2.5.1+cu121",
+      "arms": [
+        "B",
+        "B_S"
+      ],
+      "fit_seeds": [
+        20260930,
+        20261001
+      ],
+      "generation_seeds": [
+        20261011,
+        20261012
+      ],
+      "model": "MOSTLY_AI/Medium",
+      "max_epochs": 60,
+      "max_training_minutes": 180,
+      "batch_size": 2,
+      "gradient_accumulation_steps": 16,
+      "cpu_threads": 4,
+      "history": "full frozen encoded customer sequence, no additional crop, both arms",
+      "training_order": "length/position, category, gap, merchant, amount, label",
+      "generation_order": "same as training",
+      "state_feature_groups": [
+        "label_duration",
+        "personal_amount",
+        "recent_gap"
+      ],
+      "amount_feature_cap": 10000,
+      "duration_feature_cap_seconds": 604800,
+      "ema_alpha": 0.0625,
+      "checkpoint": "native minimum internal validation loss, patience 4",
+      "development_contexts": "all 147 held-out development customers",
+      "generated_length": "native, never real future lengths",
+      "test_access": false
+    },
+    "source_hashes": {
+      "configs/argn_label_first_control_v1.json": "b24dada1b61951e86ec7bd2270418e3beb8e49090405cfa905e1105487990a69",
+      "scripts/run_argn_label_first_control.py": "f600d5007d7c3016598095c4a9c4bb7284fcc21b2f407542a7414793acfd7179",
+      "scripts/dispatch_argn_label_first_control.py": "8652fd227ae9f1e292f523434271c4bcd181f9bcc7d68c166a6e1ba0881faaa5",
+      "scripts/report_argn_label_first_control.py": "ca84e9efce528e7bae3765b4bf903c308871b566ab9a41e9a24a32dce4ba9872",
+      "benchmarks/argn_label_first_control.py": "c075b7ec7009a546eaaa90a8eef67835cd7442113aa5955a80dee9a1ebe1d4e2",
+      "benchmarks/argn_event_weight_control.py": "14dd43afaaf72485fc6628c9f1369c250c3ce7ae4fea34e8e55e77cd58215b2d",
+      "benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+      "benchmarks/argn_state_evaluation.py": "92170a9ba88796400cdf8354efd275cd43e4124bed70dd20cb6530bc214b57d7",
+      "benchmarks/argn_fraud_audit.py": "8e1d55255225c36778f7b983a9cd2973f0787810307e4d16ef31329f14895bd9",
+      "scripts/evaluate_sparkov_argn_control.py": "d040848fefbde10ba96ff9178eee5d08b454bad7a64b36d4853b8104a0300f93",
+      "scripts/summarize_argn_followup.py": "f7e172e99ee459c48858e8987e459c9f7c46d95b3af0ff7316d34b82a5f3b683",
+      "docs/argn_label_first_control_v1/PROTOCOL.md": "f7d3fec5fe6b963f04750966d964e01a4bc00eacb37ecd1fd3b31c1edbe197ec",
+      "tests/test_argn_label_first_control.py": "60628f171cc37fabd80587e732205fe868a6c8a39dd19d5d80f82da29fa72d2a",
+      "tests/test_argn_label_first_dispatch.py": "e3b6d639b60ca54642cc308b2770b76248db3f4788c334dca3b6b3ac7e5d60bc",
+      "docs/argn_label_first_control_v1/LAUNCH_AMENDMENT.md": "c4a8138fad635a022fc5472e10b19a0ac4116fea479428bb2bf5d797ec460725"
+    },
+    "preparation_sha256": "d46ea88574b558da19af13f4189db67160fc1f75cd168e13d9ece872f4503a02",
+    "probe_manifest_sha256": "57077bd9b6478b9df860db8457c7463030ef4c23ffcf78f100021a5ac2380439",
+    "paired_weights": {
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20260930/workspace/ModelStore/model-data/model-weights.pt": "78d26d2710627561eb4fc9637d78fc4dc7c73e6f1292c263c31a5f1405a5b8e0",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20261001/workspace/ModelStore/model-data/model-weights.pt": "d8a836c5856a581e08f051535701f586ced9de38049d949aa488d593e85472c7",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20260930/workspace/ModelStore/model-data/model-weights.pt": "7763b9819c5fd020ca43aa219e4ed976838b20a9737ba830d21ca8220f028779",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20261001/workspace/ModelStore/model-data/model-weights.pt": "ea5017388ae68a123f7fa76bf3da5620c7a1f0d31123f66c6baf9f8fb909be1e",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20260930/workspace/ModelStore/model-data/model-weights.pt": "4404641f3420a0ff26596cf9e93556179e439f7f35bf98ef3c3fa88ed4bf90f8",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20261001/workspace/ModelStore/model-data/model-weights.pt": "68e26028d624e7b2571079bf3f90cfe682eec5bd0f336cf1cdfb428303beae51"
+    },
+    "paired_generations": {
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20260930/generated_validation_20261011.parquet": "8c2c08726b0297c2a07defc9613f432da3f116503204eec02d3fe18880a6aa78",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20260930/generated_validation_20261012.parquet": "ec7eb8300b73ce1b8f6e16043eeae08ccc1c9f857875bb4992d282874ed9e7c5",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20261001/generated_validation_20261011.parquet": "5ed05bdbe70e139a40748a81b6d4716378ad6141b2de421b98caf202cb032816",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20261001/generated_validation_20261012.parquet": "eee85bd81a3cdda04fc62454ed04be0fa70d5f9f308bdbfd821a69961dc2d6d2",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20260930/generated_validation_20261011.parquet": "94c82755f504cca5644e87140cdc3db65bf5212b37e289f1b05a37bfd53fa76f",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20260930/generated_validation_20261012.parquet": "a3e939eb758c09a4790d2c3995e4b15d53acddafb081fdf5af8395ada4524438",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20261001/generated_validation_20261011.parquet": "cf52633f109329332b2d1d3689c6a2196d7fedf94aea1ce427f862a7a769ab4b",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20261001/generated_validation_20261012.parquet": "e87f75e7c705c096aea5ce8f015769d2d6936fe066cb9da81101a4484c5b81d1",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20260930/generated_validation_20261011.parquet": "da5b7827bd7b5e0152def784c2814147e6c87633e11db9ebd8a8c2a751cb71df",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20260930/generated_validation_20261012.parquet": "b2dac545b20a93e6bcd44ff1089e075640015d20597695720dcfa7a22f974270",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20261001/generated_validation_20261011.parquet": "ef9fdc62405f39fc5ee70b2ccd972bf8b8f3927d511f08f4558e6ae41388c66d",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20261001/generated_validation_20261012.parquet": "258dd4713bc92ad84448fd383c51d93871a838c64ed9843c0871d7ec2160e162"
+    },
+    "test_events_read": false
+  },
+  "new_fits_completed_at_check": 0,
+  "test_events_read": false,
+  "initial_observation_utc_approximate": "2026-09-27T08:20:00Z",
+  "verified_utc": "2026-09-27T08:21:43.351744+00:00",
+  "latest_gpu_snapshot_csv": "index, uuid, memory.used [MiB], utilization.gpu [%]\n0, GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933, 20827 MiB, 100 %\n1, GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9, 20893 MiB, 100 %\n2, GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637, 2701 MiB, 74 %\n3, GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073, 3140 MiB, 78 %\n",
+  "latest_dispatch_status": {
+    "updated_utc": "2026-09-27T08:21:36.125189+00:00",
+    "pid": 1289977,
+    "pending": [
+      [
+        "B_label_first",
+        20260930
+      ],
+      [
+        "B_label_first",
+        20261001
+      ]
+    ],
+    "running": {
+      "B_event_label_first_20260930": {
+        "pid": 1290079,
+        "gpu_uuid": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637"
+      },
+      "B_event_label_first_20261001": {
+        "pid": 1290086,
+        "gpu_uuid": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+      }
+    },
+    "finished": {},
+    "last_gpu_state": [
+      {
+        "index": 0,
+        "uuid": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+        "memory_mib": 20827,
+        "utilization": 100,
+        "has_compute_process": true
+      },
+      {
+        "index": 1,
+        "uuid": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+        "memory_mib": 20893,
+        "utilization": 100,
+        "has_compute_process": true
+      },
+      {
+        "index": 2,
+        "uuid": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+        "memory_mib": 2701,
+        "utilization": 74,
+        "has_compute_process": true
+      },
+      {
+        "index": 3,
+        "uuid": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+        "memory_mib": 3140,
+        "utilization": 79,
+        "has_compute_process": true
+      }
+    ],
+    "report_errors": []
+  }
+}

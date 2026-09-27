@@ -1,0 +1,98 @@
+[
+  {
+    "arm": "balanced_mixture",
+    "fit_seed": 20260930,
+    "generation_seed": 20261011,
+    "max_error": 1.1102230246251565e-16
+  },
+  {
+    "arm": "balanced_mixture",
+    "fit_seed": 20260930,
+    "generation_seed": 20261012,
+    "max_error": 1.1102230246251565e-16
+  },
+  {
+    "arm": "balanced_mixture",
+    "fit_seed": 20261001,
+    "generation_seed": 20261011,
+    "max_error": 1.3877787807814457e-17
+  },
+  {
+    "arm": "balanced_mixture",
+    "fit_seed": 20261001,
+    "generation_seed": 20261012,
+    "max_error": 2.7755575615628914e-17
+  },
+  {
+    "arm": "balanced_routed",
+    "fit_seed": 20260930,
+    "generation_seed": 20261011,
+    "max_error": 4.163336342344337e-17
+  },
+  {
+    "arm": "balanced_routed",
+    "fit_seed": 20260930,
+    "generation_seed": 20261012,
+    "max_error": 2.7755575615628914e-17
+  },
+  {
+    "arm": "balanced_routed",
+    "fit_seed": 20261001,
+    "generation_seed": 20261011,
+    "max_error": 1.1102230246251565e-16
+  },
+  {
+    "arm": "balanced_routed",
+    "fit_seed": 20261001,
+    "generation_seed": 20261012,
+    "max_error": 3.469446951953614e-17
+  },
+  {
+    "arm": "balanced_shared",
+    "fit_seed": 20260930,
+    "generation_seed": 20261011,
+    "max_error": 0.0
+  },
+  {
+    "arm": "balanced_shared",
+    "fit_seed": 20260930,
+    "generation_seed": 20261012,
+    "max_error": 1.1102230246251565e-16
+  },
+  {
+    "arm": "balanced_shared",
+    "fit_seed": 20261001,
+    "generation_seed": 20261011,
+    "max_error": 6.938893903907228e-18
+  },
+  {
+    "arm": "balanced_shared",
+    "fit_seed": 20261001,
+    "generation_seed": 20261012,
+    "max_error": 4.163336342344337e-17
+  },
+  {
+    "arm": "natural_shared",
+    "fit_seed": 20260930,
+    "generation_seed": 20261011,
+    "max_error": 2.7755575615628914e-17
+  },
+  {
+    "arm": "natural_shared",
+    "fit_seed": 20260930,
+    "generation_seed": 20261012,
+    "max_error": 0.0
+  },
+  {
+    "arm": "natural_shared",
+    "fit_seed": 20261001,
+    "generation_seed": 20261011,
+    "max_error": 4.163336342344337e-17
+  },
+  {
+    "arm": "natural_shared",
+    "fit_seed": 20261001,
+    "generation_seed": 20261012,
+    "max_error": 2.220446049250313e-16
+  }
+]

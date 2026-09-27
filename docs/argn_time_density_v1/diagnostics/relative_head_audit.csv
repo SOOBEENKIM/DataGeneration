@@ -1,0 +1,3 @@
+fit_seed,selected_step,last_layer_exactly_zero,output_depends_on_native_history,head_sha256
+20260930,0,True,False,14063125f5ac7f81f40761a29513451e0af554857e965d43e6b3cfe9080a34b0
+20261001,0,True,False,a35474d394b1afc9d367f2c5edc815f9b83c4de0fce33893ed90fd88854bc0a3

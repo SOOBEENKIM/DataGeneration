@@ -1,0 +1,26 @@
+{
+  "20260930": {
+    "pid": 1334549,
+    "gpu": {
+      "index": 2,
+      "uuid": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "memory_mib": 52,
+      "utilization": 0,
+      "has_compute_process": false
+    },
+    "started_utc": "2026-09-27T09:13:51.236713+00:00",
+    "attempt": 2
+  },
+  "20261001": {
+    "pid": 1334550,
+    "gpu": {
+      "index": 3,
+      "uuid": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+      "memory_mib": 93,
+      "utilization": 0,
+      "has_compute_process": false
+    },
+    "started_utc": "2026-09-27T09:13:51.265698+00:00",
+    "attempt": 2
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "posthoc_diagnostic": true,
+  "test_events_read": false,
+  "model_selection": false,
+  "exact_cdf_and_scipy_comparisons": 64,
+  "definition": "real phase-weighted conditional W1 minus W1 of phase-standardized mixture",
+  "caution": "This is a mathematical cancellation diagnostic, not a causal rollout intervention."
+}

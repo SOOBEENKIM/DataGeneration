@@ -1,0 +1,8 @@
+{
+  "new_head_fits": 4,
+  "new_generations": 8,
+  "new_rows": 1609190,
+  "test_events_read": false,
+  "exact_labels_and_lengths": true,
+  "source_sha256": "5ff9d9906a5de6089154caafdd9397b21fa73a31ceff834eefa120ac8bc104a7"
+}
