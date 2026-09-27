@@ -1,0 +1,6 @@
+{
+  "problem": "Optional tabulate dependency absent at Markdown rendering",
+  "fix": "Render the same already computed screen as a plain Markdown table",
+  "models_changed": false,
+  "metrics_changed": false
+}

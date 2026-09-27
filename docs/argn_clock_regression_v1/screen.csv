@@ -1,0 +1,3 @@
+fit_seed,arm,onset_better_than_simple,onset_better_than_clock,costs,passes_quality_screen,supports_relative_added_effect
+20260930,clock_joint,True,True,mixture:normal_gap_seconds_log_w1,False,False
+20261001,clock_joint,True,True,mixture:normal_gap_seconds_log_w1,False,False

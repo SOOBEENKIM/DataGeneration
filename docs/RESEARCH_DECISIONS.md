@@ -288,3 +288,46 @@ CPU 추가12생성/2,279,190행도 정상 완료하고 같은 장치의 기준�
 같은 용량 대조 없이 이를 새 방법의 효과로 해석하지 않는다.
 [추가 확인](argn_phase_gap_v1/confirmation_cpu/RESULTS.md). 모든 worker는
 종료했으며 최종 test는 계속 미사용이다.
+
+### 단일 조건부 시간 출력의 구별 대조 등록 — 2026-09-27 UTC
+
+사용자가 개인 onset 속도와 전체 시간 분포를 함께 보존하는 다음 단계를 승인했다.
+[새 프로토콜](argn_time_density_v1/PROTOCOL.md)은 일반 history mixture,
+명시적 clock 입력, 같은 입력의 clock-relative 출력 3팔을 같은 용량으로 비교한다.
+고객별 정규화 자체는 RevIN 등 기존 방법이며2026 normalization 분석도 원래
+통계의 정보 손실을 지적한다. 따라서 원래 history/clock 입력을 유지하고 같은
+정보의 일반 출력보다 추가 효과가 있는지 구별한다. 시간 이외 모듈을 추가하지 않는다.
+
+strict-past clock 및 축소/재정렬 recurrent state, 정수 likelihood 총합과 tail
+gradient, 첫 gap의 기존 logits 보존을 실행 전 확인했다. 새 학습6개와 자유 생성24개,
+고정 비용 screen을 등록한다. 현 최종 후보는 유지하며 결과를 보고 소급 변경하지 않는다.
+기존 단순/경계 비교군의 추가 GPU8생성도 후속 GPU 사용 허가에 따라 정상 완료했다.
+CPU 결과와 섞지 않고 새 모델의 같은 GPU4draw 비교에 사용한다.
+
+신경 밀도6학습 후 relative 두 팔이0step을 선택했고 희귀 전환 validation 손실이
+빠르게 악화했다. relative 자유 생성 결과를 보기 전에 [clock 조건부 GMR](argn_clock_regression_v1/PROTOCOL.md)을
+추가 단순 대조로 등록한다. 같은 clock과 log-gap의 결합분포에서 조건부 밀도를
+계산하는 알려진 방법(Calinon2016 §5.1)이다. 큰 이력망이 꼭 필요한지 구분하는
+비교군이며 미래 신규성으로 분류하지 않는다. 기존3팔/선택/자료는 그대로 보존한다.
+
+### 단일 시간 출력·낮은 차원 대조 완료 — 2026-09-27 UTC
+
+새 head6학습, known-GMR 전환4적합, 새 출력32전체 생성과 기존GPU 대조8생성,
+총40생성/7,881,346행을 완료했다. 기존 출력과합쳐56개 matched-GPU 결과를
+독립 검증했다. [최종 해석](argn_time_density_v1/INTERPRETATION.md)에 모든 비용을 보존한다.
+개인 상대 출력은0step이 선택됐고 전체 사기/정상 gap을1.900/2.597로 악화시켜
+채택하지 않는다. 일반 history 밀도는 onset개인 관계.143으로 개선했지만
+한 부모에서 비용 screen을 실패했다.
+
+known clock-GMR은 phase GMM 대비 onset개인 gap .229→.117, 전체사기 gap
+.133→.100, 정상개인 gap .068→.012로 개선했다. 정상 전체gap .074→.137 및
+onset 절대gap .314→.514의 비용을 숨기지 않는다. 원래 최종 후보는 유지하고
+이 모델을 더 강한 단순 비교군으로 추가한다. 이를 새로운 신경 구조의 기여로
+분류하지 않는다.
+
+105고객의 실제25prefix/실제500label을 고정한 진단에서 상대 head의 actual-clock
+gap W1 .094→recursive-clock1.062, GMR .082→.288이다. 이 조건부 실험에서는
+clock 반복 입력이 오류를 키웠다. 일반 ARGN 전체의 유일한 원인으로 확대하지 않는다.
+다음은 개인 속도 수준/변화를 함께 보존하는 단일 시간 출력으로 좁힌다.
+최신 전체 생성기 직접 비교/다른 데이터/최종test는 남아 있으며 전부 완료했다고
+하지 않는다. 원래 manifest와 fixture 정밀도 수정·표 렌더링 오류도 보존했다.

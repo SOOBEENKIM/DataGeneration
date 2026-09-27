@@ -1,0 +1,10 @@
+{
+  "statistical_phase_fits": 4,
+  "new_neural_fits": 0,
+  "new_full_generations": 8,
+  "generated_rows": 1581756,
+  "all_compared_generations": 56,
+  "test_events_read": false,
+  "source_sha256": "9e94cd09b7ba8d09851a3d2d2ab2e00581b5edb768c0f281d4a18b0d3b7889bb",
+  "completed_utc": "2026-09-27T15:27:03.088491+00:00"
+}

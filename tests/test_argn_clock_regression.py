@@ -1,0 +1,18 @@
+import numpy as np
+import torch
+from scipy.stats import multivariate_normal,norm
+from scipy.special import logsumexp
+from benchmarks.argn_clock_regression import ClockRegression
+
+
+def test_conditional_density_equals_joint_divided_by_clock_density():
+    h=ClockRegression(1,'clock_joint',components=2).double()
+    mu=np.array([[1.,2.],[3.,-1.]])
+    cov=np.array([[[2.,.7],[.7,1.]],[[1.,-.3],[-.3,2.]]])
+    h.weights[:]=torch.tensor([.3,.7],dtype=torch.float64);h.means[:]=torch.tensor(mu);h.covariances[:]=torch.tensor(cov)
+    x=np.array([-2.,0.,1.,4.,8.]);y=np.array([.2,1.,-1.,2.,0.])
+    logits,loc,scale=h(torch.zeros(5,1),torch.zeros(5,dtype=torch.long),torch.tensor(x),torch.ones(5))
+    estimated=logsumexp(logits.detach().numpy()-logsumexp(logits.detach().numpy(),axis=1,keepdims=True)+norm.logpdf(y[:,None],loc.numpy(),scale.numpy()),axis=1)
+    joint=logsumexp(np.stack([np.log(w)+multivariate_normal.logpdf(np.c_[x,y],m,c) for w,m,c in zip([.3,.7],mu,cov)],axis=1),axis=1)
+    marginal=logsumexp(np.stack([np.log(w)+norm.logpdf(x,m[0],np.sqrt(c[0,0])) for w,m,c in zip([.3,.7],mu,cov)],axis=1),axis=1)
+    np.testing.assert_allclose(estimated,joint-marginal,rtol=1e-8,atol=1e-8)
