@@ -1,0 +1,9 @@
+{
+  "fits": 4,
+  "new_generations": 8,
+  "new_rows": 1609190,
+  "test_events_read": false,
+  "source_sha256": "9a3d3822c120f30c1d7c29dfa684b8d90dcd1c6a05ea050cec54a0ce5900ac40",
+  "exact_label_length_comparisons": 8,
+  "independent_w1_comparisons": 60
+}

@@ -1,0 +1,29 @@
+{
+  "config": {
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012
+    ],
+    "allowed_gpu_uuids": [
+      "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+    ]
+  },
+  "created_utc": "2026-09-27T14:09:01.419880+00:00",
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_phase_gap.py": "46618f8b3beffc2f8aae75df9d25b9d70ab2478503d871ae360a1be70e0e01b6",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_phase_gap.py": "004456d6cb30db866c6280391511164048d06311b04223c39d593ccf9217c24a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/tests/test_argn_phase_gap.py": "54206dea3b99f038740a0e3bbd352f633309509614ea3eb340e9c765755c3602",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/dispatch_argn_phase_gap.py": "49b84f0d222fe75d708c5a1781214a7d8dc0e6c0f6f8b7a4c240b8e115ab3e50",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_phase_gap_v1/PROTOCOL.md": "bbf9ee4ef21ca1cffab20803059edb76dd0dccd928b6146f1e8287c5b5fccfd2",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_boundary_gap.py": "40778c9266ed802ba1387bb92e1f09cb57712db499e175baccdc53f8a77ec86f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_phase_gap_v1/parameters.json": "e1521b040a2f3f83206bbbcefc64c3358e8509827263aecd2eba9dd645ff4f4e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_optimization.parquet": "bb6c3bff604f218d4f9c2d3eb18727b3a389ccaa0497649c45e6ec08ba3469c8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_internal_validation.parquet": "53008f14d9e691d83e05f9a8704d905675aff871d4eecaf5c07d92debe6093a4"
+  },
+  "test_events_read": false
+}

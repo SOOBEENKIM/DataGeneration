@@ -1,0 +1,8 @@
+{
+  "new_full_generations": 4,
+  "new_rows": 804595,
+  "new_neural_training": 0,
+  "test_events_read": false,
+  "exact_label_length_comparisons": 4,
+  "source_sha256": "f8a671bbddb41907b91408d97f7f7c33746f73b190a80da533ce2fdf004ebece"
+}
