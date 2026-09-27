@@ -1,0 +1,12 @@
+{
+  "markov": {
+    "all_split_positions": 1094506,
+    "non_label_logits_identical": true,
+    "parent_state_dict_keys_identical": true
+  },
+  "duration": {
+    "all_split_positions": 1094506,
+    "non_label_logits_identical": true,
+    "parent_state_dict_keys_identical": true
+  }
+}

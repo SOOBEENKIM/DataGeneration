@@ -1,0 +1,25 @@
+[
+  {
+    "name": "sage.pdf",
+    "url": "https://aclanthology.org/2026.acl-long.174.pdf",
+    "bytes": 4447116,
+    "sha256": "32c0e4c7b1118e85e1e81a200ff860712069385a0b845e0c084879b480fbd9c0"
+  },
+  {
+    "name": "hfgf.pdf",
+    "url": "https://arxiv.org/pdf/2507.19211",
+    "bytes": 358409,
+    "sha256": "62f7c40dc56f526583aa0e77d1e69b503b5d43416b677a8b8e99f9c284f53f52"
+  },
+  {
+    "name": "stg-dgr.pdf",
+    "url": "https://dl.acm.org/doi/pdf/10.1145/3774904.3792195",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "tabdit-tree.json",
+    "url": "https://api.github.com/repos/fabriziogaruti/TabDiT/git/trees/main?recursive=1",
+    "bytes": 5167,
+    "sha256": "ce83080922ad56a52250264debd31bb50c0d883d6a2a3dd80736572e45a646f1"
+  }
+]

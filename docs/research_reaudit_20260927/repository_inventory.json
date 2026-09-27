@@ -1,0 +1,46 @@
+{
+  "audit_base_head": "873fb3417d3b77916beed20204e1286886155c30",
+  "published_branches": [
+    {
+      "ref": "datageneration/main",
+      "commit": "de8fa70e7e9608a77a2b651686c1b39d59e2456d",
+      "research_paths": 443,
+      "commits_not_in_current_head": 0
+    },
+    {
+      "ref": "datageneration/research/argn-fraud-audit-v1",
+      "commit": "35637cc1cd64a5549796e76fbf8b92996f00bfc6",
+      "research_paths": 1220,
+      "commits_not_in_current_head": 0
+    },
+    {
+      "ref": "datageneration/research/argn-relation-pilot-v1",
+      "commit": "c1463e52f3d5785d25dcd78a82c553d2c13e804e",
+      "research_paths": 998,
+      "commits_not_in_current_head": 0
+    },
+    {
+      "ref": "datageneration/research/argn-state-first-v1",
+      "commit": "873fb3417d3b77916beed20204e1286886155c30",
+      "research_paths": 1328,
+      "commits_not_in_current_head": 0
+    },
+    {
+      "ref": "datageneration/research/cs-saf",
+      "commit": "b9d4162bf4d6d5a8db12aa517662521c3a62a08e",
+      "research_paths": 648,
+      "commits_not_in_current_head": 0
+    },
+    {
+      "ref": "datageneration/research/cs-saf-external-audit-v1",
+      "commit": "5f0bfc251288333f8988306799fa0277887ca21d",
+      "research_paths": 977,
+      "commits_not_in_current_head": 0
+    }
+  ],
+  "unique_research_paths": 1328,
+  "unique_path_versions": 1329,
+  "published_ancestry_commits": 132,
+  "current_model_files": 28,
+  "note": "Inventory is coverage/provenance, not a claim of executing or independently validating every line."
+}
