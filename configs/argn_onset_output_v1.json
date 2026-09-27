@@ -1,0 +1,15 @@
+{
+  "fit_seeds": [20260930, 20261001],
+  "generation_seeds": [20261011, 20261012],
+  "sampling_seeds": [20261101, 20261102, 20261103, 20261104],
+  "arms": ["onset_fit", "all_fraud_fit"],
+  "learning_rate": 0.0001,
+  "weight_decay": 0.001,
+  "batch_size": 256,
+  "max_steps": 1000,
+  "validation_every": 50,
+  "patience": 5,
+  "min_delta": 0.00001,
+  "gradient_clip": 1.0,
+  "allowed_gpu_uuids": ["GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637", "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"]
+}

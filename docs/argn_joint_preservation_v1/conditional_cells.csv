@@ -1,0 +1,589 @@
+run,conditioning,cell,real_events,generated_events,ratio_w1
+old_20260930_20261011,phase,"('continuation',)",912,928,0.11763881823538483
+old_20260930_20261011,phase,"('left_boundary',)",72,23,0.24828705635814446
+old_20260930_20261011,phase,"('onset',)",102,97,0.6497364695485597
+old_20260930_20261011,phase+age_band,"('continuation', 1)",407,388,0.15128754783191478
+old_20260930_20261011,phase+age_band,"('continuation', 2)",384,372,0.18927912414925735
+old_20260930_20261011,phase+age_band,"('continuation', 3)",121,143,0.37896602132906354
+old_20260930_20261011,phase+age_band,"('left_boundary', 2)",54,22,0.32322808594453706
+old_20260930_20261011,phase+age_band,"('left_boundary', 3)",18,1,0.5588475722407229
+old_20260930_20261011,phase+age_band,"('onset', 0)",102,97,0.6497364695485597
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'entertainment')",10,18,0.858788283099543
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'food_dining')",10,11,0.3918626736931073
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'gas_transport')",36,33,0.08255405553421365
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'grocery_net')",9,7,0.302615754282401
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'grocery_pos')",87,65,0.1721948289758167
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'health_fitness')",9,9,0.7643775637576559
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'home')",13,12,1.0580675098670689
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'kids_pets')",13,20,0.8120020987710204
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'misc_net')",54,47,0.17048886330761426
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'misc_pos')",13,21,0.7006352247628361
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'personal_care')",14,18,0.2697358047615303
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'shopping_net')",82,73,0.11949759369230012
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'shopping_pos')",48,44,0.4028929551066792
+old_20260930_20261011,phase+age_band+category,"('continuation', 1, 'travel')",9,10,2.2123840202846288
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'entertainment')",13,14,0.5098400804558797
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'food_dining')",10,9,0.5374364193779461
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'gas_transport')",20,43,0.20598387193313292
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'grocery_net')",2,6,0.9696367586261843
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'grocery_pos')",80,77,0.16577284488935679
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'health_fitness')",16,3,1.130236338118132
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'home')",21,10,0.9263072757059385
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'kids_pets')",6,19,0.3692878183568941
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'misc_net')",41,42,0.1443045323437527
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'misc_pos')",14,15,1.0548133083789604
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'personal_care')",14,6,0.15601678964679747
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'shopping_net')",99,81,0.169775325031574
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'shopping_pos')",42,41,0.43224108224830016
+old_20260930_20261011,phase+age_band+category,"('continuation', 2, 'travel')",6,6,0.9385606786861744
+old_20260930_20261011,phase+age_band+category,"('continuation', 3, 'entertainment')",5,8,0.6980313715168922
+old_20260930_20261011,phase+age_band+category,"('continuation', 3, 'food_dining')",5,3,0.4827398760124464
+old_20260930_20261011,phase+age_band+category,"('continuation', 3, 'gas_transport')",3,13,0.2703013520997148
+old_20260930_20261011,phase+age_band+category,"('continuation', 3, 'grocery_pos')",13,23,0.17006630743614323
+old_20260930_20261011,phase+age_band+category,"('continuation', 3, 'health_fitness')",6,1,0.11151667840683077
+old_20260930_20261011,phase+age_band+category,"('continuation', 3, 'home')",15,5,0.7022659288469715
+old_20260930_20261011,phase+age_band+category,"('continuation', 3, 'kids_pets')",11,2,0.7342253007126345
+old_20260930_20261011,phase+age_band+category,"('continuation', 3, 'misc_net')",11,19,0.3161170112036745
+old_20260930_20261011,phase+age_band+category,"('continuation', 3, 'misc_pos')",1,5,0.3952694856515976
+old_20260930_20261011,phase+age_band+category,"('continuation', 3, 'personal_care')",8,6,0.22155067720389388
+old_20260930_20261011,phase+age_band+category,"('continuation', 3, 'shopping_net')",22,38,0.7114836165754326
+old_20260930_20261011,phase+age_band+category,"('continuation', 3, 'shopping_pos')",17,13,0.24059071963120915
+old_20260930_20261011,phase+age_band+category,"('continuation', 3, 'travel')",4,2,1.328774592373389
+old_20260930_20261011,phase+age_band+category,"('left_boundary', 2, 'entertainment')",1,1,0.27808809548317104
+old_20260930_20261011,phase+age_band+category,"('left_boundary', 2, 'food_dining')",1,1,2.170523709789107
+old_20260930_20261011,phase+age_band+category,"('left_boundary', 2, 'gas_transport')",2,2,0.1925770934487585
+old_20260930_20261011,phase+age_band+category,"('left_boundary', 2, 'grocery_pos')",8,6,0.13858405427145554
+old_20260930_20261011,phase+age_band+category,"('left_boundary', 2, 'misc_net')",9,3,0.5940865109408096
+old_20260930_20261011,phase+age_band+category,"('left_boundary', 2, 'shopping_net')",21,4,0.5728344133907076
+old_20260930_20261011,phase+age_band+category,"('left_boundary', 2, 'shopping_pos')",5,1,0.2968050925367153
+old_20260930_20261011,phase+age_band+category,"('left_boundary', 3, 'misc_net')",2,1,0.13254773417236387
+old_20260930_20261011,phase+age_band+category,"('onset', 0, 'entertainment')",2,8,1.3662643733512736
+old_20260930_20261011,phase+age_band+category,"('onset', 0, 'food_dining')",3,1,0.569360867524953
+old_20260930_20261011,phase+age_band+category,"('onset', 0, 'gas_transport')",10,14,0.06986431146517175
+old_20260930_20261011,phase+age_band+category,"('onset', 0, 'grocery_net')",1,2,0.23293475153105625
+old_20260930_20261011,phase+age_band+category,"('onset', 0, 'grocery_pos')",44,22,0.265232929688914
+old_20260930_20261011,phase+age_band+category,"('onset', 0, 'health_fitness')",2,5,0.15206289284489674
+old_20260930_20261011,phase+age_band+category,"('onset', 0, 'kids_pets')",1,4,0.3808947353624854
+old_20260930_20261011,phase+age_band+category,"('onset', 0, 'misc_net')",11,9,0.8341068239652646
+old_20260930_20261011,phase+age_band+category,"('onset', 0, 'misc_pos')",3,3,0.94350235484995
+old_20260930_20261011,phase+age_band+category,"('onset', 0, 'personal_care')",1,5,0.3572163101912288
+old_20260930_20261011,phase+age_band+category,"('onset', 0, 'shopping_net')",17,9,0.48096519726489845
+old_20260930_20261011,phase+age_band+category,"('onset', 0, 'shopping_pos')",7,12,0.9865565195857979
+current_20260930_20261011,phase,"('continuation',)",912,801,0.1539794092009268
+current_20260930_20261011,phase,"('left_boundary',)",72,79,0.2308717200727129
+current_20260930_20261011,phase,"('onset',)",102,89,0.5756756052350835
+current_20260930_20261011,phase+age_band,"('continuation', 1)",407,354,0.13374131227969774
+current_20260930_20261011,phase+age_band,"('continuation', 2)",384,330,0.3007288629811595
+current_20260930_20261011,phase+age_band,"('continuation', 3)",121,117,0.20779768598469744
+current_20260930_20261011,phase+age_band,"('left_boundary', 2)",54,56,0.23855369376314983
+current_20260930_20261011,phase+age_band,"('left_boundary', 3)",18,23,0.21049652170944805
+current_20260930_20261011,phase+age_band,"('onset', 0)",102,89,0.5756756052350835
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'entertainment')",10,16,1.1187805048565054
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'food_dining')",10,8,0.4829108584636546
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'gas_transport')",36,28,0.07927959169208824
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'grocery_net')",9,5,0.7319836937553753
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'grocery_pos')",87,77,0.15981491483239676
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'health_fitness')",9,8,0.7026638857069352
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'home')",13,7,0.8701591894792958
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'kids_pets')",13,16,0.8907079344791965
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'misc_net')",54,42,0.2867271580372222
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'misc_pos')",13,20,0.8524242093541914
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'personal_care')",14,12,0.30418616040725466
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'shopping_net')",82,72,0.12441792957248707
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'shopping_pos')",48,34,0.3259184777379147
+current_20260930_20261011,phase+age_band+category,"('continuation', 1, 'travel')",9,9,2.5947125725432953
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'entertainment')",13,14,0.5496561642588963
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'food_dining')",10,10,0.35889308377887796
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'gas_transport')",20,42,0.08574403755269126
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'grocery_net')",2,7,0.6123091672082155
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'grocery_pos')",80,54,0.11896822310966856
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'health_fitness')",16,5,0.7327430782304307
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'home')",21,9,0.8991382813434026
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'kids_pets')",6,13,0.7128471848803256
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'misc_net')",41,36,0.08506504162670604
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'misc_pos')",14,16,1.0066426940159334
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'personal_care')",14,9,0.10802088054148855
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'shopping_net')",99,69,0.28912910850003204
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'shopping_pos')",42,40,0.35482721972281384
+current_20260930_20261011,phase+age_band+category,"('continuation', 2, 'travel')",6,6,1.5341105723063553
+current_20260930_20261011,phase+age_band+category,"('continuation', 3, 'entertainment')",5,6,1.012798101808254
+current_20260930_20261011,phase+age_band+category,"('continuation', 3, 'gas_transport')",3,10,0.0984887126399642
+current_20260930_20261011,phase+age_band+category,"('continuation', 3, 'grocery_pos')",13,26,0.1531165731929592
+current_20260930_20261011,phase+age_band+category,"('continuation', 3, 'health_fitness')",6,1,0.11151667840683077
+current_20260930_20261011,phase+age_band+category,"('continuation', 3, 'home')",15,5,0.898241062299694
+current_20260930_20261011,phase+age_band+category,"('continuation', 3, 'kids_pets')",11,4,0.46291801046115105
+current_20260930_20261011,phase+age_band+category,"('continuation', 3, 'misc_net')",11,13,0.22541709175704222
+current_20260930_20261011,phase+age_band+category,"('continuation', 3, 'personal_care')",8,6,0.2892819053840696
+current_20260930_20261011,phase+age_band+category,"('continuation', 3, 'shopping_net')",22,28,0.45422958854585277
+current_20260930_20261011,phase+age_band+category,"('continuation', 3, 'shopping_pos')",17,10,0.2906030457349355
+current_20260930_20261011,phase+age_band+category,"('continuation', 3, 'travel')",4,1,1.7046579248938094
+current_20260930_20261011,phase+age_band+category,"('left_boundary', 2, 'gas_transport')",2,2,0.012512852528756432
+current_20260930_20261011,phase+age_band+category,"('left_boundary', 2, 'grocery_net')",3,1,0.017872605259005313
+current_20260930_20261011,phase+age_band+category,"('left_boundary', 2, 'grocery_pos')",8,21,0.13610727365800676
+current_20260930_20261011,phase+age_band+category,"('left_boundary', 2, 'misc_net')",9,4,0.34711634222262755
+current_20260930_20261011,phase+age_band+category,"('left_boundary', 2, 'shopping_net')",21,17,0.4714181092633561
+current_20260930_20261011,phase+age_band+category,"('left_boundary', 2, 'shopping_pos')",5,8,0.5173281475571232
+current_20260930_20261011,phase+age_band+category,"('left_boundary', 3, 'grocery_pos')",4,9,0.12321539174081177
+current_20260930_20261011,phase+age_band+category,"('left_boundary', 3, 'misc_net')",2,2,0.6628991979995419
+current_20260930_20261011,phase+age_band+category,"('left_boundary', 3, 'shopping_net')",7,2,0.44278038254174273
+current_20260930_20261011,phase+age_band+category,"('left_boundary', 3, 'shopping_pos')",1,4,0.3092512636669346
+current_20260930_20261011,phase+age_band+category,"('left_boundary', 3, 'travel')",2,1,0.9090167941451903
+current_20260930_20261011,phase+age_band+category,"('onset', 0, 'entertainment')",2,3,1.4065011029295045
+current_20260930_20261011,phase+age_band+category,"('onset', 0, 'food_dining')",3,2,0.6101965861843412
+current_20260930_20261011,phase+age_band+category,"('onset', 0, 'gas_transport')",10,11,0.13476875457046203
+current_20260930_20261011,phase+age_band+category,"('onset', 0, 'grocery_net')",1,2,0.11906586095289762
+current_20260930_20261011,phase+age_band+category,"('onset', 0, 'grocery_pos')",44,21,0.1786397157591717
+current_20260930_20261011,phase+age_band+category,"('onset', 0, 'health_fitness')",2,1,0.41476183368999
+current_20260930_20261011,phase+age_band+category,"('onset', 0, 'kids_pets')",1,4,0.26223560764004483
+current_20260930_20261011,phase+age_band+category,"('onset', 0, 'misc_net')",11,9,0.8636037419359501
+current_20260930_20261011,phase+age_band+category,"('onset', 0, 'misc_pos')",3,2,1.0600153640891685
+current_20260930_20261011,phase+age_band+category,"('onset', 0, 'personal_care')",1,7,0.4051775259827196
+current_20260930_20261011,phase+age_band+category,"('onset', 0, 'shopping_net')",17,4,0.358949809519374
+current_20260930_20261011,phase+age_band+category,"('onset', 0, 'shopping_pos')",7,19,0.6554292290707981
+old_20260930_20261012,phase,"('continuation',)",912,1118,0.1875136916944709
+old_20260930_20261012,phase,"('left_boundary',)",72,51,0.3109786064885772
+old_20260930_20261012,phase,"('onset',)",102,123,0.5438504984241954
+old_20260930_20261012,phase+age_band,"('continuation', 1)",407,477,0.2237304744119456
+old_20260930_20261012,phase+age_band,"('continuation', 2)",384,468,0.1899568524167264
+old_20260930_20261012,phase+age_band,"('continuation', 3)",121,173,0.07541300697514924
+old_20260930_20261012,phase+age_band,"('left_boundary', 2)",54,34,0.3867850849983032
+old_20260930_20261012,phase+age_band,"('left_boundary', 3)",18,17,0.19974264178118192
+old_20260930_20261012,phase+age_band,"('onset', 0)",102,123,0.5438504984241954
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'entertainment')",10,18,1.0527310303153323
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'food_dining')",10,8,0.3829601630945428
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'gas_transport')",36,48,0.03965311206437132
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'grocery_net')",9,15,0.868618761366527
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'grocery_pos')",87,113,0.13916856981095102
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'health_fitness')",9,10,0.5646644883760821
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'home')",13,16,0.6994232179420579
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'kids_pets')",13,18,0.6764310187106196
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'misc_net')",54,38,0.20053835976898757
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'misc_pos')",13,24,0.6259377141721273
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'personal_care')",14,15,0.17690706357600053
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'shopping_net')",82,90,0.1939125376050184
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'shopping_pos')",48,51,0.41361825319244255
+old_20260930_20261012,phase+age_band+category,"('continuation', 1, 'travel')",9,13,1.27781789118507
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'entertainment')",13,19,0.28484881125264694
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'food_dining')",10,10,0.857978828443141
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'gas_transport')",20,46,0.21834673723383366
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'grocery_net')",2,7,0.2131182947036556
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'grocery_pos')",80,118,0.0656136367169654
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'health_fitness')",16,6,0.24320432182196083
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'home')",21,15,0.5426617008273311
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'kids_pets')",6,19,0.4857172747859425
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'misc_net')",41,49,0.20774694776734168
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'misc_pos')",14,13,0.9223817208210537
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'personal_care')",14,17,0.31312234049949356
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'shopping_net')",99,109,0.17867059350814762
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'shopping_pos')",42,32,0.2581695952501711
+old_20260930_20261012,phase+age_band+category,"('continuation', 2, 'travel')",6,8,1.5926412271941042
+old_20260930_20261012,phase+age_band+category,"('continuation', 3, 'entertainment')",5,5,0.9617187410554412
+old_20260930_20261012,phase+age_band+category,"('continuation', 3, 'food_dining')",5,5,0.41061246578941835
+old_20260930_20261012,phase+age_band+category,"('continuation', 3, 'gas_transport')",3,19,0.07120938376940862
+old_20260930_20261012,phase+age_band+category,"('continuation', 3, 'grocery_pos')",13,43,0.33238291439120854
+old_20260930_20261012,phase+age_band+category,"('continuation', 3, 'health_fitness')",6,3,0.17216673031935717
+old_20260930_20261012,phase+age_band+category,"('continuation', 3, 'home')",15,1,0.7481044079192734
+old_20260930_20261012,phase+age_band+category,"('continuation', 3, 'kids_pets')",11,6,0.623169826528077
+old_20260930_20261012,phase+age_band+category,"('continuation', 3, 'misc_net')",11,20,0.24711998439394323
+old_20260930_20261012,phase+age_band+category,"('continuation', 3, 'misc_pos')",1,7,0.24813364635747215
+old_20260930_20261012,phase+age_band+category,"('continuation', 3, 'personal_care')",8,3,0.25529226139183026
+old_20260930_20261012,phase+age_band+category,"('continuation', 3, 'shopping_net')",22,42,0.27541136090780033
+old_20260930_20261012,phase+age_band+category,"('continuation', 3, 'shopping_pos')",17,14,0.3859585247052183
+old_20260930_20261012,phase+age_band+category,"('continuation', 3, 'travel')",4,1,2.055195024547161
+old_20260930_20261012,phase+age_band+category,"('left_boundary', 2, 'food_dining')",1,4,2.362454758774312
+old_20260930_20261012,phase+age_band+category,"('left_boundary', 2, 'gas_transport')",2,2,0.09964611087626771
+old_20260930_20261012,phase+age_band+category,"('left_boundary', 2, 'grocery_pos')",8,10,0.2690637968065171
+old_20260930_20261012,phase+age_band+category,"('left_boundary', 2, 'kids_pets')",2,1,0.5181653300096599
+old_20260930_20261012,phase+age_band+category,"('left_boundary', 2, 'misc_net')",9,4,0.4471207794999224
+old_20260930_20261012,phase+age_band+category,"('left_boundary', 2, 'shopping_net')",21,8,0.5377009316806274
+old_20260930_20261012,phase+age_band+category,"('left_boundary', 2, 'shopping_pos')",5,2,1.4029032095286178
+old_20260930_20261012,phase+age_band+category,"('left_boundary', 3, 'grocery_pos')",4,2,0.1325941657905373
+old_20260930_20261012,phase+age_band+category,"('left_boundary', 3, 'misc_net')",2,4,0.544425342849418
+old_20260930_20261012,phase+age_band+category,"('left_boundary', 3, 'shopping_net')",7,3,0.14915324191253929
+old_20260930_20261012,phase+age_band+category,"('left_boundary', 3, 'shopping_pos')",1,1,0.1670956649548061
+old_20260930_20261012,phase+age_band+category,"('left_boundary', 3, 'travel')",2,1,0.020879184339471356
+old_20260930_20261012,phase+age_band+category,"('onset', 0, 'entertainment')",2,7,0.9241361257593169
+old_20260930_20261012,phase+age_band+category,"('onset', 0, 'food_dining')",3,3,0.4362860720430657
+old_20260930_20261012,phase+age_band+category,"('onset', 0, 'gas_transport')",10,14,0.10819718687809515
+old_20260930_20261012,phase+age_band+category,"('onset', 0, 'grocery_net')",1,4,0.8783524282808429
+old_20260930_20261012,phase+age_band+category,"('onset', 0, 'grocery_pos')",44,26,0.1106350821175245
+old_20260930_20261012,phase+age_band+category,"('onset', 0, 'health_fitness')",2,1,1.1155399444102445
+old_20260930_20261012,phase+age_band+category,"('onset', 0, 'kids_pets')",1,9,0.6547308972842378
+old_20260930_20261012,phase+age_band+category,"('onset', 0, 'misc_net')",11,9,0.5246939531800032
+old_20260930_20261012,phase+age_band+category,"('onset', 0, 'misc_pos')",3,5,0.6705753054649604
+old_20260930_20261012,phase+age_band+category,"('onset', 0, 'personal_care')",1,8,0.37433887205950356
+old_20260930_20261012,phase+age_band+category,"('onset', 0, 'shopping_net')",17,18,0.4384482382064796
+old_20260930_20261012,phase+age_band+category,"('onset', 0, 'shopping_pos')",7,13,1.2465657317721002
+current_20260930_20261012,phase,"('continuation',)",912,851,0.12223574894084219
+current_20260930_20261012,phase,"('left_boundary',)",72,87,0.1901834640966033
+current_20260930_20261012,phase,"('onset',)",102,94,0.5520926047543373
+current_20260930_20261012,phase+age_band,"('continuation', 1)",407,365,0.12052461085550775
+current_20260930_20261012,phase+age_band,"('continuation', 2)",384,357,0.16912770571823177
+current_20260930_20261012,phase+age_band,"('continuation', 3)",121,129,0.12518813252763572
+current_20260930_20261012,phase+age_band,"('left_boundary', 2)",54,53,0.1730003317468255
+current_20260930_20261012,phase+age_band,"('left_boundary', 3)",18,34,0.12845940510445195
+current_20260930_20261012,phase+age_band,"('onset', 0)",102,94,0.5520926047543373
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'entertainment')",10,15,1.1194200882149206
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'food_dining')",10,6,0.4095355349844344
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'gas_transport')",36,36,0.059839402967966526
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'grocery_net')",9,10,0.93575192982932
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'grocery_pos')",87,72,0.15146530110255993
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'health_fitness')",9,8,0.8028558420516111
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'home')",13,13,0.5330476297936796
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'kids_pets')",13,13,0.5477100226458037
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'misc_net')",54,32,0.187447016645834
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'misc_pos')",13,16,0.45359548434873714
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'personal_care')",14,10,0.0922068937706564
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'shopping_net')",82,76,0.16162182975487444
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'shopping_pos')",48,50,0.35566816445704846
+current_20260930_20261012,phase+age_band+category,"('continuation', 1, 'travel')",9,8,2.098753940549647
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'entertainment')",13,14,0.4235245172139842
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'food_dining')",10,10,0.5894537812171501
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'gas_transport')",20,32,0.19241904902087378
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'grocery_net')",2,5,0.23858229854517546
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'grocery_pos')",80,89,0.05637481080400804
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'health_fitness')",16,2,0.13134602130218787
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'home')",21,6,0.5877403043089341
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'kids_pets')",6,14,0.3996562888935556
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'misc_net')",41,31,0.25905807789249835
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'misc_pos')",14,14,0.7608548452852045
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'personal_care')",14,10,0.3855258786259878
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'shopping_net')",99,100,0.2844363221732034
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'shopping_pos')",42,25,0.38998852568747333
+current_20260930_20261012,phase+age_band+category,"('continuation', 2, 'travel')",6,5,2.0150869950223766
+current_20260930_20261012,phase+age_band+category,"('continuation', 3, 'entertainment')",5,7,0.5219679962390988
+current_20260930_20261012,phase+age_band+category,"('continuation', 3, 'gas_transport')",3,11,0.09218408991113855
+current_20260930_20261012,phase+age_band+category,"('continuation', 3, 'grocery_pos')",13,25,0.42653497948789854
+current_20260930_20261012,phase+age_band+category,"('continuation', 3, 'health_fitness')",6,2,0.32438166848833555
+current_20260930_20261012,phase+age_band+category,"('continuation', 3, 'home')",15,1,0.3092210995182829
+current_20260930_20261012,phase+age_band+category,"('continuation', 3, 'kids_pets')",11,3,1.5184716794911224
+current_20260930_20261012,phase+age_band+category,"('continuation', 3, 'misc_net')",11,13,0.28894376643717645
+current_20260930_20261012,phase+age_band+category,"('continuation', 3, 'misc_pos')",1,5,0.28646636245281193
+current_20260930_20261012,phase+age_band+category,"('continuation', 3, 'personal_care')",8,7,0.14099449574902617
+current_20260930_20261012,phase+age_band+category,"('continuation', 3, 'shopping_net')",22,34,0.1838834756006845
+current_20260930_20261012,phase+age_band+category,"('continuation', 3, 'shopping_pos')",17,18,0.3113941880468644
+current_20260930_20261012,phase+age_band+category,"('continuation', 3, 'travel')",4,1,0.3590556276562949
+current_20260930_20261012,phase+age_band+category,"('left_boundary', 2, 'food_dining')",1,2,2.29982969551057
+current_20260930_20261012,phase+age_band+category,"('left_boundary', 2, 'gas_transport')",2,5,0.011452017742160488
+current_20260930_20261012,phase+age_band+category,"('left_boundary', 2, 'grocery_pos')",8,12,0.3853503794820416
+current_20260930_20261012,phase+age_band+category,"('left_boundary', 2, 'misc_net')",9,6,0.4906539280904261
+current_20260930_20261012,phase+age_band+category,"('left_boundary', 2, 'shopping_net')",21,14,0.32032491296673926
+current_20260930_20261012,phase+age_band+category,"('left_boundary', 2, 'shopping_pos')",5,10,0.10325332706882268
+current_20260930_20261012,phase+age_band+category,"('left_boundary', 3, 'food_dining')",1,1,0.47418567021765085
+current_20260930_20261012,phase+age_band+category,"('left_boundary', 3, 'grocery_net')",1,2,0.06070477836647023
+current_20260930_20261012,phase+age_band+category,"('left_boundary', 3, 'grocery_pos')",4,3,0.2006543120264401
+current_20260930_20261012,phase+age_band+category,"('left_boundary', 3, 'misc_net')",2,6,0.25519253500100586
+current_20260930_20261012,phase+age_band+category,"('left_boundary', 3, 'shopping_net')",7,10,0.11954474743823011
+current_20260930_20261012,phase+age_band+category,"('left_boundary', 3, 'shopping_pos')",1,3,0.23939187693703046
+current_20260930_20261012,phase+age_band+category,"('left_boundary', 3, 'travel')",2,2,0.36673709497929263
+current_20260930_20261012,phase+age_band+category,"('onset', 0, 'entertainment')",2,2,0.7847317876777611
+current_20260930_20261012,phase+age_band+category,"('onset', 0, 'food_dining')",3,3,0.568770932397038
+current_20260930_20261012,phase+age_band+category,"('onset', 0, 'gas_transport')",10,10,0.13149624359928425
+current_20260930_20261012,phase+age_band+category,"('onset', 0, 'grocery_net')",1,3,0.9805461992828016
+current_20260930_20261012,phase+age_band+category,"('onset', 0, 'grocery_pos')",44,25,0.0780472462294158
+current_20260930_20261012,phase+age_band+category,"('onset', 0, 'health_fitness')",2,4,0.3434032618558376
+current_20260930_20261012,phase+age_band+category,"('onset', 0, 'kids_pets')",1,4,0.18592669708937032
+current_20260930_20261012,phase+age_band+category,"('onset', 0, 'misc_net')",11,5,0.6768954371097282
+current_20260930_20261012,phase+age_band+category,"('onset', 0, 'misc_pos')",3,7,0.5392619655655969
+current_20260930_20261012,phase+age_band+category,"('onset', 0, 'personal_care')",1,4,0.3797208995797544
+current_20260930_20261012,phase+age_band+category,"('onset', 0, 'shopping_net')",17,14,0.2616392941567575
+current_20260930_20261012,phase+age_band+category,"('onset', 0, 'shopping_pos')",7,8,1.1052849686112856
+old_20261001_20261011,phase,"('continuation',)",912,948,0.13344000032500125
+old_20261001_20261011,phase,"('left_boundary',)",72,23,0.32351406789241943
+old_20261001_20261011,phase,"('onset',)",102,96,0.3114704663888254
+old_20261001_20261011,phase+age_band,"('continuation', 1)",407,386,0.09882967005027216
+old_20261001_20261011,phase+age_band,"('continuation', 2)",384,378,0.15855994236063342
+old_20261001_20261011,phase+age_band,"('continuation', 3)",121,159,0.153447121471231
+old_20261001_20261011,phase+age_band,"('left_boundary', 2)",54,22,0.4341496690328142
+old_20261001_20261011,phase+age_band,"('left_boundary', 3)",18,1,0.6319556817471174
+old_20261001_20261011,phase+age_band,"('onset', 0)",102,96,0.3114704663888254
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'entertainment')",10,21,1.0492473427566644
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'food_dining')",10,11,0.4099979868187158
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'gas_transport')",36,27,0.15303630034046303
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'grocery_net')",9,5,0.460524938934296
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'grocery_pos')",87,64,0.0836023839908229
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'health_fitness')",9,8,0.5663320665802017
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'home')",13,9,0.6194882874234078
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'kids_pets')",13,20,0.09660569091213377
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'misc_net')",54,54,0.1900354582712147
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'misc_pos')",13,25,0.5300719915428209
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'personal_care')",14,12,0.13456085740132523
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'shopping_net')",82,70,0.15854738153717518
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'shopping_pos')",48,55,0.27000311802633137
+old_20261001_20261011,phase+age_band+category,"('continuation', 1, 'travel')",9,5,0.07155339274801682
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'entertainment')",13,19,0.5484428150389982
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'food_dining')",10,10,0.8704176737541619
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'gas_transport')",20,30,0.13792746664750427
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'grocery_net')",2,4,0.020986594518675496
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'grocery_pos')",80,67,0.23863826013322686
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'health_fitness')",16,4,0.6483735551941453
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'home')",21,14,0.28833395418137475
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'kids_pets')",6,24,0.1652475843002658
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'misc_net')",41,54,0.20520446768303244
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'misc_pos')",14,18,0.24180736208740158
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'personal_care')",14,13,0.24239329003708251
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'shopping_net')",99,65,0.24280252260330565
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'shopping_pos')",42,47,0.20328201634008214
+old_20261001_20261011,phase+age_band+category,"('continuation', 2, 'travel')",6,9,0.38663428109492276
+old_20261001_20261011,phase+age_band+category,"('continuation', 3, 'entertainment')",5,6,1.196962125196898
+old_20261001_20261011,phase+age_band+category,"('continuation', 3, 'food_dining')",5,2,0.3923696130110388
+old_20261001_20261011,phase+age_band+category,"('continuation', 3, 'gas_transport')",3,16,0.1543231961834351
+old_20261001_20261011,phase+age_band+category,"('continuation', 3, 'grocery_pos')",13,20,0.356517186592386
+old_20261001_20261011,phase+age_band+category,"('continuation', 3, 'health_fitness')",6,3,0.2399697821975354
+old_20261001_20261011,phase+age_band+category,"('continuation', 3, 'home')",15,7,0.24592922897212688
+old_20261001_20261011,phase+age_band+category,"('continuation', 3, 'kids_pets')",11,3,0.997000008908194
+old_20261001_20261011,phase+age_band+category,"('continuation', 3, 'misc_net')",11,23,0.20069731724880902
+old_20261001_20261011,phase+age_band+category,"('continuation', 3, 'misc_pos')",1,9,1.0855773302369756
+old_20261001_20261011,phase+age_band+category,"('continuation', 3, 'personal_care')",8,8,0.33905857741878254
+old_20261001_20261011,phase+age_band+category,"('continuation', 3, 'shopping_net')",22,37,0.5069316211885168
+old_20261001_20261011,phase+age_band+category,"('continuation', 3, 'shopping_pos')",17,17,0.4784498701589155
+old_20261001_20261011,phase+age_band+category,"('continuation', 3, 'travel')",4,3,0.04622618415232053
+old_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'entertainment')",1,1,0.5556665546496118
+old_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'food_dining')",1,1,2.4451159233729376
+old_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'gas_transport')",2,1,0.008026887692777167
+old_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'grocery_net')",3,1,0.00830810417179297
+old_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'grocery_pos')",8,7,0.2161465034425937
+old_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'kids_pets')",2,1,0.5650186907304214
+old_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'misc_net')",9,2,0.505356281685911
+old_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'shopping_net')",21,3,0.510319251656946
+old_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'shopping_pos')",5,1,0.30813074807338503
+old_20261001_20261011,phase+age_band+category,"('left_boundary', 3, 'misc_net')",2,1,0.2279250548170325
+old_20261001_20261011,phase+age_band+category,"('onset', 0, 'entertainment')",2,9,0.7287424464997835
+old_20261001_20261011,phase+age_band+category,"('onset', 0, 'food_dining')",3,2,0.8601692568428922
+old_20261001_20261011,phase+age_band+category,"('onset', 0, 'gas_transport')",10,9,0.07000125471787759
+old_20261001_20261011,phase+age_band+category,"('onset', 0, 'grocery_net')",1,1,0.41212401955072986
+old_20261001_20261011,phase+age_band+category,"('onset', 0, 'grocery_pos')",44,22,0.1725994005464319
+old_20261001_20261011,phase+age_band+category,"('onset', 0, 'health_fitness')",2,3,0.1725582054890777
+old_20261001_20261011,phase+age_band+category,"('onset', 0, 'kids_pets')",1,2,0.48116755178032206
+old_20261001_20261011,phase+age_band+category,"('onset', 0, 'misc_net')",11,10,1.0073142193760605
+old_20261001_20261011,phase+age_band+category,"('onset', 0, 'misc_pos')",3,4,0.9490249034561605
+old_20261001_20261011,phase+age_band+category,"('onset', 0, 'personal_care')",1,5,0.29340935283042846
+old_20261001_20261011,phase+age_band+category,"('onset', 0, 'shopping_net')",17,10,0.4167940280545767
+old_20261001_20261011,phase+age_band+category,"('onset', 0, 'shopping_pos')",7,14,0.3861579827320969
+current_20261001_20261011,phase,"('continuation',)",912,738,0.10293818522527866
+current_20261001_20261011,phase,"('left_boundary',)",72,98,0.2692524542076416
+current_20261001_20261011,phase,"('onset',)",102,84,0.273509816275575
+current_20261001_20261011,phase+age_band,"('continuation', 1)",407,332,0.08584246386306929
+current_20261001_20261011,phase+age_band,"('continuation', 2)",384,309,0.23474742230526133
+current_20261001_20261011,phase+age_band,"('continuation', 3)",121,97,0.2504468633561453
+current_20261001_20261011,phase+age_band,"('left_boundary', 2)",54,71,0.3415335747058496
+current_20261001_20261011,phase+age_band,"('left_boundary', 3)",18,27,0.12538916770994202
+current_20261001_20261011,phase+age_band,"('onset', 0)",102,84,0.273509816275575
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'entertainment')",10,17,1.1002062803773403
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'food_dining')",10,9,0.9059466450543464
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'gas_transport')",36,27,0.18997548713312107
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'grocery_net')",9,3,0.39415808011049275
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'grocery_pos')",87,64,0.1330836661965734
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'health_fitness')",9,6,0.09239724960725403
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'home')",13,5,0.5848100829343678
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'kids_pets')",13,15,0.13849192945387312
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'misc_net')",54,51,0.2559767077550009
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'misc_pos')",13,22,0.5493927002804138
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'personal_care')",14,6,0.0929614484893515
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'shopping_net')",82,58,0.13680748173613333
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'shopping_pos')",48,45,0.33512254801234953
+current_20261001_20261011,phase+age_band+category,"('continuation', 1, 'travel')",9,4,0.0710270025474459
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'entertainment')",13,17,0.825799149394125
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'food_dining')",10,11,0.8473127096614673
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'gas_transport')",20,25,0.13442835026604777
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'grocery_net')",2,7,0.23786644893928688
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'grocery_pos')",80,46,0.10870841052141948
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'health_fitness')",16,5,0.1396957906535196
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'home')",21,11,0.4091847729388562
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'kids_pets')",6,16,0.10467351182209379
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'misc_net')",41,43,0.17497181699269013
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'misc_pos')",14,14,0.5758280169435577
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'personal_care')",14,13,0.23142851011833226
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'shopping_net')",99,53,0.2130508052199997
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'shopping_pos')",42,42,0.222538709622406
+current_20261001_20261011,phase+age_band+category,"('continuation', 2, 'travel')",6,6,0.09655148324737732
+current_20261001_20261011,phase+age_band+category,"('continuation', 3, 'entertainment')",5,3,0.48690500177955337
+current_20261001_20261011,phase+age_band+category,"('continuation', 3, 'food_dining')",5,1,0.234567525392232
+current_20261001_20261011,phase+age_band+category,"('continuation', 3, 'gas_transport')",3,10,0.09711918220249914
+current_20261001_20261011,phase+age_band+category,"('continuation', 3, 'grocery_pos')",13,13,0.4536221749994179
+current_20261001_20261011,phase+age_band+category,"('continuation', 3, 'health_fitness')",6,2,0.2046137942637782
+current_20261001_20261011,phase+age_band+category,"('continuation', 3, 'home')",15,2,0.5759583385623492
+current_20261001_20261011,phase+age_band+category,"('continuation', 3, 'kids_pets')",11,2,0.6578782252271512
+current_20261001_20261011,phase+age_band+category,"('continuation', 3, 'misc_net')",11,17,0.24565771553588905
+current_20261001_20261011,phase+age_band+category,"('continuation', 3, 'misc_pos')",1,3,0.8023640613481066
+current_20261001_20261011,phase+age_band+category,"('continuation', 3, 'personal_care')",8,5,0.5247694259982725
+current_20261001_20261011,phase+age_band+category,"('continuation', 3, 'shopping_net')",22,22,0.6309746409264294
+current_20261001_20261011,phase+age_band+category,"('continuation', 3, 'shopping_pos')",17,12,0.17164646995641775
+current_20261001_20261011,phase+age_band+category,"('continuation', 3, 'travel')",4,1,0.019029602759965465
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'entertainment')",1,1,0.22772895038084484
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'food_dining')",1,1,2.157922975132034
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'gas_transport')",2,3,0.01656668357861507
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'grocery_net')",3,3,0.01550725155233839
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'grocery_pos')",8,15,0.041428887379547814
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'kids_pets')",2,2,0.5452578179258919
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'misc_net')",9,14,0.38378887255181904
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'shopping_net')",21,17,0.48678684317396465
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'shopping_pos')",5,11,0.18730192147078073
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 2, 'travel')",2,1,0.008932729470712244
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 3, 'grocery_pos')",4,5,0.18332935809245915
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 3, 'misc_net')",2,8,0.2902351564788964
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 3, 'shopping_net')",7,5,0.12000095381281164
+current_20261001_20261011,phase+age_band+category,"('left_boundary', 3, 'shopping_pos')",1,6,0.30202955764248923
+current_20261001_20261011,phase+age_band+category,"('onset', 0, 'entertainment')",2,5,0.6499910847243551
+current_20261001_20261011,phase+age_band+category,"('onset', 0, 'food_dining')",3,4,0.7592253044862278
+current_20261001_20261011,phase+age_band+category,"('onset', 0, 'gas_transport')",10,8,0.08074883155633068
+current_20261001_20261011,phase+age_band+category,"('onset', 0, 'grocery_net')",1,1,0.41212401955072986
+current_20261001_20261011,phase+age_band+category,"('onset', 0, 'grocery_pos')",44,18,0.12889961671383368
+current_20261001_20261011,phase+age_band+category,"('onset', 0, 'kids_pets')",1,1,0.8384583549608009
+current_20261001_20261011,phase+age_band+category,"('onset', 0, 'misc_net')",11,11,1.1676942462971276
+current_20261001_20261011,phase+age_band+category,"('onset', 0, 'misc_pos')",3,2,0.9368972371327049
+current_20261001_20261011,phase+age_band+category,"('onset', 0, 'personal_care')",1,6,0.3194761431363563
+current_20261001_20261011,phase+age_band+category,"('onset', 0, 'shopping_net')",17,5,0.8678026777770736
+current_20261001_20261011,phase+age_band+category,"('onset', 0, 'shopping_pos')",7,18,0.19319935415480527
+old_20261001_20261012,phase,"('continuation',)",912,1064,0.12253890394490288
+old_20261001_20261012,phase,"('left_boundary',)",72,51,0.27395005623140645
+old_20261001_20261012,phase,"('onset',)",102,117,0.20944041061540775
+old_20261001_20261012,phase+age_band,"('continuation', 1)",407,451,0.1105855901785632
+old_20261001_20261012,phase+age_band,"('continuation', 2)",384,448,0.1914318198282824
+old_20261001_20261012,phase+age_band,"('continuation', 3)",121,165,0.14339685740925467
+old_20261001_20261012,phase+age_band,"('left_boundary', 2)",54,34,0.3001168587740421
+old_20261001_20261012,phase+age_band,"('left_boundary', 3)",18,17,0.23595699897570788
+old_20261001_20261012,phase+age_band,"('onset', 0)",102,117,0.20944041061540775
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'entertainment')",10,24,1.343329003957462
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'food_dining')",10,7,0.7332389523577991
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'gas_transport')",36,45,0.0861889282093849
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'grocery_net')",9,11,0.03952860940450923
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'grocery_pos')",87,91,0.11601426734425713
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'health_fitness')",9,10,0.6190164569232838
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'home')",13,14,0.3595517248500192
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'kids_pets')",13,17,0.21461259309495503
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'misc_net')",54,46,0.16628334872696493
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'misc_pos')",13,29,0.40415975575972896
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'personal_care')",14,7,0.3009319985377582
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'shopping_net')",82,93,0.11887379889534877
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'shopping_pos')",48,47,0.16053585399475057
+old_20261001_20261012,phase+age_band+category,"('continuation', 1, 'travel')",9,10,0.44548286479563876
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'entertainment')",13,22,0.7720168323628732
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'food_dining')",10,7,0.848398788979754
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'gas_transport')",20,46,0.14210799597774768
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'grocery_net')",2,8,0.25387945305161713
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'grocery_pos')",80,97,0.1424838247426853
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'health_fitness')",16,8,0.6111671433576953
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'home')",21,9,0.3207877959878644
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'kids_pets')",6,17,0.27139099279945345
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'misc_net')",41,54,0.18245824918546735
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'misc_pos')",14,17,0.5040481550335084
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'personal_care')",14,16,0.2206572662963357
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'shopping_net')",99,95,0.16597222338749776
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'shopping_pos')",42,42,0.2995495734996528
+old_20261001_20261012,phase+age_band+category,"('continuation', 2, 'travel')",6,10,0.45250587666871844
+old_20261001_20261012,phase+age_band+category,"('continuation', 3, 'entertainment')",5,6,0.7663413791551724
+old_20261001_20261012,phase+age_band+category,"('continuation', 3, 'food_dining')",5,3,1.0830353390927487
+old_20261001_20261012,phase+age_band+category,"('continuation', 3, 'gas_transport')",3,16,0.09302660678230174
+old_20261001_20261012,phase+age_band+category,"('continuation', 3, 'grocery_pos')",13,42,0.42634282638649706
+old_20261001_20261012,phase+age_band+category,"('continuation', 3, 'health_fitness')",6,3,0.03683027306377968
+old_20261001_20261012,phase+age_band+category,"('continuation', 3, 'home')",15,3,0.6733462637226801
+old_20261001_20261012,phase+age_band+category,"('continuation', 3, 'kids_pets')",11,6,0.41096937358632557
+old_20261001_20261012,phase+age_band+category,"('continuation', 3, 'misc_net')",11,26,0.2194789444404726
+old_20261001_20261012,phase+age_band+category,"('continuation', 3, 'misc_pos')",1,6,0.5312566435382423
+old_20261001_20261012,phase+age_band+category,"('continuation', 3, 'personal_care')",8,2,0.6893721360152996
+old_20261001_20261012,phase+age_band+category,"('continuation', 3, 'shopping_net')",22,35,0.4598981272053321
+old_20261001_20261012,phase+age_band+category,"('continuation', 3, 'shopping_pos')",17,14,0.37343567844544756
+old_20261001_20261012,phase+age_band+category,"('continuation', 3, 'travel')",4,1,0.03713822538278513
+old_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'entertainment')",1,1,0.4798891798730658
+old_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'food_dining')",1,2,2.4217935600983274
+old_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'gas_transport')",2,3,0.0595996552448
+old_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'grocery_pos')",8,9,0.317129208964815
+old_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'kids_pets')",2,1,0.5181653300096599
+old_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'misc_net')",9,4,0.5256546787693362
+old_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'shopping_net')",21,7,0.33750395271459943
+old_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'shopping_pos')",5,3,1.3916249963353111
+old_20261001_20261012,phase+age_band+category,"('left_boundary', 3, 'grocery_pos')",4,2,0.34495713024929564
+old_20261001_20261012,phase+age_band+category,"('left_boundary', 3, 'misc_net')",2,4,0.641033733792647
+old_20261001_20261012,phase+age_band+category,"('left_boundary', 3, 'shopping_net')",7,3,0.09112178624719648
+old_20261001_20261012,phase+age_band+category,"('left_boundary', 3, 'shopping_pos')",1,1,0.4244969392677346
+old_20261001_20261012,phase+age_band+category,"('left_boundary', 3, 'travel')",2,1,0.02728369517643124
+old_20261001_20261012,phase+age_band+category,"('onset', 0, 'entertainment')",2,8,0.44067049129670227
+old_20261001_20261012,phase+age_band+category,"('onset', 0, 'food_dining')",3,1,1.9579984400894623
+old_20261001_20261012,phase+age_band+category,"('onset', 0, 'gas_transport')",10,11,0.17728774827266247
+old_20261001_20261012,phase+age_band+category,"('onset', 0, 'grocery_net')",1,4,0.45423012945367486
+old_20261001_20261012,phase+age_band+category,"('onset', 0, 'grocery_pos')",44,29,0.09133777645589933
+old_20261001_20261012,phase+age_band+category,"('onset', 0, 'health_fitness')",2,1,0.20161357236433028
+old_20261001_20261012,phase+age_band+category,"('onset', 0, 'kids_pets')",1,5,0.10710289442972282
+old_20261001_20261012,phase+age_band+category,"('onset', 0, 'misc_net')",11,14,0.40473566494371127
+old_20261001_20261012,phase+age_band+category,"('onset', 0, 'misc_pos')",3,4,0.4384827533426255
+old_20261001_20261012,phase+age_band+category,"('onset', 0, 'personal_care')",1,7,0.5953494116564373
+old_20261001_20261012,phase+age_band+category,"('onset', 0, 'shopping_net')",17,20,0.3350948340825855
+old_20261001_20261012,phase+age_band+category,"('onset', 0, 'shopping_pos')",7,11,0.6519174866000639
+current_20261001_20261012,phase,"('continuation',)",912,839,0.0984309891203396
+current_20261001_20261012,phase,"('left_boundary',)",72,99,0.3386506123781303
+current_20261001_20261012,phase,"('onset',)",102,93,0.19964713171489828
+current_20261001_20261012,phase+age_band,"('continuation', 1)",407,359,0.06470984144420566
+current_20261001_20261012,phase+age_band,"('continuation', 2)",384,356,0.20291314064290256
+current_20261001_20261012,phase+age_band,"('continuation', 3)",121,124,0.08643728341554535
+current_20261001_20261012,phase+age_band,"('left_boundary', 2)",54,57,0.3419790413998576
+current_20261001_20261012,phase+age_band,"('left_boundary', 3)",18,42,0.21975218997670662
+current_20261001_20261012,phase+age_band,"('onset', 0)",102,93,0.19964713171489828
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'entertainment')",10,19,1.2916748485975884
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'food_dining')",10,6,0.5751702933518008
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'gas_transport')",36,32,0.10154149420477233
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'grocery_net')",9,4,0.04520279104559731
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'grocery_pos')",87,65,0.07196718660337517
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'health_fitness')",9,10,0.6418008450569215
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'home')",13,15,0.39079518284109466
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'kids_pets')",13,11,0.2068935463392939
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'misc_net')",54,39,0.20353035558889201
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'misc_pos')",13,17,0.4283937123873457
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'personal_care')",14,7,0.3746814877482419
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'shopping_net')",82,80,0.08431032084659282
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'shopping_pos')",48,45,0.0967156127287829
+current_20261001_20261012,phase+age_band+category,"('continuation', 1, 'travel')",9,9,0.48758802711085303
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'entertainment')",13,15,0.6177656652501358
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'food_dining')",10,3,0.7702898138311496
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'gas_transport')",20,37,0.1388117953936674
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'grocery_net')",2,8,0.1708856009018423
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'grocery_pos')",80,76,0.1468020531341118
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'health_fitness')",16,3,0.10206452776536165
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'home')",21,10,0.28253094632871845
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'kids_pets')",6,17,0.24123059751457882
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'misc_net')",41,33,0.1665623642273453
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'misc_pos')",14,12,0.4095344707957026
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'personal_care')",14,15,0.27811315646324714
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'shopping_net')",99,83,0.17126807987090797
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'shopping_pos')",42,37,0.262141419391701
+current_20261001_20261012,phase+age_band+category,"('continuation', 2, 'travel')",6,7,0.035669212665737145
+current_20261001_20261012,phase+age_band+category,"('continuation', 3, 'entertainment')",5,8,0.778826868204703
+current_20261001_20261012,phase+age_band+category,"('continuation', 3, 'food_dining')",5,2,0.8073782024811855
+current_20261001_20261012,phase+age_band+category,"('continuation', 3, 'gas_transport')",3,10,0.11129242309657411
+current_20261001_20261012,phase+age_band+category,"('continuation', 3, 'grocery_pos')",13,23,0.45536925270812406
+current_20261001_20261012,phase+age_band+category,"('continuation', 3, 'health_fitness')",6,3,0.20623450331006662
+current_20261001_20261012,phase+age_band+category,"('continuation', 3, 'home')",15,2,0.2502607044398417
+current_20261001_20261012,phase+age_band+category,"('continuation', 3, 'kids_pets')",11,2,0.09031415347564291
+current_20261001_20261012,phase+age_band+category,"('continuation', 3, 'misc_net')",11,14,0.27115209353155606
+current_20261001_20261012,phase+age_band+category,"('continuation', 3, 'misc_pos')",1,6,0.7381895674106341
+current_20261001_20261012,phase+age_band+category,"('continuation', 3, 'personal_care')",8,4,0.12245628983250281
+current_20261001_20261012,phase+age_band+category,"('continuation', 3, 'shopping_net')",22,30,0.22576097287662306
+current_20261001_20261012,phase+age_band+category,"('continuation', 3, 'shopping_pos')",17,15,0.3938249638131676
+current_20261001_20261012,phase+age_band+category,"('continuation', 3, 'travel')",4,1,0.03713822538278513
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'entertainment')",1,2,0.11250485891673315
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'food_dining')",1,3,2.413472228279103
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'gas_transport')",2,4,0.08518289227361177
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'grocery_pos')",8,8,0.1099543398459528
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'kids_pets')",2,1,0.5596374499765986
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'misc_net')",9,9,0.26783774442385905
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'shopping_net')",21,13,0.5585215214426005
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 2, 'shopping_pos')",5,10,0.1552965479076729
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 3, 'food_dining')",1,2,0.11675032903880854
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 3, 'grocery_net')",1,2,0.007561136090656872
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 3, 'grocery_pos')",4,4,0.09866946440988207
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 3, 'misc_net')",2,6,0.1868935071096421
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 3, 'shopping_net')",7,10,0.19370203039376294
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 3, 'shopping_pos')",1,4,0.37155541782867224
+current_20261001_20261012,phase+age_band+category,"('left_boundary', 3, 'travel')",2,1,0.016204648722650417
+current_20261001_20261012,phase+age_band+category,"('onset', 0, 'entertainment')",2,4,0.5418420958062351
+current_20261001_20261012,phase+age_band+category,"('onset', 0, 'food_dining')",3,1,1.8695231106012435
+current_20261001_20261012,phase+age_band+category,"('onset', 0, 'gas_transport')",10,8,0.12762871540488935
+current_20261001_20261012,phase+age_band+category,"('onset', 0, 'grocery_net')",1,5,0.21150777451806438
+current_20261001_20261012,phase+age_band+category,"('onset', 0, 'grocery_pos')",44,21,0.1389146641982289
+current_20261001_20261012,phase+age_band+category,"('onset', 0, 'health_fitness')",2,2,0.10732970281128659
+current_20261001_20261012,phase+age_band+category,"('onset', 0, 'kids_pets')",1,3,0.2188322694708647
+current_20261001_20261012,phase+age_band+category,"('onset', 0, 'misc_net')",11,11,0.3507995896370635
+current_20261001_20261012,phase+age_band+category,"('onset', 0, 'misc_pos')",3,5,1.224179906846517
+current_20261001_20261012,phase+age_band+category,"('onset', 0, 'personal_care')",1,3,0.9400972128939159
+current_20261001_20261012,phase+age_band+category,"('onset', 0, 'shopping_net')",17,18,0.2876701992859632
+current_20261001_20261012,phase+age_band+category,"('onset', 0, 'shopping_pos')",7,10,0.49342209995944314

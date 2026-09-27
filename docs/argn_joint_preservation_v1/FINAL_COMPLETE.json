@@ -1,0 +1,14 @@
+{
+  "new_small_head_fits": 8,
+  "new_full_generations": 36,
+  "new_transaction_rows": 7177275,
+  "parent_fits": 2,
+  "generation_seeds_per_final_candidate": 4,
+  "unique_unit_checks": 14,
+  "native_onset_routing_exact_token_positions": 140,
+  "test_events_read": false,
+  "gpu_workers_complete": true,
+  "candidate_promoted_as_novel_method": false,
+  "original_baseline_preserved": true,
+  "bookkeeping_error_recovered": true
+}

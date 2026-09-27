@@ -1,0 +1,9 @@
+fit_seed,arm,both_target_errors_improved,large_costs,passes_preregistered_screen
+20260930,count_only,False,,False
+20260930,hazard_only,False,,False
+20260930,count_hazard,True,,True
+20260930,count_hazard_no_context,True,,True
+20261001,count_only,False,,False
+20261001,hazard_only,True,,True
+20261001,count_hazard,True,,True
+20261001,count_hazard_no_context,True,,True

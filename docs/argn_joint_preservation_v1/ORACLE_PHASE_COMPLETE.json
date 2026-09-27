@@ -1,0 +1,12 @@
+{
+  "source_sha256": "f0d691eb46bf51d665d0329fd1852d351ceda74f8cee5bb947c302378d47bc71",
+  "inputs": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_amount_learning_v1/runs/balanced_shared_20260930/conditional_optimization.parquet": "0f4fd66d013ed320008dd8615947e5c0c0a0f45a6bc4d32204f07959112b4205",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_amount_learning_v1/runs/balanced_shared_20261001/conditional_optimization.parquet": "b5c0c1413d19f7eed1eb4943e7403ec56e0f92d8e05ed8745385c5808facbf97",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_amount_learning_v1/runs/balanced_shared_20260930/conditional_development.parquet": "9cd9fb543bb123567a97f69c97bd05b2363b782bfae15749a71646e563bbe5cf",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_amount_learning_v1/runs/balanced_shared_20261001/conditional_development.parquet": "04df8fc97eec43de8651362fa6b859f5831dc9832cea304fd87be03a60352ec8"
+  },
+  "new_training": 0,
+  "test_events_read": false,
+  "scope": "actual past and actual current label/category/gap"
+}
