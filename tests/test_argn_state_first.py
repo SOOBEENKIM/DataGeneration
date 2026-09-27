@@ -150,3 +150,37 @@ def test_feature_caps_agree_with_native_decoder_tail_replacement(fixture):
             frame = pd.DataFrame({k[len(prefix):]:v for k,v in event.items() if k.startswith(prefix)})
             decoded = _decode_numeric_digit(frame, codec.columns[name]).to_numpy(dtype=float)
             np.testing.assert_allclose(np.minimum(codec.numeric(event, name), cap), np.minimum(decoded, cap))
+
+
+def test_cached_one_step_matches_native_true_prefix_and_has_no_label_leakage(fixture):
+    from benchmarks.argn_frozen_probe import teacher_with_history, one_step, label_probability
+    from mostlyai.engine._tabular.generation import _fix_rare_token_probs, _translate_fixed_probs
+    ts, codec, records, kwargs = fixture
+    masks = _translate_fixed_probs(_fix_rare_token_probs(ts), ts)
+    key = codec.prefixes['event_is_fraud'] + '__cat'
+    for enabled in [False, True]:
+        model = model_class(ts, enabled)(**kwargs).eval()
+        batch = FullHistoryCollator(True, None, torch.device('cpu'))(records)
+        with torch.no_grad():
+            teacher, histories, context = teacher_with_history(model, batch)
+            memory = codec.empty(2)
+            history = recurrent = None
+            for index in range(5):
+                fixed = {k:v[:, index] for k,v in batch.items() if k.startswith('tgt:')}
+                logits, _ = one_step(model, histories[:, index:index+1], torch.from_numpy(memory),
+                                     context, {k:v for k,v in fixed.items() if k != key}, key, masks)
+                torch.testing.assert_close(logits, teacher[key][:, index], rtol=1e-5, atol=2e-6)
+                if history is not None:
+                    torch.testing.assert_close(histories[:, index:index+1], history, rtol=1e-5, atol=2e-6)
+                    np.testing.assert_allclose(memory, recurrent[2][0].numpy())
+                _, history, recurrent = model(None, mode='gen', batch_size=2, fixed_values=fixed,
+                                              context=context, history=history, history_state=recurrent)
+                memory = codec.advance(memory, {k:v.numpy() for k,v in fixed.items()})
+            altered = copy.deepcopy(batch)
+            altered[key][:, 3:] = codec.codes['1']
+            _, new_histories, _ = teacher_with_history(model, altered)
+            torch.testing.assert_close(histories[:, :4], new_histories[:, :4], rtol=0, atol=0)
+            # The native sampler suppresses the categorical unknown label.
+            raw = torch.zeros(3, 3)
+            p = label_probability(raw, key, codec.codes['1'], masks)
+            torch.testing.assert_close(p, torch.full_like(p, .5))

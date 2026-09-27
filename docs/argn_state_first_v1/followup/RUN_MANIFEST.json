@@ -1,0 +1,223 @@
+{
+  "completed_utc": "2026-09-27T07:42:10.941863+00:00",
+  "inputs": {
+    "weights": {
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20260930/workspace/ModelStore/model-data/model-weights.pt": "78d26d2710627561eb4fc9637d78fc4dc7c73e6f1292c263c31a5f1405a5b8e0",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20261001/workspace/ModelStore/model-data/model-weights.pt": "d8a836c5856a581e08f051535701f586ced9de38049d949aa488d593e85472c7",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20260930/workspace/ModelStore/model-data/model-weights.pt": "7763b9819c5fd020ca43aa219e4ed976838b20a9737ba830d21ca8220f028779",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20261001/workspace/ModelStore/model-data/model-weights.pt": "ea5017388ae68a123f7fa76bf3da5620c7a1f0d31123f66c6baf9f8fb909be1e",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20260930/workspace/ModelStore/model-data/model-weights.pt": "4404641f3420a0ff26596cf9e93556179e439f7f35bf98ef3c3fa88ed4bf90f8",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20261001/workspace/ModelStore/model-data/model-weights.pt": "68e26028d624e7b2571079bf3f90cfe682eec5bd0f336cf1cdfb428303beae51"
+    },
+    "positions_sha256": "d3bed9bd100905c33db8b3f2d5f9e98bd72b3a5e5cf5f748cc634c237a228c14",
+    "encoded_sha256": "272ef86a092ce0c97732fd84cab27680f274ba7bf7ebaaaea1acf54044276d71",
+    "source_hashes": {
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+    },
+    "real_events": 177997,
+    "customers": 147,
+    "selected_prefixes": 1922,
+    "max_real_length": 3119,
+    "model_stats_max_length": 3106,
+    "mc_draws": 16,
+    "cases": [
+      "sample_all",
+      "fix_amount_or_numeric_value",
+      "fix_gap",
+      "fix_receiver_or_mark",
+      "fix_category"
+    ],
+    "selection_seed": 20260927,
+    "test_events_read": false,
+    "future_information": "actual total lengths only for teacher and one-step diagnostic",
+    "execution_amendment": {
+      "utc": "2026-09-27T07:35:40.267338+00:00",
+      "reason": "Move loaded native recurrent modules to requested GPU; prior inference failed before outputs. No data, parameters, selection, or experimental conditions changed.",
+      "prior_attempt": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_followup_diagnostics_v1/attempts/cpu_recurrent_placement_failure"
+    }
+  },
+  "data_check": {
+    "raw_to_canonical_exact": true,
+    "canonical_to_prepared_exact": true,
+    "raw_allowed_customers": 835,
+    "raw_allowed_events": 1094564,
+    "source_raw_sha256": "fd7139200dbfcbed0b6742bbe05a4f1abce532c4fef20918228a651647a3e75d",
+    "prepared_hashes": {
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/prepared/train.parquet": "7c228c427d714a925fb31a9285779295a11eeba6056c465456caa335a6c8a305",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/prepared/validation.parquet": "c444c6e625b8f4e0e4edae1b1e12dbbef573c9e398d44400a44c4d5a7f03228d"
+    },
+    "generation_hashes": {
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20260930/generated_validation_20261011.parquet": "8c2c08726b0297c2a07defc9613f432da3f116503204eec02d3fe18880a6aa78",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20260930/generated_validation_20261012.parquet": "ec7eb8300b73ce1b8f6e16043eeae08ccc1c9f857875bb4992d282874ed9e7c5",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20261001/generated_validation_20261011.parquet": "5ed05bdbe70e139a40748a81b6d4716378ad6141b2de421b98caf202cb032816",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20261001/generated_validation_20261012.parquet": "eee85bd81a3cdda04fc62454ed04be0fa70d5f9f308bdbfd821a69961dc2d6d2",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20260930/generated_validation_20261011.parquet": "94c82755f504cca5644e87140cdc3db65bf5212b37e289f1b05a37bfd53fa76f",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20260930/generated_validation_20261012.parquet": "a3e939eb758c09a4790d2c3995e4b15d53acddafb081fdf5af8395ada4524438",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20261001/generated_validation_20261011.parquet": "cf52633f109329332b2d1d3689c6a2196d7fedf94aea1ce427f862a7a769ab4b",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20261001/generated_validation_20261012.parquet": "e87f75e7c705c096aea5ce8f015769d2d6936fe066cb9da81101a4484c5b81d1",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20260930/generated_validation_20261011.parquet": "da5b7827bd7b5e0152def784c2814147e6c87633e11db9ebd8a8c2a751cb71df",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20260930/generated_validation_20261012.parquet": "b2dac545b20a93e6bcd44ff1089e075640015d20597695720dcfa7a22f974270",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20261001/generated_validation_20261011.parquet": "ef9fdc62405f39fc5ee70b2ccd972bf8b8f3927d511f08f4558e6ae41388c66d",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20261001/generated_validation_20261012.parquet": "258dd4713bc92ad84448fd383c51d93871a838c64ed9843c0871d7ec2160e162"
+    },
+    "test_events_read": false,
+    "raw_filter": "ID-only first pass; excluded row numbers skipped on attribute parse",
+    "script_sha256": "238d7ecb60b3ca84bfdf408e21fdce507923dcdfd69ab745fbff75d53e5a0bce",
+    "protocol_sha256": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+  },
+  "completion": {
+    "models": [
+      {
+        "arm": "B",
+        "fit_seed": 20260930,
+        "seconds": 8.589296643971466,
+        "checkpoint_sha256": "78d26d2710627561eb4fc9637d78fc4dc7c73e6f1292c263c31a5f1405a5b8e0",
+        "weights_unchanged": true,
+        "real_events": 177997,
+        "selected_prefixes": 1922,
+        "test_events_read": false,
+        "mc_draws": 16,
+        "equivalence_check_passed": true,
+        "source_hashes": {
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+        }
+      },
+      {
+        "arm": "B",
+        "fit_seed": 20261001,
+        "seconds": 8.561149914050475,
+        "checkpoint_sha256": "d8a836c5856a581e08f051535701f586ced9de38049d949aa488d593e85472c7",
+        "weights_unchanged": true,
+        "real_events": 177997,
+        "selected_prefixes": 1922,
+        "test_events_read": false,
+        "mc_draws": 16,
+        "equivalence_check_passed": true,
+        "source_hashes": {
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+        }
+      },
+      {
+        "arm": "B_S",
+        "fit_seed": 20260930,
+        "seconds": 7.735704925027676,
+        "checkpoint_sha256": "7763b9819c5fd020ca43aa219e4ed976838b20a9737ba830d21ca8220f028779",
+        "weights_unchanged": true,
+        "real_events": 177997,
+        "selected_prefixes": 1922,
+        "test_events_read": false,
+        "mc_draws": 16,
+        "equivalence_check_passed": true,
+        "source_hashes": {
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+        }
+      },
+      {
+        "arm": "B_S",
+        "fit_seed": 20261001,
+        "seconds": 7.76907985995058,
+        "checkpoint_sha256": "ea5017388ae68a123f7fa76bf3da5620c7a1f0d31123f66c6baf9f8fb909be1e",
+        "weights_unchanged": true,
+        "real_events": 177997,
+        "selected_prefixes": 1922,
+        "test_events_read": false,
+        "mc_draws": 16,
+        "equivalence_check_passed": true,
+        "source_hashes": {
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+        }
+      },
+      {
+        "arm": "B_event_weighted",
+        "fit_seed": 20260930,
+        "seconds": 7.832153055001982,
+        "checkpoint_sha256": "4404641f3420a0ff26596cf9e93556179e439f7f35bf98ef3c3fa88ed4bf90f8",
+        "weights_unchanged": true,
+        "real_events": 177997,
+        "selected_prefixes": 1922,
+        "test_events_read": false,
+        "mc_draws": 16,
+        "equivalence_check_passed": true,
+        "source_hashes": {
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+        }
+      },
+      {
+        "arm": "B_event_weighted",
+        "fit_seed": 20261001,
+        "seconds": 7.808410237077624,
+        "checkpoint_sha256": "68e26028d624e7b2571079bf3f90cfe682eec5bd0f336cf1cdfb428303beae51",
+        "weights_unchanged": true,
+        "real_events": 177997,
+        "selected_prefixes": 1922,
+        "test_events_read": false,
+        "mc_draws": 16,
+        "equivalence_check_passed": true,
+        "source_hashes": {
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+          "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+        }
+      }
+    ],
+    "weights_unchanged": true,
+    "existing_generations_unchanged": true,
+    "test_events_read": false,
+    "diagnostic_only": true,
+    "summary_script_sha256": "f7e172e99ee459c48858e8987e459c9f7c46d95b3af0ff7316d34b82a5f3b683",
+    "caveats": [
+      "Teacher/one-step use true lengths; existing free rollout does not.",
+      "One-step normal stays are sampled per customer; overall selected-prefix prevalence is not a population score.",
+      "One-step raw_label_nll/amount_digit_nll in raw per-prefix files are inherited teacher references, not sampled-field losses.",
+      "MC standard error measures field sampling only; no independent confirmation inference."
+    ]
+  },
+  "length_reconciliation": {
+    "train": {
+      "events_beyond_model_length_cap": 58,
+      "fraud_beyond_cap": 0,
+      "customers_beyond_cap": 5
+    },
+    "validation": {
+      "events_beyond_model_length_cap": 18,
+      "fraud_beyond_cap": 0,
+      "customers_beyond_cap": 3
+    }
+  },
+  "gpu_dispatch": [
+    {
+      "fit_seed": 20260930,
+      "pid": 1273652,
+      "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "log": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_followup_diagnostics_v1/worker_20260930.log"
+    },
+    {
+      "fit_seed": 20261001,
+      "pid": 1273653,
+      "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+      "log": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_followup_diagnostics_v1/worker_20261001.log"
+    }
+  ],
+  "tests": {
+    "test_file": "tests/test_argn_state_first.py",
+    "passed": 7,
+    "cached_native_equivalence": true
+  },
+  "aggregate_hashes": {
+    "cohorts.csv": "ee1f8463fa71cc8440a6ed1b6fa935118aea2fcceee1fb6727bd181fcb31ead0",
+    "conditional_summary.csv": "e752fb8272332816dd83f2ff8a06208b012d90e2ef49d26bf90927a88827b460",
+    "encoded_cohorts.csv": "e7281e7cec166269bed3e60b709fd048a7a0ff638a712c855a5dff9ac9a816b7"
+  }
+}
