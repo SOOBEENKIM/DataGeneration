@@ -1,0 +1,58 @@
+{
+  "clock_prefix_20260930": {
+    "pid": 1500918,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/../research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_location.py",
+      "worker",
+      "--seed",
+      "20260930",
+      "--arm",
+      "clock_prefix"
+    ],
+    "started_utc": "2026-09-27T16:05:05.951707+00:00"
+  },
+  "clock_prefix_20261001": {
+    "pid": 1500932,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/../research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_location.py",
+      "worker",
+      "--seed",
+      "20261001",
+      "--arm",
+      "clock_prefix"
+    ],
+    "started_utc": "2026-09-27T16:05:06.107094+00:00"
+  },
+  "clock_rollout_20260930": {
+    "pid": 1508949,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/../research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_location.py",
+      "worker",
+      "--seed",
+      "20260930",
+      "--arm",
+      "clock_rollout"
+    ],
+    "started_utc": "2026-09-27T16:10:31.257603+00:00"
+  },
+  "clock_rollout_20261001": {
+    "pid": 1509231,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/../research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_location.py",
+      "worker",
+      "--seed",
+      "20261001",
+      "--arm",
+      "clock_rollout"
+    ],
+    "started_utc": "2026-09-27T16:10:36.635751+00:00"
+  }
+}

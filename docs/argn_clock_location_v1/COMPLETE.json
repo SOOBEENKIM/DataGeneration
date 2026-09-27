@@ -1,0 +1,14 @@
+{
+  "new_full_generations": 16,
+  "generated_rows": 3163512,
+  "current_cycle_new_full_generations": 40,
+  "current_cycle_rows": 7908780,
+  "new_gmm_fits": 0,
+  "new_calibration_fits": 2,
+  "new_native_argn_fits": 0,
+  "focused_matched_generations": 72,
+  "all_preserved_generations": 96,
+  "test_events_read": false,
+  "source_sha256": "a8dd9163aad6e530dea54397c0c085062cf160e83cc984b8fae449f598d49c01",
+  "completed_utc": "2026-09-27T16:17:58.605142+00:00"
+}

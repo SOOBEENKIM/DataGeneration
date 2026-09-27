@@ -1,0 +1,9 @@
+{
+  "posthoc_descriptive": true,
+  "new_fits": 0,
+  "new_generations": 0,
+  "test_events_read": false,
+  "source_sha256": "6656964aaa9c345348002c87ef94a23c4b483a74f8e58fd33ba186fa23bf62de",
+  "plan_sha256": "3eac90b268e65ee28557968a0ac17c0ebc07f59107e65baf9a8cd303733115aa",
+  "completed_utc": "2026-09-27T16:18:32.977615+00:00"
+}

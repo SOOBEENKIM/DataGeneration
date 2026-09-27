@@ -1,0 +1,14 @@
+{
+  "status": "promising_candidate_not_promoted",
+  "lead": "clock_prefix",
+  "head": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_location_v1/clock_prefix/time_head.pt",
+  "head_sha256": "a0fe2c1e4736f862ec0fb9113444112558e7ff613bcc50b7fd06ff9e0c2a0fbd",
+  "complete_registered_screen_passed": false,
+  "reason": "Parent 20261001 normal gap remains above history_only; matched late-position costs remain.",
+  "original_candidate_preserved": true,
+  "prior_GMR_preserved": true,
+  "rollout_added_effect_supported": false,
+  "next_bounded_comparison": "Same two-coefficient correction: first 1024 versus full training support, before changing the functional form.",
+  "full_length_fit_executed": false,
+  "test_events_read": false
+}
