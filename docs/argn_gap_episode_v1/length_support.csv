@@ -1,0 +1,8 @@
+source,customers,short_le100,length_le_train_fraud_max,between_train_initial_groups,predicted_first_fraud_sum,actual_first_fraud
+optimization,619,49,49,0,49.00912434325745,49.0
+internal_validation,69,3,3,0,3.0277933450087566,3.0
+development,147,12,11,1,11.998213660245185,12.0
+generated_lengths_20260930_20261011,147,16,10,8,15.95471103327496,
+generated_lengths_20260930_20261012,147,13,6,8,12.987338003502629,
+generated_lengths_20261001_20261011,147,18,10,8,17.932959719789842,
+generated_lengths_20261001_20261012,147,14,6,10,13.97646234676007,

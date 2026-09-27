@@ -1,5 +1,28 @@
 # 문헌과 실험을 연결하는 현재 연구 판단
 
+**최신 완료(2026-09-27 간격·전환 대조):**
+[최종 해석](argn_gap_episode_v1/INTERPRETATION.md),
+[4cell 결과](argn_gap_episode_v1/RESULTS.md)를 우선한다.
+새 gap 학습4회, 새 자유 생성16회(3,159,744거래)를 완료했다. 고정 업종+금액
+기준에 gap과 알려진 episode/초기 상태–생성 길이 전환을 함께 연결하자 사기 gap
+W1 .9394→.1277, 사기 경험 고객71→104.25(실제114), 사기 전용0→7.75(실제12)로
+개선했다. 사기 금액 .2143→.1386도 개선했지만 개인 대비 금액 .1371→.1778 및
+전체 사기율 실제와의 차이는 악화됐다. 정상 gap은 개선, 정상 금액/merchant와
+측정한 다양성은 비슷했다. 이를 모든 관계 보존 완료/신규 구조 우위라고 하지 않는다.
+19tests, 실제 checkpoint memory검증30위치,15,323,084gap token replay,
+16개 새 생성의 독립 W1/길이/가중치 동일성 검증을 통과했다. 최종 test는 미개봉,
+GPU2·3 반환 확인. 다음은 [남은 길이·위험·개인 출력 비용의 구분](argn_gap_episode_v1/NEXT_STAGE.md).
+이하 실행 중 문구는 이전 시점의 기록으로 보존한다.
+
+**후속 실행(2026-09-27 간격·전환):** 사용자가 업종+금액 기준 / +간격 / +전환 /
++둘의 후속 실행을 승인했다. [고정 protocol](argn_gap_episode_v1/PROTOCOL.md)에
+사기 gap의 실제 이력 진단→natural/balanced 출력 학습(4fit), strict-past episode
+및 초기 상태–생성 길이의 알려진 통계 대조,16새 자유 생성과 정상 품질 제약을
+등록했다. 원래 category/amount/encoder/checkpoint는 동결한다. 전환 확률에는
+class balancing을 적용하지 않고 실제 위험집합 노출량을 쓴다. GPU2·3에서
+각 seed를 실행 중이다. 이 단계는 강한 단순 기준 확보이며 신규 개인 상태 구조의
+우위로 해석하지 않는다. [실행 기록](argn_gap_episode_v1/LAUNCH.json).
+
 **최신 완료(2026-09-27 출력 학습):**
 [업종–금액 결과/해석](argn_category_amount_v1/INTERPRETATION.md),
 [최초 금액 학습 대조](argn_amount_learning_v1/INTERPRETATION.md),

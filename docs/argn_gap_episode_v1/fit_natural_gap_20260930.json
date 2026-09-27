@@ -1,0 +1,23 @@
+{
+  "arm": "natural_gap",
+  "fit_seed": 20260930,
+  "selected_step": 1800,
+  "last_step": 2000,
+  "trainable_parameters": 282382,
+  "seconds": 8.85606838192325,
+  "validation": {
+    "normal_nll": 11.143458366394043,
+    "fraud_nll": 10.821282386779785,
+    "macro_nll": 10.982370376586914,
+    "normal_events": 99685,
+    "fraud_events": 472
+  },
+  "optimization": {
+    "normal_nll": 11.198951721191406,
+    "fraud_nll": 10.798227310180664,
+    "macro_nll": 10.998589515686035,
+    "normal_events": 810974,
+    "fraud_events": 4690
+  },
+  "head_sha256": "245fffb7158566852a0440cc02b98139304a86b6ce92c291e4563a1ec88de6ed"
+}
