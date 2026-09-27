@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-09-27T11:27:35.117679+00:00",
+  "config": {
+    "version": "argn-category-amount-v1",
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012
+    ],
+    "generation_arms": [
+      "category_only",
+      "category_and_amount"
+    ],
+    "learning_rate": 0.001,
+    "batch_size": 2048,
+    "max_steps": 2000,
+    "validation_every": 100,
+    "patience": 5,
+    "min_delta": 1e-05,
+    "gradient_clip": 1.0,
+    "category_objective": "equal normal/fraud conditional NLL, selected by internal validation macro NLL",
+    "amount_source": "frozen balanced_shared from argn_amount_learning_v1",
+    "transition_reference": "same frozen train-only duration table",
+    "allowed_gpu_uuids": [
+      "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+    ]
+  },
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_category_amount.py": "107be7b53de7802067e4af57b23f8f674411e4a82cdf268a681b44e43bd3646d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/configs/argn_category_amount_v1.json": "e32896b9c4f2b8fb80ec0019cb248091f5f2b051374b96a24f10aac2fbb5117e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_category_amount_v1/PROTOCOL.md": "ba217bce345bff84235c2e2becd2578484872047edda2bf6a8084ec7db781255",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/dispatch_argn_category_amount.py": "c5803452746909ff8289bb58be0a14a90c002e3b5e04c4bf9e75391ba233cff1",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_amount_learning.py": "8c8bcf68e25a8ab4485311892ee00f092b12bc88475fa0ca8b4e088839b3dd42",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_amount_control.py": "b57829405ad3b7d08706dd06d056fb260f2e003991c606d1380b57f9e67607e7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_label_first_control.py": "f600d5007d7c3016598095c4a9c4bb7284fcc21b2f407542a7414793acfd7179",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_transition_reference.py": "033e34ffe42a3c145c7222f3a5191317654ed47ad88c49110d88b5a64fabe7f9",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/research_reaudit_20260927/simple_label_parameters.json": "e7774c24a7c1aa4e1709c631b603d726d530faf8096407eb1361442730b897e4",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_amount_learning_v1/condition_probe/MANIFEST.json": "4713ea6adf01a2d2ed24720f3b2a0d31aab69c8a981b270900b3d430c7447c8b",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_amount_learning_v1/runs/balanced_shared_20260930/amount_head.pt": "0df88bbb4cd6121aa35f2ce94c9278c4b49ac0561e348d72c57eb26eed8d342f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_event_label_first_20260930/workspace/ModelStore/model-data/model-weights.pt": "c03642cfea96247115ff30a9261b71f9c9c53df29d149995bd39e8c078fc2d67",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_amount_learning_v1/runs/balanced_shared_20261001/amount_head.pt": "d9aaadf8f93c5d9cd46f64e9c70a07018844ae72df386c6adbe6ceb38c6fafb8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_event_label_first_20261001/workspace/ModelStore/model-data/model-weights.pt": "25420f1a56a9eff8f6350508d274aa896e32fdbc1587f688b9e55cb6e8a50e59"
+  },
+  "test_events_read": false
+}

@@ -1,0 +1,5 @@
+{
+  "replayed_logits": 16,
+  "current_and_later_fields_masked": true,
+  "gradient_nonzero": true
+}

@@ -1,5 +1,30 @@
 # 문헌과 실험을 연결하는 현재 연구 판단
 
+**최신 완료(2026-09-27 출력 학습):**
+[업종–금액 결과/해석](argn_category_amount_v1/INTERPRETATION.md),
+[최초 금액 학습 대조](argn_amount_learning_v1/INTERPRETATION.md),
+[다음 전환·간격 판단](argn_category_amount_v1/NEXT_STAGE.md)을 우선한다.
+새10학습·24자유 생성(4,739,616거래)을 완료했다. 동일 duration label 전환에서
+사기 금액 log-W1은 기존1.9137→금액만.9599→업종+금액.2143, 개인 rolling 비율은
+1.1022→.4680→.1371(각4draw 평균)이다. 업종만 바꾸면 회복되지 않았다.
+새 category는 두 제거 팔에서 같은 가중치, amount도 직전 학습 결과 그대로다.
+정상 금액 비용은 작지만 시드별로 다르고, 사기 gap 및 고객 구성 문제는 남았다.
+이것은 ARGN의 알려진 조건부 출력 학습을 정돈한 개선이며 새 개인/episode 전환
+구조의 학습 완료나 최신 모델 전체 대비 우월성은 아니다. 초기 상태–길이 관계와
+과거 사기 경험을 생략한 단순 duration의 한계를 다음 대조에서 먼저 분리한다.
+아래 실행 중 표현은 이전 시점의 기록으로 보존한다.
+
+**후속 실행(2026-09-27):** 사용자가 ARGN 희귀 상태별 출력 학습 개발을 승인했고,
+[금액 학습 프로토콜](argn_amount_learning_v1/PROTOCOL.md)을 고정했다.
+기존 두 checkpoint의 이력/embedding/다른 출력을 동결한 뒤 amount만 학습한다.
+natural/shared, balanced/shared, balanced/two-expert mixture, balanced/label routing의
+4팔×2부모 fit과 duration 전환을 공통 연결한16개 자유 생성을 실행한다.
+실제 checkpoint/prefix 검증과16개 테스트 후 GPU2/3에 각각 PID1361921/1361928로
+시작했다. 기존 CS-SAF나 새로운 개인 상태 모듈을 학습했다고 혼용하지 않는다.
+조건부 학습·균형 sampling·전문가 분리는 알려진 방법이며, 같은 용량의 mixture와
+단순 추가 학습 대조로 설명되는 효과를 먼저 분리한다. 조건부 결과만 좋아진 경우
+자유 생성 성공으로 해석하지 않는다. [실행 기록](argn_amount_learning_v1/LAUNCH.json).
+
 **최신 상태(2026-09-27 재점검 완료):**
 [전체 감사](research_reaudit_20260927/AUDIT_REPORT.md),
 [문헌과 구조 비교](research_reaudit_20260927/LITERATURE_UPDATE.md),

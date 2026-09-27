@@ -1,0 +1,17 @@
+{
+  "version": "argn-category-amount-v1",
+  "fit_seeds": [20260930, 20261001],
+  "generation_seeds": [20261011, 20261012],
+  "generation_arms": ["category_only", "category_and_amount"],
+  "learning_rate": 0.001,
+  "batch_size": 2048,
+  "max_steps": 2000,
+  "validation_every": 100,
+  "patience": 5,
+  "min_delta": 0.00001,
+  "gradient_clip": 1.0,
+  "category_objective": "equal normal/fraud conditional NLL, selected by internal validation macro NLL",
+  "amount_source": "frozen balanced_shared from argn_amount_learning_v1",
+  "transition_reference": "same frozen train-only duration table",
+  "allowed_gpu_uuids": ["GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637", "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"]
+}

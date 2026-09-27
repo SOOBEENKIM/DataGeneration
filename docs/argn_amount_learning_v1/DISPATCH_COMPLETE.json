@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "jobs": {
+    "20260930": {
+      "exit_code": 0,
+      "pid": 1361921,
+      "gpu_uuid": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637"
+    },
+    "20261001": {
+      "exit_code": 0,
+      "pid": 1361928,
+      "gpu_uuid": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+    }
+  },
+  "completed_utc": "2026-09-27T11:21:32.693174+00:00"
+}
