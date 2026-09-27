@@ -3,6 +3,11 @@
 See [the frozen protocol](PROTOCOL.md) and [configuration](../../configs/argn_state_first_v1.json).
 This folder contains the new study, independent of completed `sparkov_argn_control_v2`.
 
+The first fits and all eight free-generation draws are now evaluated. See
+[results and next cause-isolation control](RESULTS.md), the [evaluation implementation
+record](EVALUATION_PROTOCOL.md), and [adaptive loss-weight control](EVENT_WEIGHT_CONTROL_PROTOCOL.md).
+Do not treat the earlier start record as a statement of current running status.
+
 The required frozen data/codec workspace lives in the sibling audit worktree's
 `artifacts/sparkov_argn_control_v2/codec_digit_both`. Train data, checkpoints and
 generated transaction rows are ignored by git. No final test events are read.

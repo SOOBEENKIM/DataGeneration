@@ -1,0 +1,14 @@
+{
+  "all_registered_outputs_evaluated": 8,
+  "checkpoint_hashes_unchanged": [
+    "B_20260930",
+    "B_20261001",
+    "B_S_20260930",
+    "B_S_20261001"
+  ],
+  "input_and_evaluation_hashes_match": true,
+  "tests_passed": 10,
+  "test_events_read": false,
+  "control_training_status_at_verification": "waiting for idle GPU",
+  "diagnostic_label": "adaptive after initial evaluation"
+}
