@@ -113,3 +113,9 @@ Sparkov의 이 준비 데이터에는 짧고 모두 사기인 거래열들이 �
 현재 상태 파일은 로컬 `artifacts/argn_event_weight_control_v1/DISPATCH_STATUS.json`,
 seed별 `queue_20260930.json`, `queue_20261001.json`이다. 등록 이후의 실제 진행
 상태는 이 파일을 확인해야 한다.
+
+후속 사용자 지시 ‘GPU 비면 바로 실행 시작’에 따라 대기 만료를 해제했다.
+등록 당시의 2시간 정책은 이 지시로 대체되었으며, 현재 dispatcher는 30초마다
+확인해 GPU가 연속 두 번 비어 있으면 남은 실험을 시작한다. 이전 대기 기록은
+`dispatcher_history/`, 변경 기록은 `USER_WAIT_POLICY.json`에 보존했다.
+학습 모델·데이터·실험 조건에는 변경이 없다.

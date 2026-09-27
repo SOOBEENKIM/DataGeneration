@@ -1,4 +1,4 @@
-"""Bounded, task-specific GPU queue. Never stop or share an occupied GPU."""
+"""Task-specific GPU queue; zero wait limit means wait until a GPU is idle."""
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -18,6 +18,8 @@ def write(path, data):
 
 
 def main(wait_minutes):
+    if wait_minutes < 0:
+        raise ValueError("wait-minutes must be nonnegative; 0 means no timeout")
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "logs").mkdir(exist_ok=True)
     lock = OUT / "DISPATCH_STARTED.json"
@@ -27,7 +29,7 @@ def main(wait_minutes):
     pending = [20260930, 20261001]
     running, finished, expired, idle_counts = {}, {}, [], {}
     launch = dict(queues={}, purpose="adaptive objective control after evaluation")
-    deadline = time.monotonic() + wait_minutes * 60
+    deadline = time.monotonic() + wait_minutes * 60 if wait_minutes else float("inf")
     while pending or running:
         for fs, entry in list(running.items()):
             code = entry["process"].poll()
@@ -71,11 +73,13 @@ def main(wait_minutes):
                 write(OUT / f"queue_{fs}.json", dict(stage="waiting_for_idle_gpu", seed=fs, training_started=False))
         write(OUT / "DISPATCH_STATUS.json", dict(updated_utc=datetime.now(timezone.utc).isoformat(),
               pid=os.getpid(), pending=pending, running={fs:entry["process"].pid for fs,entry in running.items()},
-              finished=finished, expired=expired, last_gpu_state=latest))
+              finished=finished, expired=expired, last_gpu_state=latest,
+              max_wait_minutes=wait_minutes, wait_until_idle=wait_minutes == 0))
         if pending or running:
             time.sleep(30)
 
 
 if __name__ == "__main__":
-    p = argparse.ArgumentParser(); p.add_argument("--wait-minutes", type=float, default=120)
+    p = argparse.ArgumentParser(); p.add_argument("--wait-minutes", type=float, default=120,
+                                                help="Maximum idle-GPU wait; 0 disables timeout")
     main(p.parse_args().wait_minutes)
