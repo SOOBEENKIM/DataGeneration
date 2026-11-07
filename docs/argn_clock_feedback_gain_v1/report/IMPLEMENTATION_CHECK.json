@@ -1,0 +1,11 @@
+{
+  "numpy_torch_max_error": 1.7763568394002505e-15,
+  "zero_change_exact": true,
+  "probabilities_and_variances_same_input_exact": true,
+  "non_target_law_exact": true,
+  "additional_mean_bound": true,
+  "scalar_ablation_nested_exact": true,
+  "first50_outputs_exact": true,
+  "previous_replay_identity_exact": true,
+  "mid_loss_measure_preserved": true
+}

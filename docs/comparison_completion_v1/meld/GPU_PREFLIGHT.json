@@ -1,0 +1,30 @@
+{
+  "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+  "checks": [
+    {
+      "stage": "VAE",
+      "batch": 1,
+      "seconds": 1.8903527790680528,
+      "peak_gib": 1.8814592361450195,
+      "loss": 7.788618564605713,
+      "finite_gradients": true
+    },
+    {
+      "stage": "VAE",
+      "batch": 2,
+      "seconds": 0.5875242468900979,
+      "peak_gib": 3.73097562789917,
+      "loss": 7.6704559326171875,
+      "finite_gradients": true
+    },
+    {
+      "stage": "DiT",
+      "batch": 2,
+      "seconds": 0.3718114010989666,
+      "peak_gib": 0.5416607856750488,
+      "loss": 1.9947093725204468,
+      "finite_gradients": true
+    }
+  ],
+  "performance_training": false
+}

@@ -1,0 +1,24 @@
+{
+  "20260930": {
+    "mode": "generation_only",
+    "old_pid": 1210074,
+    "previous_stage": "generating",
+    "gpu": {
+      "index": 2,
+      "uuid": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "used_mib": 52,
+      "utilization": 0
+    }
+  },
+  "20261001": {
+    "mode": "fresh_restart",
+    "old_pid": 1210075,
+    "previous_stage": "training",
+    "gpu": {
+      "index": 3,
+      "uuid": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+      "used_mib": 93,
+      "utilization": 0
+    }
+  }
+}

@@ -1,0 +1,636 @@
+{
+  "pid": 3233154,
+  "started_utc": "2026-09-30T16:13:28.147248+00:00",
+  "jobs": [
+    {
+      "key": "fit_history_global_20260930_73001",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_global_20260930_73001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_global"
+      ]
+    },
+    {
+      "key": "gen_history_global_20260930_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_global_20260930_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_global_73001_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_global"
+      ]
+    },
+    {
+      "key": "fit_history_global_20261001_73001",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_global_20261001_73001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_global"
+      ]
+    },
+    {
+      "key": "gen_history_global_20261001_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_global_20261001_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_global_73001_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_global"
+      ]
+    },
+    {
+      "key": "fit_history_global_20260930_73002",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_global_20260930_73002/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_global"
+      ]
+    },
+    {
+      "key": "gen_history_global_20260930_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_global_20260930_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_global_73002_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_global"
+      ]
+    },
+    {
+      "key": "fit_history_global_20261001_73002",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_global_20261001_73002/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_global"
+      ]
+    },
+    {
+      "key": "gen_history_global_20261001_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_global_20261001_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_global_73002_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_global"
+      ]
+    },
+    {
+      "key": "fit_history_global_20260930_73003",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_global_20260930_73003/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_global"
+      ]
+    },
+    {
+      "key": "gen_history_global_20260930_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_global_20260930_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_global_73003_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_global"
+      ]
+    },
+    {
+      "key": "fit_history_global_20261001_73003",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_global_20261001_73003/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_global"
+      ]
+    },
+    {
+      "key": "gen_history_global_20261001_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_global_20261001_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_global_73003_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_global"
+      ]
+    },
+    {
+      "key": "fit_history_position3_20260930_73001",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position3_20260930_73001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_position3"
+      ]
+    },
+    {
+      "key": "gen_history_position3_20260930_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position3_20260930_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_position3_73001_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_position3"
+      ]
+    },
+    {
+      "key": "fit_history_position3_20261001_73001",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position3_20261001_73001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_position3"
+      ]
+    },
+    {
+      "key": "gen_history_position3_20261001_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position3_20261001_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_position3_73001_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_position3"
+      ]
+    },
+    {
+      "key": "fit_history_position3_20260930_73002",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position3_20260930_73002/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_position3"
+      ]
+    },
+    {
+      "key": "gen_history_position3_20260930_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position3_20260930_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_position3_73002_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_position3"
+      ]
+    },
+    {
+      "key": "fit_history_position3_20261001_73002",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position3_20261001_73002/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_position3"
+      ]
+    },
+    {
+      "key": "gen_history_position3_20261001_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position3_20261001_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_position3_73002_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_position3"
+      ]
+    },
+    {
+      "key": "fit_history_position3_20260930_73003",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position3_20260930_73003/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_position3"
+      ]
+    },
+    {
+      "key": "gen_history_position3_20260930_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position3_20260930_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_position3_73003_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_position3"
+      ]
+    },
+    {
+      "key": "fit_history_position3_20261001_73003",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position3_20261001_73003/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_position3"
+      ]
+    },
+    {
+      "key": "gen_history_position3_20261001_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position3_20261001_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_position3_73003_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_position3"
+      ]
+    },
+    {
+      "key": "fit_history_position6_20260930_73001",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position6_20260930_73001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_position6"
+      ]
+    },
+    {
+      "key": "gen_history_position6_20260930_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position6_20260930_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_position6_73001_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_position6"
+      ]
+    },
+    {
+      "key": "fit_history_position6_20261001_73001",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position6_20261001_73001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_position6"
+      ]
+    },
+    {
+      "key": "gen_history_position6_20261001_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position6_20261001_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_position6_73001_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_position6"
+      ]
+    },
+    {
+      "key": "fit_history_position6_20260930_73002",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position6_20260930_73002/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_position6"
+      ]
+    },
+    {
+      "key": "gen_history_position6_20260930_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position6_20260930_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_position6_73002_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_position6"
+      ]
+    },
+    {
+      "key": "fit_history_position6_20261001_73002",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position6_20261001_73002/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_position6"
+      ]
+    },
+    {
+      "key": "gen_history_position6_20261001_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position6_20261001_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_position6_73002_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_position6"
+      ]
+    },
+    {
+      "key": "fit_history_position6_20260930_73003",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position6_20260930_73003/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_position6"
+      ]
+    },
+    {
+      "key": "gen_history_position6_20260930_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position6_20260930_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_position6_73003_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_position6"
+      ]
+    },
+    {
+      "key": "fit_history_position6_20261001_73003",
+      "mode": "fit",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position6_20261001_73003/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_position6"
+      ]
+    },
+    {
+      "key": "gen_history_position6_20261001_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/fits/history_position6_20261001_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_calibration_specificity_v1/runs/history_position6_73003_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_position6"
+      ]
+    }
+  ]
+}

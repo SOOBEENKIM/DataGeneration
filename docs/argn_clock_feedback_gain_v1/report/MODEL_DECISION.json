@@ -1,0 +1,16 @@
+{
+  "qualified_vs_init_only": [],
+  "active_model": "clock_prefix",
+  "automatic_promotion": false,
+  "pushed": false,
+  "new_native_argn_fits": 0,
+  "calibration_fits": 4,
+  "new_full_generations": 32,
+  "generated_rows": 6327024,
+  "prior_artifact_hashes_preserved": 350,
+  "matched_generations_compared": 80,
+  "first50_time_exact": true,
+  "labels_lengths_exact": true,
+  "test_events_read": false,
+  "completed_utc": "2026-09-29T04:54:42.754606+00:00"
+}

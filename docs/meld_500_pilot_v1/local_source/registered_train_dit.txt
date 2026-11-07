@@ -1,0 +1,38 @@
+def train_dit(config,data,vae,run,fs):
+    if not (run/'LATENTS.pt').exists():
+        setseed(fs+100);zt=encode(vae,data['train']);zi=encode(vae,data['internal']);low=zt.amin((0,1),keepdim=True);high=zt.amax((0,1),keepdim=True)
+        save(run/'LATENTS.pt',dict(train=zt,internal=zi,low=low,high=high))
+    z=torch.load(run/'LATENTS.pt',map_location='cpu',weights_only=True);low,high=z['low'],z['high']
+    xt=(2*(z['train']-low)/(high-low+1e-6)-1).permute(0,2,1).contiguous();xi=(2*(z['internal']-low)/(high-low+1e-6)-1).permute(0,2,1).contiguous()
+    setseed(fs+200);m,changed=make_dit(config['seq_len']);ema=copy.deepcopy(m).eval()
+    for p in ema.parameters():p.requires_grad_(False)
+    write(run/'CLIP_RESTORATION.json',dict(overwritten_constructor_tensors=changed,restored_public_checkpoint=True,exact_restoration=True))
+    opt=torch.optim.AdamW([p for p in m.parameters() if p.requires_grad],lr=2e-4,betas=(.9,.95),weight_decay=0)
+    transport=create_transport('Linear','velocity',use_cosine_loss=True,use_lognorm=True)
+    best=float('inf');best_step=0;start=1;wall=time.monotonic()
+    if (run/'dit_last.pt').exists():
+        s=torch.load(run/'dit_last.pt',map_location='cpu',weights_only=False);m.load_state_dict(s['model']);ema.load_state_dict(s['ema']);opt.load_state_dict(s['optimizer']);restore(s['rng']);start=s['step']+1;best=s['best'];best_step=s['best_step']
+    for step in range(start,2001):
+        m.train();idx=torch.randint(0,len(xt),(32,));opt.zero_grad(set_to_none=True);summed=0.
+        for j in range(0,32,8):
+            ids=idx[j:j+8];loss=losses(transport,m,xt[ids].cuda(),[data['train_text'][i] for i in ids.tolist()])/4
+            assert torch.isfinite(loss);loss.backward();summed+=float(loss)
+        assert all(p.grad is None or torch.isfinite(p.grad).all() for p in m.parameters());opt.step()
+        with torch.no_grad():
+            for a,b in zip(ema.parameters(),m.parameters()):
+                if b.requires_grad:a.mul_(.9999).add_(b,alpha=.0001)
+        if step==1 or step%100==0:
+            rec=dict(stage='DiT_training',step=step,max_steps=2000,loss=summed,best_step=best_step,best_internal_loss=best,seconds=time.monotonic()-wall,pid=os.getpid(),gpu=os.environ.get('CUDA_VISIBLE_DEVICES'))
+            write(run/'STATUS.json',rec)
+            with (run/'DIT_CURVE.jsonl').open('a') as h:h.write(json.dumps(rec)+'\n')
+            print('DIT_STEP',fs,step,summed,flush=True)
+        if step%250==0:
+            val=dit_eval(ema,transport,xi,data['internal_text'],fs+901)
+            if val<best:
+                best=val;best_step=step;save(run/'dit_best.pt',dict(ema=ema.state_dict(),step=step,internal_loss=val))
+            save(run/'dit_last.pt',dict(model=m.state_dict(),ema=ema.state_dict(),optimizer=opt.state_dict(),rng=rng(),step=step,best=best,best_step=best_step))
+            with (run/'DIT_VALIDATION.jsonl').open('a') as h:h.write(json.dumps(dict(step=step,internal_loss=val))+'\n')
+            if step in (500,1000): pilot_preview(step,m,ema,transport,vae,data,run,fs,low,high,config)
+    s=torch.load(run/'dit_best.pt',map_location='cpu',weights_only=False);ema.load_state_dict(s['ema']);ema.eval()
+    write(run/'DIT_COMPLETE.json',dict(last_step=step,selected_step=s['step'],internal_loss=s['internal_loss'],test_reads=0))
+    return ema,transport,low,high

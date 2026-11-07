@@ -1,0 +1,71 @@
+{
+  "selected": {
+    "evaluation": 48,
+    "theta": [
+      0.06196860582931878
+    ],
+    "seconds": 42.959888390032575,
+    "objective": 0.051506919425732184,
+    "clock": 0.0,
+    "normal": 0.041876243228194415,
+    "fraud": 0.06247500722862113,
+    "personal": 0.02311925673704189,
+    "onset": 0.034843019397725467,
+    "bin0": 0.05737716704464274,
+    "bin1": 0.051022245462552226,
+    "bin2": 0.04593396055377472,
+    "fine_200": 0.0699846378040078,
+    "fine_500": 0.07559694982877224,
+    "fine_1024": 0.08617114757424989,
+    "fine_2048": 0.05263749348454538,
+    "bin2_refined": 0.07501337436261489,
+    "pooling_gap": 0.029079413808840167
+  },
+  "initial": {
+    "evaluation": 0,
+    "theta": [
+      0.0
+    ],
+    "seconds": 0.9392478431109339,
+    "objective": 0.08306112782069174,
+    "clock": 0.0,
+    "normal": 0.0847727458898349,
+    "fraud": 0.06247500722862113,
+    "personal": 0.032777566310666466,
+    "onset": 0.034843019397725467,
+    "bin0": 0.09458130555138558,
+    "bin1": 0.04329822735119611,
+    "bin2": 0.0828783126176517,
+    "fine_200": 0.13090498982921692,
+    "fine_500": 0.08752935917926707,
+    "fine_1024": 0.08981156340847973,
+    "fine_2048": 0.1025634556507782,
+    "bin2_refined": 0.106168996352064,
+    "pooling_gap": 0.0232906837344123
+  },
+  "support": {
+    "split": "optimization",
+    "horizon": 3106,
+    "customers": 619,
+    "events": 815664,
+    "tail_events": 302200,
+    "counts": {
+      "normal": 810543,
+      "fraud": 4690,
+      "personal": 807705,
+      "onset": 429,
+      "bin0": 27601,
+      "bin1": 84660,
+      "bin2": 698282
+    }
+  },
+  "optimizer_success": true,
+  "optimizer_message": "Optimization terminated successfully.",
+  "evaluations": 49,
+  "frozen_personal_objective": 0.04525344690606202,
+  "frozen_personal_objective_parity": true,
+  "conditional_sample_sha256": "399b87bbcc03fb39591b3516f512f34c578800fd3c9afad8e9d70569cf531747",
+  "time_fit_seed": 73002,
+  "parent": 20260930,
+  "arm": "history_global"
+}

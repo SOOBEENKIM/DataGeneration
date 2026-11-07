@@ -1,0 +1,214 @@
+{
+  "created_utc": "2026-10-02T06:15:01.364107+00:00",
+  "purpose": "Your dot 또는 새 Codex 작업에 전달할 연구 상태. 새 실험 프로토콜이나 실행 승인은 아님.",
+  "repository": {
+    "url": "https://github.com/SOOBEENKIM/DataGeneration.git",
+    "remote_name": "datageneration",
+    "remote_main": "de8fa70e7e9608a77a2b651686c1b39d59e2456d",
+    "active_branch": "research/argn-state-first-v1",
+    "remote_and_local_head": "0d620a97bd91e4cd34a246a6ca8557782c07f470",
+    "workspace": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first",
+    "latest_completed_results_tracked_in_git": false,
+    "gitignore": "artifacts/*",
+    "warning": "main은 이전 SAF 기준. 현재 branch README의 latest 포인터도 이전 감사 단계이다. 최신 로컬 결과와 상위 AGENTS의 LATEST COMPLETED를 우선하며, HEAD만으로 결과 시점을 판단하지 않는다."
+  },
+  "current_task": "ARGN 기반 거래열 생성에서 시간 분포와 개인 대비 시간 관계의 개선을 기존 강한 방법과 비교하여 추가 기여를 검증한다.",
+  "execution": {
+    "latest_study": "argn_matched_init_comparison_v1",
+    "completed_kst": "2026-10-02 12:38",
+    "pending_jobs": 0,
+    "new_native_argn_fits": 0,
+    "new_statistical_mixtures": 27,
+    "new_calibrations": 3,
+    "new_full_generations": 6,
+    "reused_full_generations": 18,
+    "development_customers": 147,
+    "independent_parent_pipelines": 3,
+    "draws_per_arm_per_parent": 2,
+    "sealed_test_read": false,
+    "automatic_model_promotion": false
+  },
+  "matched_means": {
+    "history_calibration_only": {
+      "normal_gap_seconds_log_w1": 0.09451525564459894,
+      "onset_personal_gap_w1": 0.13093840811863983,
+      "fraud_gap_seconds_log_w1": 0.13609355008564972,
+      "normal_stay_personal_gap_w1": 0.06362883644361463,
+      "fraud_ratio_log_w1": 0.09131937054400958,
+      "normal_amount_log_w1": 0.0824534544226687,
+      "equal_customer_normal_gap_w1": 0.11910822692060719,
+      "class_0_merchant_tv": 0.07134291350570612,
+      "median_unique_merchants_per_customer": 548.0,
+      "early_time": 0.11127784907631766,
+      "time50_99": 0.1192294595631009,
+      "time100_199": 0.11035473943289927,
+      "time200_499": 0.1386060886697705,
+      "time500_1023": 0.13491011739338468,
+      "late1024_time": 0.11701255423196229
+    },
+    "history_only": {
+      "normal_gap_seconds_log_w1": 0.1257979382608392,
+      "onset_personal_gap_w1": 0.1354159288335102,
+      "fraud_gap_seconds_log_w1": 0.14011541416102855,
+      "normal_stay_personal_gap_w1": 0.06171975832648818,
+      "fraud_ratio_log_w1": 0.09394317444647936,
+      "normal_amount_log_w1": 0.08341710706025403,
+      "equal_customer_normal_gap_w1": 0.23323194905291442,
+      "class_0_merchant_tv": 0.07136575394093775,
+      "median_unique_merchants_per_customer": 547.8333333333334,
+      "early_time": 0.3139518021497409,
+      "time50_99": 0.25640594723227034,
+      "time100_199": 0.1950979360528434,
+      "time200_499": 0.20131582486637767,
+      "time500_1023": 0.10545391550582595,
+      "late1024_time": 0.15069500510226008
+    },
+    "history_position6": {
+      "normal_gap_seconds_log_w1": 0.09769264161960872,
+      "onset_personal_gap_w1": 0.13276877239422696,
+      "fraud_gap_seconds_log_w1": 0.13440302777256385,
+      "normal_stay_personal_gap_w1": 0.06093213469999035,
+      "fraud_ratio_log_w1": 0.0956869946765505,
+      "normal_amount_log_w1": 0.08162442912760663,
+      "equal_customer_normal_gap_w1": 0.11476792155950416,
+      "class_0_merchant_tv": 0.07132235270028037,
+      "median_unique_merchants_per_customer": 547.0,
+      "early_time": 0.10698542673003919,
+      "time50_99": 0.11578670974362049,
+      "time100_199": 0.09996945111857765,
+      "time200_499": 0.12090946863060122,
+      "time500_1023": 0.13793846297176982,
+      "late1024_time": 0.1213681791564577
+    },
+    "init_only": {
+      "normal_gap_seconds_log_w1": 0.07655134181603214,
+      "onset_personal_gap_w1": 0.11646005653091136,
+      "fraud_gap_seconds_log_w1": 0.11793224353207972,
+      "normal_stay_personal_gap_w1": 0.004884139182622022,
+      "fraud_ratio_log_w1": 0.0891561613308496,
+      "normal_amount_log_w1": 0.07964059850257794,
+      "equal_customer_normal_gap_w1": 0.18782523757019143,
+      "class_0_merchant_tv": 0.07149422928029123,
+      "median_unique_merchants_per_customer": 549.3333333333334,
+      "early_time": 0.09736913144376085,
+      "time50_99": 0.05144011498104889,
+      "time100_199": 0.164383700969503,
+      "time200_499": 0.09328708842271756,
+      "time500_1023": 0.1163743895197107,
+      "late1024_time": 0.0939154513356077
+    }
+  },
+  "interpretation": [
+    "C=history_calibration_only, P6=history_position6, H=history_only. C가 최선이라고 전제하지 않는다.",
+    "C는 P6보다 정상 전체 W1 평균 3.25% 개선, 3/3 전체학습에서 같은 방향. onset 추가 개선은 1/3에서만 관측; 학습 3개 기반 불확실성은 큼.",
+    "동일 최신 부모에서 init_only는 C보다 정상 전체 2/3, 정상 개인 대비 관계 3/3에서 우수. onset 평균은 init_only 우수지만 C가 2/3 학습에서는 더 좋아 모든 반복에서 같은 우위는 아니다.",
+    "C는 init_only보다 100–199 구간과 고객 동일가중 pooled 정상 시간에서 3/3 우수. 고객별 W1 평균, 고객동일가중 pooled W1, 거래가중 pooled W1은 다른 통계이다.",
+    "H의 정상 개인 대비 시간 오류도 이미 크다. 보정만 원인으로 단정하거나 GMR/신경망 단순 결합을 확정 해결책으로 제안하지 않는다.",
+    "반복 사용한 development. 최신 모델 대비 우위, 새로운 구조의 기여, 미개봉 테스트 일반화는 아직 확정되지 않았다."
+  ],
+  "model_map": {
+    "history_calibration_only": "ARGN 기반 기존 생성 pipeline + 일반 history mixture 시간 출력 + 개인 과거 속도/거래 위치 6계수 보정; 별도 first-five override 없음.",
+    "init_only": "같은 생성 pipeline + 과거 개인 속도와 log-gap의 GMR 조건부 출력 + 첫 5개 정상 간격 mixture + 6계수 보정. GMR 자체는 ARGN base 표현을 사용하지 않음.",
+    "history_position6": "동일 history 출력에 6계수 위치-only 보정; C의 개인 속도 추가 효과를 구별하는 직접 대조.",
+    "history_only": "동일 history 시간 출력, 초기 mixture/시간 보정 없음.",
+    "legacy_cs_saf": "이전 독립 연구 계보. 현재 ARGN 시간 확장과 동일 모델명으로 혼동하지 않음."
+  },
+  "next_review_order": [
+    "원격 main/연구 branch/로컬 완료 결과 차이와 active model registry를 먼저 확인한다. 전체 과거를 재실행하지 않는다.",
+    "완료된 제거실험과 이전 history_clock/GMR/생성 이력 대조를 읽어 이미 끝난 가설을 새 제안으로 반복하지 않는다.",
+    "양 후보 장점과 비용의 원인을 특정하는 최소 대조 하나와, 그 결과에 따른 변경/폐기 조건을 작성한다. 신경 history fits는 세 최신 부모 모두 step100 선택/700종료였으며 이를 학습 부족의 증명으로 간주하지 않는다.",
+    "가장 가까운 최신 방법의 입력/출력/목적/학습/생성을 우리 코드와 대응시킨다. 평가 개념이나 알려진 GMR을 신규성으로 주장하지 않는다.",
+    "MeLD500/2000은 완료된 예비 비교. 자유 길이/사기 품질이 나빠 충분히 학습된 최신 baseline이 아님. 적합성 및 추가학습 가치 진단이 먼저이며 이전 장기 학습을 자동 재시작하지 않는다.",
+    "변경이 필요하다는 근거가 있으면 고정 기준/동일 조건에서 작은 대조부터 실행하고 충분한 근거가 있는 경우 독립 학습으로 확대한다. 최종 선택을 위해 test를 반복 열지 않는다."
+  ],
+  "suggested_dot_responsibilities": {
+    "coordination": "최신 상태/문헌-방법 대응/결과 해석/다음 제한된 작업을 연결한다.",
+    "execution": "기존 GPU 서버에 접근 가능한 Codex 작업 하나에서 큐를 관리한다. 클라우드 또는 다른 챗의 GPU 접근을 가정하지 않는다.",
+    "parallel_read_only": "문헌 및 코드 검토와 저장 결과 독립 평가를 별도 읽기 작업으로 분리할 수 있다. 같은 파일 수정이나 동일 실험 중복 실행은 피한다.",
+    "budget": "각 작업에 가설, 입출력, 소스 버전, CPU/GPU/학습 예산과 완료 조건을 지정한다. 완료·실패·결론 변경 때 알리고 반복 대기는 조용히 기록한다.",
+    "scope": "이 파일은 Dot 설정/예약 등록/위임 실행을 수행한 기록이 아니다."
+  },
+  "official_dot_sources": [
+    "https://learn.chatgpt.com/docs/dots",
+    "https://learn.chatgpt.com/docs/dots/tasks-and-memory",
+    "https://learn.chatgpt.com/docs/dots/computers-and-apps"
+  ],
+  "literature_scope_this_review": {
+    "Seq2Synth": "https://arxiv.org/html/2607.15606v3 : 방법/평가 차원과 현재 주장 중복 점검. 전체 논문 목록 완독을 뜻하지 않음.",
+    "MoTPP": "https://arxiv.org/html/2609.21382v1 : 최근 조건부 mixture 시간 출력 관련 이전 독해 참조."
+  },
+  "evidence_files": [
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/AGENTS.md",
+      "sha256": "54c28a8bf8dfd350634a24b38af928fa15641fdf37bba53881c3fd4088b10ed9"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/AGENTS.md",
+      "sha256": "88758ef5f7234a96c8ec1c12114c6e96157afca5cfd79c9420bf198f66841625"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/RESEARCH_DECISIONS.md",
+      "sha256": "2f5132023b77e0cc96c9b0b87a6c29ed7f3a6d8cfaf7a886ae0258d24f99319b"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/report/INTERPRETATION.md",
+      "sha256": "b75b103492c85c202ce3882c1e6b0d7daa9cdb57e7224050010a1d998af936bd"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/report/PROTOCOL.md",
+      "sha256": "914778d20c677f50c2513536852a6434c219f5d84fc48fa553c4b623df48da41"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/report/FINAL_AUDIT.json",
+      "sha256": "3247586185658915561d315bfae37112915a1f0d28782a33342506466f17ea8f"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/report/matched/MEANS.csv",
+      "sha256": "952732e2c656370e72d1096ee4ca57998086c930566ffc12212abddbfe8a5bec"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/report/matched/FIT_MEANS.csv",
+      "sha256": "72f1314ec3a4697ad8d546d1b3534e277eb41fd25e6e6c11f52a7f82f7dc96b7"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/report/matched/PAIRED_EFFECTS.csv",
+      "sha256": "40bba73c83a0ecb36db5bcc41a53d67269ed7d2f0d74580e44ff63a1681c383e"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/report/EXISTING_COMPARISON.md",
+      "sha256": "4cf03680862c9dd34a9bcbfa5c7dd201914aac0c4b40cc6e66095184b01caa43"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/MANIFEST.json",
+      "sha256": "e537dd71738a243fcd0d401cc2735ed742cd289679a2c5c054c74e4a2bf2a3b1"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/local_source/stages.py",
+      "sha256": "6095c12410d715d3bcf68d1cbee4d48ffadb005109ba8994036b63305a24826e"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/validation_head.py",
+      "sha256": "1761d5f378708fdf7c8f82fd90df80e4e93fc208dbb167ad4db54f0499e65f46"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/local_source/initial_clock.py",
+      "sha256": "d03f08520647ad398d1130a5899f6d793d4ad3dea2d88ed00d75b2cef8e24a0a"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_clock_regression.py",
+      "sha256": "59a84c8d942899dfb4ffaa9d463371c0a584dc013a66fa556580bcae03d0d4a7"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_time_density.py",
+      "sha256": "7ecd38efa21084ffe7f647788195d1826aa801129204261150d0a1337b7d2b35"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/report/UNCERTAINTY_INTERPRETATION.md",
+      "sha256": "6af0f833845ce7a1f54a2a7500a43bb3b0528a18f01e1683126af965193626f0"
+    },
+    {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/EXECUTION_COMPLETE.json",
+      "sha256": "1e39fbd380c9fa8b2e257a5e4db27ab5869583bf135b8601ec844d353fd782d6"
+    }
+  ]
+}

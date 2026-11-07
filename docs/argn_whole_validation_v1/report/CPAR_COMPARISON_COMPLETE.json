@@ -1,0 +1,12 @@
+{
+  "utc": "2026-09-30T17:50:05.488505+00:00",
+  "datasets": 20,
+  "common_customers": 143,
+  "argn_independent_fits": 3,
+  "cpar_independent_fits": 1,
+  "cpar_selected_epochs": 128,
+  "original147retained": true,
+  "MeLD_trained_comparison": false,
+  "sealed_test_reads": 0,
+  "qualification": "one CPAR trajectory; no balanced multi-fit SOTA or final contribution claim"
+}

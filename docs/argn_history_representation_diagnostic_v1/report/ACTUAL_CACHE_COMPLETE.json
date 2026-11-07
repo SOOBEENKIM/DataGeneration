@@ -1,0 +1,11 @@
+{
+  "rows": 177997,
+  "customers": 147,
+  "dim": 1322,
+  "actual_base_shape": [
+    177997,
+    1322
+  ],
+  "fast_forward_parity": true,
+  "test_events_read": false
+}

@@ -1,0 +1,148 @@
+{
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/backbones/20261021/workspace/ModelStore/model-data/model-weights.pt": "09d61e6c942cbd2d24d4f37997918aa20d381d7350efbe39d09436ff8df0f436",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/heads/20261021/history_only/time_head.pt": "3e9d49eb4986f362fc76d9f235973edf298af9ae93b389a78b5c7583ab862b10",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_only_20261021/generated_validation_20261031.parquet": "244ba0f489e6acd8972b6b2b49d0ada69f9a44d22e44000af0605e6b33e6a777",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_only_20261021/generated_validation_20261032.parquet": "ce6c9e2402b11ec5802bded15005028d9b0d0a2a15e32fdb4beaff6b2fd51128",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/heads/20261021/history_position6/time_head.pt": "5fb45f37d9788f576485de9f37d5e79556af02c88e16846ac508c796b02aadd6",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_position6_20261021/generated_validation_20261031.parquet": "7112ad5373274756ebdd4f318479ee9f1aba09c37ae164e63ba46d134c12b22f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_position6_20261021/generated_validation_20261032.parquet": "b5e896a4cb1f4bcb5f976f1b8a955d1a20201043f6584a82e1a7ee3442a82844",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/heads/20261021/history_calibration_only/time_head.pt": "aaee19fb4e50ec37d7417df9c3b631a3dd1e09572332edb3d5e6201c3d4b4902",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_calibration_only_20261021/generated_validation_20261031.parquet": "8c812f6ab13ac4467c6e2feb3fe0c90c4469de48991387b7e57ac1cfde99ddf3",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_calibration_only_20261021/generated_validation_20261032.parquet": "78b62bd438311cb979557dd1fafb41f59b648ea03ad12c2574830f154fee5969",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/backbones/20261022/workspace/ModelStore/model-data/model-weights.pt": "add0ee8a5828d76cba97f23b30713591a525f25c7e1ca25f77216663dbd5eadf",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/heads/20261022/history_only/time_head.pt": "7b9fedcce0f1a9080370fe7d57d2aa995873bb387b027071c8eb9953cab53330",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_only_20261022/generated_validation_20261031.parquet": "075542fec2ad44c1c55996d84f3e504d6fb7afffd0b2484cdc5c94c51157c83b",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_only_20261022/generated_validation_20261032.parquet": "9b42083195cef15a680e287b1374a1541d362568ded74d965164ddea8d10003c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/heads/20261022/history_position6/time_head.pt": "b9d3c846a261fe5f3f6240e992db659ef47d9ed98ac7bdd6aff9d55b2f7302f7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_position6_20261022/generated_validation_20261031.parquet": "eecd4aedde59c78f0ed0b53b272797ce17b18e7f78b92a0017d3e964651b0139",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_position6_20261022/generated_validation_20261032.parquet": "d0c639c88032938b2679835cd8545a674a57d353e153ad9b47ae6c5cb6813051",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/heads/20261022/history_calibration_only/time_head.pt": "f8367ff6407996ae7c53b8863db19de76e6479294c4bb6f765438e51a656255c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_calibration_only_20261022/generated_validation_20261031.parquet": "5670b142f863d14ef4a267a2bde4ac39a8ca3f65682b8501eb64fb8eaf06c7e9",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_calibration_only_20261022/generated_validation_20261032.parquet": "00773a7e4859c08e70756623e0c510fa7febf8cd7c19b78a57e9d1c0c2202278",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/backbones/20261023/workspace/ModelStore/model-data/model-weights.pt": "99dd0698c368d7e3d479b1fc2c219e6bdfdadf3a8748ff159f52b772097429c3",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/heads/20261023/history_only/time_head.pt": "83483f82ff0391838ff0c4829883daa16f8796dc7eabe23ede5c954e73994cd1",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_only_20261023/generated_validation_20261031.parquet": "200187eaacb0ff8699f341def2e699566299e9de5af6157ea4c2df23cc28ce6c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_only_20261023/generated_validation_20261032.parquet": "b5bc80a76830404166bcb57aaf44607f3df7be4e707467bbe073efe78b89c433",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/heads/20261023/history_position6/time_head.pt": "d0be3ff58024d5d588d1ac5e4b2367c688a323536270e61fab5f6f929e79113c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_position6_20261023/generated_validation_20261031.parquet": "f55bd072d1d0c80cd85623b4b69a23768fa5bc37c87b76e59cc6b30a2e1b777e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_position6_20261023/generated_validation_20261032.parquet": "c6c30ebcff28ef5902dbedcf7949aef2a00d2bd87ed439125064cc6fe94b9ece",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/heads/20261023/history_calibration_only/time_head.pt": "494db88d26ab6cf7a8a4322268b686d348fb504be4c1064cbedf10222e7549a5",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_calibration_only_20261023/generated_validation_20261031.parquet": "9255015a8852ac15dab145aec399ab1b78381c68b4724d2a9428c2db1181a76a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/runs/history_calibration_only_20261023/generated_validation_20261032.parquet": "ea1e7967cb7d4249965ca138dc97dd67c1076211cf1a703f777fbeb36ea88366"
+  },
+  "checks": [
+    {
+      "fit_seed": 20261021,
+      "arm": "history_only",
+      "generation_seed": 20261031,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261021,
+      "arm": "history_only",
+      "generation_seed": 20261032,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261021,
+      "arm": "history_position6",
+      "generation_seed": 20261031,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261021,
+      "arm": "history_position6",
+      "generation_seed": 20261032,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261021,
+      "arm": "history_calibration_only",
+      "generation_seed": 20261031,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261021,
+      "arm": "history_calibration_only",
+      "generation_seed": 20261032,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261022,
+      "arm": "history_only",
+      "generation_seed": 20261031,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261022,
+      "arm": "history_only",
+      "generation_seed": 20261032,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261022,
+      "arm": "history_position6",
+      "generation_seed": 20261031,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261022,
+      "arm": "history_position6",
+      "generation_seed": 20261032,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261022,
+      "arm": "history_calibration_only",
+      "generation_seed": 20261031,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261022,
+      "arm": "history_calibration_only",
+      "generation_seed": 20261032,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261023,
+      "arm": "history_only",
+      "generation_seed": 20261031,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261023,
+      "arm": "history_only",
+      "generation_seed": 20261032,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261023,
+      "arm": "history_position6",
+      "generation_seed": 20261031,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261023,
+      "arm": "history_position6",
+      "generation_seed": 20261032,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261023,
+      "arm": "history_calibration_only",
+      "generation_seed": 20261031,
+      "model_output_pair": true
+    },
+    {
+      "fit_seed": 20261023,
+      "arm": "history_calibration_only",
+      "generation_seed": 20261032,
+      "model_output_pair": true
+    }
+  ],
+  "backbones": 3,
+  "heads": 9,
+  "outputs": 18,
+  "current_candidate_retuned": false
+}

@@ -1,0 +1,63 @@
+{
+  "active": "clock_prefix",
+  "preserved_candidate": "init_only",
+  "automatic_promotion": false,
+  "comparisons": [
+    {
+      "comparator": "no_initial",
+      "normal_target": false,
+      "onset_target": false,
+      "costs": "",
+      "lower_normal_fits": 0,
+      "lower_onset_fits": 1,
+      "descriptive_screen": false
+    },
+    {
+      "comparator": "no_calibration",
+      "normal_target": true,
+      "onset_target": false,
+      "costs": "time500_1023",
+      "lower_normal_fits": 3,
+      "lower_onset_fits": 1,
+      "descriptive_screen": false
+    },
+    {
+      "comparator": "gmr",
+      "normal_target": true,
+      "onset_target": false,
+      "costs": "time500_1023",
+      "lower_normal_fits": 3,
+      "lower_onset_fits": 2,
+      "descriptive_screen": false
+    },
+    {
+      "comparator": "phase_gmm",
+      "normal_target": true,
+      "onset_target": true,
+      "costs": "time500_1023",
+      "lower_normal_fits": 3,
+      "lower_onset_fits": 3,
+      "descriptive_screen": false
+    },
+    {
+      "comparator": "history_only",
+      "normal_target": false,
+      "onset_target": false,
+      "costs": "",
+      "lower_normal_fits": 3,
+      "lower_onset_fits": 0,
+      "descriptive_screen": false
+    },
+    {
+      "comparator": "history_init_cal",
+      "normal_target": false,
+      "onset_target": false,
+      "costs": "",
+      "lower_normal_fits": 0,
+      "lower_onset_fits": 0,
+      "descriptive_screen": false
+    }
+  ],
+  "independent_native_argn_refits": false,
+  "same_task_whole_generator_adequacy_complete": false
+}

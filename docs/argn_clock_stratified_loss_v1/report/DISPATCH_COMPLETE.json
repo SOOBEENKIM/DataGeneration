@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "jobs": {
+    "event_two_20260930": {
+      "pid": 1595073,
+      "exit_code": 0
+    },
+    "event_two_20261001": {
+      "pid": 1595195,
+      "exit_code": 0
+    },
+    "customer_two_20260930": {
+      "pid": 1595328,
+      "exit_code": 0
+    },
+    "customer_two_20261001": {
+      "pid": 1595465,
+      "exit_code": 0
+    },
+    "position_six_20260930": {
+      "pid": 1596426,
+      "exit_code": 0
+    },
+    "position_six_20261001": {
+      "pid": 1596565,
+      "exit_code": 0
+    },
+    "personal_six_20260930": {
+      "pid": 1599512,
+      "exit_code": 0
+    },
+    "personal_six_20261001": {
+      "pid": 1599643,
+      "exit_code": 0
+    }
+  },
+  "completed_utc": "2026-09-27T18:56:19.217054+00:00"
+}

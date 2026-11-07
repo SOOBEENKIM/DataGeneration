@@ -1,0 +1,107 @@
+{
+  "foundation_20261021": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:21:30.636498+00:00"
+  },
+  "foundation_20261022": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:21:51.425621+00:00"
+  },
+  "foundation_20261023": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:22:22.685526+00:00"
+  },
+  "history_20261021": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:22:38.322419+00:00"
+  },
+  "history_20261022": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:23:25.393508+00:00"
+  },
+  "history_20261023": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:24:22.808631+00:00"
+  },
+  "gen_history_only_20261021": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:26:27.268920+00:00"
+  },
+  "cal_history_calibration_only_20261021": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:27:19.114315+00:00"
+  },
+  "gen_history_only_20261022": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:27:24.317485+00:00"
+  },
+  "cal_history_position6_20261021": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:27:55.731811+00:00"
+  },
+  "gen_history_only_20261023": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:28:16.457321+00:00"
+  },
+  "gen_history_calibration_only_20261021": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:30:46.721592+00:00"
+  },
+  "gen_history_position6_20261021": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:32:40.962824+00:00"
+  },
+  "cal_history_position6_20261022": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:32:51.296350+00:00"
+  },
+  "gen_history_position6_20261022": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:36:23.620733+00:00"
+  },
+  "cal_history_position6_20261023": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:38:22.984949+00:00"
+  },
+  "cal_history_calibration_only_20261022": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:38:43.959401+00:00"
+  },
+  "gen_history_position6_20261023": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:41:35.536634+00:00"
+  },
+  "gen_history_calibration_only_20261022": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:41:56.291199+00:00"
+  },
+  "cal_history_calibration_only_20261023": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:45:24.188376+00:00"
+  },
+  "gen_history_calibration_only_20261023": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T17:48:31.089885+00:00"
+  }
+}

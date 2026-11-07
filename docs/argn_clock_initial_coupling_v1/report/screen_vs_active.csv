@@ -1,0 +1,7 @@
+arm,fit_seed,normal_pass,improved_draws,late_pass,customer_pass,costs,passes
+init_only,20260930,True,4,True,True,,True
+handoff_only,20260930,True,4,True,True,fraud_gap_seconds_log_w1,False
+init_handoff,20260930,True,4,True,True,,True
+init_only,20261001,True,4,True,True,,True
+handoff_only,20261001,True,4,True,True,,True
+init_handoff,20261001,True,4,True,True,fraud_ratio_log_w1,False

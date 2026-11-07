@@ -1,0 +1,15 @@
+{
+  "epoch": 500,
+  "best_epoch": 500,
+  "internal_best": 0.11314347100367775,
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/snapshots/20261022/vae_last.pt": "b5f76adc154e7cb8c15f87d6c619a00546a4ad6815e739b3908d925eaca0f410",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/snapshots/20261022/vae_best.pt": "cb8f8e0363cb5484700c5bc92f38a261870e1383abb087bab55d1938c77230c4",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/snapshots/20261022/VAE_CURVE.jsonl": "35ef8fa4be050f53f19c7218d8518cfafc983e7cdee1150e66554e8b8c1799f4",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/snapshots/20261022/STATUS.json": "a15e317102afe7510af6d763802988f105b73a96a5a672cbc02a4c1bef076cd5",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/snapshots/20261022/START.json": "5f4d8ae1be1946d84a4a4d148896196ae9dd7d751c87f2fad068359160cc7eed"
+  },
+  "optimizer_and_rng_preserved": true,
+  "original_source": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/meld/fit_20261022",
+  "preliminary": true
+}

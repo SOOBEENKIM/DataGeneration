@@ -1,0 +1,8 @@
+{
+  "arm": "history_initial_only",
+  "time_fit_seed": 73001,
+  "parent": 20261001,
+  "sha256": "6a709a110b596c2cae3f63aed617b8152a8a8966f1256a02d7f434c968d0a886",
+  "source_sha256": "02e6da59d03ee217ff6797138c522c0febeeb7bc9fa059ddad87398ea30ba2e7",
+  "new_fit": false
+}

@@ -1,0 +1,33 @@
+{
+  "config": {
+    "seed": 20260929,
+    "epochs": 50,
+    "batch_size": 4,
+    "accumulation": 8,
+    "lr": 0.0005,
+    "block_size": 8,
+    "transformer_dim": 32,
+    "transformer_heads": 4,
+    "num_decoder_layers": 4,
+    "dropout": 0.0,
+    "diffusion_steps": 100,
+    "sampling_steps": 50,
+    "loss_lambda": 1.0,
+    "generation_seeds": [
+      20261011,
+      20261012
+    ],
+    "parent_seed": 20260930
+  },
+  "created_utc": "2026-09-29T06:22:38.978423+00:00",
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/reference_sources/lbdtpp_20260927/model/diffusion_model.py": "7cf62afb18d3fc45845300887c4656f14088f7c0cbbd947cd6ec7e399c83f2ba",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/reference_sources/lbdtpp_20260927/model/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/reference_sources/lbdtpp_20260927/model/bdtpp_model.py": "d325493d8de4b7405511a6f1f597e585806deb22852ef05fec6c2a2377aa742f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/reference_sources/lbdtpp_20260927/model/block_dit.py": "f761a0e1437c87ac5f27421ded6eb9bdc44533d14d7e713f8b48d3e088c96211",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/lbdtpp_sparkov_v1/local_source/run_lbdtpp.py": "40b0448e147bc4b635e4513dbe7f94c06fd79b72d7740a0be3083103a43caaf5",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/lbdtpp_sparkov_v1/report/PROTOCOL.md": "118862bd37a9eedc444365ead67d8cc6a6edd7415cb58c2407e382ba79781e8d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_optimization.parquet": "bb6c3bff604f218d4f9c2d3eb18727b3a389ccaa0497649c45e6ec08ba3469c8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_internal_validation.parquet": "53008f14d9e691d83e05f9a8704d905675aff871d4eecaf5c07d92debe6093a4"
+  }
+}

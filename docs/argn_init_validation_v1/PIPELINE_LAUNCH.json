@@ -1,0 +1,995 @@
+{
+  "pid": 2923442,
+  "started_utc": "2026-09-30T12:50:24.946992+00:00",
+  "jobs": [
+    {
+      "key": "cache",
+      "mode": "cache",
+      "kind": "gpu",
+      "deps": [],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/cache/20261001/CACHE_COMPLETE.json",
+      "args": [
+        "--parent",
+        "20261001"
+      ]
+    },
+    {
+      "key": "stat_73001",
+      "mode": "statistics",
+      "kind": "cpu",
+      "deps": [],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001"
+      ]
+    },
+    {
+      "key": "history_20260930_73001",
+      "mode": "history",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/MIXTURES.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73001/TRAIN_COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930"
+      ]
+    },
+    {
+      "key": "history_cal_20260930_73001",
+      "mode": "calibrate_history",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73001/TRAIN_COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/COMPLETE.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930"
+      ]
+    },
+    {
+      "key": "gen_init_only_20260930_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/init_only_73001_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930",
+        "--arm",
+        "init_only"
+      ]
+    },
+    {
+      "key": "gen_no_initial_20260930_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/no_initial_73001_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930",
+        "--arm",
+        "no_initial"
+      ]
+    },
+    {
+      "key": "gen_no_calibration_20260930_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/no_calibration_73001_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930",
+        "--arm",
+        "no_calibration"
+      ]
+    },
+    {
+      "key": "gen_gmr_20260930_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/gmr_73001_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930",
+        "--arm",
+        "gmr"
+      ]
+    },
+    {
+      "key": "gen_phase_gmm_20260930_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/phase_gmm_73001_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930",
+        "--arm",
+        "phase_gmm"
+      ]
+    },
+    {
+      "key": "gen_history_only_20260930_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73001/TRAIN_COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/history_only_73001_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_only"
+      ]
+    },
+    {
+      "key": "gen_history_init_cal_20260930_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/history_init_cal_73001_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_init_cal"
+      ]
+    },
+    {
+      "key": "history_20261001_73001",
+      "mode": "history",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/MIXTURES.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/cache/20261001/CACHE_COMPLETE.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73001/TRAIN_COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001"
+      ]
+    },
+    {
+      "key": "history_cal_20261001_73001",
+      "mode": "calibrate_history",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73001/TRAIN_COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/COMPLETE.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001"
+      ]
+    },
+    {
+      "key": "gen_init_only_20261001_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/init_only_73001_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001",
+        "--arm",
+        "init_only"
+      ]
+    },
+    {
+      "key": "gen_no_initial_20261001_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/no_initial_73001_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001",
+        "--arm",
+        "no_initial"
+      ]
+    },
+    {
+      "key": "gen_no_calibration_20261001_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/no_calibration_73001_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001",
+        "--arm",
+        "no_calibration"
+      ]
+    },
+    {
+      "key": "gen_gmr_20261001_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/gmr_73001_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001",
+        "--arm",
+        "gmr"
+      ]
+    },
+    {
+      "key": "gen_phase_gmm_20261001_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/phase_gmm_73001_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001",
+        "--arm",
+        "phase_gmm"
+      ]
+    },
+    {
+      "key": "gen_history_only_20261001_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73001/TRAIN_COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/history_only_73001_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_only"
+      ]
+    },
+    {
+      "key": "gen_history_init_cal_20261001_73001",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73001/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/history_init_cal_73001_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73001",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_init_cal"
+      ]
+    },
+    {
+      "key": "stat_73002",
+      "mode": "statistics",
+      "kind": "cpu",
+      "deps": [],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002"
+      ]
+    },
+    {
+      "key": "history_20260930_73002",
+      "mode": "history",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/MIXTURES.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73002/TRAIN_COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930"
+      ]
+    },
+    {
+      "key": "history_cal_20260930_73002",
+      "mode": "calibrate_history",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73002/TRAIN_COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/COMPLETE.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73002/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930"
+      ]
+    },
+    {
+      "key": "gen_init_only_20260930_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/init_only_73002_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930",
+        "--arm",
+        "init_only"
+      ]
+    },
+    {
+      "key": "gen_no_initial_20260930_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/no_initial_73002_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930",
+        "--arm",
+        "no_initial"
+      ]
+    },
+    {
+      "key": "gen_no_calibration_20260930_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/no_calibration_73002_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930",
+        "--arm",
+        "no_calibration"
+      ]
+    },
+    {
+      "key": "gen_gmr_20260930_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/gmr_73002_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930",
+        "--arm",
+        "gmr"
+      ]
+    },
+    {
+      "key": "gen_phase_gmm_20260930_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/phase_gmm_73002_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930",
+        "--arm",
+        "phase_gmm"
+      ]
+    },
+    {
+      "key": "gen_history_only_20260930_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73002/TRAIN_COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/history_only_73002_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_only"
+      ]
+    },
+    {
+      "key": "gen_history_init_cal_20260930_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/history_init_cal_73002_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_init_cal"
+      ]
+    },
+    {
+      "key": "history_20261001_73002",
+      "mode": "history",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/MIXTURES.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/cache/20261001/CACHE_COMPLETE.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73002/TRAIN_COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001"
+      ]
+    },
+    {
+      "key": "history_cal_20261001_73002",
+      "mode": "calibrate_history",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73002/TRAIN_COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/COMPLETE.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73002/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001"
+      ]
+    },
+    {
+      "key": "gen_init_only_20261001_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/init_only_73002_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001",
+        "--arm",
+        "init_only"
+      ]
+    },
+    {
+      "key": "gen_no_initial_20261001_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/no_initial_73002_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001",
+        "--arm",
+        "no_initial"
+      ]
+    },
+    {
+      "key": "gen_no_calibration_20261001_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/no_calibration_73002_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001",
+        "--arm",
+        "no_calibration"
+      ]
+    },
+    {
+      "key": "gen_gmr_20261001_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/gmr_73002_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001",
+        "--arm",
+        "gmr"
+      ]
+    },
+    {
+      "key": "gen_phase_gmm_20261001_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/phase_gmm_73002_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001",
+        "--arm",
+        "phase_gmm"
+      ]
+    },
+    {
+      "key": "gen_history_only_20261001_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73002/TRAIN_COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/history_only_73002_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_only"
+      ]
+    },
+    {
+      "key": "gen_history_init_cal_20261001_73002",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73002/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/history_init_cal_73002_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73002",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_init_cal"
+      ]
+    },
+    {
+      "key": "stat_73003",
+      "mode": "statistics",
+      "kind": "cpu",
+      "deps": [],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003"
+      ]
+    },
+    {
+      "key": "history_20260930_73003",
+      "mode": "history",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/MIXTURES.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73003/TRAIN_COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930"
+      ]
+    },
+    {
+      "key": "history_cal_20260930_73003",
+      "mode": "calibrate_history",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73003/TRAIN_COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/COMPLETE.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73003/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930"
+      ]
+    },
+    {
+      "key": "gen_init_only_20260930_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/init_only_73003_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930",
+        "--arm",
+        "init_only"
+      ]
+    },
+    {
+      "key": "gen_no_initial_20260930_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/no_initial_73003_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930",
+        "--arm",
+        "no_initial"
+      ]
+    },
+    {
+      "key": "gen_no_calibration_20260930_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/no_calibration_73003_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930",
+        "--arm",
+        "no_calibration"
+      ]
+    },
+    {
+      "key": "gen_gmr_20260930_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/gmr_73003_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930",
+        "--arm",
+        "gmr"
+      ]
+    },
+    {
+      "key": "gen_phase_gmm_20260930_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/phase_gmm_73003_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930",
+        "--arm",
+        "phase_gmm"
+      ]
+    },
+    {
+      "key": "gen_history_only_20260930_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73003/TRAIN_COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/history_only_73003_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_only"
+      ]
+    },
+    {
+      "key": "gen_history_init_cal_20260930_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20260930_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/history_init_cal_73003_20260930/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20260930",
+        "--arm",
+        "history_init_cal"
+      ]
+    },
+    {
+      "key": "history_20261001_73003",
+      "mode": "history",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/MIXTURES.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/cache/20261001/CACHE_COMPLETE.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73003/TRAIN_COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001"
+      ]
+    },
+    {
+      "key": "history_cal_20261001_73003",
+      "mode": "calibrate_history",
+      "kind": "cpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73003/TRAIN_COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/COMPLETE.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73003/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001"
+      ]
+    },
+    {
+      "key": "gen_init_only_20261001_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/init_only_73003_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001",
+        "--arm",
+        "init_only"
+      ]
+    },
+    {
+      "key": "gen_no_initial_20261001_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/no_initial_73003_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001",
+        "--arm",
+        "no_initial"
+      ]
+    },
+    {
+      "key": "gen_no_calibration_20261001_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/no_calibration_73003_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001",
+        "--arm",
+        "no_calibration"
+      ]
+    },
+    {
+      "key": "gen_gmr_20261001_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/gmr_73003_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001",
+        "--arm",
+        "gmr"
+      ]
+    },
+    {
+      "key": "gen_phase_gmm_20261001_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/statistics_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/phase_gmm_73003_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001",
+        "--arm",
+        "phase_gmm"
+      ]
+    },
+    {
+      "key": "gen_history_only_20261001_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73003/TRAIN_COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/history_only_73003_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_only"
+      ]
+    },
+    {
+      "key": "gen_history_init_cal_20261001_73003",
+      "mode": "generate",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/fits/history_20261001_73003/COMPLETE.json",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/EVALUATION_READY.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/runs/history_init_cal_73003_20261001/COMPLETE.json",
+      "args": [
+        "--seed",
+        "73003",
+        "--parent",
+        "20261001",
+        "--arm",
+        "history_init_cal"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "queues": {
+    "20260930": {
+      "pid": 1236565,
+      "gpu": {
+        "index": 2,
+        "uuid": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+        "used_mib": 52,
+        "utilization": 0
+      },
+      "command": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/continue_argn_event_weight_generation.py",
+        "--seed",
+        "20260930",
+        "--device",
+        "cuda:0"
+      ],
+      "started_utc": "2026-09-27T06:52:41.835468+00:00",
+      "mode": "generation_only"
+    },
+    "20261001": {
+      "pid": 1236566,
+      "gpu": {
+        "index": 3,
+        "uuid": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+        "used_mib": 93,
+        "utilization": 0
+      },
+      "command": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_event_weight_control.py",
+        "--seed",
+        "20261001",
+        "--device",
+        "cuda:0"
+      ],
+      "started_utc": "2026-09-27T06:52:41.836728+00:00",
+      "mode": "fresh_restart"
+    }
+  },
+  "purpose": "user-requested relocation to idle GPUs 2 and 3",
+  "archive": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/relocation_history/20260927T065241Z",
+  "controller_sha256": "75d5d71ffebdf2c5246a64c23efd469c6ae9bffd0c2a8de40dd584709ec3a70d"
+}

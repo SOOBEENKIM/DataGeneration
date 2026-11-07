@@ -1,0 +1,91 @@
+{
+  "created_utc": "2026-09-30T16:46:42.315135+00:00",
+  "activity": "Read-only literature/code review and concrete next-study design requested by user; not a preregistered launched experiment",
+  "new_fits": 0,
+  "new_generations": 0,
+  "gpu_jobs": 0,
+  "sealed_test_reads": 0,
+  "push": false,
+  "model_replacement": false,
+  "evidence": "argn_calibration_specificity_v1: C normal improvement over position6 is10.7% over3time-fit means; benefit concentrated in parent20260930, parent20261001 near equality. Normal-personal costs persist. Onset gain versus H largely also occurs with global calibration.",
+  "scope": "ARGN-based time-output calibration candidate, not proven universal backbone gain, new fraud-transition model or SOTA superiority.",
+  "next_parallel_tracks": [
+    {
+      "track": "fresh complete-pipeline replication",
+      "design": "Freeze current code/hyperparameters; start with3new independent ARGN/backbone-to-time-head fits, with shared parent for H/position6/C paired comparisons and2generation draws per fit. This is a proposed design, not an executed fit count. Do not relabel time-head repetitions as whole-model repetitions. Preserve older parents separately."
+    },
+    {
+      "track": "CPAR adequacy",
+      "design": "Pin official version; compare128(default) and256epoch budgets on optimization/internal-validation first, not only training loss. Predeclare any further cap/selection before running. Maintain static-context support143separately from full147; exclusions stem from unseen statesDE/HI/RI, not labels or output quality. Do not add validation categories to training silently."
+    },
+    {
+      "track": "MeLD adaptation",
+      "design": "Pin official implementation; run author pseudo/toy-data pipeline smoke checks, then Sparkov encode/decode and small VAE/diffusion/generation checks. Verify time units/order, EOS/padding, static-condition handling, rare-label reconstruction and full required field roundtrip. Paper max120visits is not a model hard limit; do not truncate Sparkov only for MeLD and rank as full-length. Small/short experiments are compatibility checks only. README advertisesCFG/text conditioning; actual relevant code path must be verified rather than presumed absent or ready."
+    }
+  ],
+  "common_task_contract": {
+    "module_question": "Shared learned/generated labels/counts and backbone isolate time correction; preserved completed study.",
+    "whole_generator_question": "Same data split, fields, generation conditions and length/horizon policy; each full pipeline generates its own labels and other fields. Do not give true future labels/lengths to a favored model or force CPAR/MeLD to follow our synthetic labels while calling it free generation.",
+    "conditional_support": "If static conditioning differs, validate native support/adaptation or use a separately declared unconditional cohort task for all methods. Never mix conditional147customer numbers with unsupported or unconditional outputs as if equivalent.",
+    "model_set": [
+      "officialARGN",
+      "current_pipeline_without_time_calibrationH",
+      "current_pipeline_position6",
+      "current_pipeline_personalC",
+      "CPAR",
+      "MeLD_after_compatibility_and_training_verification"
+    ],
+    "primary_metrics": [
+      "normal_log_gap_W1",
+      "onset_personal_gap_W1"
+    ],
+    "cost_metrics": [
+      "normal_personal_gap",
+      "early/mid/tail_time",
+      "fraud_rate/episode/customer_distribution",
+      "amount/merchant_joint_quality",
+      "diversity",
+      "runtime"
+    ],
+    "selection": "Fix internal validation selection and tuning budgets before runs; same opportunity and documented resource/time, not identical epoch count for unrelated algorithms. Do not select on reused final development outcomes or unopenedtest.",
+    "uncertainty": "Independent fit summaries and customer-level uncertainty; generatedrows/draws are not independent trained models."
+  },
+  "final_validation": "After fixed model and baseline protocols, evaluate unopenedtest once; use Berka only for timing/personal-dynamics transfer because it lacks fraud labels. Fraud-specific external validity needs another labeled dataset. Fixed fraud-detector synthetic-train/real-evaluation utility can be auxiliary, not a new detection-method contribution.",
+  "decision": "Repeatability + adequate whole-generator comparison justify narrowed empirical claim; failure against position6 stops the personal-speed increment claim. Effects limited to one backbone or condition require restricted scope and further independent evidence, not changed metrics or automatic new correction formula. Novelty remains literature-dependent.",
+  "primary_sources_read": [
+    {
+      "name": "SDV PARSynthesizer",
+      "url": "https://docs.sdv.dev/sdv/modeling/sequential-synthesizers/parsynthesizer",
+      "scope": "defaults128epochs,context,segmenting,fit restarts; official docs loose GAN wording not adopted"
+    },
+    {
+      "name": "MeLD2026",
+      "url": "https://www.nature.com/articles/s41467-026-74492-0",
+      "scope": "Methods architecture/120visit setup/code availability, not all supplementary material"
+    },
+    {
+      "name": "MeLD official repo",
+      "url": "https://github.com/jeffreyliang-vandy/MeLD",
+      "scope": "README pipeline/pseudo-data/CFG update; local three pinned entry files reread, not all implementation or successful execution"
+    },
+    {
+      "name": "Seq2Synth2026v3",
+      "url": "https://arxiv.org/html/2607.15606v3",
+      "scope": "temporal-vs-static evaluation rationale,AppendixD deterministic sorting/grid/trimming/deduplication/imputation; different from learned online personal-speed shift; raw timestamp errors must remain visible"
+    },
+    {
+      "name": "ProbRes2026v1",
+      "url": "https://arxiv.org/html/2606.02117v1",
+      "scope": "Section3conditionalmean/volatility/normalized-residual resampling andSection4assumptions; does not transfer a stability theorem to rolling-speed calibration"
+    }
+  ],
+  "additional_search_scope": [
+    "PatientFlow2026 primary journal result screened; full page403, no fulltext understanding or reproduction claim.",
+    "Discrete Tokenization Unlocks Transformers for Calibrated Tabular Forecasting2603.07448: abstract only, prediction task; not adopted as whole-transaction generator."
+  ],
+  "implementation_followups_open": [
+    "numeric run budgets and seed IDs require final registration",
+    "MeLD full schema/conditioning/longlength compatibility unverified",
+    "no new CPAR/backbone/MeLD training launched this turn"
+  ]
+}

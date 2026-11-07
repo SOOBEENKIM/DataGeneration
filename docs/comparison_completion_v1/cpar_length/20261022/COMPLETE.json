@@ -1,0 +1,7 @@
+{
+  "fit_seed": 20261022,
+  "generations": 2,
+  "model_sha256": "39f09a04eec9ba19b3c12c1aab0b08dfa7dfd9537f3c7efe12a2f6016c24e34d",
+  "variant": "CPAR+shared-synthetic-count",
+  "test_reads": 0
+}

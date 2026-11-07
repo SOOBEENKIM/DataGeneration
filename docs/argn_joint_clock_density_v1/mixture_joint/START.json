@@ -1,0 +1,7 @@
+{
+  "pid": 2173977,
+  "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+  "arm": "mixture_joint",
+  "started_utc": "2026-09-29T06:30:34.840326+00:00",
+  "trainable_parameters": 85705
+}

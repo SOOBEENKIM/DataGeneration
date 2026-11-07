@@ -1,0 +1,13 @@
+{
+  "time_fit_seed": 73002,
+  "mixture_fits": 9,
+  "calibration_fits": 1,
+  "head_hashes": {
+    "init_only": "c4fce4d154d161d444f9456a7c93cd09b3e6f8d12ecfe12f4ed64c5f0694542c",
+    "no_initial": "1b303f2c27eb35b6b1344720e37fdf0d27769027b67ab536711b04814ca3be68",
+    "no_calibration": "db846927c528813a093f3fb99a859d981d4da633733e152018e519e993e2e3e5",
+    "gmr": "987346c22388e0072cedad54004d35df12e8916de6c56babdc0046883e650b99",
+    "phase_gmm": "1b5bc1d70d42a7a73ee811b4d08110e691b111211cd886ebac9386308cb825c1"
+  },
+  "finished_utc": "2026-09-30T12:57:10.799364+00:00"
+}

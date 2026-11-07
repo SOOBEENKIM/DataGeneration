@@ -1,0 +1,32 @@
+{
+  "status": "read_only_audit_complete_no_deletion",
+  "deleted_files": 0,
+  "scope": "이 연구 작업공간 내부만 조사. 전체 SSD나 다른 사용자의 파일은 정리 대상으로 포함하지 않음.",
+  "workspace_allocated_approx_gib": 359,
+  "free_disk_approx_gib": 132,
+  "first_priority": {
+    "description": "완료된 이전 external_validation_v1의 중간 step 체크포인트. 최종 모델, 최초/마지막 step, 설정/코드/평가/생성 자료는 보존.",
+    "candidate_files": 988,
+    "candidate_allocated_gib": 223.92171096801758,
+    "all_six_final_checkpoint_hashes_verified": true,
+    "latest_740_file_manifest_overlap": 0,
+    "limitation": "현재 manifest와 직접 겹치지 않는다는 확인이며 모든 과거 스크립트의 동적 참조가 없다는 증명은 아님. 삭제 실행 전 선택모델/재개 지점 참조와 보존목록을 확정해야 함."
+  },
+  "second_priority": {
+    "description": "benchmark_v2_5 중간 step 체크포인트. 일부 INVALID 실험이므로 보존할 진단 지점 확인 후 결정. 최종/대표 실패 모델과 실패 기록 보존.",
+    "candidate_files": 3358,
+    "candidate_allocated_gib": 17.999046325683594,
+    "safe_deletion_confirmed": false
+  },
+  "preserve": [
+    "research-argn-state-first의 현 후보와 직접 비교군 코드/모델/설정/생성 결과/평가/제거실험",
+    "research-argn-fraud-audit/artifacts/sparkov_argn_control_v2: 현 학습/평가 데이터 SOURCE",
+    "모든 원본 데이터와 미사용 테스트",
+    "Berka 재현 및 CPAR/MeLD 비교의 최종 모델과 근거",
+    "원본 protocol/실패 해석/metrics/manifest/artifact_index",
+    "cof-seqgen-0707-2119-Version3-complete/.git: 모든 worktree의 공통 Git 저장소",
+    "research-reporting의 현재 Python runtime"
+  ],
+  "future_cleanup_record": "실제 정리 시 삭제 파일/원래 기록된 해시/보존 파일/회수 용량을 별도 기록. 원본 artifact_index를 수정하여 원래 모든 중간 파일이 남아있는 것처럼 만들지 않음.",
+  "cache_note": "코드 캐시 547.25MiB도 발견했지만 원본 .py 존재 여부/실행 환경 구분 전에 일괄 삭제 대상으로 확정하지 않음. 현 모델 학습 표현 cache는 향후 재진단 편의를 위해 우선 보존."
+}

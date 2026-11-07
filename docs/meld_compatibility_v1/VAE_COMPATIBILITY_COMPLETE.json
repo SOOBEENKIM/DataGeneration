@@ -1,0 +1,9 @@
+{
+  "vendor_commit": "b1e5bb0fd95786a7dc11f616892b60ea6b311767",
+  "toy": "local32customerfixture via official notebook API; notebook itself has dt=... placeholder",
+  "sparkov": "alloptimizationrows encoded; two complete sequences in three optimizer smoke steps",
+  "absolute_calendar": "not available in common task; fixed2000anchor plus cumulativegap only",
+  "static_conditioning": "DiT text interface separately pending",
+  "latest_baseline_performance": false,
+  "test_reads": 0
+}

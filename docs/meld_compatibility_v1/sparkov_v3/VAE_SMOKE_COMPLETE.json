@@ -1,0 +1,19 @@
+{
+  "steps": 3,
+  "seconds": 16.380543978884816,
+  "finite_gradients": true,
+  "full_selected_sequence_length": 3123,
+  "latent_shape": [
+    2,
+    3123,
+    8
+  ],
+  "fraud_reconstruction_confusion": {
+    "true0_pred0": 4075,
+    "true0_pred1": 18,
+    "true1_pred0": 19,
+    "true1_pred1": 0
+  },
+  "adequate_training": false,
+  "full_diffusion_generation": false
+}

@@ -1,0 +1,38 @@
+{
+  "sessions": {
+    "53851": {
+      "task": "register",
+      "exit_code": 0
+    },
+    "77099": {
+      "task": "native_capture_20261011",
+      "exit_code": 0
+    },
+    "49187": {
+      "task": "native_capture_20261012",
+      "exit_code": 0
+    },
+    "15456": {
+      "task": "actual_cache",
+      "exit_code": 0
+    },
+    "26730": {
+      "task": "register_evaluation",
+      "exit_code": 0
+    },
+    "7601": {
+      "task": "conditional_20261011",
+      "exit_code": 0
+    },
+    "25329": {
+      "task": "conditional_20261012",
+      "exit_code": 0
+    },
+    "97514": {
+      "task": "independent_report",
+      "exit_code": 0
+    }
+  },
+  "source": "completed exec session results",
+  "running_jobs": 0
+}

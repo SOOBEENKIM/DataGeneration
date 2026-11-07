@@ -1,0 +1,8 @@
+{
+  "optimization_median_gap_cutoffs": [
+    16896.0,
+    28628.333333333332
+  ],
+  "development_classification": "observed full real record, descriptive only, never supplied to generation",
+  "unknown_speed": 12
+}

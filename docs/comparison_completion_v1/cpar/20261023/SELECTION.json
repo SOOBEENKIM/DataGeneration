@@ -1,0 +1,9 @@
+{
+  "chosen_epochs": 128,
+  "scores": {
+    "128": 0.6609651297071497,
+    "256": 0.6660858379992973
+  },
+  "criterion": "mean normal/onset personal log W1 across two internal draws; missing phase => infinity, tie=>128",
+  "test_reads": 0
+}

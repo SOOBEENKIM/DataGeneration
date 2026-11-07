@@ -1,0 +1,8 @@
+{
+  "selected_epochs": 256,
+  "fit_trajectories": 1,
+  "internal_generations": 4,
+  "development_generations": 2,
+  "development_supported_customers": 143,
+  "test_reads": 0
+}

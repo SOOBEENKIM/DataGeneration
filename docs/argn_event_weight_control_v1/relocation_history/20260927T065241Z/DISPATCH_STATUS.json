@@ -1,0 +1,14 @@
+{
+  "updated_utc": "2026-09-27T06:52:33.776475+00:00",
+  "pid": 1192307,
+  "pending": [],
+  "running": {
+    "20260930": 1210074,
+    "20261001": 1210075
+  },
+  "finished": {},
+  "expired": [],
+  "last_gpu_state": [],
+  "max_wait_minutes": 0.0,
+  "wait_until_idle": true
+}

@@ -1,0 +1,15 @@
+{
+  "current_screen_passed": [],
+  "also_active_screen_passed": [],
+  "active_model": "clock_prefix",
+  "automatic_promotion": false,
+  "pushed": false,
+  "new_native_argn_fits": 0,
+  "initial_mixture_fits": 1,
+  "calibration_fits": 2,
+  "new_full_generations": 24,
+  "generated_rows": 4745268,
+  "original_heads_and_outputs_unchanged": true,
+  "test_events_read": false,
+  "completed_utc": "2026-09-28T05:16:33.256673+00:00"
+}

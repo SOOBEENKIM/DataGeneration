@@ -1,0 +1,32 @@
+[
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/artifacts/external_validation_v1/amlsim/cof_seqgen_frozen_non_v3/attempt_001/checkpoints/final.pt",
+    "sha256": "abff5004cf85674227aa321f55c5c6c3bf871c0686f42d4f63d735ee8a826403",
+    "matches_original_index": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/artifacts/external_validation_v1/amlsim/ctgan_separate_class/attempt_001/checkpoints/final.pt",
+    "sha256": "c633e0ed426878c599c8e42206e5e5c03eabcc2321431b620a518f0c69d139c6",
+    "matches_original_index": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/artifacts/external_validation_v1/amlsim/tvae_separate_class/attempt_002/checkpoints/final.pt",
+    "sha256": "984114beb36325992fd6e61088c8687b555b08ae6431add99add620f071aa350",
+    "matches_original_index": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/artifacts/external_validation_v1/sparkov/cof_seqgen_frozen_non_v3/attempt_001/checkpoints/final.pt",
+    "sha256": "50d110fab77834bea4eb103edad7e6de62ab97da6e28946cd2b076c42a73e6ef",
+    "matches_original_index": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/artifacts/external_validation_v1/sparkov/ctgan_separate_class/attempt_001/checkpoints/final.pt",
+    "sha256": "f3439b6b9e5e3628626fc97fc65e15f5bf2e7eee8724714d82f1e0919565ae39",
+    "matches_original_index": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/cof-seqgen-0707-2119-Version3-complete/artifacts/external_validation_v1/sparkov/tvae_separate_class/attempt_001/checkpoints/final.pt",
+    "sha256": "5dca8bfb3162051bc62ce32cb8efa505b0d56025ef10b77ddbc06a96b8fdc624",
+    "matches_original_index": true
+  }
+]

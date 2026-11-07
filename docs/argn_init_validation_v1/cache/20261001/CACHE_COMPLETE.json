@@ -1,0 +1,20 @@
+{
+  "records": {
+    "optimization": {
+      "rows": 816283,
+      "customers": 619,
+      "native_logits_checked": 5713981,
+      "mapping_exact": true,
+      "sha256": "173bf19cf44524a5180a904350032bb2fdf34a899676b56be9091d474d190443"
+    },
+    "internal_validation": {
+      "rows": 100226,
+      "customers": 69,
+      "native_logits_checked": 701582,
+      "mapping_exact": true,
+      "sha256": "a9631dd7c343fdeb8c503c76434b7ddd5e8379b600f0ed5e789b253d2c31f9d7"
+    }
+  },
+  "parent_seed": 20261001,
+  "test_events_read": false
+}

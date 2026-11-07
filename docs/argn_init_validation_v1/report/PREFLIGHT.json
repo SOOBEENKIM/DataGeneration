@@ -1,0 +1,9 @@
+{
+  "frozen_init_laws_exact": true,
+  "history_wrapper_identity_exact": true,
+  "initial_removal_other_laws_exact": true,
+  "correction_removal_other_phases_exact": true,
+  "history_calibration_preserves_weights_scales": true,
+  "positions": 400,
+  "new_fits": 0
+}

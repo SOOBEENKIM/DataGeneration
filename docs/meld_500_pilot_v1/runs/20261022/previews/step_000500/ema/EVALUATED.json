@@ -1,0 +1,11 @@
+{
+  "complete": true,
+  "split": "internal",
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/runs/20261022/previews/step_000500/ema/generated_internal_20261924.parquet": "7dc99db8f4060226153ee6d2ca8da958f0d21c33f1636a4c91f91d9c3dc79bfb"
+  },
+  "preliminary": true,
+  "adequate_latest_baseline": false,
+  "final_comparison_complete": false,
+  "test_reads": 0
+}

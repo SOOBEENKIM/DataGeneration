@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-09-29T06:19:11.521444+00:00",
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/local_source/prepare_cache.py": "86d66a6373790ed0fc3a1166dbdb86155d02ae4567260b206c63398f615f89f2",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/report/CACHE_PROTOCOL.md": "acc9bf40956b316f225102c477ad846057002784a8791a2e65b57ddd4532503e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/init_only/time_head.pt": "d5ffa33894e6485621f543df9212cc1da0404703e8d206a482ae55a406fabffb"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "rows": 182116,
+  "seconds": 108.54477401683107,
+  "sha256": "8eb3cf6f05fe6f079451932421372e8fc6a71aac1cd6ffc5ce2393c9f5a27b6d",
+  "exact_labels_lengths": true,
+  "head_sha256": "89fd631688b86cce4c6d0babb6386318f71c39ea548e78fec6d022d40107e67c",
+  "sampling_audit": [
+    {
+      "sampled_values": 253090,
+      "clipped_values": 9
+    }
+  ]
+}

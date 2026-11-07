@@ -1,0 +1,19 @@
+{
+  "pid": 1591369,
+  "started_utc": "2026-09-27T18:27:44.017660+00:00",
+  "steps": [
+    [
+      "fit",
+      "run_stratified.py",
+      "prepare"
+    ],
+    [
+      "gpu",
+      "dispatch.py"
+    ],
+    [
+      "report",
+      "report_stratified.py"
+    ]
+  ]
+}

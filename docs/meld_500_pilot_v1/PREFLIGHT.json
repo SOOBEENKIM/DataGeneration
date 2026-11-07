@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "checks": {
+    "boundary_and_best_before_cap": true,
+    "epoch501_not_relabelled": true,
+    "pid_identity_suspend_terminate_owned_fixture": true,
+    "budget_only_training_source_changes": true,
+    "internal69_mapping_and_identity_metrics": {
+      "normal_gap_log_w1": 0.0,
+      "normal_amount_log_w1": 0.0,
+      "fraud_gap_log_w1": 0.0,
+      "fraud_amount_log_w1": 0.0,
+      "onset_personal_gap_w1": 0.0,
+      "normal_stay_personal_gap_w1": 0.0,
+      "continuation_personal_gap_w1": 0.0,
+      "return_normal_personal_gap_w1": 0.0,
+      "normal_early_gap_log_w1": 0.0,
+      "normal_mid_gap_log_w1": 0.0,
+      "normal_tail_gap_log_w1": 0.0,
+      "customer_length_log_w1": 0.0
+    },
+    "separate_evaluator_interpreter": true,
+    "no_model_fit_or_generation": true
+  },
+  "test_reads": 0
+}

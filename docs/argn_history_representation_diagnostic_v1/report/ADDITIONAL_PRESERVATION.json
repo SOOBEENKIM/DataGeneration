@@ -1,0 +1,17 @@
+{
+  "prior_joint_study_files_checked_against_original_records": [
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/mean_marginal/time_head.pt",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/runs/mean_marginal_20260930/generated_validation_20261011.parquet",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/runs/mean_marginal_20260930/generated_validation_20261012.parquet",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/mean_joint/time_head.pt",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/runs/mean_joint_20260930/generated_validation_20261011.parquet",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/runs/mean_joint_20260930/generated_validation_20261012.parquet",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/mixture_marginal/time_head.pt",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/runs/mixture_marginal_20260930/generated_validation_20261011.parquet",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/runs/mixture_marginal_20260930/generated_validation_20261012.parquet",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/mixture_joint/time_head.pt",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/runs/mixture_joint_20260930/generated_validation_20261011.parquet",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/runs/mixture_joint_20260930/generated_validation_20261012.parquet"
+  ],
+  "all_exact": true
+}

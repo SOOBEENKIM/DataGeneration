@@ -1,0 +1,46 @@
+{
+  "prior_hashes_verified": 350,
+  "selected_identity_full_output_checks": [
+    {
+      "arm": "mean_marginal",
+      "generation_seed": 20261011,
+      "all_fields_exact": true,
+      "rows": 203677
+    },
+    {
+      "arm": "mean_marginal",
+      "generation_seed": 20261012,
+      "all_fields_exact": true,
+      "rows": 200372
+    },
+    {
+      "arm": "mean_joint",
+      "generation_seed": 20261011,
+      "all_fields_exact": true,
+      "rows": 203677
+    },
+    {
+      "arm": "mean_joint",
+      "generation_seed": 20261012,
+      "all_fields_exact": true,
+      "rows": 200372
+    },
+    {
+      "arm": "mixture_joint",
+      "generation_seed": 20261011,
+      "all_fields_exact": true,
+      "rows": 203677
+    },
+    {
+      "arm": "mixture_joint",
+      "generation_seed": 20261012,
+      "all_fields_exact": true,
+      "rows": 200372
+    }
+  ],
+  "baseline_commit": "0d620a97bd91e4cd34a246a6ca8557782c07f470",
+  "working_tree_clean": true,
+  "test_events_read": false,
+  "commit_or_push": false,
+  "completed_utc": "2026-09-29T06:46:18.640797+00:00"
+}

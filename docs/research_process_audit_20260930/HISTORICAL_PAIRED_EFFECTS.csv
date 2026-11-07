@@ -1,0 +1,26 @@
+comparator,metric,delta_init_minus_comparator,lower_draws,total_draws,lower_parent_means,parent_count,source
+history_only,normal_gap_seconds_log_w1,-0.023885552131836026,6,8,2,2,previous_saved_metrics; not additional independent head fits
+history_only,onset_personal_gap_w1,-0.04403634634627644,6,8,2,2,previous_saved_metrics; not additional independent head fits
+history_only,normal_stay_personal_gap_w1,-0.048644217057532683,8,8,2,2,previous_saved_metrics; not additional independent head fits
+history_only,fraud_gap_seconds_log_w1,-0.03393853565734062,7,8,2,2,previous_saved_metrics; not additional independent head fits
+history_only,fraud_ratio_log_w1,0.0012761427810806776,3,8,0,2,previous_saved_metrics; not additional independent head fits
+clock_joint,normal_gap_seconds_log_w1,-0.06817105365221252,8,8,2,2,previous_saved_metrics; not additional independent head fits
+clock_joint,onset_personal_gap_w1,-0.017476950120752024,6,8,2,2,previous_saved_metrics; not additional independent head fits
+clock_joint,normal_stay_personal_gap_w1,-0.006936146285621825,8,8,2,2,previous_saved_metrics; not additional independent head fits
+clock_joint,fraud_gap_seconds_log_w1,0.005417303757810077,4,8,0,2,previous_saved_metrics; not additional independent head fits
+clock_joint,fraud_ratio_log_w1,0.00621345981346109,2,8,0,2,previous_saved_metrics; not additional independent head fits
+clock_prefix,normal_gap_seconds_log_w1,-0.014844485278107725,8,8,2,2,previous_saved_metrics; not additional independent head fits
+clock_prefix,onset_personal_gap_w1,0.0021330493933537217,5,8,0,2,previous_saved_metrics; not additional independent head fits
+clock_prefix,normal_stay_personal_gap_w1,-0.00143098304823185,7,8,2,2,previous_saved_metrics; not additional independent head fits
+clock_prefix,fraud_gap_seconds_log_w1,0.00911356673212424,2,8,0,2,previous_saved_metrics; not additional independent head fits
+clock_prefix,fraud_ratio_log_w1,0.00043196002564906306,3,8,1,2,previous_saved_metrics; not additional independent head fits
+current,normal_gap_seconds_log_w1,0.01628587811590776,0,8,0,2,previous_saved_metrics; not additional independent head fits
+current,onset_personal_gap_w1,-0.0009042209994703145,5,8,2,2,previous_saved_metrics; not additional independent head fits
+current,normal_stay_personal_gap_w1,-0.0023202392110815624,8,8,2,2,previous_saved_metrics; not additional independent head fits
+current,fraud_gap_seconds_log_w1,0.0019273109217124301,3,8,0,2,previous_saved_metrics; not additional independent head fits
+current,fraud_ratio_log_w1,-0.003432633624085272,7,8,2,2,previous_saved_metrics; not additional independent head fits
+init_handoff,normal_gap_seconds_log_w1,0.004931023261053786,0,8,0,2,previous_saved_metrics; not additional independent head fits
+init_handoff,onset_personal_gap_w1,0.002342578374432037,0,8,0,2,previous_saved_metrics; not additional independent head fits
+init_handoff,normal_stay_personal_gap_w1,-9.243284099259982e-05,5,8,2,2,previous_saved_metrics; not additional independent head fits
+init_handoff,fraud_gap_seconds_log_w1,0.0002954623370674415,4,8,0,2,previous_saved_metrics; not additional independent head fits
+init_handoff,fraud_ratio_log_w1,-0.001548581380854606,4,8,1,2,previous_saved_metrics; not additional independent head fits

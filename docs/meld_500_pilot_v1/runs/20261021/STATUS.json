@@ -1,0 +1,11 @@
+{
+  "stage": "DiT_training",
+  "step": 2000,
+  "max_steps": 2000,
+  "loss": 0.168382678180933,
+  "best_step": 1750,
+  "best_internal_loss": 1.756563072619231,
+  "seconds": 7309.704495263984,
+  "pid": 4139977,
+  "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+}

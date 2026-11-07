@@ -1,0 +1,20 @@
+{
+  "selected": {
+    "evaluation": 67,
+    "a": -0.01055159141633532,
+    "b": 0.3442695601299909,
+    "objective": 0.038226054706572324,
+    "clock": 0.0,
+    "normal": 0.027376182254095244,
+    "fraud": 0.04800561292986738,
+    "personal": 0.003048067411893662,
+    "onset": 0.036725480826068094,
+    "bin0": 0.03426462621960555,
+    "bin1": 0.08236942391928932,
+    "bin2": 0.03059373133825331
+  },
+  "success": true,
+  "message": "Optimization terminated successfully.",
+  "evaluations": 85,
+  "first48_reproduced": true
+}

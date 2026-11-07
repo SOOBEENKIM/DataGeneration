@@ -1,0 +1,22 @@
+BUDGET 16 0.04487943312932394
+BUDGET 32 0.039124431464284806
+BUDGET 48 0.11041046834922885
+BUDGET 64 0.03838577252360949
+BUDGET 80 0.03822606584026545
+ start  end  events    delta  unadjusted_w1  adjusted_w1  success
+     1   50   27601  0.19235        0.20272      0.03465     True
+    50  200   84660  0.09907        0.11177      0.02952     True
+   200  500  169507  0.07688        0.08670      0.03204     True
+   500 1024  227599 -0.00362        0.03671      0.03661     True
+  1024 2048  246496 -0.07278        0.08480      0.03459     True
+  2048   -1   54680 -0.17767        0.17295      0.04268     True
+                                               normal  personal
+split               arm                                        
+internal_validation budget192                 0.03962   0.01360
+                    clock_full_prefix         0.04146   0.01467
+                    clock_prefix              0.08444   0.03913
+                    local_offsets_diagnostic  0.03715   0.00929
+optimization        budget192                 0.02738   0.00305
+                    clock_full_prefix         0.02770   0.00388
+                    clock_prefix              0.06324   0.02791
+                    local_offsets_diagnostic  0.03184   0.00218

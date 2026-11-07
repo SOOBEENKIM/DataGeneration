@@ -1,0 +1,217 @@
+{
+  "updated_utc": "2026-09-30T16:32:34.653238+00:00",
+  "pending": [],
+  "running": {},
+  "finished": {
+    "fit_history_global_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:13:54.133816+00:00"
+    },
+    "fit_history_global_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:13:59.543910+00:00"
+    },
+    "fit_history_global_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:14:20.534428+00:00"
+    },
+    "fit_history_global_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:14:20.534861+00:00"
+    },
+    "fit_history_global_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:14:20.537853+00:00"
+    },
+    "fit_history_global_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:14:31.265470+00:00"
+    },
+    "fit_history_position3_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:16:14.869556+00:00"
+    },
+    "fit_history_position3_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:16:25.280614+00:00"
+    },
+    "fit_history_position3_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:16:35.677618+00:00"
+    },
+    "fit_history_position3_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:16:51.316634+00:00"
+    },
+    "gen_history_global_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:18:09.165557+00:00"
+    },
+    "gen_history_global_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:18:14.339231+00:00"
+    },
+    "gen_history_global_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:18:30.163328+00:00"
+    },
+    "gen_history_global_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:18:30.163921+00:00"
+    },
+    "fit_history_position3_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:19:47.901329+00:00"
+    },
+    "fit_history_position3_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:19:53.025552+00:00"
+    },
+    "fit_history_position6_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:21:41.521546+00:00"
+    },
+    "gen_history_global_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:21:51.817633+00:00"
+    },
+    "gen_history_global_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:21:56.988899+00:00"
+    },
+    "gen_history_position3_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:22:12.921366+00:00"
+    },
+    "gen_history_position3_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:22:12.921753+00:00"
+    },
+    "fit_history_position6_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:22:28.724575+00:00"
+    },
+    "fit_history_position6_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:23:30.636563+00:00"
+    },
+    "fit_history_position6_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:24:27.372051+00:00"
+    },
+    "gen_history_position3_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:25:34.489563+00:00"
+    },
+    "gen_history_position3_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:25:34.490200+00:00"
+    },
+    "gen_history_position3_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:25:50.338954+00:00"
+    },
+    "gen_history_position3_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:25:55.553715+00:00"
+    },
+    "fit_history_position6_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:26:21.788042+00:00"
+    },
+    "fit_history_position6_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:26:32.113536+00:00"
+    },
+    "gen_history_position6_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:29:06.891549+00:00"
+    },
+    "gen_history_position6_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:29:06.892243+00:00"
+    },
+    "gen_history_position6_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:29:22.696618+00:00"
+    },
+    "gen_history_position6_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:29:27.869832+00:00"
+    },
+    "gen_history_position6_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:32:34.489562+00:00"
+    },
+    "gen_history_position6_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T16:32:34.490314+00:00"
+    }
+  },
+  "gpus": [
+    {
+      "index": 0,
+      "uuid": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+      "memory": 52,
+      "utilization": 0,
+      "external": false
+    },
+    {
+      "index": 1,
+      "uuid": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+      "memory": 117,
+      "utilization": 0,
+      "external": false
+    },
+    {
+      "index": 2,
+      "uuid": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "memory": 52,
+      "utilization": 0,
+      "external": false
+    },
+    {
+      "index": 3,
+      "uuid": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+      "memory": 93,
+      "utilization": 0,
+      "external": false
+    }
+  ]
+}

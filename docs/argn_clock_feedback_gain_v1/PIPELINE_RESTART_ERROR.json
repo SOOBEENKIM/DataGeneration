@@ -1,0 +1,4 @@
+{
+  "error": "CalledProcessError(1, ['/home/finx_sbk/.conda/envs/cofseq/bin/python3.10', '/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_feedback_gain_v1/local_source/dispatch.py'])",
+  "utc": "2026-09-29T04:31:46.578773+00:00"
+}

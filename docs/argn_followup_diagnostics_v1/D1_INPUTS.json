@@ -1,0 +1,38 @@
+{
+  "weights": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20260930/workspace/ModelStore/model-data/model-weights.pt": "78d26d2710627561eb4fc9637d78fc4dc7c73e6f1292c263c31a5f1405a5b8e0",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20261001/workspace/ModelStore/model-data/model-weights.pt": "d8a836c5856a581e08f051535701f586ced9de38049d949aa488d593e85472c7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20260930/workspace/ModelStore/model-data/model-weights.pt": "7763b9819c5fd020ca43aa219e4ed976838b20a9737ba830d21ca8220f028779",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20261001/workspace/ModelStore/model-data/model-weights.pt": "ea5017388ae68a123f7fa76bf3da5620c7a1f0d31123f66c6baf9f8fb909be1e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20260930/workspace/ModelStore/model-data/model-weights.pt": "4404641f3420a0ff26596cf9e93556179e439f7f35bf98ef3c3fa88ed4bf90f8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20261001/workspace/ModelStore/model-data/model-weights.pt": "68e26028d624e7b2571079bf3f90cfe682eec5bd0f336cf1cdfb428303beae51"
+  },
+  "positions_sha256": "d3bed9bd100905c33db8b3f2d5f9e98bd72b3a5e5cf5f748cc634c237a228c14",
+  "encoded_sha256": "272ef86a092ce0c97732fd84cab27680f274ba7bf7ebaaaea1acf54044276d71",
+  "source_hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+  },
+  "real_events": 177997,
+  "customers": 147,
+  "selected_prefixes": 1922,
+  "max_real_length": 3119,
+  "model_stats_max_length": 3106,
+  "mc_draws": 16,
+  "cases": [
+    "sample_all",
+    "fix_amount_or_numeric_value",
+    "fix_gap",
+    "fix_receiver_or_mark",
+    "fix_category"
+  ],
+  "selection_seed": 20260927,
+  "test_events_read": false,
+  "future_information": "actual total lengths only for teacher and one-step diagnostic",
+  "execution_amendment": {
+    "utc": "2026-09-27T07:35:40.267338+00:00",
+    "reason": "Move loaded native recurrent modules to requested GPU; prior inference failed before outputs. No data, parameters, selection, or experimental conditions changed.",
+    "prior_attempt": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_followup_diagnostics_v1/attempts/cpu_recurrent_placement_failure"
+  }
+}

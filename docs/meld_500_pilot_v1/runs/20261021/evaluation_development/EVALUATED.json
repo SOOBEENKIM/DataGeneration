@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "split": "development",
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/runs/20261021/generated_development_20261031.parquet": "a8dce6a3ee09d2e01eb2b925053fbe04feaab8abe04a703148841b4f3901594e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/runs/20261021/generated_development_20261032.parquet": "eeb8d6ce2f4e6b2f62a1ff16acf924663c5e3838459501072bb2dbcbed820be3"
+  },
+  "preliminary": true,
+  "adequate_latest_baseline": false,
+  "final_comparison_complete": false,
+  "test_reads": 0
+}

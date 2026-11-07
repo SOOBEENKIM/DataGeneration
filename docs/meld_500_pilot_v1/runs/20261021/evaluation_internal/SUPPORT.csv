@@ -1,0 +1,12 @@
+model,fit_seed,generation_seed,step,kind,cohort,preliminary,group,real_events,generated_events,real_customers,generated_customers
+MeLD_500_pilot,20261021,20261923,2000,selected_ema,internal69,True,normal_gap,99685,5915,,
+MeLD_500_pilot,20261021,20261923,2000,selected_ema,internal69,True,normal_amount,99751,5984,,
+MeLD_500_pilot,20261021,20261923,2000,selected_ema,internal69,True,fraud_gap,472,25,,
+MeLD_500_pilot,20261021,20261923,2000,selected_ema,internal69,True,fraud_amount,475,25,,
+MeLD_500_pilot,20261021,20261923,2000,selected_ema,internal69,True,onset,47,24,47.0,19.0
+MeLD_500_pilot,20261021,20261923,2000,selected_ema,internal69,True,normal_stay,99314,5563,66.0,63.0
+MeLD_500_pilot,20261021,20261923,2000,selected_ema,internal69,True,continuation,397,0,48.0,0.0
+MeLD_500_pilot,20261021,20261923,2000,selected_ema,internal69,True,return_normal,46,25,46.0,20.0
+MeLD_500_pilot,20261021,20261923,2000,selected_ema,internal69,True,early,2890,2107,,
+MeLD_500_pilot,20261021,20261923,2000,selected_ema,internal69,True,mid,6576,1336,,
+MeLD_500_pilot,20261021,20261923,2000,selected_ema,internal69,True,tail,40174,0,,

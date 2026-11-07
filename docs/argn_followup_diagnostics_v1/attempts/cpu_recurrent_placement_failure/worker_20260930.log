@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py", line 201, in <module>
+    if __name__=='__main__': main()
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py", line 198, in main
+    for arm in ARMS: probe(arm,args.fit_seed,args.device)
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py", line 125, in probe
+    logits,history,context = teacher_with_history(model,batch)
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py", line 27, in teacher_with_history
+    logits, _ = model(batch, mode='trn')
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_state_adapter.py", line 61, in forward
+    return super().forward(x, mode, **kwargs)
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-paper-reproduction-2026-09-27/runtime/lib/python3.10/site-packages/mostlyai/engine/_tabular/argn.py", line 1254, in forward
+    history, _ = self.history_compressor(history_in)
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1844, in _call_impl
+    return inner()
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in inner
+    result = forward_call(*args, **kwargs)
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-paper-reproduction-2026-09-27/runtime/lib/python3.10/site-packages/mostlyai/engine/_tabular/argn.py", line 606, in forward
+    x, history_state = compressor_layer(x, history_state)
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/lib/python3.10/site-packages/torch/nn/modules/rnn.py", line 1123, in forward
+    result = _VF.lstm(
+RuntimeError: Input and parameter tensors are not at the same device, found input tensor at cuda:0 and parameter tensor at cpu

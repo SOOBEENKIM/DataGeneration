@@ -1,0 +1,26 @@
+{
+  "rows": 118907,
+  "customers": 147,
+  "conditional_sample_values": 5707536,
+  "conditions": 12,
+  "noises": 4,
+  "new_fits": 0,
+  "independent_native_base_max_abs": {
+    "history": 0.0,
+    "static": 7.152557373046875e-07,
+    "current": 0.0
+  },
+  "static_and_current_frozen": true,
+  "strict_past_current_future_invariance": true,
+  "init_only_identical_sample_checks": 1902512,
+  "first5_identical_sample_checks": 23520,
+  "noise_parity": {
+    "nonidentical_seconds": 1,
+    "values": 118907,
+    "max_seconds": 1.0,
+    "native_in_call_parity_exact": true,
+    "float32_batch_shape_rounding_reported": true
+  },
+  "seconds": 142.40457515208982,
+  "test_events_read": false
+}

@@ -1,0 +1,10 @@
+{
+  "stage": "VAE_training",
+  "epoch": 500,
+  "max_epochs": 1000,
+  "best_epoch": 500,
+  "best_internal_reconstruction": 1.1256745741560166,
+  "pid": 3541047,
+  "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+  "seconds": 35520.222648933064
+}

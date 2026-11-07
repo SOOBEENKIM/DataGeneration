@@ -1,0 +1,7 @@
+arm,fit_seed,early_pass,early_improved_draws,costs,passes
+init_only,20260930,True,4,"whole_normal_time,position_50_200,position_100_200",False
+handoff_only,20260930,True,4,"whole_normal_time,position_50_200,position_100_200",False
+init_handoff,20260930,True,4,"whole_normal_time,position_50_200",False
+init_only,20261001,True,4,"whole_normal_time,position_50_200,position_100_200",False
+handoff_only,20261001,True,4,"whole_normal_time,position_50_200,position_100_200",False
+init_handoff,20261001,True,4,"whole_normal_time,position_50_200",False

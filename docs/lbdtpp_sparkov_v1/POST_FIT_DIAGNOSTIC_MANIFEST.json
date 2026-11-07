@@ -1,0 +1,10 @@
+{
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/lbdtpp_sparkov_v1/local_source/diagnose_frozen.py": "3c95c3359f31a1713d6cb6a213507988c86dc28035fd211763cc08a910489aa0",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/lbdtpp_sparkov_v1/report/POST_FIT_DIAGNOSTIC_PROTOCOL.md": "8c4415f465992efa7f4bda4ccaa95426f6192027c8d7535b96dc43f2223378d3",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/lbdtpp_sparkov_v1/official_scale/best.pt": "2a763a2b4efbfd8ba5123d7b3e554e01972dc3a05551ad80f4a6a9414c812e67",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/lbdtpp_sparkov_v1/median_scale/best.pt": "88a078adfe691adac1b70f507c150ee374596522469f8a6bd1714e374d220147"
+  },
+  "post_hoc": true,
+  "new_fits": 0
+}

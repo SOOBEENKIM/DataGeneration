@@ -1,0 +1,48 @@
+2026-09-27 15:32:34,689 INFO mostlyai.engine._tabular.training TRAIN_TABULAR started
+2026-09-27 15:32:34,695 INFO mostlyai.engine._tabular.training numpy=1.26.4, pandas=2.2.3
+2026-09-27 15:32:34,696 INFO mostlyai.engine._tabular.training torch=2.5.1+cu121, opacus=1.5.4
+2026-09-27 15:32:34,696 INFO mostlyai.engine._tabular.training device=device(type='cuda', index=0)
+2026-09-27 15:32:34,697 INFO mostlyai.engine._tabular.training is_sequential=True
+2026-09-27 15:32:34,697 INFO mostlyai.engine._tabular.training max_training_time=10800s
+2026-09-27 15:32:34,697 INFO mostlyai.engine._tabular.training max_epochs=60
+2026-09-27 15:32:34,697 INFO mostlyai.engine._tabular.training model_size=<ModelSize.M: 'M'>
+2026-09-27 15:32:34,697 INFO mostlyai.engine._tabular.training enable_flexible_generation=False
+2026-09-27 15:32:34,697 INFO mostlyai.engine._tabular.training with_dp=False
+2026-09-27 15:32:34,697 INFO mostlyai.engine._tabular.training model_state_strategy=<ModelStateStrategy.reset: 'RESET'>
+2026-09-27 15:32:34,697 INFO mostlyai.engine._tabular.training max_sequence_window=3106
+2026-09-27 15:32:34,697 INFO mostlyai.engine._tabular.training tgt_seq_len_deciles=[7, 499, 518, 998, 1029, 1069, 1535, 1570, 2049, 2541, 3106]
+2026-09-27 15:32:34,697 INFO mostlyai.engine._tabular.training ctx_seq_deciles={}
+2026-09-27 15:32:34,697 INFO mostlyai.engine._tabular.training create training model
+2026-09-27 15:32:35,309 INFO mostlyai.engine._tabular.training model class: StateSequentialModel
+2026-09-27 15:32:35,309 INFO mostlyai.engine._tabular.training model weights not found; change strategy from RESET to RESET
+2026-09-27 15:32:35,309 INFO mostlyai.engine._tabular.training model_state_strategy=<ModelStateStrategy.reset: 'RESET'>
+2026-09-27 15:32:35,309 INFO mostlyai.engine._tabular.training remove existing checkpoint files
+2026-09-27 15:32:35,309 INFO mostlyai.engine._tabular.training start training progress from epoch=0.0, steps=0
+2026-09-27 15:32:35,332 INFO mostlyai.engine._tabular.training no_of_model_params=4815662
+2026-09-27 15:32:37,054 INFO mostlyai.engine._tabular.training trn_cnt=619, val_cnt=69
+2026-09-27 15:32:37,054 INFO mostlyai.engine._tabular.training len(tgt_sub_columns)=26, len(ctxflt_sub_columns)=4, len(ctxseq_sub_columns)=0
+2026-09-27 15:32:37,054 INFO mostlyai.engine._tabular.training tgt_cardinalities_deciles=[2, 3, 10, 10, 10, 10, 10, 10, 10, 10, 694]
+2026-09-27 15:32:37,054 INFO mostlyai.engine._tabular.training ctx_cardinalities_deciles=[3, 3, 3, 3, 41, 41, 41, 76, 76, 76, 101]
+2026-09-27 15:32:37,054 INFO mostlyai.engine._tabular.training trn_batch_size=32, val_batch_size=1
+2026-09-27 15:32:37,054 INFO mostlyai.engine._tabular.training trn_steps=19, val_steps=34
+2026-09-27 15:32:37,054 INFO mostlyai.engine._tabular.training batch_size=2, gradient_accumulation_steps=16, initial_lr=0.001
+2026-09-27 15:32:40,463 INFO mostlyai.engine._common {'epoch': 0.05, 'is_checkpoint': 0, 'steps': 1, 'samples': 32, 'trn_loss': 55.8823, 'val_loss': None, 'total_time': 2.7, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:33:28,927 INFO mostlyai.engine._common {'epoch': 1.0, 'is_checkpoint': 1, 'steps': 19, 'samples': 608, 'trn_loss': 40.6568, 'val_loss': 40.8253, 'total_time': 51.2, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:34:14,647 INFO mostlyai.engine._common {'epoch': 2.0, 'is_checkpoint': 1, 'steps': 38, 'samples': 1215, 'trn_loss': 37.2562, 'val_loss': 39.6819, 'total_time': 96.9, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:35:00,330 INFO mostlyai.engine._common {'epoch': 3.0, 'is_checkpoint': 1, 'steps': 57, 'samples': 1822, 'trn_loss': 36.4851, 'val_loss': 39.1923, 'total_time': 142.6, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:35:46,343 INFO mostlyai.engine._common {'epoch': 4.0, 'is_checkpoint': 1, 'steps': 76, 'samples': 2429, 'trn_loss': 36.1731, 'val_loss': 38.6988, 'total_time': 188.6, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:36:32,063 INFO mostlyai.engine._common {'epoch': 5.0, 'is_checkpoint': 1, 'steps': 95, 'samples': 3036, 'trn_loss': 35.0974, 'val_loss': 38.1829, 'total_time': 234.3, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:37:17,858 INFO mostlyai.engine._common {'epoch': 6.0, 'is_checkpoint': 1, 'steps': 114, 'samples': 3643, 'trn_loss': 34.702, 'val_loss': 37.7267, 'total_time': 280.1, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:38:09,356 INFO mostlyai.engine._common {'epoch': 7.0, 'is_checkpoint': 1, 'steps': 133, 'samples': 4250, 'trn_loss': 34.3228, 'val_loss': 37.4157, 'total_time': 331.6, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:38:55,418 INFO mostlyai.engine._common {'epoch': 8.0, 'is_checkpoint': 1, 'steps': 152, 'samples': 4857, 'trn_loss': 33.7638, 'val_loss': 37.2114, 'total_time': 377.7, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:39:45,209 INFO mostlyai.engine._common {'epoch': 9.0, 'is_checkpoint': 1, 'steps': 171, 'samples': 5464, 'trn_loss': 34.1939, 'val_loss': 37.0502, 'total_time': 427.5, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:40:30,552 INFO mostlyai.engine._common {'epoch': 10.0, 'is_checkpoint': 1, 'steps': 190, 'samples': 6071, 'trn_loss': 33.5724, 'val_loss': 36.9653, 'total_time': 472.8, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:41:16,457 INFO mostlyai.engine._common {'epoch': 11.0, 'is_checkpoint': 1, 'steps': 209, 'samples': 6678, 'trn_loss': 33.6301, 'val_loss': 36.8965, 'total_time': 518.7, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:42:01,929 INFO mostlyai.engine._common {'epoch': 12.0, 'is_checkpoint': 0, 'steps': 228, 'samples': 7285, 'trn_loss': 33.2535, 'val_loss': 36.9198, 'total_time': 564.2, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:42:48,388 INFO mostlyai.engine._common {'epoch': 13.0, 'is_checkpoint': 1, 'steps': 247, 'samples': 7892, 'trn_loss': 33.5136, 'val_loss': 36.894, 'total_time': 610.7, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:43:49,319 INFO mostlyai.engine._common {'epoch': 14.0, 'is_checkpoint': 0, 'steps': 266, 'samples': 8499, 'trn_loss': 32.5139, 'val_loss': 36.9077, 'total_time': 671.6, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:45:32,626 INFO mostlyai.engine._common {'epoch': 15.0, 'is_checkpoint': 1, 'steps': 285, 'samples': 9106, 'trn_loss': 32.3715, 'val_loss': 36.8914, 'total_time': 774.9, 'learn_rate': 0.0005, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:47:19,797 INFO mostlyai.engine._common {'epoch': 16.0, 'is_checkpoint': 0, 'steps': 304, 'samples': 9713, 'trn_loss': 33.4782, 'val_loss': 36.9244, 'total_time': 882.1, 'learn_rate': 0.0005, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:49:03,479 INFO mostlyai.engine._common {'epoch': 17.0, 'is_checkpoint': 1, 'steps': 323, 'samples': 10320, 'trn_loss': 32.5682, 'val_loss': 36.8906, 'total_time': 985.8, 'learn_rate': 0.0005, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:50:48,806 INFO mostlyai.engine._common {'epoch': 18.0, 'is_checkpoint': 0, 'steps': 342, 'samples': 10927, 'trn_loss': 33.3176, 'val_loss': 36.9121, 'total_time': 1091.1, 'learn_rate': 0.0005, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:52:32,147 INFO mostlyai.engine._common {'epoch': 19.0, 'is_checkpoint': 0, 'steps': 361, 'samples': 11534, 'trn_loss': 32.6087, 'val_loss': 36.9187, 'total_time': 1194.4, 'learn_rate': 0.00025, 'dp_eps': None, 'dp_delta': None}

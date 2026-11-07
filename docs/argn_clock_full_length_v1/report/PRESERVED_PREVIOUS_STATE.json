@@ -1,0 +1,13 @@
+{
+  "previous_commit": "0d620a97bd91e4cd34a246a6ca8557782c07f470",
+  "working_tree_clean": true,
+  "prior_head": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_location_v1/clock_prefix/time_head.pt",
+  "prior_head_sha256": "a0fe2c1e4736f862ec0fb9113444112558e7ff613bcc50b7fd06ff9e0c2a0fbd",
+  "replacement_performed": false,
+  "commits_created": 0,
+  "push_performed": false,
+  "failed_candidate_local_only": true,
+  "new_gpu_workers_complete": true,
+  "gpu0_released": true,
+  "test_events_read": false
+}

@@ -1,0 +1,73 @@
+{
+  "native_instrumentation_generations": 2,
+  "native_rows": 412514,
+  "conditional_resamples": 96,
+  "conditional_time_values": 11585568,
+  "independently_recomputed_metrics": 768,
+  "max_metric_error": 9.71445146547012e-17,
+  "independent_init_only_sample_checks": 5792784,
+  "prior_preserved_hashes": 371,
+  "new_fits": 0,
+  "gpu_jobs": 0,
+  "device": "cpu",
+  "native_gpu_results_not_replaced": true,
+  "test_events_read": false,
+  "head_hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_clock_density_v1/mixture_marginal/time_head.pt": "b74db501693c014c20fd16aeb8f9e59adc9ed839a3b34e48fef50a34a86001a8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/init_only/time_head.pt": "d5ffa33894e6485621f543df9212cc1da0404703e8d206a482ae55a406fabffb"
+  },
+  "jobs": [
+    {
+      "rows": 118907,
+      "customers": 147,
+      "conditional_sample_values": 5707536,
+      "conditions": 12,
+      "noises": 4,
+      "new_fits": 0,
+      "independent_native_base_max_abs": {
+        "history": 0.0,
+        "static": 7.152557373046875e-07,
+        "current": 0.0
+      },
+      "static_and_current_frozen": true,
+      "strict_past_current_future_invariance": true,
+      "init_only_identical_sample_checks": 1902512,
+      "first5_identical_sample_checks": 23520,
+      "noise_parity": {
+        "nonidentical_seconds": 1,
+        "values": 118907,
+        "max_seconds": 1.0,
+        "native_in_call_parity_exact": true,
+        "float32_batch_shape_rounding_reported": true
+      },
+      "seconds": 142.40457515208982,
+      "test_events_read": false
+    },
+    {
+      "rows": 122459,
+      "customers": 147,
+      "conditional_sample_values": 5878032,
+      "conditions": 12,
+      "noises": 4,
+      "new_fits": 0,
+      "independent_native_base_max_abs": {
+        "history": 0.0,
+        "static": 7.152557373046875e-07,
+        "current": 0.0
+      },
+      "static_and_current_frozen": true,
+      "strict_past_current_future_invariance": true,
+      "init_only_identical_sample_checks": 1959344,
+      "first5_identical_sample_checks": 23520,
+      "noise_parity": {
+        "nonidentical_seconds": 0,
+        "values": 122459,
+        "max_seconds": 0.0,
+        "native_in_call_parity_exact": true,
+        "float32_batch_shape_rounding_reported": true
+      },
+      "seconds": 157.29418815788813,
+      "test_events_read": false
+    }
+  ]
+}

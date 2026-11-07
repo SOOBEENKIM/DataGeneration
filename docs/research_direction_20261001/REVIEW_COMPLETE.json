@@ -1,0 +1,75 @@
+{
+  "completed_utc": "2026-09-30T15:47:33.634422+00:00",
+  "activity": "Primary method/evaluation section review and read-only official/local implementation comparison",
+  "new_fits": 0,
+  "new_generations": 0,
+  "gpu_jobs": 0,
+  "sealed_test_reads": 0,
+  "commit": false,
+  "push": false,
+  "model_replacement": false,
+  "whole_generator_reproduction_completed": false,
+  "head": "0d620a97bd91e4cd34a246a6ca8557782c07f470",
+  "git_status": "",
+  "files": {
+    "artifacts/research_direction_20261001/REASSESSMENT.md": "e52ed69278087d53214932bdf1384d284548e8df884a811f6198278d999c9425",
+    "artifacts/research_direction_20261001/sources/4_sample_synthetic_data.py": "118d4c9d1afd7b6ee9d01ecabb384b8825e903224a0def887eaa5fc0f6f636d3",
+    "artifacts/research_direction_20261001/sources/1_train_vae.py": "5008aeb1896cd8bc802c80ef96e0ea3d8280257fdadb7f5b73df3f103d02578b",
+    "artifacts/research_direction_20261001/sources/3_train_DiT.sh": "da05679d730968121dcd3e2e5a8149cbf63814e9d9dcd105e4dd152899837669",
+    "artifacts/research_direction_20261001/sources/meld_commit.json": "0e5cb6b530ba8dc87d87a1bda7ecd74e10234f47a3d3b22b1e92f0d32df4783e",
+    "artifacts/argn_init_validation_v1/local_source/validation_head.py": "1761d5f378708fdf7c8f82fd90df80e4e93fc208dbb167ad4db54f0499e65f46",
+    "artifacts/argn_init_validation_v1/local_source/experiment.py": "435e33321cc81c592001fd1398f198fcb27213278ac9a6278a347666f5b2fcba",
+    "artifacts/argn_clock_adaptive_v1/local_source/adaptive_clock.py": "adc2edf6eaf7efde467b7732c3003b26b8b81428a175adf09e7a4aa28165125d",
+    "artifacts/argn_clock_adaptive_v1/local_source/run_adaptive.py": "c7ed4dc11a23a092986dd66aa5223c0ade87af468085a36c8e1a47986f97ac33",
+    "artifacts/argn_clock_stratified_loss_v1/local_source/run_stratified.py": "fd85bd8f58a192721420ccb84507995544cd4c3270bfd8c45e34f4bcce94744c",
+    "scripts/run_argn_clock_evolution.py": "05f838ce88f38bc6d26539315bdf567baf0d5126cc3dd53742a8e79dccf1122c",
+    "artifacts/argn_history_component_ablation_v1/report/FINAL_AUDIT.json": "47a44cb3b918c4aba20ff9a7982c0f1fdfed651431441020d1112216c8f4b52e",
+    "artifacts/argn_history_component_ablation_v1/report/MEANS.csv": "8c38387d10c07f98e8525cd7e8a84e8cfc4005b9e14f46f8c7fdc5b2d9ba14a2"
+  },
+  "primary_reading": [
+    {
+      "name": "TabDiT",
+      "url": "https://arxiv.org/html/2504.07566v2",
+      "scope": "4–5.2"
+    },
+    {
+      "name": "MoTPP",
+      "url": "https://arxiv.org/html/2609.21382v1",
+      "scope": "3–5.2 and Tables3/4"
+    },
+    {
+      "name": "SigTPP",
+      "url": "https://arxiv.org/html/2607.06652v1",
+      "scope": "3–4.4, not all appendix proofs"
+    },
+    {
+      "name": "MTDPP",
+      "url": "https://arxiv.org/html/2407.03774v2",
+      "scope": "2.1–2.3 and Proposition1"
+    },
+    {
+      "name": "MeLD",
+      "url": "https://www.nature.com/articles/s41467-026-74492-0",
+      "scope": "Architecture, setup, Methods, Discussion; three official code entrypoints at saved commit"
+    },
+    {
+      "name": "EdiTPP",
+      "url": "https://arxiv.org/html/2510.06050",
+      "scope": "3–4.1, not all appendices"
+    },
+    {
+      "name": "Enhanced TimeAutoDiff",
+      "url": "https://arxiv.org/html/2510.19728v1",
+      "scope": "3–4"
+    },
+    {
+      "name": "ProbRes",
+      "url": "https://arxiv.org/html/2606.02117v1",
+      "scope": "3 and assumptions in4; no independent theorem verification"
+    }
+  ],
+  "access_notes": [
+    "Web raw-GitHub retrieval cache misses; sandbox DNS unavailable. Successful approved host read obtained the official commit and three entry files. No downloaded code executed."
+  ],
+  "next_comparison_status": "design judgment only; no new fit protocol or launch"
+}

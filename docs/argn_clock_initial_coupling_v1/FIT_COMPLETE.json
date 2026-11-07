@@ -1,0 +1,11 @@
+{
+  "initial_mixture_fits": 1,
+  "calibration_fits": 2,
+  "new_native_argn_fits": 0,
+  "heads": {
+    "init_only": "d5ffa33894e6485621f543df9212cc1da0404703e8d206a482ae55a406fabffb",
+    "handoff_only": "3fbca056da3c4ee20f740a9a74a7caa0a6c834d8889f81795eb2a83d293edab5",
+    "init_handoff": "ed3368c01bc2dc026188b5b4367b05156d47e1a03a658582cdaa492d827a9a1f"
+  },
+  "test_events_read": false
+}

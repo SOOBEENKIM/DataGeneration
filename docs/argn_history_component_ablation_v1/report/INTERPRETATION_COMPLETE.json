@@ -1,0 +1,11 @@
+{
+  "completed_utc": "2026-09-30T14:28:26.213218+00:00",
+  "scope": "Post-evaluation interpretation and derived figure only; frozen protocol, evaluator, source, heads and raw results unchanged.",
+  "files": {
+    "report/INTERPRETATION.md": "396e1507044d25bdcaf13d64451b16da54645ca15985b79be530aeb6a96a29fe",
+    "report/SCOPE_NOTES.md": "6f5ef64ae5164f498f4a841a8d57a22b0baca79e6a9071b212d3b4e67d2c4114",
+    "report/FACTORIAL_COMPARISON.png": "7373ada004e9b4613c7dc3c94db73b386da15d9cd120d086ea3cfcfc93aae58d",
+    "report/FACTORIAL_COMPARISON.pdf": "833a323e19697fe85f686aa405946406f17876a3b39e26cb2855b016ff136f96",
+    "local_source/plot_factorial.py": "39825a78801fe9bc94919899f4603e805b9c6b83ce4c9180b88cb0c517c43d79"
+  }
+}

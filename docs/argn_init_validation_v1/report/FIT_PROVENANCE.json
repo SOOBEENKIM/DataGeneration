@@ -1,0 +1,214 @@
+{
+  "calibrations": [
+    {
+      "fit": "history_20260930_73001",
+      "evaluations": 738,
+      "optimizer_success": true,
+      "initial_objective": 0.1651370452469559,
+      "selected_objective": 0.04479619627840434
+    },
+    {
+      "fit": "history_20260930_73002",
+      "evaluations": 284,
+      "optimizer_success": true,
+      "initial_objective": 0.08306112782069174,
+      "selected_objective": 0.04525344690606202
+    },
+    {
+      "fit": "history_20260930_73003",
+      "evaluations": 570,
+      "optimizer_success": true,
+      "initial_objective": 0.15901968136395167,
+      "selected_objective": 0.05246932802917742
+    },
+    {
+      "fit": "history_20261001_73001",
+      "evaluations": 348,
+      "optimizer_success": true,
+      "initial_objective": 0.1399664115004143,
+      "selected_objective": 0.04162714050662697
+    },
+    {
+      "fit": "history_20261001_73002",
+      "evaluations": 795,
+      "optimizer_success": true,
+      "initial_objective": 0.1049549345467885,
+      "selected_objective": 0.050509377369023854
+    },
+    {
+      "fit": "history_20261001_73003",
+      "evaluations": 921,
+      "optimizer_success": true,
+      "initial_objective": 0.15982563338264316,
+      "selected_objective": 0.0439807756607253
+    },
+    {
+      "fit": "statistics_73001",
+      "evaluations": 692,
+      "optimizer_success": true,
+      "initial_objective": 0.10514482713046147,
+      "selected_objective": 0.03538596364919416
+    },
+    {
+      "fit": "statistics_73002",
+      "evaluations": 555,
+      "optimizer_success": true,
+      "initial_objective": 0.11031343584398265,
+      "selected_objective": 0.03966524866148376
+    },
+    {
+      "fit": "statistics_73003",
+      "evaluations": 622,
+      "optimizer_success": true,
+      "initial_objective": 0.11721462207073141,
+      "selected_objective": 0.03823238875150811
+    }
+  ],
+  "mixtures": [
+    {
+      "fit": "statistics_73001",
+      "mixture_fits": 9,
+      "all_converged": true
+    },
+    {
+      "fit": "statistics_73002",
+      "mixture_fits": 9,
+      "all_converged": true
+    },
+    {
+      "fit": "statistics_73003",
+      "mixture_fits": 9,
+      "all_converged": true
+    }
+  ],
+  "neural": [
+    {
+      "fit": "history_20260930_73001",
+      "selected_step": 100,
+      "stopped_step": 700,
+      "initial_nll": 11.46829096292208,
+      "selected_nll": 11.368732577373454,
+      "parameters": 85641,
+      "training_phase_support": [
+        810543,
+        433,
+        431,
+        4257
+      ],
+      "internal_phase_support": [
+        99639,
+        48,
+        46,
+        424
+      ],
+      "head_sha256": "fabd3040fdb06efe3120d7d915c954741567f8fb9389bda6b5c7c4e70a35ad96"
+    },
+    {
+      "fit": "history_20260930_73002",
+      "selected_step": 100,
+      "stopped_step": 700,
+      "initial_nll": 11.468642357410873,
+      "selected_nll": 11.364549426978744,
+      "parameters": 85641,
+      "training_phase_support": [
+        810543,
+        433,
+        431,
+        4257
+      ],
+      "internal_phase_support": [
+        99639,
+        48,
+        46,
+        424
+      ],
+      "head_sha256": "47c4cd3a21e78db758c599620d97f29bd4ef3b21ea875ecd7eacba53786a8b32"
+    },
+    {
+      "fit": "history_20260930_73003",
+      "selected_step": 100,
+      "stopped_step": 700,
+      "initial_nll": 11.468202335399607,
+      "selected_nll": 11.372628203034697,
+      "parameters": 85641,
+      "training_phase_support": [
+        810543,
+        433,
+        431,
+        4257
+      ],
+      "internal_phase_support": [
+        99639,
+        48,
+        46,
+        424
+      ],
+      "head_sha256": "ba7401d54327b3a7e62e5d5013b5a9aef95f2004f0d12703adbb12671cdd1baa"
+    },
+    {
+      "fit": "history_20261001_73001",
+      "selected_step": 100,
+      "stopped_step": 700,
+      "initial_nll": 11.46829096292208,
+      "selected_nll": 11.383346917137144,
+      "parameters": 85641,
+      "training_phase_support": [
+        810543,
+        433,
+        431,
+        4257
+      ],
+      "internal_phase_support": [
+        99639,
+        48,
+        46,
+        424
+      ],
+      "head_sha256": "0575ba581eab4820c8e3f58532370ffc28f20fae293ba2c97ccd640f5b259c3c"
+    },
+    {
+      "fit": "history_20261001_73002",
+      "selected_step": 100,
+      "stopped_step": 700,
+      "initial_nll": 11.468642357410873,
+      "selected_nll": 11.386032310664582,
+      "parameters": 85641,
+      "training_phase_support": [
+        810543,
+        433,
+        431,
+        4257
+      ],
+      "internal_phase_support": [
+        99639,
+        48,
+        46,
+        424
+      ],
+      "head_sha256": "c7db5250438c93e27d40c639249468b6a6ff6583e954fd2288ac59ce8c507472"
+    },
+    {
+      "fit": "history_20261001_73003",
+      "selected_step": 100,
+      "stopped_step": 700,
+      "initial_nll": 11.468202335399607,
+      "selected_nll": 11.38073094928721,
+      "parameters": 85641,
+      "training_phase_support": [
+        810543,
+        433,
+        431,
+        4257
+      ],
+      "internal_phase_support": [
+        99639,
+        48,
+        46,
+        424
+      ],
+      "head_sha256": "ca73a70d9677174b84751d020023cca486aecb31415502db5a6a73a19f3775f8"
+    }
+  ],
+  "new_generation_reads": 0,
+  "scope": "Supplemental fit provenance from completed records; no model or protocol changes."
+}

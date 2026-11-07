@@ -1,0 +1,11 @@
+{
+  "calibration_fits": 4,
+  "new_native_argn_fits": 0,
+  "heads": {
+    "correction_gain": "1fa83dc37dff14f6f340be042ff85cec67e1ed0d241c5dff71cc3db148eb1dbe",
+    "regression_gain": "8e893f7df0dd2a219dee5f3df7475ce4a44fe693bbbc9045cbdaac29a9a7f36a",
+    "joint_gain": "35155341f1d874be4a0e52dc92fb0086747834c58cc46312e06e84b8ab006bf4",
+    "output_gain_shift": "0ca818b9b998e6ae347d37039780d8960c5258d689537c5e4349d4e1bf4237cd"
+  },
+  "test_events_read": false
+}

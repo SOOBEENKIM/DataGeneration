@@ -1,0 +1,51 @@
+{
+  "rows": 816341,
+  "customers": 619,
+  "max_length": 3123,
+  "shapes": [
+    [
+      619,
+      3123,
+      5
+    ],
+    [
+      619,
+      3123,
+      8
+    ],
+    [
+      619,
+      3123,
+      2
+    ],
+    [
+      619,
+      3123,
+      2
+    ]
+  ],
+  "datatype": {
+    "n_bins": 1,
+    "n_cats": 2,
+    "n_nums": 2,
+    "cards": [
+      693,
+      14
+    ],
+    "n_paddings": 2
+  },
+  "roundtrip_max_abs": {
+    "amount": 27434.90539999994,
+    "amount_clipped_rows": 1293,
+    "amount_clip_min": 1.02,
+    "amount_clip_max": 1513.9946000000589,
+    "gap": 892506.3799999997,
+    "gap_clipped_rows": 1621,
+    "gap_clip_min": 5.0,
+    "gap_clip_max": 448964.6200000002
+  },
+  "label_merchant_category_exact": true,
+  "numeric_roundtrip_only_after_official_0_001_quantile_clipping": true,
+  "EOS_exact": true,
+  "truncation": 0
+}

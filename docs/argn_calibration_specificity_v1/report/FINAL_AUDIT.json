@@ -1,0 +1,20 @@
+{
+  "completed_utc": "2026-09-30T16:36:37.797439+00:00",
+  "new_calibration_fits": 18,
+  "new_neural_fits": 0,
+  "new_native_argn_fits": 0,
+  "new_generations": 36,
+  "new_rows": 7241355,
+  "reused_generations": 36,
+  "reused_rows": 7241355,
+  "evaluated_outputs": 72,
+  "independent_metric_checks": 828,
+  "max_metric_error": 9.71445146547012e-17,
+  "preserved_previous_hashes": 590,
+  "new_routing_workers": 18,
+  "labels_lengths_exact": 72,
+  "all_calibration_optimizer_success": true,
+  "test_events_read": false,
+  "push": false,
+  "model_replacement": false
+}

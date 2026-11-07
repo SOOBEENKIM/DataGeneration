@@ -1,0 +1,7 @@
+{
+  "attempt1": "Guard stopped evaluator because native-generation COMPLETE files were not present yet; no scores or source files were changed.",
+  "attempt2": "Rerun unchanged evaluator only after both COMPLETE files verified.",
+  "attempt1_log": "logs/evaluate_comparison.log",
+  "attempt2_log": "logs/evaluate_comparison_attempt2.log",
+  "data_or_training_change": false
+}

@@ -1,0 +1,5 @@
+control,metric,estimand,requested_customers,complete_six_pair_support,incomplete_or_missing,delta,bootstrap95_low,bootstrap95_high,improved_customers,worsened_customers
+history_only,normal_gap_seconds_log_w1,"mean matched-customer W1 difference, conditional on fixed trained outputs; NOT pooled W1",147,119,28,-0.022704196057484187,-0.03823817837610005,-0.006594063510099796,71,48
+history_only,normal_stay_personal_gap_w1,"mean matched-customer W1 difference, conditional on fixed trained outputs; NOT pooled W1",147,119,28,0.0018676591039863066,0.0015781450105627325,0.002142557595284789,11,108
+history_position6,normal_gap_seconds_log_w1,"mean matched-customer W1 difference, conditional on fixed trained outputs; NOT pooled W1",147,119,28,-0.013993436408146785,-0.017816085399845395,-0.010050194215252778,92,27
+history_position6,normal_stay_personal_gap_w1,"mean matched-customer W1 difference, conditional on fixed trained outputs; NOT pooled W1",147,119,28,0.0021237569265368803,0.0018394530062266865,0.0024030624841577366,11,108

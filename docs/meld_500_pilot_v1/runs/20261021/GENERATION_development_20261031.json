@@ -1,0 +1,9 @@
+{
+  "rows": 14057,
+  "customers": 147,
+  "sha256": "a8dce6a3ee09d2e01eb2b925053fbe04feaab8abe04a703148841b4f3901594e",
+  "eos_native": true,
+  "max_cap": 3123,
+  "future_counts_supplied": false,
+  "test_reads": 0
+}

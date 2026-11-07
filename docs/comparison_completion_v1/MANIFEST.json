@@ -1,0 +1,12 @@
+{
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/local_source/dispatch_cpar.py": "44460fe23bf366f13afbfaa1903a0b759d02d8c13dfdeed6648d04314b72c0b6",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/local_source/cpar_refit.py": "7c3eb4b20c390649a01f9582dfac9fb76654f98e7ec99347d9ed831d593b40d3",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/report/PROTOCOL.md": "955e424c10daceaf77106bb2d0d2a5f72e88bccf1a5fd0af6ea935c995d5ec80"
+  },
+  "test_reads": 0,
+  "new_cpar_seeds": [
+    20261022,
+    20261023
+  ]
+}

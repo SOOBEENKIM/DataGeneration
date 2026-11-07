@@ -1,0 +1,10 @@
+{
+  "pid": 1669037,
+  "started_utc": "2026-09-28T04:56:23.453238+00:00",
+  "steps": [
+    "wait_for_registered_fits",
+    "idle_gpu_dispatch",
+    "independent_report"
+  ],
+  "new_native_argn_fits": 0
+}

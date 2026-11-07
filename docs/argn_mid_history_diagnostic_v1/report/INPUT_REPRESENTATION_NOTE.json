@@ -1,0 +1,14 @@
+{
+  "source_metadata_differences": [
+    {
+      "event_index": 384,
+      "label": 0,
+      "source_gap": 1096094.0,
+      "metadata_gap": 1045690.0
+    }
+  ],
+  "primary_before200_exact": true,
+  "diagnostic_representation": "previous frozen metadata",
+  "saved_native_audit_representation": "original prepared source",
+  "interpretation": "Primary100\u2013199 is unaffected; later replay metrics use preserved metadata including the known difference at384."
+}

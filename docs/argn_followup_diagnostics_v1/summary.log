@@ -1,0 +1,55 @@
+             arm  fit_seed                        case        group  prefixes  customers  mean_fraud_probability
+               B  20260930            matched_prefixes continuation      1032        114                0.715414
+               B  20260930            matched_prefixes        onset       102        102                0.002246
+               B  20260930            matched_prefixes  termination       101        101                0.689453
+               B  20260930 fix_amount_or_numeric_value continuation      1032        114                0.680714
+               B  20260930 fix_amount_or_numeric_value        onset       102        102                0.001973
+               B  20260930 fix_amount_or_numeric_value  termination       101        101                0.729354
+               B  20260930                  sample_all continuation      1032        114                0.631130
+               B  20260930                  sample_all        onset       102        102                0.001050
+               B  20260930                  sample_all  termination       101        101                0.764024
+               B  20261001            matched_prefixes continuation      1032        114                0.675160
+               B  20261001            matched_prefixes        onset       102        102                0.003955
+               B  20261001            matched_prefixes  termination       101        101                0.695722
+               B  20261001 fix_amount_or_numeric_value continuation      1032        114                0.642465
+               B  20261001 fix_amount_or_numeric_value        onset       102        102                0.003916
+               B  20261001 fix_amount_or_numeric_value  termination       101        101                0.753736
+               B  20261001                  sample_all continuation      1032        114                0.612654
+               B  20261001                  sample_all        onset       102        102                0.002612
+               B  20261001                  sample_all  termination       101        101                0.778922
+             B_S  20260930            matched_prefixes continuation      1032        114                0.778471
+             B_S  20260930            matched_prefixes        onset       102        102                0.001310
+             B_S  20260930            matched_prefixes  termination       101        101                0.737601
+             B_S  20260930 fix_amount_or_numeric_value continuation      1032        114                0.744972
+             B_S  20260930 fix_amount_or_numeric_value        onset       102        102                0.001157
+             B_S  20260930 fix_amount_or_numeric_value  termination       101        101                0.774721
+             B_S  20260930                  sample_all continuation      1032        114                0.697212
+             B_S  20260930                  sample_all        onset       102        102                0.000705
+             B_S  20260930                  sample_all  termination       101        101                0.804161
+             B_S  20261001            matched_prefixes continuation      1032        114                0.819808
+             B_S  20261001            matched_prefixes        onset       102        102                0.002491
+             B_S  20261001            matched_prefixes  termination       101        101                0.815434
+             B_S  20261001 fix_amount_or_numeric_value continuation      1032        114                0.793340
+             B_S  20261001 fix_amount_or_numeric_value        onset       102        102                0.002504
+             B_S  20261001 fix_amount_or_numeric_value  termination       101        101                0.854659
+             B_S  20261001                  sample_all continuation      1032        114                0.770371
+             B_S  20261001                  sample_all        onset       102        102                0.001787
+             B_S  20261001                  sample_all  termination       101        101                0.872712
+B_event_weighted  20260930            matched_prefixes continuation      1032        114                0.045827
+B_event_weighted  20260930            matched_prefixes        onset       102        102                0.012800
+B_event_weighted  20260930            matched_prefixes  termination       101        101                0.022150
+B_event_weighted  20260930 fix_amount_or_numeric_value continuation      1032        114                0.031826
+B_event_weighted  20260930 fix_amount_or_numeric_value        onset       102        102                0.010346
+B_event_weighted  20260930 fix_amount_or_numeric_value  termination       101        101                0.020812
+B_event_weighted  20260930                  sample_all continuation      1032        114                0.022720
+B_event_weighted  20260930                  sample_all        onset       102        102                0.007323
+B_event_weighted  20260930                  sample_all  termination       101        101                0.020846
+B_event_weighted  20261001            matched_prefixes continuation      1032        114                0.012044
+B_event_weighted  20261001            matched_prefixes        onset       102        102                0.008416
+B_event_weighted  20261001            matched_prefixes  termination       101        101                0.007154
+B_event_weighted  20261001 fix_amount_or_numeric_value continuation      1032        114                0.009948
+B_event_weighted  20261001 fix_amount_or_numeric_value        onset       102        102                0.007656
+B_event_weighted  20261001 fix_amount_or_numeric_value  termination       101        101                0.007261
+B_event_weighted  20261001                  sample_all continuation      1032        114                0.008509
+B_event_weighted  20261001                  sample_all        onset       102        102                0.006417
+B_event_weighted  20261001                  sample_all  termination       101        101                0.007414

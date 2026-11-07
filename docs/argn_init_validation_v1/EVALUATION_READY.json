@@ -1,0 +1,22 @@
+{
+  "source_sha256": "f40e44bb5f5a0a974e4bc16709ad83fcee9c75803aec036e9b4d7121b48b21c4",
+  "registered_utc": "2026-09-30T12:53:21.006937+00:00",
+  "prior_frozen_output_checks": {
+    "normal_amount_log_w1": 7.632783294297951e-17,
+    "normal_gap_seconds_log_w1": 8.326672684688674e-17,
+    "fraud_amount_log_w1": 5.551115123125783e-17,
+    "fraud_gap_seconds_log_w1": 4.163336342344337e-17,
+    "fraud_ratio_log_w1": 2.7755575615628914e-17,
+    "onset_personal_gap_w1": 5.551115123125783e-17,
+    "normal_stay_personal_gap_w1": 0.0,
+    "return_normal_personal_gap_w1": 8.326672684688674e-17,
+    "continuation_personal_gap_w1": 2.7755575615628914e-17,
+    "left_fraud_personal_gap_w1": 2.7755575615628914e-17,
+    "equal_customer_normal_gap_w1": 0.0,
+    "early_time": 2.7755575615628914e-17,
+    "time100_199": 5.551115123125783e-17,
+    "late1024_time": 2.7755575615628914e-17
+  },
+  "new_output_reads": 0,
+  "test_events_read": false
+}

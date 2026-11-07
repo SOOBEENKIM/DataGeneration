@@ -1,0 +1,43 @@
+{
+  "pid": 2168500,
+  "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+  "config": {
+    "batch_size": 4,
+    "block_size": 8,
+    "transformer_dim": 32,
+    "transformer_heads": 4,
+    "num_decoder_layers": 4,
+    "dropout": 0.0,
+    "diffusion_steps": 100,
+    "sampling_steps": 50,
+    "loss_lambda": 1.0,
+    "num_classes": 28,
+    "model_length": 3112,
+    "tgt_len": 20,
+    "device": "cuda:0"
+  },
+  "normalization": "median_scale",
+  "scale": 16535.0,
+  "categories": {
+    "entertainment": 0,
+    "food_dining": 1,
+    "gas_transport": 2,
+    "grocery_net": 3,
+    "grocery_pos": 4,
+    "health_fitness": 5,
+    "home": 6,
+    "kids_pets": 7,
+    "misc_net": 8,
+    "misc_pos": 9,
+    "personal_care": 10,
+    "shopping_net": 11,
+    "shopping_pos": 12,
+    "travel": 13
+  },
+  "train_rows": 816283,
+  "train_customers": 619,
+  "first_event_retained": true,
+  "full_length": true,
+  "torch_version": "2.5.1+cu121",
+  "started_utc": "2026-09-29T06:23:15.321814+00:00"
+}

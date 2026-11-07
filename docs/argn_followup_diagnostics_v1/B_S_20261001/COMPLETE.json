@@ -1,0 +1,17 @@
+{
+  "arm": "B_S",
+  "fit_seed": 20261001,
+  "seconds": 7.76907985995058,
+  "checkpoint_sha256": "ea5017388ae68a123f7fa76bf3da5620c7a1f0d31123f66c6baf9f8fb909be1e",
+  "weights_unchanged": true,
+  "real_events": 177997,
+  "selected_prefixes": 1922,
+  "test_events_read": false,
+  "mc_draws": 16,
+  "equivalence_check_passed": true,
+  "source_hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+  }
+}

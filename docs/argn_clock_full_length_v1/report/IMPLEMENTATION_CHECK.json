@@ -1,0 +1,28 @@
+{
+  "parity": [
+    {
+      "theta": [
+        0.0,
+        0.0
+      ],
+      "max_metric_error": 0.0
+    },
+    {
+      "theta": [
+        0.044445093678576936,
+        0.2609018929508713
+      ],
+      "max_metric_error": 0.0
+    },
+    {
+      "theta": [
+        -0.03,
+        0.17
+      ],
+      "max_metric_error": 0.0
+    }
+  ],
+  "all_48_evaluations_reproduced": true,
+  "selected_coefficients_reproduced": true,
+  "prefix_noise_unchanged": true
+}

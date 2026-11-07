@@ -1,0 +1,99 @@
+{
+  "config": {
+    "arms": [
+      "init_only",
+      "handoff_only",
+      "init_handoff"
+    ],
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012,
+      20261021,
+      20261022
+    ],
+    "allowed_gpu_uuids": [
+      "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+      "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+      "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+    ],
+    "horizon": null,
+    "fit_noise_seed": 20261201,
+    "diagnostic_seeds": [
+      20261202,
+      20261203
+    ],
+    "maxfev": 192,
+    "bounds": [
+      [
+        -0.35,
+        0.35
+      ],
+      [
+        -1.0,
+        1.0
+      ]
+    ],
+    "prefix_horizon": 1024,
+    "noise_extension": "preserve_prefix_then_append",
+    "max_parallel_fits": 2,
+    "delta_limit": 0.35,
+    "weighting": "equal_customer_within_each_objective_group",
+    "loss_refinement": [
+      [
+        200,
+        500
+      ],
+      [
+        500,
+        1024
+      ],
+      [
+        1024,
+        2048
+      ],
+      [
+        2048,
+        null
+      ]
+    ],
+    "subgroup_mass": "inherited_original_bin2_row_weights",
+    "maximum_own_workers_per_gpu": 2,
+    "mixture_seed": 20261206,
+    "mixture_components": 3,
+    "mixture_n_init": 3,
+    "mixture_reg_covar": 0.0001,
+    "mixture_max_iter": 300,
+    "handoff_knots": [
+      6,
+      50,
+      200
+    ],
+    "handoff_bound": 0.35,
+    "fit_condition": "actual_labels_lengths_and_own_generated_time_history",
+    "initial_scope": "phase0_and_positions1to5",
+    "fit_support": "full_sequence"
+  },
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/local_source/dispatch.py": "729842bcf4b80a0f85eb8d9e0996fff19122cab413a40e673299d2cbf8128399",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/local_source/report_initial.py": "e1668eaa114470213e43950f9cfeacc2784cffb767ba011171f2b7f4e3176936",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/local_source/run_initial.py": "77437c567b8df52c16c254334986d25a4eff7751902e59b6487838afa5d62c07",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/local_source/initial_clock.py": "d03f08520647ad398d1130a5899f6d793d4ad3dea2d88ed00d75b2cef8e24a0a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/report/PROTOCOL.md": "e54dba52fac4e4782de7bf490d4e286c9c9cae566fd8c001b005e52b451a94a4",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/report/IMPLEMENTATION_CHECK.json": "e0ee7883493b57b00dfc39bf177b6b8abc1e110646a61d6c67a7eea001b9103c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/personal_six/time_head.pt": "89fd631688b86cce4c6d0babb6386318f71c39ea548e78fec6d022d40107e67c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/MANIFEST.json": "2ead4933113f296288869082e98533037b1797cbfe03b5e746ccfad30c8ed3b7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/local_source/run_stratified.py": "fd85bd8f58a192721420ccb84507995544cd4c3270bfd8c45e34f4bcce94744c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_optimization.parquet": "bb6c3bff604f218d4f9c2d3eb18727b3a389ccaa0497649c45e6ec08ba3469c8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_internal_validation.parquet": "53008f14d9e691d83e05f9a8704d905675aff871d4eecaf5c07d92debe6093a4",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_early_history_diagnostic_v1/local_source/diagnose.py": "3e0b482b0c006818013684ac45ee6bc87c977f6fbe5bdd15a20ca8a43fcc1ca9"
+  },
+  "created_utc": "2026-09-28T04:50:07.181015+00:00",
+  "local_only": true,
+  "test_events_read": false,
+  "baseline_commit": "0d620a97bd91e4cd34a246a6ca8557782c07f470"
+}

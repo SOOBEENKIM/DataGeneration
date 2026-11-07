@@ -1,0 +1,10 @@
+{
+  "previous_context_preserved": "CONTEXT.json",
+  "bundle": "/home/ssd-990/soobeenkim/DataGeneration",
+  "active_checkout": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first",
+  "read_first": "/home/ssd-990/soobeenkim/DataGeneration/README.md",
+  "research_index": "/home/ssd-990/soobeenkim/DataGeneration/RESEARCH_INDEX.md",
+  "replace_old_workspace_prefix": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete",
+  "with_physical_workspace_prefix": "/home/ssd-990/soobeenkim/DataGeneration/workspace",
+  "model_change": false
+}

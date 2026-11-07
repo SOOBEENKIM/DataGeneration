@@ -1,0 +1,18 @@
+{
+  "verified_manifest_entries": 36,
+  "new_head_fits": 4,
+  "new_lbdtpp_fits": 2,
+  "new_cpar_fits": 0,
+  "new_native_argn_fits": 0,
+  "new_full_generations": 12,
+  "new_generated_rows": 2424294,
+  "head_arms_screen_passed": [],
+  "comparison_complete": true,
+  "common_task_rows": 66,
+  "working_tree_clean": true,
+  "test_events_read": false,
+  "pushed": false,
+  "active_model": "clock_prefix",
+  "next_comparison_anchor": "init_only",
+  "completed_utc": "2026-09-29T06:51:29.403414+00:00"
+}

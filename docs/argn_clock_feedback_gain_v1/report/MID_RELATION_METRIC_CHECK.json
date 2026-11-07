@@ -1,0 +1,23 @@
+{
+  "optimization": {
+    "shape": [
+      3106,
+      619
+    ],
+    "observed_intervals": 815664,
+    "mid_personal_intervals": 56520,
+    "scipy_w1_error": 2.8102520310824275e-16
+  },
+  "internal_validation": {
+    "shape": [
+      3099,
+      69
+    ],
+    "observed_intervals": 100157,
+    "mid_personal_intervals": 6573,
+    "scipy_w1_error": 1.0148132334464322e-16
+  },
+  "raw_strict_past_denominator": true,
+  "maximum_length_not_truncated_to_1024": true,
+  "frozen_sources_unchanged": true
+}

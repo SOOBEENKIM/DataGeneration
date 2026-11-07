@@ -1,0 +1,11 @@
+{
+  "reason": "Before any fitting: double-precision parity test accidentally constructed float32 clock endpoints. Use float64 in that test; numerical model and protocol unchanged. Original test failure max error 1.3612e-7. No development read or fit occurred.",
+  "updates": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/local_source/run_adaptive.py": {
+      "original_sha256": "e1884f212366378678f44cebdcb8fcbd47bce8821ec3fbf5b95f5cfa91f19567",
+      "archived_original": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/initialization_01/run_adaptive.py",
+      "updated_sha256": "c7ed4dc11a23a092986dd66aa5223c0ade87af468085a36c8e1a47986f97ac33"
+    }
+  },
+  "created_utc": "2026-09-27T17:35:24.131706+00:00"
+}

@@ -1,0 +1,8 @@
+{
+  "source_sha256": "7ae70681ad36677230240af5c962761d562218b4906d405cb44202d08c4f64af",
+  "plan_sha256": "84b8e4963c4832099aad19b4acbe2fee671f5030f8e1ce5a1b66a1b9a6f46cfa",
+  "rows": 510,
+  "new_fits": 0,
+  "test_events_read": false,
+  "development_events_read": false
+}

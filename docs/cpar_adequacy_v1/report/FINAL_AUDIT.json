@@ -1,0 +1,15 @@
+{
+  "independent_metric_checks": 8,
+  "selected_epochs": 128,
+  "scores": {
+    "128": 0.6559283997443068,
+    "256": 1.0577231666904816
+  },
+  "training_trajectories": 1,
+  "internal_generations": 4,
+  "development_generations": 2,
+  "development_supported_customers": 143,
+  "test_events_read": false,
+  "CPAR_optimality_established": false,
+  "checkpoint_note": "128 snapshot stores epoch128 network tensors with shared preprocessor/context; wrapper constructor/history retains256 trajectory budget"
+}

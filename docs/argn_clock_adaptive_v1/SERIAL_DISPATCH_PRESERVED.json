@@ -1,0 +1,57 @@
+{
+  "status": {
+    "pending": [
+      [
+        20261001,
+        "event_two"
+      ],
+      [
+        20260930,
+        "customer_two"
+      ],
+      [
+        20261001,
+        "customer_two"
+      ],
+      [
+        20260930,
+        "position_six"
+      ],
+      [
+        20261001,
+        "position_six"
+      ],
+      [
+        20260930,
+        "personal_six"
+      ],
+      [
+        20261001,
+        "personal_six"
+      ]
+    ],
+    "running": {
+      "event_two_20260930": {
+        "pid": 1576209,
+        "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933"
+      }
+    },
+    "finished": {}
+  },
+  "launched": {
+    "event_two_20260930": {
+      "pid": 1576209,
+      "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+      "command": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/../research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/local_source/run_adaptive.py",
+        "worker",
+        "--seed",
+        "20260930",
+        "--arm",
+        "event_two"
+      ],
+      "started_utc": "2026-09-27T17:41:21.445768+00:00"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "arm": "event_two",
+  "selected": {
+    "evaluation": 68,
+    "theta": [
+      -0.01052605107103651,
+      0.3443832835367472
+    ],
+    "seconds": 14.187112947925925,
+    "objective": 0.03822613532862632,
+    "clock": 0.0,
+    "normal": 0.027380472520243018,
+    "fraud": 0.04800561292986738,
+    "personal": 0.003056569686879535,
+    "onset": 0.036725480826068094,
+    "bin0": 0.03427932483201677,
+    "bin1": 0.08233149423558002,
+    "bin2": 0.03060457534343207,
+    "clipped_offset_fraction": 0.0
+  },
+  "initial": {
+    "evaluation": 0,
+    "theta": [
+      0.0,
+      0.0
+    ],
+    "seconds": 0.20886889193207026,
+    "objective": 0.07192807732083084,
+    "clock": 0.0,
+    "normal": 0.026416779386799604,
+    "fraud": 0.04800561292986738,
+    "personal": 0.0032901103186094927,
+    "onset": 0.036725480826068094,
+    "bin0": 0.20271587577655936,
+    "bin1": 0.11176804261892181,
+    "bin2": 0.03783420736910504,
+    "clipped_offset_fraction": 0.0
+  },
+  "support": {
+    "split": "optimization",
+    "horizon": 3106,
+    "customers": 619,
+    "events": 815664,
+    "tail_events": 302200,
+    "counts": {
+      "normal": 810543,
+      "fraud": 4690,
+      "personal": 807705,
+      "onset": 429,
+      "bin0": 27601,
+      "bin1": 84660,
+      "bin2": 698282
+    }
+  },
+  "weighting": "event",
+  "evaluations": 88,
+  "distinct_evaluations": 87,
+  "optimizer_success": true,
+  "optimizer_message": "Optimization terminated successfully.",
+  "head_sha256": "c2e4b5401c6f236b5658894d79ead2dfbd2a81b2b34dd55a31c2ef082f484aa2",
+  "original_gmr_buffers_unchanged": true,
+  "new_native_argn_fits": 0,
+  "previous_unclipped_converged_control": {
+    "evaluation": 67,
+    "a": -0.01055159141633532,
+    "b": 0.3442695601299909,
+    "objective": 0.038226054706572324,
+    "clock": 0.0,
+    "normal": 0.027376182254095244,
+    "fraud": 0.04800561292986738,
+    "personal": 0.003048067411893662,
+    "onset": 0.036725480826068094,
+    "bin0": 0.03426462621960555,
+    "bin1": 0.08236942391928932,
+    "bin2": 0.03059373133825331
+  },
+  "selected_coefficient_difference": [
+    2.5540345298809622e-05,
+    0.00011372340675630532
+  ]
+}

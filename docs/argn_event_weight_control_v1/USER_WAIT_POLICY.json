@@ -1,0 +1,8 @@
+{
+  "updated_utc": "2026-09-27T06:16:58.673700+00:00",
+  "user_instruction": "Start execution as soon as a GPU is free",
+  "max_wait_minutes": 0,
+  "wait_until_idle": true,
+  "old_waiting_dispatcher_pid": 1169614,
+  "no_training_process_stopped": true
+}

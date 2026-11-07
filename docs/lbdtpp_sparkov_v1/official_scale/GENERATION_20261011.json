@@ -1,0 +1,10 @@
+{
+  "rows": 203677,
+  "seconds": 487.2287225560285,
+  "shared_length_schedule": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/runs/init_only_20260930/generated_validation_20261011.parquet",
+  "schedule_sha256": "69a4fc817109f187b0c1460dd3aa0e33711b79c54984bb996106676ebe3ae096",
+  "sha256": "4546ce91f63101b3e9fdf99ce3ddf3a66cfdc53fd29b2d93514781a5a67ad704",
+  "oracle_timestamps_used": false,
+  "customer_context_used": false,
+  "note": "count-conditioned timing/label/category comparator, not full mixed-field generation"
+}

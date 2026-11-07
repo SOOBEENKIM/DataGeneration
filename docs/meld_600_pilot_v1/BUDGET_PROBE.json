@@ -1,0 +1,15 @@
+{
+  "seconds_per_batch32": [
+    3.3202071629930288,
+    2.9911274719052017,
+    2.9943103599362075,
+    2.993186776060611
+  ],
+  "steady_mean": 2.9928748693006733,
+  "peak_gib": 1.251974105834961,
+  "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+  "random_latents": true,
+  "optimizer_steps": 0,
+  "performance_training": false,
+  "note": "Excludes optimizer, EMA, validation and generation; measured on idle GPU."
+}

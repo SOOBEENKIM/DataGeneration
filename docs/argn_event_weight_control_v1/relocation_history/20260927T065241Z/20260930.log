@@ -1,0 +1,83 @@
+2026-09-27 15:32:34,684 INFO mostlyai.engine._tabular.training TRAIN_TABULAR started
+2026-09-27 15:32:34,690 INFO mostlyai.engine._tabular.training numpy=1.26.4, pandas=2.2.3
+2026-09-27 15:32:34,691 INFO mostlyai.engine._tabular.training torch=2.5.1+cu121, opacus=1.5.4
+2026-09-27 15:32:34,691 INFO mostlyai.engine._tabular.training device=device(type='cuda', index=0)
+2026-09-27 15:32:34,692 INFO mostlyai.engine._tabular.training is_sequential=True
+2026-09-27 15:32:34,692 INFO mostlyai.engine._tabular.training max_training_time=10800s
+2026-09-27 15:32:34,692 INFO mostlyai.engine._tabular.training max_epochs=60
+2026-09-27 15:32:34,692 INFO mostlyai.engine._tabular.training model_size=<ModelSize.M: 'M'>
+2026-09-27 15:32:34,692 INFO mostlyai.engine._tabular.training enable_flexible_generation=False
+2026-09-27 15:32:34,692 INFO mostlyai.engine._tabular.training with_dp=False
+2026-09-27 15:32:34,692 INFO mostlyai.engine._tabular.training model_state_strategy=<ModelStateStrategy.reset: 'RESET'>
+2026-09-27 15:32:34,692 INFO mostlyai.engine._tabular.training max_sequence_window=3106
+2026-09-27 15:32:34,692 INFO mostlyai.engine._tabular.training tgt_seq_len_deciles=[7, 499, 518, 998, 1029, 1069, 1535, 1570, 2049, 2541, 3106]
+2026-09-27 15:32:34,692 INFO mostlyai.engine._tabular.training ctx_seq_deciles={}
+2026-09-27 15:32:34,692 INFO mostlyai.engine._tabular.training create training model
+2026-09-27 15:32:35,294 INFO mostlyai.engine._tabular.training model class: StateSequentialModel
+2026-09-27 15:32:35,294 INFO mostlyai.engine._tabular.training model weights not found; change strategy from RESET to RESET
+2026-09-27 15:32:35,294 INFO mostlyai.engine._tabular.training model_state_strategy=<ModelStateStrategy.reset: 'RESET'>
+2026-09-27 15:32:35,294 INFO mostlyai.engine._tabular.training remove existing checkpoint files
+2026-09-27 15:32:35,294 INFO mostlyai.engine._tabular.training start training progress from epoch=0.0, steps=0
+2026-09-27 15:32:35,317 INFO mostlyai.engine._tabular.training no_of_model_params=4815662
+2026-09-27 15:32:37,051 INFO mostlyai.engine._tabular.training trn_cnt=619, val_cnt=69
+2026-09-27 15:32:37,051 INFO mostlyai.engine._tabular.training len(tgt_sub_columns)=26, len(ctxflt_sub_columns)=4, len(ctxseq_sub_columns)=0
+2026-09-27 15:32:37,051 INFO mostlyai.engine._tabular.training tgt_cardinalities_deciles=[2, 3, 10, 10, 10, 10, 10, 10, 10, 10, 694]
+2026-09-27 15:32:37,051 INFO mostlyai.engine._tabular.training ctx_cardinalities_deciles=[3, 3, 3, 3, 41, 41, 41, 76, 76, 76, 101]
+2026-09-27 15:32:37,051 INFO mostlyai.engine._tabular.training trn_batch_size=32, val_batch_size=1
+2026-09-27 15:32:37,051 INFO mostlyai.engine._tabular.training trn_steps=19, val_steps=34
+2026-09-27 15:32:37,051 INFO mostlyai.engine._tabular.training batch_size=2, gradient_accumulation_steps=16, initial_lr=0.001
+2026-09-27 15:32:39,979 INFO mostlyai.engine._common {'epoch': 0.05, 'is_checkpoint': 0, 'steps': 1, 'samples': 32, 'trn_loss': 45.6, 'val_loss': None, 'total_time': 2.3, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:33:28,304 INFO mostlyai.engine._common {'epoch': 1.0, 'is_checkpoint': 1, 'steps': 19, 'samples': 608, 'trn_loss': 40.2188, 'val_loss': 40.8353, 'total_time': 50.6, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:34:14,105 INFO mostlyai.engine._common {'epoch': 2.0, 'is_checkpoint': 1, 'steps': 38, 'samples': 1215, 'trn_loss': 37.1668, 'val_loss': 39.7154, 'total_time': 96.4, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:34:58,593 INFO mostlyai.engine._common {'epoch': 3.0, 'is_checkpoint': 1, 'steps': 57, 'samples': 1822, 'trn_loss': 36.5609, 'val_loss': 39.1781, 'total_time': 140.9, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:35:43,228 INFO mostlyai.engine._common {'epoch': 4.0, 'is_checkpoint': 1, 'steps': 76, 'samples': 2429, 'trn_loss': 35.986, 'val_loss': 38.6725, 'total_time': 185.5, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:36:28,352 INFO mostlyai.engine._common {'epoch': 5.0, 'is_checkpoint': 1, 'steps': 95, 'samples': 3036, 'trn_loss': 35.28, 'val_loss': 38.1681, 'total_time': 230.6, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:37:13,486 INFO mostlyai.engine._common {'epoch': 6.0, 'is_checkpoint': 1, 'steps': 114, 'samples': 3643, 'trn_loss': 34.3492, 'val_loss': 37.7407, 'total_time': 275.8, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:38:04,696 INFO mostlyai.engine._common {'epoch': 7.0, 'is_checkpoint': 1, 'steps': 133, 'samples': 4250, 'trn_loss': 34.517, 'val_loss': 37.4437, 'total_time': 327.0, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:38:49,565 INFO mostlyai.engine._common {'epoch': 8.0, 'is_checkpoint': 1, 'steps': 152, 'samples': 4857, 'trn_loss': 33.9318, 'val_loss': 37.2212, 'total_time': 371.8, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:39:38,469 INFO mostlyai.engine._common {'epoch': 9.0, 'is_checkpoint': 1, 'steps': 171, 'samples': 5464, 'trn_loss': 33.9035, 'val_loss': 37.0836, 'total_time': 420.7, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:40:23,485 INFO mostlyai.engine._common {'epoch': 10.0, 'is_checkpoint': 1, 'steps': 190, 'samples': 6071, 'trn_loss': 33.4304, 'val_loss': 36.9792, 'total_time': 465.8, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:41:09,582 INFO mostlyai.engine._common {'epoch': 11.0, 'is_checkpoint': 1, 'steps': 209, 'samples': 6678, 'trn_loss': 33.7247, 'val_loss': 36.9734, 'total_time': 511.9, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:41:54,881 INFO mostlyai.engine._common {'epoch': 12.0, 'is_checkpoint': 1, 'steps': 228, 'samples': 7285, 'trn_loss': 33.3889, 'val_loss': 36.9342, 'total_time': 557.2, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:42:39,202 INFO mostlyai.engine._common {'epoch': 13.0, 'is_checkpoint': 0, 'steps': 247, 'samples': 7892, 'trn_loss': 32.0178, 'val_loss': 36.9531, 'total_time': 601.5, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:43:30,493 INFO mostlyai.engine._common {'epoch': 14.0, 'is_checkpoint': 1, 'steps': 266, 'samples': 8499, 'trn_loss': 33.9814, 'val_loss': 36.923, 'total_time': 652.8, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:45:11,101 INFO mostlyai.engine._common {'epoch': 15.0, 'is_checkpoint': 0, 'steps': 285, 'samples': 9106, 'trn_loss': 32.6366, 'val_loss': 36.9437, 'total_time': 753.4, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:46:54,478 INFO mostlyai.engine._common {'epoch': 16.0, 'is_checkpoint': 0, 'steps': 304, 'samples': 9713, 'trn_loss': 33.1326, 'val_loss': 36.9675, 'total_time': 856.8, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:48:37,396 INFO mostlyai.engine._common {'epoch': 17.0, 'is_checkpoint': 0, 'steps': 323, 'samples': 10320, 'trn_loss': 32.6572, 'val_loss': 36.9694, 'total_time': 959.7, 'learn_rate': 0.001, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:50:20,085 INFO mostlyai.engine._common {'epoch': 18.0, 'is_checkpoint': 0, 'steps': 342, 'samples': 10927, 'trn_loss': 32.9114, 'val_loss': 36.9413, 'total_time': 1062.4, 'learn_rate': 0.0005, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:52:01,674 INFO mostlyai.engine._training_utils early stopping: val_loss stopped improving
+2026-09-27 15:52:01,674 INFO mostlyai.engine._common {'epoch': 19.0, 'is_checkpoint': 0, 'steps': 361, 'samples': 11534, 'trn_loss': 31.8907, 'val_loss': 36.9559, 'total_time': 1164.0, 'learn_rate': 0.0005, 'dp_eps': None, 'dp_delta': None}
+2026-09-27 15:52:01,677 INFO mostlyai.engine._tabular.training TRAIN_TABULAR finished in 1166.99s
+CONTROL_FIT_COMPLETE 20260930
+2026-09-27 15:52:01,719 INFO mostlyai.engine._tabular.generation GENERATE_TABULAR started
+2026-09-27 15:52:01,719 INFO mostlyai.engine._workspace create `/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20260930/workspace/SyntheticData`
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation is_sequential=True
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation has_context=True
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation len(tgt_sub_columns)=26
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation len(ctx_sub_columns)=4
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation enable_flexible_generation=False
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation device=device(type='cuda', index=0)
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation tgt_primary_key=None, tgt_context_key='customer_id', ctx_primary_key='customer_id'
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation imputation: None
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation rebalancing: None
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation fairness: None
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation sample_seed: None
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation gen_column_order=['tgt:/', 'tgt:t0/c0', 'tgt:t1/c1', 'tgt:t2/c2', 'tgt:t3/c3', 'tgt:t4/c4']
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation rare_category_replacement_method=<RareCategoryReplacementMethod.constant: 'CONSTANT'>
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation imputation: []
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation rebalance_column: None
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation rebalance_probabilities: {}
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation sampling_temperature=1.0, sampling_top_p=1.0
+2026-09-27 15:52:01,720 INFO mostlyai.engine._tabular.generation generate new data based on context data `(147, 5)`
+2026-09-27 15:52:01,721 INFO mostlyai.engine._tabular.generation batch_size heuristic: 10,000 (mem_available_gb=23.6GB, sample_kb=4.5KB, scaling_factor=0.1)
+2026-09-27 15:52:01,721 INFO mostlyai.engine._tabular.generation sample_size=147
+2026-09-27 15:52:01,721 INFO mostlyai.engine._tabular.generation list(seed_data.columns)=[]
+2026-09-27 15:52:01,721 INFO mostlyai.engine._tabular.generation batch_size=147
+2026-09-27 15:52:01,721 INFO mostlyai.engine._tabular.generation no_of_batches=1
+2026-09-27 15:52:01,721 INFO mostlyai.engine._tabular.generation create generative model
+2026-09-27 15:52:01,743 INFO mostlyai.engine._tabular.generation no_of_model_params=4815662
+2026-09-27 15:52:02,008 INFO mostlyai.engine._tabular.common loaded model weights in 0.26s
+2026-09-27 15:52:02,017 INFO mostlyai.engine._tabular.generation generate 1 batches
+2026-09-27 15:52:02,020 INFO mostlyai.engine._tabular.generation encode context (147, 6)
+2026-09-27 15:52:02,030 INFO mostlyai.engine._tabular.generation encode sample seed values (147, 1)
+2026-09-27 15:52:02,031 INFO mostlyai.engine._tabular.generation sample data from model with context (147, 6)

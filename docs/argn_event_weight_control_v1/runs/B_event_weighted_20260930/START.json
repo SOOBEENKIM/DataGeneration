@@ -1,0 +1,76 @@
+{
+  "created_utc": "2026-09-27T06:32:34.645726+00:00",
+  "config": {
+    "version": "argn-event-weight-control-v1",
+    "arm": "B_event_weighted",
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012
+    ],
+    "parent_study": "argn-state-first-v1",
+    "backbone_and_hyperparameters": "identical to fresh B; see argn_state_first_v1.json",
+    "intervention": "multiply each customer's transaction-column mean loss by retained length / optimization mean retained length",
+    "structural_length_loss": "unchanged customer weighting",
+    "state_features_enabled": false,
+    "checkpoint_selection": "same native early stopping using the modified internal-validation objective",
+    "purpose": "adaptive cause-isolation control, not a proposed contribution",
+    "test_access": false
+  },
+  "inherited_hyperparameters": {
+    "version": "argn-state-first-v1",
+    "engine_version": "1.0.4",
+    "torch_version": "2.5.1+cu121",
+    "arms": [
+      "B",
+      "B_S"
+    ],
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012
+    ],
+    "model": "MOSTLY_AI/Medium",
+    "max_epochs": 60,
+    "max_training_minutes": 180,
+    "batch_size": 2,
+    "gradient_accumulation_steps": 16,
+    "cpu_threads": 4,
+    "history": "full frozen encoded customer sequence, no additional crop, both arms",
+    "training_order": "length/position, category, gap, merchant, amount, label",
+    "generation_order": "same as training",
+    "state_feature_groups": [
+      "label_duration",
+      "personal_amount",
+      "recent_gap"
+    ],
+    "amount_feature_cap": 10000,
+    "duration_feature_cap_seconds": 604800,
+    "ema_alpha": 0.0625,
+    "checkpoint": "native minimum internal validation loss, patience 4",
+    "development_contexts": "all 147 held-out development customers",
+    "generated_length": "native, never real future lengths",
+    "test_access": false
+  },
+  "mean_training_length": 1318.7124394184168,
+  "source_hashes": {
+    "scripts/run_argn_event_weight_control.py": "f092caa20e48ebde5d87bc52e345d37dda7b1db6173c1945f24a4d0bbddfd569",
+    "configs/argn_event_weight_control_v1.json": "a2491f9a24ce91fb743fc29ed8b5410b2872c48f6d8507ebc753d206d6a8871f",
+    "benchmarks/argn_event_weight_control.py": "14dd43afaaf72485fc6628c9f1369c250c3ce7ae4fea34e8e55e77cd58215b2d",
+    "docs/argn_state_first_v1/EVENT_WEIGHT_CONTROL_PROTOCOL.md": "ff74382178b2d7cfde222f77955945c161c3bf7841e73bd575b5714bd71aa354",
+    "benchmarks/argn_state_evaluation.py": "92170a9ba88796400cdf8354efd275cd43e4124bed70dd20cb6530bc214b57d7"
+  },
+  "parent_preparation_sha256": "d46ea88574b558da19af13f4189db67160fc1f75cd168e13d9ece872f4503a02",
+  "fit_seed": 20260930,
+  "device": "cuda:0",
+  "cuda_visible_devices": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+  "torch": "2.5.1+cu121",
+  "pid": 1210074,
+  "fresh_initialization": true
+}

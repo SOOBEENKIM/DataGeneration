@@ -1,0 +1,13 @@
+{
+  "binding": {
+    "pid": 3541047,
+    "cmd": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python /home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/local_source/meld_train.py 20261021",
+    "start_ticks": "136464420",
+    "state": "R",
+    "ppid": 3541032,
+    "seed": 20261021
+  },
+  "paused_after_saved_epoch": 500,
+  "discarded_unsaved_next_epoch_possible": true,
+  "original_longer_run_resumable": true
+}

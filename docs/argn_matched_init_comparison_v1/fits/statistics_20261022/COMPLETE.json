@@ -1,0 +1,13 @@
+{
+  "time_fit_seed": 20261022,
+  "mixture_fits": 9,
+  "calibration_fits": 1,
+  "head_hashes": {
+    "init_only": "1b805dae0694568ce35c3b737ae7fd5affc89316957eb17a28beb93a8c7039e9",
+    "no_initial": "1062ebdbcef4edd461e973f4a0679ae84954739a4fab4605d3b608465adf78f5",
+    "no_calibration": "47f0ed5db4be53e7ce3d94036d2c4dedf94072e64b8a9654d74a6cd35576b284",
+    "gmr": "80d26c7ea6fb1a1a55518b1a03b1091672c46fc49b5bd015ad0a48eeff475373",
+    "phase_gmm": "75d9db0295dcbc48413fb1f66d91adb2ed87cbeb37a5cf0e68e3a980a6c29756"
+  },
+  "finished_utc": "2026-10-02T02:55:29.527506+00:00"
+}

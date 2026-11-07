@@ -1,0 +1,22 @@
+{
+  "updated_utc": "2026-09-27T07:12:12.853511+00:00",
+  "pid": 1236559,
+  "pending": [],
+  "running": {},
+  "finished": {
+    "20260930": {
+      "exit_code": 0,
+      "pid": 1236565
+    },
+    "20261001": {
+      "exit_code": 0,
+      "pid": 1236566
+    }
+  },
+  "expired": [],
+  "relocation_archive": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/relocation_history/20260927T065241Z",
+  "gpu_assignment": {
+    "20260930": 2,
+    "20261001": 3
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "new_calibration_fits": 1,
+  "reproduction_fits": 1,
+  "native_argn_fits": 0,
+  "test_events_read": false,
+  "heads": {
+    "clock_full_prefix": "7b825e376581ca9e7276d31f716b18c53b9e5f51964b4af2d408e76057c53582"
+  }
+}

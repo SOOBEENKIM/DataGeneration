@@ -1,0 +1,131 @@
+{
+  "config": {
+    "horizon": 200,
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012,
+      20261021,
+      20261022
+    ],
+    "noise_seeds": [
+      20261202,
+      20261203,
+      20261204,
+      20261205
+    ],
+    "optimization_noise_count": 2,
+    "generated_path_noise_count": 2,
+    "modes": [
+      "RR",
+      "GG",
+      "RG",
+      "GR",
+      "seed5",
+      "reset21",
+      "prefix_delta_first5"
+    ],
+    "bins": [
+      [
+        1,
+        6
+      ],
+      [
+        6,
+        21
+      ],
+      [
+        21,
+        50
+      ],
+      [
+        6,
+        50
+      ],
+      [
+        50,
+        100
+      ],
+      [
+        100,
+        200
+      ]
+    ],
+    "models": [
+      "clock_prefix",
+      "coarse_personal",
+      "refined_personal",
+      "refined_position",
+      "clock_joint"
+    ],
+    "max_cpu_jobs": 4
+  },
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_early_history_diagnostic_v1/local_source/diagnose.py": "3e0b482b0c006818013684ac45ee6bc87c977f6fbe5bdd15a20ca8a43fcc1ca9",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_early_history_diagnostic_v1/report/PROTOCOL.md": "fca2715841e7dd0e27806c13050155943f9ffadab46794ad8d1e70789076b19e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_early_history_diagnostic_v1/report/IMPLEMENTATION_CHECK.json": "cdfffe59552ae6c612eb3328605cf18631057ffa1d3fa5f6e771880cab1b8cd4",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/MANIFEST.json": "2ead4933113f296288869082e98533037b1797cbfe03b5e746ccfad30c8ed3b7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/report/SUMMARY_METRICS.csv": "3b77370348564287186cf16a22bea5fd35d5ff724a93d08d236b1f5934152836",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/report/horizon_diagnostic.csv": "cbe31d32a762d150378255efa4bcde6cdd92e866180ee6ef5d58a468ed622b87",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_time_density.py": "7ecd38efa21084ffe7f647788195d1826aa801129204261150d0a1337b7d2b35",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_clock_evolution.py": "92b34dced6c4ee04668bde030427ee787f4b8fe1c1a3540df39defa89b1076f2",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_clock_location.py": "b3a28137f27e2c1b3d29eca152660f3f5ff7a76ac0c8fe124d14edb70c45f020",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_clock_regression.py": "59a84c8d942899dfb4ffaa9d463371c0a584dc013a66fa556580bcae03d0d4a7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/local_source/adaptive_clock.py": "adc2edf6eaf7efde467b7732c3003b26b8b81428a175adf09e7a4aa28165125d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/prepared/validation.parquet": "c444c6e625b8f4e0e4edae1b1e12dbbef573c9e398d44400a44c4d5a7f03228d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_location_v1/clock_prefix/time_head.pt": "a0fe2c1e4736f862ec0fb9113444112558e7ff613bcc50b7fd06ff9e0c2a0fbd",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/personal_six/time_head.pt": "749e880c9d4ad9538268a83daf2ddda1a8659ef5cd82ae90bf8ef06b48fa26fc",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/personal_six/time_head.pt": "89fd631688b86cce4c6d0babb6386318f71c39ea548e78fec6d022d40107e67c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/position_six/time_head.pt": "98163dac970d54375afe74240b1614a0bbd6a5af0e2c02bbaf2fa390a1af8188",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/time_head.pt": "8591324e9757504a783821042737a487a7fea660a6b4d089f7681a0f038f78c0",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_optimization.parquet": "bb6c3bff604f218d4f9c2d3eb18727b3a389ccaa0497649c45e6ec08ba3469c8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_internal_validation.parquet": "53008f14d9e691d83e05f9a8704d905675aff871d4eecaf5c07d92debe6093a4",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_development.parquet": "69ea8d2669a28e8727d95363aec3b7407fd3a5c369f986edaf22236946949844",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_location_v1/runs/clock_prefix_20260930/generated_validation_20261011.parquet": "573cede8c96c67168cd6bee61130c04d8fe6d98e259aa7cd2f1d550d486f0054",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_location_v1/runs/clock_prefix_20260930/generated_validation_20261012.parquet": "c501c8013640211ee50f989b10c9af601ba29d8b7077cc8bc2b4b00176685902",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_location_v1/runs/clock_prefix_20260930/generated_validation_20261021.parquet": "e833fea597b73d4a97fb0e3de81b189e48ec57e443381cca95c95a426128b4f6",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_location_v1/runs/clock_prefix_20260930/generated_validation_20261022.parquet": "a486732d8bd00d232e45370e6509f86ef24f2c3ba75685519d97ae333671ef61",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_location_v1/runs/clock_prefix_20261001/generated_validation_20261011.parquet": "227799f5845f5610f50cb039c50273ae2048cc1097f469a148d759e59bc6ae0a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_location_v1/runs/clock_prefix_20261001/generated_validation_20261012.parquet": "311fc905dc3f643aa642b4b4e137ca032c0af26192c0c84995e15f7a20596d01",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_location_v1/runs/clock_prefix_20261001/generated_validation_20261021.parquet": "3f73d22fc75b3ee868054c17107ac2af208d6ce2e4b1f702ebda41058b2b7fa2",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_location_v1/runs/clock_prefix_20261001/generated_validation_20261022.parquet": "8e2fd622ccb5942c4c53cff271713910fa63ca0cd6c8a1ace15e83bf6f787ee0",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/runs/personal_six_20260930/generated_validation_20261011.parquet": "18dcb88c2488e68c42510606bfee9287d9c009b0e626d6d4f81c1a6a2e74469b",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/runs/personal_six_20260930/generated_validation_20261012.parquet": "d6eb330002b460fa9c7289844936904972a50a7c5cd8c8d5f525d36dbfa2902c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/runs/personal_six_20260930/generated_validation_20261021.parquet": "52cafbba941ce8b139807501e7fa2243318f7905a8139bb100eb52bba8d1465f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/runs/personal_six_20260930/generated_validation_20261022.parquet": "18417d1f2c3c74f16753fb92c3d08464fe2d743acba7792a3d10fef0a2bbf7cf",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/runs/personal_six_20261001/generated_validation_20261011.parquet": "a0f952ec0a7eca7497b3ff8536f656ef5a32b69b9e249f2444926d9dd8f69965",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/runs/personal_six_20261001/generated_validation_20261012.parquet": "7eeeac1c37479843cf0c47b9ca3111fbff4182d115cd3a4312d7fac4a0940be3",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/runs/personal_six_20261001/generated_validation_20261021.parquet": "03bd310f02eb6641444c307788cae936b19315d7cef2d79d411e11ff72c22c7a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/runs/personal_six_20261001/generated_validation_20261022.parquet": "6e64fb070cc2de9fd5bb24468c695808e73448b4b273a056015a28fb5d206866",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/personal_six_20260930/generated_validation_20261011.parquet": "b773c02739325c136111055b2c1a211410740cdbba778d9822276852be96ae2a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/personal_six_20260930/generated_validation_20261012.parquet": "fb1cdade278feb92ebc9a004053e0b934298e64911dd48140bfe9e08580e1425",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/personal_six_20260930/generated_validation_20261021.parquet": "31b82224c79bd31cbae8310619e81a4c0891dd288a286f8e348e6191770bad0e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/personal_six_20260930/generated_validation_20261022.parquet": "4c0475e02f6b548131097776a993319bc77d574c53e4797bd86822f7b73c0888",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/personal_six_20261001/generated_validation_20261011.parquet": "c8f61a0fdcb5b0be784888f10bc99cf0faa0150340af2461ff23ce2a5379ab2b",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/personal_six_20261001/generated_validation_20261012.parquet": "a9d29bccb4c914afd6cf3108d44272e30fe24d3415f4ae4c0d41276c3e9ba8f7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/personal_six_20261001/generated_validation_20261021.parquet": "8eb3cf6f05fe6f079451932421372e8fc6a71aac1cd6ffc5ce2393c9f5a27b6d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/personal_six_20261001/generated_validation_20261022.parquet": "cf13c29f133f7b75c3ddac7b63176963a08bffcd77dabf35ab53432a277ba223",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/position_six_20260930/generated_validation_20261011.parquet": "bcf77bddecab2697768823f5f9905d98072142dd7bbb510cb7a41f4b5a8aaaf8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/position_six_20260930/generated_validation_20261012.parquet": "321d83365b53daa660cb8a2851aa3023dff49f3a234d4accb36ee36547fa7fa1",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/position_six_20260930/generated_validation_20261021.parquet": "afbf951b08c06dfec1430e644c8d23706291e91ce12439405fd4925621f828e8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/position_six_20260930/generated_validation_20261022.parquet": "0554d17f2dba360da336bca309c4ce22e4c21bae92926c2cad4305f8196b8f17",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/position_six_20261001/generated_validation_20261011.parquet": "a6568730a8404f456b78f31ba6ec5437ed0ca1c0809ffb9509b640e0e6840e48",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/position_six_20261001/generated_validation_20261012.parquet": "1a85ad35afa3d24238101666bbdb625db154fb5a1da2690378b5763c491e2889",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/position_six_20261001/generated_validation_20261021.parquet": "897bb74ef1eb75bd4cd4682c7e16fc8bba164c564f66965e36b9d93e856b1b34",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/runs/position_six_20261001/generated_validation_20261022.parquet": "011b05cfa968003b168533a6f7c9b843da5db739ccaf99dfe30ac83fcc597377",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/runs/clock_joint_20260930/generated_validation_20261011.parquet": "5b15fe157eedd72bf4131b9c0e0e57d7a7fe739f56f4607e5798f81cd9665a31",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/runs/clock_joint_20260930/generated_validation_20261012.parquet": "6e348ed594874ba70abdc63bc553a94b17a01e13b4af691fc6e6bf742f45503e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/runs/clock_joint_20260930/generated_validation_20261021.parquet": "54e39cda0329d9689480b62bca96cd938ba6a7333a761b4566e14a6f750ea16e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/runs/clock_joint_20260930/generated_validation_20261022.parquet": "3577a7be0a793b1c388a980f90acc1102c59387f2d3a8929b8ba4a7f3a9744e6",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/runs/clock_joint_20261001/generated_validation_20261011.parquet": "1b7d23a71fccb6cfd99947882471ea6b3249f116088303e3c56925a204a8b506",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/runs/clock_joint_20261001/generated_validation_20261012.parquet": "305e054a7a3f078bf5521ec1e025f5990942469c0e8a4101be51f34ad4ff487d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/runs/clock_joint_20261001/generated_validation_20261021.parquet": "422fc70eebc1e4ca930de82e430aac113f16c750ab96b3ca37c4d619c1077f69",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/runs/clock_joint_20261001/generated_validation_20261022.parquet": "a5be3a934f7c9da7b105c86c9bd2f4421cf70b85be38cbf3e17a423d019b5e7c"
+  },
+  "created_utc": "2026-09-28T03:50:33.057118+00:00",
+  "test_events_read": false,
+  "new_model_fits": 0
+}

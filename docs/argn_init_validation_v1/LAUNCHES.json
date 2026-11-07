@@ -1,0 +1,948 @@
+[
+  {
+    "job": "stat_73001",
+    "pid": 2923462,
+    "gpu": null,
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "statistics",
+      "--seed",
+      "73001"
+    ],
+    "started_utc": "2026-09-30T12:50:25.152718+00:00"
+  },
+  {
+    "job": "stat_73002",
+    "pid": 2923463,
+    "gpu": null,
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "statistics",
+      "--seed",
+      "73002"
+    ],
+    "started_utc": "2026-09-30T12:50:25.153573+00:00"
+  },
+  {
+    "job": "stat_73003",
+    "pid": 2923464,
+    "gpu": null,
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "statistics",
+      "--seed",
+      "73003"
+    ],
+    "started_utc": "2026-09-30T12:50:25.154349+00:00"
+  },
+  {
+    "job": "cache",
+    "pid": 2923509,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "cache",
+      "--parent",
+      "20261001"
+    ],
+    "started_utc": "2026-09-30T12:50:30.545894+00:00"
+  },
+  {
+    "job": "history_20260930_73001",
+    "pid": 2923517,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "history",
+      "--seed",
+      "73001",
+      "--parent",
+      "20260930"
+    ],
+    "started_utc": "2026-09-30T12:50:30.752275+00:00"
+  },
+  {
+    "job": "history_20260930_73002",
+    "pid": 2923523,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "history",
+      "--seed",
+      "73002",
+      "--parent",
+      "20260930"
+    ],
+    "started_utc": "2026-09-30T12:50:30.952458+00:00"
+  },
+  {
+    "job": "history_20260930_73003",
+    "pid": 2923529,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "history",
+      "--seed",
+      "73003",
+      "--parent",
+      "20260930"
+    ],
+    "started_utc": "2026-09-30T12:50:31.136357+00:00"
+  },
+  {
+    "job": "history_20261001_73001",
+    "pid": 2923896,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "history",
+      "--seed",
+      "73001",
+      "--parent",
+      "20261001"
+    ],
+    "started_utc": "2026-09-30T12:51:12.895296+00:00"
+  },
+  {
+    "job": "history_20261001_73002",
+    "pid": 2923901,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "history",
+      "--seed",
+      "73002",
+      "--parent",
+      "20261001"
+    ],
+    "started_utc": "2026-09-30T12:51:13.090325+00:00"
+  },
+  {
+    "job": "history_20261001_73003",
+    "pid": 2923907,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "history",
+      "--seed",
+      "73003",
+      "--parent",
+      "20261001"
+    ],
+    "started_utc": "2026-09-30T12:51:13.263983+00:00"
+  },
+  {
+    "job": "gen_history_only_20260930_73001",
+    "pid": 2924376,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20260930",
+      "--arm",
+      "history_only"
+    ],
+    "started_utc": "2026-09-30T12:53:23.971448+00:00"
+  },
+  {
+    "job": "gen_history_only_20261001_73001",
+    "pid": 2924381,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20261001",
+      "--arm",
+      "history_only"
+    ],
+    "started_utc": "2026-09-30T12:53:24.212583+00:00"
+  },
+  {
+    "job": "gen_history_only_20260930_73002",
+    "pid": 2924387,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20260930",
+      "--arm",
+      "history_only"
+    ],
+    "started_utc": "2026-09-30T12:53:24.395816+00:00"
+  },
+  {
+    "job": "gen_history_only_20261001_73002",
+    "pid": 2924393,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20261001",
+      "--arm",
+      "history_only"
+    ],
+    "started_utc": "2026-09-30T12:53:24.600206+00:00"
+  },
+  {
+    "job": "gen_history_only_20260930_73003",
+    "pid": 2925111,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20260930",
+      "--arm",
+      "history_only"
+    ],
+    "started_utc": "2026-09-30T12:56:47.102163+00:00"
+  },
+  {
+    "job": "gen_history_only_20261001_73003",
+    "pid": 2925117,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20261001",
+      "--arm",
+      "history_only"
+    ],
+    "started_utc": "2026-09-30T12:56:47.315910+00:00"
+  },
+  {
+    "job": "history_cal_20260930_73002",
+    "pid": 2925354,
+    "gpu": null,
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "calibrate_history",
+      "--seed",
+      "73002",
+      "--parent",
+      "20260930"
+    ],
+    "started_utc": "2026-09-30T12:57:13.519584+00:00"
+  },
+  {
+    "job": "gen_init_only_20260930_73002",
+    "pid": 2925359,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20260930",
+      "--arm",
+      "init_only"
+    ],
+    "started_utc": "2026-09-30T12:57:13.734377+00:00"
+  },
+  {
+    "job": "gen_no_initial_20260930_73002",
+    "pid": 2925365,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20260930",
+      "--arm",
+      "no_initial"
+    ],
+    "started_utc": "2026-09-30T12:57:13.910564+00:00"
+  },
+  {
+    "job": "history_cal_20261001_73002",
+    "pid": 2925366,
+    "gpu": null,
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "calibrate_history",
+      "--seed",
+      "73002",
+      "--parent",
+      "20261001"
+    ],
+    "started_utc": "2026-09-30T12:57:13.912057+00:00"
+  },
+  {
+    "job": "history_cal_20260930_73003",
+    "pid": 2925617,
+    "gpu": null,
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "calibrate_history",
+      "--seed",
+      "73003",
+      "--parent",
+      "20260930"
+    ],
+    "started_utc": "2026-09-30T12:58:00.762797+00:00"
+  },
+  {
+    "job": "history_cal_20260930_73001",
+    "pid": 2925700,
+    "gpu": null,
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "calibrate_history",
+      "--seed",
+      "73001",
+      "--parent",
+      "20260930"
+    ],
+    "started_utc": "2026-09-30T12:58:52.704370+00:00"
+  },
+  {
+    "job": "gen_init_only_20260930_73001",
+    "pid": 2925795,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20260930",
+      "--arm",
+      "init_only"
+    ],
+    "started_utc": "2026-09-30T13:00:10.747843+00:00"
+  },
+  {
+    "job": "gen_no_initial_20260930_73001",
+    "pid": 2925800,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20260930",
+      "--arm",
+      "no_initial"
+    ],
+    "started_utc": "2026-09-30T13:00:10.925729+00:00"
+  },
+  {
+    "job": "gen_no_calibration_20260930_73001",
+    "pid": 2926032,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20260930",
+      "--arm",
+      "no_calibration"
+    ],
+    "started_utc": "2026-09-30T13:00:37.211433+00:00"
+  },
+  {
+    "job": "gen_gmr_20260930_73001",
+    "pid": 2926038,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20260930",
+      "--arm",
+      "gmr"
+    ],
+    "started_utc": "2026-09-30T13:00:37.384334+00:00"
+  },
+  {
+    "job": "history_cal_20261001_73001",
+    "pid": 2926254,
+    "gpu": null,
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "calibrate_history",
+      "--seed",
+      "73001",
+      "--parent",
+      "20261001"
+    ],
+    "started_utc": "2026-09-30T13:00:47.823889+00:00"
+  },
+  {
+    "job": "gen_phase_gmm_20260930_73001",
+    "pid": 2926632,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20260930",
+      "--arm",
+      "phase_gmm"
+    ],
+    "started_utc": "2026-09-30T13:03:39.087511+00:00"
+  },
+  {
+    "job": "gen_init_only_20261001_73001",
+    "pid": 2926637,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20261001",
+      "--arm",
+      "init_only"
+    ],
+    "started_utc": "2026-09-30T13:03:39.257281+00:00"
+  },
+  {
+    "job": "gen_no_initial_20261001_73001",
+    "pid": 2926844,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20261001",
+      "--arm",
+      "no_initial"
+    ],
+    "started_utc": "2026-09-30T13:04:00.268345+00:00"
+  },
+  {
+    "job": "gen_no_calibration_20261001_73001",
+    "pid": 2926866,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20261001",
+      "--arm",
+      "no_calibration"
+    ],
+    "started_utc": "2026-09-30T13:04:05.701847+00:00"
+  },
+  {
+    "job": "history_cal_20261001_73003",
+    "pid": 2927172,
+    "gpu": null,
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "calibrate_history",
+      "--seed",
+      "73003",
+      "--parent",
+      "20261001"
+    ],
+    "started_utc": "2026-09-30T13:05:08.028393+00:00"
+  },
+  {
+    "job": "gen_gmr_20261001_73001",
+    "pid": 2927474,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20261001",
+      "--arm",
+      "gmr"
+    ],
+    "started_utc": "2026-09-30T13:07:02.319032+00:00"
+  },
+  {
+    "job": "gen_phase_gmm_20261001_73001",
+    "pid": 2927479,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20261001",
+      "--arm",
+      "phase_gmm"
+    ],
+    "started_utc": "2026-09-30T13:07:02.541527+00:00"
+  },
+  {
+    "job": "gen_history_init_cal_20261001_73001",
+    "pid": 2927716,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20261001",
+      "--arm",
+      "history_init_cal"
+    ],
+    "started_utc": "2026-09-30T13:07:23.561431+00:00"
+  },
+  {
+    "job": "gen_no_calibration_20260930_73002",
+    "pid": 2927757,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20260930",
+      "--arm",
+      "no_calibration"
+    ],
+    "started_utc": "2026-09-30T13:07:28.971123+00:00"
+  },
+  {
+    "job": "gen_history_init_cal_20260930_73001",
+    "pid": 2928233,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73001",
+      "--parent",
+      "20260930",
+      "--arm",
+      "history_init_cal"
+    ],
+    "started_utc": "2026-09-30T13:10:25.451515+00:00"
+  },
+  {
+    "job": "gen_gmr_20260930_73002",
+    "pid": 2928238,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20260930",
+      "--arm",
+      "gmr"
+    ],
+    "started_utc": "2026-09-30T13:10:25.629231+00:00"
+  },
+  {
+    "job": "gen_phase_gmm_20260930_73002",
+    "pid": 2928425,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20260930",
+      "--arm",
+      "phase_gmm"
+    ],
+    "started_utc": "2026-09-30T13:10:41.413089+00:00"
+  },
+  {
+    "job": "gen_history_init_cal_20260930_73002",
+    "pid": 2928523,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20260930",
+      "--arm",
+      "history_init_cal"
+    ],
+    "started_utc": "2026-09-30T13:10:52.053800+00:00"
+  },
+  {
+    "job": "gen_init_only_20261001_73002",
+    "pid": 2936016,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20261001",
+      "--arm",
+      "init_only"
+    ],
+    "started_utc": "2026-09-30T13:13:47.947610+00:00"
+  },
+  {
+    "job": "gen_no_initial_20261001_73002",
+    "pid": 2936022,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20261001",
+      "--arm",
+      "no_initial"
+    ],
+    "started_utc": "2026-09-30T13:13:48.084947+00:00"
+  },
+  {
+    "job": "gen_no_calibration_20261001_73002",
+    "pid": 2936566,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20261001",
+      "--arm",
+      "no_calibration"
+    ],
+    "started_utc": "2026-09-30T13:14:03.840141+00:00"
+  },
+  {
+    "job": "gen_gmr_20261001_73002",
+    "pid": 2936858,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20261001",
+      "--arm",
+      "gmr"
+    ],
+    "started_utc": "2026-09-30T13:14:14.442453+00:00"
+  },
+  {
+    "job": "gen_phase_gmm_20261001_73002",
+    "pid": 2940952,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20261001",
+      "--arm",
+      "phase_gmm"
+    ],
+    "started_utc": "2026-09-30T13:17:10.065162+00:00"
+  },
+  {
+    "job": "gen_history_init_cal_20261001_73002",
+    "pid": 2940960,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73002",
+      "--parent",
+      "20261001",
+      "--arm",
+      "history_init_cal"
+    ],
+    "started_utc": "2026-09-30T13:17:10.250578+00:00"
+  },
+  {
+    "job": "gen_init_only_20260930_73003",
+    "pid": 2941437,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20260930",
+      "--arm",
+      "init_only"
+    ],
+    "started_utc": "2026-09-30T13:17:25.914979+00:00"
+  },
+  {
+    "job": "gen_no_initial_20260930_73003",
+    "pid": 2941835,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20260930",
+      "--arm",
+      "no_initial"
+    ],
+    "started_utc": "2026-09-30T13:17:36.440249+00:00"
+  },
+  {
+    "job": "gen_no_calibration_20260930_73003",
+    "pid": 2945804,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20260930",
+      "--arm",
+      "no_calibration"
+    ],
+    "started_utc": "2026-09-30T13:20:32.189962+00:00"
+  },
+  {
+    "job": "gen_gmr_20260930_73003",
+    "pid": 2945809,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20260930",
+      "--arm",
+      "gmr"
+    ],
+    "started_utc": "2026-09-30T13:20:32.335592+00:00"
+  },
+  {
+    "job": "gen_phase_gmm_20260930_73003",
+    "pid": 2946244,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20260930",
+      "--arm",
+      "phase_gmm"
+    ],
+    "started_utc": "2026-09-30T13:20:42.882102+00:00"
+  },
+  {
+    "job": "gen_history_init_cal_20260930_73003",
+    "pid": 2946703,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20260930",
+      "--arm",
+      "history_init_cal"
+    ],
+    "started_utc": "2026-09-30T13:20:58.515791+00:00"
+  },
+  {
+    "job": "gen_init_only_20261001_73003",
+    "pid": 2951318,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20261001",
+      "--arm",
+      "init_only"
+    ],
+    "started_utc": "2026-09-30T13:23:54.338292+00:00"
+  },
+  {
+    "job": "gen_no_initial_20261001_73003",
+    "pid": 2951330,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20261001",
+      "--arm",
+      "no_initial"
+    ],
+    "started_utc": "2026-09-30T13:23:54.482442+00:00"
+  },
+  {
+    "job": "gen_no_calibration_20261001_73003",
+    "pid": 2951766,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20261001",
+      "--arm",
+      "no_calibration"
+    ],
+    "started_utc": "2026-09-30T13:24:04.994252+00:00"
+  },
+  {
+    "job": "gen_gmr_20261001_73003",
+    "pid": 2952056,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20261001",
+      "--arm",
+      "gmr"
+    ],
+    "started_utc": "2026-09-30T13:24:15.475982+00:00"
+  },
+  {
+    "job": "gen_phase_gmm_20261001_73003",
+    "pid": 2956338,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20261001",
+      "--arm",
+      "phase_gmm"
+    ],
+    "started_utc": "2026-09-30T13:27:16.017776+00:00"
+  },
+  {
+    "job": "gen_history_init_cal_20261001_73003",
+    "pid": 2956343,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/experiment.py",
+      "generate",
+      "--seed",
+      "73003",
+      "--parent",
+      "20261001",
+      "--arm",
+      "history_init_cal"
+    ],
+    "started_utc": "2026-09-30T13:27:16.169591+00:00"
+  }
+]

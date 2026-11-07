@@ -1,0 +1,99 @@
+{
+  "seed": 20261023,
+  "output_fits": 3,
+  "onset_fits": 1,
+  "count_fits": 1,
+  "evidence": {
+    "category": {
+      "native_replay_checks": {
+        "optimization": 816283,
+        "internal_validation": 100226
+      },
+      "fit": {
+        "arm": "selected",
+        "fit_seed": 20261023,
+        "selected_step": 300,
+        "last_step": 800,
+        "trainable_parameters": 64239,
+        "seconds": 2.0521998160984367,
+        "validation": {
+          "normal_nll": 2.6013803482055664,
+          "fraud_nll": 2.164600133895874,
+          "macro_nll": 2.38299024105072,
+          "normal_events": 99751,
+          "fraud_events": 475
+        },
+        "optimization": {
+          "normal_nll": 2.601707696914673,
+          "fraud_nll": 2.0545804500579834,
+          "macro_nll": 2.328144073486328,
+          "normal_events": 811544,
+          "fraud_events": 4739
+        },
+        "head_sha256": "3d8b4d06494269bf1024760a2c11312f0dfcb757c9ee2915175d3f7b0dd99d69"
+      }
+    },
+    "amount_or_numeric_value": {
+      "native_replay_checks": {
+        "optimization": 5713981,
+        "internal_validation": 701582
+      },
+      "fit": {
+        "arm": "selected",
+        "fit_seed": 20261023,
+        "selected_step": 700,
+        "last_step": 1200,
+        "trainable_parameters": 282591,
+        "seconds": 7.184985442087054,
+        "validation": {
+          "normal_nll": 9.413056373596191,
+          "fraud_nll": 10.187386512756348,
+          "macro_nll": 9.80022144317627,
+          "normal_events": 99751,
+          "fraud_events": 475
+        },
+        "optimization": {
+          "normal_nll": 9.472702980041504,
+          "fraud_nll": 9.129105567932129,
+          "macro_nll": 9.300904273986816,
+          "normal_events": 811544,
+          "fraud_events": 4739
+        },
+        "head_sha256": "09d87a5f93b155c6fa86acd1ed54370277392d586568d9afe3a028aeca80b327"
+      }
+    },
+    "gap": {
+      "native_replay_checks": {
+        "optimization": 5713981,
+        "internal_validation": 701582
+      },
+      "fit": {
+        "arm": "selected",
+        "fit_seed": 20261023,
+        "selected_step": 400,
+        "last_step": 900,
+        "trainable_parameters": 282382,
+        "seconds": 5.248717762995511,
+        "validation": {
+          "normal_nll": 11.214405059814453,
+          "fraud_nll": 10.499731063842773,
+          "macro_nll": 10.857068061828613,
+          "normal_events": 99685,
+          "fraud_events": 472
+        },
+        "optimization": {
+          "normal_nll": 11.269744873046875,
+          "fraud_nll": 10.22959041595459,
+          "macro_nll": 10.749667644500732,
+          "normal_events": 810974,
+          "fraud_events": 4690
+        },
+        "head_sha256": "114c2efb36b9ee7eea5b9e2717842d65a244c3e5daba990392aadab8f3c571b1"
+      }
+    }
+  },
+  "fresh_representation": true,
+  "native_sha256": "99dd0698c368d7e3d479b1fc2c219e6bdfdadf3a8748ff159f52b772097429c3",
+  "utc": "2026-09-30T17:22:15.121680+00:00",
+  "test_events_read": false
+}

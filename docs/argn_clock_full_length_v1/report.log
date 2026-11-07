@@ -1,0 +1,44 @@
+DENSITY_AUDITED clock_full_prefix 20260930 20261011
+DENSITY_AUDITED clock_full_prefix 20260930 20261012
+DENSITY_AUDITED clock_full_prefix 20260930 20261021
+DENSITY_AUDITED clock_full_prefix 20260930 20261022
+DENSITY_AUDITED clock_full_prefix 20261001 20261011
+DENSITY_AUDITED clock_full_prefix 20261001 20261012
+DENSITY_AUDITED clock_full_prefix 20261001 20261021
+DENSITY_AUDITED clock_full_prefix 20261001 20261022
+# 전체 거래 길이 학습 대조 결과
+
+같은2부모×4draw. 전체 길이 두 계수 보정1회,1024재현1회,새 native ARGN학습0회.
+개발용 평가이며 최종 test 미사용. 모든 값은 낮을수록 좋은 W1(merchant 다양성 제외).
+
+| arm | normal_gap_seconds_log_w1 | onset_personal_gap_w1 | fraud_gap_seconds_log_w1 | normal_stay_personal_gap_w1 | onset_gap_w1 | fraud_ratio_log_w1 | normal_amount_log_w1 | class_0_merchant_tv | median_unique_merchants_per_customer |
+|---|---|---|---|---|---|---|---|---|---|
+| clock_joint | 0.13729 | 0.11678 | 0.09978 | 0.01228 | 0.51399 | 0.10459 | 0.06181 | 0.06776 | 538.25 |
+| history_only | 0.09301 | 0.14334 | 0.13914 | 0.05399 | 0.23207 | 0.10953 | 0.0615 | 0.06756 | 538.25 |
+| clock_prefix | 0.08397 | 0.09717 | 0.09609 | 0.00677 | 0.32057 | 0.11037 | 0.06157 | 0.06737 | 538.375 |
+| clock_full_prefix | 0.11088 | 0.10272 | 0.09608 | 0.01001 | 0.4295 | 0.10903 | 0.06209 | 0.06769 | 538.125 |
+
+## 같은 위치 지원집합의 정상 시간 오류
+
+| start | end | clock_joint | history_only | clock_prefix | clock_full_prefix |
+|---|---|---|---|---|---|
+| 6 | 50 | 0.84338 | 0.42738 | 0.23605 | 0.22753 |
+| 50 | 200 | 0.61709 | 0.32668 | 0.1912 | 0.34353 |
+| 200 | 500 | 0.46731 | 0.28549 | 0.29639 | 0.48169 |
+| 500 | 1024 | 0.0669 | 0.07195 | 0.12863 | 0.08582 |
+| 1024 | -1 | 0.17521 | 0.09474 | 0.33332 | 0.15276 |
+| 1024 | 2048 | 0.16288 | 0.08875 | 0.32141 | 0.14023 |
+| 2048 | -1 | 0.46379 | 0.24065 | 0.60394 | 0.44812 |
+
+## 실행 전 고정한 교체 판단
+
+| fit_seed | late_before | late_after | late_relative_improvement | improved_draws | primary_passed | costs | passes |
+|---|---|---|---|---|---|---|---|
+| 20260930 | 0.3279342374005465 | 0.14624099030303261 | 0.5540539119603713 | 4 | True | normal_gap,horizon_50_200 | False |
+| 20261001 | 0.3387131702863194 | 0.1592755113567118 | 0.5297628633038574 | 4 | True | normal_gap,horizon_50_200 | False |
+
+전체 길이 후보는 교체 기준을 통과하지 못했다. 직전 clock_prefix를 유지하고 push하지 않는다.
+
+이는 전체 길이 학습의 이번 제한된 대조이며, 다른 보정식이나 충분히 최적화한 모든 방법에 대한 부정이 아니다.
+48평가 예산의 optimizer 종료 상태는 fit 기록에 보존한다. 비용 screen은 논문 성립 조건이 아니다.
+

@@ -1,0 +1,26 @@
+{
+  "utc": "2026-09-30T17:03:39.714801+00:00",
+  "checks": {
+    "normal_amount_log_w1": 5.551115123125783e-17,
+    "normal_gap_seconds_log_w1": 0.0,
+    "normal_ratio_log_w1": 6.245004513516506e-17,
+    "fraud_amount_log_w1": 2.7755575615628914e-17,
+    "fraud_gap_seconds_log_w1": 6.938893903907228e-17,
+    "fraud_ratio_log_w1": 1.3877787807814457e-17,
+    "onset_personal_gap_w1": 8.326672684688674e-17,
+    "normal_stay_personal_gap_w1": 6.938893903907228e-17,
+    "return_normal_personal_gap_w1": 0.0,
+    "continuation_personal_gap_w1": 5.551115123125783e-17,
+    "left_fraud_personal_gap_w1": 0.0,
+    "equal_customer_normal_gap_w1": 0.0,
+    "early_time": 5.551115123125783e-17,
+    "time50_99": 5.551115123125783e-17,
+    "time100_199": 5.551115123125783e-17,
+    "time200_499": 5.551115123125783e-17,
+    "time500_1023": 1.3877787807814457e-17,
+    "late1024_time": 6.938893903907228e-17
+  },
+  "max_error": 8.326672684688674e-17,
+  "source_sha256": "4b3644ab866abe5d09f4b4c3038b52a30f5cafd583168eb4030e132dbb813c14",
+  "test_reads": 0
+}

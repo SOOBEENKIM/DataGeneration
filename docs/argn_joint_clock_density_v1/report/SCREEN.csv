@@ -1,0 +1,5 @@
+arm,onset_target,normal_target,costs,promising,selected_step
+mean_marginal,False,False,,False,0
+mean_joint,False,False,,False,0
+mixture_marginal,False,False,"position_6_50,position_50_100,position_100_200,position_200_500",False,400
+mixture_joint,False,False,,False,0

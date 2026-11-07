@@ -1,0 +1,62 @@
+   anchor             head        history  start  end   gap_w1  personal_w1
+generated mixture_marginal      generated      1   -1 0.076206     0.012050
+generated mixture_marginal      generated      1    6 0.089601          NaN
+generated mixture_marginal      generated      6   50 0.139392     0.022475
+generated mixture_marginal      generated    100  200 0.310670     0.029406
+generated mixture_marginal      generated   1024   -1 0.131712     0.006888
+generated mixture_marginal actual_aligned      1   -1 0.063948     0.012642
+generated mixture_marginal actual_aligned      1    6 0.089601          NaN
+generated mixture_marginal actual_aligned      6   50 0.131631     0.021623
+generated mixture_marginal actual_aligned    100  200 0.288887     0.034287
+generated mixture_marginal actual_aligned   1024   -1 0.124424     0.007778
+generated mixture_marginal actual_literal      1   -1 0.067851     0.010832
+generated mixture_marginal actual_literal      1    6 0.089601          NaN
+generated mixture_marginal actual_literal      6   50 0.136928     0.021787
+generated mixture_marginal actual_literal    100  200 0.296741     0.029999
+generated mixture_marginal actual_literal   1024   -1 0.088819     0.027757
+generated        init_only      generated      1   -1 0.085025     0.014124
+generated        init_only      generated      1    6 0.089601          NaN
+generated        init_only      generated      6   50 0.101606     0.036489
+generated        init_only      generated    100  200 0.293819     0.036561
+generated        init_only      generated   1024   -1 0.081251     0.046408
+generated        init_only actual_aligned      1   -1 0.085025     0.014124
+generated        init_only actual_aligned      1    6 0.089601          NaN
+generated        init_only actual_aligned      6   50 0.101606     0.036489
+generated        init_only actual_aligned    100  200 0.293819     0.036561
+generated        init_only actual_aligned   1024   -1 0.081251     0.046408
+generated        init_only actual_literal      1   -1 0.085025     0.014124
+generated        init_only actual_literal      1    6 0.089601          NaN
+generated        init_only actual_literal      6   50 0.101606     0.036489
+generated        init_only actual_literal    100  200 0.293819     0.036561
+generated        init_only actual_literal   1024   -1 0.081251     0.046408
+   actual mixture_marginal      generated      1   -1 0.020363     0.007255
+   actual mixture_marginal      generated      1    6 0.088756          NaN
+   actual mixture_marginal      generated      6   50 0.106249     0.032810
+   actual mixture_marginal      generated    100  200 0.068833     0.027170
+   actual mixture_marginal      generated   1024   -1 0.067899     0.028040
+   actual mixture_marginal actual_aligned      1   -1 0.020425     0.008895
+   actual mixture_marginal actual_aligned      1    6 0.088756          NaN
+   actual mixture_marginal actual_aligned      6   50 0.105813     0.031468
+   actual mixture_marginal actual_aligned    100  200 0.054819     0.018647
+   actual mixture_marginal actual_aligned   1024   -1 0.061180     0.027267
+   actual mixture_marginal actual_literal      1   -1 0.027904     0.010308
+   actual mixture_marginal actual_literal      1    6 0.088756          NaN
+   actual mixture_marginal actual_literal      6   50 0.108298     0.032123
+   actual mixture_marginal actual_literal    100  200 0.061955     0.022382
+   actual mixture_marginal actual_literal   1024   -1 0.027158     0.012028
+   actual        init_only      generated      1   -1 0.039189     0.010632
+   actual        init_only      generated      1    6 0.088756          NaN
+   actual        init_only      generated      6   50 0.071390     0.031666
+   actual        init_only      generated    100  200 0.046763     0.013148
+   actual        init_only      generated   1024   -1 0.044555     0.020079
+   actual        init_only actual_aligned      1   -1 0.039189     0.010632
+   actual        init_only actual_aligned      1    6 0.088756          NaN
+   actual        init_only actual_aligned      6   50 0.071390     0.031666
+   actual        init_only actual_aligned    100  200 0.046763     0.013148
+   actual        init_only actual_aligned   1024   -1 0.044555     0.020079
+   actual        init_only actual_literal      1   -1 0.039189     0.010632
+   actual        init_only actual_literal      1    6 0.088756          NaN
+   actual        init_only actual_literal      6   50 0.071390     0.031666
+   actual        init_only actual_literal    100  200 0.046763     0.013148
+   actual        init_only actual_literal   1024   -1 0.044555     0.020079
+AUDIT_COMPLETE 768

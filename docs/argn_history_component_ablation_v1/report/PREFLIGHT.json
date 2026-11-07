@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "time_fit_seed": 73001,
+      "parent": 20260930,
+      "positions": 1600,
+      "frozen_neural_exact": true,
+      "conditional_scope_exact": true,
+      "calibration_weights_scales_exact": true
+    },
+    {
+      "time_fit_seed": 73001,
+      "parent": 20261001,
+      "positions": 1600,
+      "frozen_neural_exact": true,
+      "conditional_scope_exact": true,
+      "calibration_weights_scales_exact": true
+    },
+    {
+      "time_fit_seed": 73002,
+      "parent": 20260930,
+      "positions": 1600,
+      "frozen_neural_exact": true,
+      "conditional_scope_exact": true,
+      "calibration_weights_scales_exact": true
+    },
+    {
+      "time_fit_seed": 73002,
+      "parent": 20261001,
+      "positions": 1600,
+      "frozen_neural_exact": true,
+      "conditional_scope_exact": true,
+      "calibration_weights_scales_exact": true
+    },
+    {
+      "time_fit_seed": 73003,
+      "parent": 20260930,
+      "positions": 1600,
+      "frozen_neural_exact": true,
+      "conditional_scope_exact": true,
+      "calibration_weights_scales_exact": true
+    },
+    {
+      "time_fit_seed": 73003,
+      "parent": 20261001,
+      "positions": 1600,
+      "frozen_neural_exact": true,
+      "conditional_scope_exact": true,
+      "calibration_weights_scales_exact": true
+    }
+  ],
+  "new_fits": 0,
+  "previous_hashes_verified": 529
+}

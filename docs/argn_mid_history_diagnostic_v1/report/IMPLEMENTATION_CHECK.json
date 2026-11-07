@@ -1,0 +1,16 @@
+{
+  "numpy_torch_max_error": 1.7763568394002505e-15,
+  "unmodified_replay_matches_previous_exact": true,
+  "all_interventions_preserve_first100_exact": true,
+  "non_target_same_input_law_exact": true,
+  "fixed_prefix_probabilities_scales_unchanged_when_removing_delta": true,
+  "entity_mapping": {
+    "customers": 147,
+    "rows": 177997,
+    "labels_exact": true,
+    "early_gaps_exact": true,
+    "later_decoded_gap_differences": 1,
+    "early_decoded_gap_differences": 0
+  },
+  "previous_strict_past_checks_preserved": true
+}

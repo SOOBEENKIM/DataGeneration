@@ -1,0 +1,9 @@
+{
+  "seed": 20261021,
+  "seconds": 1017.6188972780947,
+  "weights_sha256": "09d61e6c942cbd2d24d4f37997918aa20d381d7350efbe39d09436ff8df0f436",
+  "total_parameters": 4815662,
+  "utc": "2026-09-30T17:15:01.293770+00:00",
+  "fresh_initialization": true,
+  "test_events_read": false
+}

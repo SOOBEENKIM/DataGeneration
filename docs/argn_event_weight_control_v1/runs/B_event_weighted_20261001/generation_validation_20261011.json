@@ -1,0 +1,10 @@
+{
+  "seconds": 67.1291826989036,
+  "events": 180748,
+  "customers": 147,
+  "sha256": "ef9fdc62405f39fc5ee70b2ccd972bf8b8f3927d511f08f4558e6ae41388c66d",
+  "weights_sha256": "68e26028d624e7b2571079bf3f90cfe682eec5bd0f336cf1cdfb428303beae51",
+  "native_generated_length": true,
+  "labels_generated_jointly": true,
+  "no_prevalence_or_run_length_repair": true
+}

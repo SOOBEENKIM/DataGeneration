@@ -1,0 +1,69 @@
+{
+  "calibration_fits": 4,
+  "all_converged": true,
+  "evaluations": 165,
+  "original_head_tensors_exact": true,
+  "prior_artifact_hashes_verified": 350,
+  "internal_time_replays": 10,
+  "internal_customers": 69,
+  "new_native_argn_fits": 0,
+  "new_full_generations": 0,
+  "gpu_jobs_started": false,
+  "status": "awaiting_idle_GPU_native_generation",
+  "model_replaced": false,
+  "pushed": false,
+  "test_events_read": false,
+  "fits": [
+    {
+      "arm": "correction_gain",
+      "evaluations": 31,
+      "optimizer_success": true,
+      "selected_objective": 0.13732986889917032,
+      "decoded_parameters": [
+        0.0,
+        1.250690099689162,
+        0.0
+      ],
+      "original_tensors_exact": true
+    },
+    {
+      "arm": "regression_gain",
+      "evaluations": 17,
+      "optimizer_success": true,
+      "selected_objective": 0.1422698932069869,
+      "decoded_parameters": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "original_tensors_exact": true
+    },
+    {
+      "arm": "joint_gain",
+      "evaluations": 59,
+      "optimizer_success": true,
+      "selected_objective": 0.13759706601671914,
+      "decoded_parameters": [
+        0.006457569082030604,
+        1.267577273490505,
+        0.0
+      ],
+      "original_tensors_exact": true
+    },
+    {
+      "arm": "output_gain_shift",
+      "evaluations": 58,
+      "optimizer_success": true,
+      "selected_objective": 0.13710561282063388,
+      "decoded_parameters": [
+        0.0,
+        1.250690099689162,
+        0.0018663230144361767
+      ],
+      "original_tensors_exact": true
+    }
+  ],
+  "objective_decomposition_exact": true,
+  "internal_early_and_tail_metrics_equal": true,
+  "joint_train_objective_above_nested_scalar_control": true
+}

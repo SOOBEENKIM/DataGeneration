@@ -1,0 +1,60 @@
+{
+  "created_utc": "2026-09-30T16:57:31.303774+00:00",
+  "seeds": [
+    20261021,
+    20261022,
+    20261023
+  ],
+  "inherited_config": {
+    "version": "argn-state-first-v1",
+    "engine_version": "1.0.4",
+    "torch_version": "2.5.1+cu121",
+    "arms": [
+      "B",
+      "B_S"
+    ],
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012
+    ],
+    "model": "MOSTLY_AI/Medium",
+    "max_epochs": 60,
+    "max_training_minutes": 180,
+    "batch_size": 2,
+    "gradient_accumulation_steps": 16,
+    "cpu_threads": 4,
+    "history": "full frozen encoded customer sequence, no additional crop, both arms",
+    "training_order": "length/position, category, gap, merchant, amount, label",
+    "generation_order": "same as training",
+    "state_feature_groups": [
+      "label_duration",
+      "personal_amount",
+      "recent_gap"
+    ],
+    "amount_feature_cap": 10000,
+    "duration_feature_cap_seconds": 604800,
+    "ema_alpha": 0.0625,
+    "checkpoint": "native minimum internal validation loss, patience 4",
+    "development_contexts": "all 147 held-out development customers",
+    "generated_length": "native, never real future lengths",
+    "test_access": false
+  },
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/local_source/dispatch_native.py": "0ebe945ae2ed90bf53d5576912cb431d29bd62554567968230557e3b3b7ce3bd",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/local_source/native.py": "1784e955e340c763fe884459d2e7a23de46c5e5441b4d33abd2a787e59252ee7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/report/PROTOCOL.md": "d633c07f5bfa1ea579868e5b0a5a73adb377bea26c25a9279d21f4ca1e0e7185",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_direction_20261001/PLAN.json": "0dedc0a66aa1bfffc6d519920d38f22a42be49ff375395cadbb59bddd9f1fcf4",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/prepared/MANIFEST.json": "d46ea88574b558da19af13f4189db67160fc1f75cd168e13d9ece872f4503a02",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/configs/argn_state_first_v1.json": "fb1a3265e6ca3e037615d16ac936ecf56ce2d2da2b5f38acd317d498cbe1e846",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_label_first_control.py": "c075b7ec7009a546eaaa90a8eef67835cd7442113aa5955a80dee9a1ebe1d4e2",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_event_weight_control.py": "14dd43afaaf72485fc6628c9f1369c250c3ce7ae4fea34e8e55e77cd58215b2d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_state_adapter.py": "d3e14e2b18a48ad862a07413d8f338d0b73fc25cd6d898ee44a5e9ad320a133f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_state_first.py": "e7b708b05fe1b26b0c94d1c0999d5f9e0671a96e4037ea3f21988392458d5bdd",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_init_validation_v1/local_source/pipeline.py": "357ae80f5b7ad7c01f5f249aa4453cddd74ab720fe6f12090e45b5905f152f65"
+  },
+  "test_events_read": false
+}

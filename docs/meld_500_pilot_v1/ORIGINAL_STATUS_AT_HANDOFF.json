@@ -1,0 +1,39 @@
+{
+  "utc": "2026-10-01T15:10:33Z",
+  "pending": [],
+  "running": [
+    {
+      "name": "meld_20261021",
+      "pid": 3541047,
+      "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637"
+    },
+    {
+      "name": "meld_20261022",
+      "pid": 3541053,
+      "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+    }
+  ],
+  "done": [
+    {
+      "name": "cpar_length_20261021",
+      "pid": 3558640,
+      "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+      "exit_code": 0,
+      "complete": true
+    },
+    {
+      "name": "cpar_length_20261022",
+      "pid": 3565744,
+      "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+      "exit_code": 0,
+      "complete": true
+    },
+    {
+      "name": "cpar_length_20261023",
+      "pid": 3630005,
+      "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+      "exit_code": 0,
+      "complete": true
+    }
+  ]
+}

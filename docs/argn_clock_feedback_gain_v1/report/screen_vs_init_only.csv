@@ -1,0 +1,9 @@
+arm,fit_seed,mid_pass,mid_wins,whole_pass,whole_wins,costs,passes
+correction_gain,20260930,False,0,False,0,"position_200_500,mid_personal",False
+regression_gain,20260930,False,0,False,0,,False
+joint_gain,20260930,False,0,False,0,"position_200_500,mid_personal",False
+output_gain_shift,20260930,False,0,False,0,"position_200_500,mid_personal",False
+correction_gain,20261001,False,0,False,0,mid_personal,False
+regression_gain,20261001,False,0,False,0,,False
+joint_gain,20261001,False,0,False,0,mid_personal,False
+output_gain_shift,20261001,False,0,False,0,"position_200_500,mid_personal",False

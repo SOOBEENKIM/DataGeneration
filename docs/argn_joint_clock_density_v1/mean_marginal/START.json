@@ -1,0 +1,7 @@
+{
+  "pid": 2173092,
+  "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+  "arm": "mean_marginal",
+  "started_utc": "2026-09-29T06:29:38.345074+00:00",
+  "trainable_parameters": 85705
+}

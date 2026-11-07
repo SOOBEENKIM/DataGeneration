@@ -1,0 +1,19 @@
+{
+  "done": [
+    {
+      "seed": 20261023,
+      "pid": 3530454,
+      "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+      "exit_code": 0,
+      "complete": true
+    },
+    {
+      "seed": 20261022,
+      "pid": 3530445,
+      "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+      "exit_code": 0,
+      "complete": true
+    }
+  ],
+  "all_success": true
+}
