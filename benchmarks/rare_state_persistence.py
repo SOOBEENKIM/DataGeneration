@@ -96,6 +96,10 @@ def _runs(d):
         customers_with_fraud=int(per.frauds.gt(0).sum()),
         runs_per_fraud_customer=float(len(runs) / per.frauds.gt(0).sum()) if per.frauds.gt(0).sum() else np.nan,
         fraud_share_of_fraud_customers=float((per.frauds / per.events)[per.frauds.gt(0)].mean()) if per.frauds.gt(0).sum() else np.nan,
+        first_event_fraud_rate=float(e.loc[e.event_index.eq(0), "fraud"].eq(1).mean()),
+        age1_termination_rate=float((e.fraud.eq(1) & e.run_age.eq(1) & e.next_fraud.eq(0)).sum()
+                                    / (e.fraud.eq(1) & e.run_age.eq(1) & known_next).sum()) if (e.fraud.eq(1) & e.run_age.eq(1) & known_next).sum() else np.nan,
+        runs_over_20_share=float(runs.length.gt(20).mean()) if len(runs) else np.nan,
         span_hours=(runs.span_seconds / 3600.0).to_numpy() if len(runs) else np.array([]),
         lengths=runs.length.to_numpy() if len(runs) else np.array([]),
     )
@@ -116,6 +120,12 @@ def rare_state_metrics(real, gen):
     rows["R_run_length_logw1"] = _logw1(sr["lengths"], sg["lengths"])
     rows["R_run_span_hours_logw1"] = _logw1(sr["span_hours"], sg["span_hours"])
     rows["R_customers_with_fraud_reldiff"] = abs(sg["customers_with_fraud"] - sr["customers_with_fraud"]) / sr["customers_with_fraud"]
+    # Added 2026-11-07 after native_argn_episode_probe_v1: boundary failures the hazard table hides.
+    for k in ["first_event_fraud_rate", "age1_termination_rate", "runs_over_20_share"]:
+        rows[f"R_{k}_real"] = sr[k]; rows[f"R_{k}_gen"] = sg[k]
+    rows["R_first_event_fraud_absdiff"] = abs(sg["first_event_fraud_rate"] - sr["first_event_fraud_rate"])
+    rows["R_age1_termination_absdiff"] = abs(sg["age1_termination_rate"] - sr["age1_termination_rate"])
+    rows["R_runs_per_fraud_customer_absdiff"] = abs(sg["runs_per_fraud_customer"] - sr["runs_per_fraud_customer"])
     fr = er[er.fraud.eq(1)]; fg = eg[eg.fraud.eq(1)]
     nr = er[er.fraud.eq(0)]; ng = eg[eg.fraud.eq(0)]
     rows["R_fraud_gap_logw1"] = _logw1(fr.loc[fr.event_index.gt(0), "gap"], fg.loc[fg.event_index.gt(0), "gap"])
@@ -155,4 +165,5 @@ DIFF_COLUMNS = [
     "R_continuation_absdiff", "R_onset_rate_reldiff", "R_run_length_logw1", "R_run_span_hours_logw1",
     "R_customers_with_fraud_reldiff", "R_fraud_gap_logw1", "R_normal_gap_logw1", "R_fraud_amount_logw1",
     "R_normal_amount_logw1", "R_fraud_category_tv", "R_normal_category_tv", "R_onset_personal_gap_logw1",
+    "R_first_event_fraud_absdiff", "R_age1_termination_absdiff", "R_runs_per_fraud_customer_absdiff",
 ]

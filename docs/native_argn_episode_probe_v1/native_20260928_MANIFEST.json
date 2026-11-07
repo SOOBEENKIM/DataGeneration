@@ -1,0 +1,31 @@
+{
+ "run": "native_20260928",
+ "weights_sha256": "6e4409523577dcdf0f8ec83b473f70176f60cec5a1af26a57fcc095b34ece6ea",
+ "weights_unchanged": true,
+ "prefix_limit": 512,
+ "customers": 147,
+ "column_order": [
+  "tgt:/",
+  "tgt:t0/c0",
+  "tgt:t1/c1",
+  "tgt:t2/c2",
+  "tgt:t3/c3",
+  "tgt:t4/c4"
+ ],
+ "label_predicted_after": [
+  "tgt:/",
+  "tgt:t0/c0",
+  "tgt:t1/c1",
+  "tgt:t2/c2",
+  "tgt:t3/c3",
+  "tgt:t4/c4"
+ ],
+ "inputs": {
+  "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/prepared/validation.parquet": "c444c6e625b8f4e0e4edae1b1e12dbbef573c9e398d44400a44c4d5a7f03228d",
+  "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/runs/native_20260928/generated_validation_20261011.parquet": "e997ce191db4d6be821c72ecc695be2f1725cbf9c6707625451ea7558f47a7d2",
+  "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/runs/native_20260928/generated_validation_20261012.parquet": "de1aca0d6421ebdb638234ab10fe0980b5b9af1b4a2f61c7f8abca26bd3777fb"
+ },
+ "mode": "teacher forward only; no rollout; no new fit; test not read",
+ "seconds": 11.8,
+ "script_sha256": "7164d4c9a7cbc8763fd0f46850d12f4b52928647eef01bd56dbd006c2165b286"
+}

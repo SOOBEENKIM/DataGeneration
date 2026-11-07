@@ -54,6 +54,8 @@ def registry():
         add("time_calibration", "mixture_marginal", 20260930, gs, SF / f"argn_joint_clock_density_v1/runs/mixture_marginal_20260930/generated_validation_{gs}.parquet")
         add("other_generator", "LBDTPP_official_scale", None, gs, SF / f"lbdtpp_sparkov_v1/official_scale/generated_validation_{gs}.parquet")
         add("other_generator", "LBDTPP_median_scale", None, gs, SF / f"lbdtpp_sparkov_v1/median_scale/generated_validation_{gs}.parquet")
+    for gs in [20261011, 20261012]:  # registered 2026-11-07, realtabformer_sparkov_v1 (60-row windows, real length given)
+        add("other_generator", "REaLTabFormer_w60", 20261107, gs, SF / f"realtabformer_sparkov_v1/runs/generated_development_{gs}.parquet")
     for fs in [20261021, 20261022, 20261023]:
         for gs in [20261031, 20261032]:
             for arm in ["history_only", "history_position6", "history_calibration_only"]:
