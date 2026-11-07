@@ -108,6 +108,19 @@ def main():
         print(f"{r.family:20s} {r.model:45s} fit={r.fit_seed} draw={r.generation_seed} "
               f"cont={row['R_continuation_rate_gen']:.3f} run={row['R_mean_run_length_gen']:.2f} "
               f"gapW1={row['S_gap_logw1']:.3f} catTV={row['S_category_tv']:.3f}", flush=True)
+    # Reference for window-based generators (registered 2026-11-07): the best a generator that
+    # cannot see the previous 60-row window could do is to cut every real fraud run at the first
+    # 60-row boundary it crosses. Labels after that boundary within the run are set to normal.
+    ref = real.sort_values(["entity_id", "event_index"]).copy()
+    lab = pd.to_numeric(ref.event_is_fraud, errors="coerce").fillna(0).astype(int)
+    boundary = ref.entity_id.ne(ref.entity_id.shift()) | lab.ne(lab.shift())
+    run_start = ref.event_index.groupby(boundary.cumsum()).transform("min")
+    crossed = lab.eq(1) & (ref.event_index // 60).ne(run_start // 60)
+    ref.loc[crossed, "event_is_fraud"] = ref.event_is_fraud.iloc[0].__class__(0) if isinstance(ref.event_is_fraud.iloc[0], str) else 0
+    row, hz = all_metrics(real, ref)
+    row.update(family="reference", model="real_window_truncated_60", fit_seed=None, generation_seed=None, path="derived from real development")
+    row["runs_crossing_60_boundary_share"] = float(crossed.groupby(boundary.cumsum()).any()[lambda x: x].size / max(1, (lab.eq(1) & boundary).sum()))
+    results.append(row); hz.insert(0, "model", "real_window_truncated_60"); hz.insert(1, "fit_seed", None); hz.insert(2, "generation_seed", None); hazards.append(hz)
     res = pd.DataFrame(results)
     res.to_csv(OUT / "ALL_GENERATIONS.csv", index=False)
     pd.concat(hazards).to_csv(OUT / "HAZARD_BY_AGE_BAND.csv", index=False)

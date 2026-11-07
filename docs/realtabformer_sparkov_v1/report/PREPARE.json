@@ -1,0 +1,25 @@
+{
+  "train": {
+    "customers": 688,
+    "windows": 15630,
+    "rows": 916567,
+    "fraud_rate": 0.0056886185079759585,
+    "max_window_rows": 60,
+    "max_label_tokens": 782,
+    "mean_label_tokens": 764.339795265515,
+    "measure_seconds": 107.3
+  },
+  "development": {
+    "customers": 147,
+    "windows": 3041,
+    "rows": 177997,
+    "fraud_rate": 0.006438310758046484,
+    "max_window_rows": 60,
+    "max_label_tokens": 782,
+    "mean_label_tokens": 762.9210785925683,
+    "measure_seconds": 20.4
+  },
+  "longest_child_window_tokens": 782,
+  "output_max_length": 798,
+  "window": 60
+}
