@@ -1,0 +1,13 @@
+{
+ "created_utc": "2026-11-07T16:38:38Z",
+ "seconds": 99.1,
+ "test": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/prepared/validation.parquet",
+ "test_sha256": "c444c6e625b8f4e0e4edae1b1e12dbbef573c9e398d44400a44c4d5a7f03228d",
+ "generations": 124,
+ "real_draws": 20,
+ "errors": 4,
+ "new_fits": 0,
+ "new_generations": 0,
+ "gpu": false,
+ "test_events_read": false
+}
