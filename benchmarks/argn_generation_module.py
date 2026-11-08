@@ -51,10 +51,22 @@ def fit_table(train, label=LABEL):
 
 
 @contextmanager
-def generation_module(stats, parameters=None, label_first=False, label=LABEL):
+def generation_module(stats, parameters=None, label_first=False, label=LABEL, head_state=None):
     """Patch mostlyai.engine._tabular.generation for one generate() call. `parameters` from fit_table enables
-    the transition replacement; `label_first` moves the label column to the front of the generation order."""
+    the transition replacement; `label_first` moves the label column to the front of the generation order;
+    `head_state` (2026-11-08, ibm_output_heads_v1) is a partial state dict of retrained output heads that is
+    loaded on top of the native weights after the engine loads them."""
     import mostlyai.engine._tabular.generation as generation
+    parent_load = generation.load_model_weights
+
+    def load_with_heads(*args, **kwargs):
+        out = parent_load(*args, **kwargs)
+        if head_state is not None:
+            model = kwargs.get("model", args[0] if args else None)
+            missing, unexpected = model.load_state_dict({k: v.to(model.device) for k, v in head_state.items()}, strict=False)
+            assert not unexpected, unexpected
+            assert len(missing) == len(model.state_dict()) - len(head_state), (len(missing), len(head_state))
+        return out
     col = stats["columns"][label]
     label_col = get_argn_name(col["argn_processor"], col["argn_table"], col["argn_column"])
     label_key = label_col + "__cat"
@@ -109,8 +121,10 @@ def generation_module(stats, parameters=None, label_first=False, label=LABEL):
 
     generation.SequentialModel = ModuleModel
     generation._resolve_gen_column_order = ordered
+    generation.load_model_weights = load_with_heads
     try:
-        yield dict(label_key=label_key, label_first=label_first, transition=parameters is not None)
+        yield dict(label_key=label_key, label_first=label_first, transition=parameters is not None, retrained_heads=head_state is not None)
     finally:
         generation.SequentialModel = parent_model
         generation._resolve_gen_column_order = parent_order
+        generation.load_model_weights = parent_load

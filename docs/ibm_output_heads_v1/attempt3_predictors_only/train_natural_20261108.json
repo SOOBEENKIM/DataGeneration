@@ -1,0 +1,43 @@
+{
+ "mode": "natural",
+ "seed": 20261108,
+ "fraud_weight": 1.0,
+ "trn_events": 1008984,
+ "trn_fraud_events": 1140,
+ "epochs": 30,
+ "best_val_loss": 10.031434974670411,
+ "best_epoch": 30,
+ "trainable_parameters": 25404,
+ "total_parameters": 5316491,
+ "column_order": [
+  "tgt:t5/c5",
+  "tgt:/",
+  "tgt:t0/c0",
+  "tgt:t1/c1",
+  "tgt:t2/c2",
+  "tgt:t3/c3",
+  "tgt:t4/c4"
+ ],
+ "output_sub_columns": [
+  "tgt:t0/c0__bin",
+  "tgt:t2/c2__bin",
+  "tgt:t3/c3__cat",
+  "tgt:t4/c4__cat"
+ ],
+ "retrained_columns": [
+  "gap",
+  "amount_or_numeric_value",
+  "category",
+  "use_chip"
+ ],
+ "window": 100,
+ "val_window": null,
+ "batch_size": 8,
+ "lr": 0.0003,
+ "patience": 5,
+ "max_epochs": 30,
+ "seconds": 84.3,
+ "base_weights_sha256": "b0b1f46a977d4e7eb35e6b665538b7ae0b5c5dd118565d69e22d19410059603f",
+ "heads_sha256": "293e6e17179ebd9b2d06562b63cf5e551673d272ceec3e1d3f63c926ff00e346",
+ "base_weights_unchanged": true
+}
