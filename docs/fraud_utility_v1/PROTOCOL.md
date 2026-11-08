@@ -52,3 +52,15 @@ TSTR 자체는 선행이다. 남는 가설: (U1) 생성물 간 TSTR 효용의 �
 ## 6. 실행 후 갱신
 
 생성물별 효용, 상한 분포, 상관표, 실패·제외를 `RESULTS.md`와 CSV에 남긴다.
+
+## 수정안 1 — 탐지기 설정 (2026-11-08, IBM 적용 중 발견, Sparkov 결과 산출 후)
+
+등록 설정(`max_iter 300, learning_rate .1, early stopping 없음`)은 사기율 .0018인 IBM development에서
+**수치적으로 발산**한다: 같은 표에서 학습·평가해도 이력 탐지기 AUPRC가 20회 .41 → 50회 .07 → 300회
+.002로 떨어지고 예측 확률이 1.0으로 포화된다(고유값 116개). 실제 train 240명 → development에서도
+행 .023 / 이력 .002다. Sparkov 실제 상한 20회 중 2회가 무작위 수준이었던 것도 같은 현상으로 본다.
+수정 설정 `stable`: `max_iter 300, learning_rate .05, l2_regularization 1.0, min_samples_leaf 50, early stopping
+없음`(반복 예산 동일, 정규화만 추가). 같은 실제 240명 추출에서 행 .40 / 이력 .58로 복원된다.
+적용: IBM 효용은 `stable`로 실행하고 등록 설정의 결과(`utility/`)도 발산 증거로 보존한다. Sparkov
+효용은 `stable`로 다시 실행해 `detector_stable/`에 두고 원래 `RESULTS.md`는 고치지 않는다. 판단
+조건(5항)은 바꾸지 않는다. 이 수정은 설정 발견이며 모델 변경이 아니다.

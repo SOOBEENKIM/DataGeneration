@@ -63,8 +63,17 @@ def features(frame):
     return d
 
 
-def fit(train, columns, seed=20261108):
-    clf = HistGradientBoostingClassifier(max_iter=300, learning_rate=0.1, early_stopping=False, random_state=seed)
+DETECTORS = {
+    # registered 2026-11-08 (fraud_utility_v1): diverges at IBM prevalence .0018 (in-sample AUPRC .44 -> .002 by 300 iterations)
+    "registered": dict(max_iter=300, learning_rate=0.1, early_stopping=False),
+    # amendment 2026-11-08 (ibm_tabformer_v1 utility): regularised, same iteration budget, no early stopping
+    "stable": dict(max_iter=300, learning_rate=0.05, early_stopping=False, l2_regularization=1.0, min_samples_leaf=50),
+}
+DETECTOR = "registered"
+
+
+def fit(train, columns, seed=20261108, detector=None):
+    clf = HistGradientBoostingClassifier(random_state=seed, **DETECTORS[detector or DETECTOR])
     clf.fit(train[columns].to_numpy(), train.y.to_numpy())
     return clf
 
@@ -83,14 +92,14 @@ def episode_metrics(test, score, top=0.01):
                 episodes=int(len(per)), alerts=int(alert.sum()))
 
 
-def evaluate(train_frame, test_feat, variants=("row", "history")):
+def evaluate(train_frame, test_feat, variants=("row", "history"), detector=None):
     tr = features(train_frame)
     if tr.y.sum() < 2 or tr.y.sum() == len(tr):
         return {f"{v}_{k}": np.nan for v in variants for k in ["auprc", "auroc", "episode_recall_top1", "early_detection_top1"]}
     out = dict(train_events=len(tr), train_fraud=int(tr.y.sum()))
     for v in variants:
         cols = list(ROW) if v == "row" else list(ROW) + HISTORY
-        clf = fit(tr, cols)
+        clf = fit(tr, cols, detector=detector)
         score = clf.predict_proba(test_feat[cols].to_numpy())[:, 1]
         out[f"{v}_auprc"] = float(average_precision_score(test_feat.y, score))
         out[f"{v}_auroc"] = float(roc_auc_score(test_feat.y, score))

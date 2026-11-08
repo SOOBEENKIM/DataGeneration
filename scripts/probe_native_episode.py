@@ -135,8 +135,8 @@ def onset_fields(feats, source):
     for lo, hi, name in [(1, 1, "onset_age_1"), (2, 5, "age_2_5"), (6, 10**9, "age_6_plus")]:
         s = d[d.fraud.eq(1) & d.age.between(lo, hi)]
         out.append(dict(source=source, group=name, events=len(s), customers=s.customer_id.nunique(),
-                        amount_log_mean=float(np.log1p(pd.to_numeric(s[AMOUNT], errors="coerce")).mean()) if len(s) else None,
-                        gap_log_mean=float(np.log1p(pd.to_numeric(s.gap, errors="coerce").clip(lower=0)).mean()) if len(s) else None,
+                        amount_log_mean=float(np.nanmean(np.log1p(pd.to_numeric(s[AMOUNT], errors="coerce").astype(float).clip(lower=0).to_numpy()))) if len(s) else None,
+                        gap_log_mean=float(np.nanmean(np.log1p(pd.to_numeric(s.gap, errors="coerce").astype(float).clip(lower=0).to_numpy()))) if len(s) else None,
                         seen_merchant_rate=float(s.seen_merchant.mean()) if len(s) else None,
                         top_category=s.category.mode().iloc[0] if len(s) else None,
                         top_category_share=float(s.category.value_counts(normalize=True).iloc[0]) if len(s) else None,

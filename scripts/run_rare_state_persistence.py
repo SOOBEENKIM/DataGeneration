@@ -39,6 +39,8 @@ def registry_ibm():
         for gs in [20261011, 20261012]:
             rows.append(dict(family="native_argn", model="ARGN_native_ibm2013", fit_seed=fs, generation_seed=gs,
                              path=str(IBM / f"runs/native_{fs}/generated_validation_{gs}.parquet")))
+            rows.append(dict(family="native_argn_config", model="ARGN_relaxed_ibm2013", fit_seed=fs, generation_seed=gs,  # amendment 1
+                             path=str(IBM / f"runs/relaxed_{fs}/generated_validation_{gs}.parquet")))
     return pd.DataFrame(rows)
 
 

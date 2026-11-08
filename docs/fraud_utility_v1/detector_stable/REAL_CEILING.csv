@@ -1,0 +1,6 @@
+,history_auprc,history_early_detection_top1,row_auprc,history_auroc,history_episode_recall_top1,row_early_detection_top1
+mean,0.9384,0.9232,0.7319,0.9974,1.0,0.932
+std,0.004,0.0102,0.0109,0.0006,0.0,0.0175
+min,0.927,0.9123,0.708,0.9964,1.0,0.8947
+median,0.9386,0.9211,0.7317,0.9975,1.0,0.9298
+max,0.9456,0.9386,0.7503,0.9983,1.0,0.9561

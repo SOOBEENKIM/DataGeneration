@@ -8,6 +8,7 @@ in configs/ibm_tabformer_v1.json. The sealed test split is written once by `prep
 """
 from __future__ import annotations
 import argparse, hashlib, importlib.metadata, json, logging, os, random, shutil, sys, time
+from contextlib import contextmanager, nullcontext
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -123,6 +124,27 @@ def prepare():
     print(json.dumps(json.loads((DOCS / "preparation.json").read_text()), indent=1)[:3000])
 
 
+@contextmanager
+def relaxed_cap(folder):
+    """Amendment 1 (2026-11-08): the cap-only control of sparkov_argn_control_v2, unchanged. Only the internal
+    `max_epochs_cap = ceil(n/50)` assignment is replaced in an isolated source copy; the installed engine is untouched."""
+    import difflib, inspect
+    import mostlyai.engine._tabular.training as module
+    source = inspect.getsource(module)
+    old = "max_epochs_cap = math.ceil((trn_cnt + val_cnt) / 50)"
+    assert source.count(old) == 1
+    modified = source.replace(old, "max_epochs_cap = max_epochs  # registered cap-only control")
+    path = folder / "training_cap_control.py"; path.write_text(modified)
+    (folder / "training_cap_control.diff").write_text("".join(difflib.unified_diff(source.splitlines(True), modified.splitlines(True), fromfile="official_training.py", tofile=path.name)))
+    write(folder / "source_control.json", dict(official_sha256=hashlib.sha256(source.encode()).hexdigest(), controlled_sha256=digest(path), installed_source_unchanged=True))
+    namespace = dict(module.__dict__); exec(compile(modified, str(path), "exec"), namespace)
+    original = module.train; module.train = namespace["train"]
+    try:
+        yield
+    finally:
+        module.train = original
+
+
 def fit(arm, fit_seed):
     from mostlyai.engine import train, generate
     from mostlyai.engine._workspace import Workspace
@@ -133,7 +155,8 @@ def fit(arm, fit_seed):
     write(folder / "START.json", dict(arm=arm, fit_seed=fit_seed, engine=importlib.metadata.version("mostlyai-engine"), device=device,
                                       gpu=torch.cuda.get_device_name(0) if device == "cuda" else None, cuda_visible_devices=os.environ.get("CUDA_VISIBLE_DEVICES"),
                                       config_sha256=digest(CONFIG), script_sha256=digest(__file__), max_training_minutes=CFG["max_training_minutes"]))
-    train(max_training_time=CFG["max_training_minutes"], device=device, workspace_dir=wsdir)
+    with relaxed_cap(folder) if arm == "relaxed" else nullcontext():
+        train(max_training_time=CFG["max_training_minutes"], device=device, workspace_dir=wsdir)
     ws = Workspace(wsdir)
     write(folder / "FIT.json", dict(seconds=time.monotonic() - start, weights_sha256=digest(ws.model_tabular_weights_path), device=device))
     if arm == "parent":
@@ -167,7 +190,7 @@ def sample(arm, fit_seed):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser(); p.add_argument("command", choices=["prepare", "fit", "sample"])
-    p.add_argument("--arm", choices=["parent", "native"], default="native"); p.add_argument("--seed", type=int, default=CFG["fit_seeds"][0]); a = p.parse_args()
+    p.add_argument("--arm", choices=["parent", "native", "relaxed"], default="native"); p.add_argument("--seed", type=int, default=CFG["fit_seeds"][0]); a = p.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     assert importlib.metadata.version("mostlyai-engine") == CFG["engine_version"]
     if a.command == "prepare":

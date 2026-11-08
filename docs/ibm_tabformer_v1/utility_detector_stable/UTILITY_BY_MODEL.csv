@@ -1,0 +1,5 @@
+kind,family,model_name,history_auprc_mean,history_auprc_std,history_auprc_count,history_early_detection_top1_mean,history_early_detection_top1_std,history_early_detection_top1_count,row_auprc_mean,row_auprc_std,row_auprc_count,history_auroc_mean,history_auroc_std,history_auroc_count,history_episode_recall_top1_mean,history_episode_recall_top1_std,history_episode_recall_top1_count,row_early_detection_top1_mean,row_early_detection_top1_std,row_early_detection_top1_count,train_fraud_mean,train_fraud_std,train_fraud_count
+real_self,real_self,real_development_self,1.0,,1,1.0,,1,0.9584,,1,1.0,,1,1.0,,1,1.0,,1,487.0,,1
+real_subset,real_subset,real_train_subset_240,0.61,0.0372,20,0.8811,0.0279,20,0.4579,0.0515,20,0.9901,0.0015,20,0.8985,0.0237,20,0.8592,0.0247,20,321.0,42.3469,20
+generation,native_argn,ARGN_native_ibm2013,0.0026,0.0004,4,0.0281,0.0163,4,0.0033,0.001,4,0.5895,0.0489,4,0.0473,0.0084,4,0.0399,0.0339,4,181.75,23.2433,4
+generation,native_argn_config,ARGN_relaxed_ibm2013,0.0026,0.0004,4,0.0281,0.0163,4,0.0033,0.001,4,0.5895,0.0489,4,0.0473,0.0084,4,0.0399,0.0339,4,181.75,23.2433,4
