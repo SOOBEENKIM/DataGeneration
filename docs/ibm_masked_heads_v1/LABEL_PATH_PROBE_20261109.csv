@@ -1,0 +1,4 @@
+fit_seed,heads,fraud_rows_label_real,fraud_rows_label_set_0,normal_rows_label_real,normal_rows_label_set_1
+20261109,native,0.1888,0.1677,0.1273,0.1408
+20261109,mask50,0.3606,0.2052,0.1217,0.1849
+20261109,mask100,0.4363,0.1752,0.1178,0.2685
