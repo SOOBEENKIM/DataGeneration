@@ -592,3 +592,32 @@ val, 가맹점 head 제외·lr 3e-4, predictor만 학습된 구현 오류 정정
 head, 사기 행만 별도 head(사기 행 natural 가중 학습) — 이며 별도 등록이 필요하다. 실패하면 head 수준
 복구는 불가능하다고 결론하고 backbone 학습 변경(라벨 조건부 손실)으로 넘어간다. 오늘 시도 셋(생성
 시점 모듈, head 재학습, 치환 학습)의 가중치·생성물·실패 로그는 모두 보존했다.
+
+### 라벨 라우팅 출력 head(IBM) — 2026-11-08 등록
+
+사용자가 "라우팅 head 등록"을 택했다. [프로토콜](ibm_routed_heads_v1/PROTOCOL.md). 동결 원형 fit 2개 위에서
+gap·amount·category·use_chip의 regressor+predictor **복사본**(`fraud_regressors`/`fraud_predictors`, 원형 가중치
+초기화)을 추가하고 행의 라벨 코드로 라우팅한다(정상 행 = 원형 head 불변, 사기 행 = 복사본). 손실은 사기
+행만·가중 없음. 팔: `routed`(실제 문맥) / `routed_subst`(치환 p=1) × fit 2, 생성 8회. 가장 가까운 선행은
+class-conditional/hard-routed expert heads(long-tail decoupled heads 계열)이고, 자체 선행은 Sparkov
+`amount_balanced_routed`. 판단 조건 R1–R4는 프로토콜 §5. 실행 전 라우팅 항등성 검사(`scripts/check_routed_heads.py`:
+미학습 복사본 = 원형 출력, 교란 시 사기 행·라우팅 열만 변화)를 통과했다. 결과는 실행 후 추가한다.
+
+### 라벨 라우팅 출력 head(IBM) — 2026-11-08 결과
+
+[결과](ibm_routed_heads_v1/RESULTS.md). head 학습 4회(3–6분), 생성 8회, 전체 fit 0.
+- **R1 채택(routed_subst 강한 채택).** 자유 생성 사기 온라인 비율 .27(원형)·.34–.35(공유 head 2단계) →
+  **.78(routed) / .84(routed_subst)**(실제 .88; 바닥 대비 2.8 / 1.5배). 사기 금액 W1 7.6→2.3배, 사기 간격
+  8.3→2.0–2.3배, 사기 업종 TV 2.7→1.2배. 라벨 단독 P(온라인) .27→.64–.82. 정상 행 출력은 원형과 동일
+  (R3 충족), 구간 축은 전이표 그대로.
+- **R2.** 치환 학습이 온라인·금액·업종에서 일관되게 낫다 — 간섭 제거 뒤에도 노출 편향이 남고 치환이
+  그것을 줄인다.
+- **R4 미충족.** 효용 이력 AUPRC .009→**.14**(상한 .61의 23%), 조기 탐지 .14→.63–.68(상한 .88). 남은
+  축: 사기 간격(W1 2배, 24h 구간 수 2.9 대 1.85), 가맹점(라우팅 제외), 사기 행 안 열 결합.
+- Spearman(48개 생성): 이력 AUPRC ↔ 사기 온라인 .88, 사기 금액 .83, 사기 업종 .75, 구간 길이 .74;
+  표준 지표 최대 .32 → 기여 B가 IBM에서도 성립.
+결정: 공유 head 실패의 원인은 **정상·사기 손실의 간섭**이었고(구조만 바꿔 .35→.84), 기여 C의 두 번째
+부품(상태별 출력)의 최소 형태는 **동결 backbone + 전이표 + 라벨 라우팅 사기 전용 head**로 성립한다.
+IBM 모듈의 등록 형태는 `transition_table + routed_subst heads`로 고정한다. 다음 순서: (1) 두 번째
+backbone(REaLTabFormer, IBM)에서 같은 두 부품을 얹어 backbone 불문 여부 확인, (2) 효용의 남은 축
+(사기 간격·가맹점 라우팅)은 별도 등록. 공유 head 두 단계의 가중치·생성물·실패 기록은 보존한다.

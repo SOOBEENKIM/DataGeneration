@@ -1,0 +1,22 @@
+{
+ "arm": "routed_table",
+ "fit_seed": 20261108,
+ "generation_seed": 20261011,
+ "seconds": 65.3,
+ "events": 281934,
+ "customers": 240,
+ "frauds": 477,
+ "fraud_customers": 32,
+ "fraud_online_share": 0.7651991614255765,
+ "continuation": 0.6477987421383647,
+ "base_weights_sha256": "b0b1f46a977d4e7eb35e6b665538b7ae0b5c5dd118565d69e22d19410059603f",
+ "heads_sha256": "a876247e9f50afdc69e0ac0488f81368bee5993b2416adf3f2042e534047b13f",
+ "module": {
+  "label_key": "tgt:t5/c5__cat",
+  "label_first": true,
+  "transition": true,
+  "retrained_heads": true,
+  "attached": true
+ },
+ "sha256": "1ec3576e591d9b910b7855349f937ce591bd27c9ac91e2eb5edb385163868797"
+}

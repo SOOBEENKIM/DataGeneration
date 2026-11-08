@@ -50,6 +50,9 @@ def registry_ibm():
             for arm in ["mask50_table", "mask100_table"]:  # ibm_masked_heads_v1 (2026-11-08)
                 rows.append(dict(family="masked_heads", model=f"ARGN_{arm}_ibm2013", fit_seed=fs, generation_seed=gs,
                                  path=str(SF / f"ibm_masked_heads_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
+            for arm in ["routed_table", "routed_subst_table"]:  # ibm_routed_heads_v1 (2026-11-08)
+                rows.append(dict(family="routed_heads", model=f"ARGN_{arm}_ibm2013", fit_seed=fs, generation_seed=gs,
+                                 path=str(SF / f"ibm_routed_heads_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
     return pd.DataFrame(rows)
 
 
