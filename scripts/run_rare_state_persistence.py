@@ -41,6 +41,9 @@ def registry_ibm():
                              path=str(IBM / f"runs/native_{fs}/generated_validation_{gs}.parquet")))
             rows.append(dict(family="native_argn_config", model="ARGN_relaxed_ibm2013", fit_seed=fs, generation_seed=gs,  # amendment 1
                              path=str(IBM / f"runs/relaxed_{fs}/generated_validation_{gs}.parquet")))
+            for arm in ["order_only", "transition_only", "transition_label_first"]:  # ibm_generation_module_v1 (2026-11-08)
+                rows.append(dict(family="generation_module", model=f"ARGN_{arm}_ibm2013", fit_seed=fs, generation_seed=gs,
+                                 path=str(SF / f"ibm_generation_module_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
     return pd.DataFrame(rows)
 
 
