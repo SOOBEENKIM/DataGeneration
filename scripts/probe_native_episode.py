@@ -27,6 +27,11 @@ CONTROL = WS / "research-argn-fraud-audit/artifacts/sparkov_argn_control_v2"
 OUT = ROOT / "docs/native_argn_episode_probe_v1"
 MERCHANT, AMOUNT, LABEL = "receiver_or_mark", "amount_or_numeric_value", "event_is_fraud"
 CORE = ["gap", MERCHANT, AMOUNT, "category", LABEL]
+N_CUSTOMERS = 147
+# 2026-11-08: the same probe on the IBM/TabFormer 2013 model (ibm_tabformer_v1); selected with --dataset ibm.
+DATASETS = {"sparkov": dict(control=CONTROL, out=OUT, core=CORE, n=147),
+            "ibm": dict(control=ROOT / "artifacts/ibm_tabformer_v1", out=ROOT / "docs/ibm_tabformer_v1/probe",
+                        core=["gap", MERCHANT, AMOUNT, "category", "use_chip", LABEL], n=240)}
 PREFIX = 512  # overridden by --prefix
 BANDS = [(0, 0, "prev_normal"), (1, 1, "prev_fraud_age_1"), (2, 5, "prev_fraud_age_2_5"), (6, 10, "prev_fraud_age_6_10"),
          (11, 20, "prev_fraud_age_11_20"), (21, 10**9, "prev_fraud_age_21_plus")]
@@ -134,14 +139,19 @@ def onset_fields(feats, source):
                         gap_log_mean=float(np.log1p(pd.to_numeric(s.gap, errors="coerce").clip(lower=0)).mean()) if len(s) else None,
                         seen_merchant_rate=float(s.seen_merchant.mean()) if len(s) else None,
                         top_category=s.category.mode().iloc[0] if len(s) else None,
-                        top_category_share=float(s.category.value_counts(normalize=True).iloc[0]) if len(s) else None))
+                        top_category_share=float(s.category.value_counts(normalize=True).iloc[0]) if len(s) else None,
+                        online_share=float(s.use_chip.astype(str).eq("Online Transaction").mean()) if len(s) and "use_chip" in s else None))
     return out
 
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("run"); ap.add_argument("--draws", nargs="*", default=["20261011", "20261012"]); ap.add_argument("--prefix", type=int, default=512)
-    args = ap.parse_args(); OUT.mkdir(parents=True, exist_ok=True); seed(20261107); t0 = time.time()
-    global PREFIX; PREFIX = args.prefix; tag = f"{args.run}_prefix{PREFIX}"
+    ap.add_argument("--dataset", choices=list(DATASETS), default="sparkov")
+    args = ap.parse_args(); seed(20261107); t0 = time.time()
+    global PREFIX, CONTROL, OUT, CORE, N_CUSTOMERS
+    ds = DATASETS[args.dataset]; CONTROL, OUT, CORE, N_CUSTOMERS = ds["control"], ds["out"], ds["core"], ds["n"]
+    OUT.mkdir(parents=True, exist_ok=True)
+    PREFIX = args.prefix; tag = f"{args.run}_prefix{PREFIX}"
     folder = CONTROL / "runs" / args.run; assert (folder / "FIT.json").exists(), folder
     model, ws, ts, cs, lengths, order, names = load_model(folder); before = digest(ws.model_tabular_weights_path)
     sources = {"real_development": CONTROL / "prepared/validation.parquet"}
@@ -151,13 +161,13 @@ def main():
     for source, path in sources.items():
         raw = pd.read_parquet(path); hashes[str(path)] = digest(path)
         frame, ids, raw = encode_sequences(raw, ts, cs, lengths); feats = state_features(raw)
-        assert len(frame) == 147 == feats.customer_id.nunique()
+        assert len(frame) == N_CUSTOMERS == feats.customer_id.nunique()
         rows += probe_source(model, ts, names, frame, ids, feats, source); fields += onset_fields(feats, source)
         print(source, "done", round(time.time() - t0), "s", flush=True)
     assert digest(ws.model_tabular_weights_path) == before
     pd.DataFrame(rows).to_csv(OUT / f"{tag}_state_probe.csv", index=False)
     pd.DataFrame(fields).to_csv(OUT / f"{tag}_fraud_fields_by_age.csv", index=False)
-    json.dump(dict(run=args.run, weights_sha256=before, weights_unchanged=True, prefix_limit=PREFIX, customers=147,
+    json.dump(dict(run=args.run, dataset=args.dataset, weights_sha256=before, weights_unchanged=True, prefix_limit=PREFIX, customers=N_CUSTOMERS,
                    column_order=list(order), label_predicted_after=[c for c in order if c != names[LABEL]],
                    inputs=hashes, mode="teacher forward only; no rollout; no new fit; test not read",
                    seconds=round(time.time() - t0, 1), script_sha256=digest(__file__)),

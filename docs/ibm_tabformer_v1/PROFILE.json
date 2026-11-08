@@ -1,0 +1,216 @@
+{
+ "summary": {
+  "events": 24386900,
+  "users": 2000,
+  "cards": 6139,
+  "years": [
+   1991,
+   2020
+  ],
+  "fraud_events": 29757,
+  "fraud_rate": 0.0012202042900081602,
+  "events_per_user": {
+   "mean": 12193.45,
+   "median": 10860.5,
+   "min": 15,
+   "max": 82355
+  },
+  "users_with_fraud": 1343,
+  "users_with_fraud_share": 0.6715,
+  "frauds_per_fraud_user": {
+   "mean": 22.15711094564408,
+   "median": 19.0,
+   "max": 113
+  },
+  "continuation_rate": 0.4944046778909164,
+  "onset_rate": 0.0006177340038611147,
+  "runs": 15045,
+  "runs_per_fraud_user": 11.20253164556962,
+  "run_length": {
+   "mean": 1.9778664007976072,
+   "median": 2.0,
+   "p90": 4.0,
+   "max": 19,
+   "share_len1": 0.48454636091724823,
+   "share_len_ge5": 0.05689597873047524,
+   "share_len_gt20": 0.0
+  },
+  "run_span_hours": {
+   "median": 0.03333333333333333,
+   "p90": 4.633333333333334,
+   "max": 162.73333333333332
+  },
+  "gap_seconds_median": {
+   "inside_fraud_run": 2040.0,
+   "fraud_to_normal": 12360.0,
+   "normal": 13920.0
+  },
+  "fraud_days_per_fraud_user": {
+   "mean": 9.115413253909159,
+   "median": 7.0
+  },
+  "frauds_per_fraud_day": {
+   "mean": 2.4307302728312368,
+   "median": 2.0,
+   "max": 15
+  },
+  "first_event_fraud_rate": 0.0,
+  "mcc_tv_fraud_vs_normal": 0.5810215702099106,
+  "mcc_levels": 109,
+  "merchant_levels": 100343,
+  "amount_median": {
+   "fraud": 71.02,
+   "normal": 30.11,
+   "negative_share": 0.05103900044696128
+  }
+ },
+ "conditional": {
+  "use_chip": [
+   {
+    "use_chip": "Chip Transaction",
+    "0": 0.2579,
+    "1": 0.1625
+   },
+   {
+    "use_chip": "Online Transaction",
+    "0": 0.1106,
+    "1": 0.6166
+   },
+   {
+    "use_chip": "Swipe Transaction",
+    "0": 0.6314,
+    "1": 0.2209
+   }
+  ],
+  "errors": [
+   {
+    "errors": "Bad CVV,",
+    "0": 0.0004,
+    "1": 0.0094
+   },
+   {
+    "errors": "Bad CVV,Insufficient Balance,",
+    "0": 0.0,
+    "1": 0.0001
+   },
+   {
+    "errors": "Bad CVV,Technical Glitch,",
+    "0": 0.0,
+    "1": 0.0
+   },
+   {
+    "errors": "Bad Card Number,",
+    "0": 0.0005,
+    "1": 0.0035
+   },
+   {
+    "errors": "Bad Card Number,Bad CVV,",
+    "0": 0.0,
+    "1": 0.0
+   },
+   {
+    "errors": "Bad Card Number,Bad Expiration,",
+    "0": 0.0,
+    "1": 0.0
+   },
+   {
+    "errors": "Bad Card Number,Bad Expiration,Insufficient Balance,",
+    "0": 0.0,
+    "1": 0.0
+   },
+   {
+    "errors": "Bad Card Number,Bad Expiration,Technical Glitch,",
+    "0": 0.0,
+    "1": 0.0
+   },
+   {
+    "errors": "Bad Card Number,Insufficient Balance,",
+    "0": 0.0,
+    "1": 0.0001
+   },
+   {
+    "errors": "Bad Card Number,Technical Glitch,",
+    "0": 0.0,
+    "1": 0.0
+   },
+   {
+    "errors": "Bad Expiration,",
+    "0": 0.0004,
+    "1": 0.004
+   },
+   {
+    "errors": "Bad Expiration,Bad CVV,",
+    "0": 0.0,
+    "1": 0.0001
+   },
+   {
+    "errors": "Bad Expiration,Insufficient Balance,",
+    "0": 0.0,
+    "1": 0.0
+   },
+   {
+    "errors": "Bad Expiration,Technical Glitch,",
+    "0": 0.0,
+    "1": 0.0001
+   },
+   {
+    "errors": "Bad PIN,",
+    "0": 0.0024,
+    "1": 0.0101
+   },
+   {
+    "errors": "Bad PIN,Insufficient Balance,",
+    "0": 0.0,
+    "1": 0.0002
+   },
+   {
+    "errors": "Bad PIN,Technical Glitch,",
+    "0": 0.0,
+    "1": 0.0
+   },
+   {
+    "errors": "Bad Zipcode,",
+    "0": 0.0001,
+    "1": 0.0
+   },
+   {
+    "errors": "Bad Zipcode,Insufficient Balance,",
+    "0": 0.0,
+    "1": 0.0
+   },
+   {
+    "errors": "Bad Zipcode,Technical Glitch,",
+    "0": 0.0,
+    "1": 0.0
+   },
+   {
+    "errors": "Insufficient Balance,",
+    "0": 0.01,
+    "1": 0.0133
+   },
+   {
+    "errors": "Insufficient Balance,Technical Glitch,",
+    "0": 0.0,
+    "1": 0.0
+   },
+   {
+    "errors": "Technical Glitch,",
+    "0": 0.002,
+    "1": 0.0021
+   },
+   {
+    "errors": null,
+    "0": 0.9841,
+    "1": 0.9568
+   }
+  ]
+ },
+ "raw_csv": "/home/ssd-990/soobeenkim/DataGeneration/workspace/data/ibm_tabformer_raw/card_transaction.v1.csv",
+ "raw_sha256": "68c438319cf27614d5564b7b520814036f0d7e087b3a17d8c15081848e0f02de",
+ "parquet": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/raw_events.parquet",
+ "parquet_sha256": "7bd07fae8f7cd951e458d2bbac2a882612df49124ed14cf3d884296e517831bd",
+ "convert_seconds": 72.1,
+ "seconds": 86.6,
+ "created_utc": "2026-11-08T03:01:37Z",
+ "test_split_exists": false
+}

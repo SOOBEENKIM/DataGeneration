@@ -13,9 +13,23 @@ MERCHANT = "receiver_or_mark"
 LABEL = "event_is_fraud"
 CATEGORIES = ["entertainment", "food_dining", "gas_transport", "grocery_net", "grocery_pos", "health_fitness",
               "home", "kids_pets", "misc_net", "misc_pos", "personal_care", "shopping_net", "shopping_pos", "travel"]
+CHANNELS = []  # IBM use_chip levels; empty for Sparkov
 ROW = ["log_amount", "log_gap", "seen_merchant", "log_position"] + [f"cat_{c}" for c in CATEGORIES]
 HISTORY = ["amount_vs_med20", "gap_vs_med20", "mean_log_amount_5", "seen_merchants_5", "same_category_5",
            "log_amount_lag1", "log_amount_lag2", "log_amount_lag3"]
+
+
+def configure(real_frame, max_categories=40):
+    """2026-11-08: derive the one-hot vocabulary from the real evaluation table (IBM has 110 MCC codes;
+    the most frequent `max_categories` get a column, the rest share none) and add use_chip when present.
+    Sparkov keeps its original 14-name list, so earlier results are unchanged."""
+    global CATEGORIES, CHANNELS, ROW
+    cats = real_frame.category.astype(str).value_counts().index[:max_categories].tolist()
+    if set(cats) != set(CATEGORIES):
+        CATEGORIES = cats
+    CHANNELS = sorted(real_frame.use_chip.astype(str).unique().tolist()) if "use_chip" in real_frame else []
+    ROW = ["log_amount", "log_gap", "seen_merchant", "log_position"] + [f"cat_{c}" for c in CATEGORIES] + [f"chan_{c}" for c in CHANNELS]
+    return dict(categories=CATEGORIES, channels=CHANNELS)
 
 
 def features(frame):
@@ -26,8 +40,11 @@ def features(frame):
     d["log_amount"] = np.log1p(amount); d["log_gap"] = np.log1p(gap)
     d["seen_merchant"] = d.duplicated(["entity_id", MERCHANT]).astype(int)
     d["log_position"] = np.log1p(d.event_index.astype(float))
+    cat = d.category.astype(str)
     for c in CATEGORIES:
-        d[f"cat_{c}"] = d.category.eq(c).astype(int)
+        d[f"cat_{c}"] = cat.eq(c).astype(int)
+    for c in CHANNELS:
+        d[f"chan_{c}"] = d.use_chip.astype(str).eq(c).astype(int) if "use_chip" in d else 0
     la = d.log_amount; lg = d.log_gap
     med_a = g.log_amount.transform(lambda x: x.shift().rolling(20, min_periods=5).median())
     med_g = g.log_gap.transform(lambda x: x.shift().rolling(20, min_periods=5).median())
@@ -72,7 +89,7 @@ def evaluate(train_frame, test_feat, variants=("row", "history")):
         return {f"{v}_{k}": np.nan for v in variants for k in ["auprc", "auroc", "episode_recall_top1", "early_detection_top1"]}
     out = dict(train_events=len(tr), train_fraud=int(tr.y.sum()))
     for v in variants:
-        cols = ROW if v == "row" else ROW + HISTORY
+        cols = list(ROW) if v == "row" else list(ROW) + HISTORY
         clf = fit(tr, cols)
         score = clf.predict_proba(test_feat[cols].to_numpy())[:, 1]
         out[f"{v}_auprc"] = float(average_precision_score(test_feat.y, score))

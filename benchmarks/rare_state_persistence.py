@@ -136,9 +136,32 @@ def rare_state_metrics(real, gen):
     rows["R_normal_category_tv"] = _tv(nr, ng, ["category"])
     # Gap into the first fraud event of a run relative to the customer's strict-past median gap.
     rows["R_onset_personal_gap_logw1"] = _logw1(_onset_personal(er), _onset_personal(eg))
+    # Added 2026-11-08 (ibm_tabformer_v1 registration): episodes tolerant to interleaved normal events,
+    # and the channel of fraud events when the table has one (IBM use_chip; NaN for Sparkov).
+    e24r, e24g = _episodes_24h(er), _episodes_24h(eg)
+    rows["R_episode24h_per_fraud_customer_real"] = e24r; rows["R_episode24h_per_fraud_customer_gen"] = e24g
+    rows["R_episode24h_per_fraud_customer_absdiff"] = abs(e24g - e24r) if np.isfinite(e24r) and np.isfinite(e24g) else np.nan
+    if "use_chip" in er and "use_chip" in eg:
+        onr = fr.use_chip.astype(str).eq("Online Transaction").mean() if len(fr) else np.nan
+        ong = fg.use_chip.astype(str).eq("Online Transaction").mean() if len(fg) else np.nan
+    else:
+        onr = ong = np.nan
+    rows["R_fraud_online_share_real"] = float(onr); rows["R_fraud_online_share_gen"] = float(ong)
+    rows["R_fraud_online_share_absdiff"] = abs(ong - onr) if np.isfinite(onr) and np.isfinite(ong) else np.nan
     hz = pd.DataFrame(hazard_table(er, "real")).merge(
         pd.DataFrame(hazard_table(eg, "gen")), on=["age_band", "label"], suffixes=("_real", "_gen"))
     return rows, hz
+
+
+def _episodes_24h(e, tolerance_seconds=86400):
+    """Fraud episodes per fraud customer where consecutive fraud events of a customer that are at most
+    `tolerance_seconds` apart (by cumulative gap) belong to one episode, whatever lies between them."""
+    f = e[e.fraud.eq(1)]
+    if not len(f):
+        return np.nan
+    t = e.gap.fillna(0).groupby(e.entity_id, sort=False).cumsum()[f.index]
+    new = f.entity_id.ne(f.entity_id.shift()) | t.diff().gt(tolerance_seconds)
+    return float(new.sum() / f.entity_id.nunique())
 
 
 def _onset_personal(e):
@@ -166,4 +189,5 @@ DIFF_COLUMNS = [
     "R_customers_with_fraud_reldiff", "R_fraud_gap_logw1", "R_normal_gap_logw1", "R_fraud_amount_logw1",
     "R_normal_amount_logw1", "R_fraud_category_tv", "R_normal_category_tv", "R_onset_personal_gap_logw1",
     "R_first_event_fraud_absdiff", "R_age1_termination_absdiff", "R_runs_per_fraud_customer_absdiff",
+    "R_episode24h_per_fraud_customer_absdiff", "R_fraud_online_share_absdiff",  # 2026-11-08
 ]

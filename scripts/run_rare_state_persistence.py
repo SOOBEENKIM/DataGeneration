@@ -20,6 +20,26 @@ FA = WS / "research-argn-fraud-audit/artifacts/sparkov_argn_control_v2"
 OUT = ROOT / "docs/rare_state_persistence_v1"
 REAL_DEV = FA / "prepared/validation.parquet"
 REAL_TRAIN = FA / "prepared/train.parquet"
+IBM = SF / "ibm_tabformer_v1"
+
+
+def dataset(name):
+    """Registered datasets (2026-11-08): sparkov (147 dev / 688 train) and ibm (240 dev / 1000 train)."""
+    if name == "sparkov":
+        return dict(real_dev=REAL_DEV, real_train=REAL_TRAIN, out=OUT, registry=registry, n_dev=147, n_train=688)
+    if name == "ibm":
+        return dict(real_dev=IBM / "prepared/validation.parquet", real_train=IBM / "prepared/train.parquet",
+                    out=ROOT / "docs/ibm_tabformer_v1/stage1", registry=registry_ibm, n_dev=240, n_train=1000)
+    raise ValueError(name)
+
+
+def registry_ibm():
+    rows = []
+    for fs in [20261108, 20261109]:
+        for gs in [20261011, 20261012]:
+            rows.append(dict(family="native_argn", model="ARGN_native_ibm2013", fit_seed=fs, generation_seed=gs,
+                             path=str(IBM / f"runs/native_{fs}/generated_validation_{gs}.parquet")))
+    return pd.DataFrame(rows)
 
 
 def registry():
@@ -82,12 +102,15 @@ def main():
     ap.add_argument("--floor-draws", type=int, default=200)
     ap.add_argument("--floor-seed", type=int, default=20261107)
     ap.add_argument("--skip-floor", action="store_true")
+    ap.add_argument("--dataset", choices=["sparkov", "ibm"], default="sparkov")
     args = ap.parse_args()
+    ds = dataset(args.dataset)
+    OUT, REAL_DEV, REAL_TRAIN = ds["out"], ds["real_dev"], ds["real_train"]
     OUT.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
     real = pd.read_parquet(REAL_DEV)
-    assert real.entity_id.nunique() == 147, real.entity_id.nunique()
-    reg = registry()
+    assert real.entity_id.nunique() == ds["n_dev"], real.entity_id.nunique()
+    reg = ds["registry"]()
     results, hazards, skipped, hashes = [], [], [], {}
     for r in reg.itertuples():
         p = Path(r.path)
@@ -130,11 +153,11 @@ def main():
     if not args.skip_floor:
         train = pd.read_parquet(REAL_TRAIN)
         ids = np.sort(train.entity_id.unique())
-        assert len(ids) == 688 and not set(ids) & set(real.entity_id)
+        assert len(ids) == ds["n_train"] and not set(ids) & set(real.entity_id)
         rng = np.random.default_rng(args.floor_seed)
         rows = []
         for b in range(args.floor_draws):
-            pick = rng.choice(ids, size=147, replace=False)
+            pick = rng.choice(ids, size=ds["n_dev"], replace=False)
             sub = train[train.entity_id.isin(pick)]
             row, _ = all_metrics(real, sub)
             row.update(draw=b); rows.append(row)
@@ -155,7 +178,7 @@ def main():
     res.groupby(["family", "model"])[DIFF_COLUMNS + ["R_continuation_rate_gen", "R_mean_run_length_gen",
         "R_customers_with_fraud_gen", "S_fraud_rate_gen"]].mean().to_csv(OUT / "MEANS.csv")
     json.dump(dict(created_utc=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), seconds=round(time.time() - t0, 1),
-                   real_development=str(REAL_DEV), real_development_sha256=sha(REAL_DEV),
+                   dataset=args.dataset, real_development=str(REAL_DEV), real_development_sha256=sha(REAL_DEV),
                    real_train=str(REAL_TRAIN), real_train_sha256=sha(REAL_TRAIN) if not args.skip_floor else None,
                    floor_draws=0 if args.skip_floor else args.floor_draws, floor_seed=args.floor_seed,
                    generations_evaluated=len(res), generations_skipped=len(skipped), input_hashes=hashes,
