@@ -571,27 +571,31 @@ def cmd_generate(args):
             pieces = []; label_steps = 0; routed_rows = 0
             for w in sorted(wm.window_index.unique()):
                 ids = wm.index[wm.window_index.eq(w)]
-                P = parent[parent.window_id.isin(ids)]
-                for rows_n, Pg in P.groupby("window_rows"):
-                    kw = sampler._get_min_max_length(int(rows_n))
-                    for s in range(0, len(Pg), args.gen_batch):
-                        Pb = Pg.iloc[s:s + args.gen_batch]
-                        enc = encoder_inputs(m, Pb, device)
-                        ents = [int(wm.loc[i, "entity_id"]) for i in Pb.window_id]
-                        init = torch.stack([state[e] for e in ents]).to(device)
-                        proc = ModuleProcessor(geom, table=table, init_state=init, head=head, capture=cap)
-                        samples = sampler._generate(device=torch.device(device), as_numpy=True, constrain_tokens_gen=True, inputs=enc, do_sample=True,
-                                                    suppress_tokens=None, forced_decoder_ids=None, logits_processor=LogitsProcessorList([proc]), **kw)
-                        label_steps += proc.n_label_steps; routed_rows += proc.n_routed_rows
-                        df = sampler._processes_sample(samples, m.vocab["decoder"], relate_ids=list(Pb.window_id))
-                        pieces.append(df)
-                        labs = pd.to_numeric(df[LABEL], errors="coerce").fillna(0).astype(int)
-                        for wid, e in zip(Pb.window_id, ents):
-                            seq = labs[df.index == wid].to_numpy() if (df.index == wid).any() else np.zeros(0, dtype=np.int64)
-                            state[e] = final_state(seq, state[e].numpy())
+                # mixed window lengths share a batch: generate to the batch's longest window and truncate each window
+                # to its own window_rows afterwards (singleton batches per length would cost ~1 generate per customer)
+                P = parent[parent.window_id.isin(ids)].sort_values("window_rows", ascending=False)
+                for s in range(0, len(P), args.gen_batch):
+                    Pb = P.iloc[s:s + args.gen_batch]
+                    kw = sampler._get_min_max_length(int(Pb.window_rows.max()))
+                    enc = encoder_inputs(m, Pb, device)
+                    ents = [int(wm.loc[i, "entity_id"]) for i in Pb.window_id]
+                    init = torch.stack([state[e] for e in ents]).to(device)
+                    proc = ModuleProcessor(geom, table=table, init_state=init, head=head, capture=cap)
+                    samples = sampler._generate(device=torch.device(device), as_numpy=True, constrain_tokens_gen=True, inputs=enc, do_sample=True,
+                                                suppress_tokens=None, forced_decoder_ids=None, logits_processor=LogitsProcessorList([proc]), **kw)
+                    label_steps += proc.n_label_steps; routed_rows += proc.n_routed_rows
+                    df = sampler._processes_sample(samples, m.vocab["decoder"], relate_ids=list(Pb.window_id))
+                    df["_ord"] = df.groupby(level=0).cumcount()
+                    want = df.index.map(wm["window_rows"])
+                    df = df[df["_ord"].to_numpy() < np.asarray(want)].drop(columns="_ord")
+                    pieces.append(df)
+                    labs = pd.to_numeric(df[LABEL], errors="coerce").fillna(0).astype(int)
+                    for wid, e in zip(Pb.window_id, ents):
+                        seq = labs[df.index == wid].to_numpy() if (df.index == wid).any() else np.zeros(0, dtype=np.int64)
+                        state[e] = final_state(seq, state[e].numpy())
                 print("window_index", w, "customers", len(P), "rows so far", sum(len(p) for p in pieces), f"{time.time() - t0:.0f}s", flush=True)
             syn = pd.concat(pieces)
-            extra = dict(mode="rounds_with_state_carry_over", label_steps=label_steps, routed_row_interventions=routed_rows,
+            extra = dict(mode="rounds_with_state_carry_over_mixed_length_batches_truncated", label_steps=label_steps, routed_row_interventions=routed_rows,
                          head_sha256=head_sha if head is not None else None, table=str(TABLE) if table is not None else None)
         secs = time.time() - t0
         res, mism = assemble(syn, wmap, real)
@@ -676,7 +680,7 @@ def main():
     t.add_argument("--lr", type=float, default=1e-3); t.add_argument("--batch", type=int, default=8); t.add_argument("--max_epochs", type=int, default=100)
     t.add_argument("--patience", type=int, default=5); t.add_argument("--seed", type=int, default=20261108)
     g = sp.add_parser("generate"); g.add_argument("--fit", type=int, required=True); g.add_argument("--arm", choices=list(ARMS), required=True)
-    g.add_argument("--seeds", type=int, nargs="+", default=GEN_SEEDS); g.add_argument("--gen_batch", type=int, default=64)
+    g.add_argument("--seeds", type=int, nargs="+", default=GEN_SEEDS); g.add_argument("--gen_batch", type=int, default=128)
     e = sp.add_parser("evaluate"); e.add_argument("--fit", type=int, required=True)
     a = ap.parse_args()
     {"prepare": cmd_prepare, "fit": cmd_fit, "check": cmd_check, "train_heads": cmd_train_heads, "generate": cmd_generate, "evaluate": cmd_evaluate}[a.cmd](a)

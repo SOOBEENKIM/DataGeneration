@@ -1,0 +1,12 @@
+{
+  "epoch_seconds": 454.29282808303833,
+  "global_steps_one_epoch": 541,
+  "budget_seconds": 18000,
+  "max_epochs": 40,
+  "epoch_cap": 39,
+  "output_max_length": 858,
+  "parents_dropped": 0,
+  "parents_total": 19229,
+  "started_unix": 1794145393.7127602,
+  "note": "epoch_seconds includes model build/tokenization overhead and periodic eval/checkpoints"
+}

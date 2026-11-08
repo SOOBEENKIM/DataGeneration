@@ -1,6 +1,10 @@
 kind,family,model_name,history_auprc_mean,history_auprc_std,history_auprc_count,history_early_detection_top1_mean,history_early_detection_top1_std,history_early_detection_top1_count,row_auprc_mean,row_auprc_std,row_auprc_count,history_auroc_mean,history_auroc_std,history_auroc_count,history_episode_recall_top1_mean,history_episode_recall_top1_std,history_episode_recall_top1_count,row_early_detection_top1_mean,row_early_detection_top1_std,row_early_detection_top1_count,train_fraud_mean,train_fraud_std,train_fraud_count
 real_self,real_self,real_development_self,1.0,,1,1.0,,1,0.9584,,1,1.0,,1,1.0,,1,1.0,,1,487.0,,1
 real_subset,real_subset,real_train_subset_240,0.61,0.0372,20,0.8811,0.0279,20,0.4579,0.0515,20,0.9901,0.0015,20,0.8985,0.0237,20,0.8592,0.0247,20,321.0,42.3469,20
+generation,realtabformer,RTF_rtf_table_ibm2013,0.4477,0.0896,4,0.8254,0.0388,4,0.3368,0.072,4,0.9701,0.0102,4,0.8683,0.0234,4,0.7959,0.0649,4,432.0,154.7299,4
+generation,realtabformer,RTF_rtf_table_routed_ibm2013,0.4477,0.0896,4,0.8254,0.0388,4,0.3368,0.072,4,0.9701,0.0102,4,0.8683,0.0234,4,0.7959,0.0649,4,432.0,154.7299,4
+generation,realtabformer,RTF_rtf_table_routed_subst_ibm2013,0.4226,0.0442,4,0.7973,0.0257,4,0.2911,0.0437,4,0.9751,0.0035,4,0.8447,0.0177,4,0.7737,0.0454,4,432.0,154.7299,4
+generation,realtabformer,RTF_rtf_native_ibm2013,0.2905,0.124,4,0.6464,0.2079,4,0.1742,0.0791,4,0.952,0.0389,4,0.7027,0.1985,4,0.5784,0.1702,4,104.0,23.5089,4
 generation,routed_heads,ARGN_routed_subst_table_ibm2013,0.1417,0.0224,4,0.6775,0.0765,4,0.0976,0.0146,4,0.9563,0.0072,4,0.75,0.0632,4,0.6524,0.076,4,535.75,132.0363,4
 generation,routed_heads,ARGN_routed_table_ibm2013,0.1399,0.0352,4,0.6346,0.1099,4,0.0915,0.0244,4,0.9503,0.0138,4,0.7249,0.0964,4,0.6006,0.0843,4,535.75,132.0363,4
 generation,output_heads,ARGN_heads_balanced_no_table_ibm2013,0.0447,0.0261,4,0.4305,0.1949,4,0.0524,0.0393,4,0.8596,0.0535,4,0.497,0.2022,4,0.4586,0.2338,4,1035.75,135.1576,4

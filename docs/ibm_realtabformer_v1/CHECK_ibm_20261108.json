@@ -1,0 +1,33 @@
+{
+  "source": "ibm",
+  "fit": 20261108,
+  "S": 12,
+  "j_label": 0,
+  "routed_j": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "K": 431,
+  "identity_max_diff": 0.0,
+  "forcing": {
+    "1.0": {
+      "label_steps": 5,
+      "fraud_fraction": 1.0,
+      "rows": 5
+    },
+    "0.0": {
+      "label_steps": 5,
+      "fraud_fraction": 0.0,
+      "rows": 5
+    }
+  },
+  "fraud_head_parameters": 5056512
+}

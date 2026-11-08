@@ -1,0 +1,22 @@
+{
+  "source": "sparkov",
+  "fit": 0,
+  "S": 11,
+  "j_label": 10,
+  "routed_j": [],
+  "K": 0,
+  "identity_max_diff": 5.7220458984375e-06,
+  "forcing": {
+    "1.0": {
+      "label_steps": 5,
+      "fraud_fraction": 1.0,
+      "rows": 5
+    },
+    "0.0": {
+      "label_steps": 5,
+      "fraud_fraction": 0.0,
+      "rows": 5
+    }
+  },
+  "fraud_head_parameters": 4725504
+}

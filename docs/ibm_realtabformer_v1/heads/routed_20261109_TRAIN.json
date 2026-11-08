@@ -1,0 +1,41 @@
+{
+  "fit": 20261109,
+  "heads": "routed",
+  "substitute": false,
+  "epochs_run": 5,
+  "best_epoch": 0,
+  "best_criterion": 1.7218251449541877,
+  "criterion": "val_real",
+  "lr": 0.001,
+  "batch": 8,
+  "patience": 5,
+  "max_epochs": 100,
+  "fraud_windows_train": 157,
+  "fraud_windows_eval": 10,
+  "split": {
+    "rebuilt": {
+      "eval_windows": 1923,
+      "first5_labels_sha256": "fd0989724c699420954b89fbc4c08d347cf75178b4030d237065b57d0328f8a0"
+    },
+    "recorded": {
+      "eval_windows": 1923,
+      "first5_labels_sha256": "fd0989724c699420954b89fbc4c08d347cf75178b4030d237065b57d0328f8a0"
+    },
+    "match": true
+  },
+  "head_parameters": 5056512,
+  "head_sha256": "c51ecf84709036e077c92812f8c974fb032cb04396f1a0c8e069e270efef4503",
+  "seconds": 8.693402290344238,
+  "routed_sub_columns": [
+    "1___NUMERIC___gap_00",
+    "1___NUMERIC___gap_01",
+    "1___NUMERIC___gap_02",
+    "1___NUMERIC___gap_03",
+    "3___NUMERIC___amount_or_numeric_value_00",
+    "3___NUMERIC___amount_or_numeric_value_01",
+    "3___NUMERIC___amount_or_numeric_value_02",
+    "3___NUMERIC___amount_or_numeric_value_03",
+    "4___CATEGORICAL___category",
+    "5___CATEGORICAL___use_chip"
+  ]
+}

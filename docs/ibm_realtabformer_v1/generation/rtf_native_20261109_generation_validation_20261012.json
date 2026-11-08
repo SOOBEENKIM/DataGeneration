@@ -1,0 +1,20 @@
+{
+  "events": 268996,
+  "real_events": 268996,
+  "customers": 240,
+  "frauds": 82,
+  "real_frauds": 487,
+  "fraud_customers": 18,
+  "real_fraud_customers": 39,
+  "fraud_online_share": 0.6951219512195121,
+  "real_fraud_online_share": 0.8809034907597536,
+  "seconds": 1629.3766996860504,
+  "continuation": 0.4268292682926829,
+  "arm": "rtf_native",
+  "fit_seed": 20261109,
+  "generation_seed": 20261012,
+  "windows": 4602,
+  "windows_row_count_mismatch": 0,
+  "conditioned_on_real_window_lengths": true,
+  "mode": "package_sample_window_independent"
+}
