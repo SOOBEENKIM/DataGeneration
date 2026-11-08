@@ -53,6 +53,9 @@ def registry_ibm():
             for arm in ["routed_table", "routed_subst_table"]:  # ibm_routed_heads_v1 (2026-11-08)
                 rows.append(dict(family="routed_heads", model=f"ARGN_{arm}_ibm2013", fit_seed=fs, generation_seed=gs,
                                  path=str(SF / f"ibm_routed_heads_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
+            for arm in ["rtf_native", "rtf_table", "rtf_table_routed", "rtf_table_routed_subst"]:  # ibm_realtabformer_v1 (2026-11-08)
+                rows.append(dict(family="realtabformer", model=f"RTF_{arm}_ibm2013", fit_seed=fs, generation_seed=gs,
+                                 path=str(SF / f"ibm_realtabformer_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
     return pd.DataFrame(rows)
 
 

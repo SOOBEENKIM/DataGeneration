@@ -621,3 +621,12 @@ class-conditional/hard-routed expert heads(long-tail decoupled heads 계열)이�
 IBM 모듈의 등록 형태는 `transition_table + routed_subst heads`로 고정한다. 다음 순서: (1) 두 번째
 backbone(REaLTabFormer, IBM)에서 같은 두 부품을 얹어 backbone 불문 여부 확인, (2) 효용의 남은 축
 (사기 간격·가맹점 라우팅)은 별도 등록. 공유 head 두 단계의 가중치·생성물·실패 기록은 보존한다.
+
+### 두 번째 backbone: REaLTabFormer(IBM)에 같은 두 부품 — 2026-11-08 등록
+
+사용자가 "REaLTabFormer 등록"을 택했다(원격 push는 보류, 연구 우선). [프로토콜](ibm_realtabformer_v1/PROTOCOL.md).
+IBM 2013 과제에 REaLTabFormer(relational, 라벨 첫 열, 창 W∈{60,50,40} 규칙 선택) 원형 fit 2회를 학습하고, 그 위에
+(i) 라벨 열 logits를 train 전이표로 바꾸는 디코딩 시점 개입(+창 간 상태 이월, 학습 0), (ii) 마지막 블록 MLP·ln_f·
+라우팅 열 토큰만 잘라낸 lm_head의 사기 전용 복사본을 행 라벨로 라우팅(사기 행만 학습, `routed`/`routed_subst`)을
+얹는다. 팔 4 × fit 2 × draw 2 = 생성 16회, ARGN fit 0. 판단 T0–T4와 backbone 불문 판정은 프로토콜 §3·§5. 기제는
+등록된 ARGN 부품과 같고 backbone만 바뀌므로 새 문헌 조사는 하지 않았다. 결과는 실행 후 추가한다.
