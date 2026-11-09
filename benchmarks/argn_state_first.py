@@ -97,7 +97,11 @@ def attach_state_heads(model, stats, columns=ROUTED, label=LABEL, states=STATES)
         else:               # generation: sampled codes (B,1); previous label from the module memory
             mem = getattr(model, "module_memory", None)
             prev_fraud = (mem[:, 1].eq(1) & mem[:, 0].gt(0)).unsqueeze(-1) if mem is not None else torch.zeros_like(fraud)
-        model.route = torch.where(fraud, torch.where(prev_fraud, torch.full_like(lab, 2), torch.ones_like(lab)), torch.zeros_like(lab))
+        route = torch.where(fraud, torch.where(prev_fraud, torch.full_like(lab, 2), torch.ones_like(lab)), torch.zeros_like(lab))
+        # generation passes (B,1) codes while the regressor/predictor outputs are (B,1,H): add the trailing axis so the
+        # mask broadcasts per row (bug found 2026-11-09: without it the mask broadcast to (B,B,H) and routing followed the
+        # last row of the batch, i.e. the heads were effectively never used in generation; training path was unaffected)
+        model.route = route.unsqueeze(-1) if route.dim() == 2 else route
 
     def route_regressor(module, args, output):
         regressor_in, sub_col = args

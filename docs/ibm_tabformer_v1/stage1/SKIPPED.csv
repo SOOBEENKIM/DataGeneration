@@ -1,1 +1,5 @@
-
+model,path,reason
+RTF_rtf_learned_ibm2013,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_learned_20261108/generated_validation_20261011.parquet,missing
+RTF_rtf_learned_ibm2013,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_learned_20261108/generated_validation_20261012.parquet,missing
+RTF_rtf_learned_ibm2013,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_learned_20261109/generated_validation_20261011.parquet,missing
+RTF_rtf_learned_ibm2013,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_learned_20261109/generated_validation_20261012.parquet,missing

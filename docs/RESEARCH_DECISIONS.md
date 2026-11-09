@@ -720,3 +720,9 @@ autoregressive generation"을 향후 과제로 명시. 결론: 고객열 단위 
 `learned_r3`(ARGN, 동결 fit 2 × 생성 2), `rtf_learned`(RTF 원형 + 학습 상태 과정). 새 학습: 분류기 1, 2-상태 head 2(fit별).
 backbone 재학습 0. 선행: HMM/regime-switching·marked point process(잠재 상태 공동 학습; 우리는 관측 라벨 상태를 backbone 밖에서),
 행 단위 정상/사기 분리 생성(FraudDDPM·EmDT). 결과는 실행 후 추가한다.
+원 논문 확인(2026-11-09, 본문 직접 독해): TabularARGN(2501.12012 v2)은 한계·향후 연구 절이 없고 순차 평가는 univariate·bivariate
+정확도 + coherence(고객당 **인접 2행**의 결합)뿐이며 순차 데이터의 downstream 효용 평가가 없다. 희귀 범주는 보호 목적으로
+"a single category"로 병합하고 평가도 상위 10개 범주만 본다 — 희귀 상태 구조가 설계·평가 어디에도 없다. REaLTabFormer(2302.02041)
+도 한계 절이 없고(유일한 "limitation"은 TabGPT의 고객별 모델 학습), 불균형은 결론의 응용 가능성("upsampling for ... imbalanced
+data")으로만 언급한다. 따라서 본 연구가 다루는 한계는 **두 backbone 원 논문 어디에도 서술되지 않았고**, 2026년 벤치마크
+두 편(2604.13125, 2607.21636)이 처음 "깨진다"를 보였으며, 처방은 본 연구가 처음이다(읽은 범위).
