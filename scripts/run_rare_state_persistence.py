@@ -56,6 +56,10 @@ def registry_ibm():
             for arm in ["rtf_native", "rtf_table", "rtf_table_routed", "rtf_table_routed_subst"]:  # ibm_realtabformer_v1 (2026-11-08)
                 rows.append(dict(family="realtabformer", model=f"RTF_{arm}_ibm2013", fit_seed=fs, generation_seed=gs,
                                  path=str(SF / f"ibm_realtabformer_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
+            baseline_arms = ["rebalance"] + [f"{a}{t}" for a in ["oversample_x3", "oversample_x8", "weight_sqrt", "weight_inv", "fixed_label_first"] for t in ["", "_table"]]
+            for arm in baseline_arms:  # ibm_baselines_v1 (2026-11-09): standard rare-class remedies on the native ARGN
+                rows.append(dict(family="baselines", model=f"ARGN_{arm}_ibm2013", fit_seed=fs, generation_seed=gs,
+                                 path=str(SF / f"ibm_baselines_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
     return pd.DataFrame(rows)
 
 

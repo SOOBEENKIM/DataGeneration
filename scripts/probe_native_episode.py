@@ -146,13 +146,13 @@ def onset_fields(feats, source):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("run"); ap.add_argument("--draws", nargs="*", default=["20261011", "20261012"]); ap.add_argument("--prefix", type=int, default=512)
-    ap.add_argument("--dataset", choices=list(DATASETS), default="sparkov")
+    ap.add_argument("--dataset", choices=list(DATASETS), default="sparkov"); ap.add_argument("--runs", default=None, help="runs directory override (ibm_baselines_v1, 2026-11-09)")
     args = ap.parse_args(); seed(20261107); t0 = time.time()
     global PREFIX, CONTROL, OUT, CORE, N_CUSTOMERS
     ds = DATASETS[args.dataset]; CONTROL, OUT, CORE, N_CUSTOMERS = ds["control"], ds["out"], ds["core"], ds["n"]
     OUT.mkdir(parents=True, exist_ok=True)
     PREFIX = args.prefix; tag = f"{args.run}_prefix{PREFIX}"
-    folder = CONTROL / "runs" / args.run; assert (folder / "FIT.json").exists(), folder
+    folder = (Path(args.runs) if args.runs else CONTROL / "runs") / args.run; assert (folder / "FIT.json").exists(), folder
     model, ws, ts, cs, lengths, order, names = load_model(folder); before = digest(ws.model_tabular_weights_path)
     sources = {"real_development": CONTROL / "prepared/validation.parquet"}
     for gs in args.draws:

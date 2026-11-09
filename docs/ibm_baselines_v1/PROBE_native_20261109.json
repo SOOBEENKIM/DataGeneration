@@ -1,0 +1,22 @@
+{
+ "arm": "native",
+ "fit_seed": 20261109,
+ "column_order": [
+  "c5",
+  "",
+  "c0",
+  "c1",
+  "c2",
+  "c3",
+  "c4"
+ ],
+ "fraud_rows_label_real": 0.1888,
+ "fraud_rows_label_set_0": 0.1677,
+ "normal_rows_label_real": 0.1273,
+ "normal_rows_label_set_1": 0.1408,
+ "p_fraud_prev_normal": 0.00412,
+ "n_prev_normal": 111698,
+ "p_fraud_prev_fraud": 0.00899,
+ "n_prev_fraud": 127,
+ "weights_unchanged": true
+}

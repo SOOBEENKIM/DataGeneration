@@ -1,0 +1,22 @@
+{
+ "arm": "fixed_label_first",
+ "fit_seed": 20261109,
+ "column_order": [
+  "c0",
+  "",
+  "c1",
+  "c2",
+  "c3",
+  "c4",
+  "c5"
+ ],
+ "fraud_rows_label_real": 0.1368,
+ "fraud_rows_label_set_0": 0.1268,
+ "normal_rows_label_real": 0.1479,
+ "normal_rows_label_set_1": 0.1528,
+ "p_fraud_prev_normal": 0.002,
+ "n_prev_normal": 112138,
+ "p_fraud_prev_fraud": 0.0029,
+ "n_prev_fraud": 134,
+ "weights_unchanged": true
+}
