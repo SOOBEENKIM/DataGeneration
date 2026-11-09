@@ -1,0 +1,100 @@
+{
+ "features": [
+  "prev_label",
+  "run_age",
+  "ever_fraud",
+  "n_frauds",
+  "since_last_fraud",
+  "position"
+ ],
+ "rows": 1123517,
+ "frauds": 1303,
+ "seed": 20261109,
+ "classifier": "HistGradientBoostingClassifier({'learning_rate': 0.02, 'l2_regularization': 10.0, 'min_samples_leaf': 100, 'max_iter': 300, 'max_depth': 4})",
+ "selected": "hgb_l2_10_d4",
+ "candidates": {
+  "hgb_default": {
+   "max_iter": 200
+  },
+  "hgb_l2_1": {
+   "learning_rate": 0.05,
+   "l2_regularization": 1.0,
+   "min_samples_leaf": 50,
+   "max_iter": 200
+  },
+  "hgb_l2_10_d4": {
+   "learning_rate": 0.02,
+   "l2_regularization": 10.0,
+   "min_samples_leaf": 100,
+   "max_iter": 300,
+   "max_depth": 4
+  }
+ },
+ "selection_on_train_holdout": {
+  "hgb_default": {
+   "holdout_logloss": 0.08736994097074068,
+   "holdout_logloss_fraud_rows": 12.939007921240687,
+   "holdout_frauds": 97,
+   "p_fraud_given_prev_fraud": 0.05154639175257732
+  },
+  "hgb_l2_1": {
+   "holdout_logloss": 0.002248398558943813,
+   "holdout_logloss_fraud_rows": 1.7092873963636788,
+   "holdout_frauds": 97,
+   "p_fraud_given_prev_fraud": 0.6337288860503008
+  },
+  "hgb_l2_10_d4": {
+   "holdout_logloss": 0.0022305698931814146,
+   "holdout_logloss_fraud_rows": 1.6802328792794015,
+   "holdout_frauds": 97,
+   "p_fraud_given_prev_fraud": 0.6211573494415809
+  }
+ },
+ "holdout_customers": 100,
+ "seconds": 18.2,
+ "state_process_sha256": "e2f0ab1846a98706b9c7e06fbd57ac1066395af6ece25626298bb6b6b71eb32a",
+ "train_sha256": "063a1c0f4c30806e5f7254e75b426c75b368be589dd15be047321572747ab719",
+ "teacher_forced_logloss": {
+  "development": {
+   "learned": {
+    "logloss": 0.0038880086978219357,
+    "logloss_fraud_rows": 1.5899530950561684,
+    "logloss_normal_rows": 0.0010113315769190436,
+    "rows": 268996,
+    "frauds": 487
+   },
+   "table": {
+    "logloss": 0.004008006397466976,
+    "logloss_fraud_rows": 1.5863797504955122,
+    "logloss_normal_rows": 0.0011380279633148684,
+    "rows": 268996,
+    "frauds": 487
+   }
+  },
+  "train": {
+   "learned": {
+    "logloss": 0.0026505442930856646,
+    "logloss_fraud_rows": 1.6024043475740362,
+    "logloss_normal_rows": 0.0007930739659688408,
+    "rows": 1123517,
+    "frauds": 1303
+   },
+   "table": {
+    "logloss": 0.002775594686526877,
+    "logloss_fraud_rows": 1.6768755293452562,
+    "logloss_normal_rows": 0.0008318012435112627,
+    "rows": 1123517,
+    "frauds": 1303
+   }
+  }
+ },
+ "note": "development log-loss is reported, not used for selection; test not read",
+ "permutation_importance_logloss_increase": {
+  "prev_label": 0.00029196360865476386,
+  "run_age": 6.93688988486936e-05,
+  "ever_fraud": 0.011267091189624915,
+  "n_frauds": 0.00012540138329879616,
+  "since_last_fraud": 0.008492676573471573,
+  "position": 0.0001099643651636447
+ }
+}

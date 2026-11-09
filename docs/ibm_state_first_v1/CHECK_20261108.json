@@ -1,0 +1,10 @@
+{
+ "fit": 20261108,
+ "max_abs_diff": 0.0,
+ "identity": true,
+ "route_counts": {
+  "0": 18422,
+  "1": 10,
+  "2": 16
+ }
+}
