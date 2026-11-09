@@ -1,0 +1,20 @@
+{
+  "fit": 20261108,
+  "top_k_filter_equals_warper": true,
+  "merchant_tokens": 25088,
+  "j_merchant": 5,
+  "window_0": {
+    "rows": 32,
+    "merchant_steps": 8,
+    "novel_mass": 0.7,
+    "distinct_merchants_per_window": 5.75,
+    "label_steps": 8
+  },
+  "window_1": {
+    "rows": 32,
+    "merchant_steps": 8,
+    "novel_mass": 0.527,
+    "distinct_merchants_per_window": 5.0,
+    "label_steps": 8
+  }
+}

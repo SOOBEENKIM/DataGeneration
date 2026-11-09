@@ -71,17 +71,17 @@ def empty_state(n_customers, V):
 
 class MerchantMemoryProcessor(LogitsProcessor):
     def __init__(self, geom, mg, params, pool, init_counts, init_last, arm="full", top_k=TOP_K):
-        assert arm in ("full", "gate_only", "repeat_blind")
+        assert arm in ("full", "gate_only", "repeat_blind", "fraud_only")  # fraud_only (amendment 2, 2026-11-10): normal rows native
         self.g, self.m, self.arm, self.top_k = geom, mg, arm, top_k
         dev = init_counts.device
         self.counts0, self.last0 = init_counts, init_last                          # (B, Vm)
         self.gate = torch.tensor(params["gate"], dtype=torch.float64, device=dev)
         self.gate_blind = torch.tensor(params["gate_blind"], dtype=torch.float64, device=dev)
         self.edges = torch.tensor(params["position_edges"], dtype=torch.float64, device=dev)
-        self.lam = float(params["lam"]); self.pi = float(params["pi"]) if arm == "full" else 0.0
+        self.lam = float(params["lam"]); self.pi = float(params["pi"]) if arm in ("full", "fraud_only") else 0.0
         self.pool = pool.to(dev)                                                    # (Vm,) float64
         self.token_ids = mg.token_ids.to(dev); self.compact = mg.compact.to(dev)
-        self.n_merchant_steps = 0; self.rows = 0; self.novel_mass = 0.0; self.repeat_mass = 0.0; self.pool_mass = 0.0
+        self.n_merchant_steps = 0; self.rows = 0; self.replaced_rows = 0; self.novel_mass = 0.0; self.repeat_mass = 0.0; self.pool_mass = 0.0
 
     def __call__(self, input_ids, scores):
         g = self.g
@@ -129,6 +129,12 @@ class MerchantMemoryProcessor(LogitsProcessor):
         self.n_merchant_steps += 1; self.rows += B; self.novel_mass += float(gate.sum()); self.repeat_mass += float((1 - gate).sum())
         new = torch.full_like(scores, -math.inf)
         new[:, self.token_ids] = probs.clamp(min=1e-12).log().to(scores.dtype)
+        if self.arm == "fraud_only":  # normal rows keep the native scores (with the native top-k); only fraud rows are replaced
+            fraud = label.eq(1)
+            self.replaced_rows += int(fraud.sum())
+            native = top_k_filter(scores, self.top_k) if self.top_k else scores
+            return torch.where(fraud.unsqueeze(1), new, native)
+        self.replaced_rows += B
         return new
 
 

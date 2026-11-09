@@ -44,7 +44,8 @@ PARENT_STATIC = ["first_year", "cards_before", "events_per_year_before", "home_s
 ARMS = {"rtf_native": dict(table=False, heads=None), "rtf_table": dict(table=True, heads=None),
         "rtf_table_routed": dict(table=True, heads="routed"), "rtf_table_routed_subst": dict(table=True, heads="routed_subst"),
         "rtf_learned": dict(table=False, heads=None, learned=True),  # ibm_state_first_v1 (2026-11-09): learned state process, no heads
-        "rtf_full": dict(table=True, heads=None, merchant="full")}  # ibm_merchant_memory_v1 (2026-11-10): table + merchant memory (H5)
+        "rtf_full": dict(table=True, heads=None, merchant="full"),  # ibm_merchant_memory_v1 (2026-11-10): table + merchant memory (H5)
+        "rtf_fraud_only": dict(table=True, heads=None, merchant="fraud_only")}  # amendment 2 (2026-11-10): merchant memory in fraud rows only
 STATE_PKL = WS / "artifacts/ibm_state_first_v1/state_process.pkl"
 MM_ARGN = WS / "artifacts/ibm_merchant_memory_v1/merchant_memory.json"      # ARGN-indexed fit (gate / lam / pi shared)
 MM_RTF = WS / "artifacts/ibm_merchant_memory_v1/merchant_memory_rtf.json"   # same estimation, pool keyed by merchant value
@@ -656,7 +657,7 @@ def cmd_generate(args):
             # rounds over window_index so the transition state carries over within each customer
             wm = wmap.set_index("window_id")
             state = {int(e): torch.zeros(6 if learned else 4, dtype=torch.long) for e in wm.entity_id.unique()}
-            pieces = []; label_steps = 0; routed_rows = 0; mm_steps = 0; mm_rows = 0; mm_novel = 0.0; mm_pool_mass = 0.0
+            pieces = []; label_steps = 0; routed_rows = 0; mm_steps = 0; mm_rows = 0; mm_replaced = 0; mm_novel = 0.0; mm_pool_mass = 0.0
             if mm_arm:
                 custs = {int(e): i for i, e in enumerate(wm.entity_id.unique())}; mm_counts, mm_last = empty_state(len(custs), mg.V)
             for w in sorted(wm.window_index.unique()):
@@ -683,7 +684,7 @@ def cmd_generate(args):
                         kept = np.asarray([int(wm.loc[i, "window_rows"]) for i in Pb.window_id])
                         cb_counts, cb_last = mm_counts[ci].clone(), mm_last[ci].clone()
                         update_state(samples, kept, geom, mg, cb_counts, cb_last); mm_counts[ci] = cb_counts; mm_last[ci] = cb_last
-                        mm_steps += mproc.n_merchant_steps; mm_rows += mproc.rows; mm_novel += mproc.novel_mass; mm_pool_mass += mproc.pool_mass
+                        mm_steps += mproc.n_merchant_steps; mm_rows += mproc.rows; mm_replaced += mproc.replaced_rows; mm_novel += mproc.novel_mass; mm_pool_mass += mproc.pool_mass
                     df = sampler._processes_sample(samples, m.vocab["decoder"], relate_ids=list(Pb.window_id))
                     df["_ord"] = df.groupby(level=0).cumcount()
                     want = df.index.map(wm["window_rows"])
@@ -700,7 +701,7 @@ def cmd_generate(args):
                          learned_state_process=str(STATE_PKL) if learned else None)
             if mm_arm:
                 extra.update(merchant_memory=dict(arm=mm_arm, params=str(MM_RTF), params_sha256=hashlib.sha256(MM_RTF.read_bytes()).hexdigest(), merchant_steps=mm_steps,
-                                                  rows=mm_rows, novel_gate_mean=mm_novel / max(mm_rows, 1), pool_mass=mm_pool_mass, top_k_in_processor=True))
+                                                  rows=mm_rows, replaced_rows=mm_replaced, novel_gate_mean=mm_novel / max(mm_rows, 1), pool_mass=mm_pool_mass, top_k_in_processor=True))
         secs = time.time() - t0
         res, mism = assemble(syn, wmap, real)
         res.to_parquet(dest, index=False)
