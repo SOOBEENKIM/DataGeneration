@@ -65,6 +65,9 @@ def registry_ibm():
                                  path=str(SF / f"ibm_state_first_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
             rows.append(dict(family="state_first", model="RTF_rtf_learned_ibm2013", fit_seed=fs, generation_seed=gs,
                              path=str(SF / f"ibm_realtabformer_v1/runs/rtf_learned_{fs}/generated_validation_{gs}.parquet")))
+            for arm in ["repeat_blind", "gate_only", "full"]:  # ibm_merchant_memory_v1 (2026-11-09): history-referencing merchant generation on the current model
+                rows.append(dict(family="merchant_memory", model=f"ARGN_{arm}_ibm2013", fit_seed=fs, generation_seed=gs,
+                                 path=str(SF / f"ibm_merchant_memory_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
     return pd.DataFrame(rows)
 
 
