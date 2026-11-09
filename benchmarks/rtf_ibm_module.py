@@ -163,9 +163,10 @@ def run_state(flags, init):
 class ModuleProcessor(LogitsProcessor):
     """Rewrites scores at (i) the label position (transition table) and (ii) routed positions of fraud rows."""
 
-    def __init__(self, geom, table=None, init_state=None, head=None, capture=None):
+    def __init__(self, geom, table=None, init_state=None, head=None, capture=None, state_fn=None):
         self.g = geom
         self.table = table
+        self.state_fn = state_fn  # ibm_state_first_v1 (2026-11-09): learned state process on a 6-value memory; replaces `table`
         self.init = init_state
         self.head = head
         self.capture = capture
@@ -182,16 +183,22 @@ class ModuleProcessor(LogitsProcessor):
         if col < 0 or col >= g.S:
             return scores
         B = input_ids.shape[0]
-        if self.table is not None and col == g.j_label:
+        if (self.table is not None or self.state_fn is not None) and col == g.j_label:
             self.n_label_steps += 1
             if k > 0:
                 pos = 3 + g.j_label + torch.arange(k, device=input_ids.device) * (g.S + 2)
                 flags = input_ids[:, pos].eq(g.fraud_id).long()
             else:
                 flags = torch.zeros((B, 0), dtype=torch.long, device=input_ids.device)
-            init = self.init if self.init is not None else torch.zeros((B, 4), dtype=torch.long, device=input_ids.device)
-            n_, prev, age, ever = run_state(flags, init)
-            p = transition_probability(self.table, n_, prev, age, ever)
+            if self.state_fn is not None:
+                from benchmarks.state_process_features import memory_features
+                init = self.init if self.init is not None else torch.zeros((B, 6), dtype=torch.long, device=input_ids.device)
+                mem = run_state6(flags, init)
+                p = torch.as_tensor(self.state_fn(memory_features(mem.cpu().numpy())), device=scores.device, dtype=torch.float64).clamp(1e-6, 1 - 1e-6)
+            else:
+                init = self.init if self.init is not None else torch.zeros((B, 4), dtype=torch.long, device=input_ids.device)
+                n_, prev, age, ever = run_state(flags, init)
+                p = transition_probability(self.table, n_, prev, age, ever)
             new = torch.full_like(scores, -math.inf)
             new[:, g.fraud_id] = p.log().to(scores.dtype)
             new[:, g.normal_id] = torch.log1p(-p).to(scores.dtype)
@@ -209,6 +216,23 @@ class ModuleProcessor(LogitsProcessor):
                 new[lab] = full
                 return new
         return scores
+
+
+def run_state6(flags, init):
+    """flags (B, k) labels generated so far in this window; init (B, 6) [n, prev, age, ever, n_frauds, since_last] -> (B, 6)."""
+    m = init.clone()
+    for t in range(flags.shape[1]):
+        lab = flags[:, t]
+        n, prev, age, ever, nf, since = [m[:, i] for i in range(6)]
+        same = prev.eq(lab) & n.gt(0)
+        m = torch.stack([n + 1, lab, torch.where(same, age + 1, torch.ones_like(lab)), torch.maximum(ever, lab), nf + lab,
+                         torch.where(lab.eq(1), torch.zeros_like(lab), since + 1)], -1)
+    return m
+
+
+def final_state6(label_flags, init):
+    f = torch.as_tensor(np.asarray(label_flags, dtype=np.int64)).unsqueeze(0)
+    return run_state6(f, torch.as_tensor(init, dtype=torch.long).unsqueeze(0))[0]
 
 
 def final_state(label_flags, init):

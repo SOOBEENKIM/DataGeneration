@@ -42,7 +42,9 @@ LABEL = "event_is_fraud"
 CHILD_COLS = ["window_id", LABEL, "gap", "receiver_or_mark", "amount_or_numeric_value", "category", "use_chip"]  # label first
 PARENT_STATIC = ["first_year", "cards_before", "events_per_year_before", "home_state"]
 ARMS = {"rtf_native": dict(table=False, heads=None), "rtf_table": dict(table=True, heads=None),
-        "rtf_table_routed": dict(table=True, heads="routed"), "rtf_table_routed_subst": dict(table=True, heads="routed_subst")}
+        "rtf_table_routed": dict(table=True, heads="routed"), "rtf_table_routed_subst": dict(table=True, heads="routed_subst"),
+        "rtf_learned": dict(table=False, heads=None, learned=True)}  # ibm_state_first_v1 (2026-11-09): learned state process, no heads
+STATE_PKL = WS / "artifacts/ibm_state_first_v1/state_process.pkl"
 
 
 def jdump(obj, path):
@@ -538,7 +540,7 @@ def encoder_inputs(m, parent_rows, device):
 
 def cmd_generate(args):
     import torch
-    from benchmarks.rtf_ibm_module import Geometry, Capture, ModuleProcessor, final_state
+    from benchmarks.rtf_ibm_module import Geometry, Capture, ModuleProcessor, final_state, final_state6
     from realtabformer.rtf_sampler import RelationalSampler
     from transformers import LogitsProcessorList
     mkdirs()
@@ -548,6 +550,10 @@ def cmd_generate(args):
     parent = pd.read_parquet(PREP / "development_parent.parquet"); wmap = pd.read_parquet(PREP / "development_window_map.parquet")
     real = pd.read_parquet(SRC / "validation.parquet")
     table = torch.tensor(json.loads(TABLE.read_text())["table"], dtype=torch.float64, device=device) if arm["table"] else None
+    learned = bool(arm.get("learned")); state_fn = None
+    if learned:
+        import pickle
+        clf = pickle.load(open(STATE_PKL, "rb")); state_fn = lambda X: clf.predict_proba(X)[:, 1]
     head = cap = None
     if arm["heads"]:
         hd = head_dir(args.fit, arm["heads"])
@@ -560,14 +566,14 @@ def cmd_generate(args):
         if dest.exists() and rep_p.exists():
             print("exists; skipping", dest); continue
         seed_all(gs); t0 = time.time()
-        if not arm["table"] and head is None:
+        if not arm["table"] and head is None and not learned:
             syn = m.sample(input_unique_ids=parent["window_id"].copy(), input_df=parent.drop(columns="window_id").copy(), related_num="window_rows",
                            gen_batch=args.gen_batch, device=device)
             extra = dict(mode="package_sample_window_independent")
         else:
             # rounds over window_index so the transition state carries over within each customer
             wm = wmap.set_index("window_id")
-            state = {int(e): torch.zeros(4, dtype=torch.long) for e in wm.entity_id.unique()}
+            state = {int(e): torch.zeros(6 if learned else 4, dtype=torch.long) for e in wm.entity_id.unique()}
             pieces = []; label_steps = 0; routed_rows = 0
             for w in sorted(wm.window_index.unique()):
                 ids = wm.index[wm.window_index.eq(w)]
@@ -580,7 +586,7 @@ def cmd_generate(args):
                     enc = encoder_inputs(m, Pb, device)
                     ents = [int(wm.loc[i, "entity_id"]) for i in Pb.window_id]
                     init = torch.stack([state[e] for e in ents]).to(device)
-                    proc = ModuleProcessor(geom, table=table, init_state=init, head=head, capture=cap)
+                    proc = ModuleProcessor(geom, table=table, init_state=init, head=head, capture=cap, state_fn=state_fn)
                     samples = sampler._generate(device=torch.device(device), as_numpy=True, constrain_tokens_gen=True, inputs=enc, do_sample=True,
                                                 suppress_tokens=None, forced_decoder_ids=None, logits_processor=LogitsProcessorList([proc]), **kw)
                     label_steps += proc.n_label_steps; routed_rows += proc.n_routed_rows
@@ -592,11 +598,12 @@ def cmd_generate(args):
                     labs = pd.to_numeric(df[LABEL], errors="coerce").fillna(0).astype(int)
                     for wid, e in zip(Pb.window_id, ents):
                         seq = labs[df.index == wid].to_numpy() if (df.index == wid).any() else np.zeros(0, dtype=np.int64)
-                        state[e] = final_state(seq, state[e].numpy())
+                        state[e] = (final_state6 if learned else final_state)(seq, state[e].numpy())
                 print("window_index", w, "customers", len(P), "rows so far", sum(len(p) for p in pieces), f"{time.time() - t0:.0f}s", flush=True)
             syn = pd.concat(pieces)
             extra = dict(mode="rounds_with_state_carry_over_mixed_length_batches_truncated", label_steps=label_steps, routed_row_interventions=routed_rows,
-                         head_sha256=head_sha if head is not None else None, table=str(TABLE) if table is not None else None)
+                         head_sha256=head_sha if head is not None else None, table=str(TABLE) if table is not None else None,
+                         learned_state_process=str(STATE_PKL) if learned else None)
         secs = time.time() - t0
         res, mism = assemble(syn, wmap, real)
         res.to_parquet(dest, index=False)

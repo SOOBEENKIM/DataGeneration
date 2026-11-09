@@ -60,6 +60,11 @@ def registry_ibm():
             for arm in baseline_arms:  # ibm_baselines_v1 (2026-11-09): standard rare-class remedies on the native ARGN
                 rows.append(dict(family="baselines", model=f"ARGN_{arm}_ibm2013", fit_seed=fs, generation_seed=gs,
                                  path=str(SF / f"ibm_baselines_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
+            for arm in ["learned_r2", "table_r3", "learned_r3"]:  # ibm_state_first_v1 (2026-11-09): State-First generalisations on ARGN
+                rows.append(dict(family="state_first", model=f"ARGN_{arm}_ibm2013", fit_seed=fs, generation_seed=gs,
+                                 path=str(SF / f"ibm_state_first_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
+            rows.append(dict(family="state_first", model="RTF_rtf_learned_ibm2013", fit_seed=fs, generation_seed=gs,
+                             path=str(SF / f"ibm_realtabformer_v1/runs/rtf_learned_{fs}/generated_validation_{gs}.parquet")))
     return pd.DataFrame(rows)
 
 
