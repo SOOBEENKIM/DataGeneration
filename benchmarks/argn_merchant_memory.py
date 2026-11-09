@@ -15,8 +15,6 @@ import numpy as np
 import pandas as pd
 import torch
 
-from mostlyai.engine._common import get_argn_name
-
 LABEL = "event_is_fraud"
 MERCHANT = "receiver_or_mark"
 RARE = "_RARE_"
@@ -60,10 +58,17 @@ def _walk(frame, codes, rare_code, kernel_customers=(), label=LABEL, merchant=ME
     return pd.DataFrame(dict(entity_id=ent, label=y, pos=pos, bin=pos_bin(pos), novel=novel, code=code, merchant=m, p_freq=p_freq, p_rec=p_rec))
 
 
-def fit_merchant_memory(train, stats, seed=20261109, holdout_fraction=0.1):
-    codes, rare_code, V = _codes(stats)
+def fit_merchant_memory(train, stats=None, codes=None, rare_code=-1, seed=20261109, holdout_fraction=0.1):
+    """stats: ARGN tgt_stats (merchant codes incl. `_RARE_`); or `codes` = {merchant string: index} of another backbone's
+    merchant vocabulary (RTF tokens; every train merchant must be in it). Gate, kernel choice and pi do not depend on the
+    backbone — only the pool's indexing does."""
+    if stats is not None:
+        codes, rare_code, V = _codes(stats)
+    else:
+        V = len(codes)
     rng = np.random.default_rng(seed); ids = np.sort(train.entity_id.unique()); hold = set(rng.choice(ids, size=int(round(len(ids) * holdout_fraction)), replace=False))
     w = _walk(train, codes, rare_code, kernel_customers=hold)
+    assert stats is not None or w.code.ge(0).all(), "train merchant outside the backbone vocabulary"
     is_hold = w.entity_id.isin(hold).to_numpy(); fit, ho = w[~is_hold], w[is_hold]
     # gate tables (all train rows; Jeffreys smoothing)
     gate = np.zeros((2, N_BINS)); gate_blind = np.zeros(N_BINS); counts = []
@@ -93,6 +98,7 @@ def merchant_module(stats, params, arm="full", label=LABEL, merchant=MERCHANT):
     """Wrap whatever generation.SequentialModel currently is (e.g. the transition/label-first ModuleModel) and replace the
     merchant predictor output. arm: full | gate_only (no fraud pool) | repeat_blind (label-independent gate, no pool)."""
     import mostlyai.engine._tabular.generation as generation
+    from mostlyai.engine._common import get_argn_name
     assert arm in ("full", "gate_only", "repeat_blind")
     lcol = stats["columns"][label]; label_key = get_argn_name(lcol["argn_processor"], lcol["argn_table"], lcol["argn_column"]) + "__cat"
     c1 = int(lcol["codes"]["1"])

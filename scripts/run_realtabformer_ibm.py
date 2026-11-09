@@ -43,8 +43,11 @@ CHILD_COLS = ["window_id", LABEL, "gap", "receiver_or_mark", "amount_or_numeric_
 PARENT_STATIC = ["first_year", "cards_before", "events_per_year_before", "home_state"]
 ARMS = {"rtf_native": dict(table=False, heads=None), "rtf_table": dict(table=True, heads=None),
         "rtf_table_routed": dict(table=True, heads="routed"), "rtf_table_routed_subst": dict(table=True, heads="routed_subst"),
-        "rtf_learned": dict(table=False, heads=None, learned=True)}  # ibm_state_first_v1 (2026-11-09): learned state process, no heads
+        "rtf_learned": dict(table=False, heads=None, learned=True),  # ibm_state_first_v1 (2026-11-09): learned state process, no heads
+        "rtf_full": dict(table=True, heads=None, merchant="full")}  # ibm_merchant_memory_v1 (2026-11-10): table + merchant memory (H5)
 STATE_PKL = WS / "artifacts/ibm_state_first_v1/state_process.pkl"
+MM_ARGN = WS / "artifacts/ibm_merchant_memory_v1/merchant_memory.json"      # ARGN-indexed fit (gate / lam / pi shared)
+MM_RTF = WS / "artifacts/ibm_merchant_memory_v1/merchant_memory_rtf.json"   # same estimation, pool keyed by merchant value
 
 
 def jdump(obj, path):
@@ -495,6 +498,80 @@ def cmd_train_heads(args):
     print("done", hd, "best epoch", best_epoch, best, flush=True)
 
 
+# ---------------------------------------------------------------- merchant memory (ibm_merchant_memory_v1, 2026-11-10)
+def cmd_fit_mm(args):
+    """Estimate the merchant-memory tables on train with the RTF merchant vocabulary (one token per train merchant).
+    Gate, kernel choice and pi must coincide with the ARGN-indexed fit; only the pool's indexing differs."""
+    from benchmarks.rtf_ibm_module import Geometry
+    from benchmarks.rtf_merchant_memory import MerchantGeometry
+    from benchmarks.argn_merchant_memory import fit_merchant_memory
+    if MM_RTF.exists():
+        print("exists; skipping", MM_RTF); return
+    m, rep = load_fit(args.fit, "cpu"); geom = Geometry(m); mg = MerchantGeometry(geom)
+    train = pd.read_parquet(SRC / "train.parquet"); t0 = time.time()
+    params = fit_merchant_memory(train, codes=mg.codes)
+    pool = params.pop("pool")
+    params["pool_by_value"] = {mg.values[i]: float(p) for i, p in enumerate(pool) if p > 0}
+    argn = json.loads(MM_ARGN.read_text())
+    params.update(backbone="rtf", fit=args.fit, merchant_tokens=mg.V, merchant_column=mg.col, seconds=round(time.time() - t0, 1),
+                  train_sha256=hashlib.sha256((SRC / "train.parquet").read_bytes()).hexdigest(),
+                  matches_argn_fit=dict(gate=bool(np.allclose(argn["gate"], params["gate"])), gate_blind=bool(np.allclose(argn["gate_blind"], params["gate_blind"])),
+                                        lam=argn["lam"] == params["lam"], pi=bool(np.isclose(argn["pi"], params["pi"])), pool_merchants=argn["pool_merchants"] == params["pool_merchants"]))
+    assert all(params["matches_argn_fit"].values()), params["matches_argn_fit"]
+    jdump(params, MM_RTF)
+    print(json.dumps({k: params[k] for k in ("gate", "lam", "pi", "pool_merchants", "merchant_tokens", "matches_argn_fit", "seconds")}, indent=1))
+
+
+def cmd_check_mm(args):
+    """(1) the in-processor top-k filter equals transformers' TopKLogitsWarper; (2) a small generation with the merchant
+    processor replaces every merchant position, tracks the past across two windows and keeps the other columns' decoding."""
+    import torch
+    from transformers import LogitsProcessorList, TopKLogitsWarper
+    from benchmarks.rtf_ibm_module import Geometry, ModuleProcessor, final_state
+    from benchmarks.rtf_merchant_memory import MerchantGeometry, MerchantMemoryProcessor, empty_state, update_state, top_k_filter
+    from realtabformer.rtf_sampler import RelationalSampler
+    device = "cuda"
+    m, rep = load_fit(args.fit, device); geom = Geometry(m); mg = MerchantGeometry(geom)
+    params = json.loads(MM_RTF.read_text()); pool = mg.pool_tensor(params["pool_by_value"])
+    assert params["merchant_tokens"] == mg.V
+    torch.manual_seed(0); sc = torch.randn(7, geom.V, device=device) * 5
+    ref = TopKLogitsWarper(top_k=50)(None, sc.clone()); mine = top_k_filter(sc.clone(), 50)
+    assert torch.equal(torch.isinf(ref), torch.isinf(mine)) and torch.allclose(ref[~torch.isinf(ref)], mine[~torch.isinf(mine)]), "top-k mismatch"
+    table = torch.tensor(json.loads(TABLE.read_text())["table"], dtype=torch.float64, device=device)
+    parent = pd.read_parquet(PREP / "development_parent.parquet"); wmap = pd.read_parquet(PREP / "development_window_map.parquet"); wm = wmap.set_index("window_id")
+    ents = wm.entity_id.unique()[:4]
+    counts, last = empty_state(len(ents), mg.V); cidx = {int(e): i for i, e in enumerate(ents)}
+    sampler = RelationalSampler.sampler_from_model(m, device=device)
+    out = {}
+    for w in (0, 1):
+        ids = wm.index[wm.entity_id.isin(ents) & wm.window_index.eq(w)]
+        Pb = parent[parent.window_id.isin(ids)]; rows = 8
+        enc = encoder_inputs(m, Pb, device); es = [int(wm.loc[i, "entity_id"]) for i in Pb.window_id]; ci = [cidx[e] for e in es]
+        proc = ModuleProcessor(geom, table=table, init_state=torch.zeros((len(es), 4), dtype=torch.long, device=device))
+        mproc = MerchantMemoryProcessor(geom, mg, params, pool, counts[ci].to(device), last[ci].to(device), arm="full")
+        kw = sampler._get_min_max_length(rows); kw["top_k"] = 0
+        seed_all(1)
+        samples = sampler._generate(device=torch.device(device), as_numpy=True, constrain_tokens_gen=True, inputs=enc, do_sample=True,
+                                    suppress_tokens=None, forced_decoder_ids=None, logits_processor=LogitsProcessorList([proc, mproc]), **kw)
+        df = sampler._processes_sample(samples, m.vocab["decoder"], relate_ids=list(Pb.window_id))
+        cb_counts, cb_last = counts[ci].clone(), last[ci].clone()
+        update_state(samples, np.full(len(es), rows), geom, mg, cb_counts, cb_last)
+        counts[ci] = cb_counts; last[ci] = cb_last
+        # the carried state must equal a recount of the decoded merchants
+        for b, wid in enumerate(Pb.window_id):
+            dec = df.loc[[wid], "receiver_or_mark"].astype(str).tolist()[:rows]
+            assert int(cb_counts[b].sum()) == (w + 1) * rows, (int(cb_counts[b].sum()), rows)
+            for v in dec:
+                assert cb_counts[b, mg.codes[v]] >= 1
+        out[f"window_{w}"] = dict(rows=int(len(df)), merchant_steps=mproc.n_merchant_steps, novel_mass=round(mproc.novel_mass / max(mproc.rows, 1), 3),
+                                  distinct_merchants_per_window=float(df.groupby(level=0).receiver_or_mark.nunique().mean()), label_steps=proc.n_label_steps)
+        print(out[f"window_{w}"], flush=True)
+    assert out["window_0"]["merchant_steps"] == rows and out["window_1"]["merchant_steps"] == rows
+    assert float(last.max()) == 2 * rows - 1
+    jdump(dict(fit=args.fit, top_k_filter_equals_warper=True, merchant_tokens=mg.V, j_merchant=mg.j, **out), REP / f"CHECK_MM_{args.fit}.json")
+    print("CHECK_MM PASSED")
+
+
 # ---------------------------------------------------------------- generate
 def assemble(syn, wmap, real):
     """Decoded child rows (index = window_id) -> event frame in the ibm_tabformer_v1 generated format."""
@@ -559,6 +636,11 @@ def cmd_generate(args):
         hd = head_dir(args.fit, arm["heads"])
         head = build_head(m, geom, hd / "heads.pt", device); cap = Capture(m.model.decoder)
         head_sha = json.loads((hd / "TRAIN.json").read_text())["head_sha256"]
+    mm_arm = arm.get("merchant"); mg = mm_params = mm_pool = None
+    if mm_arm:
+        from benchmarks.rtf_merchant_memory import MerchantGeometry, MerchantMemoryProcessor, empty_state, update_state
+        mg = MerchantGeometry(geom); mm_params = json.loads(MM_RTF.read_text()); mm_pool = mg.pool_tensor(mm_params["pool_by_value"])
+        assert mm_params["merchant_tokens"] == mg.V and mm_params["merchant_column"] == mg.col
     out_dir = RUNS / f"{args.arm}_{args.fit}"; out_dir.mkdir(parents=True, exist_ok=True)
     sampler = RelationalSampler.sampler_from_model(m, device=device)
     for gs in args.seeds:
@@ -566,7 +648,7 @@ def cmd_generate(args):
         if dest.exists() and rep_p.exists():
             print("exists; skipping", dest); continue
         seed_all(gs); t0 = time.time()
-        if not arm["table"] and head is None and not learned:
+        if not arm["table"] and head is None and not learned and not mm_arm:
             syn = m.sample(input_unique_ids=parent["window_id"].copy(), input_df=parent.drop(columns="window_id").copy(), related_num="window_rows",
                            gen_batch=args.gen_batch, device=device)
             extra = dict(mode="package_sample_window_independent")
@@ -574,7 +656,9 @@ def cmd_generate(args):
             # rounds over window_index so the transition state carries over within each customer
             wm = wmap.set_index("window_id")
             state = {int(e): torch.zeros(6 if learned else 4, dtype=torch.long) for e in wm.entity_id.unique()}
-            pieces = []; label_steps = 0; routed_rows = 0
+            pieces = []; label_steps = 0; routed_rows = 0; mm_steps = 0; mm_rows = 0; mm_novel = 0.0; mm_pool_mass = 0.0
+            if mm_arm:
+                custs = {int(e): i for i, e in enumerate(wm.entity_id.unique())}; mm_counts, mm_last = empty_state(len(custs), mg.V)
             for w in sorted(wm.window_index.unique()):
                 ids = wm.index[wm.window_index.eq(w)]
                 # mixed window lengths share a batch: generate to the batch's longest window and truncate each window
@@ -587,9 +671,19 @@ def cmd_generate(args):
                     ents = [int(wm.loc[i, "entity_id"]) for i in Pb.window_id]
                     init = torch.stack([state[e] for e in ents]).to(device)
                     proc = ModuleProcessor(geom, table=table, init_state=init, head=head, capture=cap, state_fn=state_fn)
+                    procs = [proc]
+                    if mm_arm:  # merchant memory: carried per-customer counts/last positions; native top-k moved into the processor
+                        ci = [custs[e] for e in ents]
+                        mproc = MerchantMemoryProcessor(geom, mg, mm_params, mm_pool, mm_counts[ci].to(device), mm_last[ci].to(device), arm=mm_arm)
+                        procs.append(mproc); kw["top_k"] = 0
                     samples = sampler._generate(device=torch.device(device), as_numpy=True, constrain_tokens_gen=True, inputs=enc, do_sample=True,
-                                                suppress_tokens=None, forced_decoder_ids=None, logits_processor=LogitsProcessorList([proc]), **kw)
+                                                suppress_tokens=None, forced_decoder_ids=None, logits_processor=LogitsProcessorList(procs), **kw)
                     label_steps += proc.n_label_steps; routed_rows += proc.n_routed_rows
+                    if mm_arm:
+                        kept = np.asarray([int(wm.loc[i, "window_rows"]) for i in Pb.window_id])
+                        cb_counts, cb_last = mm_counts[ci].clone(), mm_last[ci].clone()
+                        update_state(samples, kept, geom, mg, cb_counts, cb_last); mm_counts[ci] = cb_counts; mm_last[ci] = cb_last
+                        mm_steps += mproc.n_merchant_steps; mm_rows += mproc.rows; mm_novel += mproc.novel_mass; mm_pool_mass += mproc.pool_mass
                     df = sampler._processes_sample(samples, m.vocab["decoder"], relate_ids=list(Pb.window_id))
                     df["_ord"] = df.groupby(level=0).cumcount()
                     want = df.index.map(wm["window_rows"])
@@ -604,9 +698,15 @@ def cmd_generate(args):
             extra = dict(mode="rounds_with_state_carry_over_mixed_length_batches_truncated", label_steps=label_steps, routed_row_interventions=routed_rows,
                          head_sha256=head_sha if head is not None else None, table=str(TABLE) if table is not None else None,
                          learned_state_process=str(STATE_PKL) if learned else None)
+            if mm_arm:
+                extra.update(merchant_memory=dict(arm=mm_arm, params=str(MM_RTF), params_sha256=hashlib.sha256(MM_RTF.read_bytes()).hexdigest(), merchant_steps=mm_steps,
+                                                  rows=mm_rows, novel_gate_mean=mm_novel / max(mm_rows, 1), pool_mass=mm_pool_mass, top_k_in_processor=True))
         secs = time.time() - t0
         res, mism = assemble(syn, wmap, real)
         res.to_parquet(dest, index=False)
+        lab = res[LABEL].eq("1"); novel = ~res.sort_values(["entity_id", "event_index"]).duplicated(["entity_id", "receiver_or_mark"]).reindex(res.index)
+        extra.update(novel_merchant_fraud=float(novel[lab].mean()) if lab.any() else None, novel_merchant_normal=float(novel[~lab].mean()),
+                     merchants_per_customer_median=float(res.groupby("entity_id").receiver_or_mark.nunique().median()))
         jdump(gen_stats(res, real, secs, dict(arm=args.arm, fit_seed=args.fit, generation_seed=gs, windows=int(len(wmap)), windows_row_count_mismatch=mism,
                                               conditioned_on_real_window_lengths=True, **extra)), rep_p)
         print("GENERATED", args.arm, args.fit, gs, json.dumps({k: v for k, v in json.loads(rep_p.read_text()).items() if k in ("events", "frauds", "fraud_customers", "fraud_online_share", "continuation", "seconds")}), flush=True)
@@ -689,8 +789,11 @@ def main():
     g = sp.add_parser("generate"); g.add_argument("--fit", type=int, required=True); g.add_argument("--arm", choices=list(ARMS), required=True)
     g.add_argument("--seeds", type=int, nargs="+", default=GEN_SEEDS); g.add_argument("--gen_batch", type=int, default=128)
     e = sp.add_parser("evaluate"); e.add_argument("--fit", type=int, required=True)
+    for name in ("fit_mm", "check_mm"):
+        sp.add_parser(name).add_argument("--fit", type=int, default=FIT_SEEDS[0])
     a = ap.parse_args()
-    {"prepare": cmd_prepare, "fit": cmd_fit, "check": cmd_check, "train_heads": cmd_train_heads, "generate": cmd_generate, "evaluate": cmd_evaluate}[a.cmd](a)
+    {"prepare": cmd_prepare, "fit": cmd_fit, "check": cmd_check, "train_heads": cmd_train_heads, "generate": cmd_generate, "evaluate": cmd_evaluate,
+     "fit_mm": cmd_fit_mm, "check_mm": cmd_check_mm}[a.cmd](a)
 
 
 if __name__ == "__main__":

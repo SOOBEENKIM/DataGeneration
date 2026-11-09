@@ -61,6 +61,7 @@ def dataset(name):
                          dict(model="RTF_model", role="current_model", fit=fs, draw=gs, path=SF / f"ibm_realtabformer_v1/runs/rtf_table_{fs}/generated_validation_{gs}.parquet")]
                 gens += [dict(model=f"ARGN_mm_{arm}", role="merchant_memory", fit=fs, draw=gs, path=SF / f"ibm_merchant_memory_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")
                          for arm in ["repeat_blind", "gate_only", "full"]]  # ibm_merchant_memory_v1 (2026-11-09)
+                gens.append(dict(model="RTF_mm_full", role="merchant_memory", fit=fs, draw=gs, path=SF / f"ibm_realtabformer_v1/runs/rtf_full_{fs}/generated_validation_{gs}.parquet"))  # H5 (2026-11-10)
         return dict(train=train, dev=dev, ctx=ctx, numeric=numeric, gens=gens, n_dev=240, n_train=1000,
                     sources=dict(train=str(IBM / "prepared/train.parquet"), dev=str(IBM / "prepared/validation.parquet")))
     if name == "sparkov":
