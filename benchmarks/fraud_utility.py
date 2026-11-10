@@ -68,12 +68,31 @@ DETECTORS = {
     "registered": dict(max_iter=300, learning_rate=0.1, early_stopping=False),
     # amendment 2026-11-08 (ibm_tabformer_v1 utility): regularised, same iteration budget, no early stopping
     "stable": dict(max_iter=300, learning_rate=0.05, early_stopping=False, l2_regularization=1.0, min_samples_leaf=50),
+    # ibm_merchant_memory_v1 amendment 3 (2026-11-10): a different classifier family (standardised logistic regression), auxiliary only
+    "logistic": dict(C=1.0, max_iter=500),
 }
 DETECTOR = "registered"
+# ibm_merchant_memory_v1 amendment 3 (2026-11-10): feature-set variants of the same detector, auxiliary only ("all" = registered features)
+FEATURE_SETS = {"all": (), "no_merchant": ("seen_merchant", "seen_merchants_5"), "no_channel": ("chan_",)}
+
+
+def select_columns(columns, feature_set="all"):
+    drop = FEATURE_SETS[feature_set]
+    return [c for c in columns if not any(c == d or (d.endswith("_") and c.startswith(d)) for d in drop)]
 
 
 def fit(train, columns, seed=20261108, detector=None):
-    clf = HistGradientBoostingClassifier(random_state=seed, **DETECTORS[detector or DETECTOR])
+    detector = detector or DETECTOR
+    if detector == "logistic":
+        from sklearn.linear_model import LogisticRegression
+        from sklearn.pipeline import make_pipeline
+        from sklearn.preprocessing import StandardScaler
+        clf = make_pipeline(StandardScaler(), LogisticRegression(random_state=seed, **DETECTORS[detector]))
+        # `same_category_5` is NaN on the first 5 rows per customer when `category` has pandas string dtype (ARGN outputs;
+        # object-dtype frames give 0 there). HGB treats it as missing (registered behaviour, unchanged); here NaN -> 0.
+        clf.fit(np.nan_to_num(train[columns].to_numpy(dtype=float), nan=0.0), train.y.to_numpy())
+        return clf
+    clf = HistGradientBoostingClassifier(random_state=seed, **DETECTORS[detector])
     clf.fit(train[columns].to_numpy(), train.y.to_numpy())
     return clf
 
@@ -92,13 +111,13 @@ def episode_metrics(test, score, top=0.01):
                 episodes=int(len(per)), alerts=int(alert.sum()))
 
 
-def evaluate(train_frame, test_feat, variants=("row", "history"), detector=None):
+def evaluate(train_frame, test_feat, variants=("row", "history"), detector=None, feature_set="all"):
     tr = features(train_frame)
     if tr.y.sum() < 2 or tr.y.sum() == len(tr):
         return {f"{v}_{k}": np.nan for v in variants for k in ["auprc", "auroc", "episode_recall_top1", "early_detection_top1"]}
     out = dict(train_events=len(tr), train_fraud=int(tr.y.sum()))
     for v in variants:
-        cols = list(ROW) if v == "row" else list(ROW) + HISTORY
+        cols = select_columns(list(ROW) if v == "row" else list(ROW) + HISTORY, feature_set)
         clf = fit(tr, cols, detector=detector)
         score = clf.predict_proba(test_feat[cols].to_numpy())[:, 1]
         out[f"{v}_auprc"] = float(average_precision_score(test_feat.y, score))
