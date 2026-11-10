@@ -50,7 +50,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0); ap.add_argument("--real-draws", type=int, default=20)
     ap.add_argument("--jobs", type=int, default=16); ap.add_argument("--threads", type=int, default=4); ap.add_argument("--seed", type=int, default=20261108)
-    ap.add_argument("--dataset", choices=["sparkov", "ibm"], default="sparkov")
+    ap.add_argument("--dataset", choices=["sparkov", "ibm", "ibm_test"], default="sparkov")
     ap.add_argument("--detector", choices=["registered", "stable", "logistic"], default="registered")
     ap.add_argument("--features", choices=["all", "no_merchant", "no_channel"], default="all")  # amendment 3 (2026-11-10), auxiliary
     args = ap.parse_args(); t0 = time.time()
@@ -87,7 +87,7 @@ def main():
     json.dump(dict(created_utc=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), seconds=round(time.time() - t0, 1),
                    dataset=args.dataset, detector=args.detector, feature_set=args.features, feature_vocabulary=vocab, test=str(REAL_DEV), test_sha256=sha(REAL_DEV), generations=int(res.kind.eq("generation").sum()),
                    real_draws=args.real_draws, errors=int(res.get("error", pd.Series(dtype=object)).notna().sum()),
-                   new_fits=0, new_generations=0, gpu=False, test_events_read=False),
+                   new_fits=0, new_generations=0, gpu=False, test_events_read=bool(args.dataset == "ibm_test")),
               open(OUT / "MANIFEST.json", "w"), indent=1)
     print("done", len(res), "rows", round(time.time() - t0), "s")
 

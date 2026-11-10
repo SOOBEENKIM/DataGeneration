@@ -30,7 +30,21 @@ def dataset(name):
     if name == "ibm":
         return dict(real_dev=IBM / "prepared/validation.parquet", real_train=IBM / "prepared/train.parquet",
                     out=ROOT / "docs/ibm_tabformer_v1/stage1", registry=registry_ibm, n_dev=240, n_train=1000)
+    if name == "ibm_test":  # ibm_sealed_test_v1 (2026-11-10): the sealed test, opened once
+        return dict(real_dev=IBM / "prepared/test.parquet", real_train=IBM / "prepared/train.parquet",
+                    out=ROOT / "docs/ibm_sealed_test_v1/stage1", registry=registry_ibm_test, n_dev=239, n_train=1000)
     raise ValueError(name)
+
+
+def registry_ibm_test():
+    rows = []
+    for fs in [20261108, 20261109]:
+        for gs in [20261011, 20261012]:
+            for arm in ["argn_native", "argn_minimal", "argn_merchant", "argn_gap", "argn_final"]:
+                rows.append(dict(family="sealed_test", model=arm, fit_seed=fs, generation_seed=gs, path=str(SF / f"ibm_sealed_test_v1/runs/{arm}_{fs}/generated_test_{gs}.parquet")))
+            for arm in ["rtf_native", "rtf_table"]:
+                rows.append(dict(family="sealed_test", model=arm, fit_seed=fs, generation_seed=gs, path=str(SF / f"ibm_realtabformer_v1/runs/{arm}_{fs}/generated_test_{gs}.parquet")))
+    return pd.DataFrame(rows)
 
 
 def registry_ibm():
@@ -150,7 +164,7 @@ def main():
     ap.add_argument("--floor-draws", type=int, default=200)
     ap.add_argument("--floor-seed", type=int, default=20261107)
     ap.add_argument("--skip-floor", action="store_true")
-    ap.add_argument("--dataset", choices=["sparkov", "ibm"], default="sparkov")
+    ap.add_argument("--dataset", choices=["sparkov", "ibm", "ibm_test"], default="sparkov")
     args = ap.parse_args()
     ds = dataset(args.dataset)
     OUT, REAL_DEV, REAL_TRAIN = ds["out"], ds["real_dev"], ds["real_train"]
@@ -230,7 +244,7 @@ def main():
                    real_train=str(REAL_TRAIN), real_train_sha256=sha(REAL_TRAIN) if not args.skip_floor else None,
                    floor_draws=0 if args.skip_floor else args.floor_draws, floor_seed=args.floor_seed,
                    generations_evaluated=len(res), generations_skipped=len(skipped), input_hashes=hashes,
-                   new_fits=0, new_generations=0, test_events_read=False),
+                   new_fits=0, new_generations=0, test_events_read=bool(args.dataset == "ibm_test")),
               open(OUT / "MANIFEST.json", "w"), indent=1)
     print("done", len(res), "generations,", len(skipped), "skipped,", round(time.time() - t0), "s")
 

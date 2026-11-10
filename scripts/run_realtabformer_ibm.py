@@ -158,6 +158,17 @@ def cmd_prepare(args):
     print(json.dumps({k: v for k, v in info.items() if k != "measurements"}, indent=1))
 
 
+def cmd_prepare_test(args):
+    """ibm_sealed_test_v1 (2026-11-10): windows of the sealed test customers with the window size fixed at prepare time."""
+    info = json.loads((REP / "PREPARE.json").read_text())
+    if (PREP / "test_parent.parquet").exists():
+        print("test windows exist; skipping"); return
+    child, parent, wmap = build_windows("test", info["window"])
+    child.to_parquet(PREP / "test_child.parquet", index=False); parent.to_parquet(PREP / "test_parent.parquet", index=False); wmap.to_parquet(PREP / "test_window_map.parquet", index=False)
+    out = dict(window=info["window"], customers=int(wmap.entity_id.nunique()), windows=int(len(parent)), rows=int(len(child)), frauds=int(child[LABEL].sum()), opened="2026-11-10 ibm_sealed_test_v1")
+    jdump(out, REP / "PREPARE_TEST.json"); print(json.dumps(out))
+
+
 # ---------------------------------------------------------------- fit
 def fit_dirs(seed):
     return FIT / f"fit_{seed}"
@@ -673,8 +684,9 @@ def cmd_generate(args):
     arm = ARMS[args.arm]; device = "cuda"
     m, rep = load_fit(args.fit, device)
     geom = Geometry(m)
-    parent = pd.read_parquet(PREP / "development_parent.parquet"); wmap = pd.read_parquet(PREP / "development_window_map.parquet")
-    real = pd.read_parquet(SRC / "validation.parquet")
+    split = getattr(args, "split", "validation"); tag = "development" if split == "validation" else split  # ibm_sealed_test_v1: --split test
+    parent = pd.read_parquet(PREP / f"{tag}_parent.parquet"); wmap = pd.read_parquet(PREP / f"{tag}_window_map.parquet")
+    real = pd.read_parquet(SRC / f"{split}.parquet")
     table = torch.tensor(json.loads(TABLE.read_text())["table"], dtype=torch.float64, device=device) if arm["table"] else None
     learned = bool(arm.get("learned")); state_fn = None
     if learned:
@@ -694,7 +706,7 @@ def cmd_generate(args):
     out_dir = RUNS / f"{args.arm}_{args.fit}"; out_dir.mkdir(parents=True, exist_ok=True)
     sampler = RelationalSampler.sampler_from_model(m, device=device)
     for gs in args.seeds:
-        dest = out_dir / f"generated_validation_{gs}.parquet"; rep_p = out_dir / f"generation_validation_{gs}.json"
+        dest = out_dir / f"generated_{split}_{gs}.parquet"; rep_p = out_dir / f"generation_{split}_{gs}.json"
         if dest.exists() and rep_p.exists():
             print("exists; skipping", dest); continue
         seed_all(gs); t0 = time.time()
@@ -840,12 +852,13 @@ def main():
     t.add_argument("--patience", type=int, default=5); t.add_argument("--seed", type=int, default=20261108)
     g = sp.add_parser("generate"); g.add_argument("--fit", type=int, required=True); g.add_argument("--arm", choices=list(ARMS), required=True)
     g.add_argument("--seeds", type=int, nargs="+", default=GEN_SEEDS); g.add_argument("--gen_batch", type=int, default=128)
+    g.add_argument("--split", choices=["validation", "test"], default="validation"); sp.add_parser("prepare_test")
     e = sp.add_parser("evaluate"); e.add_argument("--fit", type=int, required=True)
     for name in ("fit_mm", "check_mm", "fit_chan", "check_chan"):
         sp.add_parser(name).add_argument("--fit", type=int, default=FIT_SEEDS[0])
     a = ap.parse_args()
     {"prepare": cmd_prepare, "fit": cmd_fit, "check": cmd_check, "train_heads": cmd_train_heads, "generate": cmd_generate, "evaluate": cmd_evaluate,
-     "fit_mm": cmd_fit_mm, "check_mm": cmd_check_mm, "fit_chan": cmd_fit_chan, "check_chan": cmd_check_chan}[a.cmd](a)
+     "fit_mm": cmd_fit_mm, "check_mm": cmd_check_mm, "fit_chan": cmd_fit_chan, "check_chan": cmd_check_chan, "prepare_test": cmd_prepare_test}[a.cmd](a)
 
 
 if __name__ == "__main__":

@@ -30,9 +30,9 @@ def sha(p):
     return h.hexdigest()
 
 
-def ibm_timestamps(prepared, roles):
+def ibm_timestamps(prepared, roles, splits=("train", "validation")):
     """Absolute timestamps of the 2013 window for train/validation customers, joined on (customer, event_index)."""
-    keep = roles[roles.split.isin(["train", "validation"])]
+    keep = roles[roles.split.isin(list(splits))]
     raw = pd.read_parquet(IBM / "raw_events.parquet", columns=["user", "year", "timestamp"])
     raw = raw[raw.year.eq(2013) & raw.user.isin(keep.user)].sort_values(["user", "timestamp"], kind="stable")
     raw["event_index"] = raw.groupby("user", sort=False).cumcount()
@@ -73,6 +73,17 @@ def dataset(name):
                          for arm in ["full", "fraud_only", "fraud_only_chan"]]  # H5 (2026-11-10); fraud_only = amendment 2
         return dict(train=train, dev=dev, ctx=ctx, numeric=numeric, gens=gens, n_dev=240, n_train=1000,
                     sources=dict(train=str(IBM / "prepared/train.parquet"), dev=str(IBM / "prepared/validation.parquet")))
+    if name == "ibm_test":  # ibm_sealed_test_v1 (2026-11-10): the sealed test, opened once
+        roles = pd.read_parquet(IBM / "prepared/roles.parquet"); both = ("train", "test")
+        train = ibm_timestamps(pd.read_parquet(IBM / "prepared/train.parquet"), roles, both); dev = ibm_timestamps(pd.read_parquet(IBM / "prepared/test.parquet"), roles, both)
+        ctx = pd.concat([pd.read_parquet(IBM / "prepared/train_context.parquet"), pd.read_parquet(IBM / "prepared/test_context.parquet")])
+        gens = []
+        for fs in [20261108, 20261109]:
+            for gs in [20261011, 20261012]:
+                gens += [dict(model=arm, role="sealed_test", fit=fs, draw=gs, path=SF / f"ibm_sealed_test_v1/runs/{arm}_{fs}/generated_test_{gs}.parquet") for arm in ["argn_native", "argn_minimal", "argn_merchant", "argn_gap", "argn_final"]]
+                gens += [dict(model=arm, role="sealed_test", fit=fs, draw=gs, path=SF / f"ibm_realtabformer_v1/runs/{arm}_{fs}/generated_test_{gs}.parquet") for arm in ["rtf_native", "rtf_table"]]
+        return dict(train=train, dev=dev, ctx=ctx, numeric=["cards_before", "events_per_year_before", "first_year"], gens=gens, n_dev=239, n_train=1000,
+                    sources=dict(train=str(IBM / "prepared/train.parquet"), dev=str(IBM / "prepared/test.parquet")))
     if name == "sparkov":
         train = pd.read_parquet(SPK / "train.parquet"); dev = pd.read_parquet(SPK / "validation.parquet")
         ctx = pd.concat([pd.read_parquet(SPK / "train_context.parquet"), pd.read_parquet(SPK / "validation_context.parquet")])
@@ -100,8 +111,8 @@ def scalar_part(s):
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--dataset", required=True, choices=["ibm", "sparkov"]); ap.add_argument("--floor-draws", type=int, default=FLOOR_DRAWS)
-    a = ap.parse_args(); ds = dataset(a.dataset); out = OUT / a.dataset; out.mkdir(parents=True, exist_ok=True); t0 = time.time()
+    ap = argparse.ArgumentParser(); ap.add_argument("--dataset", required=True, choices=["ibm", "sparkov", "ibm_test"]); ap.add_argument("--floor-draws", type=int, default=FLOOR_DRAWS)
+    a = ap.parse_args(); ds = dataset(a.dataset); out = ROOT / "docs/ibm_sealed_test_v1/structure" if a.dataset == "ibm_test" else OUT / a.dataset; out.mkdir(parents=True, exist_ok=True); t0 = time.time()
     train, dev = ds["train"], ds["dev"]
     assert not set(train.entity_id) & set(dev.entity_id)
     s_train = structure_stats(train, ds["ctx"], ds["numeric"]); s_dev = structure_stats(dev, ds["ctx"], ds["numeric"])
@@ -146,7 +157,7 @@ def main():
     print(mean_ratio.round(2).to_string(), flush=True)
     json.dump(dict(dataset=a.dataset, sources=ds["sources"], source_sha256={k: sha(v) for k, v in ds["sources"].items()}, floor_seed=FLOOR_SEED,
                    floor_draws=a.floor_draws, generations=len(res), skipped=len(skipped), seconds=round(time.time() - t0),
-                   protocol_sha256=sha(OUT / "PROTOCOL.md"), test_read=False), open(out / "RUN.json", "w"), indent=1)
+                   protocol_sha256=sha(OUT / "PROTOCOL.md"), test_read=bool(a.dataset == "ibm_test")), open(out / "RUN.json", "w"), indent=1)
 
 
 if __name__ == "__main__":
