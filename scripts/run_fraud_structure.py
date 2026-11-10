@@ -61,6 +61,8 @@ def dataset(name):
                          dict(model="RTF_model", role="current_model", fit=fs, draw=gs, path=SF / f"ibm_realtabformer_v1/runs/rtf_table_{fs}/generated_validation_{gs}.parquet")]
                 gens += [dict(model=f"ARGN_mm_{arm}", role="merchant_memory", fit=fs, draw=gs, path=SF / f"ibm_merchant_memory_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")
                          for arm in ["repeat_blind", "gate_only", "full"]]  # ibm_merchant_memory_v1 (2026-11-09)
+                gens += [dict(model=f"ARGN_gap_{arm}", role="run_gap", fit=fs, draw=gs, path=SF / f"ibm_run_gap_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")
+                         for arm in ["table_pooled", "table_fraud", "table_kind", "ratio_kind"]]  # ibm_run_gap_v1 (2026-11-10)
                 gens += [dict(model=f"RTF_mm_{arm}", role="merchant_memory", fit=fs, draw=gs, path=SF / f"ibm_realtabformer_v1/runs/rtf_{arm}_{fs}/generated_validation_{gs}.parquet")
                          for arm in ["full", "fraud_only", "fraud_only_chan"]]  # H5 (2026-11-10); fraud_only = amendment 2
         return dict(train=train, dev=dev, ctx=ctx, numeric=numeric, gens=gens, n_dev=240, n_train=1000,
