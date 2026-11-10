@@ -112,6 +112,8 @@ def merchant_module(stats, params, arm="full", label=LABEL, merchant=MERCHANT, c
     if cal.get("lam") is not None:
         lam = float(cal["lam"])
     stick = torch.tensor(cal["stick"], dtype=torch.float64) if cal.get("stick") is not None else None
+    # ibm_merchant_marginal_v2: additive prior pseudo-count per merchant code (kappa * relative visit rate of the merchant's type)
+    prior = torch.tensor(cal["prior"], dtype=torch.float64) if cal.get("prior") is not None else None
     cat_of_m = torch.tensor(cal["cat_of_m"], dtype=torch.long) if cal.get("p_cat_novel") is not None else None
     p_cat = torch.tensor(cal["p_cat_novel"], dtype=torch.float64) if cal.get("p_cat_novel") is not None else None
     pool = torch.tensor(params["pool"], dtype=torch.float64); edges = torch.tensor(params["position_edges"], dtype=torch.float64)
@@ -124,6 +126,7 @@ def merchant_module(stats, params, arm="full", label=LABEL, merchant=MERCHANT, c
             self.mm_gate = gate.to(self.device); self.mm_gate_blind = gate_blind.to(self.device); self.mm_pool = pool.to(self.device); self.mm_edges = edges.to(self.device)
             self.mm_label = None
             self.mm_stick = stick.to(self.device) if stick is not None else None
+            self.mm_prior = prior.to(self.device) if prior is not None else None
             self.mm_cat_of_m = cat_of_m.to(self.device) if cat_of_m is not None else None; self.mm_p_cat = p_cat.to(self.device) if p_cat is not None else None
             self.embedders.get(label_key).register_forward_pre_hook(self._capture_label)
             self.predictors.register_forward_hook(self._replace_merchant)
@@ -147,6 +150,8 @@ def merchant_module(stats, params, arm="full", label=LABEL, merchant=MERCHANT, c
             g = torch.where(n.gt(0), g, torch.ones_like(g))
             # repeat branch
             freq = counts / counts.sum(1, keepdim=True).clamp(min=1)
+            if self.mm_prior is not None:  # visited merchants get count + kappa * rho(type): the type acts while counts are small
+                fq = counts + self.mm_prior.unsqueeze(0) * has_past; freq = fq / fq.sum(1, keepdim=True).clamp(min=1e-300)
             rec = torch.where(has_past, 1.0 / (n.unsqueeze(1) - last).clamp(min=1).double(), torch.zeros_like(counts))
             rec = rec / rec.sum(1, keepdim=True).clamp(min=1e-12)
             repeat = lam * freq + (1 - lam) * rec

@@ -65,6 +65,8 @@ def dataset(name):
                          for arm in ["table_pooled", "table_fraud", "table_kind", "ratio_kind"]]  # ibm_run_gap_v1 (2026-11-10)
                 gens += [dict(model=f"ARGN_{arm}", role="merchant_attr", fit=fs, draw=gs, path=SF / f"ibm_merchant_attr_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")
                          for arm in ["attr_cat", "attr_chan", "attr_normal", "attr_all"]]  # ibm_merchant_attr_v1 (2026-11-10)
+                gens += [dict(model=f"ARGN_{arm}", role="merchant_marginal_v2", fit=fs, draw=gs, path=SF / f"ibm_merchant_marginal_v2/runs/{arm}_{fs}/generated_validation_{gs}.parquet")
+                         for arm in ["rarefix_named", "visitrate"]]  # ibm_merchant_marginal_v2 (2026-11-10)
                 gens += [dict(model=f"ARGN_{arm}", role="merchant_marginal", fit=fs, draw=gs, path=SF / f"ibm_merchant_marginal_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")
                          for arm in ["novelcat", "novelcat_pos", "novelcat_pos_rarefix"]]  # ibm_merchant_marginal_v1 (2026-11-10)
                 gens += [dict(model=f"RTF_mm_{arm}", role="merchant_memory", fit=fs, draw=gs, path=SF / f"ibm_realtabformer_v1/runs/rtf_{arm}_{fs}/generated_validation_{gs}.parquet")

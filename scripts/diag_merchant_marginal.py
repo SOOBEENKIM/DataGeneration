@@ -28,7 +28,7 @@ def tv(a, b):
 
 def stats(d, ref=None):
     n = d[d.y.eq(0)]; k = n[n.imp.notna()]
-    o = dict(rows=int(len(n)), novel_share=float(n.novel.mean()), rare_share=float(n.m.eq(RARE).mean()), known=float(n.imp.notna().mean()))
+    o = dict(rows=int(len(n)), novel_share=float(n.novel.mean()), rare_share=float(n.m.str.startswith(RARE).mean()), known=float(n.imp.notna().mean()))
     dist = dict(all=k.imp.value_counts(normalize=True), novel=k[k.novel].imp.value_counts(normalize=True), repeat=k[~k.novel].imp.value_counts(normalize=True))
     # per-customer structure
     g = n.groupby("entity_id"); per = n.groupby(["entity_id", "m"]).size().rename("c").reset_index()
@@ -67,13 +67,13 @@ def main():
     rng = np.random.default_rng(20261107); trp = prep(tr, modal); ids = np.sort(trp.entity_id.unique())
     res["real_train_240"] = mean_dicts([stats(trp[trp.entity_id.isin(rng.choice(ids, 240, replace=False))], ref) for _ in range(8)])
     arms = {"ARGN_native": "ibm_tabformer_v1/runs/native_{fs}", "ARGN_model": "ibm_routed_heads_v1/runs/routed_subst_table_{fs}", "ARGN_current": "ibm_merchant_attr_v1/runs/attr_all_{fs}", "ARGN_novelcat": "ibm_merchant_marginal_v1/runs/novelcat_{fs}",
-            "ARGN_novelcat_pos": "ibm_merchant_marginal_v1/runs/novelcat_pos_{fs}", "ARGN_novelcat_pos_rarefix": "ibm_merchant_marginal_v1/runs/novelcat_pos_rarefix_{fs}",
+            "ARGN_novelcat_pos": "ibm_merchant_marginal_v1/runs/novelcat_pos_{fs}", "ARGN_novelcat_pos_rarefix": "ibm_merchant_marginal_v1/runs/novelcat_pos_rarefix_{fs}", "ARGN_visitrate": "ibm_merchant_marginal_v2/runs/visitrate_{fs}",
             "RTF_table": "ibm_realtabformer_v1/runs/rtf_table_{fs}"}
     for a, t in arms.items():
         if not all((SF / (t.format(fs=fs) + f"/generated_validation_{gs}.parquet")).exists() for fs in (20261108, 20261109) for gs in (20261011, 20261012)):
             continue
         res[a] = mean_dicts([stats(prep(pd.read_parquet(SF / (t.format(fs=fs) + f"/generated_validation_{gs}.parquet")), modal), ref) for fs in (20261108, 20261109) for gs in (20261011, 20261012)])
-    json.dump(res, open(OUT / ("DIAG_MERCHANT_MARGINAL_after.json" if "ARGN_novelcat" in res else "DIAG_MERCHANT_MARGINAL.json"), "w"), indent=1)
+    json.dump(res, open(ROOT / ("docs/ibm_merchant_marginal_v2/DIAG_MERCHANT_MARGINAL_v2.json" if "ARGN_visitrate" in res else "docs/ibm_merchant_marginal_v1/DIAG_MERCHANT_MARGINAL_after.json" if "ARGN_novelcat" in res else "docs/ibm_merchant_marginal_v1/DIAG_MERCHANT_MARGINAL.json"), "w"), indent=1)
     real = pd.Series(res["real_dev"]["visits_per_customer_merchant"])
     print("visits rank correlation with real dev (top-10 categories):", {k: round(float(pd.Series(v["visits_per_customer_merchant"]).corr(real, method="spearman")), 3) for k, v in res.items()})
     scal = ["novel_share", "rare_share", "merchants_per_customer", "top1_share", "top3_share", "tv_all", "tv_novel", "tv_repeat"]
