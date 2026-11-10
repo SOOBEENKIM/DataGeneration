@@ -1,6 +1,6 @@
 {
- "created_utc": "2026-11-10T08:26:52Z",
- "seconds": 356.2,
+ "created_utc": "2026-11-10T10:14:03Z",
+ "seconds": 381.3,
  "dataset": "ibm",
  "detector": "stable",
  "feature_set": "all",
@@ -54,7 +54,7 @@
  },
  "test": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/prepared/validation.parquet",
  "test_sha256": "00e2ee35671c6ceee60c2b98fd4742d06ac67665555ca0f5d492715d221210ea",
- "generations": 180,
+ "generations": 192,
  "real_draws": 20,
  "errors": 0,
  "new_fits": 0,

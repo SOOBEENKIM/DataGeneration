@@ -1,0 +1,80 @@
+{
+ "arm": "novelcat_pos_rarefix",
+ "fit_seed": 20261109,
+ "generation_seed": 20261012,
+ "seconds": 77.0,
+ "events": 272966,
+ "frauds": 732,
+ "fraud_customers": 43,
+ "novel_merchant_fraud": 0.505464480874317,
+ "novel_merchant_normal": 0.06721790812315875,
+ "merchants_per_customer_median": 73.0,
+ "top1_share_median": 0.12115516627129985,
+ "rare_share": 0.016023973681703947,
+ "consistency": {
+  "normal": {
+   "rows": 272234,
+   "online": 0.14943026954752162,
+   "category_matches_merchant": 0.9994848708817666,
+   "channel_matches_merchant": 0.9999925343606053,
+   "online_at_swipe_merchant": 7.4656393946859575e-06
+  },
+  "fraud": {
+   "rows": 732,
+   "online": 0.8674863387978142,
+   "category_matches_merchant": 0.998567335243553,
+   "channel_matches_merchant": 0.24498567335243554,
+   "online_at_swipe_merchant": 0.7234957020057307
+  }
+ },
+ "base_weights_sha256": "c5f0089b58da630a1cd7ab866849033646f235818db245a1fa8ef350b54ddbb5",
+ "calibration_sha256": "d5d7646f53df3bacae007f9ce8ee78ca17985e08aada5333faa76579279e0640",
+ "base_module": {
+  "label_key": "tgt:t5/c5__cat",
+  "label_first": true,
+  "transition": true,
+  "retrained_heads": true,
+  "attached": true
+ },
+ "merchant_module": {
+  "arm": "full",
+  "lam": 0.75,
+  "pi": 0.9318181818181818,
+  "merchant_key": "tgt:t1/c1__cat",
+  "counter": {
+   "merchant_steps": 3911,
+   "rows": 369531,
+   "repeat_mass": 342578.2582369385,
+   "novel_mass": 26952.741763094004,
+   "pool_mass": 511.7157401019726
+  },
+  "sticky": false,
+  "category_first": true
+ },
+ "gap_module": {
+  "arm": "table_kind",
+  "gap_key": "tgt:t0/c0__bin",
+  "counter": {
+   "gap_steps": 3911,
+   "onset": 382,
+   "cont": 625,
+   "exit": 381
+  }
+ },
+ "attr_module": {
+  "arm": "attr_all",
+  "keys": {
+   "label": "tgt:t5/c5__cat",
+   "merchant": "tgt:t1/c1__cat",
+   "category": "tgt:t3/c3__cat",
+   "channel": "tgt:t4/c4__cat"
+  },
+  "counter": {
+   "category_rows": 369479,
+   "channel_rows": 368454,
+   "channel_state_rows": 1007,
+   "steps": 7822
+  }
+ },
+ "sha256": "82dba2c2d985c0752c5c7246f1858d27c43441f1d0a9dfa644a381c6bbc76c8e"
+}

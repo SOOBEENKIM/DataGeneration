@@ -1,0 +1,80 @@
+{
+ "arm": "novelcat_pos",
+ "fit_seed": 20261109,
+ "generation_seed": 20261012,
+ "seconds": 76.4,
+ "events": 272966,
+ "frauds": 732,
+ "fraud_customers": 43,
+ "novel_merchant_fraud": 0.49453551912568305,
+ "novel_merchant_normal": 0.06734647398928863,
+ "merchants_per_customer_median": 74.0,
+ "top1_share_median": 0.11965193089430895,
+ "rare_share": 0.08546485642900581,
+ "consistency": {
+  "normal": {
+   "rows": 272234,
+   "online": 0.13824503919422262,
+   "category_matches_merchant": 0.9994537428655204,
+   "channel_matches_merchant": 0.999995983403423,
+   "online_at_swipe_merchant": 4.016596577056397e-06
+  },
+  "fraud": {
+   "rows": 732,
+   "online": 0.8674863387978142,
+   "category_matches_merchant": 0.9985074626865672,
+   "channel_matches_merchant": 0.25671641791044775,
+   "online_at_swipe_merchant": 0.7134328358208956
+  }
+ },
+ "base_weights_sha256": "c5f0089b58da630a1cd7ab866849033646f235818db245a1fa8ef350b54ddbb5",
+ "calibration_sha256": "d5d7646f53df3bacae007f9ce8ee78ca17985e08aada5333faa76579279e0640",
+ "base_module": {
+  "label_key": "tgt:t5/c5__cat",
+  "label_first": true,
+  "transition": true,
+  "retrained_heads": true,
+  "attached": true
+ },
+ "merchant_module": {
+  "arm": "full",
+  "lam": 0.75,
+  "pi": 0.9318181818181818,
+  "merchant_key": "tgt:t1/c1__cat",
+  "counter": {
+   "merchant_steps": 3911,
+   "rows": 369531,
+   "repeat_mass": 342578.2582369385,
+   "novel_mass": 26952.741763094004,
+   "pool_mass": 511.7157401019726
+  },
+  "sticky": false,
+  "category_first": true
+ },
+ "gap_module": {
+  "arm": "table_kind",
+  "gap_key": "tgt:t0/c0__bin",
+  "counter": {
+   "gap_steps": 3911,
+   "onset": 382,
+   "cont": 625,
+   "exit": 381
+  }
+ },
+ "attr_module": {
+  "arm": "attr_all",
+  "keys": {
+   "label": "tgt:t5/c5__cat",
+   "merchant": "tgt:t1/c1__cat",
+   "category": "tgt:t3/c3__cat",
+   "channel": "tgt:t4/c4__cat"
+  },
+  "counter": {
+   "category_rows": 369444,
+   "channel_rows": 368459,
+   "channel_state_rows": 1007,
+   "steps": 7822
+  }
+ },
+ "sha256": "8aa0700573c3105d4566333a7f5f9a8df7c8d0f3050b5fdeee33942d79f8975a"
+}
