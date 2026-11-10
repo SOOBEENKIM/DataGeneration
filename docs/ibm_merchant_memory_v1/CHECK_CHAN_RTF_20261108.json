@@ -1,0 +1,24 @@
+{
+  "fit": 20261108,
+  "all_online": {
+    "rows": 96,
+    "online": 1.0,
+    "novel": 0.5104166666666666,
+    "online_equals_novel": 0.5104166666666666,
+    "channel_rows": 96
+  },
+  "none_online": {
+    "rows": 96,
+    "online": 0.0,
+    "novel": 0.5208333333333334,
+    "online_equals_novel": 0.4791666666666667,
+    "channel_rows": 96
+  },
+  "online_iff_novel": {
+    "rows": 96,
+    "online": 0.5208333333333334,
+    "novel": 0.5208333333333334,
+    "online_equals_novel": 1.0,
+    "channel_rows": 96
+  }
+}

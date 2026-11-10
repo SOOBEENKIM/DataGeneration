@@ -65,7 +65,7 @@ def main():
 
     res["real_dev"] = table(dev, "dev")
     gens = {}
-    for arm in ["rtf_native", "rtf_table", "rtf_full", "rtf_fraud_only"]:
+    for arm in ["rtf_native", "rtf_table", "rtf_full", "rtf_fraud_only", "rtf_fraud_only_chan"]:
         rows = []
         for fs in [20261108, 20261109]:
             for gs in [20261011, 20261012]:

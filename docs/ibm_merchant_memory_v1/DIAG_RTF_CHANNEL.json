@@ -218,6 +218,46 @@
     "channel_matches_merchant": 0.999560558224279,
     "category_matches_merchant": 0.9999385611862248
    }
+  },
+  "rtf_fraud_only_chan": {
+   "generations": 4,
+   "fraud": {
+    "rows": 432.0,
+    "online": 0.8124451585362962,
+    "known_merchant": 1.0,
+    "in_pool": 0.795224938933289,
+    "channel_matches_merchant": 0.32714563521236983,
+    "category_matches_merchant": 0.9952302748594872,
+    "novel_pool": {
+     "rows": 257.5,
+     "online": 0.7356644865539093,
+     "merchant_modal_online": 0.2104205895975635,
+     "channel_matches_merchant": 0.38928190804388596,
+     "category_matches_merchant": 0.9926701310437531
+    },
+    "novel_other": {
+     "rows": 1.0,
+     "online": 0.75,
+     "merchant_modal_online": 0.0,
+     "channel_matches_merchant": 0.25,
+     "category_matches_merchant": 1.0
+    },
+    "repeat": {
+     "rows": 173.5,
+     "online": 0.9234695908508166,
+     "merchant_modal_online": 0.17428156787226268,
+     "channel_matches_merchant": 0.23570520737128703,
+     "category_matches_merchant": 0.9988095238095238
+    }
+   },
+   "normal": {
+    "rows": 268564.0,
+    "online": 0.1619493210553362,
+    "known_merchant": 1.0,
+    "in_pool": 0.42958526271191233,
+    "channel_matches_merchant": 0.9995624209072876,
+    "category_matches_merchant": 0.9999385611862248
+   }
   }
  }
 }

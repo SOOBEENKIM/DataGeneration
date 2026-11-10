@@ -1,6 +1,6 @@
 {
- "created_utc": "2026-11-09T19:03:50Z",
- "seconds": 726.3,
+ "created_utc": "2026-11-10T06:15:47Z",
+ "seconds": 730.1,
  "dataset": "ibm",
  "real_development": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/prepared/validation.parquet",
  "real_development_sha256": "00e2ee35671c6ceee60c2b98fd4742d06ac67665555ca0f5d492715d221210ea",
@@ -8,7 +8,7 @@
  "real_train_sha256": "063a1c0f4c30806e5f7254e75b426c75b368be589dd15be047321572747ab719",
  "floor_draws": 200,
  "floor_seed": 20261107,
- "generations_evaluated": 145,
+ "generations_evaluated": 149,
  "generations_skipped": 0,
  "input_hashes": {
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/runs/native_20261108/generated_validation_20261011.parquet": "e6181622ffd10a346e70b1eb710d0729f016ad69c342c5a679f9b5eedb779f6b",
@@ -47,6 +47,7 @@
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_merchant_memory_v1/runs/full_20261108/generated_validation_20261011.parquet": "87a112a6d7c00809713b8bd5acd0d8c8fdf25c5bb8daf22c0df2e2eaec8787aa",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_full_20261108/generated_validation_20261011.parquet": "59ab23c3962fa791495a0ee9867445d21cb3ea752bc77f4936cb6aa8f7c757fb",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_fraud_only_20261108/generated_validation_20261011.parquet": "80838c2eee57e46f822a3133f5ffb20423f85573d28b83ece04698605e4ab719",
+  "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_fraud_only_chan_20261108/generated_validation_20261011.parquet": "955d9cb0dad9776bcc12be916408f0f5be7a4a95e677a42a1aee9343d711cb8f",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/runs/native_20261108/generated_validation_20261012.parquet": "de9dcbfaae17b7bc6f7fd84e41d6b07a5e147ac02640dd22e000add779c9b9d4",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/runs/relaxed_20261108/generated_validation_20261012.parquet": "de9dcbfaae17b7bc6f7fd84e41d6b07a5e147ac02640dd22e000add779c9b9d4",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_generation_module_v1/runs/order_only_20261108/generated_validation_20261012.parquet": "ab865b6592f71c8ed1f79635c7fd22483b01f96c916e816d02d3e7dd6d45bb37",
@@ -83,6 +84,7 @@
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_merchant_memory_v1/runs/full_20261108/generated_validation_20261012.parquet": "158249919c6767e0c7d9befbc4efe5966ae269a5d27bfdde5f8059eab2fb5953",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_full_20261108/generated_validation_20261012.parquet": "f1b5665900096e9be8eff747b7bc0b72385271aa69d6bf1b671c3e8bfe1fe773",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_fraud_only_20261108/generated_validation_20261012.parquet": "c10c90778e10f9079fd7b9e28910a977734736ab3559e072e9e1c027da0c90a8",
+  "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_fraud_only_chan_20261108/generated_validation_20261012.parquet": "3030820cf5661f4cc089240a0d3b9c8792c522357bac5ea8c89b16fe380103fa",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/runs/native_20261109/generated_validation_20261011.parquet": "104191ba8c455370957e9db9c5a868980df22e3845d77bfade925255f350a967",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/runs/relaxed_20261109/generated_validation_20261011.parquet": "104191ba8c455370957e9db9c5a868980df22e3845d77bfade925255f350a967",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_generation_module_v1/runs/order_only_20261109/generated_validation_20261011.parquet": "cdd674e24d5af1ba19b18310eb6eef9529434e05afd10a3e722e3dd6d882a538",
@@ -119,6 +121,7 @@
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_merchant_memory_v1/runs/full_20261109/generated_validation_20261011.parquet": "b505e6c9fce6e31f19ef3fb586d6b3a9f312966826368005cae599898d6509f4",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_full_20261109/generated_validation_20261011.parquet": "dcece10c98ff47d8a4768a47666563c1e2b8d2a493859c2953cf4f05db159c18",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_fraud_only_20261109/generated_validation_20261011.parquet": "a370bccfba93721ea3df69666db2648c581d6aa6a0199e4d133d70caa029072d",
+  "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_fraud_only_chan_20261109/generated_validation_20261011.parquet": "3684b661c749dde32df837f455fa55ff73398d09336ab0af486906adb4ff2568",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/runs/native_20261109/generated_validation_20261012.parquet": "fb3479bdc739e61a39146f09cc56b40dfc6042680755e9e48d8332d0da06c858",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/runs/relaxed_20261109/generated_validation_20261012.parquet": "fb3479bdc739e61a39146f09cc56b40dfc6042680755e9e48d8332d0da06c858",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_generation_module_v1/runs/order_only_20261109/generated_validation_20261012.parquet": "edc0f56a027b39a175385016dd95b40b9e07092a9b9ebe704e093a03e6589a3a",
@@ -154,7 +157,8 @@
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_merchant_memory_v1/runs/gate_only_20261109/generated_validation_20261012.parquet": "3a8620d463f9b229d4860429c71f60c375585fece7dc2eb5e03990ae86d6f53c",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_merchant_memory_v1/runs/full_20261109/generated_validation_20261012.parquet": "b09ad9eb4027d27d8fbb8b15fa4e6f7ca1c689cf473908b34e0edd3f034be094",
   "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_full_20261109/generated_validation_20261012.parquet": "1b284eaab395394babcc57e95e39bab5abdee4098b40dfd6c1a0e66be46ebafa",
-  "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_fraud_only_20261109/generated_validation_20261012.parquet": "ec725050e576cef19ac7846c87ab33d2e4e3a765ea0c2a921efb9f191ed4bc19"
+  "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_fraud_only_20261109/generated_validation_20261012.parquet": "ec725050e576cef19ac7846c87ab33d2e4e3a765ea0c2a921efb9f191ed4bc19",
+  "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_realtabformer_v1/runs/rtf_fraud_only_chan_20261109/generated_validation_20261012.parquet": "a741165fd2108ede02b943513fdfbc8f950f198c1015f7c12808820e41da35f1"
  },
  "new_fits": 0,
  "new_generations": 0,
