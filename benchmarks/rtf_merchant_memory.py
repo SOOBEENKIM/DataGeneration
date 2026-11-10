@@ -57,6 +57,15 @@ class MerchantGeometry:
         self.compact = torch.full((geom.V,), -1, dtype=torch.long)
         self.compact[self.token_ids] = torch.arange(self.V)
 
+    def channel(self, geom, column="use_chip", online="Online Transaction"):
+        """Channel sub-column (amendment 4): index, the online token id and the other token id."""
+        orig = [original_column(c) for c in geom.cols]
+        js = [j for j, o in enumerate(orig) if o == column]
+        assert len(js) == 1 and js[0] > self.j, "the channel must follow the merchant in the row"
+        ids = list(geom.col_ids[js[0]]); on = geom.t2i[f"{geom.cols[js[0]]}{SPECIAL_COL_SEP}{online}"]
+        assert on in ids and len(ids) == 2, ids
+        return js[0], on, [t for t in ids if t != on][0]
+
     def pool_tensor(self, pool_by_value):
         p = torch.zeros(self.V, dtype=torch.float64)
         for v, w in pool_by_value.items():
@@ -70,9 +79,18 @@ def empty_state(n_customers, V):
 
 
 class MerchantMemoryProcessor(LogitsProcessor):
-    def __init__(self, geom, mg, params, pool, init_counts, init_last, arm="full", top_k=TOP_K):
-        assert arm in ("full", "gate_only", "repeat_blind", "fraud_only")  # fraud_only (amendment 2, 2026-11-10): normal rows native
-        self.g, self.m, self.arm, self.top_k = geom, mg, arm, top_k
+    def __init__(self, geom, mg, params, pool, init_counts, init_last, arm="full", top_k=TOP_K, channel_table=None):
+        # fraud_only (amendment 2, 2026-11-10): normal rows native. fraud_only_chan (amendment 4): + in fraud rows the channel
+        # token is drawn from channel_table = (P(online | fraud, novel merchant), P(online | fraud, repeated merchant)).
+        assert arm in ("full", "gate_only", "repeat_blind", "fraud_only", "fraud_only_chan")
+        self.g, self.m, self.top_k = geom, mg, top_k
+        self.chan = None
+        if arm == "fraud_only_chan":
+            assert channel_table is not None
+            self.chan = mg.channel(geom)
+            self.chan_p = torch.tensor(channel_table, dtype=torch.float64, device=init_counts.device).clamp(1e-9, 1 - 1e-9)
+            arm = "fraud_only"
+        self.arm = arm; self.chan_rows = 0; self.chan_online = 0.0
         dev = init_counts.device
         self.counts0, self.last0 = init_counts, init_last                          # (B, Vm)
         self.gate = torch.tensor(params["gate"], dtype=torch.float64, device=dev)
@@ -90,11 +108,13 @@ class MerchantMemoryProcessor(LogitsProcessor):
             k, c = divmod(idx, g.S + 2)
             if c - 1 == self.m.j:
                 return self._merchant(input_ids, scores, k)
+            if self.chan is not None and c - 1 == self.chan[0]:
+                return self._channel(input_ids, scores, k)
         return top_k_filter(scores, self.top_k) if self.top_k else scores
 
-    def _merchant(self, input_ids, scores, k):
-        g, m = self.g, self.m
-        B = input_ids.shape[0]; dev = scores.device
+    def _past(self, input_ids, k):
+        """Customer's merchant memory before row k of this window: carried state + this window's rows 0..k-1."""
+        g, m = self.g, self.m; dev = input_ids.device
         counts = self.counts0.clone(); last = self.last0.clone(); n0 = counts.sum(1).long()
         if k > 0:  # merchants of this window's earlier rows
             pos = 3 + m.j + torch.arange(k, device=dev) * (g.S + 2)
@@ -103,6 +123,29 @@ class MerchantMemoryProcessor(LogitsProcessor):
             counts.scatter_add_(1, ci, valid.double())
             rpos = torch.where(valid, n0.unsqueeze(1) + torch.arange(k, device=dev), torch.full_like(comp, -1))
             last.scatter_reduce_(1, ci, rpos, reduce="amax")
+        return counts, last
+
+    def _channel(self, input_ids, scores, k):
+        """Fraud rows: channel ~ P(online | fraud, this row's merchant novel / repeated); normal rows native."""
+        g, m = self.g, self.m
+        native = top_k_filter(scores, self.top_k) if self.top_k else scores
+        fraud = input_ids[:, 3 + g.j_label + k * (g.S + 2)].eq(g.fraud_id)
+        if not fraud.any():
+            return native
+        counts, _ = self._past(input_ids, k)
+        comp = self.compact[input_ids[:, 3 + m.j + k * (g.S + 2)]]                    # this row's merchant
+        repeat = torch.gather(counts, 1, comp.clamp(min=0).unsqueeze(1)).squeeze(1).gt(0) & comp.ge(0)
+        p = self.chan_p[repeat.long()]                                               # (B,) P(online)
+        _, on, off = self.chan
+        new = torch.full_like(scores, -math.inf)
+        new[:, on] = p.log().to(scores.dtype); new[:, off] = torch.log1p(-p).to(scores.dtype)
+        self.chan_rows += int(fraud.sum()); self.chan_online += float(p[fraud].sum())
+        return torch.where(fraud.unsqueeze(1), new, native)
+
+    def _merchant(self, input_ids, scores, k):
+        g, m = self.g, self.m
+        B = input_ids.shape[0]; dev = scores.device
+        counts, last = self._past(input_ids, k)
         n = counts.sum(1)                                                           # events so far (B,) float64
         label = input_ids[:, 3 + g.j_label + k * (g.S + 2)].eq(g.fraud_id).long()
         has_past = counts.gt(0)

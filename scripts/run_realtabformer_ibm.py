@@ -45,10 +45,12 @@ ARMS = {"rtf_native": dict(table=False, heads=None), "rtf_table": dict(table=Tru
         "rtf_table_routed": dict(table=True, heads="routed"), "rtf_table_routed_subst": dict(table=True, heads="routed_subst"),
         "rtf_learned": dict(table=False, heads=None, learned=True),  # ibm_state_first_v1 (2026-11-09): learned state process, no heads
         "rtf_full": dict(table=True, heads=None, merchant="full"),  # ibm_merchant_memory_v1 (2026-11-10): table + merchant memory (H5)
-        "rtf_fraud_only": dict(table=True, heads=None, merchant="fraud_only")}  # amendment 2 (2026-11-10): merchant memory in fraud rows only
+        "rtf_fraud_only": dict(table=True, heads=None, merchant="fraud_only"),  # amendment 2 (2026-11-10): merchant memory in fraud rows only
+        "rtf_fraud_only_chan": dict(table=True, heads=None, merchant="fraud_only_chan")}  # amendment 4: + state-conditioned channel table in fraud rows
 STATE_PKL = WS / "artifacts/ibm_state_first_v1/state_process.pkl"
 MM_ARGN = WS / "artifacts/ibm_merchant_memory_v1/merchant_memory.json"      # ARGN-indexed fit (gate / lam / pi shared)
 MM_RTF = WS / "artifacts/ibm_merchant_memory_v1/merchant_memory_rtf.json"   # same estimation, pool keyed by merchant value
+MM_CHAN = WS / "artifacts/ibm_merchant_memory_v1/channel_table.json"         # amendment 4: P(online | fraud, novel / repeated merchant), train
 
 
 def jdump(obj, path):
@@ -523,6 +525,52 @@ def cmd_fit_mm(args):
     print(json.dumps({k: params[k] for k in ("gate", "lam", "pi", "pool_merchants", "merchant_tokens", "matches_argn_fit", "seconds")}, indent=1))
 
 
+def cmd_fit_chan(args):
+    """Amendment 4: P(online | fraud row, the row's merchant is new / repeated for the customer) on train (Jeffreys .5)."""
+    if MM_CHAN.exists():
+        print("exists; skipping", MM_CHAN); return
+    d = pd.read_parquet(SRC / "train.parquet").sort_values(["entity_id", "event_index"], kind="stable")
+    novel = ~d.duplicated(["entity_id", "receiver_or_mark"]); on = d.use_chip.astype(str).eq("Online Transaction"); f = pd.to_numeric(d[LABEL], errors="coerce").eq(1)
+    cells = {}
+    for name, sel in (("novel", f & novel), ("repeat", f & ~novel)):
+        cells[name] = dict(rows=int(sel.sum()), online=int((sel & on).sum()), p_online=float(((sel & on).sum() + 0.5) / (sel.sum() + 1.0)))
+    out = dict(table=[cells["novel"]["p_online"], cells["repeat"]["p_online"]], order=["novel", "repeat"], cells=cells, smoothing=0.5,
+               normal_rows_online=float(on[~f].mean()), train_sha256=hashlib.sha256((SRC / "train.parquet").read_bytes()).hexdigest())
+    jdump(out, MM_CHAN); print(json.dumps(out, indent=1))
+
+
+def cmd_check_chan(args):
+    """Forcing check of the channel step: every row fraud (table p = 1); channel table (1,1) -> all online, (0,0) -> none,
+    (1,0) -> online iff the row's merchant is new for the customer (recomputed from the decoded rows)."""
+    import torch
+    from transformers import LogitsProcessorList
+    from benchmarks.rtf_ibm_module import Geometry, ModuleProcessor
+    from benchmarks.rtf_merchant_memory import MerchantGeometry, MerchantMemoryProcessor, empty_state
+    from realtabformer.rtf_sampler import RelationalSampler
+    device = "cuda"
+    m, rep = load_fit(args.fit, device); geom = Geometry(m); mg = MerchantGeometry(geom)
+    params = json.loads(MM_RTF.read_text()); pool = mg.pool_tensor(params["pool_by_value"])
+    parent = pd.read_parquet(PREP / "development_parent.parquet"); wmap = pd.read_parquet(PREP / "development_window_map.parquet"); wm = wmap.set_index("window_id")
+    ids = wm.index[wm.window_index.eq(0)][:8]; Pb = parent[parent.window_id.isin(ids)]; rows = 12
+    enc = encoder_inputs(m, Pb, device); sampler = RelationalSampler.sampler_from_model(m, device=device)
+    table = torch.full((3, 22, 2), 1.0, dtype=torch.float64, device=device); out = {}
+    for name, ct in (("all_online", (1.0, 1.0)), ("none_online", (0.0, 0.0)), ("online_iff_novel", (1.0, 0.0))):
+        counts, last = empty_state(len(Pb), mg.V)
+        proc = ModuleProcessor(geom, table=table, init_state=None)
+        mproc = MerchantMemoryProcessor(geom, mg, params, pool, counts.to(device), last.to(device), arm="fraud_only_chan", channel_table=ct)
+        kw = sampler._get_min_max_length(rows); kw["top_k"] = 0; seed_all(1)
+        samples = sampler._generate(device=torch.device(device), as_numpy=True, constrain_tokens_gen=True, inputs=enc, do_sample=True,
+                                    suppress_tokens=None, forced_decoder_ids=None, logits_processor=LogitsProcessorList([proc, mproc]), **kw)
+        df = sampler._processes_sample(samples, m.vocab["decoder"], relate_ids=list(Pb.window_id))
+        df["_w"] = df.index; on = df.use_chip.astype(str).eq("Online Transaction"); novel = ~df.duplicated(["_w", "receiver_or_mark"])
+        assert pd.to_numeric(df[LABEL]).eq(1).all()
+        out[name] = dict(rows=int(len(df)), online=float(on.mean()), novel=float(novel.mean()), online_equals_novel=float((on == novel).mean()), channel_rows=mproc.chan_rows)
+        print(name, out[name], flush=True)
+    assert out["all_online"]["online"] > 0.999 and out["none_online"]["online"] < 0.001 and out["online_iff_novel"]["online_equals_novel"] > 0.999
+    assert 0 < out["online_iff_novel"]["novel"] < 1, "the check needs both novel and repeated rows"
+    jdump(dict(fit=args.fit, **out), REP / f"CHECK_CHAN_{args.fit}.json"); print("CHECK_CHAN PASSED")
+
+
 def cmd_check_mm(args):
     """(1) the in-processor top-k filter equals transformers' TopKLogitsWarper; (2) a small generation with the merchant
     processor replaces every merchant position, tracks the past across two windows and keeps the other columns' decoding."""
@@ -642,6 +690,7 @@ def cmd_generate(args):
         from benchmarks.rtf_merchant_memory import MerchantGeometry, MerchantMemoryProcessor, empty_state, update_state
         mg = MerchantGeometry(geom); mm_params = json.loads(MM_RTF.read_text()); mm_pool = mg.pool_tensor(mm_params["pool_by_value"])
         assert mm_params["merchant_tokens"] == mg.V and mm_params["merchant_column"] == mg.col
+    chan_table = json.loads(MM_CHAN.read_text())["table"] if mm_arm == "fraud_only_chan" else None
     out_dir = RUNS / f"{args.arm}_{args.fit}"; out_dir.mkdir(parents=True, exist_ok=True)
     sampler = RelationalSampler.sampler_from_model(m, device=device)
     for gs in args.seeds:
@@ -657,7 +706,7 @@ def cmd_generate(args):
             # rounds over window_index so the transition state carries over within each customer
             wm = wmap.set_index("window_id")
             state = {int(e): torch.zeros(6 if learned else 4, dtype=torch.long) for e in wm.entity_id.unique()}
-            pieces = []; label_steps = 0; routed_rows = 0; mm_steps = 0; mm_rows = 0; mm_replaced = 0; mm_novel = 0.0; mm_pool_mass = 0.0
+            pieces = []; label_steps = 0; routed_rows = 0; mm_steps = 0; mm_rows = 0; mm_replaced = 0; mm_novel = 0.0; mm_pool_mass = 0.0; mm_chan_rows = 0; mm_chan_online = 0.0
             if mm_arm:
                 custs = {int(e): i for i, e in enumerate(wm.entity_id.unique())}; mm_counts, mm_last = empty_state(len(custs), mg.V)
             for w in sorted(wm.window_index.unique()):
@@ -675,7 +724,7 @@ def cmd_generate(args):
                     procs = [proc]
                     if mm_arm:  # merchant memory: carried per-customer counts/last positions; native top-k moved into the processor
                         ci = [custs[e] for e in ents]
-                        mproc = MerchantMemoryProcessor(geom, mg, mm_params, mm_pool, mm_counts[ci].to(device), mm_last[ci].to(device), arm=mm_arm)
+                        mproc = MerchantMemoryProcessor(geom, mg, mm_params, mm_pool, mm_counts[ci].to(device), mm_last[ci].to(device), arm=mm_arm, channel_table=chan_table)
                         procs.append(mproc); kw["top_k"] = 0
                     samples = sampler._generate(device=torch.device(device), as_numpy=True, constrain_tokens_gen=True, inputs=enc, do_sample=True,
                                                 suppress_tokens=None, forced_decoder_ids=None, logits_processor=LogitsProcessorList(procs), **kw)
@@ -685,6 +734,7 @@ def cmd_generate(args):
                         cb_counts, cb_last = mm_counts[ci].clone(), mm_last[ci].clone()
                         update_state(samples, kept, geom, mg, cb_counts, cb_last); mm_counts[ci] = cb_counts; mm_last[ci] = cb_last
                         mm_steps += mproc.n_merchant_steps; mm_rows += mproc.rows; mm_replaced += mproc.replaced_rows; mm_novel += mproc.novel_mass; mm_pool_mass += mproc.pool_mass
+                        mm_chan_rows += mproc.chan_rows; mm_chan_online += mproc.chan_online
                     df = sampler._processes_sample(samples, m.vocab["decoder"], relate_ids=list(Pb.window_id))
                     df["_ord"] = df.groupby(level=0).cumcount()
                     want = df.index.map(wm["window_rows"])
@@ -701,7 +751,8 @@ def cmd_generate(args):
                          learned_state_process=str(STATE_PKL) if learned else None)
             if mm_arm:
                 extra.update(merchant_memory=dict(arm=mm_arm, params=str(MM_RTF), params_sha256=hashlib.sha256(MM_RTF.read_bytes()).hexdigest(), merchant_steps=mm_steps,
-                                                  rows=mm_rows, replaced_rows=mm_replaced, novel_gate_mean=mm_novel / max(mm_rows, 1), pool_mass=mm_pool_mass, top_k_in_processor=True))
+                                                  rows=mm_rows, replaced_rows=mm_replaced, novel_gate_mean=mm_novel / max(mm_rows, 1), pool_mass=mm_pool_mass, top_k_in_processor=True,
+                                                  channel_table=chan_table, channel_rows=mm_chan_rows, channel_online_mass=mm_chan_online))
         secs = time.time() - t0
         res, mism = assemble(syn, wmap, real)
         res.to_parquet(dest, index=False)
@@ -790,11 +841,11 @@ def main():
     g = sp.add_parser("generate"); g.add_argument("--fit", type=int, required=True); g.add_argument("--arm", choices=list(ARMS), required=True)
     g.add_argument("--seeds", type=int, nargs="+", default=GEN_SEEDS); g.add_argument("--gen_batch", type=int, default=128)
     e = sp.add_parser("evaluate"); e.add_argument("--fit", type=int, required=True)
-    for name in ("fit_mm", "check_mm"):
+    for name in ("fit_mm", "check_mm", "fit_chan", "check_chan"):
         sp.add_parser(name).add_argument("--fit", type=int, default=FIT_SEEDS[0])
     a = ap.parse_args()
     {"prepare": cmd_prepare, "fit": cmd_fit, "check": cmd_check, "train_heads": cmd_train_heads, "generate": cmd_generate, "evaluate": cmd_evaluate,
-     "fit_mm": cmd_fit_mm, "check_mm": cmd_check_mm}[a.cmd](a)
+     "fit_mm": cmd_fit_mm, "check_mm": cmd_check_mm, "fit_chan": cmd_fit_chan, "check_chan": cmd_check_chan}[a.cmd](a)
 
 
 if __name__ == "__main__":
