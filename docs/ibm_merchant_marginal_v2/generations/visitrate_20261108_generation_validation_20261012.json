@@ -1,0 +1,84 @@
+{
+ "events": 274731,
+ "frauds": 446,
+ "fraud_customers": 39,
+ "novel_merchant_fraud": 0.5919282511210763,
+ "novel_merchant_normal": 0.08144083708551324,
+ "merchants_per_customer_median": 91.0,
+ "top1_share_median": 0.09458248642782158,
+ "rare_share": 0.01616126319927493,
+ "consistency": {
+  "normal": {
+   "rows": 274285,
+   "online": 0.13393003627613614,
+   "category_matches_merchant": 0.9997220822340142,
+   "channel_matches_merchant": 0.9999703554382948,
+   "online_at_swipe_merchant": 2.964456170515519e-05
+  },
+  "fraud": {
+   "rows": 446,
+   "online": 0.8452914798206278,
+   "category_matches_merchant": 1.0,
+   "channel_matches_merchant": 0.2459016393442623,
+   "online_at_swipe_merchant": 0.7166276346604216
+  }
+ },
+ "arm": "visitrate",
+ "fit_seed": 20261108,
+ "generation_seed": 20261012,
+ "seconds": 77.5,
+ "rare_rows_named": 4440,
+ "kernel": {
+  "kappa": 8.0,
+  "lam": 1.0
+ },
+ "base_weights_sha256": "b0b1f46a977d4e7eb35e6b665538b7ae0b5c5dd118565d69e22d19410059603f",
+ "base_module": {
+  "label_key": "tgt:t5/c5__cat",
+  "label_first": true,
+  "transition": true,
+  "retrained_heads": true,
+  "attached": true
+ },
+ "merchant_module": {
+  "arm": "full",
+  "lam": 1.0,
+  "pi": 0.9318181818181818,
+  "merchant_key": "tgt:t1/c1__cat",
+  "counter": {
+   "merchant_steps": 3886,
+   "rows": 366285,
+   "repeat_mass": 339656.3816277575,
+   "novel_mass": 26628.618372278852,
+   "pool_mass": 319.81178694753356
+  },
+  "sticky": false,
+  "category_first": true
+ },
+ "gap_module": {
+  "arm": "table_kind",
+  "gap_key": "tgt:t0/c0__bin",
+  "counter": {
+   "gap_steps": 3886,
+   "onset": 237,
+   "cont": 376,
+   "exit": 237
+  }
+ },
+ "attr_module": {
+  "arm": "attr_all",
+  "keys": {
+   "label": "tgt:t5/c5__cat",
+   "merchant": "tgt:t1/c1__cat",
+   "category": "tgt:t3/c3__cat",
+   "channel": "tgt:t4/c4__cat"
+  },
+  "counter": {
+   "category_rows": 366251,
+   "channel_rows": 365590,
+   "channel_state_rows": 613,
+   "steps": 7772
+  }
+ },
+ "sha256": "b15ffe66f39e55cabb5f24dd753d62a9c684a8b802fcfd83e23567531f7952a0"
+}

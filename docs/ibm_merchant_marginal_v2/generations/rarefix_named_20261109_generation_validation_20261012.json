@@ -1,0 +1,33 @@
+{
+ "events": 272966,
+ "frauds": 732,
+ "fraud_customers": 43,
+ "novel_merchant_fraud": 0.5505464480874317,
+ "novel_merchant_normal": 0.08228215432311908,
+ "merchants_per_customer_median": 88.0,
+ "top1_share_median": 0.12115516627129985,
+ "rare_share": 0.016023973681703947,
+ "consistency": {
+  "normal": {
+   "rows": 272234,
+   "online": 0.14943026954752162,
+   "category_matches_merchant": 0.9994848708817666,
+   "channel_matches_merchant": 0.9999925343606053,
+   "online_at_swipe_merchant": 7.4656393946859575e-06
+  },
+  "fraud": {
+   "rows": 732,
+   "online": 0.8674863387978142,
+   "category_matches_merchant": 0.998567335243553,
+   "channel_matches_merchant": 0.24498567335243554,
+   "online_at_swipe_merchant": 0.7234957020057307
+  }
+ },
+ "arm": "rarefix_named",
+ "fit_seed": 20261109,
+ "generation_seed": 20261012,
+ "derived_from": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_merchant_marginal_v1/runs/novelcat_pos_rarefix_20261109/generated_validation_20261012.parquet",
+ "source_sha256": "82dba2c2d985c0752c5c7246f1858d27c43441f1d0a9dfa644a381c6bbc76c8e",
+ "rare_rows_named": 4374,
+ "sha256": "21e8337b8100df9d57701c726c78c5b6faadcb02dfe10bf0739beaa86682cf39"
+}

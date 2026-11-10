@@ -1,0 +1,84 @@
+{
+ "events": 272966,
+ "frauds": 732,
+ "fraud_customers": 43,
+ "novel_merchant_fraud": 0.5341530054644809,
+ "novel_merchant_normal": 0.08212052866284153,
+ "merchants_per_customer_median": 89.5,
+ "top1_share_median": 0.0984162499536222,
+ "rare_share": 0.0159873390825231,
+ "consistency": {
+  "normal": {
+   "rows": 272234,
+   "online": 0.12922338870236635,
+   "category_matches_merchant": 0.9997237888701845,
+   "channel_matches_merchant": 0.9999776045029879,
+   "online_at_swipe_merchant": 2.239549701206744e-05
+  },
+  "fraud": {
+   "rows": 732,
+   "online": 0.8715846994535519,
+   "category_matches_merchant": 1.0,
+   "channel_matches_merchant": 0.23589001447178004,
+   "online_at_swipe_merchant": 0.7322720694645442
+  }
+ },
+ "arm": "visitrate",
+ "fit_seed": 20261109,
+ "generation_seed": 20261012,
+ "seconds": 77.4,
+ "rare_rows_named": 4364,
+ "kernel": {
+  "kappa": 8.0,
+  "lam": 1.0
+ },
+ "base_weights_sha256": "c5f0089b58da630a1cd7ab866849033646f235818db245a1fa8ef350b54ddbb5",
+ "base_module": {
+  "label_key": "tgt:t5/c5__cat",
+  "label_first": true,
+  "transition": true,
+  "retrained_heads": true,
+  "attached": true
+ },
+ "merchant_module": {
+  "arm": "full",
+  "lam": 1.0,
+  "pi": 0.9318181818181818,
+  "merchant_key": "tgt:t1/c1__cat",
+  "counter": {
+   "merchant_steps": 3911,
+   "rows": 369531,
+   "repeat_mass": 342578.2582369385,
+   "novel_mass": 26952.741763094004,
+   "pool_mass": 511.7157401019726
+  },
+  "sticky": false,
+  "category_first": true
+ },
+ "gap_module": {
+  "arm": "table_kind",
+  "gap_key": "tgt:t0/c0__bin",
+  "counter": {
+   "gap_steps": 3911,
+   "onset": 382,
+   "cont": 625,
+   "exit": 381
+  }
+ },
+ "attr_module": {
+  "arm": "attr_all",
+  "keys": {
+   "label": "tgt:t5/c5__cat",
+   "merchant": "tgt:t1/c1__cat",
+   "category": "tgt:t3/c3__cat",
+   "channel": "tgt:t4/c4__cat"
+  },
+  "counter": {
+   "category_rows": 369476,
+   "channel_rows": 368436,
+   "channel_state_rows": 1007,
+   "steps": 7822
+  }
+ },
+ "sha256": "aaf0706de2dcb3ee45924182a6282115fe61ad7bc125739a59f1866e1d1d372e"
+}
