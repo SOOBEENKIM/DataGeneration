@@ -1,0 +1,52 @@
+{
+ "floor": {
+  "actual_tv": 0.05264058365269749,
+  "implied_tv_known": 0.05267387069769364,
+  "known": 1.0,
+  "rare": 0.0
+ },
+ "arms": {
+  "ARGN_native": {
+   "actual_tv": 0.188,
+   "implied_tv_known": 0.131,
+   "known": 0.971,
+   "rare": 0.029
+  },
+  "ARGN_model": {
+   "actual_tv": 0.186,
+   "implied_tv_known": 0.147,
+   "known": 0.971,
+   "rare": 0.029
+  },
+  "ARGN_mm_full": {
+   "actual_tv": 0.12,
+   "implied_tv_known": 0.17,
+   "known": 0.963,
+   "rare": 0.037
+  },
+  "ARGN_table_kind": {
+   "actual_tv": 0.12,
+   "implied_tv_known": 0.17,
+   "known": 0.963,
+   "rare": 0.037
+  },
+  "ARGN_attr_normal": {
+   "actual_tv": 0.176,
+   "implied_tv_known": 0.178,
+   "known": 0.963,
+   "rare": 0.037
+  },
+  "ARGN_attr_all": {
+   "actual_tv": 0.176,
+   "implied_tv_known": 0.178,
+   "known": 0.963,
+   "rare": 0.037
+  },
+  "RTF_table": {
+   "actual_tv": 0.185,
+   "implied_tv_known": 0.185,
+   "known": 1.0,
+   "rare": 0.0
+  }
+ }
+}
