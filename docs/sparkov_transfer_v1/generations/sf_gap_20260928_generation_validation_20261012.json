@@ -1,0 +1,47 @@
+{
+ "arm": "sf_gap",
+ "parts": [
+  "gap"
+ ],
+ "fit_seed": 20260928,
+ "generation_seed": 20261012,
+ "seconds": 424.0,
+ "events": 167538,
+ "customers": 147,
+ "frauds": 977,
+ "fraud_customers": 96,
+ "continuation": 0.8966223132036848,
+ "novel_merchant_fraud": 0.6049129989764586,
+ "novel_merchant_normal": 0.39090783556774994,
+ "merchants_per_customer_median": 504.0,
+ "category_matches_merchant_normal": 0.2655063310138628,
+ "category_matches_merchant_fraud": 0.15148413510747186,
+ "gap_minutes_by_kind": {
+  "onset": 556.45,
+  "cont": 62.90833333333333,
+  "exit": 506.5833333333333,
+  "normal": 296.26666666666665
+ },
+ "base_weights_sha256": "6e4409523577dcdf0f8ec83b473f70176f60cec5a1af26a57fcc095b34ece6ea",
+ "heads_sha256": "85240100197231175d9b4c9f3f69088a653cf38206c0b908845efad6dec12b56",
+ "modules": {
+  "base": {
+   "label_key": "tgt:t4/c4__cat",
+   "label_first": true,
+   "transition": true,
+   "retrained_heads": true,
+   "attached": true
+  },
+  "gap": {
+   "arm": "table_kind",
+   "gap_key": "tgt:t0/c0__bin",
+   "counter": {
+    "gap_steps": 3106,
+    "onset": 89,
+    "cont": 959,
+    "exit": 109
+   }
+  }
+ },
+ "sha256": "f786ce6979391e5d6d68dfea11f3a13388b69a6bb1dc2011ad1676579a9f6b4d"
+}

@@ -10,9 +10,9 @@
  },
  "floor_seed": 20261107,
  "floor_draws": 200,
- "generations": 14,
- "skipped": 16,
- "seconds": 148,
+ "generations": 30,
+ "skipped": 4,
+ "seconds": 159,
  "protocol_sha256": "88f0fe88308240298f7ca37af22fe72402b3add599a0ea1fbe8d0928a8e62702",
  "test_read": false
 }

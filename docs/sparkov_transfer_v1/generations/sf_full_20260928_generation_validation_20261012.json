@@ -1,0 +1,63 @@
+{
+ "arm": "sf_full",
+ "parts": [
+  "gap",
+  "attr"
+ ],
+ "fit_seed": 20260928,
+ "generation_seed": 20261012,
+ "seconds": 183.3,
+ "events": 167538,
+ "customers": 147,
+ "frauds": 977,
+ "fraud_customers": 96,
+ "continuation": 0.8966223132036848,
+ "novel_merchant_fraud": 0.6079836233367452,
+ "novel_merchant_normal": 0.39092584698698973,
+ "merchants_per_customer_median": 504.0,
+ "category_matches_merchant_normal": 0.990315860255402,
+ "category_matches_merchant_fraud": 0.1535312180143296,
+ "gap_minutes_by_kind": {
+  "onset": 550.55,
+  "cont": 63.0,
+  "exit": 503.06666666666666,
+  "normal": 295.1166666666667
+ },
+ "base_weights_sha256": "6e4409523577dcdf0f8ec83b473f70176f60cec5a1af26a57fcc095b34ece6ea",
+ "heads_sha256": "85240100197231175d9b4c9f3f69088a653cf38206c0b908845efad6dec12b56",
+ "modules": {
+  "base": {
+   "label_key": "tgt:t4/c4__cat",
+   "label_first": true,
+   "transition": true,
+   "retrained_heads": true,
+   "attached": true
+  },
+  "gap": {
+   "arm": "table_kind",
+   "gap_key": "tgt:t0/c0__bin",
+   "counter": {
+    "gap_steps": 3106,
+    "onset": 89,
+    "cont": 959,
+    "exit": 109
+   }
+  },
+  "attr": {
+   "arm": "attr_normal",
+   "keys": {
+    "label": "tgt:t4/c4__cat",
+    "merchant": "tgt:t1/c1__cat",
+    "category": "tgt:t3/c3__cat",
+    "channel": "__no_channel__"
+   },
+   "counter": {
+    "category_rows": 244321,
+    "channel_rows": 0,
+    "channel_state_rows": 0,
+    "steps": 3106
+   }
+  }
+ },
+ "sha256": "c27b3ddbbc9743d5cedeb325e514171eb91debaa99d3386a058211ab5054f5ff"
+}

@@ -1,0 +1,52 @@
+{
+ "arm": "sf_attr",
+ "parts": [
+  "attr"
+ ],
+ "fit_seed": 20260928,
+ "generation_seed": 20261012,
+ "seconds": 166.6,
+ "events": 167538,
+ "customers": 147,
+ "frauds": 977,
+ "fraud_customers": 96,
+ "continuation": 0.8966223132036848,
+ "novel_merchant_fraud": 0.6110542476970318,
+ "novel_merchant_normal": 0.39090783556774994,
+ "merchants_per_customer_median": 504.0,
+ "category_matches_merchant_normal": 0.990315860255402,
+ "category_matches_merchant_fraud": 0.14841351074718526,
+ "gap_minutes_by_kind": {
+  "onset": 368.68333333333334,
+  "cont": 53.90833333333333,
+  "exit": 181.33333333333334,
+  "normal": 295.15
+ },
+ "base_weights_sha256": "6e4409523577dcdf0f8ec83b473f70176f60cec5a1af26a57fcc095b34ece6ea",
+ "heads_sha256": "85240100197231175d9b4c9f3f69088a653cf38206c0b908845efad6dec12b56",
+ "modules": {
+  "base": {
+   "label_key": "tgt:t4/c4__cat",
+   "label_first": true,
+   "transition": true,
+   "retrained_heads": true,
+   "attached": true
+  },
+  "attr": {
+   "arm": "attr_normal",
+   "keys": {
+    "label": "tgt:t4/c4__cat",
+    "merchant": "tgt:t1/c1__cat",
+    "category": "tgt:t3/c3__cat",
+    "channel": "__no_channel__"
+   },
+   "counter": {
+    "category_rows": 244321,
+    "channel_rows": 0,
+    "channel_state_rows": 0,
+    "steps": 3106
+   }
+  }
+ },
+ "sha256": "54be3d5656431f393a7e0a07418a6ffed8336402b573b8dbbc7b5ff57ee71ce8"
+}

@@ -1,17 +1,5 @@
 model,role,fit,draw,path
-ARGN_sf_gap,transfer,20260928,20261011,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_gap_20260928/generated_validation_20261011.parquet
-ARGN_sf_attr,transfer,20260928,20261011,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_attr_20260928/generated_validation_20261011.parquet
 ARGN_sf_merchant,transfer,20260928,20261011,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_merchant_20260928/generated_validation_20261011.parquet
-ARGN_sf_full,transfer,20260928,20261011,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_full_20260928/generated_validation_20261011.parquet
-ARGN_sf_gap,transfer,20260928,20261012,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_gap_20260928/generated_validation_20261012.parquet
-ARGN_sf_attr,transfer,20260928,20261012,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_attr_20260928/generated_validation_20261012.parquet
 ARGN_sf_merchant,transfer,20260928,20261012,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_merchant_20260928/generated_validation_20261012.parquet
-ARGN_sf_full,transfer,20260928,20261012,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_full_20260928/generated_validation_20261012.parquet
-ARGN_sf_gap,transfer,20260929,20261011,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_gap_20260929/generated_validation_20261011.parquet
-ARGN_sf_attr,transfer,20260929,20261011,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_attr_20260929/generated_validation_20261011.parquet
 ARGN_sf_merchant,transfer,20260929,20261011,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_merchant_20260929/generated_validation_20261011.parquet
-ARGN_sf_full,transfer,20260929,20261011,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_full_20260929/generated_validation_20261011.parquet
-ARGN_sf_gap,transfer,20260929,20261012,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_gap_20260929/generated_validation_20261012.parquet
-ARGN_sf_attr,transfer,20260929,20261012,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_attr_20260929/generated_validation_20261012.parquet
 ARGN_sf_merchant,transfer,20260929,20261012,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_merchant_20260929/generated_validation_20261012.parquet
-ARGN_sf_full,transfer,20260929,20261012,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_full_20260929/generated_validation_20261012.parquet
