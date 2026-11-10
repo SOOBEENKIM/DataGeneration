@@ -94,7 +94,7 @@ def fit_merchant_memory(train, stats=None, codes=None, rare_code=-1, seed=202611
 
 
 @contextmanager
-def merchant_module(stats, params, arm="full", label=LABEL, merchant=MERCHANT):
+def merchant_module(stats, params, arm="full", label=LABEL, merchant=MERCHANT, calibration=None):
     """Wrap whatever generation.SequentialModel currently is (e.g. the transition/label-first ModuleModel) and replace the
     merchant predictor output. arm: full | gate_only (no fraud pool) | repeat_blind (label-independent gate, no pool)."""
     import mostlyai.engine._tabular.generation as generation
@@ -106,6 +106,14 @@ def merchant_module(stats, params, arm="full", label=LABEL, merchant=MERCHANT):
     codes, rare_code, V = _codes(stats)
     gate = torch.tensor(params["gate"], dtype=torch.float64); gate_blind = torch.tensor(params["gate_blind"], dtype=torch.float64)
     lam = float(params["lam"]); pi = float(params["pi"]) if arm == "full" else 0.0
+    # ibm_merchant_marginal_v1 (2026-11-10), optional: calibration = dict(stick=(V,) repeat weights per merchant code, lam=...,
+    # cat_of_m=(V,) category index per merchant code, p_cat_novel=(K,) target category shares of normal first visits). None = unchanged.
+    cal = calibration or {}
+    if cal.get("lam") is not None:
+        lam = float(cal["lam"])
+    stick = torch.tensor(cal["stick"], dtype=torch.float64) if cal.get("stick") is not None else None
+    cat_of_m = torch.tensor(cal["cat_of_m"], dtype=torch.long) if cal.get("p_cat_novel") is not None else None
+    p_cat = torch.tensor(cal["p_cat_novel"], dtype=torch.float64) if cal.get("p_cat_novel") is not None else None
     pool = torch.tensor(params["pool"], dtype=torch.float64); edges = torch.tensor(params["position_edges"], dtype=torch.float64)
     parent_model = generation.SequentialModel
     counter = dict(merchant_steps=0, rows=0, repeat_mass=0.0, novel_mass=0.0, pool_mass=0.0)
@@ -115,6 +123,8 @@ def merchant_module(stats, params, arm="full", label=LABEL, merchant=MERCHANT):
             super().__init__(*args, **kwargs)
             self.mm_gate = gate.to(self.device); self.mm_gate_blind = gate_blind.to(self.device); self.mm_pool = pool.to(self.device); self.mm_edges = edges.to(self.device)
             self.mm_label = None
+            self.mm_stick = stick.to(self.device) if stick is not None else None
+            self.mm_cat_of_m = cat_of_m.to(self.device) if cat_of_m is not None else None; self.mm_p_cat = p_cat.to(self.device) if p_cat is not None else None
             self.embedders.get(label_key).register_forward_pre_hook(self._capture_label)
             self.predictors.register_forward_hook(self._replace_merchant)
 
@@ -140,15 +150,24 @@ def merchant_module(stats, params, arm="full", label=LABEL, merchant=MERCHANT):
             rec = torch.where(has_past, 1.0 / (n.unsqueeze(1) - last).clamp(min=1).double(), torch.zeros_like(counts))
             rec = rec / rec.sum(1, keepdim=True).clamp(min=1e-12)
             repeat = lam * freq + (1 - lam) * rec
+            if self.mm_stick is not None:  # category-level stickiness of the customer's past merchants
+                repeat = repeat * self.mm_stick.unsqueeze(0); repeat = repeat / repeat.sum(1, keepdim=True).clamp(min=1e-300)
             # novel branch: mask the customer's past (the rare bucket stays eligible: it stands for many merchants)
             mask = has_past.clone(); mask[:, rare_code] = False
             nb = backbone.masked_fill(mask, 0.0); nb = nb / nb.sum(1, keepdim=True).clamp(min=1e-12)
-            novel = nb
+            nb_n = nb  # normal rows' novel branch
+            if self.mm_p_cat is not None:  # category first: train shares of first-visit categories, backbone within the category
+                idx = self.mm_cat_of_m.unsqueeze(0).expand(B, -1)
+                mass = torch.zeros((B, self.mm_p_cat.shape[-1]), dtype=nb.dtype, device=nb.device).scatter_add_(1, idx, nb)
+                pc = self.mm_p_cat[b] if self.mm_p_cat.dim() == 2 else self.mm_p_cat.unsqueeze(0)  # amendment 1: (position bin, K) table
+                target = pc * mass.gt(0); target = target / target.sum(1, keepdim=True).clamp(min=1e-300)
+                nb_n = nb * torch.gather(target / mass.clamp(min=1e-300), 1, idx); nb_n = nb_n / nb_n.sum(1, keepdim=True).clamp(min=1e-300)
+            novel = torch.where(self.mm_label.eq(1).unsqueeze(1), nb, nb_n)
             if pi > 0:
                 pp = self.mm_pool.unsqueeze(0).expand(B, -1).masked_fill(mask, 0.0); pz = pp.sum(1, keepdim=True)
                 pp = torch.where(pz.gt(1e-12), pp / pz.clamp(min=1e-12), nb)
                 fraud = self.mm_label.eq(1).unsqueeze(1)
-                novel = torch.where(fraud, pi * pp + (1 - pi) * nb, nb)
+                novel = torch.where(fraud, pi * pp + (1 - pi) * nb, nb_n)
                 counter["pool_mass"] += float((g * pi)[self.mm_label.eq(1)].sum())
             probs = g.unsqueeze(1) * novel + (1 - g).unsqueeze(1) * repeat
             probs = probs / probs.sum(1, keepdim=True).clamp(min=1e-12)
@@ -174,6 +193,6 @@ def merchant_module(stats, params, arm="full", label=LABEL, merchant=MERCHANT):
 
     generation.SequentialModel = MerchantModel
     try:
-        yield dict(arm=arm, lam=lam, pi=pi, merchant_key=merchant_key, counter=counter)
+        yield dict(arm=arm, lam=lam, pi=pi, merchant_key=merchant_key, counter=counter, sticky=stick is not None, category_first=p_cat is not None)
     finally:
         generation.SequentialModel = parent_model
