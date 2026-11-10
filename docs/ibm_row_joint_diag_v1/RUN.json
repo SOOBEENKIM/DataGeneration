@@ -1,0 +1,8 @@
+{
+ "seconds": 350,
+ "sources": 12,
+ "swap_jobs": 44,
+ "donor": "train.parquet rows with event_index > 0, same label, seed 20261110",
+ "detector": "stable",
+ "test_read": false
+}
