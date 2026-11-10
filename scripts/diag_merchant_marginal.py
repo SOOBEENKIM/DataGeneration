@@ -66,11 +66,16 @@ def main():
     res = dict(real_dev=mean_dicts([stats(dev, ref)]))
     rng = np.random.default_rng(20261107); trp = prep(tr, modal); ids = np.sort(trp.entity_id.unique())
     res["real_train_240"] = mean_dicts([stats(trp[trp.entity_id.isin(rng.choice(ids, 240, replace=False))], ref) for _ in range(8)])
-    arms = {"ARGN_native": "ibm_tabformer_v1/runs/native_{fs}", "ARGN_model": "ibm_routed_heads_v1/runs/routed_subst_table_{fs}", "ARGN_current": "ibm_merchant_attr_v1/runs/attr_all_{fs}",
+    arms = {"ARGN_native": "ibm_tabformer_v1/runs/native_{fs}", "ARGN_model": "ibm_routed_heads_v1/runs/routed_subst_table_{fs}", "ARGN_current": "ibm_merchant_attr_v1/runs/attr_all_{fs}", "ARGN_novelcat": "ibm_merchant_marginal_v1/runs/novelcat_{fs}",
+            "ARGN_novelcat_pos": "ibm_merchant_marginal_v1/runs/novelcat_pos_{fs}", "ARGN_novelcat_pos_rarefix": "ibm_merchant_marginal_v1/runs/novelcat_pos_rarefix_{fs}",
             "RTF_table": "ibm_realtabformer_v1/runs/rtf_table_{fs}"}
     for a, t in arms.items():
+        if not all((SF / (t.format(fs=fs) + f"/generated_validation_{gs}.parquet")).exists() for fs in (20261108, 20261109) for gs in (20261011, 20261012)):
+            continue
         res[a] = mean_dicts([stats(prep(pd.read_parquet(SF / (t.format(fs=fs) + f"/generated_validation_{gs}.parquet")), modal), ref) for fs in (20261108, 20261109) for gs in (20261011, 20261012)])
-    json.dump(res, open(OUT / "DIAG_MERCHANT_MARGINAL.json", "w"), indent=1)
+    json.dump(res, open(OUT / ("DIAG_MERCHANT_MARGINAL_after.json" if "ARGN_novelcat" in res else "DIAG_MERCHANT_MARGINAL.json"), "w"), indent=1)
+    real = pd.Series(res["real_dev"]["visits_per_customer_merchant"])
+    print("visits rank correlation with real dev (top-10 categories):", {k: round(float(pd.Series(v["visits_per_customer_merchant"]).corr(real, method="spearman")), 3) for k, v in res.items()})
     scal = ["novel_share", "rare_share", "merchants_per_customer", "top1_share", "top3_share", "tv_all", "tv_novel", "tv_repeat"]
     print(pd.DataFrame({k: {s: v.get(s) for s in scal} for k, v in res.items()}).round(3).to_string())
     for key in ("share_all", "share_novel", "share_repeat", "visits_per_customer_merchant", "distinct_merchants_per_customer", "top1_category"):

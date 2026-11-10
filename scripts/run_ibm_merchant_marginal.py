@@ -20,7 +20,7 @@ from run_ibm_merchant_attr import NATIVE, TABLE, ROUTED_HEADS, MM_PARAMS, CHAN_T
 OUT = ROOT / "artifacts/ibm_merchant_marginal_v1"
 DOCS = ROOT / "docs/ibm_merchant_marginal_v1"
 PARAMS = OUT / "calibration.json"
-ARMS = ["novelcat", "novelcat_pos"]  # amendment 1 (2026-11-10): sticky not adopted (hold-out gain .011 < .05); position-binned category table added
+ARMS = ["novelcat", "novelcat_pos", "novelcat_pos_rarefix"]  # amendment 1 (2026-11-10): sticky not adopted (hold-out gain .011 < .05); position-binned category table added
 
 
 def fit(fs):
@@ -54,6 +54,7 @@ def generate(fs, arms):
     stick = (np.asarray(cal["w_cat"])[np.asarray(cal["cat_of_m"])]).tolist()
     calib = dict(sticky=dict(stick=stick, lam=cal["lam_sticky"]), novelcat=dict(cat_of_m=cal["cat_of_m"], p_cat_novel=cal["p_cat_novel"]),
                  novelcat_pos=dict(cat_of_m=cal["cat_of_m"], p_cat_novel=cal["p_cat_novel_pos"]),
+                 novelcat_pos_rarefix=dict(cat_of_m=cal["cat_of_m"], p_cat_novel=cal["p_cat_novel_pos"], rare_no_repeat=True),  # amendment 2
                  both=dict(stick=stick, lam=cal["lam_sticky"], cat_of_m=cal["cat_of_m"], p_cat_novel=cal["p_cat_novel"]))
     ctx = pd.read_parquet(NATIVE / "prepared/validation_context.parquet"); device = "cuda" if torch.cuda.is_available() else "cpu"
     head_path = ROUTED_HEADS / f"routed_subst_{fs}" / "heads.pt"; head_state = torch.load(head_path, map_location="cpu")

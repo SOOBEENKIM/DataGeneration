@@ -74,7 +74,7 @@ def registry_ibm():
             for arm in ["attr_cat", "attr_chan", "attr_normal", "attr_all"]:  # ibm_merchant_attr_v1 (2026-11-10): merchant-attribute consistency on the current ARGN model
                 rows.append(dict(family="merchant_attr", model=f"ARGN_{arm}_ibm2013", fit_seed=fs, generation_seed=gs,
                                  path=str(SF / f"ibm_merchant_attr_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
-            for arm in ["novelcat", "novelcat_pos"]:  # ibm_merchant_marginal_v1 (2026-11-10): category-first novel merchants on the attr_all stack
+            for arm in ["novelcat", "novelcat_pos", "novelcat_pos_rarefix"]:  # ibm_merchant_marginal_v1 (2026-11-10): category-first novel merchants on the attr_all stack
                 rows.append(dict(family="merchant_marginal", model=f"ARGN_{arm}_ibm2013", fit_seed=fs, generation_seed=gs,
                                  path=str(SF / f"ibm_merchant_marginal_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
             for arm in ["rtf_full", "rtf_fraud_only", "rtf_fraud_only_chan"]:  # H5 (2026-11-10): same component on RTF; fraud_only = amendment 2 ablation

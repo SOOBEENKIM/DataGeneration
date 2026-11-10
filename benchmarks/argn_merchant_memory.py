@@ -152,6 +152,8 @@ def merchant_module(stats, params, arm="full", label=LABEL, merchant=MERCHANT, c
             repeat = lam * freq + (1 - lam) * rec
             if self.mm_stick is not None:  # category-level stickiness of the customer's past merchants
                 repeat = repeat * self.mm_stick.unsqueeze(0); repeat = repeat / repeat.sum(1, keepdim=True).clamp(min=1e-300)
+            if cal.get("rare_no_repeat"):  # ibm_merchant_marginal_v1 amendment 2: the rare bucket is many merchants, never one habitual merchant
+                repeat = repeat.clone(); repeat[:, rare_code] = 0.0; repeat = repeat / repeat.sum(1, keepdim=True).clamp(min=1e-300)
             # novel branch: mask the customer's past (the rare bucket stays eligible: it stands for many merchants)
             mask = has_past.clone(); mask[:, rare_code] = False
             nb = backbone.masked_fill(mask, 0.0); nb = nb / nb.sum(1, keepdim=True).clamp(min=1e-12)
