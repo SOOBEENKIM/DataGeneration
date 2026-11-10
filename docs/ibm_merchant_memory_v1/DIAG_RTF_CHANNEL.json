@@ -1,0 +1,223 @@
+{
+ "train_merchants": 25088,
+ "pool_merchants": 191,
+ "merchant_purity_row_weighted": {
+  "channel": 0.9992345465177652,
+  "category": 0.9998299981219688
+ },
+ "pool": {
+  "rows_per_merchant_median": 237.0,
+  "rows_per_merchant_mean": 1786.0890052356021,
+  "modal_online_share_of_merchants": 0.24083769633507854,
+  "channel_purity_mean": 0.9816858774983516,
+  "category_purity_mean": 0.9999450406409996
+ },
+ "train_fraud": {
+  "online": 0.8449731389102072,
+  "online_novel": 0.7569832402234636,
+  "online_repeat": 0.9522998296422487,
+  "rows": 1303,
+  "novel_share": 0.5495011511895626
+ },
+ "real_dev": {
+  "fraud": {
+   "rows": 487,
+   "online": 0.8809034907597536,
+   "known_merchant": 0.9917864476386037,
+   "in_pool": 0.9691991786447639,
+   "channel_matches_merchant": 0.3146997929606625,
+   "category_matches_merchant": 0.9958592132505176,
+   "novel_pool": {
+    "rows": 247,
+    "online": 0.7935222672064778,
+    "merchant_modal_online": 0.2388663967611336,
+    "channel_matches_merchant": 0.44534412955465585,
+    "category_matches_merchant": 1.0
+   },
+   "novel_other": {
+    "rows": 12,
+    "online": 0.6666666666666666,
+    "merchant_modal_online": 0.4444444444444444,
+    "channel_matches_merchant": 0.5555555555555556,
+    "category_matches_merchant": 0.8888888888888888
+   },
+   "repeat": {
+    "rows": 228,
+    "online": 0.9868421052631579,
+    "merchant_modal_online": 0.15418502202643172,
+    "channel_matches_merchant": 0.16299559471365638,
+    "category_matches_merchant": 0.9955947136563876
+   }
+  },
+  "normal": {
+   "rows": 268509,
+   "online": 0.10675247384631428,
+   "known_merchant": 0.8443702073301081,
+   "in_pool": 0.31032106931238806,
+   "channel_matches_merchant": 0.9999911785851333,
+   "category_matches_merchant": 0.9992193047842943
+  }
+ },
+ "generated": {
+  "rtf_native": {
+   "generations": 4,
+   "fraud": {
+    "rows": 104.0,
+    "online": 0.8385010271834201,
+    "known_merchant": 1.0,
+    "in_pool": 0.84944354939934,
+    "channel_matches_merchant": 0.39500882599210985,
+    "category_matches_merchant": 0.997093023255814,
+    "novel_pool": {
+     "rows": 25.5,
+     "online": 0.9016148325358851,
+     "merchant_modal_online": 0.2841336295283664,
+     "channel_matches_merchant": 0.3825187969924812,
+     "category_matches_merchant": 0.9910714285714286
+    },
+    "novel_other": {
+     "rows": 2.75,
+     "online": 0.6916666666666667,
+     "merchant_modal_online": 0.23333333333333334,
+     "channel_matches_merchant": 0.5416666666666666,
+     "category_matches_merchant": 1.0
+    },
+    "repeat": {
+     "rows": 75.75,
+     "online": 0.8317158847344606,
+     "merchant_modal_online": 0.22445008551819698,
+     "channel_matches_merchant": 0.3927342007837364,
+     "category_matches_merchant": 1.0
+    }
+   },
+   "normal": {
+    "rows": 268892.0,
+    "online": 0.16158797201774588,
+    "known_merchant": 1.0,
+    "in_pool": 0.4306293230121935,
+    "channel_matches_merchant": 0.9998726225077548,
+    "category_matches_merchant": 0.9999470041331
+   }
+  },
+  "rtf_table": {
+   "generations": 4,
+   "fraud": {
+    "rows": 432.0,
+    "online": 0.8509527592667252,
+    "known_merchant": 1.0,
+    "in_pool": 0.8581503308274243,
+    "channel_matches_merchant": 0.4045639955415372,
+    "category_matches_merchant": 1.0,
+    "novel_pool": {
+     "rows": 90.75,
+     "online": 0.9243911139134804,
+     "merchant_modal_online": 0.3043180430645099,
+     "channel_matches_merchant": 0.3799269291510295,
+     "category_matches_merchant": 1.0
+    },
+    "novel_other": {
+     "rows": 2.75,
+     "online": 0.625,
+     "merchant_modal_online": 0.5,
+     "channel_matches_merchant": 0.875,
+     "category_matches_merchant": 1.0
+    },
+    "repeat": {
+     "rows": 338.5,
+     "online": 0.839265736338924,
+     "merchant_modal_online": 0.24164574089792462,
+     "channel_matches_merchant": 0.4023800045590006,
+     "category_matches_merchant": 1.0
+    }
+   },
+   "normal": {
+    "rows": 268564.0,
+    "online": 0.16199310246633775,
+    "known_merchant": 1.0,
+    "in_pool": 0.4296299726776517,
+    "channel_matches_merchant": 0.9995856830796859,
+    "category_matches_merchant": 0.9999366985032161
+   }
+  },
+  "rtf_full": {
+   "generations": 4,
+   "fraud": {
+    "rows": 432.0,
+    "online": 0.7261098726492281,
+    "known_merchant": 1.0,
+    "in_pool": 0.8227375672919581,
+    "channel_matches_merchant": 0.4583530960229564,
+    "category_matches_merchant": 0.9958053691275167,
+    "novel_pool": {
+     "rows": 271.0,
+     "online": 0.7566221151425687,
+     "merchant_modal_online": 0.2041405414571266,
+     "channel_matches_merchant": 0.44325462653052694,
+     "category_matches_merchant": 0.9926719567671102
+    },
+    "novel_other": {
+     "rows": 2.0,
+     "online": 0.3333333333333333,
+     "merchant_modal_online": 0.0,
+     "channel_matches_merchant": 0.6666666666666666,
+     "category_matches_merchant": 1.0
+    },
+    "repeat": {
+     "rows": 159.0,
+     "online": 0.68190913560163,
+     "merchant_modal_online": 0.1605049524694349,
+     "channel_matches_merchant": 0.47859581686780495,
+     "category_matches_merchant": 1.0
+    }
+   },
+   "normal": {
+    "rows": 268564.0,
+    "online": 0.16865447437936182,
+    "known_merchant": 1.0,
+    "in_pool": 0.5121549625128379,
+    "channel_matches_merchant": 0.9996387574694433,
+    "category_matches_merchant": 0.9998780527850317
+   }
+  },
+  "rtf_fraud_only": {
+   "generations": 4,
+   "fraud": {
+    "rows": 432.0,
+    "online": 0.7182008442621008,
+    "known_merchant": 1.0,
+    "in_pool": 0.795224938933289,
+    "channel_matches_merchant": 0.4746484217516067,
+    "category_matches_merchant": 0.9952302748594872,
+    "novel_pool": {
+     "rows": 257.5,
+     "online": 0.7692333177200248,
+     "merchant_modal_online": 0.2104205895975635,
+     "channel_matches_merchant": 0.4368678657548216,
+     "category_matches_merchant": 0.9926701310437531
+    },
+    "novel_other": {
+     "rows": 1.0,
+     "online": 0.5,
+     "merchant_modal_online": 0.0,
+     "channel_matches_merchant": 0.5,
+     "category_matches_merchant": 1.0
+    },
+    "repeat": {
+     "rows": 173.5,
+     "online": 0.6459618418809195,
+     "merchant_modal_online": 0.17428156787226268,
+     "channel_matches_merchant": 0.5259387736103908,
+     "category_matches_merchant": 0.9988095238095238
+    }
+   },
+   "normal": {
+    "rows": 268564.0,
+    "online": 0.1619502542546848,
+    "known_merchant": 1.0,
+    "in_pool": 0.4295927106571803,
+    "channel_matches_merchant": 0.999560558224279,
+    "category_matches_merchant": 0.9999385611862248
+   }
+  }
+ }
+}
