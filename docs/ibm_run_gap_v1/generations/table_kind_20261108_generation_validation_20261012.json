@@ -1,0 +1,67 @@
+{
+ "arm": "table_kind",
+ "fit_seed": 20261108,
+ "generation_seed": 20261012,
+ "seconds": 71.7,
+ "events": 274731,
+ "customers": 240,
+ "frauds": 446,
+ "fraud_customers": 39,
+ "gap_minutes_by_kind": {
+  "onset": {
+   "n": 168,
+   "median": 134.33333333333331,
+   "le60": 0.2976190476190476
+  },
+  "cont": {
+   "n": 278,
+   "median": 43.666666666666664,
+   "le60": 0.5539568345323741
+  },
+  "exit": {
+   "n": 167,
+   "median": 149.83333333333334,
+   "le60": 0.2934131736526946
+  },
+  "normal": {
+   "n": 273878,
+   "median": 262.8333333333333,
+   "le60": 0.242023820825331
+  }
+ },
+ "base_weights_sha256": "b0b1f46a977d4e7eb35e6b665538b7ae0b5c5dd118565d69e22d19410059603f",
+ "heads_sha256": "94d23b571a57f528404eb964a9fbf9e04751569a177cbd1817dd10c8f6ae69f7",
+ "params_sha256": "2e935d0a65143c943fd5b5cd2f16dbc558f2e92f475831c75e5c936c3ae94dc1",
+ "merchant_params_sha256": "6b0d0eac1ed516467939cb70dbca95f039401726106d69827b2a9c97ebb13e11",
+ "base_module": {
+  "label_key": "tgt:t5/c5__cat",
+  "label_first": true,
+  "transition": true,
+  "retrained_heads": true,
+  "attached": true
+ },
+ "merchant_module": {
+  "arm": "full",
+  "lam": 0.75,
+  "pi": 0.9318181818181818,
+  "merchant_key": "tgt:t1/c1__cat",
+  "counter": {
+   "merchant_steps": 3886,
+   "rows": 366285,
+   "repeat_mass": 339656.3816277575,
+   "novel_mass": 26628.618372278852,
+   "pool_mass": 319.81178694753356
+  }
+ },
+ "module": {
+  "arm": "table_kind",
+  "gap_key": "tgt:t0/c0__bin",
+  "counter": {
+   "gap_steps": 3886,
+   "onset": 237,
+   "cont": 376,
+   "exit": 237
+  }
+ },
+ "sha256": "2cebf8bacca5eafcf1e27513714951c54476927fefa128219f27960686a57dc6"
+}

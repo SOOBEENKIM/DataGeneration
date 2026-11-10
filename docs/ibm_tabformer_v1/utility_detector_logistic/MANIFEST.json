@@ -1,6 +1,6 @@
 {
- "created_utc": "2026-11-10T06:31:07Z",
- "seconds": 55.7,
+ "created_utc": "2026-11-10T07:24:00Z",
+ "seconds": 61.8,
  "dataset": "ibm",
  "detector": "logistic",
  "feature_set": "all",
@@ -54,7 +54,7 @@
  },
  "test": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/prepared/validation.parquet",
  "test_sha256": "00e2ee35671c6ceee60c2b98fd4742d06ac67665555ca0f5d492715d221210ea",
- "generations": 148,
+ "generations": 164,
  "real_draws": 20,
  "errors": 0,
  "new_fits": 0,
