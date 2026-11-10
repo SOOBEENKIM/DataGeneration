@@ -1,0 +1,9 @@
+{
+ "train_match_normal": 0.99186484271188,
+ "train_match_fraud": 0.9942462600690449,
+ "sf_base_fraud_category_tv_vs_train": {
+  "actual": 0.12605870480323614,
+  "implied": 0.22981675985011907
+ },
+ "train147_fraud_category_tv_floor": 0.03230895656788417
+}

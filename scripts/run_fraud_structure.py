@@ -84,6 +84,10 @@ def dataset(name):
         for fs in [20260930, 20261001]:
             for gs in [20261011, 20261012]:
                 gens.append(dict(model="ARGN_gap_transition", role="current_model", fit=fs, draw=gs, path=SF / f"argn_gap_episode_v1/runs/gap_and_transition_{fs}/generated_validation_{gs}.parquet"))
+        for fs in [20260928, 20260929]:  # sparkov_transfer_v1 (2026-11-10)
+            for gs in [20261011, 20261012]:
+                gens += [dict(model=f"ARGN_{arm}", role="transfer", fit=fs, draw=gs, path=SF / f"sparkov_transfer_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")
+                         for arm in ["sf_base", "sf_gap", "sf_attr", "sf_attr_all", "sf_merchant", "sf_full"]]
         for gs in [20261011, 20261012]:
             gens.append(dict(model="RTF_native", role="backbone", fit=20261107, draw=gs, path=SF / f"realtabformer_sparkov_v1/runs/generated_development_{gs}.parquet"))
         return dict(train=train, dev=dev, ctx=ctx, numeric=numeric, gens=gens, n_dev=147, n_train=688,

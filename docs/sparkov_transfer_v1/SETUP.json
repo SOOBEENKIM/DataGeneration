@@ -1,0 +1,21 @@
+{
+ "20260928": {
+  "source": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/runs/native_20260928/workspace",
+  "copy": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/workspaces/native_20260928",
+  "weights_sha256": "6e4409523577dcdf0f8ec83b473f70176f60cec5a1af26a57fcc095b34ece6ea"
+ },
+ "20260929": {
+  "source": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/runs/native_20260929/workspace",
+  "copy": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/workspaces/native_20260929",
+  "weights_sha256": "c7f9eb243589d5834fa0ad295da328189671a70fcf609edcd80ec29a6b02421a"
+ },
+ "transition_table": {
+  "first": 0.07619738751814223,
+  "train_customers": 688,
+  "train_events": 916567,
+  "train_frauds": 5214,
+  "p_fraud_after_normal_age1_never": 0.002354788069073783,
+  "p_fraud_after_fraud_age1": 0.9990636704119851,
+  "p_fraud_after_fraud_age5": 0.9675834970530451
+ }
+}

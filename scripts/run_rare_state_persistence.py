@@ -130,6 +130,10 @@ def registry():
             add("other_generator", "CPAR_length", fs, gs, SF / f"comparison_completion_v1/cpar_length/{fs}/generated_development_{gs}.parquet")
             if fs != 20261023:
                 add("other_generator", "MeLD_500", fs, gs, SF / f"meld_500_pilot_v1/runs/{fs}/generated_development_{gs}.parquet")
+    for fs in [20260928, 20260929]:  # sparkov_transfer_v1 (2026-11-10): the IBM procedure on Sparkov, current code path
+        for gs in [20261011, 20261012]:
+            for arm in ["sf_base", "sf_gap", "sf_attr", "sf_attr_all", "sf_merchant", "sf_full"]:
+                add("transfer", f"ARGN_{arm}", fs, gs, SF / f"sparkov_transfer_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")
     return pd.DataFrame(rows).drop_duplicates("path").reset_index(drop=True)
 
 

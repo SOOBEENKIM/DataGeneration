@@ -128,9 +128,9 @@ def generate(fs, arm, part_list):
             if "gap" in part_list:
                 from benchmarks.argn_run_gap import gap_module
                 infos["gap"] = stack.enter_context(gap_module(stats, json.loads((OUT / f"gap_tables_{fs}.json").read_text()), "table_kind"))
-            if "attr" in part_list:
+            if "attr" in part_list or "attr_all" in part_list:  # amendment 1: "attr" = normal rows only, "attr_all" = fraud rows too
                 from benchmarks.argn_merchant_attr import attr_module
-                infos["attr"] = stack.enter_context(attr_module(stats, dict(np.load(OUT / f"attr_tables_{fs}.npz")), (), "attr_all"))
+                infos["attr"] = stack.enter_context(attr_module(stats, dict(np.load(OUT / f"attr_tables_{fs}.npz")), (), "attr_all" if "attr_all" in part_list else "attr_normal"))
             engine_generate(ctx_data=ctx, device=device, workspace_dir=wsdir(fs))
         raw = pd.read_parquet(wsdir(fs) / "SyntheticData"); raw.to_parquet(folder / f"native_validation_{gs}.parquet", index=False)
         d = raw.rename(columns={"customer_id": "entity_id"}).copy()
