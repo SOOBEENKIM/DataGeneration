@@ -1,0 +1,18 @@
+{
+ "dataset": "ibm_test",
+ "sources": {
+  "train": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/prepared/train.parquet",
+  "dev": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/prepared/test.parquet"
+ },
+ "source_sha256": {
+  "train": "063a1c0f4c30806e5f7254e75b426c75b368be589dd15be047321572747ab719",
+  "dev": "502762f0786993e38701077d24712538c05d952525bb9f49e6df030940aab61e"
+ },
+ "floor_seed": 20261107,
+ "floor_draws": 200,
+ "generations": 28,
+ "skipped": 0,
+ "seconds": 183,
+ "protocol_sha256": "88f0fe88308240298f7ca37af22fe72402b3add599a0ea1fbe8d0928a8e62702",
+ "test_read": true
+}

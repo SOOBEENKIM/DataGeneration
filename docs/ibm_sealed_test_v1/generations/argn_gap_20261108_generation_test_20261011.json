@@ -1,0 +1,53 @@
+{
+ "arm": "argn_gap",
+ "fit_seed": 20261108,
+ "generation_seed": 20261011,
+ "split": "test",
+ "seconds": 72.0,
+ "events": 266788,
+ "customers": 239,
+ "frauds": 426,
+ "fraud_customers": 30,
+ "novel_merchant_fraud": 0.5234741784037559,
+ "novel_merchant_normal": 0.07931311523415502,
+ "merchants_per_customer_median": 85.0,
+ "rare_rows_named": 0,
+ "kernel": null,
+ "base_weights_sha256": "b0b1f46a977d4e7eb35e6b665538b7ae0b5c5dd118565d69e22d19410059603f",
+ "heads_sha256": "94d23b571a57f528404eb964a9fbf9e04751569a177cbd1817dd10c8f6ae69f7",
+ "modules": {
+  "base": {
+   "label_key": "tgt:t5/c5__cat",
+   "label_first": true,
+   "transition": true,
+   "retrained_heads": true,
+   "attached": true
+  },
+  "merchant": {
+   "arm": "full",
+   "lam": 0.75,
+   "pi": 0.9318181818181818,
+   "merchant_key": "tgt:t1/c1__cat",
+   "counter": {
+    "merchant_steps": 3911,
+    "rows": 359347,
+    "repeat_mass": 333030.47004478215,
+    "novel_mass": 26316.529955235157,
+    "pool_mass": 344.39145970239963
+   },
+   "sticky": false,
+   "category_first": false
+  },
+  "gap": {
+   "arm": "table_kind",
+   "gap_key": "tgt:t0/c0__bin",
+   "counter": {
+    "gap_steps": 3911,
+    "onset": 228,
+    "cont": 417,
+    "exit": 227
+   }
+  }
+ },
+ "sha256": "91180febb019da708562d6735f0459a7ddc045093e6ea73bcb00ff3d8ad8fc2e"
+}

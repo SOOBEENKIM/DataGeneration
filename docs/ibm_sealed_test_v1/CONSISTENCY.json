@@ -1,0 +1,662 @@
+{
+ "real_test": {
+  "normal": {
+   "rows": 258172,
+   "online": 0.12215887083029918,
+   "category_matches_merchant": 0.9996338957609705,
+   "channel_matches_merchant": 0.9999862710910364,
+   "online_at_swipe_merchant": 0.0
+  },
+  "fraud": {
+   "rows": 228,
+   "online": 0.7719298245614035,
+   "category_matches_merchant": 1.0,
+   "channel_matches_merchant": 0.37962962962962965,
+   "online_at_swipe_merchant": 0.6203703703703703
+  }
+ },
+ "argn_native": {
+  "mean": {
+   "normal": {
+    "rows": 268609.25,
+    "online": 0.20704873752969666,
+    "category_matches_merchant": 0.4816185713635678,
+    "channel_matches_merchant": 0.8671069123407182,
+    "online_at_swipe_merchant": 0.07548124676771951
+   },
+   "fraud": {
+    "rows": 193.75,
+    "online": 0.2889590183672114,
+    "category_matches_merchant": 0.396161625590575,
+    "channel_matches_merchant": 0.7933459749453025,
+    "online_at_swipe_merchant": 0.1438163308712311
+   }
+  },
+  "generations": [
+   {
+    "normal": {
+     "rows": 266256,
+     "online": 0.22257902169340785,
+     "category_matches_merchant": 0.4579302325581395,
+     "channel_matches_merchant": 0.8547286821705427,
+     "online_at_swipe_merchant": 0.08987984496124031
+    },
+    "fraud": {
+     "rows": 195,
+     "online": 0.3333333333333333,
+     "category_matches_merchant": 0.44680851063829785,
+     "channel_matches_merchant": 0.7925531914893617,
+     "online_at_swipe_merchant": 0.14893617021276595
+    },
+    "fit": 20261108,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 262876,
+     "online": 0.2316757710859873,
+     "category_matches_merchant": 0.4612636100564231,
+     "channel_matches_merchant": 0.8536808503119564,
+     "online_at_swipe_merchant": 0.09065387167576949
+    },
+    "fraud": {
+     "rows": 192,
+     "online": 0.296875,
+     "category_matches_merchant": 0.34594594594594597,
+     "channel_matches_merchant": 0.7891891891891892,
+     "online_at_swipe_merchant": 0.15675675675675677
+    },
+    "fit": 20261108,
+    "seed": 20261012
+   },
+   {
+    "normal": {
+     "rows": 256776,
+     "online": 0.17055332274044302,
+     "category_matches_merchant": 0.4990977220984063,
+     "channel_matches_merchant": 0.8846324667997744,
+     "online_at_swipe_merchant": 0.05625332602441552
+    },
+    "fraud": {
+     "rows": 193,
+     "online": 0.24870466321243523,
+     "category_matches_merchant": 0.43956043956043955,
+     "channel_matches_merchant": 0.8351648351648352,
+     "online_at_swipe_merchant": 0.09340659340659341
+    },
+    "fit": 20261109,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 288529,
+     "online": 0.20338683459894846,
+     "category_matches_merchant": 0.5081827207413022,
+     "channel_matches_merchant": 0.8753856500805995,
+     "online_at_swipe_merchant": 0.06513794440945274
+    },
+    "fraud": {
+     "rows": 195,
+     "online": 0.27692307692307694,
+     "category_matches_merchant": 0.35233160621761656,
+     "channel_matches_merchant": 0.7564766839378239,
+     "online_at_swipe_merchant": 0.17616580310880828
+    },
+    "fit": 20261109,
+    "seed": 20261012
+   }
+  ]
+ },
+ "argn_minimal": {
+  "mean": {
+   "normal": {
+    "rows": 266763.5,
+    "online": 0.2031532935083869,
+    "category_matches_merchant": 0.4536033379400404,
+    "channel_matches_merchant": 0.8629601884055847,
+    "online_at_swipe_merchant": 0.07229920839712188
+   },
+   "fraud": {
+    "rows": 483.75,
+    "online": 0.8153235128141625,
+    "category_matches_merchant": 0.03473348878589133,
+    "channel_matches_merchant": 0.32021560917184716,
+    "online_at_swipe_merchant": 0.6618176537428839
+   }
+  },
+  "generations": [
+   {
+    "normal": {
+     "rows": 266362,
+     "online": 0.2180453668316051,
+     "category_matches_merchant": 0.43602318669636136,
+     "channel_matches_merchant": 0.8521886906655699,
+     "online_at_swipe_merchant": 0.08686863200043456
+    },
+    "fraud": {
+     "rows": 426,
+     "online": 0.7652582159624414,
+     "category_matches_merchant": 0.03398058252427184,
+     "channel_matches_merchant": 0.30339805825242716,
+     "online_at_swipe_merchant": 0.6747572815533981
+    },
+    "fit": 20261108,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 262256,
+     "online": 0.22035339515587823,
+     "category_matches_merchant": 0.4329213952791426,
+     "channel_matches_merchant": 0.8517062437400926,
+     "online_at_swipe_merchant": 0.08675935930094086
+    },
+    "fraud": {
+     "rows": 507,
+     "online": 0.7672583826429981,
+     "category_matches_merchant": 0.026915113871635612,
+     "channel_matches_merchant": 0.38923395445134573,
+     "online_at_swipe_merchant": 0.5859213250517599
+    },
+    "fit": 20261108,
+    "seed": 20261012
+   },
+   {
+    "normal": {
+     "rows": 278670,
+     "online": 0.1879929665913087,
+     "category_matches_merchant": 0.48474667432924784,
+     "channel_matches_merchant": 0.8780323375661726,
+     "online_at_swipe_merchant": 0.055620024387638196
+    },
+    "fraud": {
+     "rows": 548,
+     "online": 0.8631386861313869,
+     "category_matches_merchant": 0.04339622641509434,
+     "channel_matches_merchant": 0.32264150943396225,
+     "online_at_swipe_merchant": 0.6660377358490566
+    },
+    "fit": 20261109,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 259766,
+     "online": 0.18622144545475544,
+     "category_matches_merchant": 0.46072209545540976,
+     "channel_matches_merchant": 0.8699134816505039,
+     "online_at_swipe_merchant": 0.05994881789947392
+    },
+    "fraud": {
+     "rows": 454,
+     "online": 0.8656387665198237,
+     "category_matches_merchant": 0.03464203233256351,
+     "channel_matches_merchant": 0.26558891454965355,
+     "online_at_swipe_merchant": 0.7205542725173211
+    },
+    "fit": 20261109,
+    "seed": 20261012
+   }
+  ]
+ },
+ "argn_merchant": {
+  "mean": {
+   "normal": {
+    "rows": 266763.5,
+    "online": 0.13675806913066277,
+    "category_matches_merchant": 0.30634610082522445,
+    "channel_matches_merchant": 0.8444934233324681,
+    "online_at_swipe_merchant": 0.08006914928460156
+   },
+   "fraud": {
+    "rows": 483.75,
+    "online": 0.802130136059934,
+    "category_matches_merchant": 0.056656184396943934,
+    "channel_matches_merchant": 0.294426634322516,
+    "online_at_swipe_merchant": 0.6780237320189266
+   }
+  },
+  "generations": [
+   {
+    "normal": {
+     "rows": 266362,
+     "online": 0.1476036371554501,
+     "category_matches_merchant": 0.32050460114305374,
+     "channel_matches_merchant": 0.8431897609907508,
+     "online_at_swipe_merchant": 0.08742562723313761
+    },
+    "fraud": {
+     "rows": 426,
+     "online": 0.7582159624413145,
+     "category_matches_merchant": 0.06718346253229975,
+     "channel_matches_merchant": 0.3178294573643411,
+     "online_at_swipe_merchant": 0.6459948320413437
+    },
+    "fit": 20261108,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 262256,
+     "online": 0.1492396742114575,
+     "category_matches_merchant": 0.32668706193380376,
+     "channel_matches_merchant": 0.8404934440957285,
+     "online_at_swipe_merchant": 0.08569574113577628
+    },
+    "fraud": {
+     "rows": 507,
+     "online": 0.757396449704142,
+     "category_matches_merchant": 0.04291845493562232,
+     "channel_matches_merchant": 0.3369098712446352,
+     "online_at_swipe_merchant": 0.6244635193133047
+    },
+    "fit": 20261108,
+    "seed": 20261012
+   },
+   {
+    "normal": {
+     "rows": 278670,
+     "online": 0.12253561560268418,
+     "category_matches_merchant": 0.28800038876034045,
+     "channel_matches_merchant": 0.8498487946560406,
+     "online_at_swipe_merchant": 0.07187580602354243
+    },
+    "fraud": {
+     "rows": 548,
+     "online": 0.8448905109489051,
+     "category_matches_merchant": 0.061630218687872766,
+     "channel_matches_merchant": 0.26043737574552683,
+     "online_at_swipe_merchant": 0.7256461232604374
+    },
+    "fit": 20261109,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 259766,
+     "online": 0.1276533495530593,
+     "category_matches_merchant": 0.2901923514637,
+     "channel_matches_merchant": 0.8444416935873528,
+     "online_at_swipe_merchant": 0.07527942274594991
+    },
+    "fraud": {
+     "rows": 454,
+     "online": 0.8480176211453745,
+     "category_matches_merchant": 0.05489260143198091,
+     "channel_matches_merchant": 0.26252983293556087,
+     "online_at_swipe_merchant": 0.7159904534606205
+    },
+    "fit": 20261109,
+    "seed": 20261012
+   }
+  ]
+ },
+ "argn_gap": {
+  "mean": {
+   "normal": {
+    "rows": 266763.5,
+    "online": 0.1367753153756811,
+    "category_matches_merchant": 0.30631599934905285,
+    "channel_matches_merchant": 0.8444069395396752,
+    "online_at_swipe_merchant": 0.08007637422268903
+   },
+   "fraud": {
+    "rows": 483.75,
+    "online": 0.8006308728407161,
+    "category_matches_merchant": 0.05951136302396088,
+    "channel_matches_merchant": 0.2986883848197692,
+    "online_at_swipe_merchant": 0.6737550509932898
+   }
+  },
+  "generations": [
+   {
+    "normal": {
+     "rows": 266362,
+     "online": 0.1476336714696541,
+     "category_matches_merchant": 0.32051302097585,
+     "channel_matches_merchant": 0.8432010257292294,
+     "online_at_swipe_merchant": 0.0874488894448397
+    },
+    "fraud": {
+     "rows": 426,
+     "online": 0.755868544600939,
+     "category_matches_merchant": 0.07235142118863049,
+     "channel_matches_merchant": 0.32041343669250644,
+     "online_at_swipe_merchant": 0.6434108527131783
+    },
+    "fit": 20261108,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 262256,
+     "online": 0.1492739918247819,
+     "category_matches_merchant": 0.32664619232687175,
+     "channel_matches_merchant": 0.8404465833445467,
+     "online_at_swipe_merchant": 0.08570727498674181
+    },
+    "fraud": {
+     "rows": 507,
+     "online": 0.757396449704142,
+     "category_matches_merchant": 0.045064377682403435,
+     "channel_matches_merchant": 0.3369098712446352,
+     "online_at_swipe_merchant": 0.6244635193133047
+    },
+    "fit": 20261108,
+    "seed": 20261012
+   },
+   {
+    "normal": {
+     "rows": 278670,
+     "online": 0.12252485018121793,
+     "category_matches_merchant": 0.2879204189890879,
+     "channel_matches_merchant": 0.8495743941144145,
+     "online_at_swipe_merchant": 0.07185393699462805
+    },
+    "fraud": {
+     "rows": 548,
+     "online": 0.8412408759124088,
+     "category_matches_merchant": 0.06573705179282868,
+     "channel_matches_merchant": 0.2749003984063745,
+     "online_at_swipe_merchant": 0.7111553784860558
+    },
+    "fit": 20261109,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 259766,
+     "online": 0.1276687480270705,
+     "category_matches_merchant": 0.2901843651044017,
+     "channel_matches_merchant": 0.8444057549705104,
+     "online_at_swipe_merchant": 0.07529539546454656
+    },
+    "fraud": {
+     "rows": 454,
+     "online": 0.8480176211453745,
+     "category_matches_merchant": 0.05489260143198091,
+     "channel_matches_merchant": 0.26252983293556087,
+     "online_at_swipe_merchant": 0.7159904534606205
+    },
+    "fit": 20261109,
+    "seed": 20261012
+   }
+  ]
+ },
+ "argn_final": {
+  "mean": {
+   "normal": {
+    "rows": 266763.5,
+    "online": 0.1278330620983693,
+    "category_matches_merchant": 0.9997513947563071,
+    "channel_matches_merchant": 0.9999672960057089,
+    "online_at_swipe_merchant": 3.270399429107784e-05
+   },
+   "fraud": {
+    "rows": 483.75,
+    "online": 0.8623077164173005,
+    "category_matches_merchant": 1.0,
+    "channel_matches_merchant": 0.2575277701559251,
+    "online_at_swipe_merchant": 0.7201480674229541
+   }
+  },
+  "generations": [
+   {
+    "normal": {
+     "rows": 266362,
+     "online": 0.13257897147491007,
+     "category_matches_merchant": 0.9998244716979692,
+     "channel_matches_merchant": 0.9999656575061244,
+     "online_at_swipe_merchant": 3.434249387558859e-05
+    },
+    "fraud": {
+     "rows": 426,
+     "online": 0.8427230046948356,
+     "category_matches_merchant": 1.0,
+     "channel_matches_merchant": 0.2716049382716049,
+     "online_at_swipe_merchant": 0.7086419753086419
+    },
+    "fit": 20261108,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 262256,
+     "online": 0.12180846196083217,
+     "category_matches_merchant": 0.9996162522966718,
+     "channel_matches_merchant": 0.9999418564085867,
+     "online_at_swipe_merchant": 5.814359141335442e-05
+    },
+    "fraud": {
+     "rows": 507,
+     "online": 0.873767258382643,
+     "category_matches_merchant": 1.0,
+     "channel_matches_merchant": 0.23858921161825727,
+     "online_at_swipe_merchant": 0.7385892116182573
+    },
+    "fit": 20261108,
+    "seed": 20261012
+   },
+   {
+    "normal": {
+     "rows": 278670,
+     "online": 0.12640040190906807,
+     "category_matches_merchant": 0.9998505111788469,
+     "channel_matches_merchant": 0.9999890617935742,
+     "online_at_swipe_merchant": 1.0938206425831668e-05
+    },
+    "fraud": {
+     "rows": 548,
+     "online": 0.8759124087591241,
+     "category_matches_merchant": 1.0,
+     "channel_matches_merchant": 0.26356589147286824,
+     "online_at_swipe_merchant": 0.7151162790697675
+    },
+    "fit": 20261109,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 259766,
+     "online": 0.13054441304866687,
+     "category_matches_merchant": 0.9997143438517405,
+     "channel_matches_merchant": 0.9999726083145505,
+     "online_at_swipe_merchant": 2.739168544953669e-05
+    },
+    "fraud": {
+     "rows": 454,
+     "online": 0.8568281938325991,
+     "category_matches_merchant": 1.0,
+     "channel_matches_merchant": 0.25635103926096997,
+     "online_at_swipe_merchant": 0.7182448036951501
+    },
+    "fit": 20261109,
+    "seed": 20261012
+   }
+  ]
+ },
+ "rtf_native": {
+  "mean": {
+   "normal": {
+    "rows": 258282.75,
+    "online": 0.15871472867327557,
+    "category_matches_merchant": 0.9999380544956057,
+    "channel_matches_merchant": 0.9998644835376123,
+    "online_at_swipe_merchant": 0.00013358056385973866
+   },
+   "fraud": {
+    "rows": 117.25,
+    "online": 0.8679902848735316,
+    "category_matches_merchant": 0.9977477477477478,
+    "channel_matches_merchant": 0.39366384603289845,
+    "online_at_swipe_merchant": 0.6063361539671016
+   }
+  },
+  "generations": [
+   {
+    "normal": {
+     "rows": 258318,
+     "online": 0.16893905960869934,
+     "category_matches_merchant": 0.999903220062094,
+     "channel_matches_merchant": 0.9999264472471915,
+     "online_at_swipe_merchant": 7.355275280855379e-05
+    },
+    "fraud": {
+     "rows": 82,
+     "online": 0.9512195121951219,
+     "category_matches_merchant": 1.0,
+     "channel_matches_merchant": 0.3048780487804878,
+     "online_at_swipe_merchant": 0.6951219512195121
+    },
+    "fit": 20261108,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 258289,
+     "online": 0.16958523204627374,
+     "category_matches_merchant": 0.9999341822532125,
+     "channel_matches_merchant": 0.9999264389888846,
+     "online_at_swipe_merchant": 7.356101111545594e-05
+    },
+    "fraud": {
+     "rows": 111,
+     "online": 0.954954954954955,
+     "category_matches_merchant": 0.990990990990991,
+     "channel_matches_merchant": 0.26126126126126126,
+     "online_at_swipe_merchant": 0.7387387387387387
+    },
+    "fit": 20261108,
+    "seed": 20261012
+   },
+   {
+    "normal": {
+     "rows": 258278,
+     "online": 0.1490293404780895,
+     "category_matches_merchant": 0.9999535384353294,
+     "channel_matches_merchant": 0.9998373845236528,
+     "online_at_swipe_merchant": 0.00015487188223542076
+    },
+    "fraud": {
+     "rows": 122,
+     "online": 0.7540983606557377,
+     "category_matches_merchant": 1.0,
+     "channel_matches_merchant": 0.5409836065573771,
+     "online_at_swipe_merchant": 0.45901639344262296
+    },
+    "fit": 20261109,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 258246,
+     "online": 0.14730528256003966,
+     "category_matches_merchant": 0.9999612772317867,
+     "channel_matches_merchant": 0.9997676633907204,
+     "online_at_swipe_merchant": 0.00023233660927952416
+    },
+    "fraud": {
+     "rows": 154,
+     "online": 0.8116883116883117,
+     "category_matches_merchant": 1.0,
+     "channel_matches_merchant": 0.4675324675324675,
+     "online_at_swipe_merchant": 0.5324675324675324
+    },
+    "fit": 20261109,
+    "seed": 20261012
+   }
+  ]
+ },
+ "rtf_table": {
+  "mean": {
+   "normal": {
+    "rows": 258000.5,
+    "online": 0.15910247299331595,
+    "category_matches_merchant": 0.9999525179893296,
+    "channel_matches_merchant": 0.9995832732583474,
+    "online_at_swipe_merchant": 0.0004147887604163272
+   },
+   "fraud": {
+    "rows": 399.5,
+    "online": 0.8506225012274672,
+    "category_matches_merchant": 0.9995283018867924,
+    "channel_matches_merchant": 0.38759206004068175,
+    "online_at_swipe_merchant": 0.6124079399593183
+   }
+  },
+  "generations": [
+   {
+    "normal": {
+     "rows": 257870,
+     "online": 0.16947686818939775,
+     "category_matches_merchant": 0.9999185636173266,
+     "channel_matches_merchant": 0.9995579167797728,
+     "online_at_swipe_merchant": 0.0004382052972427968
+    },
+    "fraud": {
+     "rows": 530,
+     "online": 0.9113207547169812,
+     "category_matches_merchant": 0.9981132075471698,
+     "channel_matches_merchant": 0.30566037735849055,
+     "online_at_swipe_merchant": 0.6943396226415094
+    },
+    "fit": 20261108,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 258131,
+     "online": 0.16919703561370003,
+     "category_matches_merchant": 0.9999457639725565,
+     "channel_matches_merchant": 0.9997791818882661,
+     "online_at_swipe_merchant": 0.00021694410977371955
+    },
+    "fraud": {
+     "rows": 269,
+     "online": 0.9219330855018587,
+     "category_matches_merchant": 1.0,
+     "channel_matches_merchant": 0.31226765799256506,
+     "online_at_swipe_merchant": 0.6877323420074349
+    },
+    "fit": 20261108,
+    "seed": 20261012
+   },
+   {
+    "normal": {
+     "rows": 257870,
+     "online": 0.1489975569085198,
+     "category_matches_merchant": 0.9999806103850778,
+     "channel_matches_merchant": 0.9993678985535347,
+     "online_at_swipe_merchant": 0.0006321014464652732
+    },
+    "fraud": {
+     "rows": 530,
+     "online": 0.7811320754716982,
+     "category_matches_merchant": 1.0,
+     "channel_matches_merchant": 0.45660377358490567,
+     "online_at_swipe_merchant": 0.5433962264150943
+    },
+    "fit": 20261109,
+    "seed": 20261011
+   },
+   {
+    "normal": {
+     "rows": 258131,
+     "online": 0.1487384312616462,
+     "category_matches_merchant": 0.9999651339823578,
+     "channel_matches_merchant": 0.9996280958118164,
+     "online_at_swipe_merchant": 0.0003719041881835192
+    },
+    "fraud": {
+     "rows": 269,
+     "online": 0.7881040892193308,
+     "category_matches_merchant": 1.0,
+     "channel_matches_merchant": 0.4758364312267658,
+     "online_at_swipe_merchant": 0.5241635687732342
+    },
+    "fit": 20261109,
+    "seed": 20261012
+   }
+  ]
+ }
+}
