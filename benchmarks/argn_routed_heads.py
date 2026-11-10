@@ -91,7 +91,7 @@ def train_routed_heads(ws: Workspace, out_dir: Path, substitute: bool, seed: int
     model, ts, card, order = routed_model(ws, device, None, columns)
     label_key = argn_column(ts, LABEL) + "__cat"; fraud_code = int(ts["columns"][LABEL]["codes"]["1"])
     col_keys = {c: [k for k in card if k.startswith(argn_column(ts, c) + "__")] for c in columns}
-    subst_keys = [k for k in card if k.startswith(tuple(argn_column(ts, c) + "__" for c in OUTPUT_COLUMNS))]
+    subst_keys = [k for k in card if k.startswith(tuple(argn_column(ts, c) + "__" for c in OUTPUT_COLUMNS if c in ts["columns"]))]  # datasets without use_chip (Sparkov)
     names = set(fraud_head_names(model))
     for n, prm in model.named_parameters():
         prm.requires_grad_(n in names)

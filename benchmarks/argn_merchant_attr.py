@@ -22,10 +22,13 @@ ARMS = ("attr_cat", "attr_chan", "attr_normal", "attr_all")
 def fit_attr_tables(records, keys, fraud_code, rare_code, n_m, n_c, n_u):
     """records: the fit's ARGN-encoded train sequences. keys = dict(label, merchant, category, channel) sub-column names.
     Returns count-normalised tables (no smoothing: the real dependency is deterministic)."""
+    has_chan = keys.get("channel") is not None  # sparkov_transfer_v1: datasets without a channel column
+    n_u = n_u if has_chan else 1
     cat_m = np.zeros((n_m, n_c)); chan_m = np.zeros((n_m, n_u)); chan_cat_rare = np.zeros((n_c, n_u))
     for r in records:
         y = np.asarray(r[keys["label"]]).reshape(-1) == fraud_code
-        m = np.asarray(r[keys["merchant"]]).reshape(-1).astype(int); c = np.asarray(r[keys["category"]]).reshape(-1).astype(int); u = np.asarray(r[keys["channel"]]).reshape(-1).astype(int)
+        m = np.asarray(r[keys["merchant"]]).reshape(-1).astype(int); c = np.asarray(r[keys["category"]]).reshape(-1).astype(int)
+        u = np.asarray(r[keys["channel"]]).reshape(-1).astype(int) if has_chan else np.zeros(len(m), dtype=int)
         np.add.at(cat_m, (m[~(y & (m == rare_code))], c[~(y & (m == rare_code))]), 1.0)   # rare-bucket fraud rows excluded (table used for normal rare rows)
         np.add.at(chan_m, (m[~y], u[~y]), 1.0)
         sel = ~y & (m == rare_code); np.add.at(chan_cat_rare, (c[sel], u[sel]), 1.0)
@@ -52,15 +55,16 @@ def attr_module(stats, tables, channel_state_table, arm):
 
     def key(col):
         s = stats["columns"][col]; return get_argn_name(s["argn_processor"], s["argn_table"], s["argn_column"]) + "__cat"
-    label_key, m_key, c_key, u_key = key(LABEL), key(MERCHANT), key(CATEGORY), key(CHANNEL)
+    has_chan = CHANNEL in stats["columns"]  # sparkov_transfer_v1: without a channel column only the category rule exists
+    label_key, m_key, c_key = key(LABEL), key(MERCHANT), key(CATEGORY); u_key = key(CHANNEL) if has_chan else "__no_channel__"
     c1 = int(stats["columns"][LABEL]["codes"]["1"]); rare_code = int(stats["columns"][MERCHANT]["codes"][RARE])
-    on_code = int(stats["columns"][CHANNEL]["codes"][ONLINE]); off_code = int(stats["columns"][CHANNEL]["codes"][SWIPE])
+    on_code = int(stats["columns"][CHANNEL]["codes"][ONLINE]) if has_chan else 0; off_code = int(stats["columns"][CHANNEL]["codes"][SWIPE]) if has_chan else 0
     cat_by_m = torch.tensor(tables["cat_by_m"], dtype=torch.float64); chan_by_m = torch.tensor(tables["chan_by_m"], dtype=torch.float64)
     chan_by_cat_rare = torch.tensor(tables["chan_by_cat_rare"], dtype=torch.float64)
     n_u = chan_by_m.shape[1]; state = torch.zeros((2, n_u), dtype=torch.float64)
-    for i, p in enumerate(channel_state_table):
+    for i, p in enumerate(channel_state_table if has_chan else ()):
         state[i, on_code] = p; state[i, off_code] = 1 - p
-    do_cat = arm in ("attr_cat", "attr_normal", "attr_all"); do_chan = arm in ("attr_chan", "attr_normal", "attr_all"); do_fraud = arm != "attr_normal"
+    do_cat = arm in ("attr_cat", "attr_normal", "attr_all"); do_chan = has_chan and arm in ("attr_chan", "attr_normal", "attr_all"); do_fraud = arm != "attr_normal"
     parent_model = generation.SequentialModel
     counter = dict(category_rows=0, channel_rows=0, channel_state_rows=0, steps=0)
 
