@@ -16,6 +16,11 @@ ARMS2 = {"REC2": ("REC2",), "AMT0": ("AMT0",), "AMT2": ("AMT2",), "REC2_AMT0": (
 GBINS = np.array([60, 300, 600, 1800, 3600, 14400, 86400]); GNAMES = ["<=1m", "1-5m", "5-10m", "10-30m", "30-60m", "1-4h", "4-24h", ">24h"]
 NB = np.array([1, 4, 19])                                           # previous visits in the category: 1 | 2-4 | 5-19 | 20+
 TABLES = OUT / "tables_v2.json"
+# amendment 3 (2026-11-11): AMT3 = AMT2 + a fixed per-category monotone map (quantiles of AMT2 simulated on TRAIN sequences -> real train quantiles)
+ARMS3 = {"AMT3": ("AMT3",), "ALL3": ("REC2", "AMT3")}
+TABLES3 = OUT / "tables_v3.json"
+VERSIONS = {"2": (ARMS2, "sim2", "V2", 20261112), "3": (ARMS3, "sim3", "V3", 20261113)}
+QGRID = np.linspace(0, 1, 201)
 
 
 def gbin(g):
@@ -74,12 +79,36 @@ def apply_amt2(d, T, rng):
     d = d.copy(); d["a"] = a; return d, used
 
 
-def cmd_apply():
-    T = json.loads(TABLES.read_text()); log = {}; parts_fn = {"REC2": apply_rec2, "AMT0": apply_amt0, "AMT2": apply_amt2}
+def cmd_fit3():
+    """Per-category monotone map: AMT2 applied to the real TRAIN sequences gives the part's own category distributions; map their quantiles to the real ones."""
+    t0 = time.time(); T = json.loads(TABLES.read_text()); d = base_frame(pd.read_parquet(PREP / "train.parquet")); ok = (d.y.eq(0) & d.a.gt(0)).to_numpy(); sim, _ = apply_amt2(d, T, np.random.default_rng(20261113))
+    real = np.log(d.a.to_numpy()[ok]); gen = np.log(sim.a.to_numpy()[ok]); c = d.c.to_numpy()[ok]; key = np.where(np.isin(c, [k for k in T["amt0"] if k != "other"]), c, "other"); maps = {}
+    for k in np.unique(key):
+        sel = key == k; maps[k] = dict(sim=np.quantile(gen[sel], QGRID).round(5).tolist(), real=np.quantile(real[sel], QGRID).round(5).tolist(), rows=int(sel.sum()))
+    TABLES3.write_text(json.dumps(maps) + "\n"); mapped = np.empty(len(gen))
+    for k, m in maps.items():
+        sel = key == k; mapped[sel] = np.interp(gen[sel], m["sim"], m["real"])
+    q = [.01, .05, .25, .5, .75, .95, .99]; facts = dict(categories=len(maps), quantiles=dict(real=np.quantile(real, q).round(3).tolist(), amt2_on_train=np.quantile(gen, q).round(3).tolist(), mapped=np.quantile(mapped, q).round(3).tolist()),
+                                                         sd=dict(real=float(real.std()), amt2_on_train=float(gen.std()), mapped=float(mapped.std())), seconds=round(time.time() - t0, 1), test_read=False)
+    (DOCS / "FIT_V3.json").write_text(json.dumps(facts, indent=1) + "\n"); print(json.dumps(facts, indent=1))
+
+
+def apply_amt3(d, T, rng):
+    ok = (d.y.eq(0) & d.a.gt(0)).to_numpy(); d, used = apply_amt2(d, T, rng); a = d.a.to_numpy().copy(); la = np.log(a[ok]); c = d.c.to_numpy()[ok]; maps = T["map"]; key = np.where(np.isin(c, [k for k in maps if k != "other"]), c, "other"); out = np.empty(len(la))
+    for k in np.unique(key):
+        sel = key == k; out[sel] = np.interp(la[sel], maps[k]["sim"], maps[k]["real"])
+    a[ok] = np.maximum(0.01, np.round(np.exp(out), 2)); d = d.copy(); d["a"] = a; return d, used
+
+
+def cmd_apply(ver="2"):
+    ARMS, simdir, tag, seed0 = VERSIONS[ver]
+    T = json.loads(TABLES.read_text()); log = {}; parts_fn = {"REC2": apply_rec2, "AMT0": apply_amt0, "AMT2": apply_amt2, "AMT3": apply_amt3}
+    if ver == "3":
+        T["map"] = json.loads(TABLES3.read_text())
     for fs, gs in FITS:
         raw = pd.read_parquet(BASE(fs, gs)); base = base_frame(raw); ref = raw.sort_values(["entity_id", "event_index"], kind="stable").reset_index(drop=True); fr = pd.to_numeric(ref[Y], errors="coerce").eq(1).to_numpy()
-        for arm, parts in ARMS2.items():
-            rng = np.random.default_rng([20261112, fs, gs, sorted(ARMS2).index(arm)]); d = base.copy(); info = {}
+        for arm, parts in ARMS.items():
+            rng = np.random.default_rng([seed0, fs, gs, sorted(ARMS).index(arm)]); d = base.copy(); info = {}
             for p in parts:
                 d, info[p] = parts_fn[p](d, T, rng)
             out = finish(d, ref); assert len(out) == len(ref) and out[Y].astype(str).equals(ref[Y].astype(str)), "labels changed"
@@ -88,9 +117,9 @@ def cmd_apply():
             for col in (G, A):
                 assert np.allclose(pd.to_numeric(out.loc[fr, col], errors="coerce").to_numpy(dtype=float), pd.to_numeric(ref.loc[fr, col], errors="coerce").to_numpy(dtype=float), equal_nan=True), f"fraud rows changed: {col}"
             assert np.allclose(pd.to_numeric(out[G], errors="coerce").to_numpy(dtype=float), pd.to_numeric(ref[G], errors="coerce").to_numpy(dtype=float), equal_nan=True), "gaps changed"
-            folder = OUT / "sim2" / f"{arm}_{fs}"; folder.mkdir(parents=True, exist_ok=True); out.to_parquet(folder / f"generated_validation_{gs}.parquet", index=False); log[f"{arm}_{fs}_{gs}"] = info
+            folder = OUT / simdir / f"{arm}_{fs}"; folder.mkdir(parents=True, exist_ok=True); out.to_parquet(folder / f"generated_validation_{gs}.parquet", index=False); log[f"{arm}_{fs}_{gs}"] = info
             print(arm, fs, gs, json.dumps({k: {a_: b_ for a_, b_ in v.items() if a_ != "p0"} for k, v in info.items()}, default=float)[:420], flush=True)
-    (DOCS / "APPLY_V2.json").write_text(json.dumps(log, indent=1, default=float) + "\n")
+    (DOCS / f"APPLY_{tag}.json").write_text(json.dumps(log, indent=1, default=float) + "\n")
 
 
 def extra(frame):
@@ -100,7 +129,8 @@ def extra(frame):
                 share_gap_lt_10min=float(short.mean()), category_mean_log_amount_sd=float(np.sqrt(np.average((cm["mean"] - la.mean()) ** 2, weights=cm["size"]))))
 
 
-def cmd_measure():
+def cmd_measure(ver="2"):
+    ARMS, simdir, tag, _ = VERSIONS[ver]
     from threadpoolctl import threadpool_limits
     threadpool_limits(8)
     import benchmarks.fraud_utility as fu
@@ -116,8 +146,8 @@ def cmd_measure():
     print("detectors ready", round(time.time() - t0), "s; real fraud-like share", round(float(np.mean([x[2] for x in dets])), 4), flush=True)
     rng = np.random.default_rng(0); rn = ftrain[ftrain.y.eq(0)]; rn = rn.iloc[rng.choice(len(rn), 50000, replace=False)]
     res = dict(real_train=dict(structure=structure(train), extra=extra(train), fraud_amount_vs_med20=float(ftrain[ftrain.y.eq(1)].amount_vs_med20.mean()), fraudlike_normal_share=float(np.mean([x[2] for x in dets]))))
-    for arm in ["base", *ARMS2]:
-        frames = [pd.read_parquet(BASE(fs, gs) if arm == "base" else OUT / "sim2" / f"{arm}_{fs}" / f"generated_validation_{gs}.parquet") for fs, gs in FITS]; feats = [fu.features(f).assign(src=f"{arm}{i}_") for i, f in enumerate(frames)]
+    for arm in ["base", *ARMS]:
+        frames = [pd.read_parquet(BASE(fs, gs) if arm == "base" else OUT / simdir / f"{arm}_{fs}" / f"generated_validation_{gs}.parquet") for fs, gs in FITS]; feats = [fu.features(f).assign(src=f"{arm}{i}_") for i, f in enumerate(frames)]
         st = [structure(f) for f in frames]; ex = [extra(f) for f in frames]; s = pd.concat(feats, ignore_index=True); sn = s[s.y.eq(0)]; sn = sn.iloc[rng.choice(len(sn), 50000, replace=False)]; cons = [consistency(f, att) for f in frames]
         fl = [float((dets[i][0].predict_proba(f[f.y.eq(0)][cols].to_numpy())[:, 1] >= dets[i][1]).mean()) for i, f in enumerate(feats)]
         res[arm] = dict(structure={k: float(np.mean([x[k] for x in st])) for k in st[0]}, extra={k: float(np.mean([x[k] for x in ex])) for k in ex[0]}, normal_discriminator=dg.discriminate(rn, sn, cols),
@@ -125,7 +155,7 @@ def cmd_measure():
                         normal_category_matches_merchant=float(np.mean([x["normal"]["category_matches_merchant"] for x in cons])), normal_channel_matches_merchant=float(np.mean([x["normal"]["channel_matches_merchant"] for x in cons])))
         print(arm, "fraud-like", round(res[arm]["fraudlike_normal_share"], 4), "disc AUC", round(res[arm]["normal_discriminator"]["auc"], 3), {k: round(v, 3) for k, v in res[arm]["normal_discriminator"]["permutation_auc_drop"].items()},
               "fraud amt", round(res[arm]["fraud_amount_vs_med20"], 3), "cons", round(res[arm]["normal_category_matches_merchant"], 4), round(res[arm]["normal_channel_matches_merchant"], 4), flush=True)
-    res["seconds"] = round(time.time() - t0, 1); res["test_read"] = False; (DOCS / "MEASURE_V2.json").write_text(json.dumps(res, indent=1, default=float) + "\n")
+    res["seconds"] = round(time.time() - t0, 1); res["test_read"] = False; (DOCS / f"MEASURE_{tag}.json").write_text(json.dumps(res, indent=1, default=float) + "\n")
     keys = ["amount_sd", "amount_sd_within_category", "amount_sd_within_customer_category", "amount_sd_within_customer_merchant", "abs_dlog_amount_vs_previous_visit_same_merchant_median", "same_merchant_as_previous", "same_merchant_within_5",
             "share_rows_top3_merchants", "same_category_as_previous", "distinct_merchants_per_customer_median"]
     pd.set_option("display.width", 250); arms = [k for k, v in res.items() if isinstance(v, dict) and "structure" in v]
@@ -133,4 +163,5 @@ def cmd_measure():
 
 
 if __name__ == "__main__":
-    {"fit": cmd_fit, "apply": cmd_apply, "measure": cmd_measure}[sys.argv[1]]()
+    ver = sys.argv[2] if len(sys.argv) > 2 else "2"
+    {"fit": lambda: cmd_fit(), "fit3": lambda: cmd_fit3(), "apply": lambda: cmd_apply(ver), "measure": lambda: cmd_measure(ver)}[sys.argv[1]]()

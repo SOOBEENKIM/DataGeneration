@@ -50,7 +50,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0); ap.add_argument("--real-draws", type=int, default=20)
     ap.add_argument("--jobs", type=int, default=16); ap.add_argument("--threads", type=int, default=4); ap.add_argument("--seed", type=int, default=20261108)
-    ap.add_argument("--dataset", choices=["sparkov", "ibm", "ibm_test", "ibm_episode", "ibm_normal", "ibm_normal2"], default="sparkov")
+    ap.add_argument("--dataset", choices=["sparkov", "ibm", "ibm_test", "ibm_episode", "ibm_normal", "ibm_normal2", "ibm_normal3"], default="sparkov")
     ap.add_argument("--detector", choices=["registered", "stable", "logistic"], default="registered")
     ap.add_argument("--features", choices=["all", "no_merchant", "no_channel"], default="all")  # amendment 3 (2026-11-10), auxiliary
     args = ap.parse_args(); t0 = time.time()
