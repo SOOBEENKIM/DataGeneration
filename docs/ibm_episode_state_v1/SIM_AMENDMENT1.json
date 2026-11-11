@@ -1,0 +1,190 @@
+{
+ "cv": {
+  "A2": {
+   "loglik": -3085.4370227322916,
+   "nll_per_1000_rows": 2.746230829379788
+  },
+  "A4": {
+   "loglik": -3081.288578649088,
+   "nll_per_1000_rows": 2.74253845615962
+  },
+  "A5_m2": {
+   "loglik": -3118.021786975558,
+   "nll_per_1000_rows": 2.775233295958635
+  },
+  "A5_m5": {
+   "loglik": -3106.356167902746,
+   "nll_per_1000_rows": 2.764850169514788
+  },
+  "A5_m10": {
+   "loglik": -3098.441193063386,
+   "nll_per_1000_rows": 2.757805349686196
+  },
+  "A5_m20": {
+   "loglik": -3091.6858366787455,
+   "nll_per_1000_rows": 2.7517926623974054
+  },
+  "A5_m50": {
+   "loglik": -3086.0534641164877,
+   "nll_per_1000_rows": 2.7467795005473774
+  }
+ },
+ "selected_m": 50,
+ "train_real": {
+  "frauds": 1303.0,
+  "runs": 490.0,
+  "fraud_customers": 116.0,
+  "rate": 0.0011597510318045923,
+  "customers": 1000,
+  "frauds_per_fraud_customer_quantiles": {
+   "0.25": 7.0,
+   "0.5": 11.0,
+   "0.75": 14.0,
+   "0.9": 19.0
+  },
+  "frauds_per_fraud_customer_mean": 11.232758620689655,
+  "frauds_per_fraud_customer_max": 27,
+  "share_above_27": 0.0,
+  "bursts_per_fraud_customer": 1.0517241379310345,
+  "runs_per_fraud_customer": 4.224137931034483,
+  "first_fraud_relpos_median": 0.734587028528689,
+  "first_fraud_relpos_quantiles": {
+   "0.1": 0.5415658344144669,
+   "0.25": 0.615262011730862,
+   "0.5": 0.734587028528689,
+   "0.75": 0.8289064281371133,
+   "0.9": 0.9410464784716281
+  }
+ },
+ "forced_expected_frauds": 1312.8933886744362,
+ "sim": {
+  "frauds": 1393.375,
+  "runs": 522.26,
+  "fraud_customers": 121.22,
+  "rate": 0.001240190402103395,
+  "customers": 1000,
+  "frauds_per_fraud_customer_quantiles": {
+   "0.25": 6.0,
+   "0.5": 10.0,
+   "0.75": 15.0,
+   "0.9": 22.0
+  },
+  "frauds_per_fraud_customer_mean": 11.494596601220922,
+  "frauds_per_fraud_customer_max": 83,
+  "share_above_27": 0.04236099653522521,
+  "bursts_per_fraud_customer": 1.0539927404718694,
+  "runs_per_fraud_customer": 4.308364956277842,
+  "first_fraud_relpos_median": 0.73754716535619,
+  "first_fraud_relpos_quantiles": {
+   "0.1": 0.25064372947115887,
+   "0.25": 0.5963837720933701,
+   "0.5": 0.73754716535619,
+   "0.75": 0.8394025572770043,
+   "0.9": 0.9481603337935219
+  },
+  "per_rep": {
+   "frauds": {
+    "mean": 1393.375,
+    "sd": 141.8121567922523,
+    "p2_5": 1129.925,
+    "p97_5": 1670.0
+   },
+   "runs": {
+    "mean": 522.26,
+    "sd": 53.08599641219308,
+    "p2_5": 417.9,
+    "p97_5": 626.025
+   },
+   "fraud_customers": {
+    "mean": 121.22,
+    "sd": 10.119467282937983,
+    "p2_5": 102.0,
+    "p97_5": 140.0
+   }
+  }
+ },
+ "checks": {
+  "frauds_10pct": true,
+  "runs_10pct": true,
+  "fraud_customers_10pct": true,
+  "quantiles_within_3": true,
+  "share_above_27_le_5pct": true,
+  "relpos_median_within_.10": true,
+  "bursts_within_.15": true
+ },
+ "passed": true,
+ "dev_real": {
+  "frauds": 487.0,
+  "runs": 169.0,
+  "fraud_customers": 39.0,
+  "rate": 0.0018104358429121622,
+  "customers": 240,
+  "frauds_per_fraud_customer_quantiles": {
+   "0.25": 10.0,
+   "0.5": 12.0,
+   "0.75": 14.5,
+   "0.9": 17.0
+  },
+  "frauds_per_fraud_customer_mean": 12.487179487179487,
+  "frauds_per_fraud_customer_max": 35,
+  "share_above_27": 0.05128205128205128,
+  "bursts_per_fraud_customer": 1.0512820512820513,
+  "runs_per_fraud_customer": 4.333333333333333,
+  "first_fraud_relpos_median": 0.7996768982229402,
+  "first_fraud_relpos_quantiles": {
+   "0.1": 0.5717406918158656,
+   "0.25": 0.6418976204507203,
+   "0.5": 0.7996768982229402,
+   "0.75": 0.8817835340702854,
+   "0.9": 0.953638847442343
+  }
+ },
+ "dev_sim": {
+  "frauds": 330.49,
+  "runs": 124.145,
+  "fraud_customers": 28.49,
+  "rate": 0.0012286056298234918,
+  "customers": 240,
+  "frauds_per_fraud_customer_quantiles": {
+   "0.25": 6.0,
+   "0.5": 10.0,
+   "0.75": 15.0,
+   "0.9": 22.0
+  },
+  "frauds_per_fraud_customer_mean": 11.6002106002106,
+  "frauds_per_fraud_customer_max": 66,
+  "share_above_27": 0.04703404703404703,
+  "bursts_per_fraud_customer": 1.050895050895051,
+  "runs_per_fraud_customer": 4.357493857493857,
+  "first_fraud_relpos_median": 0.740622451060359,
+  "first_fraud_relpos_quantiles": {
+   "0.1": 0.24945768102077492,
+   "0.25": 0.5947207365803918,
+   "0.5": 0.740622451060359,
+   "0.75": 0.8436512015227219,
+   "0.9": 0.9464520624590237
+  },
+  "per_rep": {
+   "frauds": {
+    "mean": 330.49,
+    "sd": 67.28780083123179,
+    "p2_5": 211.0,
+    "p97_5": 471.0
+   },
+   "runs": {
+    "mean": 124.145,
+    "sd": 25.476641681288843,
+    "p2_5": 76.975,
+    "p97_5": 179.0
+   },
+   "fraud_customers": {
+    "mean": 28.49,
+    "sd": 4.735188491522936,
+    "p2_5": 19.0,
+    "p97_5": 38.025000000000006
+   }
+  }
+ },
+ "seconds": 40.1,
+ "test_read": false
+}

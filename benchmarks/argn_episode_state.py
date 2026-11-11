@@ -19,6 +19,7 @@ N_MONTH = 12
 MONTH_SECONDS = 30.44 * 86400.0
 BURST_GAP = 50                                                    # a re-entry more than 50 events after the last fraud starts a new burst
 VARIANTS = ("A1", "A2", "A4")
+ALL_VARIANTS = VARIANTS + ("A5",)  # amendment 1 (2026-11-11): A4 with hierarchical shrinkage toward the count-pooled cell
 
 
 def dbin(d):
@@ -51,33 +52,35 @@ def _rate(k, n, fallback):
     return (k + SMOOTH) / (n + 2 * SMOOTH) if n > 0 else fallback
 
 
-def fit_episode_tables(train, variant, label=LABEL):
-    """Returns dict(onset[12], cont[22, 5], re[11, 5], counts) for variant A1 / A2 / A4."""
-    assert variant in VARIANTS, variant
+def fit_episode_tables(train, variant, label=LABEL, shrink=None):
+    """Returns dict(onset[12], cont[22, 5], re[11, 5], counts) for variant A1 / A2 / A4 / A5.
+    A5 (amendment 1): count-split cells are (k + m * pooled) / (n + m) with m = `shrink`, pooled = the A2 cell."""
+    assert variant in ALL_VARIANTS, variant; assert (variant == "A5") == (shrink is not None)
+    split = (lambda k, n, pooled: (k + shrink * pooled) / (n + shrink)) if variant == "A5" else _rate
     _, s = row_states(train, label); y = s["y"]; never = s["ever"] == 0; run = s["prev"] == 1; after = (s["prev"] == 0) & (s["ever"] == 1)
     nd, nk = len(D_EDGES) + 1, len(K_EDGES) + 1; counts = []
     base0 = _rate(y[never].sum(), never.sum(), 0.0); onset = np.full(N_MONTH, base0)
-    if variant in ("A2", "A4"):
+    if variant in ("A2", "A4", "A5"):
         for m in range(N_MONTH):
             sel = never & (s["month"] == m); onset[m] = _rate(y[sel].sum(), sel.sum(), base0); counts.append(dict(table="onset", month=m, events=int(sel.sum()), frauds=int(y[sel].sum()), probability=float(onset[m])))
     else:
         counts.append(dict(table="onset", month=-1, events=int(never.sum()), frauds=int(y[never].sum()), probability=float(base0)))
-    a = np.minimum(s["age"], MAX_AGE); db = dbin(s["dist"]); kb = kbin(s["k"]); by_k = variant == "A4"
+    a = np.minimum(s["age"], MAX_AGE); db = dbin(s["dist"]); kb = kbin(s["k"]); by_k = variant in ("A4", "A5")
     base_run = _rate(y[run].sum(), run.sum(), 0.5); cont = np.zeros((MAX_AGE + 1, nk)); base_after = _rate(y[after].sum(), after.sum(), 0.0); re = np.zeros((nd, nk))
     for age in range(1, MAX_AGE + 1):
         sel = run & (a == age); pooled = _rate(y[sel].sum(), sel.sum(), base_run)
         for q in range(nk):
-            sq = sel & (kb == q) if by_k else sel; cont[age, q] = _rate(y[sq].sum(), sq.sum(), pooled) if by_k else pooled
+            sq = sel & (kb == q) if by_k else sel; cont[age, q] = split(y[sq].sum(), sq.sum(), pooled) if by_k else pooled
             if by_k or q == 0:
                 counts.append(dict(table="cont", age=age, kbin=q if by_k else -1, events=int(sq.sum()), frauds=int(y[sq].sum()), probability=float(cont[age, q])))
     cont[0] = cont[1]
     for b in range(nd):
         sel = after & (db == b); pooled = _rate(y[sel].sum(), sel.sum(), base_after)
         for q in range(nk):
-            sq = sel & (kb == q) if by_k else sel; re[b, q] = _rate(y[sq].sum(), sq.sum(), pooled) if by_k else pooled
+            sq = sel & (kb == q) if by_k else sel; re[b, q] = split(y[sq].sum(), sq.sum(), pooled) if by_k else pooled
             if by_k or q == 0:
                 counts.append(dict(table="re", dbin=b, kbin=q if by_k else -1, events=int(sq.sum()), frauds=int(y[sq].sum()), probability=float(re[b, q])))
-    return dict(variant=variant, onset=onset.tolist(), cont=cont.tolist(), re=re.tolist(), counts=counts, smoothing=SMOOTH, d_edges=D_EDGES.tolist(), k_edges=K_EDGES.tolist(),
+    return dict(variant=variant, shrink=shrink, onset=onset.tolist(), cont=cont.tolist(), re=re.tolist(), counts=counts, smoothing=SMOOTH, d_edges=D_EDGES.tolist(), k_edges=K_EDGES.tolist(),
                 month_seconds=MONTH_SECONDS, train_frauds=int(y.sum()), train_events=int(len(y)))
 
 
