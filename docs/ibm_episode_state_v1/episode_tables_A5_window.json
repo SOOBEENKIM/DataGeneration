@@ -1,0 +1,1642 @@
+{
+ "variant": "A5",
+ "shrink": 50,
+ "onset": [
+  5.235053921055387e-06,
+  6.964758322886195e-05,
+  5.882856287168956e-05,
+  5.39642109353077e-06,
+  5.350798339112196e-06,
+  5.358999367638075e-06,
+  0.00015497082273475407,
+  0.00015952648139591172,
+  0.00023243684520839948,
+  0.0003167874298747826,
+  0.00013731507241877516,
+  0.00024322099433731633
+ ],
+ "onset_beyond": 0.00010736288193308482,
+ "cont": [
+  [
+   0.6834222908912143,
+   0.672786010253529,
+   0.6615392860971165,
+   0.6684751761209976,
+   0.6579097919860867
+  ],
+  [
+   0.6834222908912143,
+   0.672786010253529,
+   0.6615392860971165,
+   0.6684751761209976,
+   0.6579097919860867
+  ],
+  [
+   0.6051864801864801,
+   0.6644838212634823,
+   0.6107954545454545,
+   0.42329545454545453,
+   0.49887766554433216
+  ],
+  [
+   0.6018310147299508,
+   0.6143342838341741,
+   0.5366369952236213,
+   0.5485192639447958,
+   0.5404753989361701
+  ],
+  [
+   0.6435185185185185,
+   0.6948111477814448,
+   0.6286256135653726,
+   0.6238776655443322,
+   0.5995776478232618
+  ],
+  [
+   0.5928571428571429,
+   0.6080357142857142,
+   0.5610902255639098,
+   0.6041162227602905,
+   0.6044973544973544
+  ],
+  [
+   0.7023809523809522,
+   0.7331201137171286,
+   0.6685563114134542,
+   0.726190476190476,
+   0.6814914645103324
+  ],
+  [
+   0.7166666666666667,
+   0.7166666666666667,
+   0.7587064676616916,
+   0.6751412429378532,
+   0.7138364779874214
+  ],
+  [
+   0.5227272727272727,
+   0.5227272727272727,
+   0.5405594405594406,
+   0.5025252525252525,
+   0.5218531468531469
+  ],
+  [
+   0.45833333333333326,
+   0.45833333333333326,
+   0.4640804597701149,
+   0.4599358974358974,
+   0.44934640522875813
+  ],
+  [
+   0.5833333333333334,
+   0.5833333333333334,
+   0.6069182389937108,
+   0.5608974358974359,
+   0.5833333333333334
+  ],
+  [
+   0.875,
+   0.875,
+   0.875,
+   0.8820754716981132,
+   0.875
+  ],
+  [
+   0.625,
+   0.625,
+   0.625,
+   0.6273584905660378,
+   0.625
+  ],
+  [
+   0.5,
+   0.5,
+   0.5,
+   0.5,
+   0.5
+  ],
+  [
+   0.75,
+   0.75,
+   0.75,
+   0.7549019607843137,
+   0.75
+  ],
+  [
+   0.75,
+   0.75,
+   0.75,
+   0.7549019607843137,
+   0.75
+  ],
+  [
+   0.75,
+   0.75,
+   0.75,
+   0.75,
+   0.7549019607843137
+  ],
+  [
+   0.75,
+   0.75,
+   0.75,
+   0.75,
+   0.7549019607843137
+  ],
+  [
+   0.75,
+   0.75,
+   0.75,
+   0.75,
+   0.7549019607843137
+  ],
+  [
+   0.25,
+   0.25,
+   0.25,
+   0.25,
+   0.24509803921568626
+  ],
+  [
+   0.6238496932515337,
+   0.6238496932515337,
+   0.6238496932515337,
+   0.6238496932515337,
+   0.6238496932515337
+  ],
+  [
+   0.6238496932515337,
+   0.6238496932515337,
+   0.6238496932515337,
+   0.6238496932515337,
+   0.6238496932515337
+  ]
+ ],
+ "re": [
+  [
+   0.010091347578884967,
+   0.010091347578884967,
+   0.010091347578884967,
+   0.010091347578884967,
+   0.010091347578884967
+  ],
+  [
+   0.39920972718514086,
+   0.37794383408393334,
+   0.3809601396566773,
+   0.3050197675811669,
+   0.2686215965040634
+  ],
+  [
+   0.24009517189755655,
+   0.2672757573953931,
+   0.17723198638025137,
+   0.15716447385294044,
+   0.19711000305281368
+  ],
+  [
+   0.204484126984127,
+   0.15282287157287158,
+   0.11796853244221667,
+   0.08288081314397105,
+   0.08762838468720822
+  ],
+  [
+   0.11495771670190275,
+   0.10970819304152638,
+   0.10174171622769754,
+   0.08906633906633907,
+   0.07007575757575758
+  ],
+  [
+   0.0731466248358011,
+   0.028929547344659617,
+   0.0388189808366553,
+   0.029334270806350145,
+   0.029734762979683974
+  ],
+  [
+   0.04714228439059159,
+   0.015642156768315,
+   0.021098644762222812,
+   0.01469024708956997,
+   0.017299036311621867
+  ],
+  [
+   0.009819387685192353,
+   0.004049340243695786,
+   0.004354642991786866,
+   0.0027373740605779193,
+   0.003285200257143981
+  ],
+  [
+   5.7273768613974806e-05,
+   3.351520920193584e-05,
+   0.0007830329739513653,
+   0.0006304690816695075,
+   2.7331066676870266e-05
+  ],
+  [
+   0.0015850785353287563,
+   1.7041626265839828e-05,
+   0.00044742917080395963,
+   9.878876506422822e-06,
+   0.000654529868941772
+  ],
+  [
+   2.0513926932346273e-06,
+   8.602879321768265e-07,
+   0.00019535104436588599,
+   1.3262551156754408e-06,
+   1.941182431160171e-06
+  ]
+ ],
+ "counts": [
+  {
+   "table": "onset",
+   "month": 0,
+   "events": 95509,
+   "frauds": 0,
+   "probability": 5.235053921055387e-06
+  },
+  {
+   "table": "onset",
+   "month": 1,
+   "events": 93326,
+   "frauds": 6,
+   "probability": 6.964758322886195e-05
+  },
+  {
+   "table": "onset",
+   "month": 2,
+   "events": 93491,
+   "frauds": 5,
+   "probability": 5.882856287168956e-05
+  },
+  {
+   "table": "onset",
+   "month": 3,
+   "events": 92653,
+   "frauds": 0,
+   "probability": 5.39642109353077e-06
+  },
+  {
+   "table": "onset",
+   "month": 4,
+   "events": 93443,
+   "frauds": 0,
+   "probability": 5.350798339112196e-06
+  },
+  {
+   "table": "onset",
+   "month": 5,
+   "events": 93300,
+   "frauds": 0,
+   "probability": 5.358999367638075e-06
+  },
+  {
+   "table": "onset",
+   "month": 6,
+   "events": 93565,
+   "frauds": 14,
+   "probability": 0.00015497082273475407
+  },
+  {
+   "table": "onset",
+   "month": 7,
+   "events": 90893,
+   "frauds": 14,
+   "probability": 0.00015952648139591172
+  },
+  {
+   "table": "onset",
+   "month": 8,
+   "events": 88195,
+   "frauds": 20,
+   "probability": 0.00023243684520839948
+  },
+  {
+   "table": "onset",
+   "month": 9,
+   "events": 86808,
+   "frauds": 27,
+   "probability": 0.0003167874298747826
+  },
+  {
+   "table": "onset",
+   "month": 10,
+   "events": 83748,
+   "frauds": 11,
+   "probability": 0.00013731507241877516
+  },
+  {
+   "table": "onset",
+   "month": 11,
+   "events": 80173,
+   "frauds": 19,
+   "probability": 0.00024322099433731633
+  },
+  {
+   "table": "cont",
+   "age": 1,
+   "kbin": 0,
+   "events": 182,
+   "frauds": 125,
+   "probability": 0.6834222908912143
+  },
+  {
+   "table": "cont",
+   "age": 1,
+   "kbin": 1,
+   "events": 95,
+   "frauds": 64,
+   "probability": 0.672786010253529
+  },
+  {
+   "table": "cont",
+   "age": 1,
+   "kbin": 2,
+   "events": 102,
+   "frauds": 67,
+   "probability": 0.6615392860971165
+  },
+  {
+   "table": "cont",
+   "age": 1,
+   "kbin": 3,
+   "events": 72,
+   "frauds": 48,
+   "probability": 0.6684751761209976
+  },
+  {
+   "table": "cont",
+   "age": 1,
+   "kbin": 4,
+   "events": 39,
+   "frauds": 25,
+   "probability": 0.6579097919860867
+  },
+  {
+   "table": "cont",
+   "age": 2,
+   "kbin": 0,
+   "events": 106,
+   "frauds": 66,
+   "probability": 0.6051864801864801
+  },
+  {
+   "table": "cont",
+   "age": 2,
+   "kbin": 1,
+   "events": 68,
+   "frauds": 50,
+   "probability": 0.6644838212634823
+  },
+  {
+   "table": "cont",
+   "age": 2,
+   "kbin": 2,
+   "events": 62,
+   "frauds": 40,
+   "probability": 0.6107954545454545
+  },
+  {
+   "table": "cont",
+   "age": 2,
+   "kbin": 3,
+   "events": 62,
+   "frauds": 19,
+   "probability": 0.42329545454545453
+  },
+  {
+   "table": "cont",
+   "age": 2,
+   "kbin": 4,
+   "events": 31,
+   "frauds": 12,
+   "probability": 0.49887766554433216
+  },
+  {
+   "table": "cont",
+   "age": 3,
+   "kbin": 0,
+   "events": 54,
+   "frauds": 34,
+   "probability": 0.6018310147299508
+  },
+  {
+   "table": "cont",
+   "age": 3,
+   "kbin": 1,
+   "events": 47,
+   "frauds": 31,
+   "probability": 0.6143342838341741
+  },
+  {
+   "table": "cont",
+   "age": 3,
+   "kbin": 2,
+   "events": 48,
+   "frauds": 24,
+   "probability": 0.5366369952236213
+  },
+  {
+   "table": "cont",
+   "age": 3,
+   "kbin": 3,
+   "events": 24,
+   "frauds": 12,
+   "probability": 0.5485192639447958
+  },
+  {
+   "table": "cont",
+   "age": 3,
+   "kbin": 4,
+   "events": 14,
+   "frauds": 6,
+   "probability": 0.5404753989361701
+  },
+  {
+   "table": "cont",
+   "age": 4,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.6435185185185185
+  },
+  {
+   "table": "cont",
+   "age": 4,
+   "kbin": 1,
+   "events": 51,
+   "frauds": 38,
+   "probability": 0.6948111477814448
+  },
+  {
+   "table": "cont",
+   "age": 4,
+   "kbin": 2,
+   "events": 33,
+   "frauds": 20,
+   "probability": 0.6286256135653726
+  },
+  {
+   "table": "cont",
+   "age": 4,
+   "kbin": 3,
+   "events": 16,
+   "frauds": 9,
+   "probability": 0.6238776655443322
+  },
+  {
+   "table": "cont",
+   "age": 4,
+   "kbin": 4,
+   "events": 7,
+   "frauds": 2,
+   "probability": 0.5995776478232618
+  },
+  {
+   "table": "cont",
+   "age": 5,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.5928571428571429
+  },
+  {
+   "table": "cont",
+   "age": 5,
+   "kbin": 1,
+   "events": 30,
+   "frauds": 19,
+   "probability": 0.6080357142857142
+  },
+  {
+   "table": "cont",
+   "age": 5,
+   "kbin": 2,
+   "events": 26,
+   "frauds": 13,
+   "probability": 0.5610902255639098
+  },
+  {
+   "table": "cont",
+   "age": 5,
+   "kbin": 3,
+   "events": 9,
+   "frauds": 6,
+   "probability": 0.6041162227602905
+  },
+  {
+   "table": "cont",
+   "age": 5,
+   "kbin": 4,
+   "events": 4,
+   "frauds": 3,
+   "probability": 0.6044973544973544
+  },
+  {
+   "table": "cont",
+   "age": 6,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.7023809523809522
+  },
+  {
+   "table": "cont",
+   "age": 6,
+   "kbin": 1,
+   "events": 17,
+   "frauds": 14,
+   "probability": 0.7331201137171286
+  },
+  {
+   "table": "cont",
+   "age": 6,
+   "kbin": 2,
+   "events": 13,
+   "frauds": 7,
+   "probability": 0.6685563114134542
+  },
+  {
+   "table": "cont",
+   "age": 6,
+   "kbin": 3,
+   "events": 8,
+   "frauds": 7,
+   "probability": 0.726190476190476
+  },
+  {
+   "table": "cont",
+   "age": 6,
+   "kbin": 4,
+   "events": 3,
+   "frauds": 1,
+   "probability": 0.6814914645103324
+  },
+  {
+   "table": "cont",
+   "age": 7,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.7166666666666667
+  },
+  {
+   "table": "cont",
+   "age": 7,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.7166666666666667
+  },
+  {
+   "table": "cont",
+   "age": 7,
+   "kbin": 2,
+   "events": 17,
+   "frauds": 15,
+   "probability": 0.7587064676616916
+  },
+  {
+   "table": "cont",
+   "age": 7,
+   "kbin": 3,
+   "events": 9,
+   "frauds": 4,
+   "probability": 0.6751412429378532
+  },
+  {
+   "table": "cont",
+   "age": 7,
+   "kbin": 4,
+   "events": 3,
+   "frauds": 2,
+   "probability": 0.7138364779874214
+  },
+  {
+   "table": "cont",
+   "age": 8,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.5227272727272727
+  },
+  {
+   "table": "cont",
+   "age": 8,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.5227272727272727
+  },
+  {
+   "table": "cont",
+   "age": 8,
+   "kbin": 2,
+   "events": 15,
+   "frauds": 9,
+   "probability": 0.5405594405594406
+  },
+  {
+   "table": "cont",
+   "age": 8,
+   "kbin": 3,
+   "events": 4,
+   "frauds": 1,
+   "probability": 0.5025252525252525
+  },
+  {
+   "table": "cont",
+   "age": 8,
+   "kbin": 4,
+   "events": 2,
+   "frauds": 1,
+   "probability": 0.5218531468531469
+  },
+  {
+   "table": "cont",
+   "age": 9,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.45833333333333326
+  },
+  {
+   "table": "cont",
+   "age": 9,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.45833333333333326
+  },
+  {
+   "table": "cont",
+   "age": 9,
+   "kbin": 2,
+   "events": 8,
+   "frauds": 4,
+   "probability": 0.4640804597701149
+  },
+  {
+   "table": "cont",
+   "age": 9,
+   "kbin": 3,
+   "events": 2,
+   "frauds": 1,
+   "probability": 0.4599358974358974
+  },
+  {
+   "table": "cont",
+   "age": 9,
+   "kbin": 4,
+   "events": 1,
+   "frauds": 0,
+   "probability": 0.44934640522875813
+  },
+  {
+   "table": "cont",
+   "age": 10,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.5833333333333334
+  },
+  {
+   "table": "cont",
+   "age": 10,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.5833333333333334
+  },
+  {
+   "table": "cont",
+   "age": 10,
+   "kbin": 2,
+   "events": 3,
+   "frauds": 3,
+   "probability": 0.6069182389937108
+  },
+  {
+   "table": "cont",
+   "age": 10,
+   "kbin": 3,
+   "events": 2,
+   "frauds": 0,
+   "probability": 0.5608974358974359
+  },
+  {
+   "table": "cont",
+   "age": 10,
+   "kbin": 4,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.5833333333333334
+  },
+  {
+   "table": "cont",
+   "age": 11,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.875
+  },
+  {
+   "table": "cont",
+   "age": 11,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.875
+  },
+  {
+   "table": "cont",
+   "age": 11,
+   "kbin": 2,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.875
+  },
+  {
+   "table": "cont",
+   "age": 11,
+   "kbin": 3,
+   "events": 3,
+   "frauds": 3,
+   "probability": 0.8820754716981132
+  },
+  {
+   "table": "cont",
+   "age": 11,
+   "kbin": 4,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.875
+  },
+  {
+   "table": "cont",
+   "age": 12,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.625
+  },
+  {
+   "table": "cont",
+   "age": 12,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.625
+  },
+  {
+   "table": "cont",
+   "age": 12,
+   "kbin": 2,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.625
+  },
+  {
+   "table": "cont",
+   "age": 12,
+   "kbin": 3,
+   "events": 3,
+   "frauds": 2,
+   "probability": 0.6273584905660378
+  },
+  {
+   "table": "cont",
+   "age": 12,
+   "kbin": 4,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.625
+  },
+  {
+   "table": "cont",
+   "age": 13,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.5
+  },
+  {
+   "table": "cont",
+   "age": 13,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.5
+  },
+  {
+   "table": "cont",
+   "age": 13,
+   "kbin": 2,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.5
+  },
+  {
+   "table": "cont",
+   "age": 13,
+   "kbin": 3,
+   "events": 2,
+   "frauds": 1,
+   "probability": 0.5
+  },
+  {
+   "table": "cont",
+   "age": 13,
+   "kbin": 4,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.5
+  },
+  {
+   "table": "cont",
+   "age": 14,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 14,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 14,
+   "kbin": 2,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 14,
+   "kbin": 3,
+   "events": 1,
+   "frauds": 1,
+   "probability": 0.7549019607843137
+  },
+  {
+   "table": "cont",
+   "age": 14,
+   "kbin": 4,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 15,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 15,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 15,
+   "kbin": 2,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 15,
+   "kbin": 3,
+   "events": 1,
+   "frauds": 1,
+   "probability": 0.7549019607843137
+  },
+  {
+   "table": "cont",
+   "age": 15,
+   "kbin": 4,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 16,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 16,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 16,
+   "kbin": 2,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 16,
+   "kbin": 3,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 16,
+   "kbin": 4,
+   "events": 1,
+   "frauds": 1,
+   "probability": 0.7549019607843137
+  },
+  {
+   "table": "cont",
+   "age": 17,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 17,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 17,
+   "kbin": 2,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 17,
+   "kbin": 3,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 17,
+   "kbin": 4,
+   "events": 1,
+   "frauds": 1,
+   "probability": 0.7549019607843137
+  },
+  {
+   "table": "cont",
+   "age": 18,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 18,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 18,
+   "kbin": 2,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 18,
+   "kbin": 3,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.75
+  },
+  {
+   "table": "cont",
+   "age": 18,
+   "kbin": 4,
+   "events": 1,
+   "frauds": 1,
+   "probability": 0.7549019607843137
+  },
+  {
+   "table": "cont",
+   "age": 19,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.25
+  },
+  {
+   "table": "cont",
+   "age": 19,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.25
+  },
+  {
+   "table": "cont",
+   "age": 19,
+   "kbin": 2,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.25
+  },
+  {
+   "table": "cont",
+   "age": 19,
+   "kbin": 3,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.25
+  },
+  {
+   "table": "cont",
+   "age": 19,
+   "kbin": 4,
+   "events": 1,
+   "frauds": 0,
+   "probability": 0.24509803921568626
+  },
+  {
+   "table": "cont",
+   "age": 20,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.6238496932515337
+  },
+  {
+   "table": "cont",
+   "age": 20,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.6238496932515337
+  },
+  {
+   "table": "cont",
+   "age": 20,
+   "kbin": 2,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.6238496932515337
+  },
+  {
+   "table": "cont",
+   "age": 20,
+   "kbin": 3,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.6238496932515337
+  },
+  {
+   "table": "cont",
+   "age": 20,
+   "kbin": 4,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.6238496932515337
+  },
+  {
+   "table": "cont",
+   "age": 21,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.6238496932515337
+  },
+  {
+   "table": "cont",
+   "age": 21,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.6238496932515337
+  },
+  {
+   "table": "cont",
+   "age": 21,
+   "kbin": 2,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.6238496932515337
+  },
+  {
+   "table": "cont",
+   "age": 21,
+   "kbin": 3,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.6238496932515337
+  },
+  {
+   "table": "cont",
+   "age": 21,
+   "kbin": 4,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.6238496932515337
+  },
+  {
+   "table": "re",
+   "dbin": 0,
+   "kbin": 0,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.010091347578884967
+  },
+  {
+   "table": "re",
+   "dbin": 0,
+   "kbin": 1,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.010091347578884967
+  },
+  {
+   "table": "re",
+   "dbin": 0,
+   "kbin": 2,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.010091347578884967
+  },
+  {
+   "table": "re",
+   "dbin": 0,
+   "kbin": 3,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.010091347578884967
+  },
+  {
+   "table": "re",
+   "dbin": 0,
+   "kbin": 4,
+   "events": 0,
+   "frauds": 0,
+   "probability": 0.010091347578884967
+  },
+  {
+   "table": "re",
+   "dbin": 1,
+   "kbin": 0,
+   "events": 117,
+   "frauds": 49,
+   "probability": 0.39920972718514086
+  },
+  {
+   "table": "re",
+   "dbin": 1,
+   "kbin": 1,
+   "events": 92,
+   "frauds": 36,
+   "probability": 0.37794383408393334
+  },
+  {
+   "table": "re",
+   "dbin": 1,
+   "kbin": 2,
+   "events": 125,
+   "frauds": 49,
+   "probability": 0.3809601396566773
+  },
+  {
+   "table": "re",
+   "dbin": 1,
+   "kbin": 3,
+   "events": 103,
+   "frauds": 29,
+   "probability": 0.3050197675811669
+  },
+  {
+   "table": "re",
+   "dbin": 1,
+   "kbin": 4,
+   "events": 53,
+   "frauds": 10,
+   "probability": 0.2686215965040634
+  },
+  {
+   "table": "re",
+   "dbin": 2,
+   "kbin": 0,
+   "events": 68,
+   "frauds": 18,
+   "probability": 0.24009517189755655
+  },
+  {
+   "table": "re",
+   "dbin": 2,
+   "kbin": 1,
+   "events": 56,
+   "frauds": 18,
+   "probability": 0.2672757573953931
+  },
+  {
+   "table": "re",
+   "dbin": 2,
+   "kbin": 2,
+   "events": 76,
+   "frauds": 12,
+   "probability": 0.17723198638025137
+  },
+  {
+   "table": "re",
+   "dbin": 2,
+   "kbin": 3,
+   "events": 73,
+   "frauds": 9,
+   "probability": 0.15716447385294044
+  },
+  {
+   "table": "re",
+   "dbin": 2,
+   "kbin": 4,
+   "events": 43,
+   "frauds": 8,
+   "probability": 0.19711000305281368
+  },
+  {
+   "table": "re",
+   "dbin": 3,
+   "kbin": 0,
+   "events": 50,
+   "frauds": 14,
+   "probability": 0.204484126984127
+  },
+  {
+   "table": "re",
+   "dbin": 3,
+   "kbin": 1,
+   "events": 38,
+   "frauds": 7,
+   "probability": 0.15282287157287158
+  },
+  {
+   "table": "re",
+   "dbin": 3,
+   "kbin": 2,
+   "events": 64,
+   "frauds": 7,
+   "probability": 0.11796853244221667
+  },
+  {
+   "table": "re",
+   "dbin": 3,
+   "kbin": 3,
+   "events": 64,
+   "frauds": 3,
+   "probability": 0.08288081314397105
+  },
+  {
+   "table": "re",
+   "dbin": 3,
+   "kbin": 4,
+   "events": 35,
+   "frauds": 1,
+   "probability": 0.08762838468720822
+  },
+  {
+   "table": "re",
+   "dbin": 4,
+   "kbin": 0,
+   "events": 36,
+   "frauds": 5,
+   "probability": 0.11495771670190275
+  },
+  {
+   "table": "re",
+   "dbin": 4,
+   "kbin": 1,
+   "events": 31,
+   "frauds": 4,
+   "probability": 0.10970819304152638
+  },
+  {
+   "table": "re",
+   "dbin": 4,
+   "kbin": 2,
+   "events": 57,
+   "frauds": 6,
+   "probability": 0.10174171622769754
+  },
+  {
+   "table": "re",
+   "dbin": 4,
+   "kbin": 3,
+   "events": 61,
+   "frauds": 5,
+   "probability": 0.08906633906633907
+  },
+  {
+   "table": "re",
+   "dbin": 4,
+   "kbin": 4,
+   "events": 34,
+   "frauds": 1,
+   "probability": 0.07007575757575758
+  },
+  {
+   "table": "re",
+   "dbin": 5,
+   "kbin": 0,
+   "events": 127,
+   "frauds": 11,
+   "probability": 0.0731466248358011
+  },
+  {
+   "table": "re",
+   "dbin": 5,
+   "kbin": 1,
+   "events": 121,
+   "frauds": 3,
+   "probability": 0.028929547344659617
+  },
+  {
+   "table": "re",
+   "dbin": 5,
+   "kbin": 2,
+   "events": 232,
+   "frauds": 9,
+   "probability": 0.0388189808366553
+  },
+  {
+   "table": "re",
+   "dbin": 5,
+   "kbin": 3,
+   "events": 255,
+   "frauds": 7,
+   "probability": 0.029334270806350145
+  },
+  {
+   "table": "re",
+   "dbin": 5,
+   "kbin": 4,
+   "events": 150,
+   "frauds": 4,
+   "probability": 0.029734762979683974
+  },
+  {
+   "table": "re",
+   "dbin": 6,
+   "kbin": 0,
+   "events": 142,
+   "frauds": 8,
+   "probability": 0.04714228439059159
+  },
+  {
+   "table": "re",
+   "dbin": 6,
+   "kbin": 1,
+   "events": 209,
+   "frauds": 3,
+   "probability": 0.015642156768315
+  },
+  {
+   "table": "re",
+   "dbin": 6,
+   "kbin": 2,
+   "events": 379,
+   "frauds": 8,
+   "probability": 0.021098644762222812
+  },
+  {
+   "table": "re",
+   "dbin": 6,
+   "kbin": 3,
+   "events": 430,
+   "frauds": 6,
+   "probability": 0.01469024708956997
+  },
+  {
+   "table": "re",
+   "dbin": 6,
+   "kbin": 4,
+   "events": 242,
+   "frauds": 4,
+   "probability": 0.017299036311621867
+  },
+  {
+   "table": "re",
+   "dbin": 7,
+   "kbin": 0,
+   "events": 277,
+   "frauds": 3,
+   "probability": 0.009819387685192353
+  },
+  {
+   "table": "re",
+   "dbin": 7,
+   "kbin": 1,
+   "events": 496,
+   "frauds": 2,
+   "probability": 0.004049340243695786
+  },
+  {
+   "table": "re",
+   "dbin": 7,
+   "kbin": 2,
+   "events": 917,
+   "frauds": 4,
+   "probability": 0.004354642991786866
+  },
+  {
+   "table": "re",
+   "dbin": 7,
+   "kbin": 3,
+   "events": 1123,
+   "frauds": 3,
+   "probability": 0.0027373740605779193
+  },
+  {
+   "table": "re",
+   "dbin": 7,
+   "kbin": 4,
+   "events": 623,
+   "frauds": 2,
+   "probability": 0.003285200257143981
+  },
+  {
+   "table": "re",
+   "dbin": 8,
+   "kbin": 0,
+   "events": 400,
+   "frauds": 0,
+   "probability": 5.7273768613974806e-05
+  },
+  {
+   "table": "re",
+   "dbin": 8,
+   "kbin": 1,
+   "events": 719,
+   "frauds": 0,
+   "probability": 3.351520920193584e-05
+  },
+  {
+   "table": "re",
+   "dbin": 8,
+   "kbin": 2,
+   "events": 1260,
+   "frauds": 1,
+   "probability": 0.0007830329739513653
+  },
+  {
+   "table": "re",
+   "dbin": 8,
+   "kbin": 3,
+   "events": 1577,
+   "frauds": 1,
+   "probability": 0.0006304690816695075
+  },
+  {
+   "table": "re",
+   "dbin": 8,
+   "kbin": 4,
+   "events": 893,
+   "frauds": 0,
+   "probability": 2.7331066676870266e-05
+  },
+  {
+   "table": "re",
+   "dbin": 9,
+   "kbin": 0,
+   "events": 595,
+   "frauds": 1,
+   "probability": 0.0015850785353287563
+  },
+  {
+   "table": "re",
+   "dbin": 9,
+   "kbin": 1,
+   "events": 1263,
+   "frauds": 0,
+   "probability": 1.7041626265839828e-05
+  },
+  {
+   "table": "re",
+   "dbin": 9,
+   "kbin": 2,
+   "events": 2235,
+   "frauds": 1,
+   "probability": 0.00044742917080395963
+  },
+  {
+   "table": "re",
+   "dbin": 9,
+   "kbin": 3,
+   "events": 2215,
+   "frauds": 0,
+   "probability": 9.878876506422822e-06
+  },
+  {
+   "table": "re",
+   "dbin": 9,
+   "kbin": 4,
+   "events": 1512,
+   "frauds": 1,
+   "probability": 0.000654529868941772
+  },
+  {
+   "table": "re",
+   "dbin": 10,
+   "kbin": 0,
+   "events": 2046,
+   "frauds": 0,
+   "probability": 2.0513926932346273e-06
+  },
+  {
+   "table": "re",
+   "dbin": 10,
+   "kbin": 1,
+   "events": 4948,
+   "frauds": 0,
+   "probability": 8.602879321768265e-07
+  },
+  {
+   "table": "re",
+   "dbin": 10,
+   "kbin": 2,
+   "events": 5091,
+   "frauds": 1,
+   "probability": 0.00019535104436588599
+  },
+  {
+   "table": "re",
+   "dbin": 10,
+   "kbin": 3,
+   "events": 3192,
+   "frauds": 0,
+   "probability": 1.3262551156754408e-06
+  },
+  {
+   "table": "re",
+   "dbin": 10,
+   "kbin": 4,
+   "events": 2165,
+   "frauds": 0,
+   "probability": 1.941182431160171e-06
+  }
+ ],
+ "smoothing": 0.5,
+ "d_edges": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  10,
+  20,
+  50,
+  100,
+  200
+ ],
+ "k_edges": [
+  3,
+  6,
+  10,
+  15
+ ],
+ "month_seconds": 2630016.0,
+ "train_frauds": 1303,
+ "train_events": 1123517
+}
