@@ -48,7 +48,19 @@ def dataset(name):
     if name == "ibm_normal4":  # ibm_normal_rows_v1 amendment 4 (2026-11-11)
         return dict(real_dev=IBM / "prepared/validation.parquet", real_train=IBM / "prepared/train.parquet",
                     out=ROOT / "docs/ibm_normal_rows_v1/v4/stage1", registry=registry_ibm_normal4, n_dev=240, n_train=1000)
+    if name == "ibm_impl":  # ibm_normal_impl_v1 (2026-11-11): in-generator stay + amount decoding stage, 8 independent dev generations per arm
+        return dict(real_dev=IBM / "prepared/validation.parquet", real_train=IBM / "prepared/train.parquet",
+                    out=ROOT / "docs/ibm_normal_impl_v1/stage1", registry=registry_ibm_impl, n_dev=240, n_train=1000)
     raise ValueError(name)
+
+
+def registry_ibm_impl():
+    rows = []
+    for i, fs in enumerate([20261108, 20261109]):
+        for gs in [20261100 + 10 * i + j for j in range(4)]:  # distinct seeds per fit (ibm_eval_frame_v2 amendment 1)
+            for arm in ("B", "R", "BA", "RA"):
+                rows.append(dict(family="normal_impl", model=arm, fit_seed=fs, generation_seed=gs, path=str(SF / f"ibm_normal_impl_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
+    return pd.DataFrame(rows)
 
 
 def registry_ibm_normal4():
@@ -224,7 +236,7 @@ def main():
     ap.add_argument("--floor-draws", type=int, default=200)
     ap.add_argument("--floor-seed", type=int, default=20261107)
     ap.add_argument("--skip-floor", action="store_true")
-    ap.add_argument("--dataset", choices=["sparkov", "ibm", "ibm_test", "ibm_episode", "ibm_normal", "ibm_normal2", "ibm_normal3", "ibm_normal4"], default="sparkov")
+    ap.add_argument("--dataset", choices=["sparkov", "ibm", "ibm_test", "ibm_episode", "ibm_normal", "ibm_normal2", "ibm_normal3", "ibm_normal4", "ibm_impl"], default="sparkov")
     args = ap.parse_args()
     ds = dataset(args.dataset)
     OUT, REAL_DEV, REAL_TRAIN = ds["out"], ds["real_dev"], ds["real_train"]
