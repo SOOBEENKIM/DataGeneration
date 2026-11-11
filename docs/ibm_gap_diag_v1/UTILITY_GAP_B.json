@@ -1,0 +1,160 @@
+{
+ "cross_swap": {
+  "ARGNf_RTFn": {
+   "history_auprc_mean": 0.44805746521214973,
+   "history_auprc_sd": 0.02789718999869305,
+   "per_draw": [
+    0.4106,
+    0.4743,
+    0.4631,
+    0.4442
+   ]
+  },
+  "RTFf_ARGNn": {
+   "history_auprc_mean": 0.3178888364093913,
+   "history_auprc_sd": 0.07238816460659779,
+   "per_draw": [
+    0.3912,
+    0.3682,
+    0.2468,
+    0.2653
+   ]
+  }
+ },
+ "normal_structure": {
+  "real_train": {
+   "rows": 1122214,
+   "amount_sd": 1.402021105925519,
+   "amount_sd_within_customer": 1.3287567665913536,
+   "amount_sd_within_category": 1.1846559700434776,
+   "amount_sd_within_merchant": 1.109384340014084,
+   "amount_sd_within_customer_category": 1.011124310251925,
+   "amount_sd_within_customer_merchant": 1.0026389245026757,
+   "rows_at_repeat_customer_merchant_pairs": 0.9732466356684197,
+   "abs_dlog_amount_vs_previous_visit_same_merchant_median": 0.32404971662265575,
+   "exact_same_amount_as_previous_visit_same_merchant": 0.022734954737946306,
+   "amount_lag1_autocorr": 0.002861111524855027,
+   "gap_lag1_autocorr": 0.18644273335006725,
+   "gap_sd": 1.99723491776952,
+   "gap_sd_within_customer": 1.9048444499954824,
+   "same_category_as_previous": 0.2100651034472926,
+   "same_merchant_as_previous": 0.1754798995556997,
+   "same_merchant_within_5": 0.35029325957437707,
+   "same_category_within_5": 0.44449899929959885,
+   "distinct_merchants_per_customer_median": 90.0,
+   "distinct_categories_per_customer_median": 44.0,
+   "share_rows_top3_merchants": 0.37662602676494855,
+   "amount_sd_within_customer_merchant_top3": 1.1401571788737814
+  },
+  "real_dev": {
+   "rows": 268509,
+   "amount_sd": 1.3820375405665266,
+   "amount_sd_within_customer": 1.307329809412069,
+   "amount_sd_within_category": 1.1643166919772965,
+   "amount_sd_within_merchant": 1.0822588604785721,
+   "amount_sd_within_customer_category": 0.9980954406138656,
+   "amount_sd_within_customer_merchant": 0.9875222467767061,
+   "rows_at_repeat_customer_merchant_pairs": 0.9728016565552737,
+   "abs_dlog_amount_vs_previous_visit_same_merchant_median": 0.33529931979702443,
+   "exact_same_amount_as_previous_visit_same_merchant": 0.022645895736215144,
+   "amount_lag1_autocorr": 0.01559321682714847,
+   "gap_lag1_autocorr": 0.1786404466667433,
+   "gap_sd": 1.93885637020886,
+   "gap_sd_within_customer": 1.8686661558938533,
+   "same_category_as_previous": 0.20304347340312615,
+   "same_merchant_as_previous": 0.1682625163402344,
+   "same_merchant_within_5": 0.3428004275461903,
+   "same_category_within_5": 0.43880093404690346,
+   "distinct_merchants_per_customer_median": 92.0,
+   "distinct_categories_per_customer_median": 44.0,
+   "share_rows_top3_merchants": 0.3685947212197729,
+   "amount_sd_within_customer_merchant_top3": 1.0961055017939327
+  },
+  "argn_final": {
+   "rows": 277292.0,
+   "amount_sd": 1.4172981469273138,
+   "amount_sd_within_customer": 1.3886241233257688,
+   "amount_sd_within_category": 1.38650006851553,
+   "amount_sd_within_merchant": 1.3440076524930342,
+   "amount_sd_within_customer_category": 1.3327767712968208,
+   "amount_sd_within_customer_merchant": 1.3084209404066716,
+   "rows_at_repeat_customer_merchant_pairs": 0.9731416526958565,
+   "abs_dlog_amount_vs_previous_visit_same_merchant_median": 1.1587953187147086,
+   "exact_same_amount_as_previous_visit_same_merchant": 0.0031829337440368206,
+   "amount_lag1_autocorr": 0.05711108866381504,
+   "gap_lag1_autocorr": 0.048789035288661464,
+   "gap_sd": 1.8281823753598447,
+   "gap_sd_within_customer": 1.8002589498500474,
+   "same_category_as_previous": 0.09274660015603658,
+   "same_merchant_as_previous": 0.042145861089227736,
+   "same_merchant_within_5": 0.17553879305743722,
+   "same_category_within_5": 0.3451189603237659,
+   "distinct_merchants_per_customer_median": 89.5,
+   "distinct_categories_per_customer_median": 43.125,
+   "share_rows_top3_merchants": 0.24079093230325174,
+   "amount_sd_within_customer_merchant_top3": 1.3133430650853117
+  },
+  "rtf_table": {
+   "rows": 268564.0,
+   "amount_sd": 1.4124097156346969,
+   "amount_sd_within_customer": 1.3786478850428185,
+   "amount_sd_within_category": 1.2024256692008257,
+   "amount_sd_within_merchant": 1.163833301922219,
+   "amount_sd_within_customer_category": 1.1205518223743762,
+   "amount_sd_within_customer_merchant": 1.1011511362638013,
+   "rows_at_repeat_customer_merchant_pairs": 0.9821215894415739,
+   "abs_dlog_amount_vs_previous_visit_same_merchant_median": 0.4221967616844952,
+   "exact_same_amount_as_previous_visit_same_merchant": 0.03262452908818942,
+   "amount_lag1_autocorr": -0.05451795902634596,
+   "gap_lag1_autocorr": 0.196160168648851,
+   "gap_sd": 2.142810184381476,
+   "gap_sd_within_customer": 2.083691748096468,
+   "same_category_as_previous": 0.262823527130221,
+   "same_merchant_as_previous": 0.2399228969786349,
+   "same_merchant_within_5": 0.429809774169135,
+   "same_category_within_5": 0.488707337837242,
+   "distinct_merchants_per_customer_median": 76.875,
+   "distinct_categories_per_customer_median": 33.5,
+   "share_rows_top3_merchants": 0.42226801179884305,
+   "amount_sd_within_customer_merchant_top3": 1.1969493020340596
+  }
+ },
+ "normal_discriminator_per_feature": {
+  "argn_final": {
+   "auc": 0.8254943406725517,
+   "drop": {
+    "log_gap": 0.11437930386361914,
+    "log_amount": 0.10194408714010798,
+    "gap_vs_med20": 0.08681666226020254,
+    "amount_vs_med20": 0.0839754950497376,
+    "same_category_5": 0.04689286923303539,
+    "log_position": 0.030565315140552052,
+    "log_amount_lag1": 0.02708965692689753,
+    "seen_merchants_5": 0.022569561918195303,
+    "log_amount_lag2": 0.02034979256020617,
+    "log_amount_lag3": 0.0152825943825891,
+    "mean_log_amount_5": 0.009454959798446395,
+    "seen_merchant": 0.003779414750803656
+   }
+  },
+  "rtf_table": {
+   "auc": 0.6821175250656787,
+   "drop": {
+    "log_amount": 0.03173186495548488,
+    "gap_vs_med20": 0.03084970971224359,
+    "log_gap": 0.029990438510422313,
+    "amount_vs_med20": 0.01891707008258694,
+    "log_position": 0.015921443547438453,
+    "seen_merchants_5": 0.014236268910147221,
+    "same_category_5": 0.01368012723793055,
+    "log_amount_lag2": 0.007503518494217843,
+    "log_amount_lag1": 0.007417827607905237,
+    "log_amount_lag3": 0.006576777012556723,
+    "seen_merchant": 0.0027531048788690614,
+    "mean_log_amount_5": 0.002578912208379447
+   }
+  }
+ },
+ "seconds": 51.2,
+ "test_read": false
+}

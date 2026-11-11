@@ -1,0 +1,459 @@
+{
+ "vocabulary": {
+  "categories": [
+   "5411",
+   "5541",
+   "5499",
+   "5812",
+   "5912",
+   "4829",
+   "5300",
+   "4784",
+   "5814",
+   "7538",
+   "5311",
+   "4121",
+   "5310",
+   "5942",
+   "4900",
+   "5813",
+   "4814",
+   "5211",
+   "4111",
+   "7832",
+   "5921",
+   "7230",
+   "5719",
+   "9402",
+   "5651",
+   "4214",
+   "5970",
+   "5815",
+   "7349",
+   "4899",
+   "6300",
+   "7542",
+   "7922",
+   "5251",
+   "4722",
+   "7210",
+   "8021",
+   "7995",
+   "8011",
+   "5655"
+  ],
+  "channels": [
+   "Online Transaction",
+   "Swipe Transaction"
+  ]
+ },
+ "groups": {
+  "amount": [
+   "log_amount",
+   "amount_vs_med20",
+   "mean_log_amount_5",
+   "log_amount_lag1",
+   "log_amount_lag2",
+   "log_amount_lag3"
+  ],
+  "gap": [
+   "log_gap",
+   "gap_vs_med20"
+  ],
+  "merchant": [
+   "seen_merchant",
+   "seen_merchants_5"
+  ],
+  "category": [
+   "cat_5411",
+   "cat_5541",
+   "cat_5499",
+   "cat_5812",
+   "cat_5912",
+   "cat_4829",
+   "cat_5300",
+   "cat_4784",
+   "cat_5814",
+   "cat_7538",
+   "cat_5311",
+   "cat_4121",
+   "cat_5310",
+   "cat_5942",
+   "cat_4900",
+   "cat_5813",
+   "cat_4814",
+   "cat_5211",
+   "cat_4111",
+   "cat_7832",
+   "cat_5921",
+   "cat_7230",
+   "cat_5719",
+   "cat_9402",
+   "cat_5651",
+   "cat_4214",
+   "cat_5970",
+   "cat_5815",
+   "cat_7349",
+   "cat_4899",
+   "cat_6300",
+   "cat_7542",
+   "cat_7922",
+   "cat_5251",
+   "cat_4722",
+   "cat_7210",
+   "cat_8021",
+   "cat_7995",
+   "cat_8011",
+   "cat_5655",
+   "same_category_5"
+  ],
+  "channel": [
+   "chan_Online Transaction",
+   "chan_Swipe Transaction"
+  ],
+  "position": [
+   "log_position"
+  ]
+ },
+ "discriminators": {
+  "argn_final": {
+   "fraud": {
+    "auc": 0.8274715335473228,
+    "n_real": 1303,
+    "n_synth": 2143,
+    "permutation_auc_drop": {
+     "amount": 0.10017412280457971,
+     "gap": 0.020475414435257334,
+     "merchant": 0.0372581228187814,
+     "category": 0.11199121647628692,
+     "channel": 0.011806334557931186,
+     "position": 0.11699076818776735
+    }
+   },
+   "onset": {
+    "auc": 0.7552776113211486,
+    "n_real": 490,
+    "n_synth": 782,
+    "permutation_auc_drop": {
+     "amount": 0.09450853088672564,
+     "gap": 0.028044703941237904,
+     "merchant": 0.013102763998856636,
+     "category": 0.07994915378543502,
+     "channel": 0.001493436212875099,
+     "position": 0.08903058948801554
+    }
+   },
+   "continuation": {
+    "auc": 0.827161918174097,
+    "n_real": 813,
+    "n_synth": 1361,
+    "permutation_auc_drop": {
+     "amount": 0.09906804656279047,
+     "gap": 0.02472504340494086,
+     "merchant": 0.032455662241663207,
+     "category": 0.10036532785590666,
+     "channel": 0.006197549040048389,
+     "position": 0.11570324015119851
+    }
+   },
+   "normal": {
+    "auc": 0.8254943406725517,
+    "n_real": 50000,
+    "n_synth": 50000,
+    "permutation_auc_drop": {
+     "amount": 0.1906180506124433,
+     "gap": 0.08757714387269186,
+     "merchant": 0.02682281517998264,
+     "category": 0.13099204483405757,
+     "channel": 0.0025450379975741066,
+     "position": 0.031077776910982124
+    }
+   }
+  },
+  "rtf_table": {
+   "fraud": {
+    "auc": 0.8914231828645587,
+    "n_real": 1303,
+    "n_synth": 1728,
+    "permutation_auc_drop": {
+     "amount": 0.0320133183893788,
+     "gap": 0.037827704601564816,
+     "merchant": 0.1721574665888922,
+     "category": 0.017184362251246664,
+     "channel": 0.007482597840503424,
+     "position": 0.15432896177735272
+    }
+   },
+   "onset": {
+    "auc": 0.8670715002485518,
+    "n_real": 490,
+    "n_synth": 608,
+    "permutation_auc_drop": {
+     "amount": 0.05350718532410317,
+     "gap": 0.05772429059274613,
+     "merchant": 0.12494225668288028,
+     "category": 0.01218097069300228,
+     "channel": 0.011652616014033845,
+     "position": 0.13972188901880517
+    }
+   },
+   "continuation": {
+    "auc": 0.9014049448325027,
+    "n_real": 813,
+    "n_synth": 1120,
+    "permutation_auc_drop": {
+     "amount": 0.017591411173210746,
+     "gap": 0.047171653820526974,
+     "merchant": 0.18567553229657552,
+     "category": 0.004552449891977695,
+     "channel": 0.00670451250871793,
+     "position": 0.15813471214917385
+    }
+   },
+   "normal": {
+    "auc": 0.6827022978047048,
+    "n_real": 50000,
+    "n_synth": 50000,
+    "permutation_auc_drop": {
+     "amount": 0.04621496449778735,
+     "gap": 0.02921137209718656,
+     "merchant": 0.01536544637353281,
+     "category": 0.09724295795067625,
+     "channel": 0.025596080435031254,
+     "position": 0.019400826554474348
+    }
+   }
+  },
+  "real_vs_real": {
+   "fraud": {
+    "auc": 0.5747611461713686,
+    "n_real": 660,
+    "n_synth": 643,
+    "permutation_auc_drop": {
+     "amount": 0.009203162483675153,
+     "gap": 0.004371798723039133,
+     "merchant": -0.0030612776157603718,
+     "category": -0.0013514989018629242,
+     "channel": -0.0007901416550971429,
+     "position": 0.050700297420376336
+    }
+   },
+   "onset": {
+    "auc": 0.6042008931066148,
+    "n_real": 258,
+    "n_synth": 232,
+    "permutation_auc_drop": {
+     "amount": -0.001988414214637568,
+     "gap": 0.011472903775674526,
+     "merchant": -0.007462770134010166,
+     "category": -0.0007731022330376702,
+     "channel": -0.0017842893860622877,
+     "position": 0.08143192478689346
+    }
+   }
+  }
+ },
+ "feature_summary": {
+  "real_train": {
+   "fraud": {
+    "rows": 1303,
+    "seen_merchant": 0.45049884881043745,
+    "seen_merchants_5": 3.49424405218726,
+    "log_amount_mean": 4.066660093999952,
+    "log_amount_sd": 1.5663302044648866,
+    "amount_vs_med20_mean": 0.5618651674133073,
+    "amount_vs_med20_sd": 1.7208243049449012,
+    "log_gap_median": 8.188966863648876,
+    "gap_vs_med20_mean": -1.0329919241917516,
+    "same_category_5": 0.27705295471987723,
+    "log_position_mean": 6.5805720870844615,
+    "relative_position_mean": 0.7342385801340919,
+    "chan_Online Transaction": 0.8449731389102072,
+    "chan_Swipe Transaction": 0.15502686108979277
+   },
+   "onset": {
+    "rows": 490,
+    "seen_merchant": 0.46530612244897956,
+    "seen_merchants_5": 3.9959183673469387,
+    "log_amount_mean": 3.9861555519032126,
+    "log_amount_sd": 1.6397803326082558,
+    "amount_vs_med20_mean": 0.556984407058816,
+    "amount_vs_med20_sd": 1.8079710779011702,
+    "log_gap_median": 9.074629286616194,
+    "gap_vs_med20_mean": -0.0645266494265332,
+    "same_category_5": 0.22448979591836735,
+    "log_position_mean": 6.63988217167433,
+    "relative_position_mean": 0.7335680287790555,
+    "chan_Online Transaction": 0.8346938775510204,
+    "chan_Swipe Transaction": 0.1653061224489796
+   },
+   "continuation": {
+    "rows": 813,
+    "seen_merchant": 0.44157441574415746,
+    "seen_merchants_5": 3.1918819188191883,
+    "log_amount_mean": 4.115180666727385,
+    "log_amount_sd": 1.5193182962883072,
+    "amount_vs_med20_mean": 0.5648068310955959,
+    "amount_vs_med20_sd": 1.667232590968346,
+    "log_gap_median": 7.6783263565068856,
+    "gap_vs_med20_mean": -1.6166917822913298,
+    "same_category_5": 0.3087330873308733,
+    "log_position_mean": 6.544825541636693,
+    "relative_position_mean": 0.7346427254772259,
+    "chan_Online Transaction": 0.8511685116851169,
+    "chan_Swipe Transaction": 0.14883148831488316
+   },
+   "normal": {
+    "rows": 1122214,
+    "seen_merchant": 0.9174569199813939,
+    "seen_merchants_5": 4.573098357354302,
+    "log_amount_mean": 3.1308338282384223,
+    "log_amount_sd": 1.402021105925519,
+    "amount_vs_med20_mean": -0.17529264957441548,
+    "amount_vs_med20_sd": 1.4175390116928746,
+    "log_gap_median": 9.4925826756776,
+    "gap_vs_med20_mean": -0.2987932094614045,
+    "same_category_5": 0.7575061441044222,
+    "log_position_mean": 6.142319515563258,
+    "relative_position_mean": 0.4992824783241743,
+    "chan_Online Transaction": 0.11801225078282752,
+    "chan_Swipe Transaction": 0.8819877492171725
+   }
+  },
+  "argn_final": {
+   "fraud": {
+    "rows": 2143,
+    "seen_merchant": 0.432104526364909,
+    "seen_merchants_5": 3.420905272981801,
+    "log_amount_mean": 4.097185493890494,
+    "log_amount_sd": 1.7377097280358729,
+    "amount_vs_med20_mean": 0.4569218026010467,
+    "amount_vs_med20_sd": 1.8255897997843473,
+    "log_gap_median": 8.25608813381491,
+    "gap_vs_med20_mean": -0.9894027842815148,
+    "same_category_5": 0.22631824545030332,
+    "log_position_mean": 6.322889917810284,
+    "relative_position_mean": 0.5328636831407177,
+    "chan_Online Transaction": 0.8651423238450769,
+    "chan_Swipe Transaction": 0.134857676154923
+   },
+   "onset": {
+    "rows": 782,
+    "seen_merchant": 0.4475703324808184,
+    "seen_merchants_5": 3.8836317135549874,
+    "log_amount_mean": 4.028213939428722,
+    "log_amount_sd": 1.8099309191742645,
+    "amount_vs_med20_mean": 0.4733431729920885,
+    "amount_vs_med20_sd": 1.8876507355028571,
+    "log_gap_median": 9.042037256177114,
+    "gap_vs_med20_mean": -0.17431970047638495,
+    "same_category_5": 0.2570332480818414,
+    "log_position_mean": 6.331996947902256,
+    "relative_position_mean": 0.5351580690729745,
+    "chan_Online Transaction": 0.8593350383631714,
+    "chan_Swipe Transaction": 0.14066496163682865
+   },
+   "continuation": {
+    "rows": 1361,
+    "seen_merchant": 0.42321822189566494,
+    "seen_merchants_5": 3.1550330639235855,
+    "log_amount_mean": 4.136814998364488,
+    "log_amount_sd": 1.6942294154718045,
+    "amount_vs_med20_mean": 0.44748645238371043,
+    "amount_vs_med20_sd": 1.7895940487525293,
+    "log_gap_median": 7.67368812926773,
+    "gap_vs_med20_mean": -1.4577311983414791,
+    "same_category_5": 0.20867009551800147,
+    "log_position_mean": 6.317657223077057,
+    "relative_position_mean": 0.5315453805697957,
+    "chan_Online Transaction": 0.8684790595150624,
+    "chan_Swipe Transaction": 0.13152094048493754
+   },
+   "normal": {
+    "rows": 1109168,
+    "seen_merchant": 0.9186173780707702,
+    "seen_merchants_5": 4.5783082454596595,
+    "log_amount_mean": 3.1276992893084063,
+    "log_amount_sd": 1.4173077610887639,
+    "amount_vs_med20_mean": -0.16421242449052542,
+    "amount_vs_med20_sd": 1.447628316501587,
+    "log_gap_median": 9.563880407219427,
+    "gap_vs_med20_mean": -0.2992147130982553,
+    "same_category_5": 0.4599817160249845,
+    "log_position_mean": 6.198010878830449,
+    "relative_position_mean": 0.4995037479687741,
+    "chan_Online Transaction": 0.12750277685616607,
+    "chan_Swipe Transaction": 0.8724972231438339
+   }
+  },
+  "rtf_table": {
+   "fraud": {
+    "rows": 1728,
+    "seen_merchant": 0.7835648148148148,
+    "seen_merchants_5": 4.191550925925926,
+    "log_amount_mean": 3.710556047582481,
+    "log_amount_sd": 1.5523112883854417,
+    "amount_vs_med20_mean": 0.02988684805166373,
+    "amount_vs_med20_sd": 1.603733921992136,
+    "log_gap_median": 8.101980731853192,
+    "gap_vs_med20_mean": -0.7514490332156961,
+    "same_category_5": 0.5862268518518519,
+    "log_position_mean": 6.115688653559817,
+    "relative_position_mean": 0.5104002832174845,
+    "chan_Online Transaction": 0.8489583333333334,
+    "chan_Swipe Transaction": 0.15104166666666666
+   },
+   "onset": {
+    "rows": 608,
+    "seen_merchant": 0.787828947368421,
+    "seen_merchants_5": 4.259868421052632,
+    "log_amount_mean": 3.606282171934916,
+    "log_amount_sd": 1.5541133943488303,
+    "amount_vs_med20_mean": -0.07166098619670813,
+    "amount_vs_med20_sd": 1.6027734047907864,
+    "log_gap_median": 8.357259153499912,
+    "gap_vs_med20_mean": -0.6798407439705686,
+    "same_category_5": 0.5756578947368421,
+    "log_position_mean": 6.038858582639466,
+    "relative_position_mean": 0.4881837410277921,
+    "chan_Online Transaction": 0.78125,
+    "chan_Swipe Transaction": 0.21875
+   },
+   "continuation": {
+    "rows": 1120,
+    "seen_merchant": 0.78125,
+    "seen_merchants_5": 4.154464285714286,
+    "log_amount_mean": 3.7671618657911594,
+    "log_amount_sd": 1.5490875378906699,
+    "amount_vs_med20_mean": 0.08501281521506561,
+    "amount_vs_med20_sd": 1.6022756058526224,
+    "log_gap_median": 7.944846711001996,
+    "gap_vs_med20_mean": -0.7903221045201939,
+    "same_category_5": 0.5919642857142857,
+    "log_position_mean": 6.157396406345152,
+    "relative_position_mean": 0.5224606918347462,
+    "chan_Online Transaction": 0.8857142857142857,
+    "chan_Swipe Transaction": 0.11428571428571428
+   },
+   "normal": {
+    "rows": 1074256,
+    "seen_merchant": 0.9313236323557885,
+    "seen_merchants_5": 4.643118586258769,
+    "log_amount_mean": 3.132808066415983,
+    "log_amount_sd": 1.4125529202458371,
+    "amount_vs_med20_mean": -0.23921421669580245,
+    "amount_vs_med20_sd": 1.454575745680183,
+    "log_gap_median": 9.298442820197728,
+    "gap_vs_med20_mean": -0.32068354158915646,
+    "same_category_5": 0.8792959964850091,
+    "log_position_mean": 6.124992342753327,
+    "relative_position_mean": 0.49953644970156064,
+    "chan_Online Transaction": 0.16199304448846458,
+    "chan_Swipe Transaction": 0.8380069555115355
+   }
+  }
+ },
+ "seconds": 157.5,
+ "test_read": false,
+ "detector": "stable"
+}
