@@ -1,0 +1,100 @@
+{
+ "base": {
+  "utility": [
+   0.4935,
+   0.5073,
+   0.5018,
+   0.4606
+  ],
+  "mean": 0.49078745424590486,
+  "fraud_amount_vs_med20": 0.45542106938817467
+ },
+ "arms": {
+  "ALL2": {
+   "mean_utility": 0.5260317259805257,
+   "mean_diff": 0.03524427173462082,
+   "diff_by_generation": [
+    0.0584,
+    0.004,
+    0.0428,
+    0.0358
+   ],
+   "positive_of_20": 18,
+   "sd_across_draws_within_generation": 0.008840151088988307,
+   "se_draws": 0.004909977295923805,
+   "se_generations": 0.011450195573766746,
+   "fraud_amount_vs_med20": 0.47023804229521515,
+   "early": 0.821301775147929
+  },
+  "ALL3": {
+   "mean_utility": 0.5148949449569578,
+   "mean_diff": 0.024107490711053003,
+   "diff_by_generation": [
+    0.0506,
+    -0.0123,
+    0.031,
+    0.0271
+   ],
+   "positive_of_20": 16,
+   "sd_across_draws_within_generation": 0.013331185145827673,
+   "se_draws": 0.005919822291493485,
+   "se_generations": 0.013170275179055498,
+   "fraud_amount_vs_med20": 0.41502811434986775,
+   "early": 0.81301775147929
+  },
+  "ALL4": {
+   "mean_utility": 0.516132611526866,
+   "mean_diff": 0.025345157280961157,
+   "diff_by_generation": [
+    0.0393,
+    -0.0055,
+    0.035,
+    0.0325
+   ],
+   "positive_of_20": 18,
+   "sd_across_draws_within_generation": 0.011885257040231832,
+   "se_draws": 0.0048824567194419854,
+   "se_generations": 0.010359927972808458,
+   "fraud_amount_vs_med20": 0.44858009608998684,
+   "early": 0.8177514792899407
+  }
+ },
+ "pairs": {
+  "ALL2-ALL3": {
+   "mean": 0.011136781023567823,
+   "se_draws": 0.003199037880135044,
+   "se_generations": 0.0018951157259235719,
+   "by_generation": [
+    0.0078,
+    0.0162,
+    0.0118,
+    0.0087
+   ]
+  },
+  "ALL2-ALL4": {
+   "mean": 0.009899114453659671,
+   "se_draws": 0.003699478144946479,
+   "se_generations": 0.0033353341079973065,
+   "by_generation": [
+    0.0191,
+    0.0094,
+    0.0078,
+    0.0033
+   ]
+  },
+  "ALL4-ALL3": {
+   "mean": 0.0012376665699081525,
+   "se_draws": 0.004120682179588935,
+   "se_generations": 0.004217737286482669,
+   "by_generation": [
+    -0.0113,
+    0.0068,
+    0.004,
+    0.0055
+   ]
+  }
+ },
+ "reps": 5,
+ "seconds": 128.7,
+ "test_read": false
+}
