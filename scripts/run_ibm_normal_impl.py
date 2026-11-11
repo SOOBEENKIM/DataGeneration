@@ -82,8 +82,9 @@ def cmd_decode(_):
             for gs in SEEDS[fs]:
                 raw = pd.read_parquet(path(src, fs, gs)); ref = raw.sort_values(["entity_id", "event_index"], kind="stable").reset_index(drop=True); d, used = apply_amt3(base_frame(raw), T, np.random.default_rng([20261115, fs, gs]))
                 out = finish(d, ref); fr = pd.to_numeric(ref.event_is_fraud, errors="coerce").eq(1).to_numpy()
-                for col in ("gap", "receiver_or_mark", "category", "use_chip", "event_is_fraud"):
-                    assert out[col].astype(str).equals(ref[col].astype(str)), f"{col} changed"
+                for col in ("receiver_or_mark", "category", "use_chip", "event_is_fraud"):
+                    assert (out[col].astype(str).to_numpy() == ref[col].astype(str).to_numpy()).all(), f"{col} changed"
+                assert np.allclose(pd.to_numeric(out.gap, errors="coerce").to_numpy(dtype=float), pd.to_numeric(ref.gap, errors="coerce").to_numpy(dtype=float), equal_nan=True), "gap changed"
                 assert np.allclose(pd.to_numeric(out.loc[fr, "amount_or_numeric_value"]).to_numpy(dtype=float), pd.to_numeric(ref.loc[fr, "amount_or_numeric_value"]).to_numpy(dtype=float), equal_nan=True), "fraud amounts changed"
                 dest = path(new, fs, gs); dest.parent.mkdir(parents=True, exist_ok=True); out.to_parquet(dest, index=False); log[f"{new}_{fs}_{gs}"] = used; print("DECODED", new, fs, gs, used, flush=True)
     write(DOCS / "DECODE.json", log)

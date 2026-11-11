@@ -1,0 +1,7 @@
+kind,family,model_name,history_auprc_mean,history_auprc_std,history_auprc_count,history_early_detection_top1_mean,history_early_detection_top1_std,history_early_detection_top1_count,row_auprc_mean,row_auprc_std,row_auprc_count,history_auroc_mean,history_auroc_std,history_auroc_count,history_episode_recall_top1_mean,history_episode_recall_top1_std,history_episode_recall_top1_count,row_early_detection_top1_mean,row_early_detection_top1_std,row_early_detection_top1_count,train_fraud_mean,train_fraud_std,train_fraud_count
+real_self,real_self,real_development_self,1.0,,1,1.0,,1,0.9584,,1,1.0,,1,1.0,,1,1.0,,1,487.0,,1
+real_subset,real_subset,real_train_subset_240,0.61,0.0372,20,0.8811,0.0279,20,0.4579,0.0515,20,0.9901,0.0015,20,0.8985,0.0237,20,0.8592,0.0247,20,321.0,42.3469,20
+generation,normal_impl,RA,0.4672,0.0757,8,0.7737,0.0531,8,0.3482,0.0852,8,0.985,0.0029,8,0.8254,0.0422,8,0.7892,0.0503,8,360.625,108.3907,8
+generation,normal_impl,BA,0.4552,0.0693,8,0.7885,0.0654,8,0.3529,0.083,8,0.9858,0.0027,8,0.841,0.0556,8,0.7959,0.0489,8,360.625,108.3907,8
+generation,normal_impl,B,0.4502,0.0495,8,0.7966,0.0483,8,0.2981,0.0763,8,0.9855,0.003,8,0.8499,0.0446,8,0.7855,0.0513,8,360.625,108.3907,8
+generation,normal_impl,R,0.4471,0.0591,8,0.7766,0.0516,8,0.2906,0.0747,8,0.9851,0.0028,8,0.8321,0.0351,8,0.7885,0.04,8,360.625,108.3907,8
