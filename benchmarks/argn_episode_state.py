@@ -31,7 +31,8 @@ def kbin(k):
 
 
 def mbin(seconds):
-    return np.minimum(N_MONTH - 1, np.floor(np.asarray(seconds, dtype=float) / MONTH_SECONDS)).astype(np.int64)
+    """Calendar bin 0..11; 12 = beyond the one-year window (amendment 2: never occurs in real data, only in generated time)."""
+    return np.minimum(N_MONTH, np.floor(np.asarray(seconds, dtype=float) / MONTH_SECONDS)).astype(np.int64)
 
 
 def row_states(frame, label=LABEL):
@@ -80,12 +81,81 @@ def fit_episode_tables(train, variant, label=LABEL, shrink=None):
             sq = sel & (kb == q) if by_k else sel; re[b, q] = split(y[sq].sum(), sq.sum(), pooled) if by_k else pooled
             if by_k or q == 0:
                 counts.append(dict(table="re", dbin=b, kbin=q if by_k else -1, events=int(sq.sum()), frauds=int(y[sq].sum()), probability=float(re[b, q])))
-    return dict(variant=variant, shrink=shrink, onset=onset.tolist(), cont=cont.tolist(), re=re.tolist(), counts=counts, smoothing=SMOOTH, d_edges=D_EDGES.tolist(), k_edges=K_EDGES.tolist(),
+    return dict(variant=variant, shrink=shrink, onset=onset.tolist(), onset_beyond=float(base0), cont=cont.tolist(), re=re.tolist(), counts=counts, smoothing=SMOOTH, d_edges=D_EDGES.tolist(), k_edges=K_EDGES.tolist(),
                 month_seconds=MONTH_SECONDS, train_frauds=int(y.sum()), train_events=int(len(y)))
 
 
 def hazard(tables, prev, age, ever, dist, k, month):
     """Vectorised P(fraud) for numpy state arrays (prev = -1 or 0 or 1)."""
-    onset, cont, re = np.asarray(tables["onset"]), np.asarray(tables["cont"]), np.asarray(tables["re"])
+    onset, cont, re = np.asarray(list(tables["onset"]) + [tables.get("onset_beyond", tables["onset"][-1])]), np.asarray(tables["cont"]), np.asarray(tables["re"])
     kb = kbin(k); p_run = cont[np.minimum(age, MAX_AGE), kb]; p_after = re[dbin(dist), kb]
     return np.where(ever == 0, onset[month], np.where(prev == 1, p_run, p_after))
+
+
+def gap_seconds_by_code(gap_stats):
+    """Expected decoded seconds of every gap bin code (the engine decodes a bin uniformly; special tokens: UNK -> 0, MIN -> first edge)."""
+    bins = np.asarray(gap_stats["bins"], dtype=float); off = len(gap_stats["codes"]); out = np.zeros(off + len(bins) - 1)
+    if "<<MIN>>" in gap_stats["codes"]:
+        out[int(gap_stats["codes"]["<<MIN>>"])] = bins[0]
+    if "<<MAX>>" in gap_stats["codes"]:
+        out[int(gap_stats["codes"]["<<MAX>>"])] = bins[-1]
+    out[off:] = (bins[:-1] + bins[1:]) / 2
+    return out
+
+
+def episode_module(stats, tables, label=LABEL, gap="gap"):
+    """Generation-time episode state process. Enter right after generation_module(..., transition table, label_first=True):
+    the base module keeps (n, prev label, run age, ever); this layer adds (events since the last fraud, cumulative fraud
+    count, cumulative generated seconds) on the LSTM state tuple and overrides the label logits with the episode tables."""
+    from contextlib import contextmanager
+    import torch
+
+    @contextmanager
+    def ctx():
+        import mostlyai.engine._tabular.generation as generation
+        from mostlyai.engine._common import get_argn_name
+        lcol = stats["columns"][label]; label_key = get_argn_name(lcol["argn_processor"], lcol["argn_table"], lcol["argn_column"]) + "__cat"; c1, c0 = int(lcol["codes"]["1"]), int(lcol["codes"]["0"])
+        gcol = stats["columns"][gap]; gap_key = get_argn_name(gcol["argn_processor"], gcol["argn_table"], gcol["argn_column"]) + "__bin"
+        onset = torch.tensor(list(tables["onset"]) + [tables["onset_beyond"]], dtype=torch.float64); cont = torch.tensor(tables["cont"], dtype=torch.float64); re = torch.tensor(tables["re"], dtype=torch.float64)
+        sec = torch.tensor(gap_seconds_by_code(gcol), dtype=torch.float64); d_edges = torch.tensor(D_EDGES); k_edges = torch.tensor(K_EDGES)
+        parent_model = generation.SequentialModel; counter = dict(label_steps=0, rows=0, expected_frauds=0.0, beyond_window_rows=0, never_rows=0, run_rows=0, after_rows=0)
+
+        class EpisodeModel(parent_model):
+            def __init__(self, *args, **kwargs):
+                super().__init__(*args, **kwargs)
+                self.ep = {k: v.to(self.device) for k, v in dict(onset=onset, cont=cont, re=re, sec=sec, d_edges=d_edges, k_edges=k_edges).items()}
+                self.predictors.register_forward_hook(self._ep_label)   # registered after the base table hook -> overrides it
+
+            def _ep_label(self, module, args, output):
+                if args[1] != label_key:
+                    return output
+                base, mem = self.module_memory, self.ep_memory          # base: n, prev, age, ever ; mem: dist, k, seconds
+                prev, age, ever = base[:, 1], base[:, 2], base[:, 3]; dist, k, seconds = mem[:, 0], mem[:, 1], mem[:, 2]
+                month = torch.clamp(torch.div(seconds, int(MONTH_SECONDS), rounding_mode="floor"), max=N_MONTH)
+                kb = torch.bucketize(k, self.ep["k_edges"]); db = torch.bucketize(dist, self.ep["d_edges"])
+                p = torch.where(ever.eq(0), self.ep["onset"][month], torch.where(prev.eq(1), self.ep["cont"][age.clamp(0, MAX_AGE), kb], self.ep["re"][db, kb])).clamp(1e-9, 1 - 1e-9)
+                counter["label_steps"] += 1; counter["rows"] += int(p.numel()); counter["expected_frauds"] += float(p.sum()); counter["beyond_window_rows"] += int((ever.eq(0) & month.eq(N_MONTH)).sum())
+                counter["never_rows"] += int(ever.eq(0).sum()); counter["run_rows"] += int((ever.eq(1) & prev.eq(1)).sum()); counter["after_rows"] += int((ever.eq(1) & prev.eq(0)).sum())
+                logits = torch.full_like(output, -1e9); logits[:, -1, c1] = p.log().to(output.dtype); logits[:, -1, c0] = torch.log1p(-p).to(output.dtype)
+                return logits
+
+            def forward(self, x, mode, **kwargs):
+                if mode != "gen":
+                    return super().forward(x, mode, **kwargs)
+                state = kwargs.get("history_state")
+                if state is None:
+                    mem = torch.zeros((kwargs["batch_size"], 3), dtype=torch.long, device=self.device)
+                else:
+                    mem = state[-1][0]; kwargs["history_state"] = tuple(state[:-1])
+                self.ep_memory = mem
+                outputs, history, recurrent = super().forward(x, mode, **kwargs)
+                lab = outputs[label_key].reshape(-1).eq(c1).long(); code = outputs[gap_key].reshape(-1).long().clamp(0, len(self.ep["sec"]) - 1)
+                new = torch.stack([torch.where(lab.eq(1), torch.zeros_like(lab), mem[:, 0]) + 1, mem[:, 1] + lab, mem[:, 2] + self.ep["sec"][code].round().long()], -1)
+                return outputs, history, (*recurrent, new.unsqueeze(0))
+
+        generation.SequentialModel = EpisodeModel
+        try:
+            yield dict(variant=tables["variant"], shrink=tables.get("shrink"), label_key=label_key, gap_key=gap_key, counter=counter)
+        finally:
+            generation.SequentialModel = parent_model
+    return ctx()
