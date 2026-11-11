@@ -51,7 +51,19 @@ def dataset(name):
     if name == "ibm_impl":  # ibm_normal_impl_v1 (2026-11-11): in-generator stay + amount decoding stage, 8 independent dev generations per arm
         return dict(real_dev=IBM / "prepared/validation.parquet", real_train=IBM / "prepared/train.parquet",
                     out=ROOT / "docs/ibm_normal_impl_v1/stage1", registry=registry_ibm_impl, n_dev=240, n_train=1000)
+    if name == "ibm_impl_a1":  # ibm_normal_impl_v1 amendment 1 (2026-11-11): all 24 independent dev generations per arm
+        return dict(real_dev=IBM / "prepared/validation.parquet", real_train=IBM / "prepared/train.parquet",
+                    out=ROOT / "docs/ibm_normal_impl_v1/a1/stage1", registry=registry_ibm_impl_a1, n_dev=240, n_train=1000)
     raise ValueError(name)
+
+
+def registry_ibm_impl_a1():
+    rows = []
+    for fs, seeds in {20261108: [*range(20261100, 20261104), *range(20261200, 20261208)], 20261109: [*range(20261110, 20261114), *range(20261300, 20261308)]}.items():
+        for gs in seeds:
+            for arm in ("B", "R", "BA", "RA"):
+                rows.append(dict(family="normal_impl", model=arm, fit_seed=fs, generation_seed=gs, path=str(SF / f"ibm_normal_impl_v1/runs/{arm}_{fs}/generated_validation_{gs}.parquet")))
+    return pd.DataFrame(rows)
 
 
 def registry_ibm_impl():
@@ -236,7 +248,7 @@ def main():
     ap.add_argument("--floor-draws", type=int, default=200)
     ap.add_argument("--floor-seed", type=int, default=20261107)
     ap.add_argument("--skip-floor", action="store_true")
-    ap.add_argument("--dataset", choices=["sparkov", "ibm", "ibm_test", "ibm_episode", "ibm_normal", "ibm_normal2", "ibm_normal3", "ibm_normal4", "ibm_impl"], default="sparkov")
+    ap.add_argument("--dataset", choices=["sparkov", "ibm", "ibm_test", "ibm_episode", "ibm_normal", "ibm_normal2", "ibm_normal3", "ibm_normal4", "ibm_impl", "ibm_impl_a1"], default="sparkov")
     args = ap.parse_args()
     ds = dataset(args.dataset)
     OUT, REAL_DEV, REAL_TRAIN = ds["out"], ds["real_dev"], ds["real_train"]
