@@ -73,6 +73,15 @@ def dataset(name):
                          for arm in ["full", "fraud_only", "fraud_only_chan"]]  # H5 (2026-11-10); fraud_only = amendment 2
         return dict(train=train, dev=dev, ctx=ctx, numeric=numeric, gens=gens, n_dev=240, n_train=1000,
                     sources=dict(train=str(IBM / "prepared/train.parquet"), dev=str(IBM / "prepared/validation.parquet")))
+    if name == "ibm_normal":  # ibm_normal_rows_v1 (2026-11-11): 2013 dev
+        roles = pd.read_parquet(IBM / "prepared/roles.parquet")
+        train = ibm_timestamps(pd.read_parquet(IBM / "prepared/train.parquet"), roles); dev = ibm_timestamps(pd.read_parquet(IBM / "prepared/validation.parquet"), roles)
+        ctx = pd.concat([pd.read_parquet(IBM / "prepared/train_context.parquet"), pd.read_parquet(IBM / "prepared/validation_context.parquet")]); gens = []
+        for fs in [20261108, 20261109]:
+            for gs in [20261011, 20261012]:
+                gens += [dict(model=arm, role="normal_rows", fit=fs, draw=gs, path=SF / folder / f"generated_validation_{gs}.parquet") for arm, folder in [("base", f"ibm_merchant_marginal_v2/runs/visitrate_{fs}")] + [(a, f"ibm_normal_rows_v1/sim/{a}_{fs}") for a in ("AMT", "REC", "GAP", "AMT_REC", "ALL")]]
+        return dict(train=train, dev=dev, ctx=ctx, numeric=["cards_before", "events_per_year_before", "first_year"], gens=gens, n_dev=240, n_train=1000,
+                    sources=dict(train=str(IBM / "prepared/train.parquet"), dev=str(IBM / "prepared/validation.parquet")))
     if name == "ibm_episode":  # ibm_episode_state_v1 (2026-11-11): 2013 dev
         roles = pd.read_parquet(IBM / "prepared/roles.parquet")
         train = ibm_timestamps(pd.read_parquet(IBM / "prepared/train.parquet"), roles); dev = ibm_timestamps(pd.read_parquet(IBM / "prepared/validation.parquet"), roles)
@@ -120,8 +129,8 @@ def scalar_part(s):
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--dataset", required=True, choices=["ibm", "sparkov", "ibm_test", "ibm_episode"]); ap.add_argument("--floor-draws", type=int, default=FLOOR_DRAWS)
-    a = ap.parse_args(); ds = dataset(a.dataset); out = ROOT / "docs/ibm_sealed_test_v1/structure" if a.dataset == "ibm_test" else ROOT / "docs/ibm_episode_state_v1/structure" if a.dataset == "ibm_episode" else OUT / a.dataset; out.mkdir(parents=True, exist_ok=True); t0 = time.time()
+    ap = argparse.ArgumentParser(); ap.add_argument("--dataset", required=True, choices=["ibm", "sparkov", "ibm_test", "ibm_episode", "ibm_normal"]); ap.add_argument("--floor-draws", type=int, default=FLOOR_DRAWS)
+    a = ap.parse_args(); ds = dataset(a.dataset); out = ROOT / "docs/ibm_sealed_test_v1/structure" if a.dataset == "ibm_test" else ROOT / "docs/ibm_episode_state_v1/structure" if a.dataset == "ibm_episode" else ROOT / "docs/ibm_normal_rows_v1/structure" if a.dataset == "ibm_normal" else OUT / a.dataset; out.mkdir(parents=True, exist_ok=True); t0 = time.time()
     train, dev = ds["train"], ds["dev"]
     assert not set(train.entity_id) & set(dev.entity_id)
     s_train = structure_stats(train, ds["ctx"], ds["numeric"]); s_dev = structure_stats(dev, ds["ctx"], ds["numeric"])
