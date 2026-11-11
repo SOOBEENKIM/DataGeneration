@@ -39,7 +39,19 @@ def dataset(name):
     if name == "ibm_normal":  # ibm_normal_rows_v1 (2026-11-11): 2013 dev, CPU post-processing arms on the adopted model's generations
         return dict(real_dev=IBM / "prepared/validation.parquet", real_train=IBM / "prepared/train.parquet",
                     out=ROOT / "docs/ibm_normal_rows_v1/stage1", registry=registry_ibm_normal, n_dev=240, n_train=1000)
+    if name == "ibm_normal2":  # ibm_normal_rows_v1 amendment 2 (2026-11-11)
+        return dict(real_dev=IBM / "prepared/validation.parquet", real_train=IBM / "prepared/train.parquet",
+                    out=ROOT / "docs/ibm_normal_rows_v1/v2/stage1", registry=registry_ibm_normal2, n_dev=240, n_train=1000)
     raise ValueError(name)
+
+
+def registry_ibm_normal2():
+    rows = []
+    for fs in [20261108, 20261109]:
+        for gs in [20261011, 20261012]:
+            for arm, folder in [("base", f"ibm_merchant_marginal_v2/runs/visitrate_{fs}")] + [(a, f"ibm_normal_rows_v1/sim2/{a}_{fs}") for a in ("REC2", "AMT0", "AMT2", "REC2_AMT0", "ALL2")]:
+                rows.append(dict(family="normal_rows_v2", model=arm, fit_seed=fs, generation_seed=gs, path=str(SF / folder / f"generated_validation_{gs}.parquet")))
+    return pd.DataFrame(rows)
 
 
 def registry_ibm_normal():
@@ -188,7 +200,7 @@ def main():
     ap.add_argument("--floor-draws", type=int, default=200)
     ap.add_argument("--floor-seed", type=int, default=20261107)
     ap.add_argument("--skip-floor", action="store_true")
-    ap.add_argument("--dataset", choices=["sparkov", "ibm", "ibm_test", "ibm_episode", "ibm_normal"], default="sparkov")
+    ap.add_argument("--dataset", choices=["sparkov", "ibm", "ibm_test", "ibm_episode", "ibm_normal", "ibm_normal2"], default="sparkov")
     args = ap.parse_args()
     ds = dataset(args.dataset)
     OUT, REAL_DEV, REAL_TRAIN = ds["out"], ds["real_dev"], ds["real_train"]

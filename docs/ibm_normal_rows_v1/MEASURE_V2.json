@@ -1,0 +1,382 @@
+{
+ "real_train": {
+  "structure": {
+   "rows": 1122214,
+   "amount_sd": 1.402021105925519,
+   "amount_sd_within_customer": 1.3287567665913536,
+   "amount_sd_within_category": 1.1846559700434776,
+   "amount_sd_within_merchant": 1.109384340014084,
+   "amount_sd_within_customer_category": 1.011124310251925,
+   "amount_sd_within_customer_merchant": 1.0026389245026757,
+   "rows_at_repeat_customer_merchant_pairs": 0.9732466356684197,
+   "abs_dlog_amount_vs_previous_visit_same_merchant_median": 0.32404971662265575,
+   "exact_same_amount_as_previous_visit_same_merchant": 0.022734954737946306,
+   "amount_lag1_autocorr": 0.002861111524855027,
+   "gap_lag1_autocorr": 0.18644273335006725,
+   "gap_sd": 1.99723491776952,
+   "gap_sd_within_customer": 1.9048444499954824,
+   "same_category_as_previous": 0.2100651034472926,
+   "same_merchant_as_previous": 0.1754798995556997,
+   "same_merchant_within_5": 0.35029325957437707,
+   "same_category_within_5": 0.44449899929959885,
+   "distinct_merchants_per_customer_median": 90.0,
+   "distinct_categories_per_customer_median": 44.0,
+   "share_rows_top3_merchants": 0.37662602676494855,
+   "amount_sd_within_customer_merchant_top3": 1.1401571788737814
+  },
+  "extra": {
+   "same_merchant_gap_lt_10min": 0.738447542343403,
+   "same_merchant_gap_ge_1h": 0.058846272519473324,
+   "online_gap_lt_10min": 0.053684032144417984,
+   "novel_gap_lt_10min": 0.021628805108857552,
+   "share_gap_lt_10min": 0.10004158026418637,
+   "category_mean_log_amount_sd": 0.7498352572928253
+  },
+  "fraud_amount_vs_med20": 0.5618651674133073,
+  "fraudlike_normal_share": 0.009016247356109064
+ },
+ "base": {
+  "structure": {
+   "rows": 277292.0,
+   "amount_sd": 1.4172981469273138,
+   "amount_sd_within_customer": 1.3886241233257688,
+   "amount_sd_within_category": 1.38650006851553,
+   "amount_sd_within_merchant": 1.3440076524930342,
+   "amount_sd_within_customer_category": 1.3327767712968208,
+   "amount_sd_within_customer_merchant": 1.3084209404066716,
+   "rows_at_repeat_customer_merchant_pairs": 0.9731416526958565,
+   "abs_dlog_amount_vs_previous_visit_same_merchant_median": 1.1587953187147086,
+   "exact_same_amount_as_previous_visit_same_merchant": 0.0031829337440368206,
+   "amount_lag1_autocorr": 0.05711108866381504,
+   "gap_lag1_autocorr": 0.048789035288661464,
+   "gap_sd": 1.8281823753598447,
+   "gap_sd_within_customer": 1.8002589498500474,
+   "same_category_as_previous": 0.09274660015603658,
+   "same_merchant_as_previous": 0.042145861089227736,
+   "same_merchant_within_5": 0.17553879305743722,
+   "same_category_within_5": 0.3451189603237659,
+   "distinct_merchants_per_customer_median": 89.5,
+   "distinct_categories_per_customer_median": 43.125,
+   "share_rows_top3_merchants": 0.24079093230325174,
+   "amount_sd_within_customer_merchant_top3": 1.3133430650853117
+  },
+  "extra": {
+   "same_merchant_gap_lt_10min": 0.05315128692880472,
+   "same_merchant_gap_ge_1h": 0.0409200441960833,
+   "online_gap_lt_10min": 0.12569652641248008,
+   "novel_gap_lt_10min": 0.07927376976314335,
+   "share_gap_lt_10min": 0.07217084427296559,
+   "category_mean_log_amount_sd": 0.2938015723947384
+  },
+  "normal_discriminator": {
+   "auc": 0.8254943406725517,
+   "n_real": 50000,
+   "n_synth": 50000,
+   "permutation_auc_drop": {
+    "amount": 0.1906180506124433,
+    "gap": 0.08757714387269186,
+    "merchant": 0.02682281517998264,
+    "category": 0.13099204483405757,
+    "channel": 0.0025450379975741066,
+    "position": 0.031077776910982124
+   }
+  },
+  "fraud_amount_vs_med20": 0.4569218026010467,
+  "fraudlike_normal_share": 0.016059287833387465,
+  "fraudlike_normal_share_per_generation": [
+   0.017189126580614444,
+   0.017051606905226314,
+   0.01785612677458818,
+   0.012140291073120918
+  ],
+  "normal_category_matches_merchant": 0.9997693432740655,
+  "normal_channel_matches_merchant": 0.9999725387807575
+ },
+ "REC2": {
+  "structure": {
+   "rows": 277292.0,
+   "amount_sd": 1.4172981469273138,
+   "amount_sd_within_customer": 1.3886241233257688,
+   "amount_sd_within_category": 1.3920535314888043,
+   "amount_sd_within_merchant": 1.3515083848892249,
+   "amount_sd_within_customer_category": 1.3385504871419056,
+   "amount_sd_within_customer_merchant": 1.3146683114812885,
+   "rows_at_repeat_customer_merchant_pairs": 0.9746393422561124,
+   "abs_dlog_amount_vs_previous_visit_same_merchant_median": 1.1679577034085802,
+   "exact_same_amount_as_previous_visit_same_merchant": 0.0035721687608282196,
+   "amount_lag1_autocorr": 0.05711108866381504,
+   "gap_lag1_autocorr": 0.048789035288661464,
+   "gap_sd": 1.8281823753598447,
+   "gap_sd_within_customer": 1.8002589498500474,
+   "same_category_as_previous": 0.19332133880993962,
+   "same_merchant_as_previous": 0.14897194603180647,
+   "same_merchant_within_5": 0.2543785353422067,
+   "same_category_within_5": 0.3957871543271391,
+   "distinct_merchants_per_customer_median": 89.5,
+   "distinct_categories_per_customer_median": 43.125,
+   "share_rows_top3_merchants": 0.24909560411723292,
+   "amount_sd_within_customer_merchant_top3": 1.348562820174299
+  },
+  "extra": {
+   "same_merchant_gap_lt_10min": 0.6821733496569865,
+   "same_merchant_gap_ge_1h": 0.06006150528626639,
+   "online_gap_lt_10min": 0.09772848416243542,
+   "novel_gap_lt_10min": 0.07927376976314335,
+   "share_gap_lt_10min": 0.07217084427296559,
+   "category_mean_log_amount_sd": 0.2662693354632157
+  },
+  "normal_discriminator": {
+   "auc": 0.8213051422655795,
+   "n_real": 50000,
+   "n_synth": 50000,
+   "permutation_auc_drop": {
+    "amount": 0.22116918380810083,
+    "gap": 0.0799550048421773,
+    "merchant": 0.02725871479279498,
+    "category": 0.10940944196534683,
+    "channel": 0.0021833956157052857,
+    "position": 0.03305386616646846
+   }
+  },
+  "fraud_amount_vs_med20": 0.4569218026010467,
+  "fraudlike_normal_share": 0.01581365277768262,
+  "fraudlike_normal_share_per_generation": [
+   0.01704700895696323,
+   0.01681098127859708,
+   0.017329796011266323,
+   0.012066824863903848
+  ],
+  "normal_category_matches_merchant": 0.9997662099318001,
+  "normal_channel_matches_merchant": 0.9999734557005606
+ },
+ "AMT0": {
+  "structure": {
+   "rows": 277292.0,
+   "amount_sd": 1.4084109216812528,
+   "amount_sd_within_customer": 1.4010786484136681,
+   "amount_sd_within_category": 1.2028682792237153,
+   "amount_sd_within_merchant": 1.188877388072468,
+   "amount_sd_within_customer_category": 1.1810793919007534,
+   "amount_sd_within_customer_merchant": 1.1717571171632866,
+   "rows_at_repeat_customer_merchant_pairs": 0.9731416526958565,
+   "abs_dlog_amount_vs_previous_visit_same_merchant_median": 0.8504905005571752,
+   "exact_same_amount_as_previous_visit_same_merchant": 0.009110919677476743,
+   "amount_lag1_autocorr": 0.021499218045055037,
+   "gap_lag1_autocorr": 0.048789035288661464,
+   "gap_sd": 1.8281823753598447,
+   "gap_sd_within_customer": 1.8002589498500474,
+   "same_category_as_previous": 0.09274660015603658,
+   "same_merchant_as_previous": 0.042145861089227736,
+   "same_merchant_within_5": 0.17553879305743722,
+   "same_category_within_5": 0.3451189603237659,
+   "distinct_merchants_per_customer_median": 89.5,
+   "distinct_categories_per_customer_median": 43.125,
+   "share_rows_top3_merchants": 0.24079093230325174,
+   "amount_sd_within_customer_merchant_top3": 1.2692255555490397
+  },
+  "extra": {
+   "same_merchant_gap_lt_10min": 0.05315128692880472,
+   "same_merchant_gap_ge_1h": 0.0409200441960833,
+   "online_gap_lt_10min": 0.12569652641248008,
+   "novel_gap_lt_10min": 0.07927376976314335,
+   "share_gap_lt_10min": 0.07217084427296559,
+   "category_mean_log_amount_sd": 0.7324822318668363
+  },
+  "normal_discriminator": {
+   "auc": 0.7941554315081549,
+   "n_real": 50000,
+   "n_synth": 50000,
+   "permutation_auc_drop": {
+    "amount": 0.1490406010186323,
+    "gap": 0.09832649607860766,
+    "merchant": 0.024858723976406316,
+    "category": 0.07571146068633036,
+    "channel": 0.0022961243674417984,
+    "position": 0.036005648461353325
+   }
+  },
+  "fraud_amount_vs_med20": 0.41084136457586096,
+  "fraudlike_normal_share": 0.013654634791750065,
+  "fraudlike_normal_share_per_generation": [
+   0.013486962484500297,
+   0.014043786572360866,
+   0.015380949671398901,
+   0.011706840438740202
+  ],
+  "normal_category_matches_merchant": 0.9997693432740655,
+  "normal_channel_matches_merchant": 0.9999725387807575
+ },
+ "AMT2": {
+  "structure": {
+   "rows": 277292.0,
+   "amount_sd": 1.405750496676431,
+   "amount_sd_within_customer": 1.3827296877800523,
+   "amount_sd_within_category": 1.2229115048990788,
+   "amount_sd_within_merchant": 1.1757497906027192,
+   "amount_sd_within_customer_category": 0.9937725550119683,
+   "amount_sd_within_customer_merchant": 0.98551330744297,
+   "rows_at_repeat_customer_merchant_pairs": 0.9731416526958565,
+   "abs_dlog_amount_vs_previous_visit_same_merchant_median": 0.5253242210752735,
+   "exact_same_amount_as_previous_visit_same_merchant": 0.003358176325679579,
+   "amount_lag1_autocorr": 0.039892487106258895,
+   "gap_lag1_autocorr": 0.048789035288661464,
+   "gap_sd": 1.8281823753598447,
+   "gap_sd_within_customer": 1.8002589498500474,
+   "same_category_as_previous": 0.09274660015603658,
+   "same_merchant_as_previous": 0.042145861089227736,
+   "same_merchant_within_5": 0.17553879305743722,
+   "same_category_within_5": 0.3451189603237659,
+   "distinct_merchants_per_customer_median": 89.5,
+   "distinct_categories_per_customer_median": 43.125,
+   "share_rows_top3_merchants": 0.24079093230325174,
+   "amount_sd_within_customer_merchant_top3": 1.0438952958436447
+  },
+  "extra": {
+   "same_merchant_gap_lt_10min": 0.05315128692880472,
+   "same_merchant_gap_ge_1h": 0.0409200441960833,
+   "online_gap_lt_10min": 0.12569652641248008,
+   "novel_gap_lt_10min": 0.07927376976314335,
+   "share_gap_lt_10min": 0.07217084427296559,
+   "category_mean_log_amount_sd": 0.6931422033019141
+  },
+  "normal_discriminator": {
+   "auc": 0.8087870545909445,
+   "n_real": 50000,
+   "n_synth": 50000,
+   "permutation_auc_drop": {
+    "amount": 0.18775586645206016,
+    "gap": 0.07262284857180497,
+    "merchant": 0.024752865601721585,
+    "category": 0.0809808929569793,
+    "channel": 0.0009827202205876517,
+    "position": 0.02645222537223637
+   }
+  },
+  "fraud_amount_vs_med20": 0.4715252600290989,
+  "fraudlike_normal_share": 0.013578601656199998,
+  "fraudlike_normal_share_per_generation": [
+   0.01475180933499611,
+   0.01265107461217347,
+   0.014932857264787049,
+   0.011978665412843363
+  ],
+  "normal_category_matches_merchant": 0.9997693432740655,
+  "normal_channel_matches_merchant": 0.9999725387807575
+ },
+ "REC2_AMT0": {
+  "structure": {
+   "rows": 277292.0,
+   "amount_sd": 1.4156416614329006,
+   "amount_sd_within_customer": 1.408082719082677,
+   "amount_sd_within_category": 1.2070863494249244,
+   "amount_sd_within_merchant": 1.1932942632438792,
+   "amount_sd_within_customer_category": 1.1858183866483296,
+   "amount_sd_within_customer_merchant": 1.1759959924092467,
+   "rows_at_repeat_customer_merchant_pairs": 0.974696422270428,
+   "abs_dlog_amount_vs_previous_visit_same_merchant_median": 0.8534231460027406,
+   "exact_same_amount_as_previous_visit_same_merchant": 0.009324825953455419,
+   "amount_lag1_autocorr": 0.04907294061692276,
+   "gap_lag1_autocorr": 0.048789035288661464,
+   "gap_sd": 1.8281823753598447,
+   "gap_sd_within_customer": 1.8002589498500474,
+   "same_category_as_previous": 0.19338168416795853,
+   "same_merchant_as_previous": 0.14896085501394674,
+   "same_merchant_within_5": 0.2542300674993801,
+   "same_category_within_5": 0.3957559257575618,
+   "distinct_merchants_per_customer_median": 89.5,
+   "distinct_categories_per_customer_median": 43.125,
+   "share_rows_top3_merchants": 0.24879044270195266,
+   "amount_sd_within_customer_merchant_top3": 1.3107456297609035
+  },
+  "extra": {
+   "same_merchant_gap_lt_10min": 0.6799451458997859,
+   "same_merchant_gap_ge_1h": 0.059741733592776486,
+   "online_gap_lt_10min": 0.09775245269095892,
+   "novel_gap_lt_10min": 0.07927376976314335,
+   "share_gap_lt_10min": 0.07217084427296559,
+   "category_mean_log_amount_sd": 0.7394498392083958
+  },
+  "normal_discriminator": {
+   "auc": 0.7808940484964928,
+   "n_real": 50000,
+   "n_synth": 50000,
+   "permutation_auc_drop": {
+    "amount": 0.16245825872543743,
+    "gap": 0.09820910259408241,
+    "merchant": 0.029489385109105794,
+    "category": 0.046438954014268674,
+    "channel": 0.0011026761465038782,
+    "position": 0.03496461479367423
+   }
+  },
+  "fraud_amount_vs_med20": 0.4032379495180375,
+  "fraudlike_normal_share": 0.013401839426022386,
+  "fraudlike_normal_share_per_generation": [
+   0.013476303662726456,
+   0.01356618116193011,
+   0.015085777689265698,
+   0.011479095190167283
+  ],
+  "normal_category_matches_merchant": 0.9997650954862967,
+  "normal_channel_matches_merchant": 0.9999753160160533
+ },
+ "ALL2": {
+  "structure": {
+   "rows": 277292.0,
+   "amount_sd": 1.401844055612088,
+   "amount_sd_within_customer": 1.378945954231477,
+   "amount_sd_within_category": 1.2301447479100016,
+   "amount_sd_within_merchant": 1.1777976906642602,
+   "amount_sd_within_customer_category": 0.9965328916084677,
+   "amount_sd_within_customer_merchant": 0.9881235920103213,
+   "rows_at_repeat_customer_merchant_pairs": 0.9746648763070149,
+   "abs_dlog_amount_vs_previous_visit_same_merchant_median": 0.5303004611772633,
+   "exact_same_amount_as_previous_visit_same_merchant": 0.0037187067056915777,
+   "amount_lag1_autocorr": 0.08771309290678495,
+   "gap_lag1_autocorr": 0.048789035288661464,
+   "gap_sd": 1.8281823753598447,
+   "gap_sd_within_customer": 1.8002589498500474,
+   "same_category_as_previous": 0.19344600353212876,
+   "same_merchant_as_previous": 0.14898633254157892,
+   "same_merchant_within_5": 0.25422530530959647,
+   "same_category_within_5": 0.39571008087422416,
+   "distinct_merchants_per_customer_median": 89.5,
+   "distinct_categories_per_customer_median": 43.125,
+   "share_rows_top3_merchants": 0.2488176827972158,
+   "amount_sd_within_customer_merchant_top3": 1.080089036841328
+  },
+  "extra": {
+   "same_merchant_gap_lt_10min": 0.6841119357591454,
+   "same_merchant_gap_ge_1h": 0.05989031492391818,
+   "online_gap_lt_10min": 0.09827936294456427,
+   "novel_gap_lt_10min": 0.07927376976314335,
+   "share_gap_lt_10min": 0.07217084427296559,
+   "category_mean_log_amount_sd": 0.6719362280935417
+  },
+  "normal_discriminator": {
+   "auc": 0.8088530692793336,
+   "n_real": 50000,
+   "n_synth": 50000,
+   "permutation_auc_drop": {
+    "amount": 0.2164827844944365,
+    "gap": 0.06915536752455147,
+    "merchant": 0.026024538834146727,
+    "category": 0.05969515143757207,
+    "channel": 0.0002905651075633564,
+    "position": 0.030009013267585604
+   }
+  },
+  "fraud_amount_vs_med20": 0.4533746978527354,
+  "fraudlike_normal_share": 0.013212494667261945,
+  "fraudlike_normal_share_per_generation": [
+   0.014325456464042464,
+   0.012220865158503017,
+   0.014093573074625167,
+   0.012210083971877134
+  ],
+  "normal_category_matches_merchant": 0.9997733140099131,
+  "normal_channel_matches_merchant": 0.9999698196675657
+ },
+ "seconds": 188.3,
+ "test_read": false
+}

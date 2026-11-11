@@ -50,14 +50,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0); ap.add_argument("--real-draws", type=int, default=20)
     ap.add_argument("--jobs", type=int, default=16); ap.add_argument("--threads", type=int, default=4); ap.add_argument("--seed", type=int, default=20261108)
-    ap.add_argument("--dataset", choices=["sparkov", "ibm", "ibm_test", "ibm_episode", "ibm_normal"], default="sparkov")
+    ap.add_argument("--dataset", choices=["sparkov", "ibm", "ibm_test", "ibm_episode", "ibm_normal", "ibm_normal2"], default="sparkov")
     ap.add_argument("--detector", choices=["registered", "stable", "logistic"], default="registered")
     ap.add_argument("--features", choices=["all", "no_merchant", "no_channel"], default="all")  # amendment 3 (2026-11-10), auxiliary
     args = ap.parse_args(); t0 = time.time()
     global OUT, REAL_DEV, REAL_TRAIN, _N_DEV, _DETECTOR, _FEATURES
     ds = dataset(args.dataset); REAL_DEV, REAL_TRAIN, _N_DEV, _DETECTOR, _FEATURES = ds["real_dev"], ds["real_train"], ds["n_dev"], args.detector, args.features
     if args.dataset != "sparkov":
-        OUT = ROOT / f"docs/{ds['out'].parent.name}/utility"
+        OUT = ds["out"].parent / "utility"
     if args.detector != "registered":
         OUT = OUT.parent / f"{OUT.name}_detector_{args.detector}" if args.dataset != "sparkov" else OUT / f"detector_{args.detector}"
     if args.features != "all":
