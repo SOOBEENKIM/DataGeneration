@@ -139,12 +139,14 @@ def cmd_measure():
     import diag_utility_gap as dg
     from diag_utility_gap_b import structure
     from run_ibm_merchant_attr import consistency, merchant_attributes
+    from threadpoolctl import threadpool_limits
+    threadpool_limits(8)                                             # a shared machine: HistGradientBoosting with every core stalls under load (first run, recorded in RESULTS)
     t0 = time.time(); dev = pd.read_parquet(PREP / "validation.parquet"); fu.configure(dev); train = pd.read_parquet(PREP / "train.parquet"); ftrain = fu.features(train); cols = dg.cols_all(); att = merchant_attributes()
     rng = np.random.default_rng(0); rn = ftrain[ftrain.y.eq(0)]; rn = rn.iloc[rng.choice(len(rn), 50000, replace=False)]; res = dict(real_train=dict(structure=structure(train), fraud_amount_vs_med20=float(ftrain[ftrain.y.eq(1)].amount_vs_med20.mean()),
                                                                                                                                                      window_days={q: float((pd.to_numeric(train.gap, errors="coerce").groupby(train.entity_id).sum() / 86400).quantile(q)) for q in (.1, .5, .9)}))
     for arm in ["base", *ARMS]:
         frames = [pd.read_parquet(BASE(fs, gs) if arm == "base" else OUT / "sim" / f"{arm}_{fs}" / f"generated_validation_{gs}.parquet") for fs, gs in FITS]
-        st = [structure(f) for f in frames]; feats = [fu.features(f).assign(src=f"{arm}{i}_") for i, f in enumerate(frames)]; s = pd.concat(feats, ignore_index=True); sn = s[s.y.eq(0)]; sn = sn.iloc[rng.choice(len(sn), 50000, replace=False)]
+        print(arm, "start", round(time.time() - t0), "s", flush=True); st = [structure(f) for f in frames]; feats = [fu.features(f).assign(src=f"{arm}{i}_") for i, f in enumerate(frames)]; s = pd.concat(feats, ignore_index=True); sn = s[s.y.eq(0)]; sn = sn.iloc[rng.choice(len(sn), 50000, replace=False)]
         cons = [consistency(f, att) for f in frames]; days = pd.concat([pd.to_numeric(f.gap, errors="coerce").groupby(f.entity_id).sum() / 86400 for f in frames])
         res[arm] = dict(structure={k: float(np.mean([x[k] for x in st])) for k in st[0]}, normal_discriminator=dg.discriminate(rn, sn, cols), fraud_amount_vs_med20=float(s[s.y.eq(1)].amount_vs_med20.mean()),
                         normal_category_matches_merchant=float(np.mean([x["normal"]["category_matches_merchant"] for x in cons])), normal_channel_matches_merchant=float(np.mean([x["normal"]["channel_matches_merchant"] for x in cons])),
