@@ -1,0 +1,10 @@
+{
+  "seed": 20260927,
+  "repeats": 500,
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/prepared/validation.parquet": "c444c6e625b8f4e0e4edae1b1e12dbbef573c9e398d44400a44c4d5a7f03228d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/prepared/metric_state.json": "612cfeff97f7f5ed9262480f3f4a52bfe753cd6c2678ff20954ec884e2fb35b8"
+  },
+  "description": "Two independent customer bootstrap samples from observed development customers. Features calculated before whole-customer resampling. Descriptive finite-sample reference, not a bound, null significance test or validation-independent model selection.",
+  "test_events_read": false
+}

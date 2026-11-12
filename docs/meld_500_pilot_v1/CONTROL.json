@@ -1,0 +1,29 @@
+{
+  "target_epoch": 500,
+  "dit_cap": 2000,
+  "dispatcher": {
+    "pid": 3541032,
+    "cmd": "/home/finx_sbk/.conda/envs/cofseq/bin/python artifacts/comparison_completion_v1/local_source/dispatch_comparators.py",
+    "start_ticks": "136464377",
+    "state": "S",
+    "ppid": 3541030
+  },
+  "workers": [
+    {
+      "pid": 3541047,
+      "cmd": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python /home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/local_source/meld_train.py 20261021",
+      "start_ticks": "136464420",
+      "state": "R",
+      "ppid": 3541032,
+      "seed": 20261021
+    },
+    {
+      "pid": 3541053,
+      "cmd": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python /home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/local_source/meld_train.py 20261022",
+      "start_ticks": "136464440",
+      "state": "R",
+      "ppid": 3541032,
+      "seed": 20261022
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "active": "clock_prefix",
+  "automatic_promotion": false,
+  "preserved": [
+    "init_only",
+    "history_init_cal"
+  ],
+  "comparisons": [
+    {
+      "candidate": "history_init_cal",
+      "reference": "history_only",
+      "primary_effect": true,
+      "costs": "",
+      "descriptive_screen": true,
+      "normal_personal_delta": 0.0020269373529311976
+    },
+    {
+      "candidate": "history_init_cal",
+      "reference": "history_initial_only",
+      "primary_effect": true,
+      "costs": "",
+      "descriptive_screen": true,
+      "normal_personal_delta": 0.00235598449497304
+    },
+    {
+      "candidate": "history_init_cal",
+      "reference": "history_calibration_only",
+      "primary_effect": false,
+      "costs": "",
+      "descriptive_screen": false,
+      "normal_personal_delta": -5.2685816962542986e-05
+    },
+    {
+      "candidate": "history_only",
+      "reference": "init_only",
+      "primary_effect": false,
+      "costs": "early_time,time50_99,time100_199,time200_499",
+      "descriptive_screen": false,
+      "normal_personal_delta": 0.02750062972992474
+    },
+    {
+      "candidate": "history_initial_only",
+      "reference": "init_only",
+      "primary_effect": false,
+      "costs": "early_time,time50_99,time100_199,time200_499",
+      "descriptive_screen": false,
+      "normal_personal_delta": 0.0271715825878829
+    },
+    {
+      "candidate": "history_calibration_only",
+      "reference": "init_only",
+      "primary_effect": true,
+      "costs": "early_time",
+      "descriptive_screen": false,
+      "normal_personal_delta": 0.02958025289981848
+    },
+    {
+      "candidate": "history_init_cal",
+      "reference": "init_only",
+      "primary_effect": true,
+      "costs": "",
+      "descriptive_screen": true,
+      "normal_personal_delta": 0.02952756708285594
+    }
+  ],
+  "new_method_claim": false,
+  "whole_generator_comparison_complete": false
+}

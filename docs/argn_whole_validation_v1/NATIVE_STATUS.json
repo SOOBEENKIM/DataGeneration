@@ -1,0 +1,52 @@
+{
+  "utc": "2026-09-30T17:15:24.721817+00:00",
+  "pending": [],
+  "running": {},
+  "finished": {
+    "20261023": {
+      "exit_code": 0,
+      "complete": true,
+      "utc": "2026-09-30T17:14:17.104887+00:00"
+    },
+    "20261021": {
+      "exit_code": 0,
+      "complete": true,
+      "utc": "2026-09-30T17:15:03.837523+00:00"
+    },
+    "20261022": {
+      "exit_code": 0,
+      "complete": true,
+      "utc": "2026-09-30T17:15:24.564223+00:00"
+    }
+  },
+  "gpus": [
+    {
+      "index": 0,
+      "uuid": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+      "memory": 52,
+      "utilization": 0,
+      "external": false
+    },
+    {
+      "index": 1,
+      "uuid": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+      "memory": 1021,
+      "utilization": 58,
+      "external": true
+    },
+    {
+      "index": 2,
+      "uuid": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "memory": 857,
+      "utilization": 55,
+      "external": true
+    },
+    {
+      "index": 3,
+      "uuid": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+      "memory": 17688,
+      "utilization": 16,
+      "external": true
+    }
+  ]
+}

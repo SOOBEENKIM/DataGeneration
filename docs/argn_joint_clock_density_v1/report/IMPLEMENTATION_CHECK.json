@@ -1,0 +1,8 @@
+{
+  "identity_law_exact": true,
+  "clock_checks": 256,
+  "first5_laws_preserved": true,
+  "implicit_gradient_max_error": 5.016143056479905e-11,
+  "quantization_gradient_is_surrogate": true,
+  "native_history_in_training_is_teacher_forced": true
+}

@@ -1,0 +1,6 @@
+{
+  "loss_difference": 9.5367431640625e-07,
+  "max_gradient_difference": 2.9802322387695312e-08,
+  "fixed_prediction_objective": true,
+  "stochastic_dropout_realizations_not_identical_across_batching": true
+}

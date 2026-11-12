@@ -1,0 +1,9 @@
+{
+  "generations": 2,
+  "parent": 20260930,
+  "time_fit_seed": 73002,
+  "arm": "no_initial",
+  "exact_labels_lengths": true,
+  "test_events_read": false,
+  "finished_utc": "2026-09-30T13:00:27.264562+00:00"
+}

@@ -1,0 +1,61 @@
+{
+ "features": [
+  "prev_label",
+  "run_age",
+  "ever_fraud",
+  "n_frauds",
+  "since_last_fraud",
+  "position"
+ ],
+ "rows": 1123517,
+ "frauds": 1303,
+ "max_iter": 200,
+ "seed": 20261109,
+ "classifier": "HistGradientBoostingClassifier(default, early_stopping=False)",
+ "seconds": 4.5,
+ "state_process_sha256": "d5a47ac227582ac36710e1e5f4429811665e825d55d74e34e2c928122470d019",
+ "train_sha256": "063a1c0f4c30806e5f7254e75b426c75b368be589dd15be047321572747ab719",
+ "teacher_forced_logloss": {
+  "development": {
+   "learned": {
+    "logloss": 0.03605631107511149,
+    "logloss_fraud_rows": 13.519122841258762,
+    "logloss_normal_rows": 0.011601810852774654,
+    "rows": 268996,
+    "frauds": 487
+   },
+   "table": {
+    "logloss": 0.004008006397466976,
+    "logloss_fraud_rows": 1.5863797504955122,
+    "logloss_normal_rows": 0.0011380279633148684,
+    "rows": 268996,
+    "frauds": 487
+   }
+  },
+  "train": {
+   "learned": {
+    "logloss": 0.024321933788145993,
+    "logloss_fraud_rows": 13.368902753944326,
+    "logloss_normal_rows": 0.008827572811840679,
+    "rows": 1123517,
+    "frauds": 1303
+   },
+   "table": {
+    "logloss": 0.002775594686526877,
+    "logloss_fraud_rows": 1.6768755293452562,
+    "logloss_normal_rows": 0.0008318012435112627,
+    "rows": 1123517,
+    "frauds": 1303
+   }
+  }
+ },
+ "note": "development log-loss is reported, not used for selection; test not read",
+ "permutation_importance_logloss_increase": {
+  "prev_label": 0.0025145414379911385,
+  "run_age": 0.01420285336804817,
+  "ever_fraud": 0.14191447137152377,
+  "n_frauds": 0.010951110304528965,
+  "since_last_fraud": 0.5804444016943968,
+  "position": 0.5682734446816189
+ }
+}

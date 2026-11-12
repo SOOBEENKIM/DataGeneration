@@ -1,0 +1,22 @@
+{
+  "completed_utc": "2026-09-29T05:56:57.063617+00:00",
+  "task": "research review and design; not a model experiment",
+  "local_evidence_hashes_preserved": 19,
+  "downloaded_primary_source_hashes_verified": 24,
+  "metrics_copy_exact": true,
+  "tracked_checkout_clean": true,
+  "preserved_head": "0d620a97bd91e4cd34a246a6ca8557782c07f470",
+  "new_model_fits": 0,
+  "new_generations": 0,
+  "test_events_read": false,
+  "commit_or_push": false,
+  "active_model_changed": false,
+  "next_design_status": "proposed; implementation/protocol/experiments not run",
+  "files": {
+    "RESEARCH_REASSESSMENT.md": "e4d87585e72d29ca705ec1ea9cbd9d1682beeb13070115e4469a27756622799a",
+    "LITERATURE_TO_DESIGN.md": "2d291cb01f69fd1b13c1784a2a7b648c77a95a2960aa2b9d79c90bfe5fdee1f1",
+    "SOURCE_INDEX.csv": "79d789f22581233db497340d820e16a48400214bb5a152ffcb09c7694c7ae3d6",
+    "LOCAL_EVIDENCE_INDEX.json": "42cef49a6606610a6d0c7afdfb968c09794b1aae435516c734d102ccae5f38c2",
+    "PRESERVED_METRICS.csv": "063102d1fe22dc9c5e26835d992c0c69da7645d851fbbc6086c38f4a0a3945a9"
+  }
+}

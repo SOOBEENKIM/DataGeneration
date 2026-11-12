@@ -1,0 +1,44 @@
+{
+  "optimization_customers": 619,
+  "optimization_rows": 816341,
+  "internal_customers": 69,
+  "internal_rows": 100226,
+  "max_length": 3123,
+  "training_parser_parity": true,
+  "clipping": {
+    "amount": {
+      "rows": 1293,
+      "low": 1.02,
+      "high": 1513.9946000000589
+    },
+    "gap": {
+      "rows": 1621,
+      "low": 5.0,
+      "high": 448964.6200000002
+    }
+  },
+  "truncation": 0,
+  "test_reads": 0,
+  "conditioning_columns": [
+    "customer_id",
+    "cardholder_gender",
+    "cardholder_state",
+    "birth_year",
+    "city_population"
+  ],
+  "datatype": {
+    "n_bins": 1,
+    "n_cats": 2,
+    "n_nums": 2,
+    "cards": [
+      693,
+      14
+    ],
+    "n_paddings": 2
+  },
+  "files": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/meld/DATA.pt": "d19745635c979a12de3031d58b0bf0f83b7ec7ab42375fe730d495c0ded20f48",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/meld/parser.pkl": "43fd3ffe629462b34d76faa1786b4619a6e2c418dbd411121eb89a3bc7795bd3",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/meld/VAE_CONFIG.json": "e9a3c6f9cbe6e7f960a33323dc4cee63de030362bb19621b3317007b9a3dd825"
+  }
+}

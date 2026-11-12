@@ -1,0 +1,37 @@
+{
+  "candidates": [
+    60,
+    50,
+    40
+  ],
+  "decoder_limit": 1024,
+  "measurements": {
+    "60": {
+      "windows": 19229,
+      "max_label_tokens": 842,
+      "mean_label_tokens": 819.995631598107,
+      "tokens_per_row": 14.0,
+      "output_max_length": 858,
+      "fits_limit": true,
+      "measure_seconds": 136.9
+    }
+  },
+  "window": 60,
+  "output_max_length": 858,
+  "train": {
+    "customers": 1000,
+    "windows": 19229,
+    "rows": 1123517,
+    "frauds": 1303,
+    "fraud_windows": 167,
+    "max_window_index": 82
+  },
+  "development": {
+    "customers": 240,
+    "windows": 4602,
+    "rows": 268996,
+    "frauds": 487,
+    "fraud_windows": 57,
+    "max_window_index": 52
+  }
+}

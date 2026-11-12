@@ -1,0 +1,38 @@
+{
+  "pending": [
+    [
+      20260930,
+      "correction_gain"
+    ],
+    [
+      20261001,
+      "correction_gain"
+    ],
+    [
+      20260930,
+      "regression_gain"
+    ],
+    [
+      20261001,
+      "regression_gain"
+    ],
+    [
+      20260930,
+      "joint_gain"
+    ],
+    [
+      20261001,
+      "joint_gain"
+    ],
+    [
+      20260930,
+      "output_gain_shift"
+    ],
+    [
+      20261001,
+      "output_gain_shift"
+    ]
+  ],
+  "running": {},
+  "finished": {}
+}

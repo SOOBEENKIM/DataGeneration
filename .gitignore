@@ -25,6 +25,9 @@ data/benchmark_v2/
 *.ckpt
 *.npz
 
+# Per-event diagnostic selection remains local; version aggregate results only.
+docs/argn_state_first_v1/followup/selected_positions.csv
+
 # Third-party baseline repositories are acquired from pinned upstream revisions.
 external/cof_seqgen_saf_baselines/
 external/cs_saf_external_audit/

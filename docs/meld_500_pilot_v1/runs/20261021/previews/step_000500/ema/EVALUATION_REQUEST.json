@@ -1,0 +1,13 @@
+{
+  "dst": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/runs/20261021/previews/step_000500/ema",
+  "split": "internal",
+  "files": [
+    [
+      20261923,
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/runs/20261021/previews/step_000500/ema/generated_internal_20261923.parquet"
+    ]
+  ],
+  "fs": 20261021,
+  "step": 500,
+  "kind": "ema"
+}

@@ -1,0 +1,402 @@
+{
+  "recorded_utc": "2026-09-30T13:31:24.380015+00:00",
+  "jobs": 58,
+  "exit_zero": 58,
+  "routing_workers": 42,
+  "routing": [
+    {
+      "run": "gmr_73001_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "gmr_73001_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "gmr_73002_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "gmr_73002_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "gmr_73003_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "gmr_73003_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "history_init_cal_73001_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "history_init_cal_73001_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "history_init_cal_73002_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "history_init_cal_73002_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "history_init_cal_73003_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "history_init_cal_73003_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "history_only_73001_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "history_only_73001_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "history_only_73002_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "history_only_73002_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "history_only_73003_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "history_only_73003_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "init_only_73001_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "init_only_73001_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "init_only_73002_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "init_only_73002_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "init_only_73003_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "init_only_73003_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "no_calibration_73001_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "no_calibration_73001_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "no_calibration_73002_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "no_calibration_73002_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "no_calibration_73003_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "no_calibration_73003_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "no_initial_73001_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "no_initial_73001_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "no_initial_73002_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "no_initial_73002_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "no_initial_73003_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "no_initial_73003_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "phase_gmm_73001_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "phase_gmm_73001_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "phase_gmm_73002_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "phase_gmm_73002_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "phase_gmm_73003_20260930",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    },
+    {
+      "run": "phase_gmm_73003_20261001",
+      "first_native_logits": 28,
+      "sampled_digit_positions": 210,
+      "steps": 10,
+      "strict_past_clock_exact": true,
+      "reordered_compacted_batch": true,
+      "strict_native_checkpoint": true
+    }
+  ],
+  "gpu_observation": {
+    "utilization_percent": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "memory_mib": [
+      52,
+      117,
+      52,
+      93
+    ],
+    "note": "Host observation after all generation workers exited; preexisting MPS overhead remains."
+  },
+  "scientific_evaluation": "Separate evaluator still running; not a substitute for FINAL_AUDIT.json."
+}

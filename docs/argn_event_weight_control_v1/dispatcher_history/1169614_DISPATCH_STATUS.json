@@ -1,0 +1,37 @@
+{
+  "updated_utc": "2026-09-27T06:16:54.765990+00:00",
+  "pid": 1169614,
+  "pending": [
+    20260930,
+    20261001
+  ],
+  "running": {},
+  "finished": {},
+  "expired": [],
+  "last_gpu_state": [
+    {
+      "index": 0,
+      "uuid": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+      "used_mib": 20631,
+      "utilization": 100
+    },
+    {
+      "index": 1,
+      "uuid": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+      "used_mib": 20697,
+      "utilization": 100
+    },
+    {
+      "index": 2,
+      "uuid": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "used_mib": 20631,
+      "utilization": 100
+    },
+    {
+      "index": 3,
+      "uuid": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+      "used_mib": 20672,
+      "utilization": 100
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "updated_utc": "2026-09-30T13:30:27.702875+00:00",
+  "pending": [],
+  "running": {},
+  "finished": {
+    "history_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:50:46.512685+00:00"
+    },
+    "history_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:50:46.513088+00:00"
+    },
+    "history_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:50:46.513446+00:00"
+    },
+    "cache": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:51:18.270297+00:00"
+    },
+    "history_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:51:28.679574+00:00"
+    },
+    "history_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:51:28.709693+00:00"
+    },
+    "history_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:51:28.710094+00:00"
+    },
+    "gen_history_only_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:56:41.490522+00:00"
+    },
+    "gen_history_only_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:56:41.493948+00:00"
+    },
+    "gen_history_only_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:56:41.494232+00:00"
+    },
+    "gen_history_only_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:56:41.494450+00:00"
+    },
+    "stat_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:57:13.277981+00:00"
+    },
+    "stat_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:58:00.554407+00:00"
+    },
+    "stat_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T12:58:52.541537+00:00"
+    },
+    "gen_history_only_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:00:05.188021+00:00"
+    },
+    "gen_history_only_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:00:05.188571+00:00"
+    },
+    "gen_init_only_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:00:31.637717+00:00"
+    },
+    "gen_no_initial_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:00:31.641199+00:00"
+    },
+    "history_cal_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:00:47.653507+00:00"
+    },
+    "gen_no_initial_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:03:28.380663+00:00"
+    },
+    "gen_init_only_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:03:33.562145+00:00"
+    },
+    "gen_gmr_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:03:54.681597+00:00"
+    },
+    "gen_no_calibration_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:03:59.871972+00:00"
+    },
+    "history_cal_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:05:07.839793+00:00"
+    },
+    "history_cal_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:05:13.035157+00:00"
+    },
+    "gen_phase_gmm_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:06:56.765235+00:00"
+    },
+    "gen_init_only_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:06:56.769192+00:00"
+    },
+    "history_cal_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:07:07.548716+00:00"
+    },
+    "gen_no_initial_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:07:18.018799+00:00"
+    },
+    "gen_no_calibration_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:07:23.202754+00:00"
+    },
+    "history_cal_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:07:59.944090+00:00"
+    },
+    "gen_gmr_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:10:19.891022+00:00"
+    },
+    "gen_phase_gmm_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:10:19.921449+00:00"
+    },
+    "gen_history_init_cal_20261001_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:10:35.876643+00:00"
+    },
+    "gen_no_calibration_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:10:46.420513+00:00"
+    },
+    "gen_history_init_cal_20260930_73001": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:13:42.474140+00:00"
+    },
+    "gen_gmr_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:13:42.474797+00:00"
+    },
+    "gen_phase_gmm_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:13:58.344338+00:00"
+    },
+    "gen_history_init_cal_20260930_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:14:08.847540+00:00"
+    },
+    "history_cal_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:16:28.561508+00:00"
+    },
+    "gen_init_only_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:17:04.489425+00:00"
+    },
+    "gen_no_initial_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:17:04.490175+00:00"
+    },
+    "gen_no_calibration_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:17:20.467061+00:00"
+    },
+    "gen_gmr_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:17:30.921364+00:00"
+    },
+    "gen_phase_gmm_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:20:26.625847+00:00"
+    },
+    "gen_history_init_cal_20261001_73002": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:20:26.626555+00:00"
+    },
+    "gen_init_only_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:20:37.342951+00:00"
+    },
+    "gen_no_initial_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:20:53.048729+00:00"
+    },
+    "gen_no_calibration_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:23:48.925470+00:00"
+    },
+    "gen_gmr_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:23:48.926015+00:00"
+    },
+    "gen_phase_gmm_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:23:59.489760+00:00"
+    },
+    "gen_history_init_cal_20260930_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:24:10.002134+00:00"
+    },
+    "gen_init_only_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:27:10.468471+00:00"
+    },
+    "gen_no_initial_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:27:10.469093+00:00"
+    },
+    "gen_no_calibration_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:27:21.176816+00:00"
+    },
+    "gen_gmr_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:27:31.560296+00:00"
+    },
+    "gen_phase_gmm_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:30:27.488943+00:00"
+    },
+    "gen_history_init_cal_20261001_73003": {
+      "exit_code": 0,
+      "completed": true,
+      "finished_utc": "2026-09-30T13:30:27.489727+00:00"
+    }
+  },
+  "gpus": [
+    {
+      "index": 0,
+      "uuid": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+      "memory": 52,
+      "utilization": 0,
+      "external": false
+    },
+    {
+      "index": 1,
+      "uuid": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+      "memory": 117,
+      "utilization": 0,
+      "external": false
+    },
+    {
+      "index": 2,
+      "uuid": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "memory": 52,
+      "utilization": 0,
+      "external": false
+    },
+    {
+      "index": 3,
+      "uuid": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+      "memory": 93,
+      "utilization": 0,
+      "external": false
+    }
+  ]
+}

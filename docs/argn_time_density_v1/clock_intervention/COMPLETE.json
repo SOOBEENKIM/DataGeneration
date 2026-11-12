@@ -1,0 +1,19 @@
+{
+  "customers": 105,
+  "real_prefix": 25,
+  "oracle_label_horizon": 500,
+  "sampling_seeds": [
+    20261111,
+    20261112,
+    20261113,
+    20261114
+  ],
+  "not_free_generation_benchmark": true,
+  "new_fits": 0,
+  "test_events_read": false,
+  "source_sha256": "bd4c6ce5170c23206d0dcc9ccb18df9d4eb490682192b4ecd29fbacf86341f8d",
+  "plan_sha256": "916059cac548ed1b674a4ee709a6159ee401d46a44640a409a5cbd23d16e8ad1",
+  "relative_head_sha256": "14063125f5ac7f81f40761a29513451e0af554857e965d43e6b3cfe9080a34b0",
+  "gmr_head_sha256": "8591324e9757504a783821042737a487a7fea660a6b4d089f7681a0f038f78c0",
+  "completed_utc": "2026-09-27T15:21:39.051733+00:00"
+}

@@ -1,0 +1,10 @@
+{
+  "new_small_fits": 6,
+  "new_full_generations": 24,
+  "new_generated_rows": 4745268,
+  "audited_full_generations": 48,
+  "same_label_length_comparisons": 48,
+  "test_events_read": false,
+  "source_sha256": "c996966b13134196ae54f89dafe820bde85eff8e33502e5804017bf783cdd038",
+  "completed_utc": "2026-09-27T15:24:16.422684+00:00"
+}

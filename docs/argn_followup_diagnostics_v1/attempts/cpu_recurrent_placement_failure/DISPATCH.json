@@ -1,0 +1,14 @@
+[
+  {
+    "fit_seed": 20260930,
+    "pid": 1272810,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "log": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_followup_diagnostics_v1/worker_20260930.log"
+  },
+  {
+    "fit_seed": 20261001,
+    "pid": 1272814,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "log": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_followup_diagnostics_v1/worker_20261001.log"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "steps": 4,
+  "loss_curve": [
+    1.9318456649780273,
+    1.9556190967559814,
+    1.7919926643371582,
+    1.9679304361343384
+  ],
+  "ode_steps": 4,
+  "generated_shape": [
+    2,
+    8,
+    8
+  ],
+  "max_real_length": 3123,
+  "explicit_padding": 1,
+  "full_length_forward": true,
+  "text_condition_and_null_checks": true,
+  "seconds": 1.395507063018158,
+  "architecture": "tiny64hidden/2layer/4head; not paper256hidden/8layer/8head",
+  "public_clip_adapter": true,
+  "adequate_training": false,
+  "full_sparkov_generation": false,
+  "test_reads": 0
+}

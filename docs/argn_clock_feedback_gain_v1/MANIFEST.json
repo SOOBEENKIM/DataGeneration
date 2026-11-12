@@ -1,0 +1,172 @@
+{
+  "config": {
+    "arms": [
+      "correction_gain",
+      "regression_gain",
+      "joint_gain",
+      "output_gain_shift"
+    ],
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012,
+      20261021,
+      20261022
+    ],
+    "allowed_gpu_uuids": [
+      "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+      "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+      "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+    ],
+    "horizon": null,
+    "fit_noise_seed": 20261201,
+    "diagnostic_seeds": [
+      20261202,
+      20261203
+    ],
+    "maxfev": 192,
+    "bounds": [
+      [
+        -0.35,
+        0.35
+      ],
+      [
+        -1.0,
+        1.0
+      ]
+    ],
+    "prefix_horizon": 1024,
+    "noise_extension": "preserve_prefix_then_append",
+    "max_parallel_fits": 4,
+    "delta_limit": 0.35,
+    "weighting": "equal_customer_within_each_objective_group",
+    "loss_refinement": [
+      [
+        200,
+        500
+      ],
+      [
+        500,
+        1024
+      ],
+      [
+        1024,
+        2048
+      ],
+      [
+        2048,
+        null
+      ]
+    ],
+    "subgroup_mass": "inherited_original_bin2_row_weights",
+    "maximum_own_workers_per_gpu": 2,
+    "mixture_seed": 20261206,
+    "mixture_components": 3,
+    "mixture_n_init": 3,
+    "mixture_reg_covar": 0.0001,
+    "mixture_max_iter": 300,
+    "handoff_knots": [
+      6,
+      50,
+      200
+    ],
+    "handoff_bound": 0.35,
+    "fit_condition": "actual_labels_lengths_and_own_generated_time_history",
+    "initial_scope": "phase0_and_positions1to5",
+    "fit_support": "full_sequence",
+    "gain_parameters": {
+      "correction_gain": [
+        [
+          1.0
+        ],
+        [
+          [
+            0.0,
+            1.5
+          ]
+        ]
+      ],
+      "regression_gain": [
+        [
+          0.0
+        ],
+        [
+          [
+            0.0,
+            1.0
+          ]
+        ]
+      ],
+      "joint_gain": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.5
+          ]
+        ]
+      ],
+      "output_gain_shift": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          [
+            0.0,
+            1.5
+          ],
+          [
+            -0.35,
+            0.35
+          ]
+        ]
+      ]
+    },
+    "feedback_knots": [
+      50,
+      125,
+      350
+    ],
+    "additional_mean_bound": 0.35,
+    "mid_loss_refinement": [
+      [
+        50,
+        100
+      ],
+      [
+        100,
+        200
+      ]
+    ],
+    "mid_personal_tolerance": 0.005,
+    "mid_personal_penalty": 4.0
+  },
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_feedback_gain_v1/local_source/feedback_clock.py": "aaea2bdd9a602b215c67464fd2935ce57899fe43c3134b64247a2e89a69d74ba",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_feedback_gain_v1/local_source/dispatch.py": "6b089b849fedb3b8929e28cbcad5de1caadc5dfec17193feddcd59cde157ebde",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_feedback_gain_v1/local_source/run_feedback.py": "ad62101eb33eca6a480ac9f3a054a801ea1e838eb27c0e7091a2129cfdd11479",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_feedback_gain_v1/local_source/report_feedback.py": "9b98ad4fb6551c31234a8c8dbbd22aaf317dc0534c682c6988c1b6f9651027cb",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_feedback_gain_v1/report/PROTOCOL.md": "1c62b2fd557929d09149b6e774c9f8c07be1100921a9752b427ab21175f66485",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_feedback_gain_v1/report/IMPLEMENTATION_CHECK.json": "d63409ea03677762a9d309fac83c564a7749538edffc9981df16c958719a204e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/init_only/time_head.pt": "d5ffa33894e6485621f543df9212cc1da0404703e8d206a482ae55a406fabffb",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/MANIFEST.json": "c747f2571b7fde79f16737f0e8bf0c09e39ad9e57a568ebbb28e18949dc6e241",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/report/ARTIFACT_HASHES.json": "6d7d89a438caee5d515df8eb686503a9464ade2670a70c0c48a44513946ff43c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/local_source/run_initial.py": "77437c567b8df52c16c254334986d25a4eff7751902e59b6487838afa5d62c07",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/local_source/initial_clock.py": "d03f08520647ad398d1130a5899f6d793d4ad3dea2d88ed00d75b2cef8e24a0a"
+  },
+  "created_utc": "2026-09-28T14:25:32.679678+00:00",
+  "test_events_read": false,
+  "local_only": true
+}

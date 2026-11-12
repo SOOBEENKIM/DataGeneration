@@ -1,0 +1,11 @@
+{
+  "reference": "existing encoded development metadata used with actual representations",
+  "known_preexisting_source_difference": {
+    "customer_id": 829,
+    "event_index": 384,
+    "encoded_gap": 1045690,
+    "source_gap": 1096094
+  },
+  "primary_early_mid_affected": false,
+  "source_metadata_unchanged": true
+}

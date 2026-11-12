@@ -1,0 +1,43 @@
+{
+ "arm": "argn_merchant",
+ "fit_seed": 20261109,
+ "generation_seed": 20261012,
+ "split": "test",
+ "seconds": 68.0,
+ "events": 260220,
+ "customers": 239,
+ "frauds": 454,
+ "fraud_customers": 35,
+ "novel_merchant_fraud": 0.5022026431718062,
+ "novel_merchant_normal": 0.08076884580738049,
+ "merchants_per_customer_median": 87.0,
+ "rare_rows_named": 0,
+ "kernel": null,
+ "base_weights_sha256": "c5f0089b58da630a1cd7ab866849033646f235818db245a1fa8ef350b54ddbb5",
+ "heads_sha256": "7c963ec1054718640214e0ccc55b025c83a87c3f5453e4a4fc606468e19e1ab8",
+ "modules": {
+  "base": {
+   "label_key": "tgt:t5/c5__cat",
+   "label_first": true,
+   "transition": true,
+   "retrained_heads": true,
+   "attached": true
+  },
+  "merchant": {
+   "arm": "full",
+   "lam": 0.75,
+   "pi": 0.9318181818181818,
+   "merchant_key": "tgt:t1/c1__cat",
+   "counter": {
+    "merchant_steps": 3793,
+    "rows": 353891,
+    "repeat_mass": 327834.916661336,
+    "novel_mass": 26056.083338684002,
+    "pool_mass": 307.14807430282434
+   },
+   "sticky": false,
+   "category_first": false
+  }
+ },
+ "sha256": "a130a808e804c7c9aead47d9531dbe402b19bdda018f5f222ef20ae85aae6e10"
+}

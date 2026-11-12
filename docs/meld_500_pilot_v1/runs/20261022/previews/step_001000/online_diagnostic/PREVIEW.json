@@ -1,0 +1,8 @@
+{
+  "step": 1000,
+  "kind": "online_diagnostic",
+  "fit_seed": 20261022,
+  "selection_effect": false,
+  "preliminary": true,
+  "adequate_latest_baseline": false
+}

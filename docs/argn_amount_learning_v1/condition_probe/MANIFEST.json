@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-09-27T11:19:41.930455+00:00",
+  "cases": {
+    "all_current_true": [
+      "category",
+      "gap",
+      "receiver_or_mark"
+    ],
+    "all_current_sampled": [],
+    "category_true": [
+      "category"
+    ],
+    "gap_true": [
+      "gap"
+    ],
+    "merchant_true": [
+      "receiver_or_mark"
+    ],
+    "category_merchant_true": [
+      "category",
+      "receiver_or_mark"
+    ]
+  },
+  "arm": "balanced_shared",
+  "generation_seeds": [
+    20261101,
+    20261102,
+    20261103,
+    20261104
+  ],
+  "batch_size": 768,
+  "split": "development",
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/probe_argn_amount_conditions.py": "474e1d3ed2ca8b0d727b6b9336b0bbcdd4c4e86cf379b3871305543a5e8569e4",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_amount_learning_v1/condition_probe/PROTOCOL.md": "2fcd454d353f15de9612a29acd29b57cbd095193aef72c9b6beb1213b8339422",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_amount_control.py": "b57829405ad3b7d08706dd06d056fb260f2e003991c606d1380b57f9e67607e7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_amount_learning_v1/MANIFEST.json": "9065527bb68ef8d2c804ac7619b8c2c5f4e04f3894f22dd12c3882b3b75abb88",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_amount_learning_v1/runs/balanced_shared_20260930/amount_head.pt": "0df88bbb4cd6121aa35f2ce94c9278c4b49ac0561e348d72c57eb26eed8d342f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_amount_learning_v1/worker_20260930/development_cache.pt": "8d916d9e07e117f67f20846d2b0e4d70953877afcef034ef9c2685a7bf6028e6",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_event_label_first_20260930/workspace/ModelStore/model-data/model-weights.pt": "c03642cfea96247115ff30a9261b71f9c9c53df29d149995bd39e8c078fc2d67",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_amount_learning_v1/runs/balanced_shared_20261001/amount_head.pt": "d9aaadf8f93c5d9cd46f64e9c70a07018844ae72df386c6adbe6ceb38c6fafb8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_amount_learning_v1/worker_20261001/development_cache.pt": "1ef700263cc04f8ef963f6fe6c873808d1731d121d86686ddc7668cae61d5b2e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_event_label_first_20261001/workspace/ModelStore/model-data/model-weights.pt": "25420f1a56a9eff8f6350508d274aa896e32fdbc1587f688b9e55cb6e8a50e59"
+  },
+  "test_events_read": false
+}

@@ -1,0 +1,71 @@
+{
+  "arm": "personal_six",
+  "selected": {
+    "evaluation": 487,
+    "theta": [
+      0.29492947621387755,
+      0.15092402439334338,
+      0.028150588787899694,
+      0.023680546258435794,
+      0.0662334358048473,
+      0.141659453058652
+    ],
+    "seconds": 288.08596201613545,
+    "objective": 0.028649074130109482,
+    "clock": 0.0,
+    "normal": 0.027568268419290876,
+    "fraud": 0.1329469430824046,
+    "personal": 0.008672902883310352,
+    "onset": 0.036725480826068094,
+    "bin0": 0.033489028380856135,
+    "bin1": 0.027926005946559012,
+    "bin2": 0.027774605195369124,
+    "clipped_offset_fraction": 0.0
+  },
+  "initial": {
+    "evaluation": 0,
+    "theta": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "seconds": 0.5980032780207694,
+    "objective": 0.10386939969533612,
+    "clock": 0.0,
+    "normal": 0.07833535995638717,
+    "fraud": 0.1329469430824046,
+    "personal": 0.035108399098448116,
+    "onset": 0.036725480826068094,
+    "bin0": 0.20647714294771416,
+    "bin1": 0.1123022156703497,
+    "bin2": 0.06943095968479143,
+    "clipped_offset_fraction": 0.0
+  },
+  "support": {
+    "split": "optimization",
+    "horizon": 3106,
+    "customers": 619,
+    "events": 815664,
+    "tail_events": 302200,
+    "counts": {
+      "normal": 810543,
+      "fraud": 4690,
+      "personal": 807705,
+      "onset": 429,
+      "bin0": 27601,
+      "bin1": 84660,
+      "bin2": 698282
+    }
+  },
+  "weighting": "customer",
+  "evaluations": 488,
+  "distinct_evaluations": 487,
+  "optimizer_success": true,
+  "optimizer_message": "Optimization terminated successfully.",
+  "head_sha256": "749e880c9d4ad9538268a83daf2ddda1a8659ef5cd82ae90bf8ef06b48fa26fc",
+  "original_gmr_buffers_unchanged": true,
+  "new_native_argn_fits": 0
+}

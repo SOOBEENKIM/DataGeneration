@@ -1,0 +1,34 @@
+{
+ "run": "native_20261108",
+ "dataset": "ibm",
+ "weights_sha256": "b0b1f46a977d4e7eb35e6b665538b7ae0b5c5dd118565d69e22d19410059603f",
+ "weights_unchanged": true,
+ "prefix_limit": 4096,
+ "customers": 240,
+ "column_order": [
+  "tgt:/",
+  "tgt:t0/c0",
+  "tgt:t1/c1",
+  "tgt:t2/c2",
+  "tgt:t3/c3",
+  "tgt:t4/c4",
+  "tgt:t5/c5"
+ ],
+ "label_predicted_after": [
+  "tgt:/",
+  "tgt:t0/c0",
+  "tgt:t1/c1",
+  "tgt:t2/c2",
+  "tgt:t3/c3",
+  "tgt:t4/c4",
+  "tgt:t5/c5"
+ ],
+ "inputs": {
+  "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/prepared/validation.parquet": "00e2ee35671c6ceee60c2b98fd4742d06ac67665555ca0f5d492715d221210ea",
+  "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/runs/native_20261108/generated_validation_20261011.parquet": "e6181622ffd10a346e70b1eb710d0729f016ad69c342c5a679f9b5eedb779f6b",
+  "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/ibm_tabformer_v1/runs/native_20261108/generated_validation_20261012.parquet": "de9dcbfaae17b7bc6f7fd84e41d6b07a5e147ac02640dd22e000add779c9b9d4"
+ },
+ "mode": "teacher forward only; no rollout; no new fit; test not read",
+ "seconds": 290.3,
+ "script_sha256": "88345adc3051fb118853c63b8bdbbd6c167115f87036c5837c68ecb9fc5736ce"
+}

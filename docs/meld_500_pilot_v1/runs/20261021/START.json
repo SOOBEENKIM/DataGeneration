@@ -1,0 +1,9 @@
+{
+  "pid": 4139977,
+  "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+  "fit_seed": 20261021,
+  "vae_cap": 500,
+  "dit_cap": 2000,
+  "preliminary": true,
+  "test_reads": 0
+}

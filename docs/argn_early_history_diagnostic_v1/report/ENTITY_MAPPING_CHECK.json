@@ -1,0 +1,8 @@
+{
+  "customers": 147,
+  "rows": 177997,
+  "labels_exact": true,
+  "early_gaps_exact": true,
+  "later_decoded_gap_differences": 1,
+  "early_decoded_gap_differences": 0
+}

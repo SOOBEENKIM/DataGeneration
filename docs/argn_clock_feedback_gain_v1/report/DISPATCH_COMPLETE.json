@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "jobs": {
+    "regression_gain_20261001": {
+      "pid": 2109609,
+      "exit_code": 0
+    },
+    "regression_gain_20260930": {
+      "pid": 2109603,
+      "exit_code": 0
+    },
+    "output_gain_shift_20261001": {
+      "pid": 2110053,
+      "exit_code": 0
+    },
+    "output_gain_shift_20260930": {
+      "pid": 2110047,
+      "exit_code": 0
+    },
+    "correction_gain_20260930": {
+      "pid": 2109591,
+      "exit_code": 0
+    },
+    "correction_gain_20261001": {
+      "pid": 2109596,
+      "exit_code": 0
+    },
+    "joint_gain_20260930": {
+      "pid": 2110036,
+      "exit_code": 0
+    },
+    "joint_gain_20261001": {
+      "pid": 2110041,
+      "exit_code": 0
+    }
+  },
+  "completed_utc": "2026-09-29T04:51:05.972283+00:00"
+}

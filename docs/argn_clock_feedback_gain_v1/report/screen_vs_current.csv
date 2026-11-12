@@ -1,0 +1,9 @@
+arm,fit_seed,early_pass,early_improved_draws,costs,passes
+correction_gain,20260930,True,4,"whole_normal_time,position_50_200,position_100_200,position_200_500",False
+regression_gain,20260930,True,4,"whole_normal_time,position_50_200,position_100_200",False
+joint_gain,20260930,True,4,"whole_normal_time,position_50_200,position_100_200,position_200_500",False
+output_gain_shift,20260930,True,4,"whole_normal_time,position_50_200,position_100_200,position_200_500",False
+correction_gain,20261001,True,4,"whole_normal_time,position_50_200,position_100_200,position_200_500",False
+regression_gain,20261001,True,4,"whole_normal_time,position_50_200,position_100_200",False
+joint_gain,20261001,True,4,"whole_normal_time,position_50_200,position_100_200,position_200_500",False
+output_gain_shift,20261001,True,4,"whole_normal_time,position_50_200,position_100_200,position_200_500",False

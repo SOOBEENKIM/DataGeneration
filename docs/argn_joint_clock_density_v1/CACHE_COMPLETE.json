@@ -1,0 +1,26 @@
+{
+  "records": {
+    "optimization": {
+      "rows": 816283,
+      "customers": 619,
+      "base_dim": 1322,
+      "native_logits_checked": 5713981,
+      "mapping_exact": true,
+      "decoded_metadata_differences": [],
+      "sha256": "a0591aeb21632273124d9c4bbb745f99d64e260b5370e28c0507fcdf3656d819"
+    },
+    "internal_validation": {
+      "rows": 100226,
+      "customers": 69,
+      "base_dim": 1322,
+      "native_logits_checked": 701582,
+      "mapping_exact": true,
+      "decoded_metadata_differences": [],
+      "sha256": "cf66130ce15ab580a5843841d50169e6244ceda97dbb501ca191a0755dbadff6"
+    }
+  },
+  "parent_seed": 20260930,
+  "seconds": 37.9729105590377,
+  "pid": 2163485,
+  "test_events_read": false
+}

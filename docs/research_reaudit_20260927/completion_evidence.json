@@ -1,0 +1,120 @@
+{
+  "saved_model_split_audits": 10,
+  "splits_per_model": 3,
+  "new_generations": 8,
+  "generated_rows": 1579872,
+  "generation_checks": [
+    {
+      "mode": "markov",
+      "fit_seed": 20260930,
+      "generation_seed": 20261011,
+      "rows": 185791,
+      "customers": 147,
+      "sha256": "810cdb4fc8fbfeb4c44204e17e63967d4d5cdd6014bec6a289fddc468c23bbf0",
+      "independent_metrics_checked": 5
+    },
+    {
+      "mode": "markov",
+      "fit_seed": 20260930,
+      "generation_seed": 20261012,
+      "rows": 210976,
+      "customers": 147,
+      "sha256": "2beff1b8fa478b57ed9494884f894b4d66d2e08d16b230859130ae1591e8704d",
+      "independent_metrics_checked": 5
+    },
+    {
+      "mode": "markov",
+      "fit_seed": 20261001,
+      "generation_seed": 20261011,
+      "rows": 186265,
+      "customers": 147,
+      "sha256": "20371cff46b43b1dda0deae0fc5dc175422f8c8d23976dc0c5a8f2a74b416771",
+      "independent_metrics_checked": 5
+    },
+    {
+      "mode": "markov",
+      "fit_seed": 20261001,
+      "generation_seed": 20261012,
+      "rows": 206904,
+      "customers": 147,
+      "sha256": "c0e70e4f2e9cd23e6b898b27662fe0d971c96396aedebcd376d69ff024e7d602",
+      "independent_metrics_checked": 5
+    },
+    {
+      "mode": "duration",
+      "fit_seed": 20260930,
+      "generation_seed": 20261011,
+      "rows": 185791,
+      "customers": 147,
+      "sha256": "0465c312aea2383773b66c11b5c19b7e8f76142b4ba3856b9389455a36f2c0fc",
+      "independent_metrics_checked": 5
+    },
+    {
+      "mode": "duration",
+      "fit_seed": 20260930,
+      "generation_seed": 20261012,
+      "rows": 210976,
+      "customers": 147,
+      "sha256": "700b09d6c197a36b0a21e1ed20d79d7e0e74be5bd30ebad55e442325829faa83",
+      "independent_metrics_checked": 5
+    },
+    {
+      "mode": "duration",
+      "fit_seed": 20261001,
+      "generation_seed": 20261011,
+      "rows": 186265,
+      "customers": 147,
+      "sha256": "1578ad03332d6dcbafcf388c1e77e01c6433c8e9bc4e83ab2024516b2d061355",
+      "independent_metrics_checked": 5
+    },
+    {
+      "mode": "duration",
+      "fit_seed": 20261001,
+      "generation_seed": 20261012,
+      "rows": 206904,
+      "customers": 147,
+      "sha256": "719f206d50b41211d80fb0b7f7198a7267d5b93221c061f868107abbc490220e",
+      "independent_metrics_checked": 5
+    }
+  ],
+  "original_weight_hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20260930/workspace/ModelStore/model-data/model-weights.pt": "78d26d2710627561eb4fc9637d78fc4dc7c73e6f1292c263c31a5f1405a5b8e0",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20261001/workspace/ModelStore/model-data/model-weights.pt": "d8a836c5856a581e08f051535701f586ced9de38049d949aa488d593e85472c7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20260930/workspace/ModelStore/model-data/model-weights.pt": "7763b9819c5fd020ca43aa219e4ed976838b20a9737ba830d21ca8220f028779",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20261001/workspace/ModelStore/model-data/model-weights.pt": "ea5017388ae68a123f7fa76bf3da5620c7a1f0d31123f66c6baf9f8fb909be1e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20260930/workspace/ModelStore/model-data/model-weights.pt": "4404641f3420a0ff26596cf9e93556179e439f7f35bf98ef3c3fa88ed4bf90f8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_event_weight_control_v1/runs/B_event_weighted_20261001/workspace/ModelStore/model-data/model-weights.pt": "68e26028d624e7b2571079bf3f90cfe682eec5bd0f336cf1cdfb428303beae51",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_label_first_20260930/workspace/ModelStore/model-data/model-weights.pt": "2029e48b045b275abcb4f4dfaa771580cb91b57f0696f56798c16cfa7ae82494",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_label_first_20261001/workspace/ModelStore/model-data/model-weights.pt": "4794c7fae66e3354494c1dffa79161eaab28a0566cf10e339a89a928f45d460d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_event_label_first_20260930/workspace/ModelStore/model-data/model-weights.pt": "c03642cfea96247115ff30a9261b71f9c9c53df29d149995bd39e8c078fc2d67",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_event_label_first_20261001/workspace/ModelStore/model-data/model-weights.pt": "25420f1a56a9eff8f6350508d274aa896e32fdbc1587f688b9e55cb6e8a50e59"
+  },
+  "test_events_read": false,
+  "neural_training": false,
+  "artifacts_local": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/research_reaudit_20260927",
+  "conditional_amount_probes": [
+    {
+      "seconds": 68.12691877002362,
+      "selection_sha256": "9a85bbcffc972bba70fb7266e047200bbc8fa1bf2bc5752a477622a558d9d559",
+      "rows": {
+        "optimization": "5f56c96931b5965a26c6a09634d36437d919feebdac6ebb5cd396a45ede7ff9e",
+        "development": "e2d80b0012168948f8f8054eeddc1d21d66e5a4e8f44dc110f6d4972c3ba02c9"
+      },
+      "first_digit_teacher_generation_equivalence_checks": 11770,
+      "weights_unchanged": true,
+      "test_events_read": false
+    },
+    {
+      "seconds": 67.63450997998007,
+      "selection_sha256": "9a85bbcffc972bba70fb7266e047200bbc8fa1bf2bc5752a477622a558d9d559",
+      "rows": {
+        "optimization": "c6757541b7bfb0acb45101fb7940123147fc9b0ebcb10eada8f40e6af8845260",
+        "development": "e1c820b09fa7522c1dea62e58bd93650835fbb262abe3e16bd7ca41454ab1d4d"
+      },
+      "first_digit_teacher_generation_equivalence_checks": 11770,
+      "weights_unchanged": true,
+      "test_events_read": false
+    }
+  ],
+  "first_digit_teacher_generation_equivalence_checks": 23540
+}

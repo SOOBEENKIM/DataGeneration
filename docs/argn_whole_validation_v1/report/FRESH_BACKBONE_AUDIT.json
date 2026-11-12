@@ -1,0 +1,21 @@
+{
+  "fits": [
+    {
+      "seed": 20261021,
+      "parameters": 4815662,
+      "fresh_weights_sha256": "09d61e6c942cbd2d24d4f37997918aa20d381d7350efbe39d09436ff8df0f436"
+    },
+    {
+      "seed": 20261022,
+      "parameters": 4815662,
+      "fresh_weights_sha256": "add0ee8a5828d76cba97f23b30713591a525f25c7e1ca25f77216663dbd5eadf"
+    },
+    {
+      "seed": 20261023,
+      "parameters": 4815662,
+      "fresh_weights_sha256": "99dd0698c368d7e3d479b1fc2c219e6bdfdadf3a8748ff159f52b772097429c3"
+    }
+  ],
+  "distinct_checkpoints": 3,
+  "native_loading_all_pass": true
+}

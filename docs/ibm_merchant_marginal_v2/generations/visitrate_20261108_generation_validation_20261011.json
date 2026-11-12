@@ -1,0 +1,84 @@
+{
+ "events": 281934,
+ "frauds": 477,
+ "fraud_customers": 32,
+ "novel_merchant_fraud": 0.5807127882599581,
+ "novel_merchant_normal": 0.08062332789733423,
+ "merchants_per_customer_median": 88.0,
+ "top1_share_median": 0.09675631751160604,
+ "rare_share": 0.016326516134981945,
+ "consistency": {
+  "normal": {
+   "rows": 281457,
+   "online": 0.11980515673797418,
+   "category_matches_merchant": 0.9998266472126316,
+   "channel_matches_merchant": 0.9999747193851755,
+   "online_at_swipe_merchant": 2.528061482455253e-05
+  },
+  "fraud": {
+   "rows": 477,
+   "online": 0.8637316561844863,
+   "category_matches_merchant": 1.0,
+   "channel_matches_merchant": 0.25740318906605925,
+   "online_at_swipe_merchant": 0.7129840546697038
+  }
+ },
+ "arm": "visitrate",
+ "fit_seed": 20261108,
+ "generation_seed": 20261011,
+ "seconds": 78.6,
+ "rare_rows_named": 4603,
+ "kernel": {
+  "kappa": 8.0,
+  "lam": 1.0
+ },
+ "base_weights_sha256": "b0b1f46a977d4e7eb35e6b665538b7ae0b5c5dd118565d69e22d19410059603f",
+ "base_module": {
+  "label_key": "tgt:t5/c5__cat",
+  "label_first": true,
+  "transition": true,
+  "retrained_heads": true,
+  "attached": true
+ },
+ "merchant_module": {
+  "arm": "full",
+  "lam": 1.0,
+  "pi": 0.9318181818181818,
+  "merchant_key": "tgt:t1/c1__cat",
+  "counter": {
+   "merchant_steps": 3888,
+   "rows": 371545,
+   "repeat_mass": 344673.20071243274,
+   "novel_mass": 26871.79928758197,
+   "pool_mass": 347.80092079905205
+  },
+  "sticky": false,
+  "category_first": true
+ },
+ "gap_module": {
+  "arm": "table_kind",
+  "gap_key": "tgt:t0/c0__bin",
+  "counter": {
+   "gap_steps": 3888,
+   "onset": 240,
+   "cont": 412,
+   "exit": 238
+  }
+ },
+ "attr_module": {
+  "arm": "attr_all",
+  "keys": {
+   "label": "tgt:t5/c5__cat",
+   "merchant": "tgt:t1/c1__cat",
+   "category": "tgt:t3/c3__cat",
+   "channel": "tgt:t4/c4__cat"
+  },
+  "counter": {
+   "category_rows": 371501,
+   "channel_rows": 370818,
+   "channel_state_rows": 652,
+   "steps": 7776
+  }
+ },
+ "sha256": "d4cadc8acb6397608571fe155e7c4b9aa5c2559235f4cdb782f6f357710641dc"
+}

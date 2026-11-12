@@ -1,0 +1,15 @@
+{
+  "rows": 201658,
+  "customers": 147,
+  "seconds": 106.0514390359167,
+  "sha256": "244ba0f489e6acd8972b6b2b49d0ada69f9a44d22e44000af0605e6b33e6a777",
+  "head_sha256": "3e9d49eb4986f362fc76d9f235973edf298af9ae93b389a78b5c7583ab862b10",
+  "native_sha256": "09d61e6c942cbd2d24d4f37997918aa20d381d7350efbe39d09436ff8df0f436",
+  "sampling_audit": [
+    {
+      "sampled_values": 283341,
+      "clipped_values": 45
+    }
+  ],
+  "future_labels_or_lengths": false
+}

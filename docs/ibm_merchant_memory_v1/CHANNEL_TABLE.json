@@ -1,0 +1,25 @@
+{
+  "table": [
+    0.7566248256624826,
+    0.951530612244898
+  ],
+  "order": [
+    "novel",
+    "repeat"
+  ],
+  "cells": {
+    "novel": {
+      "rows": 716,
+      "online": 542,
+      "p_online": 0.7566248256624826
+    },
+    "repeat": {
+      "rows": 587,
+      "online": 559,
+      "p_online": 0.951530612244898
+    }
+  },
+  "smoothing": 0.5,
+  "normal_rows_online": 0.11801225078282752,
+  "train_sha256": "063a1c0f4c30806e5f7254e75b426c75b368be589dd15be047321572747ab719"
+}

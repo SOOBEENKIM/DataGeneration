@@ -1,0 +1,35 @@
+{
+ "created_utc": "2026-11-10T13:18:50Z",
+ "seconds": 143.0,
+ "dataset": "sparkov",
+ "detector": "stable",
+ "feature_set": "all",
+ "feature_vocabulary": {
+  "categories": [
+   "entertainment",
+   "food_dining",
+   "gas_transport",
+   "grocery_net",
+   "grocery_pos",
+   "health_fitness",
+   "home",
+   "kids_pets",
+   "misc_net",
+   "misc_pos",
+   "personal_care",
+   "shopping_net",
+   "shopping_pos",
+   "travel"
+  ],
+  "channels": []
+ },
+ "test": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/prepared/validation.parquet",
+ "test_sha256": "c444c6e625b8f4e0e4edae1b1e12dbbef573c9e398d44400a44c4d5a7f03228d",
+ "generations": 144,
+ "real_draws": 20,
+ "errors": 4,
+ "new_fits": 0,
+ "new_generations": 0,
+ "gpu": false,
+ "test_events_read": false
+}

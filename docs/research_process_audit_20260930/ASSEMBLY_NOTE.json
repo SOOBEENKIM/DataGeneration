@@ -1,0 +1,10 @@
+{
+  "summary_only_amendment": "Removed averaged seed-ID columns; added parent/draw counts. No metric changed.",
+  "raw_recomputation": "40 saved outputs, 440 checks; see AUDIT_COMPLETE.json",
+  "prior_summary_source": "argn_clock_feedback_gain_v1/report/all_models.csv",
+  "caution": "History/GMR comparative rows use prior audited metric tables, not extra raw recomputation this turn.",
+  "independent_new_head_refits": 0,
+  "new_fit": 0,
+  "new_generation": 0,
+  "test_events_read": false
+}

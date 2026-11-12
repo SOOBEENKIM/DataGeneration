@@ -1,0 +1,17 @@
+{
+  "dst": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/runs/20261021/evaluation_development",
+  "split": "development",
+  "files": [
+    [
+      20261031,
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/runs/20261021/generated_development_20261031.parquet"
+    ],
+    [
+      20261032,
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/runs/20261021/generated_development_20261032.parquet"
+    ]
+  ],
+  "fs": 20261021,
+  "step": 2000,
+  "kind": "selected_ema"
+}

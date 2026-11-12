@@ -1,0 +1,14 @@
+{
+  "dispatcher": {
+    "pid": 3541032,
+    "cmd": "/home/finx_sbk/.conda/envs/cofseq/bin/python artifacts/comparison_completion_v1/local_source/dispatch_comparators.py",
+    "start_ticks": "136464377",
+    "state": "S",
+    "ppid": 3541030
+  },
+  "suspended": true,
+  "workers_continue": true,
+  "target_epoch": 500,
+  "reason": "User changed 600 to 500; preserve old longer-budget run.",
+  "utc": 1790867433.9827483
+}

@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "jobs": {
+    "clock_full_prefix_20260930": {
+      "pid": 1559309,
+      "exit_code": 0
+    },
+    "clock_full_prefix_20261001": {
+      "pid": 1561686,
+      "exit_code": 0
+    }
+  },
+  "completed_utc": "2026-09-27T17:05:11.252441+00:00"
+}

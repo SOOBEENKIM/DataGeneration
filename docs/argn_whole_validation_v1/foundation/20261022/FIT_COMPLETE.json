@@ -1,0 +1,99 @@
+{
+  "seed": 20261022,
+  "output_fits": 3,
+  "onset_fits": 1,
+  "count_fits": 1,
+  "evidence": {
+    "category": {
+      "native_replay_checks": {
+        "optimization": 816283,
+        "internal_validation": 100226
+      },
+      "fit": {
+        "arm": "selected",
+        "fit_seed": 20261022,
+        "selected_step": 600,
+        "last_step": 1100,
+        "trainable_parameters": 64239,
+        "seconds": 2.0559919618535787,
+        "validation": {
+          "normal_nll": 2.596950054168701,
+          "fraud_nll": 2.161900043487549,
+          "macro_nll": 2.379425048828125,
+          "normal_events": 99751,
+          "fraud_events": 475
+        },
+        "optimization": {
+          "normal_nll": 2.5965564250946045,
+          "fraud_nll": 1.9885709285736084,
+          "macro_nll": 2.2925636768341064,
+          "normal_events": 811544,
+          "fraud_events": 4739
+        },
+        "head_sha256": "699ee3ad4e8f119f86e8bde09e7e495398de0df735579a2252d8179c080738dd"
+      }
+    },
+    "amount_or_numeric_value": {
+      "native_replay_checks": {
+        "optimization": 5713981,
+        "internal_validation": 701582
+      },
+      "fit": {
+        "arm": "selected",
+        "fit_seed": 20261022,
+        "selected_step": 700,
+        "last_step": 1200,
+        "trainable_parameters": 282591,
+        "seconds": 6.781782882055268,
+        "validation": {
+          "normal_nll": 9.35322093963623,
+          "fraud_nll": 10.209482192993164,
+          "macro_nll": 9.781351566314697,
+          "normal_events": 99751,
+          "fraud_events": 475
+        },
+        "optimization": {
+          "normal_nll": 9.419650077819824,
+          "fraud_nll": 8.861357688903809,
+          "macro_nll": 9.140503883361816,
+          "normal_events": 811544,
+          "fraud_events": 4739
+        },
+        "head_sha256": "e6ad6adbf9b428ddb1b06941a162e2987b6aed14093db494ec6bb14d255aa70d"
+      }
+    },
+    "gap": {
+      "native_replay_checks": {
+        "optimization": 5713981,
+        "internal_validation": 701582
+      },
+      "fit": {
+        "arm": "selected",
+        "fit_seed": 20261022,
+        "selected_step": 600,
+        "last_step": 1100,
+        "trainable_parameters": 282382,
+        "seconds": 6.731036894954741,
+        "validation": {
+          "normal_nll": 11.206401824951172,
+          "fraud_nll": 10.488197326660156,
+          "macro_nll": 10.847299575805664,
+          "normal_events": 99685,
+          "fraud_events": 472
+        },
+        "optimization": {
+          "normal_nll": 11.261754035949707,
+          "fraud_nll": 10.166031837463379,
+          "macro_nll": 10.713892936706543,
+          "normal_events": 810974,
+          "fraud_events": 4690
+        },
+        "head_sha256": "354a4d010221eb4c3715aece0e4825db8966e9b964da4161bf673ea3f16e800f"
+      }
+    }
+  },
+  "fresh_representation": true,
+  "native_sha256": "add0ee8a5828d76cba97f23b30713591a525f25c7e1ca25f77216663dbd5eadf",
+  "utc": "2026-09-30T17:21:43.219154+00:00",
+  "test_events_read": false
+}

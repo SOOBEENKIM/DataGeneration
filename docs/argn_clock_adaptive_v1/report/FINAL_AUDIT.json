@@ -1,0 +1,15 @@
+{
+  "completed_utc": "2026-09-27T18:13:05.284555+00:00",
+  "all_8_workers_exit_zero": true,
+  "all_32_generations_independently_audited": true,
+  "previous_model_preserved": true,
+  "tracked_worktree_clean": true,
+  "commits_created": 0,
+  "pushed": false,
+  "test_events_read": false,
+  "new_calibration_fits": 4,
+  "new_native_argn_fits": 0,
+  "generated_rows": 6327024,
+  "active_candidate": "clock_prefix",
+  "next_objective_change_executed": false
+}

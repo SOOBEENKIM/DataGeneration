@@ -1,0 +1,22 @@
+{
+ "arm": "oversample_x3",
+ "fit_seed": 20261108,
+ "column_order": [
+  "c5",
+  "",
+  "c0",
+  "c1",
+  "c2",
+  "c3",
+  "c4"
+ ],
+ "fraud_rows_label_real": 0.2777,
+ "fraud_rows_label_set_0": 0.2188,
+ "normal_rows_label_real": 0.1509,
+ "normal_rows_label_set_1": 0.1822,
+ "p_fraud_prev_normal": 0.0064,
+ "n_prev_normal": 111698,
+ "p_fraud_prev_fraud": 0.01091,
+ "n_prev_fraud": 127,
+ "weights_unchanged": true
+}

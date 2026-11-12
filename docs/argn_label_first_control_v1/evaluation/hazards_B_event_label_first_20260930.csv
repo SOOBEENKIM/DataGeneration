@@ -1,0 +1,13 @@
+run,age_band,label,observed_events,eligible_transitions,customers,ends,continues,censored_next,termination_rate
+B_event_label_first_20260930_20261011,0,1,974,974,135,962,12,0,0.9876796714579056
+B_event_label_first_20260930_20261011,1,2-5,13,13,10,12,1,0,0.9230769230769231
+B_event_label_first_20260930_20261011,2,6-10,0,0,0,0,0,0,
+B_event_label_first_20260930_20261011,3,11-20,0,0,0,0,0,0,
+B_event_label_first_20260930_20261011,4,21-50,0,0,0,0,0,0,
+B_event_label_first_20260930_20261011,5,51+,0,0,0,0,0,0,
+B_event_label_first_20260930_20261012,0,1,974,973,138,968,5,1,0.9948612538540597
+B_event_label_first_20260930_20261012,1,2-5,5,5,5,5,0,0,1.0
+B_event_label_first_20260930_20261012,2,6-10,0,0,0,0,0,0,
+B_event_label_first_20260930_20261012,3,11-20,0,0,0,0,0,0,
+B_event_label_first_20260930_20261012,4,21-50,0,0,0,0,0,0,
+B_event_label_first_20260930_20261012,5,51+,0,0,0,0,0,0,

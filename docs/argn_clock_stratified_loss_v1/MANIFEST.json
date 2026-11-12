@@ -1,0 +1,96 @@
+{
+  "config": {
+    "arms": [
+      "event_two",
+      "customer_two",
+      "position_six",
+      "personal_six"
+    ],
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012,
+      20261021,
+      20261022
+    ],
+    "allowed_gpu_uuids": [
+      "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+      "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+      "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+    ],
+    "horizon": null,
+    "fit_noise_seed": 20261201,
+    "diagnostic_seeds": [
+      20261202,
+      20261203
+    ],
+    "maxfev": 1536,
+    "bounds": [
+      [
+        -0.35,
+        0.35
+      ],
+      [
+        -1.0,
+        1.0
+      ]
+    ],
+    "prefix_horizon": 1024,
+    "noise_extension": "preserve_prefix_then_append",
+    "max_parallel_fits": 4,
+    "delta_limit": 0.35,
+    "weighting": "equal_customer_within_each_objective_group",
+    "loss_refinement": [
+      [
+        200,
+        500
+      ],
+      [
+        500,
+        1024
+      ],
+      [
+        1024,
+        2048
+      ],
+      [
+        2048,
+        null
+      ]
+    ],
+    "subgroup_mass": "inherited_original_bin2_row_weights",
+    "maximum_own_workers_per_gpu": 4
+  },
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/local_source/report_stratified.py": "5a616c9e39b1013ce26d3f2e84061735d4a10ca9800afe1ca72d4b0b70089637",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/local_source/dispatch.py": "3c9704627c2b2f245ff4ec0226b5fbedb16609594a1f18a78c139830a2dae6a7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/local_source/run_stratified.py": "fd85bd8f58a192721420ccb84507995544cd4c3270bfd8c45e34f4bcce94744c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/report/PROTOCOL.md": "fef1bbb5d77167e0f70ccba764bb6531a93ac7371457484bb770d7754b7e8508",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/report/CLOCK_ENDPOINTS.json": "7407d7a3728467595dd491579d8afaea643913a6f02f2d3bc99787f152d56852",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_stratified_loss_v1/report/IMPLEMENTATION_CHECK.json": "5ecad925d85130f06b677475c14cb2d1a3728078f2eb5f44026a4a75d3b610ec",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/MANIFEST.json": "a531d514ea44c54f1c6bc6bd4b98780e16354222a888f581c30894cbf26201e7",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/AMENDMENT_01.json": "d4f04a51012a24701929c4a1792a9a24de3f50c375e28c357ebe0a4e660c3578",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/local_source/run_adaptive.py": "c7ed4dc11a23a092986dd66aa5223c0ade87af468085a36c8e1a47986f97ac33",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/local_source/adaptive_clock.py": "adc2edf6eaf7efde467b7732c3003b26b8b81428a175adf09e7a4aa28165125d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/local_source/report_adaptive.py": "668e45cc70034a07c99fcd1d1ea380e42bf4ea47a26034c65b05f7f01acae3ed",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_optimization.parquet": "bb6c3bff604f218d4f9c2d3eb18727b3a389ccaa0497649c45e6ec08ba3469c8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_internal_validation.parquet": "53008f14d9e691d83e05f9a8704d905675aff871d4eecaf5c07d92debe6093a4",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/event_two/FIT_COMPLETE.json": "da0ee7754d118c01ad0b8eb468c9ef0c93da74b7ea13fe9eeafb23cdcc7dab54",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/event_two/time_head.pt": "c2e4b5401c6f236b5658894d79ead2dfbd2a81b2b34dd55a31c2ef082f484aa2",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/customer_two/FIT_COMPLETE.json": "6a2163b03097b1410ba09fa8ee4b2ab2ccf0e2e7db2fe359fdc11aafafdbff38",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/customer_two/time_head.pt": "b0d60c8f7c7bb9ecd78d3c60d0721bc6c9cc4a83e58aa681293626ad167e1f09",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/position_six/FIT_COMPLETE.json": "a7b233f730101ffbf0fd1ccbe9db1926fe1b242195b0dd0d167d3b172c41ed0d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/position_six/time_head.pt": "4a2ce6df0573a8a18ca5b9518c071723916d99b00b460c1889c3f2ac78d444d9",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/personal_six/FIT_COMPLETE.json": "2f43838ab8975efe106e30c6f308b6ae6ab10e460e834a5ca200661282b51a39",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_adaptive_v1/personal_six/time_head.pt": "749e880c9d4ad9538268a83daf2ddda1a8659ef5cd82ae90bf8ef06b48fa26fc"
+  },
+  "created_utc": "2026-09-27T18:27:08.136770+00:00",
+  "baseline_commit": "0d620a97bd91e4cd34a246a6ca8557782c07f470",
+  "test_events_read": false,
+  "local_only": true,
+  "only_intervention": "within_200plus_OT_coupling"
+}

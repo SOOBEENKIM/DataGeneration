@@ -1,0 +1,18 @@
+{
+  "numpy_torch_parameter_errors": {
+    "clock_prefix": 1.7763568394002505e-15,
+    "coarse_personal": 1.7763568394002505e-15,
+    "refined_personal": 1.7763568394002505e-15,
+    "refined_position": 1.7763568394002505e-15,
+    "clock_joint": 1.7763568394002505e-15
+  },
+  "unchanged_gmr_buffers": true,
+  "recurrent_vectorized_history_parity": true,
+  "known_noop_interventions_exact": true,
+  "reset_boundaries_exact": true,
+  "first5_prefix_delta_swap_exact": true,
+  "actual_prefix_previous_simulator_exact": true,
+  "first_gap_ignored": true,
+  "future_invariance": true,
+  "reorder_invariance": true
+}

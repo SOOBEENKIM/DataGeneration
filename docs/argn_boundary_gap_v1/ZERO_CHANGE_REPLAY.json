@@ -1,0 +1,20 @@
+{
+  "fit_seed": 20260930,
+  "selected_step": 0,
+  "checks": [
+    {
+      "generation_seed": 20261011,
+      "rows": 203677,
+      "all_fields_exact": true,
+      "baseline_sha256": "e8030c3db362b9f6bb7e3697910cec1472fe8b82d639aa21cc77ca006cfdbcdb",
+      "control_sha256": "e8030c3db362b9f6bb7e3697910cec1472fe8b82d639aa21cc77ca006cfdbcdb"
+    },
+    {
+      "generation_seed": 20261012,
+      "rows": 200372,
+      "all_fields_exact": true,
+      "baseline_sha256": "0d89396054aca0e46f315045f3a011c40ab627b80686cb55f9c1df2133853c36",
+      "control_sha256": "0d89396054aca0e46f315045f3a011c40ab627b80686cb55f9c1df2133853c36"
+    }
+  ]
+}

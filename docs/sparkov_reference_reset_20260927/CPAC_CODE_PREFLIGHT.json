@@ -1,0 +1,67 @@
+{
+  "upstream": "https://github.com/claudiunderthehood/VAEGAN-CPAC",
+  "commit": "b24e6fb3b16d123d580a1e98b6bacd8ff7cc16dc",
+  "code_hashes": {
+    "scripts/vaegan_cpac_fraud_run.py": "55f38d99e2129e1bfe71fb400498223ffca609cb59a8a3e0a7964c2ab6628881",
+    "newDL_modules/cpac_vaegan_loop.py": "888ba4fda511b383a052ffe508978d0b1333699c410e20c9956cd76de3cd19bd",
+    "newDL_modules/training_funcs.py": "ac56e1acc6102371eeafb00d93c1c774de546935c7f593294e501f16f59caece",
+    "deepLearning_modules/vae_ganClass.py": "397b07458cb856662151decd7de13423bd6b56f0e2425b91f1c804e14b18dfd5",
+    "README.md": "cabfec1578d6bd7b6f31e28c36dc11d02412355204871c3bc9274861310ca947"
+  },
+  "official_sparkov_entrypoint": "scripts/vaegan_cpac_fraud_run.py",
+  "declared_hyperparameters": {
+    "RANDOM_STATE": 42,
+    "VAL_SIZE": 0.1,
+    "VAE_HIDDEN_SIZE": [
+      256,
+      64,
+      16,
+      4,
+      2
+    ],
+    "BATCH_SIZE": 64,
+    "LR": 0.0001,
+    "VAE_MAX_EPOCHS": 100,
+    "VAE_PATIENCE": 10
+  },
+  "customer_id_dropped": true,
+  "generation_label": "all ones assigned by author generation function; not a learned natural fraud prevalence",
+  "random_weight_interface_smoke": {
+    "passed": true,
+    "generated_shape": [
+      50,
+      16
+    ],
+    "training_performed": false,
+    "quality_claim": false
+  },
+  "preflight_runtime_note": "Exact standalone normalization definition executed via AST; whole-module import required absent optional seaborn. This is not full author-environment reproduction.",
+  "plot_signature": {
+    "line": 202,
+    "call_lines": [
+      278
+    ],
+    "unsupported_keywords": [
+      "max_points_per_class"
+    ],
+    "reproduced_bind_error": "got an unexpected keyword argument 'max_points_per_class'"
+  },
+  "validation_preprocessing_order": {
+    "normalize_all_features": 242,
+    "stratified_train_val_split": 248
+  },
+  "normalization_precedes_validation_split": true,
+  "decoder_output_support": [
+    0,
+    1
+  ],
+  "permitted_training_amount": {
+    "rows": 916567,
+    "normalization_source": "unmodified author normalize_all_features",
+    "fraction_outside_decoder_support": 0.6266415875762492,
+    "normalized_min": -0.6315284441398219,
+    "normalized_max": 396.1868403015765
+  },
+  "interpretation": "Source compatibility checks only; no paper metric or fitted generator reproduced. No upstream fixes applied.",
+  "test_events_read": false
+}

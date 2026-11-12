@@ -1,0 +1,9 @@
+arm,fit_seed,normal_pass,improved_draws,late_pass,customer_pass,costs,passes
+event_two,20260930,False,0,True,False,"position_50_200,position_200_500",False
+customer_two,20260930,False,0,False,True,position_500_1024,False
+position_six,20260930,False,0,False,True,position_6_50,False
+personal_six,20260930,False,0,False,True,"position_6_50,position_500_1024",False
+event_two,20261001,False,0,True,False,"position_50_200,position_200_500",False
+customer_two,20261001,False,0,False,True,position_500_1024,False
+position_six,20261001,False,0,False,True,position_6_50,False
+personal_six,20261001,False,0,False,True,position_6_50,False

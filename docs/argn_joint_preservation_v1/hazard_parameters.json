@@ -1,0 +1,92 @@
+{
+  "rates": [
+    1.5091360391199533,
+    0.9545998062843349,
+    0.7290987889467463,
+    0.7362313042852815,
+    1.210548777639607,
+    1.454478565405119,
+    1.123113489216153,
+    2.099799442337058,
+    2.0120986524501268,
+    2.5895834979049996
+  ],
+  "counts": [
+    {
+      "band": 0,
+      "events": 75399,
+      "onsets": 79,
+      "normalized_exposure": 52.71484999050508,
+      "rate": 1.5091360391199533
+    },
+    {
+      "band": 1,
+      "events": 66144,
+      "onsets": 44,
+      "normalized_exposure": 46.635212666331405,
+      "rate": 0.9545998062843349
+    },
+    {
+      "band": 2,
+      "events": 60269,
+      "onsets": 31,
+      "normalized_exposure": 43.214823631987436,
+      "rate": 0.7290987889467463
+    },
+    {
+      "band": 3,
+      "events": 55418,
+      "onsets": 29,
+      "normalized_exposure": 40.081595293722486,
+      "rate": 0.7362313042852815
+    },
+    {
+      "band": 4,
+      "events": 50628,
+      "onsets": 44,
+      "normalized_exposure": 36.78472913028605,
+      "rate": 1.210548777639607
+    },
+    {
+      "band": 5,
+      "events": 44616,
+      "onsets": 46,
+      "normalized_exposure": 31.99318596572793,
+      "rate": 1.454478565405119
+    },
+    {
+      "band": 6,
+      "events": 39013,
+      "onsets": 31,
+      "normalized_exposure": 28.06169733191293,
+      "rate": 1.123113489216153
+    },
+    {
+      "band": 7,
+      "events": 33590,
+      "onsets": 50,
+      "normalized_exposure": 24.07692293777159,
+      "rate": 2.099799442337058
+    },
+    {
+      "band": 8,
+      "events": 27950,
+      "onsets": 39,
+      "normalized_exposure": 19.653341743826992,
+      "rate": 2.0120986524501268
+    },
+    {
+      "band": 9,
+      "events": 22719,
+      "onsets": 40,
+      "normalized_exposure": 15.658524247417393,
+      "rate": 2.5895834979049996
+    }
+  ],
+  "fit_split": "optimization",
+  "likelihood": "Bernoulli p=1-exp(-lambda_band/L)",
+  "weak_gamma_prior": {
+    "shape": 1.5,
+    "rate": 1e-06
+  }
+}

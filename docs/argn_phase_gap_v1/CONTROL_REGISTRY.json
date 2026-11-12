@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-09-27T14:34:23.038248+00:00",
+  "current_candidate": "onset_fit unchanged",
+  "controls": {
+    "phase_mixture": "Strong simple comparator; passed original screen; normal personal-gap cost remains",
+    "boundary_fit": "Diagnostic comparator; rejected promotion because all-fraud gap cost; personal boundary timing advantage under confirmation"
+  },
+  "artifacts": {
+    "frozen_registry": {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_joint_preservation_v1/MODEL_REGISTRY.json",
+      "sha256": "f602101a890240efb8e9dc25c709efafa503f38515394a495a9d56f86d56f5bc"
+    },
+    "phase_mixture": {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_phase_gap_v1/parameters.json",
+      "sha256": "e1521b040a2f3f83206bbbcefc64c3358e8509827263aecd2eba9dd645ff4f4e"
+    },
+    "boundary_20260930": {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_boundary_gap_v1/worker_20260930/boundary_fit/boundary_head.pt",
+      "sha256": "d7ebcd81241bf7c8c72cf991e597693e89919468ab14fd9457a52bff653d12bb"
+    },
+    "boundary_20261001": {
+      "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_boundary_gap_v1/worker_20261001/boundary_fit/boundary_head.pt",
+      "sha256": "2f9f36c4d64a6a0a25eb5726c1841a5bbca2493dc5a2e67003bf1b1ccdf877a7"
+    }
+  },
+  "final_test_opened": false
+}

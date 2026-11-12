@@ -1,0 +1,23 @@
+{
+  "events": 258400,
+  "real_events": 258400,
+  "customers": 239,
+  "frauds": 111,
+  "real_frauds": 228,
+  "fraud_customers": 18,
+  "real_fraud_customers": 19,
+  "fraud_online_share": 0.954954954954955,
+  "real_fraud_online_share": 0.7719298245614035,
+  "seconds": 1531.9744939804077,
+  "continuation": 0.5855855855855856,
+  "arm": "rtf_native",
+  "fit_seed": 20261108,
+  "generation_seed": 20261012,
+  "windows": 4419,
+  "windows_row_count_mismatch": 0,
+  "conditioned_on_real_window_lengths": true,
+  "mode": "package_sample_window_independent",
+  "novel_merchant_fraud": 0.4144144144144144,
+  "novel_merchant_normal": 0.06741673087123339,
+  "merchants_per_customer_median": 72.0
+}

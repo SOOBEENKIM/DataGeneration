@@ -1,0 +1,12 @@
+{
+  "seconds": 999.1998630010057,
+  "weights_sha256": "68e26028d624e7b2571079bf3f90cfe682eec5bd0f336cf1cdfb428303beae51",
+  "mean_training_length": 1318.7124394184168,
+  "source_hashes": {
+    "scripts/run_argn_event_weight_control.py": "f092caa20e48ebde5d87bc52e345d37dda7b1db6173c1945f24a4d0bbddfd569",
+    "configs/argn_event_weight_control_v1.json": "a2491f9a24ce91fb743fc29ed8b5410b2872c48f6d8507ebc753d206d6a8871f",
+    "benchmarks/argn_event_weight_control.py": "14dd43afaaf72485fc6628c9f1369c250c3ce7ae4fea34e8e55e77cd58215b2d",
+    "docs/argn_state_first_v1/EVENT_WEIGHT_CONTROL_PROTOCOL.md": "ff74382178b2d7cfde222f77955945c161c3bf7841e73bd575b5714bd71aa354",
+    "benchmarks/argn_state_evaluation.py": "92170a9ba88796400cdf8354efd275cd43e4124bed70dd20cb6530bc214b57d7"
+  }
+}

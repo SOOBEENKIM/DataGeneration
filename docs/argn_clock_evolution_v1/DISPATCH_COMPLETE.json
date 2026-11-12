@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "jobs": {
+    "progress_joint_20261001": {
+      "pid": 1490358,
+      "exit_code": 0
+    },
+    "progress_prefix_20260930": {
+      "pid": 1490368,
+      "exit_code": 0
+    },
+    "progress_prefix_20261001": {
+      "pid": 1490378,
+      "exit_code": 0
+    },
+    "progress_joint_20260930": {
+      "pid": 1490348,
+      "exit_code": 0
+    },
+    "progress_rollout_20260930": {
+      "pid": 1499596,
+      "exit_code": 0
+    },
+    "progress_rollout_20261001": {
+      "pid": 1499610,
+      "exit_code": 0
+    }
+  },
+  "completed_utc": "2026-09-27T16:10:28.477342+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "active": "clock_prefix",
+  "comparison_anchor": "init_only",
+  "model_changes": 0,
+  "new_fits": 0,
+  "automatic_promotion": false,
+  "commit": false,
+  "push": false,
+  "diagnostic_only": true,
+  "no_deployable_oracle_claim": true
+}

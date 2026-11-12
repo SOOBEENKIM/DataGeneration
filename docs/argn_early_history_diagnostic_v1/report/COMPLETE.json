@@ -1,0 +1,14 @@
+{
+  "trajectories": 426,
+  "time_values": 14138474,
+  "new_model_fits": 0,
+  "full_transaction_generations": 0,
+  "original_heads_and_outputs_unchanged": true,
+  "test_events_read": false,
+  "pushed": false,
+  "amendments": [
+    "AMENDMENT1.md",
+    "AMENDMENT2.md"
+  ],
+  "completed_utc": "2026-09-28T04:00:28.914016+00:00"
+}

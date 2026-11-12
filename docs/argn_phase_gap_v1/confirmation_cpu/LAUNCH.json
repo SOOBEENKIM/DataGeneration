@@ -1,0 +1,26 @@
+{
+  "20260930": {
+    "pid": 11,
+    "device": "cpu",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/confirm_argn_gap_cpu.py",
+      "worker",
+      "--seed",
+      "20260930"
+    ],
+    "started_utc": "2026-09-27T14:28:11.823263+00:00"
+  },
+  "20261001": {
+    "pid": 12,
+    "device": "cpu",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/confirm_argn_gap_cpu.py",
+      "worker",
+      "--seed",
+      "20261001"
+    ],
+    "started_utc": "2026-09-27T14:28:11.824014+00:00"
+  }
+}

@@ -1,0 +1,3 @@
+fit_seed,late_before,late_after,late_relative_improvement,improved_draws,primary_passed,costs,passes
+20260930,0.3279342374005465,0.14624099030303261,0.5540539119603713,4,True,"normal_gap,horizon_50_200",False
+20261001,0.3387131702863194,0.1592755113567118,0.5297628633038574,4,True,"normal_gap,horizon_50_200",False

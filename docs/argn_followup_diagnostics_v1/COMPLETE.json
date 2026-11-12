@@ -1,0 +1,117 @@
+{
+  "models": [
+    {
+      "arm": "B",
+      "fit_seed": 20260930,
+      "seconds": 8.589296643971466,
+      "checkpoint_sha256": "78d26d2710627561eb4fc9637d78fc4dc7c73e6f1292c263c31a5f1405a5b8e0",
+      "weights_unchanged": true,
+      "real_events": 177997,
+      "selected_prefixes": 1922,
+      "test_events_read": false,
+      "mc_draws": 16,
+      "equivalence_check_passed": true,
+      "source_hashes": {
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+      }
+    },
+    {
+      "arm": "B",
+      "fit_seed": 20261001,
+      "seconds": 8.561149914050475,
+      "checkpoint_sha256": "d8a836c5856a581e08f051535701f586ced9de38049d949aa488d593e85472c7",
+      "weights_unchanged": true,
+      "real_events": 177997,
+      "selected_prefixes": 1922,
+      "test_events_read": false,
+      "mc_draws": 16,
+      "equivalence_check_passed": true,
+      "source_hashes": {
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+      }
+    },
+    {
+      "arm": "B_S",
+      "fit_seed": 20260930,
+      "seconds": 7.735704925027676,
+      "checkpoint_sha256": "7763b9819c5fd020ca43aa219e4ed976838b20a9737ba830d21ca8220f028779",
+      "weights_unchanged": true,
+      "real_events": 177997,
+      "selected_prefixes": 1922,
+      "test_events_read": false,
+      "mc_draws": 16,
+      "equivalence_check_passed": true,
+      "source_hashes": {
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+      }
+    },
+    {
+      "arm": "B_S",
+      "fit_seed": 20261001,
+      "seconds": 7.76907985995058,
+      "checkpoint_sha256": "ea5017388ae68a123f7fa76bf3da5620c7a1f0d31123f66c6baf9f8fb909be1e",
+      "weights_unchanged": true,
+      "real_events": 177997,
+      "selected_prefixes": 1922,
+      "test_events_read": false,
+      "mc_draws": 16,
+      "equivalence_check_passed": true,
+      "source_hashes": {
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+      }
+    },
+    {
+      "arm": "B_event_weighted",
+      "fit_seed": 20260930,
+      "seconds": 7.832153055001982,
+      "checkpoint_sha256": "4404641f3420a0ff26596cf9e93556179e439f7f35bf98ef3c3fa88ed4bf90f8",
+      "weights_unchanged": true,
+      "real_events": 177997,
+      "selected_prefixes": 1922,
+      "test_events_read": false,
+      "mc_draws": 16,
+      "equivalence_check_passed": true,
+      "source_hashes": {
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+      }
+    },
+    {
+      "arm": "B_event_weighted",
+      "fit_seed": 20261001,
+      "seconds": 7.808410237077624,
+      "checkpoint_sha256": "68e26028d624e7b2571079bf3f90cfe682eec5bd0f336cf1cdfb428303beae51",
+      "weights_unchanged": true,
+      "real_events": 177997,
+      "selected_prefixes": 1922,
+      "test_events_read": false,
+      "mc_draws": 16,
+      "equivalence_check_passed": true,
+      "source_hashes": {
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/diagnose_argn_followup_models.py": "b3b2f990c97ade39e30765e82696e4b5d5de0111d6275fefa2b686e17532017d",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_frozen_probe.py": "00c4ca400e3128316a3b8be847234d39ecb2109201387a6084815f13708a2d7c",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_state_first_v1/FOLLOWUP_DIAGNOSTIC_PROTOCOL.md": "59538470b3b7d9c4167dcdc169718c94d406acc8eecfdd721dd3a7673acd853f"
+      }
+    }
+  ],
+  "weights_unchanged": true,
+  "existing_generations_unchanged": true,
+  "test_events_read": false,
+  "diagnostic_only": true,
+  "summary_script_sha256": "f7e172e99ee459c48858e8987e459c9f7c46d95b3af0ff7316d34b82a5f3b683",
+  "caveats": [
+    "Teacher/one-step use true lengths; existing free rollout does not.",
+    "One-step normal stays are sampled per customer; overall selected-prefix prevalence is not a population score.",
+    "One-step raw_label_nll/amount_digit_nll in raw per-prefix files are inherited teacher references, not sampled-field losses.",
+    "MC standard error measures field sampling only; no independent confirmation inference."
+  ]
+}

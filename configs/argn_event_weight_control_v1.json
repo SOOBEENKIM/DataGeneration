@@ -1,0 +1,14 @@
+{
+  "version": "argn-event-weight-control-v1",
+  "arm": "B_event_weighted",
+  "fit_seeds": [20260930, 20261001],
+  "generation_seeds": [20261011, 20261012],
+  "parent_study": "argn-state-first-v1",
+  "backbone_and_hyperparameters": "identical to fresh B; see argn_state_first_v1.json",
+  "intervention": "multiply each customer's transaction-column mean loss by retained length / optimization mean retained length",
+  "structural_length_loss": "unchanged customer weighting",
+  "state_features_enabled": false,
+  "checkpoint_selection": "same native early stopping using the modified internal-validation objective",
+  "purpose": "adaptive cause-isolation control, not a proposed contribution",
+  "test_access": false
+}

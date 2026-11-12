@@ -1,0 +1,305 @@
+{
+  "toy_pooled": 0,
+  "toy_refined": 10,
+  "exact_weighted_w1": true,
+  "collapsed_partition_parity": true,
+  "original_row_and_customer_mass_preserved": true,
+  "checks": [
+    {
+      "weighting": "event",
+      "arm": "event_two",
+      "unchanged_terms_exact": true,
+      "objective_change": 0.004400650834828657,
+      "pooling_gap": 0.02640390500897194,
+      "support": [
+        {
+          "start": 200,
+          "end": 500,
+          "rows": 19685,
+          "customers": 66,
+          "mass": 0.227364603425773
+        },
+        {
+          "start": 500,
+          "end": 1024,
+          "rows": 26738,
+          "customers": 63,
+          "mass": 0.30882777578858617
+        },
+        {
+          "start": 1024,
+          "end": 2048,
+          "rows": 32137,
+          "customers": 49,
+          "mass": 0.3711870083969554
+        },
+        {
+          "start": 2048,
+          "end": null,
+          "rows": 8019,
+          "customers": 18,
+          "mass": 0.09262061238868548
+        }
+      ]
+    },
+    {
+      "weighting": "event",
+      "arm": "customer_two",
+      "unchanged_terms_exact": true,
+      "objective_change": 0.0014032692747786568,
+      "pooling_gap": 0.008419615648671844,
+      "support": [
+        {
+          "start": 200,
+          "end": 500,
+          "rows": 19685,
+          "customers": 66,
+          "mass": 0.227364603425773
+        },
+        {
+          "start": 500,
+          "end": 1024,
+          "rows": 26738,
+          "customers": 63,
+          "mass": 0.30882777578858617
+        },
+        {
+          "start": 1024,
+          "end": 2048,
+          "rows": 32137,
+          "customers": 49,
+          "mass": 0.3711870083969554
+        },
+        {
+          "start": 2048,
+          "end": null,
+          "rows": 8019,
+          "customers": 18,
+          "mass": 0.09262061238868548
+        }
+      ]
+    },
+    {
+      "weighting": "event",
+      "arm": "position_six",
+      "unchanged_terms_exact": true,
+      "objective_change": 0.0018400785227573602,
+      "pooling_gap": 0.011040471136544244,
+      "support": [
+        {
+          "start": 200,
+          "end": 500,
+          "rows": 19685,
+          "customers": 66,
+          "mass": 0.227364603425773
+        },
+        {
+          "start": 500,
+          "end": 1024,
+          "rows": 26738,
+          "customers": 63,
+          "mass": 0.30882777578858617
+        },
+        {
+          "start": 1024,
+          "end": 2048,
+          "rows": 32137,
+          "customers": 49,
+          "mass": 0.3711870083969554
+        },
+        {
+          "start": 2048,
+          "end": null,
+          "rows": 8019,
+          "customers": 18,
+          "mass": 0.09262061238868548
+        }
+      ]
+    },
+    {
+      "weighting": "event",
+      "arm": "personal_six",
+      "unchanged_terms_exact": true,
+      "objective_change": 0.0019861257914432218,
+      "pooling_gap": 0.011916754748659344,
+      "support": [
+        {
+          "start": 200,
+          "end": 500,
+          "rows": 19685,
+          "customers": 66,
+          "mass": 0.227364603425773
+        },
+        {
+          "start": 500,
+          "end": 1024,
+          "rows": 26738,
+          "customers": 63,
+          "mass": 0.30882777578858617
+        },
+        {
+          "start": 1024,
+          "end": 2048,
+          "rows": 32137,
+          "customers": 49,
+          "mass": 0.3711870083969554
+        },
+        {
+          "start": 2048,
+          "end": null,
+          "rows": 8019,
+          "customers": 18,
+          "mass": 0.09262061238868548
+        }
+      ]
+    },
+    {
+      "weighting": "customer",
+      "arm": "event_two",
+      "unchanged_terms_exact": true,
+      "objective_change": 0.007534738929884273,
+      "pooling_gap": 0.045208433579305644,
+      "support": [
+        {
+          "start": 200,
+          "end": 500,
+          "rows": 19685,
+          "customers": 66,
+          "mass": 0.3878818963740317
+        },
+        {
+          "start": 500,
+          "end": 1024,
+          "rows": 26738,
+          "customers": 63,
+          "mass": 0.30049631398158777
+        },
+        {
+          "start": 1024,
+          "end": 2048,
+          "rows": 32137,
+          "customers": 49,
+          "mass": 0.263834624571351
+        },
+        {
+          "start": 2048,
+          "end": null,
+          "rows": 8019,
+          "customers": 18,
+          "mass": 0.04778716507302977
+        }
+      ]
+    },
+    {
+      "weighting": "customer",
+      "arm": "customer_two",
+      "unchanged_terms_exact": true,
+      "objective_change": 0.008339056977727875,
+      "pooling_gap": 0.05003434186636727,
+      "support": [
+        {
+          "start": 200,
+          "end": 500,
+          "rows": 19685,
+          "customers": 66,
+          "mass": 0.3878818963740317
+        },
+        {
+          "start": 500,
+          "end": 1024,
+          "rows": 26738,
+          "customers": 63,
+          "mass": 0.30049631398158777
+        },
+        {
+          "start": 1024,
+          "end": 2048,
+          "rows": 32137,
+          "customers": 49,
+          "mass": 0.263834624571351
+        },
+        {
+          "start": 2048,
+          "end": null,
+          "rows": 8019,
+          "customers": 18,
+          "mass": 0.04778716507302977
+        }
+      ]
+    },
+    {
+      "weighting": "customer",
+      "arm": "position_six",
+      "unchanged_terms_exact": true,
+      "objective_change": 0.008951644249237792,
+      "pooling_gap": 0.05370986549542678,
+      "support": [
+        {
+          "start": 200,
+          "end": 500,
+          "rows": 19685,
+          "customers": 66,
+          "mass": 0.3878818963740317
+        },
+        {
+          "start": 500,
+          "end": 1024,
+          "rows": 26738,
+          "customers": 63,
+          "mass": 0.30049631398158777
+        },
+        {
+          "start": 1024,
+          "end": 2048,
+          "rows": 32137,
+          "customers": 49,
+          "mass": 0.263834624571351
+        },
+        {
+          "start": 2048,
+          "end": null,
+          "rows": 8019,
+          "customers": 18,
+          "mass": 0.04778716507302977
+        }
+      ]
+    },
+    {
+      "weighting": "customer",
+      "arm": "personal_six",
+      "unchanged_terms_exact": true,
+      "objective_change": 0.010402062111358717,
+      "pooling_gap": 0.062412372668152326,
+      "support": [
+        {
+          "start": 200,
+          "end": 500,
+          "rows": 19685,
+          "customers": 66,
+          "mass": 0.3878818963740317
+        },
+        {
+          "start": 500,
+          "end": 1024,
+          "rows": 26738,
+          "customers": 63,
+          "mass": 0.30049631398158777
+        },
+        {
+          "start": 1024,
+          "end": 2048,
+          "rows": 32137,
+          "customers": 49,
+          "mass": 0.263834624571351
+        },
+        {
+          "start": 2048,
+          "end": null,
+          "rows": 8019,
+          "customers": 18,
+          "mass": 0.04778716507302977
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "completed_utc": "2026-09-27T18:59:42.301343+00:00",
+  "all_8_workers_exit_zero": true,
+  "all_32_generations_independently_audited": true,
+  "generated_rows": 6327024,
+  "fixed_labels_and_lengths_exact": true,
+  "previous_model_preserved": true,
+  "previous_head_sha256": "a0fe2c1e4736f862ec0fb9113444112558e7ff613bcc50b7fd06ff9e0c2a0fbd",
+  "tracked_worktree_clean": true,
+  "commits_created": 0,
+  "pushed": false,
+  "test_events_read": false,
+  "new_calibration_fits": 4,
+  "new_native_argn_fits": 0,
+  "active_candidate": "clock_prefix",
+  "promising_local_candidate": "personal_six_with_refined_loss",
+  "automatic_replacement_screen_passed": false,
+  "current_experiment_gpu_processes_finished": true
+}

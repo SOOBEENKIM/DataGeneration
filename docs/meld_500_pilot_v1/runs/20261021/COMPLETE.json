@@ -1,0 +1,13 @@
+{
+  "fit_seed": 20261021,
+  "vae_cap": 500,
+  "vae_selected": 500,
+  "dit_cap": 2000,
+  "dit_selected": 2000,
+  "development_generations": 2,
+  "previews": true,
+  "preliminary": true,
+  "final_comparison_complete": false,
+  "adequate_latest_baseline": false,
+  "test_reads": 0
+}

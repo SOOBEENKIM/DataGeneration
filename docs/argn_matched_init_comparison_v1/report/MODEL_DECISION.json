@@ -1,0 +1,323 @@
+{
+  "preserve_C_P6_H_init": true,
+  "automatic_promotion": false,
+  "new_architecture_established": false,
+  "latest_generator_superiority": false,
+  "fit_effects": [
+    {
+      "control": "history_only",
+      "metric": "normal_gap_seconds_log_w1",
+      "mean_delta_C_minus_control": -0.03128268261624029,
+      "lower_fits": 2,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "onset_personal_gap_w1",
+      "mean_delta_C_minus_control": -0.004477520714870384,
+      "lower_fits": 2,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "fraud_gap_seconds_log_w1",
+      "mean_delta_C_minus_control": -0.00402186407537881,
+      "lower_fits": 3,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "normal_stay_personal_gap_w1",
+      "mean_delta_C_minus_control": 0.0019090781171264514,
+      "lower_fits": 0,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "fraud_ratio_log_w1",
+      "mean_delta_C_minus_control": -0.0026238039024697596,
+      "lower_fits": 2,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "normal_amount_log_w1",
+      "mean_delta_C_minus_control": -0.0009636526375853388,
+      "lower_fits": 2,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "equal_customer_normal_gap_w1",
+      "mean_delta_C_minus_control": -0.11412372213230722,
+      "lower_fits": 3,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "class_0_merchant_tv",
+      "mean_delta_C_minus_control": -2.2840435231620087e-05,
+      "lower_fits": 1,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "median_unique_merchants_per_customer",
+      "mean_delta_C_minus_control": 0.16666666666666666,
+      "lower_fits": 1,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "early_time",
+      "mean_delta_C_minus_control": -0.20267395307342317,
+      "lower_fits": 3,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "time50_99",
+      "mean_delta_C_minus_control": -0.13717648766916946,
+      "lower_fits": 3,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "time100_199",
+      "mean_delta_C_minus_control": -0.08474319661994412,
+      "lower_fits": 3,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "time200_499",
+      "mean_delta_C_minus_control": -0.06270973619660719,
+      "lower_fits": 2,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "time500_1023",
+      "mean_delta_C_minus_control": 0.029456201887558747,
+      "lower_fits": 1,
+      "fits": 3
+    },
+    {
+      "control": "history_only",
+      "metric": "late1024_time",
+      "mean_delta_C_minus_control": -0.033682450870297795,
+      "lower_fits": 2,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "normal_gap_seconds_log_w1",
+      "mean_delta_C_minus_control": -0.0031773859750097813,
+      "lower_fits": 3,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "onset_personal_gap_w1",
+      "mean_delta_C_minus_control": -0.001830364275587142,
+      "lower_fits": 1,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "fraud_gap_seconds_log_w1",
+      "mean_delta_C_minus_control": 0.001690522313085858,
+      "lower_fits": 1,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "normal_stay_personal_gap_w1",
+      "mean_delta_C_minus_control": 0.0026967017436242808,
+      "lower_fits": 0,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "fraud_ratio_log_w1",
+      "mean_delta_C_minus_control": -0.004367624132540891,
+      "lower_fits": 2,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "normal_amount_log_w1",
+      "mean_delta_C_minus_control": 0.0008290252950620738,
+      "lower_fits": 0,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "equal_customer_normal_gap_w1",
+      "mean_delta_C_minus_control": 0.004340305361103032,
+      "lower_fits": 0,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "class_0_merchant_tv",
+      "mean_delta_C_minus_control": 2.0560805425756667e-05,
+      "lower_fits": 1,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "median_unique_merchants_per_customer",
+      "mean_delta_C_minus_control": 1.0,
+      "lower_fits": 0,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "early_time",
+      "mean_delta_C_minus_control": 0.00429242234627848,
+      "lower_fits": 2,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "time50_99",
+      "mean_delta_C_minus_control": 0.003442749819480418,
+      "lower_fits": 2,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "time100_199",
+      "mean_delta_C_minus_control": 0.010385288314321617,
+      "lower_fits": 1,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "time200_499",
+      "mean_delta_C_minus_control": 0.01769662003916928,
+      "lower_fits": 1,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "time500_1023",
+      "mean_delta_C_minus_control": -0.003028345578385124,
+      "lower_fits": 1,
+      "fits": 3
+    },
+    {
+      "control": "history_position6",
+      "metric": "late1024_time",
+      "mean_delta_C_minus_control": -0.004355624924495427,
+      "lower_fits": 2,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "normal_gap_seconds_log_w1",
+      "mean_delta_C_minus_control": 0.017963913828566793,
+      "lower_fits": 1,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "onset_personal_gap_w1",
+      "mean_delta_C_minus_control": 0.014478351587728444,
+      "lower_fits": 2,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "fraud_gap_seconds_log_w1",
+      "mean_delta_C_minus_control": 0.01816130655357,
+      "lower_fits": 0,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "normal_stay_personal_gap_w1",
+      "mean_delta_C_minus_control": 0.05874469726099261,
+      "lower_fits": 0,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "fraud_ratio_log_w1",
+      "mean_delta_C_minus_control": 0.002163209213159989,
+      "lower_fits": 1,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "normal_amount_log_w1",
+      "mean_delta_C_minus_control": 0.0028128559200907427,
+      "lower_fits": 0,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "equal_customer_normal_gap_w1",
+      "mean_delta_C_minus_control": -0.06871701064958423,
+      "lower_fits": 3,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "class_0_merchant_tv",
+      "mean_delta_C_minus_control": -0.00015131577458510348,
+      "lower_fits": 2,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "median_unique_merchants_per_customer",
+      "mean_delta_C_minus_control": -1.3333333333333333,
+      "lower_fits": 2,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "early_time",
+      "mean_delta_C_minus_control": 0.013908717632556833,
+      "lower_fits": 1,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "time50_99",
+      "mean_delta_C_minus_control": 0.06778934458205203,
+      "lower_fits": 0,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "time100_199",
+      "mean_delta_C_minus_control": -0.05402896153660373,
+      "lower_fits": 3,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "time200_499",
+      "mean_delta_C_minus_control": 0.04531900024705293,
+      "lower_fits": 0,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "time500_1023",
+      "mean_delta_C_minus_control": 0.018535727873673993,
+      "lower_fits": 1,
+      "fits": 3
+    },
+    {
+      "control": "init_only",
+      "metric": "late1024_time",
+      "mean_delta_C_minus_control": 0.023097102896354582,
+      "lower_fits": 1,
+      "fits": 3
+    }
+  ]
+}

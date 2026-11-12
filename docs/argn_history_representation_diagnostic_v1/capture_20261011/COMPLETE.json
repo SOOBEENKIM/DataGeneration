@@ -1,0 +1,18 @@
+{
+  "rows": 199642,
+  "steps": 3106,
+  "seconds": 119.37512472108938,
+  "native_noise_parity_exact": true,
+  "explicit_id_mapping": true,
+  "weights_unchanged": true,
+  "sampling_audit": [
+    {
+      "sampled_values": 284667,
+      "clipped_values": 39
+    }
+  ],
+  "original_cuda_replay": false,
+  "test_events_read": false,
+  "device": "cpu",
+  "sha256": "4e1b276a11b93a6494f814e036ce5ad397afaca2fec4947021a748f4b6640605"
+}

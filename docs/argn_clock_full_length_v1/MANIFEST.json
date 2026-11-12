@@ -1,0 +1,57 @@
+{
+  "config": {
+    "arms": [
+      "clock_full_prefix"
+    ],
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012,
+      20261021,
+      20261022
+    ],
+    "allowed_gpu_uuids": [
+      "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+      "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+      "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+    ],
+    "horizon": null,
+    "fit_noise_seed": 20261201,
+    "diagnostic_seeds": [
+      20261202,
+      20261203
+    ],
+    "maxfev": 48,
+    "bounds": [
+      [
+        -0.35,
+        0.35
+      ],
+      [
+        -1.0,
+        1.0
+      ]
+    ],
+    "prefix_horizon": 1024,
+    "noise_extension": "preserve_prefix_then_append"
+  },
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_full_length_v1/local_source/run_full_length.py": "d7985c76d67eb85de869e6324c4bac8a83c4bc9c3597c129de9209749a08264f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_full_length_v1/report/PROTOCOL.md": "ecd80ab1cfc998e86be3fe31bf98f2454ebe0d11175fb212bb1ed52582081f55",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_location_v1/MANIFEST.json": "1fbcea8f02dcc3b8c6c1f01b3fc945093e7c81e3eff8954278eb013759bc79a0",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_location_v1/clock_prefix/time_head.pt": "a0fe2c1e4736f862ec0fb9113444112558e7ff613bcc50b7fd06ff9e0c2a0fbd",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_regression_v1/time_head.pt": "8591324e9757504a783821042737a487a7fea660a6b4d089f7681a0f038f78c0",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_evolution.py": "05f838ce88f38bc6d26539315bdf567baf0d5126cc3dd53742a8e79dccf1122c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_location.py": "6dc8a2d1552a33c9b21ad6934bfe18e35be74bfb25722f165f8c470839ea8a1a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_optimization.parquet": "bb6c3bff604f218d4f9c2d3eb18727b3a389ccaa0497649c45e6ec08ba3469c8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_internal_validation.parquet": "53008f14d9e691d83e05f9a8704d905675aff871d4eecaf5c07d92debe6093a4"
+  },
+  "baseline_commit": "0d620a97bd91e4cd34a246a6ca8557782c07f470",
+  "created_utc": "2026-09-27T16:52:01.687023+00:00",
+  "test_events_read": false,
+  "local_only": true
+}

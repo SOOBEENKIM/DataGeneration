@@ -1,0 +1,80 @@
+{
+ "arm": "novelcat",
+ "fit_seed": 20261108,
+ "generation_seed": 20261011,
+ "seconds": 77.1,
+ "events": 281934,
+ "frauds": 477,
+ "fraud_customers": 32,
+ "novel_merchant_fraud": 0.4968553459119497,
+ "novel_merchant_normal": 0.06634761260156968,
+ "merchants_per_customer_median": 73.0,
+ "top1_share_median": 0.16111802685521753,
+ "rare_share": 0.14626472862442982,
+ "consistency": {
+  "normal": {
+   "rows": 281457,
+   "online": 0.16789420764095403,
+   "category_matches_merchant": 0.9998293685805131,
+   "channel_matches_merchant": 0.999958382580613,
+   "online_at_swipe_merchant": 4.161741938705865e-05
+  },
+  "fraud": {
+   "rows": 477,
+   "online": 0.870020964360587,
+   "category_matches_merchant": 1.0,
+   "channel_matches_merchant": 0.30024213075060535,
+   "online_at_swipe_merchant": 0.6779661016949152
+  }
+ },
+ "base_weights_sha256": "b0b1f46a977d4e7eb35e6b665538b7ae0b5c5dd118565d69e22d19410059603f",
+ "calibration_sha256": "d5d7646f53df3bacae007f9ce8ee78ca17985e08aada5333faa76579279e0640",
+ "base_module": {
+  "label_key": "tgt:t5/c5__cat",
+  "label_first": true,
+  "transition": true,
+  "retrained_heads": true,
+  "attached": true
+ },
+ "merchant_module": {
+  "arm": "full",
+  "lam": 0.75,
+  "pi": 0.9318181818181818,
+  "merchant_key": "tgt:t1/c1__cat",
+  "counter": {
+   "merchant_steps": 3888,
+   "rows": 371545,
+   "repeat_mass": 344673.20071243274,
+   "novel_mass": 26871.79928758197,
+   "pool_mass": 347.80092079905205
+  },
+  "sticky": false,
+  "category_first": true
+ },
+ "gap_module": {
+  "arm": "table_kind",
+  "gap_key": "tgt:t0/c0__bin",
+  "counter": {
+   "gap_steps": 3888,
+   "onset": 240,
+   "cont": 412,
+   "exit": 238
+  }
+ },
+ "attr_module": {
+  "arm": "attr_all",
+  "keys": {
+   "label": "tgt:t5/c5__cat",
+   "merchant": "tgt:t1/c1__cat",
+   "category": "tgt:t3/c3__cat",
+   "channel": "tgt:t4/c4__cat"
+  },
+  "counter": {
+   "category_rows": 371457,
+   "channel_rows": 370839,
+   "channel_state_rows": 652,
+   "steps": 7776
+  }
+ },
+ "sha256": "2ead55cdbc299836cca643e6fe08e0b8fc4fc38761053931f11f324556320901"
+}

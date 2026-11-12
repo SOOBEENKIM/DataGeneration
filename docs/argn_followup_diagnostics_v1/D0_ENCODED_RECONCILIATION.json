@@ -1,0 +1,12 @@
+{
+  "train": {
+    "events_beyond_model_length_cap": 58,
+    "fraud_beyond_cap": 0,
+    "customers_beyond_cap": 5
+  },
+  "validation": {
+    "events_beyond_model_length_cap": 18,
+    "fraud_beyond_cap": 0,
+    "customers_beyond_cap": 3
+  }
+}

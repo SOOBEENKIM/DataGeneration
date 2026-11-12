@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-09-27T17:43:41.896034+00:00",
+  "source_sha256": "35a1ae46bbf943f98de76cab2d3b9bf682be2d5cd16b48b53e3ddffff5cc215d",
+  "previous_dispatcher_pid": 1576152,
+  "maximum_own_workers_per_gpu": 4,
+  "reason": "Resource utilization only: first worker on previously idle GPU0 uses 460MiB and about13% GPU. Run up to4 independent own workers on that same GPU; never share GPUs with external compute jobs. Preserve initial worker, seeds, source, models, evaluation and all numerical settings. No generated quality result has been inspected. Stop only our serial scheduler and adopt its existing worker.",
+  "model_protocol_unchanged": true
+}

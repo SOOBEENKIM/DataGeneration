@@ -1,0 +1,6 @@
+{
+  "min_length": 7,
+  "max_length": 3123,
+  "fixed": false,
+  "selected_epochs": 128
+}

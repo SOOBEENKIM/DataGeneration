@@ -1,0 +1,8 @@
+{
+  "first_native_logits": 28,
+  "sampled_digit_positions": 210,
+  "steps": 10,
+  "strict_past_clock_exact": true,
+  "reordered_compacted_batch": true,
+  "strict_native_checkpoint": true
+}

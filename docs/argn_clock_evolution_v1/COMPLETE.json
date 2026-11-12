@@ -1,0 +1,17 @@
+{
+  "new_full_generations": 24,
+  "generated_rows": 4745268,
+  "statistical_phase_fits": 4,
+  "calibration_fits": 2,
+  "new_native_argn_fits": 0,
+  "matched_compared_generations": 56,
+  "all_preserved_comparisons": 80,
+  "test_events_read": false,
+  "source_sha256": "2c12aa095bec7b655e57df5580da9d857a8de4e6d0fb504338114632762f82f2",
+  "heads": {
+    "progress_joint": "1f41dc8ab490065d3d8b809618e1dbfd1f0bc329f83884bc5e21f44f00da486a",
+    "progress_prefix": "478cf4e0b1c9508a59e7b2d5c733c2d60e8dad1ce66858b8cc2b6081192a1bcd",
+    "progress_rollout": "f78f0353e97dffb566aa25de110f1df6ebf8e08276fb6c8102ef672074cfbfd8"
+  },
+  "completed_utc": "2026-09-27T16:11:54.614177+00:00"
+}

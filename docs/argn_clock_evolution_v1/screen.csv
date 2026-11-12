@@ -1,0 +1,7 @@
+fit_seed,arm,normal_better_than_GMR_and_history,costs,passes_screen,rollout_added_effect
+20260930,progress_joint,False,"GMR:onset_personal_gap_w1,GMR:normal_stay_personal_gap_w1,GMR:fraud_gap_seconds_log_w1,phase_GMM:normal_gap_seconds_log_w1",False,False
+20260930,progress_prefix,True,"GMR:normal_stay_personal_gap_w1,GMR:fraud_gap_seconds_log_w1",False,False
+20260930,progress_rollout,True,"GMR:normal_stay_personal_gap_w1,GMR:fraud_gap_seconds_log_w1",False,False
+20261001,progress_joint,False,"GMR:onset_personal_gap_w1,GMR:normal_stay_personal_gap_w1,GMR:fraud_gap_seconds_log_w1,phase_GMM:normal_gap_seconds_log_w1",False,False
+20261001,progress_prefix,True,"GMR:normal_stay_personal_gap_w1,GMR:fraud_gap_seconds_log_w1",False,False
+20261001,progress_rollout,True,"GMR:normal_stay_personal_gap_w1,GMR:fraud_gap_seconds_log_w1",False,False

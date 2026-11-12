@@ -1,0 +1,205 @@
+[
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/lib64",
+    "target": "lib",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/lib",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python3.10",
+    "target": "python",
+    "resolved": "/home/finx_sbk/.conda/envs/cofseq/bin/python3.10",
+    "exists": true,
+    "inside_workspace": false
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python3",
+    "target": "python",
+    "resolved": "/home/finx_sbk/.conda/envs/cofseq/bin/python3.10",
+    "exists": true,
+    "inside_workspace": false
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-paper-reproduction-2026-09-27/runtime/bin/python",
+    "resolved": "/home/finx_sbk/.conda/envs/cofseq/bin/python3.10",
+    "exists": true,
+    "inside_workspace": false
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-paper-reproduction-2026-09-27/runtime/lib64",
+    "target": "lib",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-paper-reproduction-2026-09-27/runtime/lib",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-paper-reproduction-2026-09-27/runtime/bin/python3.10",
+    "target": "python",
+    "resolved": "/home/finx_sbk/.conda/envs/cofseq/bin/python3.10",
+    "exists": true,
+    "inside_workspace": false
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-paper-reproduction-2026-09-27/runtime/bin/python3",
+    "target": "python",
+    "resolved": "/home/finx_sbk/.conda/envs/cofseq/bin/python3.10",
+    "exists": true,
+    "inside_workspace": false
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-paper-reproduction-2026-09-27/runtime/bin/python",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-external-audit/external/cs_saf_external_audit/runtime/bin/python",
+    "resolved": "/home/finx_sbk/.conda/envs/cofseq/bin/python3.10",
+    "exists": true,
+    "inside_workspace": false
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/rollout_audit_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-rollout-audit/artifacts/cs_saf/rollout_audit_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-rollout-audit/artifacts/cs_saf/rollout_audit_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/replay_oracle_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-replay-oracle/artifacts/cs_saf/replay_oracle_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-replay-oracle/artifacts/cs_saf/replay_oracle_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-rollout-audit/data/cs_saf/prevalence_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/data/cs_saf/prevalence_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/data/cs_saf/prevalence_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-rollout-audit/artifacts/cs_saf/replication_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/replication_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/replication_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-rollout-audit/artifacts/cs_saf/followup_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/followup_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/followup_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-rollout-audit/artifacts/cs_saf/prepared_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/prepared_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/prepared_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-replay-oracle/data/cs_saf/prevalence_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/data/cs_saf/prevalence_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/data/cs_saf/prevalence_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-replay-oracle/artifacts/cs_saf/rollout_audit_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-rollout-audit/artifacts/cs_saf/rollout_audit_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-rollout-audit/artifacts/cs_saf/rollout_audit_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-replay-oracle/artifacts/cs_saf/replication_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/replication_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/replication_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-replay-oracle/artifacts/cs_saf/followup_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/followup_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/followup_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-replay-oracle/artifacts/cs_saf/prepared_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/prepared_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/prepared_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-external-audit/artifacts/cs_saf/replication_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/replication_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/replication_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-external-audit/artifacts/cs_saf/generation_repeats_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/generation_repeats_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/generation_repeats_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-external-audit/artifacts/cs_saf/calibration_u_control_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/calibration_u_control_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/calibration_u_control_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-external-audit/artifacts/cs_saf/followup_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/followup_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/followup_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-external-audit/artifacts/cs_saf/calibration_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/calibration_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/calibration_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-external-audit/artifacts/cs_saf/prepared_v1",
+    "target": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/prepared_v1",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf/artifacts/cs_saf/prepared_v1",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-external-audit/external/cs_saf_external_audit/runtime/lib64",
+    "target": "lib",
+    "resolved": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-external-audit/external/cs_saf_external_audit/runtime/lib",
+    "exists": true,
+    "inside_workspace": true
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-external-audit/external/cs_saf_external_audit/runtime/bin/python3.10",
+    "target": "python3",
+    "resolved": "/home/finx_sbk/.conda/envs/cofseq/bin/python3.10",
+    "exists": true,
+    "inside_workspace": false
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-external-audit/external/cs_saf_external_audit/runtime/bin/python3",
+    "target": "/home/finx_sbk/.conda/envs/cofseq/bin/python3",
+    "resolved": "/home/finx_sbk/.conda/envs/cofseq/bin/python3.10",
+    "exists": true,
+    "inside_workspace": false
+  },
+  {
+    "path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-cs-saf-external-audit/external/cs_saf_external_audit/runtime/bin/python",
+    "target": "python3",
+    "resolved": "/home/finx_sbk/.conda/envs/cofseq/bin/python3.10",
+    "exists": true,
+    "inside_workspace": false
+  }
+]

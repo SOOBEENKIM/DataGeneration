@@ -1,0 +1,62 @@
+{
+  "year": 2016,
+  "protocol_sha256": "37aca187faa9830dcc4a3fce3fdb28bbc21d51c429d0fe7d2aad9b9375321f5d",
+  "roles_2013_sha256": "69e424c85f378850613deb196ac2d7d149d3c1dee2cfc0a6ffa858856400adb3",
+  "eligible_customers": 1460,
+  "excluded_no_2013_role": 60,
+  "sizes": {
+    "train": {
+      "customers": 988,
+      "events": 1122650
+    },
+    "validation": {
+      "customers": 237,
+      "events": 271014
+    },
+    "test": {
+      "customers": 235,
+      "events": 261381
+    }
+  },
+  "test_events_read": false,
+  "test_fraud_statistics_computed": false,
+  "train_frauds": 2490,
+  "train_fraud_customers": 535,
+  "validation_frauds": 553,
+  "validation_fraud_customers": 121,
+  "target_columns": {
+    "gap": {
+      "encoding": "TABULAR_NUMERIC_BINNED",
+      "cardinality": 2
+    },
+    "receiver_or_mark": {
+      "encoding": "TABULAR_CATEGORICAL",
+      "cardinality": 9421
+    },
+    "amount_or_numeric_value": {
+      "encoding": "TABULAR_NUMERIC_BINNED",
+      "cardinality": 2
+    },
+    "category": {
+      "encoding": "TABULAR_CATEGORICAL",
+      "cardinality": 110
+    },
+    "use_chip": {
+      "encoding": "TABULAR_CATEGORICAL",
+      "cardinality": 4
+    },
+    "event_is_fraud": {
+      "encoding": "TABULAR_CATEGORICAL",
+      "cardinality": 3
+    }
+  },
+  "files": {
+    "roles.parquet": "9932c131b652286bd9a669587ab4d91a7572efefe853e2b4acd0cb4cf8ee2b9a",
+    "test.parquet": "fe1a0196599820d4a48f1d76f9b2d4f8faecd91b6af60c9c0a41d93c30c09d7e",
+    "test_context.parquet": "41305cfa9b19057aa5be023ecdf7d40e974c89eeb1d1cda827dae624c99bafbd",
+    "train.parquet": "7d90d4346a9605431602b036066e70cc35a8c7da14d04691b978a8f620a92e34",
+    "train_context.parquet": "06528968fd729a80d863dc7e4834d7f2be2e65a05ccf6ad08d831053dc326b51",
+    "validation.parquet": "cafecdb8550aaa2dd2e9b7f1f2bd3b61c84a823e3000749dc36f735a6ad9f45b",
+    "validation_context.parquet": "af891d673b5b4e101cba7ba0d77012527a5758d85777acd6b4bf0aa9a0a35fb2"
+  }
+}

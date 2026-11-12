@@ -1,0 +1,9 @@
+{
+  "utc": "2026-09-30T17:23:07.274275+00:00",
+  "package": "tabulate0.9.0",
+  "scope": "report rendering only, isolated local_source package; no registered source/model/config changed",
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/local_source/tabulate/__init__.py": "5f7af0a28fcd713b830c97388675945fa8c4950b05b58f8d187c900a5752d57d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_whole_validation_v1/local_source/tabulate/version.py": "4155698e74e8afddf29be4dbe98fd7b4bffaa6643732da0dcb743a234a3762a8"
+  }
+}

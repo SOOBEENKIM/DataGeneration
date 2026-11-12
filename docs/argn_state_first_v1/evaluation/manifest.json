@@ -1,0 +1,42 @@
+{
+  "started_utc": "2026-09-27T05:44:31.972196+00:00",
+  "test_events_read": false,
+  "bootstrap_repeats": 500,
+  "bootstrap_seed": 20260927,
+  "uncertainty_scope": "customer resampling conditional on each fit/draw; 2 independent training seeds",
+  "inputs": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/prepared/metric_state.json": "612cfeff97f7f5ed9262480f3f4a52bfe753cd6c2678ff20954ec884e2fb35b8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/prepared/train.parquet": "7c228c427d714a925fb31a9285779295a11eeba6056c465456caa335a6c8a305",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-fraud-audit/artifacts/sparkov_argn_control_v2/prepared/validation.parquet": "c444c6e625b8f4e0e4edae1b1e12dbbef573c9e398d44400a44c4d5a7f03228d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20260930/generated_validation_20261011.parquet": "8c2c08726b0297c2a07defc9613f432da3f116503204eec02d3fe18880a6aa78",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20260930/generated_validation_20261012.parquet": "ec7eb8300b73ce1b8f6e16043eeae08ccc1c9f857875bb4992d282874ed9e7c5",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20261001/generated_validation_20261011.parquet": "5ed05bdbe70e139a40748a81b6d4716378ad6141b2de421b98caf202cb032816",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20261001/generated_validation_20261012.parquet": "eee85bd81a3cdda04fc62454ed04be0fa70d5f9f308bdbfd821a69961dc2d6d2",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20260930/generated_validation_20261011.parquet": "94c82755f504cca5644e87140cdc3db65bf5212b37e289f1b05a37bfd53fa76f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20260930/generated_validation_20261012.parquet": "a3e939eb758c09a4790d2c3995e4b15d53acddafb081fdf5af8395ada4524438",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20261001/generated_validation_20261011.parquet": "cf52633f109329332b2d1d3689c6a2196d7fedf94aea1ce427f862a7a769ab4b",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20261001/generated_validation_20261012.parquet": "e87f75e7c705c096aea5ce8f015769d2d6936fe066cb9da81101a4484c5b81d1"
+  },
+  "code": {
+    "scripts/evaluate_argn_state_first.py": "b9c36b36ba98c7435cdbe5f4622cd601599bb14316568d6eb9ecf3cc166a1e82",
+    "benchmarks/argn_state_evaluation.py": "92170a9ba88796400cdf8354efd275cd43e4124bed70dd20cb6530bc214b57d7",
+    "benchmarks/argn_fraud_audit.py": "8e1d55255225c36778f7b983a9cd2973f0787810307e4d16ef31329f14895bd9",
+    "scripts/evaluate_sparkov_argn_control.py": "d040848fefbde10ba96ff9178eee5d08b454bad7a64b36d4853b8104a0300f93",
+    "docs/argn_state_first_v1/EVALUATION_PROTOCOL.md": "7c1874b1286c7bd8f739cd5b0aa472ef3bda04cfca34bd6e64de402daa4be444"
+  },
+  "completed_utc": "2026-09-27T05:45:41.296309+00:00",
+  "outputs": {
+    "fit_summary.csv": "faed0e97309de4afaa82cd7e56ea5b24d7e00babb7206d4ab8620ae62e9dd973",
+    "hazards.csv": "9f186c55b0fed53214dcb053b63634b64980bc61ea6bc38e93315c946be67db1",
+    "real_only_variability.csv": "c268d13c49e4c35e6ee22f22b8e3d1ebb6a8f5e3487bdd3eea038d477830355b",
+    "position_curves.csv": "dba8e852263f3dcff5d7a870d62b9c8e0741afbaba164de6248da35ebbe988ca",
+    "paired_fit_means.csv": "b979d499f8101135fec7db884fe09f2cea39252f33b10cdea891a8345bf63827",
+    "metrics.csv": "127f50c944f08c18223040773db17ea69d88894b74ed9091ec0d9f1fa17aa952",
+    "paired_draw_differences.csv": "fbc96c2f3c408a42d3d6d6fa038f88c8fa8ced6df2c269d3f5edb96638e945c5",
+    "age_amounts.csv": "081bd1224ab454ac668499f0918ce802ea90e8710b23461947a6d4fe1d3a5ae0",
+    "paired_customer_bootstrap.csv": "ebc5a5dcbd34f56adf5ff8ebcd79d0906562e230e263cddc230245dffb4ba89e",
+    "numeric.csv": "2b4baabf4855d11fff27616ff9407db7f0588f96639773607795872acfa73135",
+    "conditional_rates.csv": "eaa3f5704651e6f740dc02808af51fec9b8f6509771c6f4d4f55cff064546da3"
+  },
+  "no_output_or_weight_mutation": true
+}

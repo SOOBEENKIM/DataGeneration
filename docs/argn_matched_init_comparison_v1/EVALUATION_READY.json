@@ -1,0 +1,22 @@
+{
+  "source_sha256": "3ba2d7d7a5cde6102728f959594f162107c32bc30b32d9cb97d82add24f3b0fb",
+  "checks": {
+    "normal_gap_seconds_log_w1": 2.7755575615628914e-17,
+    "onset_personal_gap_w1": 0.0,
+    "fraud_gap_seconds_log_w1": 0.0,
+    "normal_stay_personal_gap_w1": 4.163336342344337e-17,
+    "fraud_ratio_log_w1": 5.551115123125783e-17,
+    "normal_amount_log_w1": 6.938893903907228e-17,
+    "equal_customer_normal_gap_w1": 8.326672684688674e-17,
+    "class_0_merchant_tv": 8.326672684688674e-17,
+    "median_unique_merchants_per_customer": 0.0,
+    "early_time": 0.0,
+    "time50_99": 1.3877787807814457e-17,
+    "time100_199": 5.551115123125783e-17,
+    "time200_499": 5.551115123125783e-17,
+    "time500_1023": 6.938893903907228e-17,
+    "late1024_time": 0.0
+  },
+  "passed": true,
+  "new_output_reads": 0
+}

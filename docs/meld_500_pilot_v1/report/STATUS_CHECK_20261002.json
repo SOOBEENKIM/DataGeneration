@@ -1,0 +1,16 @@
+{
+  "checked_at_kst": "2026-10-02T11:26:19.970647",
+  "all_recorded_jobs_exit_zero": true,
+  "frozen_and_snapshot_hashes": 48,
+  "generation_hashes": 12,
+  "total_generated_rows": 1805473,
+  "development_rows": 903300,
+  "completed_vae_epochs_per_fit": 500,
+  "completed_dit_updates_per_fit": 2000,
+  "independent_fits": 2,
+  "preliminary": true,
+  "final_comparison_complete": false,
+  "new_training_this_status_check": 0,
+  "new_generation_this_status_check": 0,
+  "test_reads": 0
+}

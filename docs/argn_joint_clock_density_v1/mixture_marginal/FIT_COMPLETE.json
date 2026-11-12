@@ -1,0 +1,11 @@
+{
+  "selected_step": 400,
+  "selected_identity": false,
+  "internal_objective": 0.10046178102493286,
+  "seconds": 257.90805959282443,
+  "sha256": "b74db501693c014c20fd16aeb8f9e59adc9ed839a3b34e48fef50a34a86001a8",
+  "original_buffers_exact": true,
+  "new_native_argn_fits": 0,
+  "independent_head_fits": 1,
+  "test_events_read": false
+}

@@ -1,0 +1,139 @@
+{
+ "train_merchants": 25088,
+ "argn_merchant_codes": 9411,
+ "rare_normal_train_rows": 32307,
+ "train_rare_row_share": 0.02883089441459275,
+ "real_dev": {
+  "normal": {
+   "rows": 268509,
+   "rare_share": 0.0,
+   "known_merchant": 0.8443702073301081,
+   "online": 0.10675247384631428,
+   "channel_matches_merchant": 0.9999911785851333,
+   "category_matches_merchant": 0.9992193047842943,
+   "online_at_swipe_merchant": 0.0,
+   "category_x_channel_tv": 0.0
+  },
+  "fraud": {
+   "rows": 487,
+   "rare_share": 0.0,
+   "known_merchant": 0.9917864476386037,
+   "online": 0.8809034907597536,
+   "channel_matches_merchant": 0.3146997929606625,
+   "category_matches_merchant": 0.9958592132505176,
+   "online_at_swipe_merchant": 0.6853002070393375,
+   "category_x_channel_tv": 0.0
+  }
+ },
+ "real_train": {
+  "normal": {
+   "rows": 1122214,
+   "rare_share": 0.0,
+   "known_merchant": 1.0,
+   "online": 0.11801225078282752,
+   "channel_matches_merchant": 0.9999964356174491,
+   "category_matches_merchant": 0.9998315829244689,
+   "online_at_swipe_merchant": 0.0,
+   "category_x_channel_tv": 0.04564484220610016
+  },
+  "fraud": {
+   "rows": 1303,
+   "rare_share": 0.0,
+   "known_merchant": 1.0,
+   "online": 0.8449731389102072,
+   "channel_matches_merchant": 0.3430544896392939,
+   "category_matches_merchant": 0.9984650805832693,
+   "online_at_swipe_merchant": 0.656945510360706,
+   "category_x_channel_tv": 0.1845338745999203
+  }
+ },
+ "ARGN_table_kind": {
+  "normal": {
+   "rows": 277292.0,
+   "rare_share": 0.03686310132743844,
+   "known_merchant": 0.9631368986725616,
+   "online": 0.14130816741632934,
+   "channel_matches_merchant": 0.8393510340861743,
+   "category_matches_merchant": 0.30583578144414697,
+   "online_at_swipe_merchant": 0.0844597662339532,
+   "category_x_channel_tv": 0.1648488444589623
+  },
+  "fraud": {
+   "rows": 535.75,
+   "rare_share": 0.07713216008122514,
+   "known_merchant": 0.9228678399187749,
+   "online": 0.8328388193518786,
+   "channel_matches_merchant": 0.28058649929069013,
+   "category_matches_merchant": 0.05811242135261764,
+   "online_at_swipe_merchant": 0.6951247756489278,
+   "category_x_channel_tv": 0.3852941332319848
+  }
+ },
+ "ARGN_native": {
+  "normal": {
+   "rows": 264338.5,
+   "rare_share": 0.028681710821337976,
+   "known_merchant": 0.971318289178662,
+   "online": 0.20003332655249967,
+   "channel_matches_merchant": 0.8715047513158086,
+   "category_matches_merchant": 0.4804250112117334,
+   "online_at_swipe_merchant": 0.07005785122895698,
+   "category_x_channel_tv": 0.22615495425837967
+  },
+  "fraud": {
+   "rows": 181.75,
+   "rare_share": 0.03355018119011276,
+   "known_merchant": 0.9664498188098873,
+   "online": 0.2709609912319171,
+   "channel_matches_merchant": 0.8266967466242829,
+   "category_matches_merchant": 0.39942079525412855,
+   "online_at_swipe_merchant": 0.11856801277091134,
+   "category_x_channel_tv": 0.8390334002532704
+  }
+ },
+ "RTF_table": {
+  "normal": {
+   "rows": 268564.0,
+   "rare_share": 0.0,
+   "known_merchant": 1.0,
+   "online": 0.16199310246633775,
+   "channel_matches_merchant": 0.9995856830796859,
+   "category_matches_merchant": 0.9999366985032161,
+   "online_at_swipe_merchant": 0.0004133865077319582,
+   "category_x_channel_tv": 0.20470756243779845
+  },
+  "fraud": {
+   "rows": 432.0,
+   "rare_share": 0.0,
+   "known_merchant": 1.0,
+   "online": 0.8509527592667252,
+   "channel_matches_merchant": 0.4045639955415372,
+   "category_matches_merchant": 1.0,
+   "online_at_swipe_merchant": 0.5954360044584628,
+   "category_x_channel_tv": 0.41698981910638006
+  }
+ },
+ "what_if_mean": {
+  "none": {
+   "row_auprc": 0.1094,
+   "history_auprc": 0.3337,
+   "category+channel_auprc": 0.0965
+  },
+  "fd_normal": {
+   "row_auprc": 0.2602,
+   "history_auprc": 0.4516,
+   "category+channel_auprc": 0.376
+  },
+  "fd_normal+rare": {
+   "row_auprc": 0.28,
+   "history_auprc": 0.4659,
+   "category+channel_auprc": 0.377
+  },
+  "fd_all": {
+   "row_auprc": 0.2506,
+   "history_auprc": 0.4764,
+   "category+channel_auprc": 0.3702
+  }
+ },
+ "seconds": 82
+}

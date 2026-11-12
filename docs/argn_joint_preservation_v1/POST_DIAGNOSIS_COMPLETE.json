@@ -1,0 +1,6 @@
+{
+  "source_sha256": "08f5679570d898e7c81af2a34258c8c685f713c1aa0360cf2db65809d611c4d7",
+  "generations": 20,
+  "test_events_read": false,
+  "purpose": "post-generation explanation only; no checkpoint or probability selection"
+}

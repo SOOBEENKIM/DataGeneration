@@ -1,0 +1,12 @@
+model,fit_seed,generation_seed,step,kind,cohort,preliminary,group,real_events,generated_events,real_customers,generated_customers
+MeLD_500_pilot,20261022,20261924,1000,ema,internal69,True,normal_gap,99685,207180,,
+MeLD_500_pilot,20261022,20261924,1000,ema,internal69,True,normal_amount,99751,207249,,
+MeLD_500_pilot,20261022,20261924,1000,ema,internal69,True,fraud_gap,472,326,,
+MeLD_500_pilot,20261022,20261924,1000,ema,internal69,True,fraud_amount,475,326,,
+MeLD_500_pilot,20261022,20261924,1000,ema,internal69,True,onset,47,326,47.0,67.0
+MeLD_500_pilot,20261022,20261924,1000,ema,internal69,True,normal_stay,99314,206509,66.0,69.0
+MeLD_500_pilot,20261022,20261924,1000,ema,internal69,True,continuation,397,0,48.0,0.0
+MeLD_500_pilot,20261022,20261924,1000,ema,internal69,True,return_normal,46,326,46.0,67.0
+MeLD_500_pilot,20261022,20261924,1000,ema,internal69,True,early,2890,3034,,
+MeLD_500_pilot,20261022,20261924,1000,ema,internal69,True,mid,6576,6888,,
+MeLD_500_pilot,20261022,20261924,1000,ema,internal69,True,tail,40174,136687,,

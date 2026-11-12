@@ -1,0 +1,27 @@
+{
+  "config": {
+    "fits": [
+      20260930,
+      20261001
+    ],
+    "draws": [
+      20261021,
+      20261022
+    ],
+    "arms": [
+      "boundary_fit",
+      "phase_mixture"
+    ],
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9"
+  },
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/confirm_argn_gap_controls.py": "df3a9d86e133eb971ef8b86f6aed0f5f04f9ee7be56b31e8e594c5033f1cd0a3",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_phase_gap_v1/confirmation/PROTOCOL.md": "7a4fda2b4ebbe1f758d3553dad1f430713f286a0d352714d85cd7da9808e434f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_phase_gap_v1/parameters.json": "e1521b040a2f3f83206bbbcefc64c3358e8509827263aecd2eba9dd645ff4f4e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_boundary_gap_v1/worker_20260930/boundary_fit/boundary_head.pt": "d7ebcd81241bf7c8c72cf991e597693e89919468ab14fd9457a52bff653d12bb",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_boundary_gap_v1/worker_20261001/boundary_fit/boundary_head.pt": "2f9f36c4d64a6a0a25eb5726c1841a5bbca2493dc5a2e67003bf1b1ccdf877a7"
+  },
+  "new_training": 0,
+  "test_events_read": false,
+  "created_utc": "2026-09-27T14:25:37.730109+00:00"
+}

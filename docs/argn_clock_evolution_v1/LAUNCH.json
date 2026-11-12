@@ -1,0 +1,86 @@
+{
+  "progress_joint_20260930": {
+    "pid": 1490348,
+    "gpu": "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/../research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_evolution.py",
+      "worker",
+      "--seed",
+      "20260930",
+      "--arm",
+      "progress_joint"
+    ],
+    "started_utc": "2026-09-27T15:58:00.166095+00:00"
+  },
+  "progress_joint_20261001": {
+    "pid": 1490358,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/../research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_evolution.py",
+      "worker",
+      "--seed",
+      "20261001",
+      "--arm",
+      "progress_joint"
+    ],
+    "started_utc": "2026-09-27T15:58:00.342229+00:00"
+  },
+  "progress_prefix_20260930": {
+    "pid": 1490368,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/../research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_evolution.py",
+      "worker",
+      "--seed",
+      "20260930",
+      "--arm",
+      "progress_prefix"
+    ],
+    "started_utc": "2026-09-27T15:58:00.532930+00:00"
+  },
+  "progress_prefix_20261001": {
+    "pid": 1490378,
+    "gpu": "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/../research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_evolution.py",
+      "worker",
+      "--seed",
+      "20261001",
+      "--arm",
+      "progress_prefix"
+    ],
+    "started_utc": "2026-09-27T15:58:00.747619+00:00"
+  },
+  "progress_rollout_20260930": {
+    "pid": 1499596,
+    "gpu": "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/../research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_evolution.py",
+      "worker",
+      "--seed",
+      "20260930",
+      "--arm",
+      "progress_rollout"
+    ],
+    "started_utc": "2026-09-27T16:04:17.259385+00:00"
+  },
+  "progress_rollout_20261001": {
+    "pid": 1499610,
+    "gpu": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+    "command": [
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/../research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_evolution.py",
+      "worker",
+      "--seed",
+      "20261001",
+      "--arm",
+      "progress_rollout"
+    ],
+    "started_utc": "2026-09-27T16:04:17.473183+00:00"
+  }
+}

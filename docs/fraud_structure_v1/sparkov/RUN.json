@@ -1,0 +1,18 @@
+{
+ "dataset": "sparkov",
+ "sources": {
+  "train": "/home/ssd-990/soobeenkim/DataGeneration/data/sparkov_prepared/train.parquet",
+  "dev": "/home/ssd-990/soobeenkim/DataGeneration/data/sparkov_prepared/validation.parquet"
+ },
+ "source_sha256": {
+  "train": "7c228c427d714a925fb31a9285779295a11eeba6056c465456caa335a6c8a305",
+  "dev": "c444c6e625b8f4e0e4edae1b1e12dbbef573c9e398d44400a44c4d5a7f03228d"
+ },
+ "floor_seed": 20261107,
+ "floor_draws": 200,
+ "generations": 30,
+ "skipped": 4,
+ "seconds": 159,
+ "protocol_sha256": "88f0fe88308240298f7ca37af22fe72402b3add599a0ea1fbe8d0928a8e62702",
+ "test_read": false
+}

@@ -1,0 +1,8 @@
+candidate,reference,primary_effect,costs,descriptive_screen,normal_personal_delta
+history_init_cal,history_only,True,,True,0.0020269373529311976
+history_init_cal,history_initial_only,True,,True,0.00235598449497304
+history_init_cal,history_calibration_only,False,,False,-5.2685816962542986e-05
+history_only,init_only,False,"early_time,time50_99,time100_199,time200_499",False,0.02750062972992474
+history_initial_only,init_only,False,"early_time,time50_99,time100_199,time200_499",False,0.0271715825878829
+history_calibration_only,init_only,True,early_time,False,0.02958025289981848
+history_init_cal,init_only,True,,True,0.02952756708285594

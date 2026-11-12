@@ -1,0 +1,8 @@
+{
+  "arm": "history_position3",
+  "parent": 20261001,
+  "time_fit_seed": 73003,
+  "sha256": "cbf23c6fb4f63487855f4860f7323b5f1e9950c64ced050dd57f667aeb915624",
+  "source_sha256": "599c7a0f6a356d93150ca881afd9e49ab38fca06b51573100e1e43d7795e8217",
+  "frozen_neural_exact": true
+}

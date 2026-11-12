@@ -1,0 +1,13 @@
+{
+  "dst": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/runs/20261022/previews/step_001000/online_diagnostic",
+  "split": "internal",
+  "files": [
+    [
+      20261924,
+      "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_500_pilot_v1/runs/20261022/previews/step_001000/online_diagnostic/generated_internal_20261924.parquet"
+    ]
+  ],
+  "fs": 20261022,
+  "step": 1000,
+  "kind": "online_diagnostic"
+}

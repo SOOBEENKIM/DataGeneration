@@ -1,0 +1,67 @@
+{
+ "arm": "ratio_kind",
+ "fit_seed": 20261108,
+ "generation_seed": 20261012,
+ "seconds": 72.2,
+ "events": 274731,
+ "customers": 240,
+ "frauds": 446,
+ "fraud_customers": 39,
+ "gap_minutes_by_kind": {
+  "onset": {
+   "n": 168,
+   "median": 380.16666666666663,
+   "le60": 0.19047619047619047
+  },
+  "cont": {
+   "n": 278,
+   "median": 52.83333333333333,
+   "le60": 0.5071942446043165
+  },
+  "exit": {
+   "n": 167,
+   "median": 243.66666666666666,
+   "le60": 0.2634730538922156
+  },
+  "normal": {
+   "n": 273878,
+   "median": 262.8333333333333,
+   "le60": 0.2420019132606489
+  }
+ },
+ "base_weights_sha256": "b0b1f46a977d4e7eb35e6b665538b7ae0b5c5dd118565d69e22d19410059603f",
+ "heads_sha256": "94d23b571a57f528404eb964a9fbf9e04751569a177cbd1817dd10c8f6ae69f7",
+ "params_sha256": "2e935d0a65143c943fd5b5cd2f16dbc558f2e92f475831c75e5c936c3ae94dc1",
+ "merchant_params_sha256": "6b0d0eac1ed516467939cb70dbca95f039401726106d69827b2a9c97ebb13e11",
+ "base_module": {
+  "label_key": "tgt:t5/c5__cat",
+  "label_first": true,
+  "transition": true,
+  "retrained_heads": true,
+  "attached": true
+ },
+ "merchant_module": {
+  "arm": "full",
+  "lam": 0.75,
+  "pi": 0.9318181818181818,
+  "merchant_key": "tgt:t1/c1__cat",
+  "counter": {
+   "merchant_steps": 3886,
+   "rows": 366285,
+   "repeat_mass": 339656.3816277575,
+   "novel_mass": 26628.618372278852,
+   "pool_mass": 319.81178694753356
+  }
+ },
+ "module": {
+  "arm": "ratio_kind",
+  "gap_key": "tgt:t0/c0__bin",
+  "counter": {
+   "gap_steps": 3886,
+   "onset": 237,
+   "cont": 376,
+   "exit": 237
+  }
+ },
+ "sha256": "5b21b879bdec074a3a64a060304557c9a8aaad3dfaa00e15193ac068c1d89846"
+}

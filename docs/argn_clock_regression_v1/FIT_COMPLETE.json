@@ -1,0 +1,35 @@
+{
+  "statistical_phase_fits": 4,
+  "neural_fits": 0,
+  "head_sha256": "8591324e9757504a783821042737a487a7fea660a6b4d089f7681a0f038f78c0",
+  "phases": [
+    {
+      "phase": 0,
+      "positions": 810543,
+      "fitted_positions": 50000,
+      "converged": true,
+      "iterations": 9
+    },
+    {
+      "phase": 1,
+      "positions": 433,
+      "fitted_positions": 433,
+      "converged": true,
+      "iterations": 9
+    },
+    {
+      "phase": 2,
+      "positions": 431,
+      "fitted_positions": 431,
+      "converged": true,
+      "iterations": 6
+    },
+    {
+      "phase": 3,
+      "positions": 4257,
+      "fitted_positions": 4257,
+      "converged": true,
+      "iterations": 21
+    }
+  ]
+}

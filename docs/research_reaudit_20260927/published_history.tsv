@@ -1,0 +1,133 @@
+commit	date	subject
+873fb3417d3b77916beed20204e1286886155c30	2026-09-27T17:57:42+09:00	Record completed ARGN order controls and persistent transition failure
+2aabc9f26501e91b742e2ee78f52b4ff7b437f6c	2026-09-27T17:21:08+09:00	Run matched ARGN label-first order controls on idle GPUs
+ea950284368fa8aac44eb61ed8ad79cf0bc3421e	2026-09-27T16:57:35+09:00	Screen Sparkov generation references before further architecture training
+2c058b1d95eee457aa4692c28a6abdd141a20867	2026-09-27T16:42:40+09:00	Diagnose Sparkov source cohorts and frozen ARGN transition failures
+10c1e0f267b37c7d041645de30b41d7430bdb0a9	2026-09-27T15:17:53+09:00	Keep objective control queued until a GPU becomes idle
+1934d93cf0316c4f26b4c3195dde4e117a0f66cf	2026-09-27T15:00:20+09:00	Evaluate state-conditioned ARGN and isolate transaction-loss weighting bias
+b4452ce795065462b9c18782235b17e048b4a21b	2026-09-27T12:45:04+09:00	Start paired ARGN past-state feature study with causal validation
+35637cc1cd64a5549796e76fbf8b92996f00bfc6	2026-09-27T03:20:35+09:00	Audit labelled Sparkov ARGN preprocessing and sequence relationships
+9bee19cefca0826f5516fc1e9e51abb408bfac02	2026-09-27T01:04:45+09:00	Complete fresh Berka fit and confirm paper-range fidelity scores
+64b3125135d96ade009637caf3e49f777cd6ea03	2026-09-27T00:47:22+09:00	Verify all five public Berka artifacts against paper metrics
+b7e7119815ab935cec6e5c4e9365f00b58609efb	2026-09-27T00:42:46+09:00	Document why prior Sparkov audit is not a matched Berka comparison
+90099ece4bef73e88497d0c8bb86a7b9ac679824	2026-09-27T00:42:03+09:00	Establish paper-era Berka reproduction and author-output metric control
+daa98926e9482e2eff89f8cf4fdf24b241baee73	2026-09-27T00:29:30+09:00	Prioritize author-provided Berka benchmark reproduction before Sparkov changes
+d0a5af012ee4bf1a1e56abcc5cf078492ec6eecf	2026-09-27T00:12:38+09:00	Report labelled ARGN runs, relationship failures and validation noise
+497fb7dad0de2b22fc538d8af12a16b98ebde354	2026-09-27T00:10:05+09:00	Register frozen-checkpoint validation sampling diagnostic
+452475d144791b5327685072b016df6619cec39f	2026-09-27T00:00:49+09:00	Record legacy relationship audit and fit-only fraud encoding checks
+1ddc1afe0a54b7631ac34307e38bfc4d62f6d3ae	2026-09-26T23:57:43+09:00	Register frozen-checkpoint prediction and information-path diagnostics
+2ccc01ea3679f7a1ee923b11785a2fb98c08cd45	2026-09-26T23:53:05+09:00	Handle official parquet nullable numerics in audit metrics
+5f93b0a752bc8bbf3d48fa9017aac4ed0dd55e33	2026-09-26T23:52:27+09:00	Register labelled ARGN baseline and relationship audit with isolated data boundaries
+c1463e52f3d5785d25dcd78a82c553d2c13e804e	2026-09-21T23:51:12+09:00	Close ARGN relation pilot: small gains below fixed adoption threshold
+9ba6c6a350c9cdd9cfed37844921e0634b431f5b	2026-09-21T23:41:41+09:00	Fix workspace metadata copy before any pilot model initialization
+afd418c5f334c1f28a7a77b6514925c1153f1657	2026-09-21T23:38:59+09:00	Preregister isolated TabularARGN relation-path feasibility pilot with matched control
+5f0bfc251288333f8988306799fa0277887ca21d	2026-09-21T22:44:29+09:00	Audit D architecture, bounded improvements and remaining research evidence
+bc5a5314025f64b1bb619c4f7e1b7f48674183a6	2026-09-21T22:29:53+09:00	Close D binned-amount comparison with gains and preregistered cost failure
+1579ee4bbe0afe3d822799a8afdb94c0fbf147c5	2026-09-21T22:16:03+09:00	Preregister final bounded empirical-bin amount control for D
+5f81c5e8ca60648b03f263750d3309d6abdf35c3	2026-09-21T21:41:00+09:00	Record frozen D amount-tail and history-feedback diagnostic results
+76f823040f36840b2a7adc1a488c7933168277a3	2026-09-21T21:35:06+09:00	Preregister frozen D amount-tail and crossed-history diagnostic
+c4d4c721481b804ec0ee29ab530c3df84cac411d	2026-09-21T21:14:45+09:00	Report bounded output controls, direct-head comparison and remaining amount tails
+e1d44f2a6028972e30f1e3f9f7ce0c6dd0b5dd3d	2026-09-21T20:28:37+09:00	Register bounded external amount and action controls with verified output distributions
+34ee431bdf55777cbe36c2422d736bc1bf96123c	2026-09-21T01:47:11+09:00	Report external U/G pilot with independent verification and model limitations
+ebad17d0d4cf312332acc1d4f4f2e927e444702b	2026-09-21T00:51:22+09:00	Preserve CPAR tail segments and validate installed sampling API before corrected runs
+676fe6a93ed8b6259df7b9164c033efb64788d73	2026-09-21T00:46:41+09:00	Port U/G to external schemas and complete histories; register bounded external pilot
+04a89188a9680602ee21d0746d7a6ce26a3efc3e	2026-09-21T00:23:09+09:00	Report verified Berka and Sparkov relations and external comparison requirements
+6726a8eab25fd27b79da3b0e8b900f3ef2b8a8b9	2026-09-21T00:12:09+09:00	Implement split-safe external relationship audit and chronology checks
+e9e61d2f8ef92a64e6d3d1ae4be4e19779a35811	2026-09-21T00:09:18+09:00	Register external relation and preprocessing audit on Berka and Sparkov
+a2a7a422d9f436bac5071f2cf4eadeb6223172a8	2026-09-20T23:57:46+09:00	Audit literature datasets and prioritize external problem validation
+aca02c9927501ab9845e5900c77f6461981a09df	2026-09-20T23:41:28+09:00	Complete frozen history diagnostic: localize run-state errors and audit architecture limits
+36d9050f72106249a6c080d4d9ea26b978f2f693	2026-09-20T23:33:16+09:00	Record passed frozen-model audit and train-only state coverage
+4bd9eec70dd0abb0998b0a0366644c2de5def383	2026-09-20T23:32:59+09:00	Implement frozen history replay, matched oracle diagnostics and censoring checks
+1fd005de800daf79dc56f109207d1701ecb7abb3	2026-09-20T23:30:17+09:00	Preregister frozen history and prior-run diagnostic without further fitting
+e19897b3adf1851ddfc59c11232ad898138f3f0f	2026-09-20T23:12:57+09:00	Complete frozen rollout calibration: report limited gains, null-response failures and oracle variability
+a9fe2b8b3d56a73bdbb3a00c82803fc0cc1bfa11	2026-09-20T23:02:55+09:00	Fix oracle curve metadata collision and preserve failed evaluation artifacts
+f00cfada00037d7a1089dcc1b3d559eb5e51f2e1	2026-09-20T22:28:54+09:00	Export complete bounded search traces and fitting manifests for review
+2be327299840fc880a9bccb840be45158d327982	2026-09-20T22:18:37+09:00	Record active bounded rollout experiment without premature result claims
+6634ce48423bf6e66babeb323b6fcbe81cd15a10	2026-09-20T22:15:54+09:00	Verify immutable fit manifests and registered numerical selection tolerance
+0b73bb8a8a3a937dcc70eaf7b8f99f695808924f	2026-09-20T22:06:47+09:00	Clarify what the average prediction guard does and does not constrain
+ec185351f6ea302ef8c8b53d978eded52e851027	2026-09-20T21:55:53+09:00	Include oracle duration dependency in evaluation provenance
+f6dceca00875e47f0d94b55049d50619192c346d	2026-09-20T21:52:26+09:00	Document execution provenance and limited optimization scope
+0b27051617574e8da0bda8600c4e0a7faf52e1c4	2026-09-20T21:49:52+09:00	Prepare complete result tables and paired prediction-generation figures
+1417169f8c5a3b708ffb9dc832ab30ab3ddfd388	2026-09-20T21:48:22+09:00	Freeze post-fit evaluation, oracle sampling, prospective decisions and verification
+429172ef0dee90b7057454dd6f043c481671ab34	2026-09-20T21:43:47+09:00	Record passing train-only CPU and deterministic GPU rollout gates
+027bc5584bcb2a24600b95edbbb2973ea54d1c0d	2026-09-20T21:42:53+09:00	Implement train-only frozen rollout calibration and deterministic gates
+13dc0ac0810d6a1f95af1ce7e98749cea73cac20	2026-09-20T21:38:00+09:00	Preregister frozen U/G rollout calibration with prediction guards and oracle evaluation
+12ce8d332ced89b069f142859720fcdfc68c2e36	2026-09-20T21:15:28+09:00	Complete matched structure pilot and report constrained-head failure
+6afb05b4ec06b255d0cd9b74a4f9df8276ecbd9e	2026-09-20T20:57:48+09:00	Record passing CPU and full FP32 GPU gates before structure fits
+d32a786f14f6258ae1e2896927d393550fad943b	2026-09-20T20:54:53+09:00	Pin full FP32 after measured runtime drift and implement registered result analysis
+e3d3010fcaa21c629b7acf233739478922b6a70e	2026-09-20T20:51:08+09:00	Separate tiny learning and checkpoint-selection checks without changing scientific settings
+2330aa7db02c341c6fa856fcc0c5708e862d14c1	2026-09-20T20:48:44+09:00	Correct CPU gate mask indexing before training
+ab375a4ba6ebb1924d62c477677f5ad8fbeadc97	2026-09-20T20:47:49+09:00	Implement parameter-matched observed-repeat structures and bounded runners
+892a5d109e6879c01c464b7b7c79a7b96d090895	2026-09-20T20:42:22+09:00	Preregister matched U general-repeat and constrained-repeat structure pilot
+3ac58b51ef8b87e8a3b60bdb759482279a166d0f	2026-09-20T20:30:16+09:00	Report bounded ARGN continuation and equal repeat-control results
+a03739e1d8564709f79ed5984b1ebee4131eed01	2026-09-20T19:55:38+09:00	Verify native sampler identity and group alignment before stage-one controls
+6e59d03f7fe7c9ca39d39b82b270f778ece03469	2026-09-20T19:53:24+09:00	Implement bounded continuation and shared repeat controls with CPU smoke checks
+0672e82491c295256b726dadadbfbf6917029404	2026-09-20T19:47:15+09:00	Register bounded baseline continuation and equal observable-repeat controls
+52811e734fdeff6fd1232a1a412a919659b071a9	2026-09-20T19:20:20+09:00	Complete four official ARGN audits and define evidence-gated model candidate
+a7fcb7a83d403bba987ef7d08a388f1a2c4cd014	2026-09-20T18:59:33+09:00	Record diagnostic decomposition and tighten remaining jobs memory cap
+e75c83d92ab96b58d488b416c61246757232b4f0	2026-09-20T18:41:49+09:00	Record native baseline caveats and handle undefined first-event replay comparison
+f6f1007f99c941532d896ccba758ea3c00b26236	2026-09-20T18:38:53+09:00	Verify current-target future and prefix invariance for ARGN replay
+67e5d2c42302aab682bb119b3355eac81fdc1a9f	2026-09-20T18:36:12+09:00	Add invariant-checked read-only sequential probability replay
+a4adee7552599b29a6c5a4db027903d6bbf9519a	2026-09-20T18:32:07+09:00	Record official ARGN CPU fit reload and roundtrip checks
+b23997651ef9a327637643a5ff42faf0a6f49159	2026-09-20T18:30:30+09:00	Implement isolated official ARGN fit roundtrip and native generation audit
+f1d41ae0c0dfcab68d9fd863e93a87251016e60f	2026-09-20T18:28:14+09:00	Register bounded official TabularARGN audit and correct TabDiT availability
+b9d4162bf4d6d5a8db12aa517662521c3a62a08e	2026-09-20T17:04:29+09:00	Record equal gap calibration gains and withdraw E generation superiority claim
+547bce0c0dde6a2c59d7513b0b020f010c9d87b8	2026-09-20T16:26:10+09:00	Normalize stored metric metadata without changing experiment definitions
+b9251b67fe7f568db8d501768dea4ded7b8918fb	2026-09-20T16:22:21+09:00	Implement equal centered gap offsets and fixed joint evaluation
+db76b8587f758dc49dc44ad53aee2d993b04047e	2026-09-20T16:17:13+09:00	Preregister equal bounded gap calibration for frozen U and E
+dceb203ed09c88400d232170332ecc874172186b	2026-09-20T15:16:44+09:00	Record calibrated replay decomposition and narrow predictor correction target
+035473d967d66e9aeff886aaac7dba7aa25a54c6	2026-09-20T15:05:39+09:00	Implement frozen calibrated cross-history replay and exact error decomposition
+5f3c74556077cc610b78c4fb76c8a5bfe238bf35	2026-09-20T15:02:09+09:00	Preregister calibrated U E replay on all frozen generation repeats
+39525ff3fcf8e106dacb685c7d799b413b5a5a0d	2026-09-20T14:53:20+09:00	Record repeated generation costs and separate sampling uncertainty
+16bd9acfb6d7f36808f0b886d6d02df1f75c66ba	2026-09-20T14:13:52+09:00	Implement frozen-plan generation repeats and nested sampling analysis
+70ce09d12c4af7b033287a745fa04cc66f50108d	2026-09-20T14:09:22+09:00	Preregister five fresh generation tapes for frozen U and E controls
+c2e74dc58528cee32c868ca96e0af57e407e46b6	2026-09-20T13:59:44+09:00	Record equal-calibration U control and limits of history-structure gains
+c39313fd67424dfc7da2e8072b90cf9e4c0e2f96	2026-09-20T13:46:15+09:00	Implement equal train-only calibration for frozen U and paired controls
+de011db2cb7e379089f28246a4c7c6cb953ca8e8	2026-09-20T13:44:18+09:00	Preregister equally calibrated U control before fitting
+bdfcafdf7f2094736f66288b2937f231d0f3d1da	2026-09-20T13:39:01+09:00	research: report partial calibration gains and persistent generation tradeoff
+405b3182e5fd487543091316c6f878630c5af0ae	2026-09-20T13:20:57+09:00	fix: verify calibration responses without batch-dependent TF32 rounding
+b66c2f170c52e4cf365c280c8fda0171e82d59a0	2026-09-20T13:09:24+09:00	research: implement frozen copy calibration with paired generation audit
+54811a15d0507db7fe543721902353e7deeba605	2026-09-20T13:04:59+09:00	research: preregister train-only copy-probability calibration comparison
+cfbe3655c011a585bbcdd4a74e56d489e95c6286	2026-09-17T11:33:52+09:00	research: qualify hybrid-rollout diagnosis and isolate repeat-calibration costs
+6e022a7373d11035da4ec2ef64ec62e0b6794443	2026-09-17T11:23:42+09:00	research: implement fixed cross-history replay and joint-oracle controls
+5eb72175f8b90dd29750e9767c500e6aa46749f8	2026-09-17T11:14:48+09:00	research: preregister cross-history replay and coherent joint-oracle controls
+30f2d37f9a6cf9877fd6544deea0e916c9a8b3f7	2026-09-17T09:58:49+09:00	research: report mark-history feedback sensitivity across saved checkpoints
+fadf2722bfcc9b12d1b2c33cc2d26833c12517fb	2026-09-17T09:41:18+09:00	fix: audit streamed predictions without TF32 rounding differences
+7e0e7a1bd9d39e822872d131f1da92f57aaccd5b	2026-09-17T09:39:15+09:00	fix: keep diagnostic inverse CDF deterministic on pinned CUDA runtime
+ad97c240d7785f7d5c581485bf80c3f46d8153ec	2026-09-17T09:38:00+09:00	research: implement frozen-checkpoint endpoint and rollout diagnostics
+fd78ae5e5338cc1149e9c3177777f5b3aef30769	2026-09-17T09:33:08+09:00	research: preregister fixed-checkpoint rollout error decomposition
+65be9bdee506dfee8245f05e711840638b1f559e	2026-09-17T09:25:16+09:00	docs: report complete lambda prevalence and CPAR follow-up with limitations
+e4089664d7e50ea29a662bc78952220bd79014f1	2026-09-17T00:07:12+09:00	perf: vectorize pinned CPAR loss with verified gradients and unchanged budget
+926b505f1f908665ab8917735d6bbeaa2a0b2fae	2026-09-17T00:00:17+09:00	fix: enable dropout-free GRU backward for preserved checkpoint diagnostics
+fccc7bb18042db616df646f1b0d940eb036665de	2026-09-16T23:51:22+09:00	feat: implement fixed lambda sweep gradient audit and matched CPAR comparison
+0bbd0490fafd4d347b3ab15b425d12186d832f06	2026-09-16T23:46:55+09:00	docs: preregister bounded lambda prevalence and CPAR follow-up after failed gate
+1da477571e826b44a857edc58ff3a046f9e38de7	2026-09-16T23:34:57+09:00	docs: report five-trial null benefit and failed active-accuracy expansion gate
+e35c6c275eec2b8ae13824d73aa3abee2865579e	2026-09-16T23:24:02+09:00	feat: execute paired five-trial replication with frozen expansion gate
+8f5eaef3c325b909d1b34b55c7e854679103c684	2026-09-16T23:19:08+09:00	docs: preregister fixed U E ER five-trial prevalence replication
+c17a218c17939ce9eedd4067becf07ee0b9d99a0	2026-09-16T19:26:07+09:00	docs: preserve v4 pilot pass and checkpoint-sensitive accuracy limits
+635664954057bf037ef04c572ac113db8fb28767	2026-09-16T19:20:39+09:00	feat: isolate raw prediction from centered residual regularization
+642b87801ea8a553f17ff5852642a492952bb853	2026-09-16T19:17:56+09:00	docs: preregister raw-forward centered-penalty factorial comparison
+279b98fda063d8a3267e73db7d1037d12806b2e3	2026-09-16T19:11:24+09:00	docs: preserve v3 response success and conditional-accuracy failure
+44a2bd3848abd1fdddf0fc37d2cd6894109e3d65	2026-09-16T18:57:46+09:00	fix: evaluate constant gap controls once before broadcasting probabilities
+c9c516a04dc174da2cc9f455228cec2f19c3739f	2026-09-16T18:56:07+09:00	feat: implement explicit history head and centered residual regularization pilot
+981357351f1394b6ec0ada4947ecf839f0e875d1	2026-09-16T18:50:17+09:00	docs: preregister explicit-history and residual-regularization v3 pilot
+a7bf32722e7d96b0db31332a9f11743d9fc3aa99	2026-09-16T18:23:24+09:00	docs: preserve route decomposition results and audit CS-SAF research claims
+7d5a1be64f198f9cc56fa1a9d085460a704bbad8	2026-09-16T18:12:36+09:00	fix: match parent GRU audit batch shape without relaxing numeric tolerances
+ad01aaf0a2e0a5b9bba1075d70567bc85643c972	2026-09-16T18:08:41+09:00	feat: implement frozen CS-SAF route component audit with likelihood identities
+d12021b306567867cb89eb3358191d59fb266ef8	2026-09-16T18:04:45+09:00	docs: preregister fixed-checkpoint route mean and residual decomposition
+758e4300f302718b174989e1ddefce7500f197b2	2026-09-16T17:54:57+09:00	docs: preserve three-objective diagnostic results and unresolved null response
+f4bed4b9a17970d2cd146515f3e97d1ae0db6947	2026-09-16T17:48:59+09:00	feat: implement frozen three-objective CS-SAF diagnostic and paired null audits
+d4069c9242070f9caa1ef03a96ddcec92a0943f3	2026-09-16T17:44:52+09:00	docs: preregister CS-SAF three-objective loss and null-response diagnostic
+80238215eaeae0644890ec60deec00bc540852a5	2026-09-16T16:52:35+09:00	docs: preserve CS-SAF v2 rare-null pilot failure and next diagnostic
+c77d2f9558ca019d14ccf4b833cbc6628728ff44	2026-09-16T16:41:30+09:00	feat: implement preregistered CS-SAF v2 context route banks
+d8302e363d2d019704bf050911024dd5bb0b9858	2026-09-16T16:29:30+09:00	docs: record CS-SAF checkpoint forensics and preregister isolated routes
+d96e1b4966f9fec018aee472a26be579ab9a4d1c	2026-09-16T16:20:35+09:00	feat: freeze train-only CS-SAF checkpoint forensic diagnostics
+ccb16df04d512675992a48f4e3401a5b4a0ac160	2026-09-16T16:03:22+09:00	docs: preserve CS-SAF pilot null-safety failure and recovery state
+0d3be638e180695bf62379af8444398bb0c9708e	2026-09-16T15:53:03+09:00	feat: retain pilot generation samples and architecture provenance
+43ceef8ef420b4d6517b32110fa23addcc3683fb	2026-09-16T15:50:05+09:00	fix: expose CS-SAF loss and architecture contracts explicitly
+924131bee7aca609d36ec7e1049aeeeec5801c72	2026-09-16T15:47:03+09:00	feat: implement matched CS-SAF models and freeze controlled pilot
+e5c0cedb35889b38ff8155425ab63b46cfee24bb	2026-09-16T15:35:15+09:00	docs: record reproducible CS-SAF oracle audit pass and next stage
+34cdf667b5932cefbfa42dcc3e0443210b644749	2026-09-16T15:32:51+09:00	feat: freeze CS-SAF design and implement train-only oracle audit
+a1913920a37d51ff7c5d5167ad8a42f2998acdf6	2026-09-15T14:37:17+09:00	docs: define CS-SAF conference research protocol
+de8fa70e7e9608a77a2b651686c1b39d59e2456d	2026-09-15T14:35:43+09:00	chore: publish validated SAF baseline snapshot
+d98dff83f3a4fda65db02f7d4754ed9d5521f149	2026-09-15T14:28:46+09:00	Initial commit

@@ -1,0 +1,33 @@
+{
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/local_source/meld_train.py": "2a152bd5d491ef43c95525c46c725bf8560167832ea5d5bed38a7487ce1d06f6",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/local_source/meld_prepare.py": "26357ebb2f16c790d71064cf763592bae79dee56427d337803590885bd5776b0",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/report/MELD_PROTOCOL.md": "f72c62fff7805547b2e92c4a7b52a599fdd239206ac4eb152c4387961292262d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/meld/DATA.pt": "d19745635c979a12de3031d58b0bf0f83b7ec7ab42375fe730d495c0ded20f48",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/meld/parser.pkl": "43fd3ffe629462b34d76faa1786b4619a6e2c418dbd411121eb89a3bc7795bd3",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/comparison_completion_v1/meld/VAE_CONFIG.json": "e9a3c6f9cbe6e7f960a33323dc4cee63de030362bb19621b3317007b9a3dd825",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/gen_cohort.py": "04c4f4a6306150cb1c2e8dcd199054750a1904f966f680cbca1ef84e6973639b",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/timeautoencoder.py": "6d81061c6d8cca9131440506d25a30e21308eb530139ad18abf94a10eb1e0e37",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/process_edited.py": "926429429695c46331e6d56a95d7c6a8d0135f7abdbedc74f4563b57cc9c123b",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/DP.py": "92be8a643796b9c13c9ea605350877d63e5de5ee701e0b48710d68b917d2b828",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/data_loader.py": "4c487547be077db0512300cbf91d6864747f0135b0259ee532f105f1259d13ae",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/LightningD1T/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/LightningD1T/models/lightning1dit.py": "267de365dfcf5190cac4d5cee88e85c6e0d9888c54996999a58178d07a80307a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/LightningD1T/models/rmsnorm.py": "f2a00e364306b83a46c6ddb02d28740c448189b8503eb198148349dcaab66971",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/LightningD1T/models/lpips.py": "ba4b36dd036bc4715c59784860c33b762318caf93b6d12060bdcb3033335b518",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/LightningD1T/models/pos_embed.py": "049a6d41ffbf652747e51632651a89b936dc55afd47ec9b5568598d1e8e09c83",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/LightningD1T/models/swiglu_ffn.py": "f47835f5e2d7ca8fada59bf3a6bf593b6051e2334cf56ac5b0d540c8e6fe286a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/LightningD1T/transport/__init__.py": "8255068f106927e1a905a24a532b3bbe44b86bc1d9b7984e09e484a974655c42",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/LightningD1T/transport/utils.py": "0c2682c0bbf4f56b99abd56627e0b5704ff910a5df56b37b49a9cfeb9aeb21e0",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/LightningD1T/transport/integrators.py": "09145177be07e0a3d7a63b947388ef02661d275ea0b94019a7e7287141c7df42",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/LightningD1T/transport/path.py": "298ae86a39d84d133cab517ddd25654631446652768c32b3729f6977753e86a1",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/meld_compatibility_v1/vendor/MeLD-b1e5bb0fd95786a7dc11f616892b60ea6b311767/model/LightningD1T/transport/transport.py": "320a8028dbc92a1078787b3e2978d0b74b0cd5cdce0a257da4b89063f8f32fe4"
+  },
+  "vendor_commit": "b1e5bb0fd95786a7dc11f616892b60ea6b311767",
+  "seeds": [
+    20261021,
+    20261022
+  ],
+  "test_reads": 0
+}

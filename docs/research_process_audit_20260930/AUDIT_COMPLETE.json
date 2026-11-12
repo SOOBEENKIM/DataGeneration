@@ -1,0 +1,17 @@
+{
+  "completed_utc": "2026-09-30T08:20:47.475265+00:00",
+  "checked_frozen_hashes": 395,
+  "previous_manifest_entries": 371,
+  "raw_outputs": 40,
+  "raw_rows": 7943220,
+  "metrics_recomputed": 440,
+  "max_metric_difference": 9.8879238130678e-17,
+  "identity_all_fields_comparisons": 6,
+  "study_groups": 26,
+  "indexed_documents": 81,
+  "new_training": 0,
+  "new_generation": 0,
+  "test_events_read": false,
+  "push": false,
+  "head_unchanged": true
+}

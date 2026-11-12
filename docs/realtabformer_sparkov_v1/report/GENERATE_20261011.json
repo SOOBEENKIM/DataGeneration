@@ -1,0 +1,12 @@
+{
+  "seed": 20261011,
+  "rows": 177997,
+  "real_rows": 177997,
+  "customers": 147,
+  "windows": 3041,
+  "windows_row_count_mismatch": 0,
+  "fraud_rate": 0.006494491480193486,
+  "seconds": 584.334676027298,
+  "output": "/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/realtabformer_sparkov_v1/runs/generated_development_20261011.parquet",
+  "conditioned_on_real_window_lengths": true
+}

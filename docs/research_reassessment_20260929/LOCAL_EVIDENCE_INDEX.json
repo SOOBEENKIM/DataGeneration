@@ -1,0 +1,78 @@
+[
+  {
+    "path": "AGENTS.md",
+    "sha256": "88758ef5f7234a96c8ec1c12114c6e96157afca5cfd79c9420bf198f66841625"
+  },
+  {
+    "path": "docs/RESEARCH_DECISIONS.md",
+    "sha256": "2f5132023b77e0cc96c9b0b87a6c29ed7f3a6d8cfaf7a886ae0258d24f99319b"
+  },
+  {
+    "path": "artifacts/argn_clock_feedback_gain_v1/report/SUMMARY_METRICS.csv",
+    "sha256": "063102d1fe22dc9c5e26835d992c0c69da7645d851fbbc6086c38f4a0a3945a9"
+  },
+  {
+    "path": "benchmarks/argn_clock_regression.py",
+    "sha256": "59a84c8d942899dfb4ffaa9d463371c0a584dc013a66fa556580bcae03d0d4a7"
+  },
+  {
+    "path": "benchmarks/argn_time_density.py",
+    "sha256": "7ecd38efa21084ffe7f647788195d1826aa801129204261150d0a1337b7d2b35"
+  },
+  {
+    "path": "scripts/run_argn_time_density.py",
+    "sha256": "822556fa0ddfdfe6ed60fd5b3dd4a3c9d22d4ffad590840db521d2430fd95973"
+  },
+  {
+    "path": "artifacts/argn_clock_full_length_v1/report/INTERPRETATION.md",
+    "sha256": "d12ee18601b3414d209643e1e9413fa0adb8df58d906e8066dbd087294390324"
+  },
+  {
+    "path": "artifacts/argn_clock_adaptive_v1/report/INTERPRETATION.md",
+    "sha256": "78beee832bc99f5a6e5b90928d5bdac73102c88bc6d598ca0b39d33dff394ee3"
+  },
+  {
+    "path": "artifacts/argn_clock_initial_coupling_v1/report/INTERPRETATION.md",
+    "sha256": "0ae8b880b879e49091879b398554746ee5f499b1dc8b4c865fe7f4aadd77a45e"
+  },
+  {
+    "path": "artifacts/argn_clock_feedback_gain_v1/report/INTERPRETATION.md",
+    "sha256": "fa9af6abecf60bb77a1b0a34e7c3eb00b3fe16d9e788ffb08ac624ef01f993aa"
+  },
+  {
+    "path": "artifacts/argn_clock_stratified_loss_v1/report/INTERPRETATION.md",
+    "sha256": "6411a580a53283894b8081aa6f00f5866836646b3a00d6345c83a47e5c500366"
+  },
+  {
+    "path": "artifacts/argn_mid_history_diagnostic_v1/report/INTERPRETATION.md",
+    "sha256": "e88bca7665fa1027a6048e3f027ba266580774dca36716fbc9c3f122a82f7609"
+  },
+  {
+    "path": "artifacts/argn_early_history_diagnostic_v1/report/INTERPRETATION.md",
+    "sha256": "4adbe2b81a5990061556c77f2f3794208c23f1b61834a09338c2f97870a282a3"
+  },
+  {
+    "path": "docs/research_reaudit_20260927/AUDIT_REPORT.md",
+    "sha256": "9a296492f4d4d96006477891efb8613690cf459bf7814543982437b43fe424c1"
+  },
+  {
+    "path": "docs/argn_joint_preservation_v1/INTERPRETATION.md",
+    "sha256": "3c66ddb13564b0200f74419d13be7bc8d50307d5f89d367d442ccb64fe0b5810"
+  },
+  {
+    "path": "docs/argn_residual_v1/INTERPRETATION.md",
+    "sha256": "166374b28f8210b787f953562f6c3ac9331b738d8a2b88ff42e2f89662716001"
+  },
+  {
+    "path": "docs/argn_phase_gap_v1/INTERPRETATION.md",
+    "sha256": "002ed4fccc5d4c8a2293d8efd0e1faee92cab516afe21438ad3c3d446eb5e15d"
+  },
+  {
+    "path": "docs/argn_time_density_v1/INTERPRETATION.md",
+    "sha256": "304423fd4539f1b1f47672e8ed8ef1ce5b3a6e7624e5e5520257a18e433fa98f"
+  },
+  {
+    "path": "docs/argn_clock_location_v1/INTERPRETATION.md",
+    "sha256": "1e44256b65a7e2c97c37fdd9b0bc2ef7434ecbeeb9a3df89d1c7fba9483758d8"
+  }
+]

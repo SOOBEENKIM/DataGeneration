@@ -1,0 +1,7 @@
+fit_seed,arm,onset_better_than_simple,onset_better_than_clock,costs,passes_quality_screen,supports_relative_added_effect
+20260930,history_only,True,True,"frozen:normal_stay_personal_gap_w1,mixture:normal_gap_seconds_log_w1",False,False
+20260930,history_clock,True,False,"frozen:normal_stay_personal_gap_w1,mixture:normal_gap_seconds_log_w1",False,False
+20260930,history_relative,True,True,"frozen:normal_gap_seconds_log_w1,frozen:fraud_gap_seconds_log_w1,mixture:fraud_gap_seconds_log_w1,mixture:normal_gap_seconds_log_w1",False,False
+20261001,history_only,True,True,,True,False
+20261001,history_clock,True,False,,True,False
+20261001,history_relative,True,False,"frozen:normal_gap_seconds_log_w1,frozen:fraud_gap_seconds_log_w1,mixture:fraud_gap_seconds_log_w1,mixture:normal_gap_seconds_log_w1",False,False

@@ -1,0 +1,92 @@
+{
+  "config": {
+    "horizon": 1024,
+    "intervention": [
+      100,
+      200
+    ],
+    "modes": [
+      "GG_on",
+      "RG_on",
+      "GR_on",
+      "RR_on",
+      "GG_off",
+      "RR_off"
+    ],
+    "bins": [
+      [
+        6,
+        50
+      ],
+      [
+        50,
+        100
+      ],
+      [
+        100,
+        150
+      ],
+      [
+        150,
+        200
+      ],
+      [
+        100,
+        200
+      ],
+      [
+        200,
+        500
+      ],
+      [
+        500,
+        1024
+      ]
+    ],
+    "noise_seeds": [
+      20261202,
+      20261203,
+      20261204,
+      20261205
+    ],
+    "max_cpu_jobs": 4,
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012,
+      20261021,
+      20261022
+    ]
+  },
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_mid_history_diagnostic_v1/local_source/diagnose_mid.py": "31638e1784dd0d92bc744ea45ea7fdcdfc4235fc5e9e06bffeeea7926ed7abfc",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_mid_history_diagnostic_v1/report/PROTOCOL.md": "c0b3e9469adede6790475f62b51f3ff811caf99541680dee60e049d4fb1c4b6f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_mid_history_diagnostic_v1/report/IMPLEMENTATION_CHECK.json": "15b9a4b7fcbbc91abb9fb3b935557194b7f37fba9a3a5f396bffdd4fe7720c6f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/init_only/time_head.pt": "d5ffa33894e6485621f543df9212cc1da0404703e8d206a482ae55a406fabffb",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/MANIFEST.json": "c747f2571b7fde79f16737f0e8bf0c09e39ad9e57a568ebbb28e18949dc6e241",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/report/ARTIFACT_HASHES.json": "6d7d89a438caee5d515df8eb686503a9464ade2670a70c0c48a44513946ff43c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/local_source/run_initial.py": "77437c567b8df52c16c254334986d25a4eff7751902e59b6487838afa5d62c07",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/local_source/initial_clock.py": "d03f08520647ad398d1130a5899f6d793d4ad3dea2d88ed00d75b2cef8e24a0a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_early_history_diagnostic_v1/local_source/diagnose.py": "3e0b482b0c006818013684ac45ee6bc87c977f6fbe5bdd15a20ca8a43fcc1ca9",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_early_history_diagnostic_v1/local_source/diagnose_amendment2.py": "4bb78ba56a9b67c73d39efbc8d28d2d65600b6c506b6c31767a54edacd17651f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_followup_diagnostics_v1/positions.parquet": "d3bed9bd100905c33db8b3f2d5f9e98bd72b3a5e5cf5f748cc634c237a228c14",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_followup_diagnostics_v1/D1_INPUTS.json": "57077bd9b6478b9df860db8457c7463030ef4c23ffcf78f100021a5ac2380439",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_optimization.parquet": "bb6c3bff604f218d4f9c2d3eb18727b3a389ccaa0497649c45e6ec08ba3469c8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_internal_validation.parquet": "53008f14d9e691d83e05f9a8704d905675aff871d4eecaf5c07d92debe6093a4",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_residual_v1/metadata_development.parquet": "69ea8d2669a28e8727d95363aec3b7407fd3a5c369f986edaf22236946949844",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/runs/init_only_20260930/generated_validation_20261011.parquet": "69a4fc817109f187b0c1460dd3aa0e33711b79c54984bb996106676ebe3ae096",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/runs/init_only_20260930/generated_validation_20261012.parquet": "049957719f8186f4862826a407c3d1b0132cea94e02e751f37789b54af6332f9",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/runs/init_only_20260930/generated_validation_20261021.parquet": "4a7899a6b52a29c55cd796a1d55ef3669152c9fae17978be9511b2fb7043b794",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/runs/init_only_20260930/generated_validation_20261022.parquet": "6feaf3e60bceb120071c3d03f567ee0a5ef79b9796b4d08dac4c3f3724c57d61",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/runs/init_only_20261001/generated_validation_20261011.parquet": "b1013f62af2a50779fe9466e99801c304fd7e7ad50f31edfbdb6f88999f9cd7f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/runs/init_only_20261001/generated_validation_20261012.parquet": "a885aa9293cd65449368fcb62deca57e856496342337eb892b376fda5d6f6148",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/runs/init_only_20261001/generated_validation_20261021.parquet": "ceae7ca21abf56fcf5864fdab83f13f645e25841764a5f5a90ec285c1f26221d",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_initial_coupling_v1/runs/init_only_20261001/generated_validation_20261022.parquet": "749f174ded66e28a1fa12bb7ce028983e2382a92c8109643eb76f96f45417af6"
+  },
+  "created_utc": "2026-09-28T05:33:24.856527+00:00",
+  "new_fits": 0,
+  "test_events_read": false
+}

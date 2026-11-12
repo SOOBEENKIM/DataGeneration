@@ -1,0 +1,57 @@
+{
+ "mode": "routed_subst",
+ "substitute": true,
+ "seed": 20260929,
+ "fraud_weight": null,
+ "loss": "fraud rows only, unweighted",
+ "trn_events": 816283,
+ "trn_fraud_events": 4739,
+ "val_fraud_events": 475,
+ "epochs": 18,
+ "best_epoch_by_column": {
+  "gap": 3,
+  "amount_or_numeric_value": 13,
+  "category": 13
+ },
+ "best_val_by_column": {
+  "gap": 4.302455251593339,
+  "amount_or_numeric_value": 2.048240970812346,
+  "category": 2.1010447170859887
+ },
+ "selection": "per-column best fraud-row val CE under the arm's own context condition",
+ "trainable_parameters": 258123,
+ "total_parameters": 3851963,
+ "column_order": [
+  "tgt:t4/c4",
+  "tgt:/",
+  "tgt:t0/c0",
+  "tgt:t1/c1",
+  "tgt:t2/c2",
+  "tgt:t3/c3"
+ ],
+ "routed_sub_columns": [
+  "tgt:t0/c0__bin",
+  "tgt:t2/c2__bin",
+  "tgt:t3/c3__cat"
+ ],
+ "substituted_sub_columns": [
+  "tgt:t0/c0__bin",
+  "tgt:t1/c1__cat",
+  "tgt:t2/c2__bin",
+  "tgt:t3/c3__cat"
+ ],
+ "routed_columns": [
+  "gap",
+  "amount_or_numeric_value",
+  "category"
+ ],
+ "window": 100,
+ "batch_size": 8,
+ "lr": 0.001,
+ "patience": 5,
+ "max_epochs": 100,
+ "seconds": 335.3,
+ "base_weights_sha256": "c7f9eb243589d5834fa0ad295da328189671a70fcf609edcd80ec29a6b02421a",
+ "heads_sha256": "fa87b5630c8cc730020aaa10ffa37cee55725542c4935bb2f9260ec2e927e227",
+ "base_weights_unchanged": true
+}

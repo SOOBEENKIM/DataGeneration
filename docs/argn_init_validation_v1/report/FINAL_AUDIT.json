@@ -1,0 +1,22 @@
+{
+  "completed_utc": "2026-09-30T13:34:58.436434+00:00",
+  "full_generations": 84,
+  "rows": 16896495,
+  "independent_metric_checks": 420,
+  "max_metric_error": 9.71445146547012e-17,
+  "preserved_previous_hashes": 395,
+  "time_fit_seeds": [
+    73001,
+    73002,
+    73003
+  ],
+  "statistical_mixture_fits": 27,
+  "neural_history_fits": 6,
+  "calibration_fits": 9,
+  "new_native_argn_fits": 0,
+  "new_cpar_fits": 0,
+  "latest_generator_fits": 0,
+  "test_events_read": false,
+  "push": false,
+  "model_replacement": false
+}

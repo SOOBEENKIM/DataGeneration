@@ -1,0 +1,24 @@
+{
+  "cap": 500,
+  "selected_epoch": 500,
+  "internal": {
+    "reconstruction": 1.1256745741560166,
+    "kl": 18.052578939907793,
+    "confusion": [
+      [
+        99741,
+        10
+      ],
+      [
+        18,
+        457
+      ]
+    ],
+    "fraud_recall": 0.9621052631578947,
+    "fraud_precision": 0.9785867237687366,
+    "fraud_bce": 0.0032960046989284563,
+    "eos_accuracy": 0.9999102029413526
+  },
+  "source_hash": "af74d585cfcec8e99bd6d75fd64027651c9a085ec15a8138ae7979a7e0e96850",
+  "frozen": true
+}

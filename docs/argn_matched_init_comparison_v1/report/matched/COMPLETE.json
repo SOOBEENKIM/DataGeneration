@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-02T03:38:06.813323+00:00",
+  "outputs": 24,
+  "rows": 4750216,
+  "new_generations": 6,
+  "reused_generations": 18,
+  "metric_checks": 312,
+  "max_error": 9.71445146547012e-17,
+  "native_argn_new_fits": 0,
+  "matched_backbones": 3,
+  "draws_per_arm_per_backbone": 2,
+  "labels_lengths_exact": true,
+  "test_reads": 0,
+  "push": false,
+  "model_promotion": false,
+  "subgroups_confirmatory": false
+}

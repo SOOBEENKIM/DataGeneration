@@ -1,0 +1,14 @@
+{
+  "replayed_digit_positions": {
+    "optimization": 5713981,
+    "internal_validation": 701582,
+    "development": 1245979
+  },
+  "hashes": {
+    "optimization": "90ba969656bd9d2783aa4ff45f3f61081957f19949f190e13af98a11f74a0848",
+    "internal_validation": "aa92add82b850651e7d0392bd20d9f930a9eceee2720939d807d0e978cda912f",
+    "development": "1ef700263cc04f8ef963f6fe6c873808d1731d121d86686ddc7668cae61d5b2e"
+  },
+  "frozen_representation": true,
+  "test_events_read": false
+}

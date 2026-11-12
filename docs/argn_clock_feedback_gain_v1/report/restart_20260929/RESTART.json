@@ -1,0 +1,11 @@
+{
+  "pid": 2109307,
+  "started_utc": "2026-09-29T04:31:42.936531+00:00",
+  "source_sha256": "524dfdb1355acb8bfe904de16d619ed91101d13b58dab00b4051263e5daea2a3",
+  "previous_pipeline_pid": 1907476,
+  "previous_process_absent": true,
+  "previous_last_queue_update": "2026-09-28T15:08:26Z",
+  "previous_exit_reason": "not established; no traceback or completion record",
+  "session": "argn-feedback-20260929",
+  "model_protocol_and_fits_unchanged": true
+}

@@ -1,0 +1,75 @@
+{
+  "selected": {
+    "evaluation": 230,
+    "theta": [
+      0.2604981792480379,
+      0.1254106367628155,
+      0.05961395856260912
+    ],
+    "seconds": 191.43808993906714,
+    "objective": 0.04468869137149735,
+    "clock": 0.0,
+    "normal": 0.0254230362354217,
+    "fraud": 0.08722467625563639,
+    "personal": 0.02808695758676667,
+    "onset": 0.08787511675225408,
+    "bin0": 0.037558453794002584,
+    "bin1": 0.06231259977022224,
+    "bin2": 0.030689209565139867,
+    "fine_200": 0.12250018594966056,
+    "fine_500": 0.04342555107358849,
+    "fine_1024": 0.0852750022362346,
+    "fine_2048": 0.22084073861645664,
+    "bin2_refined": 0.09199198595849414,
+    "pooling_gap": 0.061302776393354276
+  },
+  "initial": {
+    "evaluation": 0,
+    "theta": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "seconds": 0.9193390631116927,
+    "objective": 0.15982563338264316,
+    "clock": 0.0,
+    "normal": 0.1384137661518402,
+    "fraud": 0.08722467625563639,
+    "personal": 0.0471234826576327,
+    "onset": 0.08787511675225408,
+    "bin0": 0.2676886415986891,
+    "bin1": 0.12700723874511383,
+    "bin2": 0.13088018197475002,
+    "fine_200": 0.2494186156703313,
+    "fine_500": 0.09965936199756772,
+    "fine_1024": 0.04262040513094316,
+    "fine_2048": 0.1668324738634054,
+    "bin2_refined": 0.14901662149653544,
+    "pooling_gap": 0.018136439521785425
+  },
+  "support": {
+    "split": "optimization",
+    "horizon": 3106,
+    "customers": 619,
+    "events": 815664,
+    "tail_events": 302200,
+    "counts": {
+      "normal": 810543,
+      "fraud": 4690,
+      "personal": 807705,
+      "onset": 429,
+      "bin0": 27601,
+      "bin1": 84660,
+      "bin2": 698282
+    }
+  },
+  "optimizer_success": true,
+  "optimizer_message": "Optimization terminated successfully.",
+  "evaluations": 237,
+  "frozen_personal_objective": 0.0439807756607253,
+  "frozen_personal_objective_parity": true,
+  "conditional_sample_sha256": "ad7ddea3b305bb532dc3f0196412892a1c40aba0d1ac742a123a0fa036136aa7",
+  "time_fit_seed": 73003,
+  "parent": 20261001,
+  "arm": "history_position3"
+}

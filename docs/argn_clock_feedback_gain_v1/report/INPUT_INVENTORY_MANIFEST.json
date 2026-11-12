@@ -1,0 +1,5 @@
+{
+  "prior_inventory_sha256": "547773e0b93b85330c5e747b8d63f0ff920a7a8e802ce299aa9bd97676e1f4ef",
+  "frozen_manifest_sha256": "9d63932d5cd284cd144590d79309af27efe8bccfe1466b8c84e29db0e649133c",
+  "note": "Supplemental inventory reference before observing any fit or generation result; no source/protocol change."
+}

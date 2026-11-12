@@ -1,0 +1,18 @@
+{
+  "adaptive_after_evaluation": true,
+  "inputs": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20260930/native_validation_20261011.parquet": "d35e5e4e1f59112f9f96d45002de96027b9b126647d5a39b5417eb0909bc9537",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20260930/native_validation_20261012.parquet": "b53d378eae823bf21449c490226eb96d3cf0c08b32c5302bf138ab9f4f9c7b0a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20261001/native_validation_20261011.parquet": "43aae7ffafc7db5d43c24bf930a89e47bdce10febbf007ea39a0fe367c97924f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_20261001/native_validation_20261012.parquet": "b0ecf6b43de99b49b76a570dd655bef8159684e2a06ea2822d8b700191a4316f",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20260930/native_validation_20261011.parquet": "fe1fe122915bd8961f1423d6001eee00a886e60ebc639668f319c944c4f2ca56",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20260930/native_validation_20261012.parquet": "f2883e09004410b871d9c6613ef731bb691eede5f8cc9398ccddb857bfad2c0e",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20261001/native_validation_20261011.parquet": "955cb2070fde8595f0f16c43ca5c1ce91e4e407149d7409f2c890902d110d941",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_state_first_v1/runs/B_S_20261001/native_validation_20261012.parquet": "3e89a78d58ec2f1473fd52cebd085d4c8df49e8f1203d65c604bc67514c06714"
+  },
+  "weights_unchanged": true,
+  "test_events_read": false,
+  "script_sha256": "11ec24f3feb38a7b3859d99a38faba17143175268f7efad681726d2e9e8eb972",
+  "protocol_sha256": "a358f0dd6b447fc329dbfd4a41ce5adc91cc2b1f0f4f74ecfea0b4c2cd2b8558",
+  "interpretation": "reencoded first-row conditional sensitivity; true lengths used only in teacher diagnostic; not free-generation results"
+}

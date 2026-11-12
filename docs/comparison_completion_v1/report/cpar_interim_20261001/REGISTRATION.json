@@ -1,0 +1,10 @@
+{
+  "purpose": "Evaluate completed CPAR and frozen ARGN now; final registered evaluator remains unchanged and runs after MeLD. No new fitting or selection.",
+  "frozen_evaluator_sha256": "1a2139a0dccf1a54f7fb1aa2bc257633dcf82eb4eb4165ffb1da3f47b1c9a44d",
+  "supplement_sha256": "9dc72c77dbabc54f17d7f6492fef5d26ba5a0437a9427839e489613b739f11e4",
+  "changes": [
+    "output directory",
+    "explicit interim status"
+  ],
+  "test_reads": 0
+}

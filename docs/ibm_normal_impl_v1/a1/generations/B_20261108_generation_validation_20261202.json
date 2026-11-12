@@ -1,0 +1,69 @@
+{
+ "arm": "B",
+ "fit_seed": 20261108,
+ "generation_seed": 20261202,
+ "device": "cpu",
+ "seconds": 170.4,
+ "events": 276185,
+ "customers": 240,
+ "frauds": 420,
+ "fraud_customers": 27,
+ "merchants_per_customer_median": 85.5,
+ "novel_merchant_normal": 0.08101100574764745,
+ "same_merchant_gap_lt_10min": 0.05014279437609842,
+ "same_merchant_gap_ge_1h": 0.04017887688773765,
+ "same_merchant_as_previous": 0.04112101337168341,
+ "rare_rows_named": 4394,
+ "base_weights_sha256": "b0b1f46a977d4e7eb35e6b665538b7ae0b5c5dd118565d69e22d19410059603f",
+ "heads_sha256": "94d23b571a57f528404eb964a9fbf9e04751569a177cbd1817dd10c8f6ae69f7",
+ "modules": {
+  "base": {
+   "label_key": "tgt:t5/c5__cat",
+   "label_first": true,
+   "transition": true,
+   "retrained_heads": true,
+   "attached": true
+  },
+  "merchant": {
+   "arm": "full",
+   "lam": 1.0,
+   "pi": 0.9318181818181818,
+   "merchant_key": "tgt:t1/c1__cat",
+   "counter": {
+    "merchant_steps": 3911,
+    "rows": 371520,
+    "repeat_mass": 344612.5774791215,
+    "novel_mass": 26907.422520910382,
+    "pool_mass": 396.47815992505423
+   },
+   "sticky": false,
+   "category_first": true
+  },
+  "gap": {
+   "arm": "table_kind",
+   "gap_key": "tgt:t0/c0__bin",
+   "counter": {
+    "gap_steps": 3911,
+    "onset": 292,
+    "cont": 448,
+    "exit": 291
+   }
+  },
+  "attr": {
+   "arm": "attr_all",
+   "keys": {
+    "label": "tgt:t5/c5__cat",
+    "merchant": "tgt:t1/c1__cat",
+    "category": "tgt:t3/c3__cat",
+    "channel": "tgt:t4/c4__cat"
+   },
+   "counter": {
+    "category_rows": 371474,
+    "channel_rows": 370746,
+    "channel_state_rows": 740,
+    "steps": 7822
+   }
+  }
+ },
+ "sha256": "c2f934fb60bd94b30d999aa45a86271eb91b030457cb652f79a118a2f6adf76e"
+}

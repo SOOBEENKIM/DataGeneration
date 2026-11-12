@@ -1,0 +1,23 @@
+{
+  "recursive_replays": 156,
+  "fixed_prefix_resamples": 96,
+  "evaluated_time_values": 20790732,
+  "new_model_fits": 0,
+  "new_native_full_generations": 0,
+  "test_events_read": false,
+  "pushed": false,
+  "completed_utc": "2026-09-28T05:35:55.325148+00:00",
+  "completed_jobs": 11,
+  "metric_rows": 2760,
+  "matched_supports": true,
+  "all_early_outputs_unchanged_checks": 130,
+  "prior_artifacts_hash_verified": 309,
+  "saved_full_generation_metrics_reproduced": 40,
+  "numpy_torch_and_identity_checks_passed": true,
+  "original_heads_and_generations_preserved": true,
+  "committed": false,
+  "active_model": "clock_prefix",
+  "diagnosed_local_candidate": "init_only",
+  "new_model_training_started": false,
+  "experiment_running": false
+}

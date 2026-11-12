@@ -1,0 +1,8 @@
+{
+  "weighted_w1_max_error": 4.649058915617843e-15,
+  "numpy_torch_and_phase_parity": true,
+  "unmodified_gmr_at_zero": true,
+  "strict_past_events": 300,
+  "reorder_and_future_invariance": true,
+  "legacy_uniform_objective_parity": true
+}

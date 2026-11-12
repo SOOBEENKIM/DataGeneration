@@ -1,0 +1,6 @@
+{
+  "unchanged_output_rejected": true,
+  "late_improvement_without_cost_passes": true,
+  "late_improvement_with_normal_regression_rejected": true,
+  "prior_files_verified": true
+}

@@ -1,0 +1,7 @@
+{
+  "label_only_draws": 768,
+  "full_transaction_generations": 0,
+  "source_sha256": "44e1ee849718d0f278b13bf5b284f63be5381b6d93d4434a903c87a9a99ccac4",
+  "parameter_sha256": "d5450283adb7d75db710cc0293fae1467ef0ac9da3af003541328506c917c1e7",
+  "test_events_read": false
+}

@@ -1,0 +1,15 @@
+{
+  "status": "rejected_keep_previous",
+  "screen_passed": false,
+  "active_candidate": "clock_prefix",
+  "previous_files_unchanged": true,
+  "push_permitted_by_screen": false,
+  "pushed": false,
+  "new_calibration_fits": 1,
+  "reproduction_fits": 1,
+  "new_native_argn_fits": 0,
+  "new_full_generations": 8,
+  "generated_rows": 1581756,
+  "test_events_read": false,
+  "completed_utc": "2026-09-27T17:06:26.867790+00:00"
+}

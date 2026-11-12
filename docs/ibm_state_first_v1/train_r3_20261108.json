@@ -1,0 +1,66 @@
+{
+ "mode": "state_routed_subst",
+ "states": [
+  "onset",
+  "continuation"
+ ],
+ "substitute": true,
+ "seed": 20261108,
+ "loss": "fraud rows only, routed by state, unweighted",
+ "epochs": 44,
+ "best_epoch": {
+  "onset/gap": 1,
+  "onset/amount_or_numeric_value": 11,
+  "onset/category": 17,
+  "onset/use_chip": 39,
+  "continuation/gap": 12,
+  "continuation/amount_or_numeric_value": 11,
+  "continuation/category": 21,
+  "continuation/use_chip": 39
+ },
+ "best_val": {
+  "onset/gap": 4.485499161940354,
+  "onset/amount_or_numeric_value": 4.184381925142729,
+  "onset/category": 4.685054937998454,
+  "onset/use_chip": 0.7330984320396032,
+  "continuation/gap": 4.255330497568304,
+  "continuation/amount_or_numeric_value": 4.407140124927867,
+  "continuation/category": 3.7615901123393667,
+  "continuation/use_chip": 0.39775858142159204
+ },
+ "val_rows_by_state": {
+  "onset": 39,
+  "continuation": 88
+ },
+ "trainable_parameters": 652408,
+ "column_order": [
+  "tgt:t5/c5",
+  "tgt:/",
+  "tgt:t0/c0",
+  "tgt:t1/c1",
+  "tgt:t2/c2",
+  "tgt:t3/c3",
+  "tgt:t4/c4"
+ ],
+ "routed_sub_columns": [
+  "tgt:t0/c0__bin",
+  "tgt:t2/c2__bin",
+  "tgt:t3/c3__cat",
+  "tgt:t4/c4__cat"
+ ],
+ "routed_columns": [
+  "gap",
+  "amount_or_numeric_value",
+  "category",
+  "use_chip"
+ ],
+ "window": 100,
+ "batch_size": 8,
+ "lr": 0.001,
+ "patience": 5,
+ "max_epochs": 100,
+ "seconds": 195.4,
+ "base_weights_sha256": "b0b1f46a977d4e7eb35e6b665538b7ae0b5c5dd118565d69e22d19410059603f",
+ "heads_sha256": "b7836f54cc5eb781d485c2c943693f2484c3ba548185a814707b162a53a4c38d",
+ "base_weights_unchanged": true
+}

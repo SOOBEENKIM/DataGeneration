@@ -1,0 +1,93 @@
+{
+ "arm": "episode",
+ "fit_seed": 20261109,
+ "generation_seed": 20261011,
+ "seconds": 160.5,
+ "events": 268483,
+ "customers": 240,
+ "frauds": 329,
+ "fraud_rate": 0.0012254034706108022,
+ "fraud_customers": 26,
+ "frauds_per_fraud_customer_max": 36,
+ "frauds_per_fraud_customer_quantiles": {
+  "0.25": 5.25,
+  "0.5": 9.5,
+  "0.75": 15.75,
+  "0.9": 24.5
+ },
+ "fraud_relative_position_mean": 0.5942832510183965,
+ "total_days_quantiles": {
+  "0.1": 274.0721643518519,
+  "0.5": 393.815625,
+  "0.9": 529.1346527777778
+ },
+ "rare_rows_named": 4380,
+ "episode_tables_sha256": "aa29ff640084500c2ca7b7e63350afaca981222d1db539e397877b3c012d91cf",
+ "base_weights_sha256": "c5f0089b58da630a1cd7ab866849033646f235818db245a1fa8ef350b54ddbb5",
+ "heads_sha256": "7c963ec1054718640214e0ccc55b025c83a87c3f5453e4a4fc606468e19e1ab8",
+ "modules": {
+  "base": {
+   "label_key": "tgt:t5/c5__cat",
+   "label_first": true,
+   "transition": true,
+   "retrained_heads": true,
+   "attached": true
+  },
+  "episode": {
+   "variant": "A5",
+   "shrink": 50,
+   "label_key": "tgt:t5/c5__cat",
+   "gap_key": "tgt:t0/c0__bin",
+   "counter": {
+    "label_steps": 3866,
+    "rows": 363533,
+    "expected_frauds": 416.5176903730583,
+    "beyond_window_rows": 97881,
+    "never_rows": 327190,
+    "run_rows": 424,
+    "after_rows": 35919
+   }
+  },
+  "merchant": {
+   "arm": "full",
+   "lam": 1.0,
+   "pi": 0.9318181818181818,
+   "merchant_key": "tgt:t1/c1__cat",
+   "counter": {
+    "merchant_steps": 3866,
+    "rows": 363533,
+    "repeat_mass": 337111.46684848354,
+    "novel_mass": 26421.53315153921,
+    "pool_mass": 214.61012658269368
+   },
+   "sticky": false,
+   "category_first": true
+  },
+  "gap": {
+   "arm": "table_kind",
+   "gap_key": "tgt:t0/c0__bin",
+   "counter": {
+    "gap_steps": 3866,
+    "onset": 149,
+    "cont": 276,
+    "exit": 148
+   }
+  },
+  "attr": {
+   "arm": "attr_all",
+   "keys": {
+    "label": "tgt:t5/c5__cat",
+    "merchant": "tgt:t1/c1__cat",
+    "category": "tgt:t3/c3__cat",
+    "channel": "tgt:t4/c4__cat"
+   },
+   "counter": {
+    "category_rows": 363503,
+    "channel_rows": 363008,
+    "channel_state_rows": 425,
+    "steps": 7732
+   }
+  }
+ },
+ "sha256": "1313dbc68df3d90e598774594dad461be636e8e77147266d06ea35db7a24c5ad"
+}

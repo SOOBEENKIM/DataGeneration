@@ -1,0 +1,91 @@
+{
+ "train_rate": 0.0011597510318045923,
+ "rows": [
+  {
+   "fit": 20261108,
+   "seed": 20261011,
+   "events": 281934,
+   "current_frauds": 477,
+   "beyond_window_row_share": 0.19981981598530152,
+   "registered_last_bin": {
+    "frauds": 390.97,
+    "rate": 0.001386742996587854,
+    "fraud_customers": 33.97,
+    "relpos": 0.6867647058823529,
+    "max": 57
+   },
+   "amendment2_year_average": {
+    "frauds": 328.18,
+    "rate": 0.0011640312981052302,
+    "fraud_customers": 28.35,
+    "relpos": 0.6590656284760845,
+    "max": 57
+   }
+  },
+  {
+   "fit": 20261108,
+   "seed": 20261012,
+   "events": 274731,
+   "current_frauds": 446,
+   "beyond_window_row_share": 0.1808168717763922,
+   "registered_last_bin": {
+    "frauds": 378.54,
+    "rate": 0.001377856885462507,
+    "fraud_customers": 33.19,
+    "relpos": 0.6913809082483782,
+    "max": 80
+   },
+   "amendment2_year_average": {
+    "frauds": 313.65,
+    "rate": 0.0011416622077595902,
+    "fraud_customers": 27.76,
+    "relpos": 0.6594776299434104,
+    "max": 80
+   }
+  },
+  {
+   "fit": 20261109,
+   "seed": 20261011,
+   "events": 281680,
+   "current_frauds": 488,
+   "beyond_window_row_share": 0.17452428287418348,
+   "registered_last_bin": {
+    "frauds": 379.53,
+    "rate": 0.0013473800056802046,
+    "fraud_customers": 33.06,
+    "relpos": 0.7005077111009315,
+    "max": 57
+   },
+   "amendment2_year_average": {
+    "frauds": 323.75,
+    "rate": 0.0011493538767395626,
+    "fraud_customers": 28.01,
+    "relpos": 0.6688741721854304,
+    "max": 57
+   }
+  },
+  {
+   "fit": 20261109,
+   "seed": 20261012,
+   "events": 272966,
+   "current_frauds": 732,
+   "beyond_window_row_share": 0.17868525750459766,
+   "registered_last_bin": {
+    "frauds": 377.74,
+    "rate": 0.0013838353494574416,
+    "fraud_customers": 32.67,
+    "relpos": 0.6935890964159516,
+    "max": 53
+   },
+   "amendment2_year_average": {
+    "frauds": 325.8,
+    "rate": 0.0011935552413121049,
+    "fraud_customers": 27.87,
+    "relpos": 0.6593172119487909,
+    "max": 53
+   }
+  }
+ ],
+ "note": "CPU free-run on the adopted model's existing dev generations (generated lengths and gaps); no dev labels used",
+ "test_read": false
+}

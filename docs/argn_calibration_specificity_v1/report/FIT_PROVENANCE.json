@@ -1,0 +1,187 @@
+{
+  "completed_utc": "2026-09-30T16:27:36.280055+00:00",
+  "checks": [
+    {
+      "arm": "history_global",
+      "parent": 20260930,
+      "time_fit_seed": 73001,
+      "evaluations": 19,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "bcbfb5359e6c75e897cf244b535970aa03dabab2b4bdfeb7a6abbb865d15f12b",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_position3",
+      "parent": 20260930,
+      "time_fit_seed": 73001,
+      "evaluations": 132,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "b409faec5f6d05f85c106e918d07bc2a9a1ca29c4f2a2a002a8810dcf996eec7",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_position6",
+      "parent": 20260930,
+      "time_fit_seed": 73001,
+      "evaluations": 359,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "11609152302387ec3e920afbfcd8eb00deaa68ff8b1111fd47c5adda90f499b8",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_global",
+      "parent": 20261001,
+      "time_fit_seed": 73001,
+      "evaluations": 25,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "49f067c268a59de87eb7f7a7f97e1cce5cd6e328d2692542e3b9a9f9e26dca16",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_position3",
+      "parent": 20261001,
+      "time_fit_seed": 73001,
+      "evaluations": 118,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "5ab35bc26833b13d880cc80d684b46b4095d8886b0e2ae1495681eeed0e59618",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_position6",
+      "parent": 20261001,
+      "time_fit_seed": 73001,
+      "evaluations": 403,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "73d40942037a39c0aca275f67935f279acf5d5745b69c5128d4b52c8d3e7bfa0",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_global",
+      "parent": 20260930,
+      "time_fit_seed": 73002,
+      "evaluations": 49,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "fd55426cd5b9fdf4bcf63bfcf9e17db76e5d68fc3c3fc802f33a4f5147fb5822",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_position3",
+      "parent": 20260930,
+      "time_fit_seed": 73002,
+      "evaluations": 147,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "281aff76bd08eccd6fe5fc1e6153f07d3698de50e6004f7f60a11ed8514700d4",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_position6",
+      "parent": 20260930,
+      "time_fit_seed": 73002,
+      "evaluations": 268,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "8065a8d0170ad109eed4f0ca3110bb4cadd05b6dd82bdb6a9e104c9345ebcd53",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_global",
+      "parent": 20261001,
+      "time_fit_seed": 73002,
+      "evaluations": 54,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "f2cc318a62bf1410bc0bcc4be37e93937c1da9f4cdbcae47e1c279fa94183a52",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_position3",
+      "parent": 20261001,
+      "time_fit_seed": 73002,
+      "evaluations": 96,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "edabdba113cf3e0184d977eaa1aa674b67813e9507fe73283a6715d79d3701b7",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_position6",
+      "parent": 20261001,
+      "time_fit_seed": 73002,
+      "evaluations": 330,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "57e8cfcf8a4be6c24df3040a1e6d8e8200bead928f8213a296c04c768ff9824d",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_global",
+      "parent": 20260930,
+      "time_fit_seed": 73003,
+      "evaluations": 19,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "9989010f2b7c534b67ba814954041f75f386c82fa90d85298b6b0abd09d49744",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_position3",
+      "parent": 20260930,
+      "time_fit_seed": 73003,
+      "evaluations": 245,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "149f9fe0b73f0a31f173dd3ac780e7006ff0c7708a3b921cdf7ab2a9c46c3370",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_position6",
+      "parent": 20260930,
+      "time_fit_seed": 73003,
+      "evaluations": 340,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "9bda028b9578d67155b2c09b4c4db48906d4c12bd7c2cb632125f17fa7dd3da7",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_global",
+      "parent": 20261001,
+      "time_fit_seed": 73003,
+      "evaluations": 25,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "6b06fe5a3260a42cc544e1065cde6cdc9569f795507f6c99aa257bb6846452f2",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_position3",
+      "parent": 20261001,
+      "time_fit_seed": 73003,
+      "evaluations": 237,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "cbf23c6fb4f63487855f4860f7323b5f1e9950c64ced050dd57f667aeb915624",
+      "prior_objective_parity": true
+    },
+    {
+      "arm": "history_position6",
+      "parent": 20261001,
+      "time_fit_seed": 73003,
+      "evaluations": 295,
+      "optimizer_success": true,
+      "frozen_tensors_exact": true,
+      "head_sha256": "c03567b21bed247d4c991c54721c0def523747067d47d6d35a6926b30ba36348",
+      "prior_objective_parity": true
+    }
+  ],
+  "new_calibration_fits": 18,
+  "new_neural_fits": 0
+}

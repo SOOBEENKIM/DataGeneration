@@ -1,0 +1,7 @@
+{
+  "new_fits": 0,
+  "new_full_generations": 0,
+  "checkpoint_selection_changed": false,
+  "test_events_read": false,
+  "qualification": "noise probes use actual other-block history, not free-generation performance"
+}

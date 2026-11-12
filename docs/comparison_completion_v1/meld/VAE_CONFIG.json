@@ -1,0 +1,19 @@
+{
+  "channels": 64,
+  "batch_size": 128,
+  "seq_len": 3123,
+  "n_bins": 1,
+  "n_cats": 2,
+  "n_nums": 2,
+  "cards": [
+    693,
+    14
+  ],
+  "feature_size": 5,
+  "hidden_size": 256,
+  "num_layers": 2,
+  "bidirectional": false,
+  "emb_dim": 128,
+  "time_dim": 8,
+  "lat_dim": 32
+}

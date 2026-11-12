@@ -1,0 +1,12 @@
+{
+  "arm": "onset_fit",
+  "fit_seed": 20261001,
+  "initial_validation_nll": 9.436137199401855,
+  "best_validation_nll": 9.42275333404541,
+  "selected_step": 50,
+  "last_step": 300,
+  "train_events": 433,
+  "validation_events": 48,
+  "parameters": 282591,
+  "head_sha256": "8c4bce8c8c8f0117969a40838b4a3a78e1eb5d724455bd1824faf2d1d1deacab"
+}

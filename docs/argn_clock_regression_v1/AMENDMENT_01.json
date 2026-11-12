@@ -1,0 +1,9 @@
+{
+  "reason": "Align the double-precision SciPy test fixture; no model changes",
+  "test_path": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/tests/test_argn_clock_regression.py",
+  "archived_original_test": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_regression_v1/original_test_fixture.py.txt",
+  "original_test_sha256": "5372c31238e8693872d7ddf23fadc913e5f723df22d23f23ff67aa8e438db46e",
+  "corrected_test_sha256": "08bd71c96e979d58ea3f1fda15a2e7d315b087a800b4e5b18edb253c5432c659",
+  "launcher_sha256": "8920f9493a978cb7e29f6cedabb90cdf4913683a13ed5b2f1664d64c900801ad",
+  "unchanged_head_sha256": "8591324e9757504a783821042737a487a7fea660a6b4d089f7681a0f038f78c0"
+}

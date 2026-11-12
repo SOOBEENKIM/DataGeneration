@@ -1,0 +1,7 @@
+{
+  "pid": 1236565,
+  "cuda_visible_devices": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+  "completed_fit_sha256": "e4518c15e6dcf319df4944a5602b19b0349645a95815dc90c8ba64474359fca9",
+  "runner_sha256": "7582e4955b74f053541efd2a87215bc296cc78c821808ed37e08845b57a23a28",
+  "training_resumed": false
+}

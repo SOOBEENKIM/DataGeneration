@@ -1,0 +1,8 @@
+{
+  "step": 500,
+  "kind": "ema",
+  "fit_seed": 20261022,
+  "selection_effect": false,
+  "preliminary": true,
+  "adequate_latest_baseline": false
+}

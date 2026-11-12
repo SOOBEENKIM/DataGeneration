@@ -1,0 +1,59 @@
+{
+  "checks": [
+    {
+      "seed": 73001,
+      "parent": 20260930,
+      "zero_exact": true,
+      "non_normal_laws_exact": true,
+      "weights_scales_exact": true,
+      "nested_personal_position_parity": true,
+      "numpy_torch_basis_parity": true
+    },
+    {
+      "seed": 73001,
+      "parent": 20261001,
+      "zero_exact": true,
+      "non_normal_laws_exact": true,
+      "weights_scales_exact": true,
+      "nested_personal_position_parity": true,
+      "numpy_torch_basis_parity": true
+    },
+    {
+      "seed": 73002,
+      "parent": 20260930,
+      "zero_exact": true,
+      "non_normal_laws_exact": true,
+      "weights_scales_exact": true,
+      "nested_personal_position_parity": true,
+      "numpy_torch_basis_parity": true
+    },
+    {
+      "seed": 73002,
+      "parent": 20261001,
+      "zero_exact": true,
+      "non_normal_laws_exact": true,
+      "weights_scales_exact": true,
+      "nested_personal_position_parity": true,
+      "numpy_torch_basis_parity": true
+    },
+    {
+      "seed": 73003,
+      "parent": 20260930,
+      "zero_exact": true,
+      "non_normal_laws_exact": true,
+      "weights_scales_exact": true,
+      "nested_personal_position_parity": true,
+      "numpy_torch_basis_parity": true
+    },
+    {
+      "seed": 73003,
+      "parent": 20261001,
+      "zero_exact": true,
+      "non_normal_laws_exact": true,
+      "weights_scales_exact": true,
+      "nested_personal_position_parity": true,
+      "numpy_torch_basis_parity": true
+    }
+  ],
+  "new_fit": false
+}

@@ -1,0 +1,29 @@
+{
+  "completed_utc": "2026-09-27T16:23:39.651258+00:00",
+  "new_full_generations": 40,
+  "new_generated_rows": 7908780,
+  "statistical_phase_GMM_fits": 4,
+  "two_coefficient_fits": 4,
+  "new_native_ARGN_fits": 0,
+  "new_unit_tests_passed": 3,
+  "native_routing_checks_passed": 10,
+  "all_new_labels_and_lengths_exact": true,
+  "independent_raw_audits": 40,
+  "focused_matched_GPU_outputs": 72,
+  "all_preserved_comparisons": 96,
+  "all_own_GPU_workers_exit_zero": true,
+  "final_test_events_read": false,
+  "head_parameters_chosen_on_optimization_only": true,
+  "source_and_report_hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_location_v1/INTERPRETATION.md": "1e44256b65a7e2c97c37fdd9b0bc2ef7434ecbeeb9a3df89d1c7fba9483758d8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_location_v1/RESULTS.md": "8697a331c8a844f1069a5db3b0eeb5e571bb0ec203f6a2c8cc8f3f5b3344a13c",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_location_v1/COMPLETE.json": "6dce7d51927ea070f2449ef76e823ade87361186773d33a5af966843764b193a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_location_v1/HORIZON_DIAGNOSTIC_COMPLETE.json": "f64c5317e57d0da069efdfb615303591f4de32a14e9492cd05906e88f5c35bbc",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_location_v1/screen.csv": "bb86cbcbef9fe9b60cd51648071b74738299a14fed1754e7cd261c2fbde98f15",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_location_v1/all_models.csv": "20d07ab9b29280857fccd922d35de63cafe21f7e3c32e37d29f233151d68ac46",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_location_v1/MODEL_DECISION.json": "43456f22ecad822f3ee6581220eedee3d908ce4325e7f799d38f74cb30a0a182",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_location_v1/horizon_means.csv": "63787bb9c4e159ae96956037402b2cc2faf6d658466678df556d6c5c45738576",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_location_v1/METHOD_AND_OVERLAP.md": "37dca955e83eef23c76d2e000e64a05fc77040e2ea2ccd59018add8ab69c95a2",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_location_v1/REPRODUCIBILITY.md": "0100f20509c1229485604f6a84452ab39f28ccee27fa97230a685ccfd6b9295c"
+  }
+}

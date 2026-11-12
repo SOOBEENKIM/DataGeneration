@@ -1,0 +1,5 @@
+model,path,reason
+ARGN_sf_merchant,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_merchant_20260928/generated_validation_20261011.parquet,missing
+ARGN_sf_merchant,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_merchant_20260928/generated_validation_20261012.parquet,missing
+ARGN_sf_merchant,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_merchant_20260929/generated_validation_20261011.parquet,missing
+ARGN_sf_merchant,/home/ssd-990/soobeenkim/DataGeneration/workspace/research-argn-state-first/artifacts/sparkov_transfer_v1/runs/sf_merchant_20260929/generated_validation_20261012.parquet,missing

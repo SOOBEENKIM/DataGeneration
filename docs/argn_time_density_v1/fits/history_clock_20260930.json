@@ -1,0 +1,22 @@
+{
+  "arm": "history_clock",
+  "fit_seed": 20260930,
+  "selected_step": 100,
+  "steps": 700,
+  "initial_nll": 11.46826451432699,
+  "best_nll": 11.405821330200215,
+  "train_positions": [
+    810543,
+    433,
+    431,
+    4257
+  ],
+  "validation_positions": [
+    99639,
+    48,
+    46,
+    424
+  ],
+  "parameters": 85641,
+  "sha256": "e86ab8b958731b903aff285964ab7a18be5dc470d24b81b029b8b8d27ffd188a"
+}

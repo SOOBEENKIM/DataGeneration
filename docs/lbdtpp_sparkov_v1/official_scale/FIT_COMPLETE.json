@@ -1,0 +1,13 @@
+{
+  "selected_epoch": 50,
+  "internal": [
+    7.52840384884157,
+    7.496667765188908,
+    0.0002882032215669481,
+    0.03144794292208077
+  ],
+  "seconds": 510.62950102286413,
+  "sha256": "2a763a2b4efbfd8ba5123d7b3e554e01972dc3a05551ad80f4a6a9414c812e67",
+  "independent_fits": 1,
+  "test_events_read": false
+}

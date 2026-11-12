@@ -1,0 +1,9 @@
+file,cohort,customers,events,fraud,short_customers
+part.000000-trn.parquet,all,619,816283,4739,49
+part.000000-trn.parquet,normal_only,137,198639,0,0
+part.000000-trn.parquet,mixed,433,617163,4258,0
+part.000000-trn.parquet,all_fraud,49,481,481,49
+part.000000-val.parquet,all,69,100226,475,3
+part.000000-val.parquet,normal_only,18,27437,0,0
+part.000000-val.parquet,mixed,48,72763,449,0
+part.000000-val.parquet,all_fraud,3,26,26,3

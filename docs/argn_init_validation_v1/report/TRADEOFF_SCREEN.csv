@@ -1,0 +1,7 @@
+comparator,normal_target,onset_target,costs,lower_normal_fits,lower_onset_fits,descriptive_screen
+no_initial,False,False,,0,1,False
+no_calibration,True,False,time500_1023,3,1,False
+gmr,True,False,time500_1023,3,2,False
+phase_gmm,True,True,time500_1023,3,3,False
+history_only,False,False,,3,0,False
+history_init_cal,False,False,,0,0,False

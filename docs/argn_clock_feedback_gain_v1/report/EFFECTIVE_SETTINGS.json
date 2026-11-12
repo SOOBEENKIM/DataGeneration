@@ -1,0 +1,107 @@
+{
+  "arms": [
+    "correction_gain",
+    "regression_gain",
+    "joint_gain",
+    "output_gain_shift"
+  ],
+  "fit_seeds": [
+    20260930,
+    20261001
+  ],
+  "generation_seeds": [
+    20261011,
+    20261012,
+    20261021,
+    20261022
+  ],
+  "fit_noise_seed": 20261201,
+  "diagnostic_seeds": [
+    20261202,
+    20261203
+  ],
+  "maxfev": 192,
+  "gain_parameters": {
+    "correction_gain": [
+      [
+        1.0
+      ],
+      [
+        [
+          0.0,
+          1.5
+        ]
+      ]
+    ],
+    "regression_gain": [
+      [
+        0.0
+      ],
+      [
+        [
+          0.0,
+          1.0
+        ]
+      ]
+    ],
+    "joint_gain": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.5
+        ]
+      ]
+    ],
+    "output_gain_shift": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        [
+          0.0,
+          1.5
+        ],
+        [
+          -0.35,
+          0.35
+        ]
+      ]
+    ]
+  },
+  "feedback_knots": [
+    50,
+    125,
+    350
+  ],
+  "additional_mean_bound": 0.35,
+  "mid_loss_refinement": [
+    [
+      50,
+      100
+    ],
+    [
+      100,
+      200
+    ]
+  ],
+  "mid_personal_tolerance": 0.005,
+  "mid_personal_penalty": 4.0,
+  "horizon": null,
+  "prefix_horizon": 1024,
+  "notes": [
+    "gain_parameters contains the effective per-arm initial values and bounds. The inherited top-level bounds entry is unused by run_feedback.fit.",
+    "horizon=None means full available customer length; prefix_horizon=1024 describes how existing random draws are preserved before extending, not a training-length truncation.",
+    "The actual training optimizer is Powell, xtol=ftol=.001, 191 optimizer evaluations plus explicit initial identity evaluation. All arms use the same maximum budget, not forced identical iteration counts.",
+    "New heads share a single optimization-data/noise fit across the two frozen native parents.",
+    "No final test events are used. All 32 prospective native generations use the existing development/validation cohort."
+  ]
+}

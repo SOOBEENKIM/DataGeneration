@@ -1,0 +1,14 @@
+{
+  "numpy_torch_max_errors": [
+    1.7763568394002505e-15,
+    1.7763568394002505e-15,
+    1.7763568394002505e-15,
+    1.7763568394002505e-15
+  ],
+  "frozen_own_clock_first200_exact": true,
+  "identity_head_exact": true,
+  "non_target_phases_exact": true,
+  "later_conditional_head_unchanged": true,
+  "mixtures_normalized": true,
+  "first_gap_native_unchanged": true
+}

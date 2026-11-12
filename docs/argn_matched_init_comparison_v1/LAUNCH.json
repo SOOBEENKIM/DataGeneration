@@ -1,0 +1,101 @@
+{
+  "pid": 284628,
+  "utc": "2026-10-02T02:44:51.236778+00:00",
+  "jobs": [
+    {
+      "key": "existing_costs",
+      "kind": "cpu",
+      "deps": [],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/report/existing_costs/COMPLETE.json",
+      "cmd": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/local_source/evaluate_matched.py",
+        "--existing-only"
+      ]
+    },
+    {
+      "key": "fit_20261021",
+      "kind": "cpu",
+      "deps": [],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/fits/statistics_20261021/HEAD_PREFLIGHT.json",
+      "cmd": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/local_source/matched_study.py",
+        "fit",
+        "--seed",
+        "20261021"
+      ]
+    },
+    {
+      "key": "generate_20261021",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/fits/statistics_20261021/HEAD_PREFLIGHT.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/runs/init_only_20261021/COMPLETE.json",
+      "cmd": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/local_source/matched_study.py",
+        "generate",
+        "--seed",
+        "20261021"
+      ]
+    },
+    {
+      "key": "fit_20261022",
+      "kind": "cpu",
+      "deps": [],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/fits/statistics_20261022/HEAD_PREFLIGHT.json",
+      "cmd": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/local_source/matched_study.py",
+        "fit",
+        "--seed",
+        "20261022"
+      ]
+    },
+    {
+      "key": "generate_20261022",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/fits/statistics_20261022/HEAD_PREFLIGHT.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/runs/init_only_20261022/COMPLETE.json",
+      "cmd": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/local_source/matched_study.py",
+        "generate",
+        "--seed",
+        "20261022"
+      ]
+    },
+    {
+      "key": "fit_20261023",
+      "kind": "cpu",
+      "deps": [],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/fits/statistics_20261023/HEAD_PREFLIGHT.json",
+      "cmd": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/local_source/matched_study.py",
+        "fit",
+        "--seed",
+        "20261023"
+      ]
+    },
+    {
+      "key": "generate_20261023",
+      "kind": "gpu",
+      "deps": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/fits/statistics_20261023/HEAD_PREFLIGHT.json"
+      ],
+      "done": "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/runs/init_only_20261023/COMPLETE.json",
+      "cmd": [
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-reporting/argn-state-first-2026-09-27/runtime/bin/python",
+        "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_matched_init_comparison_v1/local_source/matched_study.py",
+        "generate",
+        "--seed",
+        "20261023"
+      ]
+    }
+  ]
+}

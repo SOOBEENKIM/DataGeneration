@@ -1,0 +1,13 @@
+fit_seed,arm,split,case,label,positions,real_median,generated_median,log_w1
+20260930,native_gap,development,sampled_category,0,1134,18784.0,17400.0,0.0651813468564703
+20260930,native_gap,development,sampled_category,1,1134,4598.5,29173.5,1.4881660117872324
+20260930,native_gap,development,true_category,0,1134,18784.0,17425.0,0.06566412099352406
+20260930,native_gap,development,true_category,1,1134,4598.5,28995.5,1.483714964916082
+20260930,natural_gap,development,sampled_category,0,1134,18784.0,16697.0,0.09064707336560306
+20260930,natural_gap,development,sampled_category,1,1134,4598.5,17778.0,1.109238165058466
+20260930,natural_gap,development,true_category,0,1134,18784.0,16732.5,0.09263436079827354
+20260930,natural_gap,development,true_category,1,1134,4598.5,17639.5,1.0978475362860456
+20260930,balanced_gap,development,sampled_category,0,1134,18784.0,17553.0,0.06819816341629532
+20260930,balanced_gap,development,sampled_category,1,1134,4598.5,6235.5,0.15057323021201405
+20260930,balanced_gap,development,true_category,0,1134,18784.0,17782.5,0.06490571580372641
+20260930,balanced_gap,development,true_category,1,1134,4598.5,5942.5,0.11822005099238354

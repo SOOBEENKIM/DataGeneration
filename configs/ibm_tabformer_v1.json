@@ -1,0 +1,17 @@
+{
+  "version": "ibm-tabformer-v1",
+  "engine_version": "1.0.4",
+  "window_year": 2013,
+  "min_events_in_window": 30,
+  "split_seed": 20261108,
+  "train_customers": 1000,
+  "development_customers": 240,
+  "preparation_seed": 20261108,
+  "fit_seeds": [20261108, 20261109],
+  "generation_seeds": [20261011, 20261012],
+  "max_training_minutes": 120,
+  "device": "cuda",
+  "cpu_threads": 4,
+  "core_columns": ["gap", "receiver_or_mark", "amount_or_numeric_value", "category", "use_chip", "event_is_fraud"],
+  "static_columns": ["first_year", "cards_before", "events_per_year_before", "home_state"]
+}

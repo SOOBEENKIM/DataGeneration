@@ -1,0 +1,5 @@
+{
+  "reason": "Pandas nested Arrow state arrays require np.stack; diagnostic reader only, no trained model or input data changed. Both first attempts failed at the first collator, before neural outputs.",
+  "original_script_sha256": "2c4b4640c4659330a52f8ba821a4acad0904475afefe73c0ebb4b477dfa827f2",
+  "corrected_script_sha256": "e584f0a5421a2a97f705563e012170c68aea27599ea2990507d980038e8d7b7d"
+}

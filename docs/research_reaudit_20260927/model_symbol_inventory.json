@@ -1,0 +1,283 @@
+[
+  {
+    "path": "models/__init__.py",
+    "lines": 0,
+    "top_level_symbols": []
+  },
+  {
+    "path": "models/argn_relation_pilot.py",
+    "lines": 148,
+    "top_level_symbols": [
+      "tensor_hash",
+      "RelationPath",
+      "official_extension"
+    ]
+  },
+  {
+    "path": "models/candidate_components_v2_6.py",
+    "lines": 428,
+    "top_level_symbols": [
+      "weighted_tvae_loss_v2_6",
+      "WeightedCoFSeqGenV26",
+      "_tempered_choice",
+      "ddim_sample_v2_6"
+    ]
+  },
+  {
+    "path": "models/cof_ccmtpp_v1.py",
+    "lines": 1099,
+    "top_level_symbols": [
+      "_prefix_mask",
+      "CausalEventDecoder",
+      "GapMixtureParameters",
+      "SampledGap",
+      "MixtureLogisticGapHead",
+      "_canonical_sha256",
+      "ReceiverHierarchyState",
+      "fit_train_receiver_hierarchy",
+      "FlatReceiverDecoder",
+      "_validate_sampled_gap",
+      "_causal_pointer",
+      "FlatReceiverDistribution",
+      "FlatCopyReceiverDecoder",
+      "HierarchicalReceiverDistribution",
+      "HierarchicalCopyReceiverDecoder",
+      "receiver_nll_diagnostics",
+      "balanced_event_mean",
+      "ConditionalAmountHead",
+      "CoFCCMTPPV1",
+      "SampledMark",
+      "_hierarchy_to_dict",
+      "_hierarchy_from_dict",
+      "_state_dict_sha256",
+      "build_checkpoint_bundle",
+      "load_checkpoint_bundle"
+    ]
+  },
+  {
+    "path": "models/cof_hcmttpp_v2.py",
+    "lines": 886,
+    "top_level_symbols": [
+      "_canonical_sha256",
+      "_ordered_tensor_sha256",
+      "TrainOnlyH1TailState",
+      "fit_train_only_h1_tail_state",
+      "H1GapParameters",
+      "RQSTransformResult",
+      "H1SampledGap",
+      "InvalidH1GapStateError",
+      "H1HurdleRQSGapDecoder",
+      "CoFHCMTTPPV2H1",
+      "_state_dict_sha256",
+      "_tail_state_to_dict",
+      "_tail_state_from_dict",
+      "build_h1_checkpoint_bundle",
+      "load_h1_checkpoint_bundle"
+    ]
+  },
+  {
+    "path": "models/cof_seqgen.py",
+    "lines": 236,
+    "top_level_symbols": [
+      "CoFSeqGen"
+    ]
+  },
+  {
+    "path": "models/cof_seqgen_saf.py",
+    "lines": 1028,
+    "top_level_symbols": [
+      "GapSupportState",
+      "_weighted_median",
+      "fit_train_only_gap_support",
+      "SAFCandidate",
+      "SAFModelConfig",
+      "UnorderedGapDecoder",
+      "OrderedHazardGapDecoder",
+      "HurdleLogNormalGapDecoder",
+      "_categorical_embedding_dim",
+      "CausalHistoryEncoder",
+      "CoFSeqGenSAF"
+    ]
+  },
+  {
+    "path": "models/cof_seqgen_v3.py",
+    "lines": 667,
+    "top_level_symbols": [
+      "JointStateCodec",
+      "corrupt_joint_state",
+      "DirectJointDiscretePath",
+      "FactorizedJointDiscretePath",
+      "V3DenoiserOutput",
+      "CoFSeqDenoiserV3",
+      "CoFSeqGenV3"
+    ]
+  },
+  {
+    "path": "models/coherence_teacher.py",
+    "lines": 255,
+    "top_level_symbols": [
+      "CoherenceTeacher",
+      "pretrain_coherence_teacher",
+      "SequenceTeacher",
+      "pretrain_sequence_teacher"
+    ]
+  },
+  {
+    "path": "models/cs_saf.py",
+    "lines": 193,
+    "top_level_symbols": [
+      "CSSAF"
+    ]
+  },
+  {
+    "path": "models/cs_saf_binned_amount.py",
+    "lines": 115,
+    "top_level_symbols": [
+      "fit_amount_pool",
+      "pool_metadata",
+      "pool_tail_matrix",
+      "BinnedAmountD"
+    ]
+  },
+  {
+    "path": "models/cs_saf_calibration.py",
+    "lines": 97,
+    "top_level_symbols": [
+      "CalibratedCSSAF",
+      "repeat_nll_and_gradient",
+      "fit_repeat_calibration"
+    ]
+  },
+  {
+    "path": "models/cs_saf_calibration_u.py",
+    "lines": 63,
+    "top_level_symbols": [
+      "CalibratedU"
+    ]
+  },
+  {
+    "path": "models/cs_saf_external.py",
+    "lines": 169,
+    "top_level_symbols": [
+      "ExternalUG"
+    ]
+  },
+  {
+    "path": "models/cs_saf_external_controls.py",
+    "lines": 248,
+    "top_level_symbols": [
+      "ExternalControls"
+    ]
+  },
+  {
+    "path": "models/cs_saf_gap_calibration.py",
+    "lines": 116,
+    "top_level_symbols": [
+      "GapCorrection",
+      "GapCalibratedE",
+      "GapCalibratedU",
+      "objective_gradient",
+      "fit_gap_offsets"
+    ]
+  },
+  {
+    "path": "models/cs_saf_observable_coupling.py",
+    "lines": 53,
+    "top_level_symbols": [
+      "_ConstrainedRepeat",
+      "observable_gap_repeat_joint"
+    ]
+  },
+  {
+    "path": "models/cs_saf_observed_repeat_control.py",
+    "lines": 94,
+    "top_level_symbols": [
+      "assign_bins",
+      "fit_controls",
+      "apply_numpy",
+      "apply_torch",
+      "redistribute"
+    ]
+  },
+  {
+    "path": "models/cs_saf_structure.py",
+    "lines": 93,
+    "top_level_symbols": [
+      "_MarginalLogits",
+      "constrained_repeat_logits",
+      "ObservedRepeatStructure"
+    ]
+  },
+  {
+    "path": "models/cs_saf_v2.py",
+    "lines": 102,
+    "top_level_symbols": [
+      "CSSAFv2"
+    ]
+  },
+  {
+    "path": "models/cs_saf_v3.py",
+    "lines": 132,
+    "top_level_symbols": [
+      "CSSAFv3"
+    ]
+  },
+  {
+    "path": "models/cs_saf_v4.py",
+    "lines": 17,
+    "top_level_symbols": [
+      "CSSAFv4"
+    ]
+  },
+  {
+    "path": "models/evaluation_only_components_v2_7.py",
+    "lines": 204,
+    "top_level_symbols": [
+      "ddim_sample_gap_bias_v2_7"
+    ]
+  },
+  {
+    "path": "models/sampler.py",
+    "lines": 253,
+    "top_level_symbols": [
+      "_cosine_alpha_sigma",
+      "calibrate_temperature_entity",
+      "ddim_sample",
+      "sample_empirical_dt_bin",
+      "sample_empirical_x_cat"
+    ]
+  },
+  {
+    "path": "models/seq_denoiser.py",
+    "lines": 145,
+    "top_level_symbols": [
+      "SeqDenoiser"
+    ]
+  },
+  {
+    "path": "models/single_factor_components_v2_6.py",
+    "lines": 466,
+    "top_level_symbols": [
+      "EpsilonPredictionCoFSeqGenV26",
+      "epsilon_reverse_sample_v2_6",
+      "variance_preserving_residual"
+    ]
+  },
+  {
+    "path": "models/soft_g.py",
+    "lines": 92,
+    "top_level_symbols": [
+      "soft_g"
+    ]
+  },
+  {
+    "path": "models/teacher.py",
+    "lines": 253,
+    "top_level_symbols": [
+      "BehaviorTeacher",
+      "compute_g_from_real",
+      "compute_g_stats_from_data",
+      "pretrain_teacher"
+    ]
+  }
+]

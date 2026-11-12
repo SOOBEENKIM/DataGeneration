@@ -1,0 +1,16 @@
+split,group,events,customers,frauds,fraud_probability
+optimization,first_all,619,619,49,0.0791599353796446
+optimization,first_length_le100,49,49,49,1.0
+optimization,first_length_gt100,570,570,0,0.0
+optimization,normal_before_any_fraud,475746,570,433,0.0009101495335746385
+optimization,normal_after_prior_fraud,335230,431,0,0.0
+internal_validation,first_all,69,69,3,0.043478260869565216
+internal_validation,first_length_le100,3,3,3,1.0
+internal_validation,first_length_gt100,66,66,0,0.0
+internal_validation,normal_before_any_fraud,72059,66,48,0.0006661208176633037
+internal_validation,normal_after_prior_fraud,27628,46,0,0.0
+development,first_all,147,147,12,0.08163265306122448
+development,first_length_le100,12,12,12,1.0
+development,first_length_gt100,135,135,0,0.0
+development,normal_before_any_fraud,114839,135,102,0.0008882000017415686
+development,normal_after_prior_fraud,61878,100,0,0.0

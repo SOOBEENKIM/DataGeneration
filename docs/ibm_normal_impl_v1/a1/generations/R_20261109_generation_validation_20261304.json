@@ -1,0 +1,90 @@
+{
+ "arm": "R",
+ "fit_seed": 20261109,
+ "generation_seed": 20261304,
+ "device": "cpu",
+ "seconds": 175.1,
+ "events": 273830,
+ "customers": 240,
+ "frauds": 346,
+ "fraud_customers": 30,
+ "merchants_per_customer_median": 87.0,
+ "novel_merchant_normal": 0.08139050182094748,
+ "same_merchant_gap_lt_10min": 0.680786686838124,
+ "same_merchant_gap_ge_1h": 0.06902244163772563,
+ "same_merchant_as_previous": 0.17476794639424398,
+ "rare_rows_named": 4354,
+ "base_weights_sha256": "c5f0089b58da630a1cd7ab866849033646f235818db245a1fa8ef350b54ddbb5",
+ "heads_sha256": "7c963ec1054718640214e0ccc55b025c83a87c3f5453e4a4fc606468e19e1ab8",
+ "modules": {
+  "base": {
+   "label_key": "tgt:t5/c5__cat",
+   "label_first": true,
+   "transition": true,
+   "retrained_heads": true,
+   "attached": true
+  },
+  "merchant": {
+   "arm": "full",
+   "lam": 1.0,
+   "pi": 0.9318181818181818,
+   "merchant_key": "tgt:t1/c1__cat",
+   "counter": {
+    "merchant_steps": 3911,
+    "rows": 369837,
+    "repeat_mass": 343087.0275582744,
+    "novel_mass": 26749.9724417585,
+    "pool_mass": 284.9803788978007
+   },
+   "sticky": false,
+   "category_first": true
+  },
+  "stay": {
+   "stay": [
+    0.8035615171137835,
+    0.7693010785448784,
+    0.7006713399267244,
+    0.44129696716802913,
+    0.17177290065785836,
+    0.05865882435811644,
+    0.06374940538702123,
+    0.10258641893553819
+   ],
+   "merchant_key": "tgt:t1/c1__cat",
+   "gap_key": "tgt:t0/c0__bin",
+   "counter": {
+    "merchant_steps": 3911,
+    "eligible_rows": 363265,
+    "raised_rows": 311463,
+    "target_mass": 65417.689080535616,
+    "pointer_mass": 14803.357943687814
+   }
+  },
+  "gap": {
+   "arm": "table_kind",
+   "gap_key": "tgt:t0/c0__bin",
+   "counter": {
+    "gap_steps": 3911,
+    "onset": 229,
+    "cont": 330,
+    "exit": 229
+   }
+  },
+  "attr": {
+   "arm": "attr_all",
+   "keys": {
+    "label": "tgt:t5/c5__cat",
+    "merchant": "tgt:t1/c1__cat",
+    "category": "tgt:t3/c3__cat",
+    "channel": "tgt:t4/c4__cat"
+   },
+   "counter": {
+    "category_rows": 369812,
+    "channel_rows": 369209,
+    "channel_state_rows": 559,
+    "steps": 7822
+   }
+  }
+ },
+ "sha256": "5089b8abadb349f8069aad6e11328f78482cbbecf1aab43569dd6bc0e143cf34"
+}

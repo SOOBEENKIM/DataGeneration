@@ -1,0 +1,33 @@
+TEACHER B 20261001 2 147
+TEACHER B 20261001 32 147
+TEACHER B 20261001 62 147
+TEACHER B 20261001 92 147
+TEACHER B 20261001 122 147
+ONE_STEP B 20261001 sample_all seconds 7.1
+ONE_STEP B 20261001 fix_amount_or_numeric_value seconds 7.4
+ONE_STEP B 20261001 fix_gap seconds 7.8
+ONE_STEP B 20261001 fix_receiver_or_mark seconds 8.1
+ONE_STEP B 20261001 fix_category seconds 8.5
+D1_COMPLETE B 20261001
+TEACHER B_S 20261001 2 147
+TEACHER B_S 20261001 32 147
+TEACHER B_S 20261001 62 147
+TEACHER B_S 20261001 92 147
+TEACHER B_S 20261001 122 147
+ONE_STEP B_S 20261001 sample_all seconds 6.3
+ONE_STEP B_S 20261001 fix_amount_or_numeric_value seconds 6.7
+ONE_STEP B_S 20261001 fix_gap seconds 7.0
+ONE_STEP B_S 20261001 fix_receiver_or_mark seconds 7.4
+ONE_STEP B_S 20261001 fix_category seconds 7.7
+D1_COMPLETE B_S 20261001
+TEACHER B_event_weighted 20261001 2 147
+TEACHER B_event_weighted 20261001 32 147
+TEACHER B_event_weighted 20261001 62 147
+TEACHER B_event_weighted 20261001 92 147
+TEACHER B_event_weighted 20261001 122 147
+ONE_STEP B_event_weighted 20261001 sample_all seconds 6.3
+ONE_STEP B_event_weighted 20261001 fix_amount_or_numeric_value seconds 6.7
+ONE_STEP B_event_weighted 20261001 fix_gap seconds 7.0
+ONE_STEP B_event_weighted 20261001 fix_receiver_or_mark seconds 7.4
+ONE_STEP B_event_weighted 20261001 fix_category seconds 7.8
+D1_COMPLETE B_event_weighted 20261001

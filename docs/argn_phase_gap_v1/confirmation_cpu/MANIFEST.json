@@ -1,0 +1,25 @@
+{
+  "config": {
+    "fits": [
+      20260930,
+      20261001
+    ],
+    "draws": [
+      20261021,
+      20261022
+    ],
+    "arms": [
+      "frozen",
+      "boundary_fit",
+      "phase_mixture"
+    ],
+    "device": "cpu"
+  },
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/confirm_argn_gap_cpu.py": "9c90185cd39d0ef2557655d8accef895dc151ad4f11feb82c3097369308585b2",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_phase_gap_v1/confirmation/CPU_AMENDMENT.md": "48ba0f136954585259ddf8682d7252d9b0b167d10807a0a62f734103236c41d0"
+  },
+  "new_training": 0,
+  "test_events_read": false,
+  "created_utc": "2026-09-27T14:27:57.595603+00:00"
+}

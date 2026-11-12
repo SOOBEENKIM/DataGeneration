@@ -1,0 +1,47 @@
+{
+ "train_events": 1123517,
+ "train_frauds": 1303,
+ "train_fraud_rate": 0.0011597510318045923,
+ "weight_sqrt": 29,
+ "weight_inv": 861,
+ "rebalance_probabilities": {
+  "1": 0.0011597510318045923
+ },
+ "engine_trn_partition": {
+  "customers": 900,
+  "fraud_customers": 103,
+  "events": 1011592,
+  "frauds": 1176
+ },
+ "engine_val_partition": {
+  "customers": 100,
+  "events": 111925,
+  "frauds": 127
+ },
+ "oversample": {
+  "x3": {
+   "trn_customers": 1106,
+   "fraud_customers": 309,
+   "normal_customers": 797,
+   "approx_fraud_rate": 0.0028002222398603063
+  },
+  "x8": {
+   "trn_customers": 1621,
+   "fraud_customers": 824,
+   "normal_customers": 797,
+   "approx_fraud_rate": 0.005002472523090175
+  }
+ },
+ "label_first_columns": [
+  "event_is_fraud",
+  "gap",
+  "receiver_or_mark",
+  "amount_or_numeric_value",
+  "category",
+  "use_chip"
+ ],
+ "train_sha256": "063a1c0f4c30806e5f7254e75b426c75b368be589dd15be047321572747ab719",
+ "protocol_sha256": "35fd3887c069e71b4987d94bebd8d68fbcea2ddadc4cd8429922522399b90d1b",
+ "script_sha256": "0b5dd788d5c36a368040be9b66f59c2881c261769f45ab754fb77d04a1c7b365",
+ "test_read": false
+}

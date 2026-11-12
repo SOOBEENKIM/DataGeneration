@@ -1,0 +1,29 @@
+{
+ "merchant_codes": 9411,
+ "merchants_with_category_table": 9411,
+ "merchants_with_channel_table": 9407,
+ "category_purity_row_weighted": 0.9998612819568247,
+ "channel_purity_row_weighted": 1.0,
+ "rare_rows": 32287,
+ "rare_category_top": 0.08480193266639824,
+ "rows": 1120826,
+ "customers": 1000,
+ "fit": 20261109,
+ "seconds": 0.2,
+ "keys": {
+  "label": "tgt:t5/c5__cat",
+  "merchant": "tgt:t1/c1__cat",
+  "category": "tgt:t3/c3__cat",
+  "channel": "tgt:t4/c4__cat"
+ },
+ "channel_codes": {
+  "_RARE_": 0,
+  "Online Transaction": 1,
+  "Swipe Transaction": 2
+ },
+ "channel_state_table": [
+  0.7566248256624826,
+  0.951530612244898
+ ],
+ "tables_sha256": "7848c3048d48741db47d21b1e9cd78e29bc336737790a6e4e67474138dfe719a"
+}

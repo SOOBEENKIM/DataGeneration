@@ -1,0 +1,8 @@
+{
+  "arm": "history_calibration_only",
+  "time_fit_seed": 73002,
+  "parent": 20260930,
+  "sha256": "6c7617b7df86881959e8d1539f09bdabc228458b79557bfb05f0e9a3bdb88cee",
+  "source_sha256": "4d699a0c01091182fe3e60182c37dfe3da90b9eec03309f4b02095ecf66dbbac",
+  "new_fit": false
+}

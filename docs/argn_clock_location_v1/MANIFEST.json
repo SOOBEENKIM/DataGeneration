@@ -1,0 +1,52 @@
+{
+  "config": {
+    "arms": [
+      "clock_prefix",
+      "clock_rollout"
+    ],
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261011,
+      20261012,
+      20261021,
+      20261022
+    ],
+    "allowed_gpu_uuids": [
+      "GPU-91378a3a-8cbc-62ac-7636-36e0f3f7d933",
+      "GPU-4e575de7-5122-2c13-d12d-9ee15e4a1af9",
+      "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+    ],
+    "horizon": 1024,
+    "fit_noise_seed": 20261201,
+    "diagnostic_seeds": [
+      20261202,
+      20261203
+    ],
+    "maxfev": 48,
+    "bounds": [
+      [
+        -0.35,
+        0.35
+      ],
+      [
+        -1.0,
+        1.0
+      ]
+    ]
+  },
+  "created_utc": "2026-09-27T16:01:02.600825+00:00",
+  "test_events_read": false,
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/run_argn_clock_location.py": "6dc8a2d1552a33c9b21ad6934bfe18e35be74bfb25722f165f8c470839ea8a1a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/benchmarks/argn_clock_location.py": "b3a28137f27e2c1b3d29eca152660f3f5ff7a76ac0c8fe124d14edb70c45f020",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/tests/test_argn_clock_location.py": "c1fdd236ab37e2746b6f3f48de85c98256d55a02a17f64935c747a703b851d02",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_location_v1/PROTOCOL.md": "9e49a53122d0b99773c1b135b4414c0e28f27aef96900b41a6294f9be824abb6",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_clock_evolution_v1/MANIFEST.json": "38bfab32448a65ac9516d8241326b20bbd386898314155686483c1c0fdaab756",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_clock_evolution_v1/internal_conditional_diagnostics.csv": "232421d663369dd3e404b62914a59be79276b447d765d1c57c9f463176be2f2e"
+  },
+  "development_generations_not_consulted": true
+}

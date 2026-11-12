@@ -1,0 +1,62 @@
+{
+  "selected": {
+    "evaluation": 42,
+    "a": -0.008190303597799731,
+    "b": 0.3399482412038526,
+    "objective": 0.03828033361196969,
+    "clock": 0.0,
+    "normal": 0.027704995478020196,
+    "fraud": 0.04800561292986738,
+    "personal": 0.0038827630626983114,
+    "onset": 0.036725480826068094,
+    "bin0": 0.03422428887783864,
+    "bin1": 0.08055599886043206,
+    "bin2": 0.031786727499486855
+  },
+  "initial": {
+    "evaluation": 0,
+    "a": 0.0,
+    "b": 0.0,
+    "objective": 0.07192807732083084,
+    "clock": 0.0,
+    "normal": 0.026416779386799604,
+    "fraud": 0.04800561292986738,
+    "personal": 0.0032901103186094927,
+    "onset": 0.036725480826068094,
+    "bin0": 0.20271587577655936,
+    "bin1": 0.11176804261892181,
+    "bin2": 0.03783420736910504
+  },
+  "reference": {
+    "clock": 0.0,
+    "normal": 0.026416779386799604,
+    "fraud": 0.04800561292986738,
+    "personal": 0.0032901103186094927,
+    "onset": 0.036725480826068094,
+    "bin0": 0.20271587577655936,
+    "bin1": 0.11176804261892181,
+    "bin2": 0.03783420736910504
+  },
+  "source": "actual",
+  "optimizer_success": false,
+  "optimizer_message": "Maximum number of function evaluations has been exceeded.",
+  "evaluations": 48,
+  "support": {
+    "split": "optimization",
+    "horizon": 3106,
+    "customers": 619,
+    "events": 815664,
+    "tail_events": 302200,
+    "counts": {
+      "normal": 810543,
+      "fraud": 4690,
+      "personal": 807705,
+      "onset": 429,
+      "bin0": 27601,
+      "bin1": 84660,
+      "bin2": 698282
+    }
+  },
+  "head_sha256": "7b825e376581ca9e7276d31f716b18c53b9e5f51964b4af2d408e76057c53582",
+  "original_gmr_buffers_unchanged": true
+}

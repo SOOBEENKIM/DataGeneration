@@ -1,0 +1,9 @@
+arm,fit_seed,normal_pass,improved_draws,late_pass,customer_pass,costs,passes
+correction_gain,20260930,False,2,True,True,fraud_gap_seconds_log_w1,False
+regression_gain,20260930,True,4,True,True,,True
+joint_gain,20260930,False,2,True,True,fraud_gap_seconds_log_w1,False
+output_gain_shift,20260930,False,2,True,True,fraud_gap_seconds_log_w1,False
+correction_gain,20261001,False,2,True,True,,False
+regression_gain,20261001,True,4,True,True,,True
+joint_gain,20261001,False,2,True,True,,False
+output_gain_shift,20261001,False,2,True,True,,False

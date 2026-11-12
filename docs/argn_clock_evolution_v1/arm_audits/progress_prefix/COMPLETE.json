@@ -1,0 +1,10 @@
+{
+  "raw_independent_audit": true,
+  "sha256": {
+    "metrics": "bd15540fc50b5dca1781f6dfbaa0edeabd4c69b6e9740caa59903e2af46a1877",
+    "phases": "f70391cdac8a172eec07267f2c02983904057a1bbb8de3fa4428f804e0dd06bd",
+    "personal": "e0237509ce69096f9a9e2b06872f2dc05e5fdab920ead92ee2b336ce0c3039d5",
+    "checks": "f0dc751ba66982af980979846f5a339341e004e523d7024076ee426f3dcc5e92",
+    "sampling": "f7e03b933a01bafc869f83d53bbe89297e574f02d42f2a75b515ff8e2e5339a3"
+  }
+}

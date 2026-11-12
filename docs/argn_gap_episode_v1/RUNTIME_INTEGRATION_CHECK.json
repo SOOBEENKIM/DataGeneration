@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "probability_checks": 30,
+  "max_probability_error": 8.344650270775134e-08,
+  "shrink_and_reorder": true,
+  "real_checkpoint": true,
+  "synthetic_fixed_lengths_for_unit_verification": true,
+  "full_transaction_generations": 0,
+  "source_sha256": "4c2cc36288074ca66e1a023c034e5c8b0125aae3eff62a1d45888a7f16863504"
+}

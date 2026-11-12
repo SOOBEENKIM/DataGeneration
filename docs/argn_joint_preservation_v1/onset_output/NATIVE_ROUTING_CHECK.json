@@ -1,0 +1,18 @@
+{
+  "checks": [
+    {
+      "fit_seed": 20260930,
+      "token_positions": 70,
+      "exact_routing": true,
+      "shrinking_reordered_batch": true
+    },
+    {
+      "fit_seed": 20261001,
+      "token_positions": 70,
+      "exact_routing": true,
+      "shrinking_reordered_batch": true
+    }
+  ],
+  "source_sha256": "9b392bfe30b3575830a2fecfe0b914961eb052dcdc297d75b13e5d8b335cb218",
+  "test_events_read": false
+}

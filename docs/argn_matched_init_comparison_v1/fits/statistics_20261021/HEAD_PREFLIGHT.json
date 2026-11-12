@@ -1,0 +1,7 @@
+{
+  "finite": true,
+  "base_input_ignored_as_registered": true,
+  "first_five_override_exact": true,
+  "handoff_zero": true,
+  "head_sha256": "342779a867e9dcf01e00adf73ad3c3ed529fee1b90cb6046f6deefde3b6cbfc6"
+}

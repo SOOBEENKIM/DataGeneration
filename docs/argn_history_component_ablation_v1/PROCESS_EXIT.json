@@ -1,0 +1,62 @@
+{
+  "gen_history_calibration_only_20260930_73001": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T13:59:18.089672+00:00"
+  },
+  "gen_history_initial_only_20261001_73001": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T13:59:18.090199+00:00"
+  },
+  "gen_history_calibration_only_20261001_73001": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T13:59:18.090537+00:00"
+  },
+  "gen_history_initial_only_20260930_73001": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T13:59:23.397672+00:00"
+  },
+  "gen_history_initial_only_20261001_73002": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T14:07:05.789916+00:00"
+  },
+  "gen_history_initial_only_20260930_73002": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T14:07:11.141699+00:00"
+  },
+  "gen_history_calibration_only_20260930_73002": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T14:07:11.142531+00:00"
+  },
+  "gen_history_calibration_only_20261001_73002": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T14:07:16.821587+00:00"
+  },
+  "gen_history_initial_only_20260930_73003": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T14:15:04.658711+00:00"
+  },
+  "gen_history_initial_only_20261001_73003": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T14:15:09.945826+00:00"
+  },
+  "gen_history_calibration_only_20260930_73003": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T14:15:20.597936+00:00"
+  },
+  "gen_history_calibration_only_20261001_73003": {
+    "exit_code": 0,
+    "completed": true,
+    "finished_utc": "2026-09-30T14:15:20.598757+00:00"
+  }
+}

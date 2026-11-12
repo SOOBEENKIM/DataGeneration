@@ -1,0 +1,27 @@
+{
+  "checked_utc": "2026-09-28T14:38:10+00:00",
+  "cpu_fits_complete": 4,
+  "cpu_prepare_exit_code": 0,
+  "pending_gpu_workers": 8,
+  "pending_full_generations": 32,
+  "launched_gpu_workers": 0,
+  "status_age_seconds": 2.764268398284912,
+  "gpu_utilization_percent": [
+    100,
+    100,
+    100,
+    100
+  ],
+  "gpu_memory_mib": [
+    3338,
+    4001,
+    3466,
+    3898
+  ],
+  "live_pipeline_pid": 1907476,
+  "active_model": "clock_prefix",
+  "native_model_replaced": false,
+  "pushed": false,
+  "partial_result_document_sha256": "8b23cb8f3b97be9fa06999ad65a7beb961e184432ad58e45f226d90b14f858fc",
+  "automatic_dispatch_and_evaluation_running": true
+}

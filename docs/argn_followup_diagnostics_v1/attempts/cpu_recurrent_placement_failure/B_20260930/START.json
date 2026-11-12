@@ -1,0 +1,8 @@
+{
+  "arm": "B",
+  "fit_seed": 20260930,
+  "pid": 1272810,
+  "device": "cuda",
+  "cuda_visible_devices": "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+  "mc_draws": 16
+}

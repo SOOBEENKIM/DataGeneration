@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "new_gap_fits": 4,
+  "new_full_generations": 16,
+  "new_generated_rows": 3159744,
+  "test_events_read": false,
+  "source_sha256": "14eed5fb470006eef85acf6da615756665be3d0e533bf6a7c232e55c001f074a",
+  "created_utc": "2026-09-27T12:16:40.357083+00:00"
+}

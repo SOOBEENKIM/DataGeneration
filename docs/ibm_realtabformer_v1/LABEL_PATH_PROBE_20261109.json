@@ -1,0 +1,20 @@
+{
+  "fit": 20261109,
+  "split": {
+    "rebuilt": {
+      "eval_windows": 1923,
+      "first5_labels_sha256": "fd0989724c699420954b89fbc4c08d347cf75178b4030d237065b57d0328f8a0"
+    },
+    "recorded": {
+      "eval_windows": 1923,
+      "first5_labels_sha256": "fd0989724c699420954b89fbc4c08d347cf75178b4030d237065b57d0328f8a0"
+    },
+    "match": true
+  },
+  "normal_rows_label_set_1_p_online": {
+    "native": 0.4101667106151581,
+    "routed": 0.4101667106151581,
+    "routed_subst": 0.845344066619873
+  },
+  "eval_windows": 1923
+}

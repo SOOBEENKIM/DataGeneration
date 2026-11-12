@@ -1,0 +1,22 @@
+{
+  "completed_utc": "2026-09-28T04:06:57.278447+00:00",
+  "prior_artifacts_verified": 264,
+  "input_and_amendment_hashes_verified": true,
+  "completed_jobs": 11,
+  "trajectories": 426,
+  "metric_rows": 5020,
+  "matched_supports": true,
+  "first_five_real_generated_clock_noop_exact": true,
+  "original_heads_and_generations_unchanged": true,
+  "git_head": "0d620a97bd91e4cd34a246a6ca8557782c07f470",
+  "tracked_status_clean": true,
+  "native_training_jobs": 0,
+  "native_generation_jobs": 0,
+  "diagnostic_workers_finished": true,
+  "test_events_read": false,
+  "committed": false,
+  "pushed": false,
+  "active_model": "clock_prefix",
+  "local_candidate": "argn_clock_stratified_loss_v1/personal_six",
+  "next_initialization_training_started": false
+}

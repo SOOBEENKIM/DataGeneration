@@ -1,0 +1,24 @@
+{
+  "interim": true,
+  "final_comparison_complete": false,
+  "complete": true,
+  "available_datasets": 30,
+  "common_customers": 143,
+  "cohort_sizes_separate": true,
+  "status": [
+    {
+      "model": "MeLD_public_Sparkov",
+      "fit": 20261021,
+      "status": "incomplete"
+    },
+    {
+      "model": "MeLD_public_Sparkov",
+      "fit": 20261022,
+      "status": "incomplete"
+    }
+  ],
+  "prior_hashes": 590,
+  "test_reads": 0,
+  "automatic_promotion": false,
+  "novelty_established": false
+}

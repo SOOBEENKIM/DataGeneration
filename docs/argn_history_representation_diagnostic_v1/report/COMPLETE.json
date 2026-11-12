@@ -1,0 +1,14 @@
+{
+  "completed_utc": "2026-09-29T09:46:18.280949+00:00",
+  "native_generations": 2,
+  "native_rows": 412514,
+  "conditional_resamples": 96,
+  "conditional_time_values": 11585568,
+  "fits": 0,
+  "test_events_read": false,
+  "commit": false,
+  "push": false,
+  "active_unchanged": true,
+  "running_jobs": 0,
+  "inner_head": "0d620a97bd91e4cd34a246a6ca8557782c07f470"
+}

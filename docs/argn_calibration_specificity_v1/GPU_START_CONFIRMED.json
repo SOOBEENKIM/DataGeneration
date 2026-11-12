@@ -1,0 +1,33 @@
+{
+  "recorded_status_utc": "2026-09-30T16:14:36.538881+00:00",
+  "generation_workers": [
+    "gen_history_global_20260930_73001",
+    "gen_history_global_20261001_73001",
+    "gen_history_global_20260930_73002",
+    "gen_history_global_20261001_73002"
+  ],
+  "observed_host_gpus": [
+    {
+      "index": 0,
+      "memory_MiB": 503,
+      "utilization_percent": 9
+    },
+    {
+      "index": 1,
+      "memory_MiB": 569,
+      "utilization_percent": 10
+    },
+    {
+      "index": 2,
+      "memory_MiB": 52,
+      "utilization_percent": 0
+    },
+    {
+      "index": 3,
+      "memory_MiB": 93,
+      "utilization_percent": 0
+    }
+  ],
+  "preexisting_mps_pid": 1059805,
+  "external_jobs_touched": false
+}

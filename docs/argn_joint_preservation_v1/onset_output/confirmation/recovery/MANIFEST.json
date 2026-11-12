@@ -1,0 +1,47 @@
+{
+  "created_utc": "2026-09-27T13:18:28.051288+00:00",
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/recover_argn_onset_confirmation.py": "f4ae43592b9974171576d46d0af621c5495cd27cd1c97681734aa248638fe7c8",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/dispatch_argn_onset_recovery.py": "488c7e511361f63dd007cccc9ab143416a4e963d8de5c861f684abab5aa59603",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/argn_joint_preservation_v1/onset_output/RECOVERY_PROTOCOL.md": "5d3c52d803468dbfac4d844823cdfdd3ff76ffd9e4184534b2d9ea65db964ede",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_preservation_v1/onset_output/confirmation/MANIFEST.json": "a0edf5574ebaf8e1c4ba436108378abd20e49fc7e4c931a7f02575fd9a489060",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_preservation_v1/onset_output/confirmation/runs/onset_fit_20260930/generated_validation_20261021.parquet": "f593d0054e9067e78b047710d13241a471d77a5517e6bd4af2904420d4aa5727",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_joint_preservation_v1/onset_output/confirmation/runs/onset_fit_20261001/generated_validation_20261021.parquet": "f5fa2c36046bb50f93d50a891d9425e55e2c636d458bae352ba329798efcc038"
+  },
+  "config": {
+    "fit_seeds": [
+      20260930,
+      20261001
+    ],
+    "generation_seeds": [
+      20261021,
+      20261022
+    ],
+    "sampling_seeds": [
+      20261101,
+      20261102,
+      20261103,
+      20261104
+    ],
+    "arms": [
+      "onset_fit",
+      "all_fraud_fit"
+    ],
+    "learning_rate": 0.0001,
+    "weight_decay": 0.001,
+    "batch_size": 256,
+    "max_steps": 1000,
+    "validation_every": 50,
+    "patience": 5,
+    "min_delta": 1e-05,
+    "gradient_clip": 1.0,
+    "allowed_gpu_uuids": [
+      "GPU-f1d4c556-ae70-3415-adec-c1d68f9bb637",
+      "GPU-5eae2fe0-7b63-fcc9-dd31-4e915ab63073"
+    ]
+  },
+  "reused_existing_draws": 2,
+  "remaining_new_draws": 2,
+  "training_changes": false,
+  "test_events_read": false
+}

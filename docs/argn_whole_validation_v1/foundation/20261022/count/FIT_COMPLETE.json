@@ -1,0 +1,18 @@
+{
+  "fit_seed": 20261022,
+  "conditioned": false,
+  "steps": 525,
+  "best_step": 325,
+  "initial_validation_nll": 7.287269051229102,
+  "best_validation_nll": 7.1123129183463405,
+  "nll": {
+    "optimization": 6.894522304678771,
+    "internal_validation": 7.1123129183463405
+  },
+  "customers": {
+    "optimization": 619,
+    "internal_validation": 69
+  },
+  "head_sha256": "ba646892df02f7cdcd77ac88e345d16f01df6fc7f81496b5fac2ad85c20ce5c3",
+  "test_events_read": false
+}

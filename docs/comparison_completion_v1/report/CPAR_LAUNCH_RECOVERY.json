@@ -1,0 +1,5 @@
+{
+  "reason": "Initial manifest-writing shell used unavailable python alias; workers correctly stopped before any fit at missing-manifest guard. Manifest is now materialized using python3. Frozen model/protocol unchanged. New dispatcher logs/status names preserve first attempt.",
+  "sha256": "be1bb98e7202b757dcb850e3d2e9c3d52228e966c523c1d92d81abf7df709174",
+  "test_reads": 0
+}

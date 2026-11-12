@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "raw_checks": 54,
+  "max_error": 9.020562075079397e-17,
+  "prior_hashes": 590,
+  "independent_fits": 3,
+  "new_fits": 0,
+  "new_generations": 0,
+  "test_reads": 0,
+  "confirmatory": false,
+  "model_replacement": false
+}

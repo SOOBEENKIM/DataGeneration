@@ -1,0 +1,35 @@
+{
+  "initial_mixture": {
+    "weights": [
+      0.39501226685442115,
+      0.4323733633246288,
+      0.17261436982094994
+    ],
+    "location": [
+      9.937420070462974,
+      11.487588400628164,
+      8.040980034155908
+    ],
+    "scale": [
+      0.8036851231942582,
+      0.7581968286597154,
+      1.410607388897692
+    ],
+    "rows": 2838,
+    "customers": 570,
+    "converged": true,
+    "iterations": 7,
+    "seed": 20261206,
+    "fit_split": "optimization",
+    "first_positions": [
+      1,
+      5
+    ],
+    "phase": "normal_stay"
+  },
+  "handoff": [
+    0.0,
+    0.0
+  ],
+  "head_sha256": "d5ffa33894e6485621f543df9212cc1da0404703e8d206a482ae55a406fabffb"
+}

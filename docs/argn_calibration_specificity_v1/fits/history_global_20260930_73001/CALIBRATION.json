@@ -1,0 +1,71 @@
+{
+  "selected": {
+    "evaluation": 7,
+    "theta": [
+      0.1598050093112405
+    ],
+    "seconds": 6.432286133058369,
+    "objective": 0.05919137925956233,
+    "clock": 0.0,
+    "normal": 0.03950680331500335,
+    "fraud": 0.17290285073654932,
+    "personal": 0.04389517570205743,
+    "onset": 0.04237225710943471,
+    "bin0": 0.06515063756909462,
+    "bin1": 0.06508120047724139,
+    "bin2": 0.0443337208206043,
+    "fine_200": 0.09486038745141867,
+    "fine_500": 0.07983159370970747,
+    "fine_1024": 0.15079246341836905,
+    "fine_2048": 0.17379295919222543,
+    "bin2_refined": 0.10639602756602794,
+    "pooling_gap": 0.06206230674542364
+  },
+  "initial": {
+    "evaluation": 0,
+    "theta": [
+      0.0
+    ],
+    "seconds": 0.8606726990547031,
+    "objective": 0.1651370452469559,
+    "clock": 0.0,
+    "normal": 0.15114269401974417,
+    "fraud": 0.17290285073654932,
+    "personal": 0.05325045651246712,
+    "onset": 0.04237225710943471,
+    "bin0": 0.21826760555081479,
+    "bin1": 0.16365538145233277,
+    "bin2": 0.14070063139957317,
+    "fine_200": 0.24959928024252653,
+    "fine_500": 0.11682163875723811,
+    "fine_1024": 0.06666839019389516,
+    "fine_2048": 0.035548041305145224,
+    "bin2_refined": 0.1554712024193554,
+    "pooling_gap": 0.014770571019782214
+  },
+  "support": {
+    "split": "optimization",
+    "horizon": 3106,
+    "customers": 619,
+    "events": 815664,
+    "tail_events": 302200,
+    "counts": {
+      "normal": 810543,
+      "fraud": 4690,
+      "personal": 807705,
+      "onset": 429,
+      "bin0": 27601,
+      "bin1": 84660,
+      "bin2": 698282
+    }
+  },
+  "optimizer_success": true,
+  "optimizer_message": "Optimization terminated successfully.",
+  "evaluations": 19,
+  "frozen_personal_objective": 0.04479619627840434,
+  "frozen_personal_objective_parity": true,
+  "conditional_sample_sha256": "98288f03af0415534df29d9cd8e305975fbeb07036c3dd20c6a5a7a8e60506eb",
+  "time_fit_seed": 73001,
+  "parent": 20260930,
+  "arm": "history_global"
+}

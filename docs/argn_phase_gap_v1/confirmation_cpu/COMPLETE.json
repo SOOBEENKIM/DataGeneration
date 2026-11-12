@@ -1,0 +1,8 @@
+{
+  "new_full_generations": 12,
+  "new_rows": 2279190,
+  "new_training": 0,
+  "test_events_read": false,
+  "matched_reference_device": "cpu",
+  "source_sha256": "8611663e23e421c3227ec90dfa65d825822f9418861dbd1c42f8dd0cc6377311"
+}

@@ -1,0 +1,16 @@
+{
+  "hashes": {
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/scripts/probe_argn_conditional_amount.py": "b0ec80b9c69a05549abc8db0816846c4f14d0b79096ee75dbbb68a187f14412b",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/docs/research_reaudit_20260927/AMOUNT_PROBE_PROTOCOL.md": "629786b331a7061671680252eb3dc294e9bf317c6f8f57792477e2b32c07155a",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_event_label_first_20260930/workspace/ModelStore/model-data/model-weights.pt": "c03642cfea96247115ff30a9261b71f9c9c53df29d149995bd39e8c078fc2d67",
+    "/home/ssd-990/soobeenkim/cof-seqgen-0707-2119-Version3-complete/research-argn-state-first/artifacts/argn_label_first_control_v1/runs/B_event_label_first_20261001/workspace/ModelStore/model-data/model-weights.pt": "25420f1a56a9eff8f6350508d274aa896e32fdbc1587f688b9e55cb6e8a50e59"
+  },
+  "selection_seed": 20260927,
+  "sampling_seeds": [
+    20261101,
+    20261102,
+    20261103,
+    20261104
+  ],
+  "test_events_read": false
+}
