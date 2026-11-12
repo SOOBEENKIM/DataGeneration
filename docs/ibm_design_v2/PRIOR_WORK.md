@@ -53,3 +53,42 @@
 - Karst et al., Generative AI for Banks — https://arxiv.org/abs/2412.14730
 - Benson et al., Modeling User Consumption Sequences (WWW 2016) — https://cseweb.ucsd.edu/classes/fa17/cse291-b/reading/sequences-www2016.pdf
 - Shchur et al., Neural Temporal Point Processes: A Review — https://arxiv.org/abs/2104.03528
+
+---
+
+## 추가 (2026-11-12) — 미해결이던 본문 확인: Banksformer · UniTTab · TabDiT, 그리고 같은 자료를 쓴 선행 1건
+
+사용자 지시(2026-11-12): "채택하고 진행"(정상 행 부품 채택, 기여 서술 전에 미해결 선행부터 확인). 위의 "미해결" 첫 항목을 푼다. 위 본문은 고치지 않는다. 모델 변경·학습·생성 없음.
+읽은 방법: Banksformer는 원 서버가 다시 연결을 거부해 **저자의 학위논문**(Nickerson 2023, 2장이 ECML-PKDD 논문 그대로임을 본문이 명시)의 방법·결과·향후 과제 절을 직접 읽었다. UniTTab은 arXiv v4 본문, TabDiT는 arXiv v2 본문과 부록. 검색 5회(extended 2회).
+
+| 논문 | 무엇인가 | 한 거래 안의 생성과 금액 | 고객 이력을 **명시적으로** 참조하는 기제 | 사기 라벨 / 가맹점 | 평가 |
+|---|---|---|---|---|---|
+| **Banksformer** (Nickerson et al., ECML-PKDD 2022) | 은행 거래열 생성기(transformer decoder) | 필드를 정해진 순서로 생성: `p(tcode | hist) · p(date | hist, tcode) · p(amount | hist, tcode, date)`. 금액은 정규분포(평균·분산 출력). 날짜는 달력 특징(월의 날, 월말까지 남은 날, 요일, 월)과 간격 Δt의 분포를 곱해 날짜 하나를 뽑는 "date mechanism" | **없음** — 이력은 self-attention 문맥 `hist`로만 들어간다 | 둘 다 없음(거래 유형 코드 16–44종, 날짜, 금액뿐). 고정 길이 열(80 / 20건) | 단변량 W1·JSD, 3-gram JSD, (유형, 날짜) 결합 JSD, 월 현금 흐름, PCA 시각화. **TSTR 없음**("쓰임을 미리 모를 때는 가치가 덜하다"고 적음) |
+| **UniTTab** (Luetto et al., MLJ 2025; arXiv 2302.06375) | **생성기가 아니다** — 마스킹 사전학습 표현 모형 + 하류 분류·회귀 | 수치는 주파수 임베딩, 예측 목표는 구간 + 이웃 구간 label smoothing | 없음(행 열 transformer의 attention뿐) | Padhi의 거래 자료에서 사기 **탐지**(F1)를 하류 과제로 씀. 생성 없음 | 하류 과제 성능만. 합성 자료 평가 없음 |
+| **TabDiT** (Garuti et al., ICLR 2025; arXiv 2504.07566) — 이전 기록의 "UniTTab-AR / BankDiT"의 출판본 | 표 시계열 **확산** 생성기(행별 VAE 잠재 + DiT 잡음 제거, 부모 행 조건은 CFG). 비교용 자체 "AR Baseline" 포함 | 수치는 자릿수 표현(크기 자리 + 유효 숫자 4개). 행들을 함께 잡음 제거 | **없음** — 복사·포인터·최근성 기제 없음 | 사기 없음. 자료: Age1 / Age2 / Leaving, PKDD'99, Rossmann, Airbnb. 열 길이 상한 50–100행 | 판별 가능성(MLD-TS, LD-SR)과 부모 표 라벨 분류의 MLE-TS. REaLTabFormer보다 낫다고 보고. 본문에서 코드 주소는 찾지 못함(공개 여부 미확인) |
+| Hsieh et al. (arXiv 2401.00965, 2024) | 우리와 **같은 자료원**(Altman)의 카드 거래열을 SDV의 CPAR로 생성 | 전처리 다섯 가지(금액 변환·범주 부호화)만 바꿈 | 없음 | 사기 행을 **따로** 생성(고객 3명, 사기 15,000건) | 주변 분포의 시각 비교, 합성 학습 탐지기의 FNR / FPR. 실제 학습 기준선 없음, 격차의 원인 분석 없음 |
+
+### 겹침과 남는 것 (정정 포함)
+
+- **후보 2의 미해결 항목은 풀렸다.** Banksformer·UniTTab·TabDiT 어디에도 "금액이나 가맹점을 그 고객의 과거 같은 가맹점·업종 행에 명시적으로 묶는" 기제는 없다. 셋 다 이력을 암묵적 문맥으로만 쓴다(RTF와 같은 부류).
+  → "학습형 고객 거래열 생성기에 이력 참조 부품을 **명시적으로** 넣은 선행은 읽은 범위에 없다"고 쓸 수 있다. "없다"가 아니라 "읽은 범위에서 찾지 못했다"이다. 기제 자체(복사, 재소비, 준마르코프)의 새로움을 주장하지 않는다는 것은 그대로다.
+- **새로 확인한 겹침 — 행 안의 조건부 생성 순서.** Banksformer의 두 번째 혁신이 "한 거래의 필드를 정해진 순서로 만들고 뒤 필드를 앞 필드에 조건화"하는 것이다(제거 실험 포함). 우리의 "상태 먼저"(라벨 → 간격 → 가맹점 → 금액 …)는 **형식상 같은 것**이다.
+  남는 차이는 무엇을 맨 앞에 두는가(희귀한 사기 라벨)와 그 라벨로 출력층을 가르는 라우팅, 표로 둔 라벨 과정이며, 이것은 "순서를 정해 조건화한다"는 발상의 새로움이 아니라 **적용과 근거**(사다리)의 문제다. 논문에서는 Banksformer를 이 지점의 선행으로 인용해야 한다.
+- **진단 주장(격차가 정상 행의 고객 이력 구조에 있다)의 선행은 여전히 찾지 못했다.** 위 넷 중 어느 것도 사기 탐지 TSTR의 격차를 사기 행 대 정상 행으로 가르지 않는다. 가장 가까운 것은 여전히 Sajja 2604.13125(행동 사기 패턴이 깨진다는 측정, 처방·위치 특정 없음)다.
+  이번 검색(extended 2회)에서도 행 교체 실험을 한 논문은 나오지 않았다 — 검색 범위의 한계 안에서의 진술이다.
+- **평가의 차이.** 위 생성기들은 판별 가능성·분포 거리·부모 표 라벨 분류로 평가한다. 사기 라벨이 있는 고객 거래열에서 탐지 효용(TSTR)을 상한·바닥과 함께 재고 부품별로 가르는 평가는 읽은 범위에 없다.
+
+### 앞으로의 결정에 미치는 것
+
+- **시간 구조 부품(다음 후보)의 가장 가까운 선행은 Banksformer의 date mechanism이다**(달력 특징의 분포를 곱해 날짜를 뽑음). 그 부품을 등록할 때 네 항목 대조의 첫 줄에 놓는다. 우리 진단(생성된 "1년"이 280–540일, 사기 진입의 달력 몰림)이 가리키는 것이 같은 기제로 풀리는지부터 본다.
+- **비교군.** 심사에서 최신 생성기를 요구받으면 후보는 TabDiT다. 다만 (i) 코드 공개 여부 미확인, (ii) 그 논문의 열 길이 상한이 50–100행인데 우리 과제는 고객당 연 1,100건 안팎, (iii) 사기 라벨·가맹점 9,411종 같은 고차원 범주를 다룬 실험이 없다.
+  넣을 수 있는지는 코드와 길이 제약을 확인한 뒤에 정한다 — 지금은 "확인 필요"로 둔다. Banksformer는 코드가 있으나 가맹점·사기 라벨이 없는 3필드 모형이라 그대로는 비교군이 되지 않는다.
+- **아직 미해결**: Sparkov 생성기의 사기 기간 규칙(코드 미확인), TabDiT 코드 공개 여부, Garuti 학위논문 자체(출판본 TabDiT로 대신 읽음).
+
+### 출처 (추가)
+
+- Nickerson, A deep generative model framework for creating high quality synthetic transaction sequences (PhD thesis, Memorial University, 2023; 2장 = Banksformer 논문) — https://hdl.handle.net/20.500.14783/14762
+- Banksformer 코드 — https://github.com/BigTuna08/Banksformer_ecml_2022
+- Luetto et al., One Transformer for All Time Series — https://arxiv.org/abs/2302.06375
+- Garuti et al., Diffusion Transformers for Tabular Data Time Series Generation (ICLR 2025) — https://arxiv.org/abs/2504.07566
+- Hsieh, Wang, Cheng, Improve Fidelity and Utility of Synthetic Credit Card Transaction Time Series from Data-centric Perspective — https://arxiv.org/abs/2401.00965
